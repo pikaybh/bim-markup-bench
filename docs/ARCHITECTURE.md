@@ -28,19 +28,46 @@ For phase one, the XML representation is an *experiment-only IFC-preserving auth
 
 A self-contained `building.xml` (plus required binary assets) as an authoritative full BIM document is an optional later arm. Do not silently treat overlays as a complete BIXML implementation.
 
-## Proposed XML dialect (illustrative only)
+## Proposed direct-declarative XML source (illustrative only)
+
+**NON-NEGOTIABLE:** The editable file is a **declarative snapshot**, not an XML-encoded imperative command list. The tested model **must NOT write** `<Create/>`, `<Edit/>`, `<Delete/>`, `<Move/>`, `<SetProperty/>` command opcodes that merely wrap a BIM API.
+
 ```xml
-<BuildingOverlay sourceModelSha256="...">
-  <Edit targetGuid="0123456789012345678901" expectedIfcType="IfcWall">
-    <Set path="Pset_WallCommon.FireRating" value="REI60" />
-  </Edit>
-  <Create entityId="new-wall-1" ifcClass="IfcWall"
-          storeyRef="known-IFC-GlobalId" start="0,0,0"
-          end="6,0,0" thickness="0.2m" height="3m" />
-</BuildingOverlay>
+<Building xmlns="urn:bim-markup-bench:toy:v0"
+          sourceModelSha256="(immutable-input-hash)"
+          units="m">
+  <Levels>
+    <Level id="level-1" ifcGuid="(existing-storey-guid)" elevation="0"/>
+  </Levels>
+  <Elements>
+    <Wall id="wall-1" ifcGuid="(existing-wall-guid)"
+          level="level-1" from="0,0,0" to="6,0,0"
+          height="3" thickness="0.20"/>
+    <Window id="window-1" ifcGuid="(existing-window-guid)"
+            host="wall-1" offset="2.0" sill="0.9"
+            width="1.2" height="1.5"/>
+  </Elements>
+  <Relations>
+    <FillsOpening element="window-1" opening="(existing-opening-id)"/>
+  </Relations>
+</Building>
 ```
 
-**Not a formal schema.** Canonical semantics for GUID assignment, property path type, unit system, coordinate frame, object identity, host/void/fill relationships, space boundary and deterministic ordering must be specified by dedicated issues. The example is *not proof* that these attributes are supported.
+The example is **not** a frozen, published or normative XML grammar. For the first pilot, `sourceModelSha256` pins the immutable IFC backing asset, and the XML snapshot is authoritative for a **clearly declared managed subset** of elements/relationships. The complete original IFC model may contain uneditable **opaque passthrough entities**. These remain preserved in the backend and may be read only via explicit stable references and public model context.
+
+### Operations are inferred solely from before/after declarative document states
+
+- **Create:** an element definition appears in the edited XML and has no corresponding existing IFC GlobalId (assign a validated new stable identity).
+- **Update:** a definition with a stable ID exists in both source snapshots but its semantic attributes, geometry or relations differ.
+- **Delete:** a previously managed element definition is absent from the edited snapshot and deletion of that kind is authorized within the declared managed scope.
+- **Unmanaged elements:** absence in XML **NEVER** means delete. They must be preserved identically from the immutable IFC backing model.
+- **Relationship edits:** adding/removing a declared semantic reference (e.g., `host`, `boundsSpace`, `FillsOpening`) changes the derived IFC relationship graph. An unrepresented relationship remains preserved unless its owner lies within an explicitly controlled/managed relation scope.
+
+No mutation action names occur in the LLM-editable document. The runtime's generated **internal delta/transaction plan** may contain imperative instructions, but that plan is not exposed as the LLM authoring surface. This is what isolates declarative authoring from the Python/IfcOpenShell control.
+
+### Critical semantics to freeze before pilot
+
+Stable local ID versus existing IFC GlobalId; managed/unmanaged boundary; create/delete identity; owning scope of relationship collections; units and transforms; host/void/fill/space boundary edges; no-op fidelity; canonicalization; behavior on uncertain geometry or unsupported class; and the permitted observation window for the model.
 
 ## Authoritative states
 - Benchmark `input.ifc`: immutable, read-only and pinned by SHA-256, not modified in place.
