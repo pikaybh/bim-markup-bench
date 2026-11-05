@@ -48,3 +48,25 @@
 - **G5 complete** only after independent task-family validation and rights audit.
 
 Prefer completing evidence-driven gates over implementing more IFC object types without passing any test.
+
+## Executable GitHub Issue index (created 2026-11-06)
+
+The [master epic #1](https://github.com/pikaybh/bim-markup-bench/issues/1) tracks all gates. Each issue includes concrete file contracts, prerequisites, positive/negative tests, evidence requirements and out-of-scope constraints. Creating an issue is **not** completing it.
+
+| Gate / milestone | GitHub Issues | Exit condition |
+| --- | --- | --- |
+| **G0** Foundations | [#2](https://github.com/pikaybh/bim-markup-bench/issues/2) protocol; [#3](https://github.com/pikaybh/bim-markup-bench/issues/3) BIM-Edit pinning; [#4](https://github.com/pikaybh/bim-markup-bench/issues/4) scorer audit; [#5](https://github.com/pikaybh/bim-markup-bench/issues/5) BIBIMBAP availability; [#6](https://github.com/pikaybh/bim-markup-bench/issues/6) IFC-Bench; [#7](https://github.com/pikaybh/bim-markup-bench/issues/7) environment; [#8](https://github.com/pikaybh/bim-markup-bench/issues/8) fixtures/GT separation | Data, scorer, versioning, rights and leakage evidence |
+| **G1** Runtime | [#9](https://github.com/pikaybh/bim-markup-bench/issues/9) XML spec; [#10](https://github.com/pikaybh/bim-markup-bench/issues/10) parser; [#11](https://github.com/pikaybh/bim-markup-bench/issues/11) IFC projection; [#12](https://github.com/pikaybh/bim-markup-bench/issues/12) semantic graph; [#13](https://github.com/pikaybh/bim-markup-bench/issues/13) compiler; [#14](https://github.com/pikaybh/bim-markup-bench/issues/14) geometry; [#15](https://github.com/pikaybh/bim-markup-bench/issues/15) topology; [#16](https://github.com/pikaybh/bim-markup-bench/issues/16) deterministic oracle | Same task succeeds D0/I0; invalid edits fail closed |
+| **G2** Matched comparison | [#17](https://github.com/pikaybh/bim-markup-bench/issues/17) direct XML LLM; [#18](https://github.com/pikaybh/bim-markup-bench/issues/18) Python control; [#19](https://github.com/pikaybh/bim-markup-bench/issues/19) sandbox; [#20](https://github.com/pikaybh/bim-markup-bench/issues/20) runner/budgets; [#21](https://github.com/pikaybh/bim-markup-bench/issues/21) evaluator; [#22](https://github.com/pikaybh/bim-markup-bench/issues/22) calibration | Blind independent scoring and equal tool/model access validated |
+| **G3** Pilot | [#23](https://github.com/pikaybh/bim-markup-bench/issues/23) preregistration; [#24](https://github.com/pikaybh/bim-markup-bench/issues/24) pilot runs; [#25](https://github.com/pikaybh/bim-markup-bench/issues/25) statistical analysis | Predeclared paired pilot and complete failure report |
+| **G4** BIM-Edit 324 | [#26](https://github.com/pikaybh/bim-markup-bench/issues/26) full sweep; [#27](https://github.com/pikaybh/bim-markup-bench/issues/27) final primary report | 324 tasks accounted for with ITT & supported denominator |
+| **G5** Extensions and reporting | [#28](https://github.com/pikaybh/bim-markup-bench/issues/28) IFC-Bench QA; [#29](https://github.com/pikaybh/bim-markup-bench/issues/29) BIBIMBAP conditional; [#30](https://github.com/pikaybh/bim-markup-bench/issues/30) ablations; [#31](https://github.com/pikaybh/bim-markup-bench/issues/31) reproduction/paper | Rights-cleared secondary evaluation, reproducibility package |
+
+### Suggested initial parallel assignment (does not assign GitHub users)
+
+- Research/Data agents: #3, #4, #5, #6; coordinate #2 and shared task manifest changes.
+- Runtime agents: start at #9 and #10, then #11 and #12; #13–#16 follow contracts.
+- Infrastructure/Security agent: #7 and #8; #19 starts after the G0 threat model.
+- Comparators/Scoring agents: #17–#22 **after G1 oracle release**, with separate paths to avoid overlap.
+
+**No one is currently assigned.** Each subagent must read root AGENTS.md and claim a path-scoped Issue before writing. Specific owner assignment and paid compute approvals are separate decisions.
