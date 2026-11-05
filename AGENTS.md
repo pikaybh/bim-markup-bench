@@ -35,6 +35,6 @@
 - If blocked, report exact dependency and evidence; do not invent a passing result.
 
 ## The core non-negotiable
-**XML is what the LLM edits.** APIs, translators and compiled geometry may exist behind the runtime boundary, but they cannot be the direct-markup arm's LLM authoring interface. The metric and ground truth remain independent of either arm.
+**XML is what the LLM edits, as a declarative document state.** Do not implement a pseudo-declarative `<Create>`, `<Update>`, `<Delete>`, `<Move>` or `<Set>` operation list wrapping commands. Creates/updates/deletes must be **inferred by stable-ID semantic diff of previous and edited source**, with an explicit boundary identifying which IFC entities are managed in XML versus preserved as opaque pass-through assets. APIs, translators and compiled geometry may exist behind the runtime boundary, but they cannot be the direct-markup arm's LLM authoring interface. The metric and ground truth remain independent of either arm.
 
 **한국어:** 이 저장소는 독립적인 실험 전용입니다. LLM의 선언적 마크업 직접 편집 원칙, 대조군의 공정성, 정답 IFC 비공개, 버전 고정, Agent 작업경로 격리, 비용·보안·라이선스 검증을 준수합니다. 기존 Xim/BIXML 저장소는 수정하지 않습니다.
