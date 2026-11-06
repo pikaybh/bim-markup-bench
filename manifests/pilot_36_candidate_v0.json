@@ -1,0 +1,284 @@
+{
+  "status": "CANDIDATE_NOT_PREREGISTERED",
+  "warning": "DO NOT RUN LLMs OR CLAIM PILOT RESULTS. G0/G1/G2 ORACLES AND COST APPROVAL REQUIRED.",
+  "benchmark": "BIM-Edit",
+  "task_source": "https://huggingface.co/datasets/BIM-Edit/BIM-Edit-Tasks",
+  "task_revision": "2dc6462bfab145ddf81b43e9954322855b8443dc",
+  "task_data_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "sampling_algorithm": "2 tasks per (operation,category,scene) stratum; SHA256(seed|task_id), lowest 2 lexically",
+  "seed": "BIM-Edit-pilot-v0-2026-11-07",
+  "sample_size": 36,
+  "runs_per_repetition": 72,
+  "expected_arms": [
+    "direct_declarative_xml",
+    "imperative_python_ifcopenshell"
+  ],
+  "class_counts": {
+    "IfcColumn": 1,
+    "IfcDoor": 3,
+    "IfcSlab": 5,
+    "IfcSpace": 9,
+    "IfcWall": 12,
+    "IfcWindow": 6
+  },
+  "tasks": [
+    {
+      "task_id": "WIN-CRE-DIR-A-001",
+      "operation": "create",
+      "category": "direct",
+      "scene": "scene:A",
+      "entity_type": "IfcWindow"
+    },
+    {
+      "task_id": "DOR-CRE-DIR-A-001",
+      "operation": "create",
+      "category": "direct",
+      "scene": "scene:A",
+      "entity_type": "IfcDoor"
+    },
+    {
+      "task_id": "WAL-CRE-DIR-R-004",
+      "operation": "create",
+      "category": "direct",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "WAL-CRE-DIR-R-001",
+      "operation": "create",
+      "category": "direct",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "SLB-CRE-SPA-A-001",
+      "operation": "create",
+      "category": "spatial",
+      "scene": "scene:A",
+      "entity_type": "IfcSlab"
+    },
+    {
+      "task_id": "WAL-CRE-SPA-A-003",
+      "operation": "create",
+      "category": "spatial",
+      "scene": "scene:A",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "WAL-CRE-SPA-R-002",
+      "operation": "create",
+      "category": "spatial",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "ROM-CRE-SPA-R-003",
+      "operation": "create",
+      "category": "spatial",
+      "scene": "scene:R",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "DOR-CRE-TOP-A-002",
+      "operation": "create",
+      "category": "topological",
+      "scene": "scene:A",
+      "entity_type": "IfcDoor"
+    },
+    {
+      "task_id": "ROM-CRE-TOP-A-002",
+      "operation": "create",
+      "category": "topological",
+      "scene": "scene:A",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "WIN-CRE-TOP-R-001",
+      "operation": "create",
+      "category": "topological",
+      "scene": "scene:R",
+      "entity_type": "IfcWindow"
+    },
+    {
+      "task_id": "WAL-CRE-TOP-R-002",
+      "operation": "create",
+      "category": "topological",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "DOR-DEL-DIR-A-001",
+      "operation": "delete",
+      "category": "direct",
+      "scene": "scene:A",
+      "entity_type": "IfcDoor"
+    },
+    {
+      "task_id": "ROM-DEL-DIR-A-001",
+      "operation": "delete",
+      "category": "direct",
+      "scene": "scene:A",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "ROM-DEL-DIR-R-004",
+      "operation": "delete",
+      "category": "direct",
+      "scene": "scene:R",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "ROM-DEL-DIR-R-002",
+      "operation": "delete",
+      "category": "direct",
+      "scene": "scene:R",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "COL-DEL-SPA-A-001",
+      "operation": "delete",
+      "category": "spatial",
+      "scene": "scene:A",
+      "entity_type": "IfcColumn"
+    },
+    {
+      "task_id": "WIN-DEL-SPA-A-002",
+      "operation": "delete",
+      "category": "spatial",
+      "scene": "scene:A",
+      "entity_type": "IfcWindow"
+    },
+    {
+      "task_id": "SLB-DEL-SPA-R-003",
+      "operation": "delete",
+      "category": "spatial",
+      "scene": "scene:R",
+      "entity_type": "IfcSlab"
+    },
+    {
+      "task_id": "ROM-DEL-SPA-R-001",
+      "operation": "delete",
+      "category": "spatial",
+      "scene": "scene:R",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "WIN-DEL-TOP-A-002",
+      "operation": "delete",
+      "category": "topological",
+      "scene": "scene:A",
+      "entity_type": "IfcWindow"
+    },
+    {
+      "task_id": "WAL-DEL-TOP-A-001",
+      "operation": "delete",
+      "category": "topological",
+      "scene": "scene:A",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "SLB-DEL-TOP-R-003",
+      "operation": "delete",
+      "category": "topological",
+      "scene": "scene:R",
+      "entity_type": "IfcSlab"
+    },
+    {
+      "task_id": "WAL-DEL-TOP-R-003",
+      "operation": "delete",
+      "category": "topological",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "WIN-UPD-DIR-A-002",
+      "operation": "update",
+      "category": "direct",
+      "scene": "scene:A",
+      "entity_type": "IfcWindow"
+    },
+    {
+      "task_id": "ROM-UPD-DIR-A-001",
+      "operation": "update",
+      "category": "direct",
+      "scene": "scene:A",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "WAL-UPD-DIR-R-004",
+      "operation": "update",
+      "category": "direct",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "WAL-UPD-DIR-R-003",
+      "operation": "update",
+      "category": "direct",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "ROM-UPD-SPA-A-001",
+      "operation": "update",
+      "category": "spatial",
+      "scene": "scene:A",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "WIN-UPD-SPA-A-003",
+      "operation": "update",
+      "category": "spatial",
+      "scene": "scene:A",
+      "entity_type": "IfcWindow"
+    },
+    {
+      "task_id": "WAL-UPD-SPA-R-003",
+      "operation": "update",
+      "category": "spatial",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "SLB-UPD-SPA-R-002",
+      "operation": "update",
+      "category": "spatial",
+      "scene": "scene:R",
+      "entity_type": "IfcSlab"
+    },
+    {
+      "task_id": "ROM-UPD-TOP-A-003",
+      "operation": "update",
+      "category": "topological",
+      "scene": "scene:A",
+      "entity_type": "IfcSpace"
+    },
+    {
+      "task_id": "WAL-UPD-TOP-A-001",
+      "operation": "update",
+      "category": "topological",
+      "scene": "scene:A",
+      "entity_type": "IfcWall"
+    },
+    {
+      "task_id": "SLB-UPD-TOP-R-003",
+      "operation": "update",
+      "category": "topological",
+      "scene": "scene:R",
+      "entity_type": "IfcSlab"
+    },
+    {
+      "task_id": "WAL-UPD-TOP-R-003",
+      "operation": "update",
+      "category": "topological",
+      "scene": "scene:R",
+      "entity_type": "IfcWall"
+    }
+  ],
+  "gate_status": {
+    "G0": "NOT_PASSED",
+    "G1": "NOT_PASSED",
+    "G2": "NOT_PASSED",
+    "BUDGET": "NOT_APPROVED"
+  }
+}

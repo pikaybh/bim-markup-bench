@@ -1,0 +1,20 @@
+{
+  "status": "PLAN_ONLY_BLOCKED",
+  "description": "36-task BIM-Edit matched pilot: direct XML source editing versus Python/IfcOpenShell",
+  "tasks": 36,
+  "arms": ["direct_declarative_xml", "imperative_python_ifcopenshell"],
+  "model": "gpt-6-luna",
+  "repetitions": 1,
+  "price_estimate_only": {
+    "input_usd_per_million": 0.10,
+    "output_usd_per_million": 0.50,
+    "input_tokens_per_arm_task": 20000,
+    "output_tokens_per_arm_task": 5000,
+    "source": "https://developers.openai.com/api/docs/pricing",
+    "rate_warning": "Rates are a conservative planning estimate and must be verified at run time. Actual billing depends on model, mode, caching and tokens."
+  },
+  "max_total_usd_proposed": 5.0,
+  "max_total_usd_explicitly_authorized": false,
+  "paid_calls_enabled": false,
+  "hard_requirements": ["G0_DATA_PROVENANCE", "G0_EVALUATOR_PROVENANCE", "G0_GROUND_TRUTH_ISOLATION", "G1_DETERMINISTIC_D0_I0_ORACLES", "G2_MATCHED_AGENT_ARMS", "G2_INDEPENDENT_SCORER", "G2_SAFETY_AND_BUDGET", "G3_FROZEN_PREREGISTRATION"]
+}
