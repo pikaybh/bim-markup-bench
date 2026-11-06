@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The only model-visible benchmark task envelope",
+  "type": "object",
+  "required": ["task_id", "instruction", "input_file"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "instruction": {"type": "string", "minLength": 1},
+    "input_file": {"const": "input.ifc"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,66 @@
+{
+  "records": [
+    {
+      "asset_rights": "Original self-generated fixture",
+      "consent_documented": true,
+      "notes": "Own synthetic model; no third-party IFC content.",
+      "redistribution_permitted": true,
+      "rights_checked": true,
+      "source": "tests/fixtures/synthetic/expected_wall_height.ifc",
+      "source_digest_sha256": "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+      "source_revision": "tools/generate_synthetic_ifc.py"
+    },
+    {
+      "asset_rights": "Original self-generated fixture",
+      "consent_documented": true,
+      "notes": "Own synthetic model; no third-party IFC content.",
+      "redistribution_permitted": true,
+      "rights_checked": true,
+      "source": "tests/fixtures/synthetic/expected_window_move.ifc",
+      "source_digest_sha256": "be6a92510a430c7463b27556bf5475d42b6e1a1c43b9723f503a0ea62e000aae",
+      "source_revision": "tools/generate_synthetic_ifc.py"
+    },
+    {
+      "asset_rights": "Original self-generated fixture",
+      "consent_documented": true,
+      "notes": "Own synthetic model; no third-party IFC content.",
+      "redistribution_permitted": true,
+      "rights_checked": true,
+      "source": "tests/fixtures/synthetic/input.ifc",
+      "source_digest_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+      "source_revision": "tools/generate_synthetic_ifc.py"
+    },
+    {
+      "asset_rights": "Dataset card advertises CC-BY-4.0; individual model provenance not audited",
+      "consent_documented": false,
+      "notes": "Do not commit or redistribute any original model IFC/GT until each file's rights/provenance are verified.",
+      "redistribution_permitted": false,
+      "rights_checked": false,
+      "source": "BIM-Edit/BIM-Edit",
+      "source_digest_sha256": null,
+      "source_revision": "0ae510bd21865def4e2c6145c1244f01a1e3bcb9"
+    },
+    {
+      "asset_rights": "Per-IFC model license unknown",
+      "consent_documented": false,
+      "notes": "G0 #6 must audit license per model; dataset-level CC-BY does not override model-specific obligations.",
+      "redistribution_permitted": false,
+      "rights_checked": false,
+      "source": "sylvainHellin/ifc-bench",
+      "source_digest_sha256": null,
+      "source_revision": "UNPINNED"
+    },
+    {
+      "asset_rights": "Public task/code availability and rights unknown",
+      "consent_documented": false,
+      "notes": "G0 #5 acquisition gate; cannot redistribute arbitrary expected outputs or source models.",
+      "redistribution_permitted": false,
+      "rights_checked": false,
+      "source": "BIBIMBAP EC3 paper",
+      "source_digest_sha256": null,
+      "source_revision": "UNVERIFIED_ARTIFACT_PACKAGE"
+    }
+  ],
+  "schema_version": "0.1",
+  "status": "G0_RIGHTS_LEDGER_NOT_MODEL_LICENSE_CLEARANCE"
+}
