@@ -1,0 +1,60 @@
+{
+  "aliases": {
+    "data/artificial/": "simple/",
+    "data/realistic/": "complex/"
+  },
+  "benchmark": "BIM-Edit",
+  "content_verified": false,
+  "gate_passed": false,
+  "model_repo": "BIM-Edit/BIM-Edit",
+  "model_repo_dataset_card_license_tag": "cc-by-4.0",
+  "model_revision": "0ae510bd21865def4e2c6145c1244f01a1e3bcb9",
+  "no_automated_model_download": true,
+  "redistribution_rights_verified": false,
+  "remote_asset_metadata": {
+    "actual_bytes_downloaded_or_verified": false,
+    "full_validation": "BLOCKED_PENDING_IFC_ASSET_DOWNLOAD_AND_CONTENT_VERIFICATION",
+    "remote_file_metadata_present": true,
+    "remote_ifc_with_lfs_sha256_pointer": 33,
+    "remote_ifc_with_only_git_object_id": 118,
+    "remote_total_file_bytes": 4310158877,
+    "remote_total_file_count": 154,
+    "remote_total_ifc_files": 151,
+    "source": "Hugging Face pinned repository tree metadata ONLY",
+    "target_guids_in_actual_input_gt_checked": false,
+    "task_paths_matched": 148,
+    "task_paths_missing": 0
+  },
+  "status": "REMOTE_METADATA_VERIFIED_ONLY_NOT_IFC_CONTENT",
+  "task_counts": {
+    "categories": {
+      "direct": 108,
+      "spatial": 108,
+      "topological": 108
+    },
+    "num_strata": 18,
+    "operations": {
+      "create": 108,
+      "delete": 108,
+      "update": 108
+    },
+    "record_count": 324,
+    "scenes": {
+      "scene:A": 162,
+      "scene:R": 162
+    },
+    "types": {
+      "IfcColumn": 36,
+      "IfcDoor": 36,
+      "IfcSlab": 72,
+      "IfcSpace": 72,
+      "IfcWall": 72,
+      "IfcWindow": 36
+    },
+    "unique_referenced_ifc_assets": 148,
+    "unique_task_ids": 324
+  },
+  "task_jsonl_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "task_repo": "BIM-Edit/BIM-Edit-Tasks",
+  "task_revision": "2dc6462bfab145ddf81b43e9954322855b8443dc"
+}
