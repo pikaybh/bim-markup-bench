@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "model": "gpt-6-luna",
+  "service_tier": "standard",
+  "price_snapshot": {
+    "checked_at_utc": "2026-11-06T16:00:00Z",
+    "url": "https://developers.openai.com/api/docs/pricing",
+    "input_per_million_usd": "0.10",
+    "cached_input_per_million_usd": "0.01",
+    "output_per_million_usd": "0.50",
+    "pricing_note": "Short-context Standard rates; long-context prices, cache writes, tools, regional premiums and future changes not included."
+  },
+  "maximum_total_spend_usd": "5.00",
+  "planned_task_count": 36,
+  "planned_arms_per_task": 2,
+  "planned_repetitions": 1,
+  "estimated_input_tokens_per_arm_task": 20000,
+  "estimated_output_tokens_per_arm_task": 5000,
+  "maximum_attempts_per_task": 1,
+  "maximum_wall_seconds_per_task": 180,
+  "maximum_output_tokens_per_request": 6000,
+  "allow_paid_api_calls": false,
+  "explicit_budget_approval": false,
+  "gate_evidence_verified": false
+}
