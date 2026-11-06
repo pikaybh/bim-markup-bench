@@ -68,3 +68,15 @@ No code copy or Git submodule from Xim/BIXML, no changes to those repositories, 
 **Licensing:** This experimental repository has not yet selected its own code license. Do not infer a grant of reuse from its public visibility.
 
 **한국어 요약:** 이 저장소는 BIXML/Xim을 수정하지 않고, LLM의 **XML 원본 직접 편집**과 **Python/IfcOpenShell 코드 생성**을 동일한 IFC 백엔드 및 독립 평가기로 비교하기 위한 토이 연구입니다. 현재는 실행 코드가 아닌 계획·이슈 단계입니다.
+
+## Development environment (G0 #7)
+
+See [Environment](docs/ENVIRONMENT.md) and [Compute / API budget](docs/COMPUTE_BUDGET.md).
+For Mac ARM64, Python 3.12 and uv 0.8.5:
+1. uv python install 3.12
+2. uv sync --frozen --python 3.12
+3. .venv/bin/python tools/doctor.py
+4. .venv/bin/python -m unittest discover -s tests -v
+5. .venv/bin/python tools/cost_budget.py
+
+These are offline-only checks, not a functioning benchmark or model runner. API calls remain blocked and the .env.example template contains no secrets.
