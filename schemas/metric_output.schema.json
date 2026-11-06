@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bim-markup-bench:metric-output:v0",
+  "title": "Per-trial scoring: explicitly declare whether this is ONLY scalar formula arithmetic or a full evaluator",
+  "type": "object",
+  "required": ["geometry", "semantics", "topology", "final_score", "strict_pass", "metric_origin", "full_ifc_evaluator_implemented"],
+  "properties": {
+    "geometry": {"type": "number", "minimum": 0, "maximum": 1},
+    "semantics": {"type": "number", "minimum": 0, "maximum": 1},
+    "topology": {"type": "number", "minimum": 0, "maximum": 1},
+    "final_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "strict_pass": {"type": "boolean"},
+    "metric_origin": {"enum": ["paper-formula-only", "independent-reimplementation", "official"]},
+    "full_ifc_evaluator_implemented": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}
