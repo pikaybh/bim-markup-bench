@@ -29,3 +29,16 @@ The trusted compiler now supports editing the **physical** thickness of a *stand
 This is a real 3D/parametric edit, not an XML-only mock. It does **not** imply a general parametric BIM engine. The next necessary fixes for #14 are wall length/rotation with correct host geometry, slab/column/space shape, opening propagation and independent geometric tolerances. Issue #15 owns typed topology regeneration.
 
 The direct-edit LLM sees XML source only. The IfcOpenShell mutation is performed behind the trusted runtime boundary; do not expose helper methods to the direct-edit model.
+
+## G1 #15 typed topology additions (PARTIAL)
+
+Actual native IFC relations now supported for existing **Window deletion**,
+**Opening.offset translation with relative filling placement**, and
+**IfcRelConnectsElements creation/removal** between straight meeting walls.
+IfcRelVoidsElement, IfcRelFillsElement, storey containment and opaque source
+IfcRelSpaceBoundary are checked on output, not inferred from XML assertions.
+
+A self-authored IFC test verifies that moving a window opening by +0.5 m moves
+the child window by +0.5 m in global coordinates without changing any
+unrelated STEP entity. Unsupported IfcSpace boundary editing, complex-host
+rotation, arbitrary openings and dimension changes remain blocked.

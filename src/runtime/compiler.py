@@ -25,6 +25,10 @@ from src.runtime.ifc_mutations import (
 )
 from src.runtime.transaction import TransactionError,stage_and_commit
 from src.runtime.geometry_ops import edit_wall_thickness,wall_thickness_eligibility
+from src.runtime.semantic_graph import graph_diff
+from src.runtime.topology_ops import (
+    plan_topology_changes,apply_topology_change,verify_topology_result,
+)
 
 
 class CompilerError(ValueError):
@@ -44,8 +48,13 @@ class CompileReport:
 
     def as_dict(self) -> dict:
         return {
-            "status":"COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
-            "scope":"Straight Wall create/delete; standalone wall thickness; swept-solid height update only",
+            "status":("COMMITTED_SCOPED_IFC4X3_TOPOLOGY_EDIT"
+                      if any(op.operation in (
+                          "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
+                          "ADD_WALL_CONNECTION","REMOVE_WALL_CONNECTION"
+                      ) for op in self.operations)
+                      else "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"),
+            "scope":"Bounded wall CRUD/dimensions and native IFC hosted/window/connection topology",
             "source_sha256":self.source_sha256,
             "result_sha256":self.result_sha256,
             "source_graph_fingerprint":self.source_graph_fingerprint,
@@ -66,8 +75,16 @@ def _root_unchanged_integrity(source_path:Path,result_path:Path,
     b=ifcopenshell.open(str(result_path))
     previous={x.GlobalId:x for x in a.by_type("IfcRoot")}
     current={x.GlobalId:x for x in b.by_type("IfcRoot")}
-    created={x.ifc_guid for x in actions if x.operation=="CREATE_WALL"}
-    deleted={x.ifc_guid for x in actions if x.operation=="DELETE_WALL"}
+    created={x.ifc_guid for x in actions if x.operation in ("CREATE_WALL","ADD_WALL_CONNECTION")}
+    deleted={x.ifc_guid for x in actions if x.operation in ("DELETE_WALL","DELETE_WINDOW","REMOVE_WALL_CONNECTION")}
+    if any(x.operation=="DELETE_WINDOW" for x in actions):
+        for op in actions:
+            if op.operation=="DELETE_WINDOW":
+                window=a.by_guid(op.ifc_guid)
+                fills=list(window.FillsVoids)
+                if len(fills)!=1:
+                    raise CompilerError("Original IfcWindow does not have exactly one filling relation")
+                deleted.add(fills[0].GlobalId)
     if not deleted <= previous.keys():
         raise CompilerError("Unexpected deleted native IFC entity")
     if not created <= current.keys():
@@ -76,7 +93,7 @@ def _root_unchanged_integrity(source_path:Path,result_path:Path,
     extra_new=set(current)-set(previous)-created
     # IfcOpenShell may add/remove only a required containment relationship
     # when a storey previously had none, never an unrelated element.
-    changes_containment=any(x.operation in ("CREATE_WALL","DELETE_WALL") for x in actions)
+    changes_containment=any(x.operation in ("CREATE_WALL","DELETE_WALL","DELETE_WINDOW") for x in actions)
     if extra_old or extra_new:
         if not changes_containment:
             raise CompilerError("IFC relationship inventory changed during height-only update")
@@ -93,9 +110,7 @@ def _root_unchanged_integrity(source_path:Path,result_path:Path,
         if str(before)==str(after):
             untouched+=1
             continue
-        if before.is_a("IfcRelContainedInSpatialStructure") and any(
-            x.operation in ("CREATE_WALL","DELETE_WALL") for x in actions
-        ):
+        if before.is_a("IfcRelContainedInSpatialStructure") and changes_containment:
             continue
         raise CompilerError("Unexpected modified IFC root entity: "+before.is_a())
     return untouched
@@ -130,9 +145,35 @@ def _verify_only_approved_swept_solid_changed(source_path:Path,result_path:Path,
         raise CompilerError("Unexpected IFC entity mutation in bounded parametric wall update")
 
 
+def _verify_only_opening_placement_point_changed(
+    source_path:Path,result_path:Path,
+    operations:tuple[Mutation,...],
+) -> None:
+    # Strict full-STEP delta when every edit is a simple hosted opening
+    # translation. Windows follow the linked placement without rewritten
+    # geometry, but MUST keep all original relational and semantic entities.
+    if not operations or any(op.operation!="MOVE_OPENING_WITH_FILLING" for op in operations):
+        return
+    before=ifcopenshell.open(str(source_path))
+    after=ifcopenshell.open(str(result_path))
+    allowed=set()
+    for op in operations:
+        opening=before.by_guid(op.ifc_guid)
+        place=opening.ObjectPlacement.RelativePlacement.Location
+        if not place.is_a("IfcCartesianPoint"):
+            raise CompilerError("Opening placement does not have a point origin")
+        allowed.add(place.id())
+    a={e.id():str(e) for e in before}
+    b={e.id():str(e) for e in after}
+    if a.keys()!=b.keys():
+        raise CompilerError("Opening move created/deleted unrelated IFC entities")
+    if {eid for eid in a if a[eid]!=b[eid]}!=allowed:
+        raise CompilerError("Opening move unexpectedly modified IFC entity")
+
+
 def _validate_typed_result(result:Path,source:IFCSnapshot,
                            operations:tuple[Mutation,...],
-                           amended_graph) -> None:
+                           amended_graph,previous_graph=None) -> None:
     actual=snapshot_source(result)
     if actual.ifc_schema!="IFC4X3":
         raise CompilerError("IFC4X3 schema lost in output")
@@ -142,11 +183,14 @@ def _validate_typed_result(result:Path,source:IFCSnapshot,
     expected_guid=set(node.ifc_guid for node in amended_graph.nodes)
     for op in operations:
         existing=by_guid_or_none(file,op.ifc_guid)
-        if op.operation=="DELETE_WALL":
+        if op.operation in ("DELETE_WALL","DELETE_WINDOW","REMOVE_WALL_CONNECTION"):
             if existing is not None:
-                raise CompilerError("Deleted native Wall still exists")
+                raise CompilerError("Deleted native IFC entity/relationship still exists")
+        elif op.operation in ("ADD_WALL_CONNECTION","MOVE_OPENING_WITH_FILLING"):
+            if existing is None:
+                raise CompilerError("New/moved native IFC relationship or opening missing")
         else:
-            if existing is None or existing.is_a()!="IfcWall":
+            if existing is None or not existing.is_a("IfcWall"):
                 raise CompilerError("Created/updated native IFC Wall missing")
             if op.operation=="UPDATE_WALL_THICKNESS":
                 # Check physical IFC profile dimensions and meshing after saved
@@ -171,6 +215,15 @@ def _validate_typed_result(result:Path,source:IFCSnapshot,
                     raise CompilerError("IFC height does not match edited declarative XML")
     _root_unchanged_integrity(source.source_file,result,operations)
     _verify_only_approved_swept_solid_changed(source.source_file,result,operations)
+    _verify_only_opening_placement_point_changed(source.source_file,result,operations)
+    if previous_graph is not None and any(op.operation in (
+        "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
+        "ADD_WALL_CONNECTION","REMOVE_WALL_CONNECTION"
+    ) for op in operations):
+        verify_topology_result(
+            ifcopenshell.open(str(source.source_file)),file,
+            operations,previous_graph,amended_graph
+        )
 
 
 def compile_declarative_xml(source: Path, edited_xml: bytes,
@@ -189,14 +242,32 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
         before=bind_document(before_doc,projection=projected)
         # Intentional graph edits may differ from native *input* relations.
         after=bind_document(after_doc,projection=projected,verify_native_edges=False)
-        plan=plan_wall_mutations(before_doc,after_doc,before,after)
+        wall_plan=plan_wall_mutations(before_doc,after_doc,before,after)
+        model=ifcopenshell.open(str(source))
+        delta=graph_diff(before.graph,after.graph)
+        topology_plan=plan_topology_changes(
+            before_doc,after_doc,before,after,delta,model)
+        # Native IFC dependencies: create wall objects before connecting them;
+        # remove simple relations before removing eligible standalone walls.
+        priorities={
+            "CREATE_WALL":0,
+            "UPDATE_WALL_HEIGHT":1,"UPDATE_WALL_THICKNESS":1,
+            "MOVE_OPENING_WITH_FILLING":1,
+            "DELETE_WINDOW":2,
+            "REMOVE_WALL_CONNECTION":2,
+            "DELETE_WALL":3,
+            "ADD_WALL_CONNECTION":4,
+        }
+        plan=tuple(sorted((*wall_plan,*topology_plan),
+                          key=lambda op:(priorities[op.operation],op.xml_id)))
+        if not plan and not delta.is_noop:
+            raise CompilerError("Unplanned semantic graph change is forbidden")
         if not plan:
             original=passthrough_noop(projected.source,before_doc,after_doc,destination)
             return CompileReport(
                 projected.source.source_sha256,original.source_sha256,
                 projected.source.graph_fingerprint,original.graph_fingerprint,
                 (),len(projected.source.global_ids),(),destination,True)
-        model=ifcopenshell.open(str(source))
         validate_source_mutation_eligibility(model,plan)
         if snapshot_source(source).source_sha256!=projected.source.source_sha256:
             raise CompilerError("Source IFC changed during compiler preflight")
@@ -228,6 +299,11 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
                     create_standalone_wall(model,attrs,op.ifc_guid,storey.ifc_guid)
                 elif op.operation=="DELETE_WALL":
                     delete_standalone_wall(model,op.ifc_guid)
+                elif op.operation in (
+                    "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
+                    "ADD_WALL_CONNECTION","REMOVE_WALL_CONNECTION"
+                ):
+                    apply_topology_change(model,op,before.graph,after.graph,after_doc)
                 else:
                     raise UnsupportedIFCMutation("Unimplemented compiler operation")
             model.write(str(stage))
@@ -235,7 +311,7 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
         def validator(stage:Path):
             if snapshot_source(source).source_sha256!=projected.source.source_sha256:
                 raise CompilerError("Source IFC changed before transaction commit")
-            _validate_typed_result(stage,projected.source,plan,after.graph)
+            _validate_typed_result(stage,projected.source,plan,after.graph,before.graph)
 
         stage_and_commit(destination,writer,validator)
         output=snapshot_source(destination)

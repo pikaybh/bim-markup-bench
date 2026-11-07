@@ -245,6 +245,10 @@ def bind_document(document: BuildingDocument, *, source: IFCSnapshot|None=None,
             deps.extend(((src.id,dst.id),(dst.id,src.id)))
         else:
             raise BindingError("Unsupported declarative relationship class")
+    # A repeated declarative relation must not silently collapse to an
+    # identical graph/no-op. Duplicate topology is a model semantic error.
+    if len(edges)!=len(set(edges)):
+        raise BindingError("Duplicate declared or derived IFC relationship")
     graph=make_graph(document.source_model_sha256,nodes,edges,deps)
     checked=();missing=()
     if source is not None and projection is not None and verify_native_edges:

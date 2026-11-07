@@ -68,9 +68,12 @@ def plan_wall_mutations(
         old_attrs=dict(old.attributes);new_attrs=dict(new.attributes)
         fields=tuple(sorted(k for k in old_attrs.keys()|new_attrs.keys()
                      if old_attrs.get(k)!=new_attrs.get(k)))
+        if old.kind=="Opening" and new.kind=="Opening" and fields==("offset",):
+            # Dedicated #15 trusted topology planner validates and applies this.
+            continue
         if old.kind!="Wall" or new.kind!="Wall" or fields not in (("height",),("thickness",)):
             raise UnsupportedIFCMutation(
-                "Only in-place Wall.height and independent Wall.thickness updates are supported")
+                "Only verified Wall geometry and hosted Opening.offset updates are supported")
         if old.provenance!="existing_source" or new.provenance!="existing_source":
             raise UnsupportedIFCMutation("Updating a new uncommitted wall requires a separate source")
         if fields==("height",):
@@ -87,8 +90,11 @@ def plan_wall_mutations(
                   xml_edited[name].span.line,("geometry","level"),"straight standalone wall"))
     for name in graph_delta.removed_nodes:
         node=old_by_id[name]
+        if node.kind=="Window" and node.provenance=="existing_source":
+            # #15 verifies and applies its fill relationship deletion.
+            continue
         if node.kind!="Wall" or node.provenance!="existing_source":
-            raise UnsupportedIFCMutation("Only deletion of an existing standalone Wall is supported")
+            raise UnsupportedIFCMutation("Only safe removal of a standalone Wall or existing hosted Window is supported")
         changes.append(Mutation("DELETE_WALL",name,node.ifc_guid,
                   old_xml[name].span.line,("entity","level"),"standalone existing wall"))
     allowed_added=set()
@@ -99,9 +105,17 @@ def plan_wall_mutations(
         elif change.operation=="DELETE_WALL":
             allowed_removed.add(("in_storey",change.xml_id))
     for edge in graph_delta.added_edges:
+        if edge.relation=="connects":
+            continue  # #15 native relation preflight enforces geometry + typed edges
         if (edge.relation,edge.target) not in allowed_added:
             raise UnsupportedIFCMutation("Unsupported IFC relationship addition")
+    deleted_windows={name for name in graph_delta.removed_nodes
+                     if old_by_id[name].kind=="Window"}
     for edge in graph_delta.removed_edges:
+        if edge.relation=="connects":
+            continue
+        if edge.relation=="opening_fill" and edge.target in deleted_windows:
+            continue
         if (edge.relation,edge.target) not in allowed_removed:
             raise UnsupportedIFCMutation("Unsupported IFC relationship deletion")
     return tuple(sorted(changes,key=lambda x:(x.operation,x.xml_id)))

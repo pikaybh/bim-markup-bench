@@ -93,3 +93,14 @@ Any connection, hosted opening, space boundary, material/type relation or other
 dependency on that wall currently blocks a thickness change rather than silently
 leaving the IFC topology out of date. See
 [geometry support matrix](../../reports/geometry_support_matrix.md).
+
+
+## G1 #15 native topology slice
+
+The compiler now accepts a small additional **declarative topology** subset
+(delete existing Window with native filling cleanup; move Opening offset with
+child Window/Door placement propagation; add/remove simple wall connection).
+Each operation is independent native IFC relation-validated and does not
+expose IfcOpenShell commands to the direct-edit model.
+See [topology gates](../semantics/topology_gates.md). General IfcSpace/host
+geometry and other 324 benchmark tasks remain unsupported.
