@@ -10,7 +10,8 @@
     "write_committed", "general_bim_edit_324_supported"
   ],
   "properties": {
-    "status": {"const": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"},
+    "status": {"enum": ["COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+                        "COMMITTED_SCOPED_IFC4X3_TOPOLOGY_EDIT"]},
     "scope": {"type":"string"},
     "source_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
     "result_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
@@ -20,7 +21,7 @@
       "type":"array",
       "items":{"type":"object","required":["operation","xml_id","ifc_guid","source_line","changed_fields","reason"],
       "properties":{
-        "operation":{"enum":["UPDATE_WALL_HEIGHT","UPDATE_WALL_THICKNESS","CREATE_WALL","DELETE_WALL"]},
+        "operation":{"enum":["UPDATE_WALL_HEIGHT","UPDATE_WALL_THICKNESS","CREATE_WALL","DELETE_WALL","DELETE_WINDOW","MOVE_OPENING_WITH_FILLING","ADD_WALL_CONNECTION","REMOVE_WALL_CONNECTION"]},
         "xml_id":{"type":"string","minLength":1},
         "ifc_guid":{"type":"string","pattern":"^[0-9A-Za-z_$]{22}$"},
         "source_line":{"type":"integer","minimum":1},
