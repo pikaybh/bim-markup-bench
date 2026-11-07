@@ -1,0 +1,17 @@
+# OFFLINE scheduling test only; no model/provider, remote code or paid API.
+experiment_id: g2-offline-pairing-v0
+dataset_revision: own-synthetic-IFC4X3
+provider: offline
+model_id: offline/mock-v0
+model_temperature: 0
+provider_seed_supported: false
+randomize_arm_order: true
+max_attempts_per_task: 1
+max_wall_seconds_per_task: 180
+max_input_tokens_per_attempt: 20000
+max_output_tokens_per_attempt: 6000
+max_concurrent_attempts: 1
+maximum_total_spend_usd: "0.00"
+currency: USD
+actual_provider_spend_authorized: false
+required_g1_release_status: PASS_FOR_OFFICIAL_EVALUATION

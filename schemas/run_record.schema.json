@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bim-markup-bench:g2-offline-mock-run-record:v0.1",
+  "title": "Immutable OFFLINE MOCK attempt; not a live provider result",
+  "type": "object",
+  "required": [
+    "schema_version","run_id","experiment_id","dataset_rev","task_id",
+    "arm","seed","attempt_id","model_id","provider","backend_versions",
+    "input_sha","result_sha","status","failures","metrics_ref",
+    "model_input_sha256","system_prompt_sha256","source_artifact_sha256",
+    "raw_response_sha256","artifact_refs","artifact_sha256s","paired_observation_format",
+    "cost","estimated_token_method","max_attempts","max_wall_seconds",
+    "provider_seed_supported","budget_policy","elapsed_wall_ms","llm_calls",
+    "python_code_executed","trusted_compiler_executed",
+    "independent_grader_executed","OS_isolation_verified",
+    "paid_pilot_authorized"
+  ],
+  "properties": {
+    "schema_version": {"const":"g2-offline-run-record-v0.1"},
+    "run_id": {"type":"string","pattern":"^r-[0-9a-f]{32}$"},
+    "experiment_id": {"type":"string","minLength":1},
+    "dataset_rev": {"const":"own-synthetic-IFC4X3"},
+    "task_id": {"type":"string","pattern":"^OWN-[A-Za-z0-9_.-]+$"},
+    "arm": {"enum":["direct_xml","imperative_python"]},
+    "seed": {"type":"integer","minimum":0},
+    "attempt_id": {"type":"integer","minimum":0},
+    "model_id": {"const":"offline/mock-v0"},
+    "provider": {"const":"offline"},
+    "backend_versions": {
+      "type":"object",
+      "required":["python","ifcopenshell","runner"],
+      "properties":{
+        "python":{"type":"string","minLength":1},
+        "ifcopenshell":{"type":"string","minLength":1},
+        "runner":{"const":"g2-offline-run-record-v0.1"}
+      },
+      "additionalProperties":false
+    },
+    "input_sha": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "result_sha": {"type":"null"},
+    "status": {"enum":["MOCK_ONLY_NOT_SCORED","BLOCKED_TOKEN_BUDGET","BLOCKED_WALL_TIME"]},
+    "failures": {"type":"array","minItems":1,"items":{"type":"string"}},
+    "metrics_ref": {"type":"null"},
+    "model_input_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "system_prompt_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "source_artifact_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "raw_response_sha256": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "artifact_refs": {
+      "type":"object",
+      "required":["model_context","source","raw_response","stdout","stderr","compiler_diagnostics","case_notes"],
+      "properties":{
+        "model_context":{"type":"string"},
+        "source":{"type":"string"},
+        "raw_response":{"type":"string"},
+        "stdout":{"type":"string"},
+        "stderr":{"type":"string"},
+        "compiler_diagnostics":{"type":"string"},
+        "case_notes":{"type":"string"}
+      },
+      "additionalProperties":false
+    },
+    "artifact_sha256s": {
+      "type":"object",
+      "required":["model_context","source","raw_response","stdout","stderr","compiler_diagnostics","case_notes"],
+      "properties":{
+        "model_context":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "source":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "raw_response":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "stdout":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "stderr":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "compiler_diagnostics":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "case_notes":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+      },
+      "additionalProperties":false
+    },
+    "paired_observation_format": {"const":"XML_VIEW_OF_SAME_SOURCE_IFC"},
+    "cost": {
+      "type":"object",
+      "required":["provider","model_id","currency","price_revision",
+                  "estimated_input_tokens","estimated_output_tokens",
+                  "reported_input_tokens","reported_output_tokens",
+                  "estimated_usd","actual_provider_charge_usd","paid_model_called"],
+      "properties":{
+        "provider":{"const":"offline"},
+        "model_id":{"const":"offline/mock-v0"},
+        "currency":{"const":"USD"},
+        "price_revision":{"const":"OFFLINE_ZERO_CHARGE_MOCK_NO_PROVIDER"},
+        "estimated_input_tokens":{"type":"integer","minimum":0},
+        "estimated_output_tokens":{"const":0},
+        "reported_input_tokens":{"type":"null"},
+        "reported_output_tokens":{"type":"null"},
+        "estimated_usd":{"const":"0.00"},
+        "actual_provider_charge_usd":{"type":"null"},
+        "paid_model_called":{"const":false}
+      },
+      "additionalProperties":false
+    },
+    "estimated_token_method": {"const":"UTF8_CONTEXT_BYTES_DIV_4_NOT_PROVIDER_REPORTED"},
+    "max_attempts": {"type":"integer","minimum":1,"maximum":5},
+    "max_wall_seconds": {"type":"integer","minimum":1,"maximum":180},
+    "budget_policy": {
+      "type":"object",
+      "required":["max_input_tokens","max_output_tokens","max_concurrent_attempts","maximum_total_spend_usd"],
+      "properties":{
+        "max_input_tokens":{"type":"integer","minimum":1,"maximum":20000},
+        "max_output_tokens":{"type":"integer","minimum":1,"maximum":6000},
+        "max_concurrent_attempts":{"const":1},
+        "maximum_total_spend_usd":{"type":"string"}
+      },
+      "additionalProperties":false
+    },
+    "provider_seed_supported": {"const":false},
+    "elapsed_wall_ms": {"type":"integer","minimum":0},
+    "llm_calls": {"const":0},
+    "python_code_executed": {"const":false},
+    "trusted_compiler_executed": {"const":false},
+    "independent_grader_executed": {"const":false},
+    "OS_isolation_verified": {"const":false},
+    "paid_pilot_authorized": {"const":false}
+  },
+  "additionalProperties":false
+}

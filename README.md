@@ -155,3 +155,20 @@ separate model-input, trusted compiler and grader paths. File integrity and
 source visibility tests pass, but host OS isolation is not certified, so
 untrusted Python and paid experiments remain disabled. See
 docs/SECURITY_ISOLATION.md.
+
+## G2 offline paired trial scheduler (#20, partial)
+
+The local CLI has doctor, validate-data, run, score and report commands.
+Only **nonbilling mock scheduling** is implemented. A fixed
+2-task × 2-arm × 2-seed demo creates eight immutable manifests and
+verifies deterministic pairing, context parity, budgets and resume.
+No real model calls, Python execution or official scores occur.
+
+    .venv/bin/python -m src.runner.cli doctor
+    .venv/bin/python -m src.runner.cli run --offline-mock \
+      --output-root /tmp/bim-g2-offline-demo
+    .venv/bin/python -m src.runner.cli report \
+      --output-root /tmp/bim-g2-offline-demo
+
+Score and doctor --enforce block until isolation and independent official
+scoring are verified. See docs/g2/offline_runner.md.
