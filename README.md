@@ -172,3 +172,16 @@ No real model calls, Python execution or official scores occur.
 
 Score and doctor --enforce block until isolation and independent official
 scoring are verified. See docs/g2/offline_runner.md.
+
+## G2 independent IFC-native scorer (#21, partial)
+
+An arm-blind, grader-only component now compares native IFC target geometry,
+product properties/materials, typed spatial/topological relationships and
+unexpected collateral edits. Metric provenance is always independent,
+NEVER official BIM-Edit equivalence.
+
+    .venv/bin/python -m unittest tests.test_bim_edit_scorer -v
+    .venv/bin/python -m tools.score_independent_ifc
+
+See docs/g2/independent_scorer.md. The main benchmark scoring and paid
+model gates remain disabled pending official corpus/capability calibration.
