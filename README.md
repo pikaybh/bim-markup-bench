@@ -200,3 +200,19 @@ claiming official scores.
 The latter must exit 2; live model/provider and generated Python execution
 remain blocked. See reports/evaluator_calibration.md and
 docs/gates/G2_evidence.md for limitations.
+
+## G3 metadata-only 36-task pilot candidate (#23, partial)
+
+A deterministic candidate sampler fixes two public task IDs in each
+of 18 operation × instruction × scene cells (36 unique tasks). Its
+methodological protocol and proposed budgets are DRAFT, not frozen:
+no provider/model/version/price has been approved and no original
+official IFC/GT content or OS sandbox has passed release gating.
+
+    .venv/bin/python tools/prepare_pilot_candidate.py
+    .venv/bin/python -m tools.pilot_preflight
+
+The preflight intentionally exits 2 even when candidate ID/metadata
+integrity is correct. It does not read API credentials or call a
+model. See docs/protocol/pilot_preregistration_v1.md and
+docs/PILOT_36_PREFLIGHT.md. Do not treat this as a scored study.

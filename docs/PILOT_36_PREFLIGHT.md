@@ -1,36 +1,40 @@
-# BIM-Edit 36-task expanded pilot — preparation status
+# BIM-Edit 36-task candidate — NOT RUN, NOT PREREGISTERED
 
-**Status: NOT RUN. Do not interpret this file as an experiment result or claim API-key validity.**
+The candidate uses Hugging Face BIM-Edit Tasks revision
+2dc6462bfab145ddf81b43e9954322855b8443dc,
+local public 324-row metadata SHA-256
+9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83.
 
-## What is prepared
+A deterministic hash sampler chose two IDs in each of 18 operation ×
+instruction category × scene cells (36 unique tasks). All six IFC
+classes appear, with deliberately unequal class counts:
+Wall 12, Space 9, Window 6, Slab 5, Door 3, Column 1.
+Two matched arms would create 72 arm-trial slots in one repetition.
+The candidate is not yet a frozen/scorable sample: official source/GT
+IFC content, rights and per-case D0/I0 feasibility remain unchecked.
 
-- Public BIM-Edit task manifest: 324 tasks pinned to HF commit `2dc6462bfab145ddf81b43e9954322855b8443dc`; local ignored `data/tasks.jsonl`; SHA-256 `9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83`.
-- Candidate subset: 36 tasks (2 chosen by deterministic SHA-256 ordering from each of 18 operation × category × scene cells). No model results examined. Six IFC entity classes represented, but not equally weighted; see manifest class counts.
-- Two arms per task: direct editing of **declarative XML document state** vs LLM-generated Python/IfcOpenShell; 72 arm-trials for one repetition. This is **not** 72 API calls if multiple tool/feedback turns are needed.
-- Local virtualenv on the Mac, with Python 3.9.6, IfcOpenShell 0.8.4.post1, OpenAI 2.48.0, python-dotenv 1.2.1, as of preparation. These are preliminary environment versions, **not yet the cross-platform validated G0 lockfile**.
-- `.env` configured with an `OPENAI_API_KEY` variable but **neither its value nor validity is printed/stored in Git**. No API request was sent.
-- Proposed model: `gpt-6-luna`. Cost planning only: 20,000 input + 5,000 output tokens per arm-trial, 72 trials, conservative rates $0.10/$0.50 per million tokens: approximately **$0.324**, excluding retries, external tools and actual variable input length. Proposed cap $5, **not yet explicitly approved in config**.
+The previous draft's purported current model ID and pricing quote were
+not independently validated. The model/provider/snapshot/temperature,
+provider seed support and latest price remain null/unselected.
+USD 5 is a proposed, NOT approved spend cap. No API key is read
+or checked by the pilot scripts; key presence alone proves neither
+authorization nor a working model transport.
 
-## Verification
+Reproduction from pinned Python 3.12 environment:
 
-```bash
-cd /Users/pikaybh/Projects/bim-markup-bench
-.venv/bin/python -m unittest discover -s tests -v
-.venv/bin/python tools/prepare_pilot_candidate.py
-.venv/bin/python tools/pilot_preflight.py
-```
+    .venv/bin/python tools/prepare_pilot_candidate.py
+    .venv/bin/python -m tools.pilot_preflight
+    .venv/bin/python -m unittest tests.test_pilot_candidate -v
+    .venv/bin/python -m unittest tests.test_pilot_preflight -v
 
-The preflight must exit **2 / BLOCKED** until all G0/G1/G2 and scientific preregistration requirements have actual audited artifacts. Missing evidence must never be faked by editing status files.
+The preflight must return exit code 2 even when metadata ID/strata
+integrity is valid: original 324 source and GT IFC files, kernel
+isolation, official metric calibration, matched production code
+execution and explicit paid budget approval are NOT verified.
+Full draft design, analysis and missing-data rules:
+docs/protocol/pilot_preregistration_v1.md.
 
-## Blocking dependencies before any paid run
-
-1. G0: #3 BIM-Edit input and GT IFC files checked, pinned, rights checked; #4 official/independent scorer audited; #8 GT and secret isolation. Note the model corpus is multi-GB and was **not downloaded** in preparation.
-2. G1: #9–#16 implement actual XML source grammar, IFC projection/semantic diff, real geometry and topology edits, and deterministic D0/I0 oracle comparisons. A code snippet that merely calls IFC APIs is **not** a valid direct-markup model method.
-3. G2: #17–#22 implement both LLM execution arms, sandbox, runner/budget control, blinded independent scorer and calibration.
-4. G3: #23 freeze pilot manifest and protocol **after** capability audit, preserving ITT coverage. Record owner-approved model ID, budget cap and API permission. #24 executes actual paired trial; #25 analyzes data.
-
-## Notes on reproducibility and API keys
-
-Never commit `.env` or place the key in README, GitHub issues/PRs, logs or LLM prompts. The preflight only checks for a nonempty variable and does not authenticate against OpenAI. The code in this branch contains no live LLM invocation; a manual API call by another script would not be protected by this proposed cost cap. Use only an audited runner with a hard request/token budget and an isolated API key/project.
-
-This repository and branch do not modify BIXML, Xim, Revit reverse-engineering worktrees or any production servers.
+Do NOT invent a frozen manifests/pilot_tasks_v1.json until full
+physical source/GT audit, model selection and scientific signoff.
+No paid model call, official benchmark scoring or production Xim/BIXML
+modification is performed here.

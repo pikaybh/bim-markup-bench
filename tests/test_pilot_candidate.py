@@ -26,6 +26,6 @@ class CandidateTests(unittest.TestCase):
         plan=json.loads((ROOT/'configs/pilot_36_plan_v0.json').read_text())
         self.assertEqual(data['status'],'CANDIDATE_NOT_PREREGISTERED')
         self.assertFalse(plan['paid_calls_enabled'])
-        self.assertFalse(plan['max_total_usd_explicitly_authorized'])
+        self.assertFalse(plan['maximum_total_spend_usd_explicitly_authorized'])
 
 if __name__=='__main__':unittest.main()

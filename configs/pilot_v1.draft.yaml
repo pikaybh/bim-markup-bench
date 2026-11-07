@@ -1,0 +1,41 @@
+# PILOT PREREGISTRATION DRAFT — NOT AUTHORIZED TO RUN.
+protocol_id: bim-edit-direct-xml-vs-python-pilot-v1-draft
+protocol_status: DRAFT_NOT_FROZEN
+dataset_revision: 2dc6462bfab145ddf81b43e9954322855b8443dc
+task_manifest: manifests/pilot_36_candidate_v0.json
+task_count: 36
+stratification:
+  strata: [operation, category, scene]
+  per_stratum: 2
+  include_all_six_ifc_classes: true
+sampling_seed: BIM-Edit-pilot-v0-2026-11-07
+paired_arm_order_shuffle_seed: 1234
+repetition_seeds: [11]
+arms: [direct_xml, imperative_python]
+context_policy: MATCHED_SOURCE_IFC_XML_PROJECTION_WITH_ARM_SPECIFIC_METHOD_REFERENCES
+model_provider: null
+model_id: null
+model_snapshot_id: null
+provider_seed_supported: UNVERIFIED
+temperature: null
+max_attempts_per_arm_task: 1
+feedback_mode: one_shot
+max_wall_seconds_per_arm_task: 180
+max_input_tokens_per_attempt: 20000
+max_output_tokens_per_attempt: 6000
+max_concurrent_attempts: 1
+estimated_input_usd_per_million: null
+estimated_output_usd_per_million: null
+price_quote_revision: null
+maximum_total_spend_usd_proposed: "5.00"
+maximum_total_spend_usd_explicitly_authorized: false
+actual_provider_spend_authorized: false
+model_calling_enabled: false
+scorer_origin: independent-reimplementation
+scorer_version: independent-ifc-three-axis-v0.1
+official_evaluator_equivalent: false
+official_IFC_GT_content_verified: false
+G2_OS_isolation_verified: false
+G2_release_gate_passed: false
+pilot_frozen: false
+pilot_run_allowed: false
