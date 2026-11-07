@@ -123,3 +123,15 @@ reports/deterministic_ceiling.json with PASS_SYNTHETIC_ONLY. The second
 **intentionally fails**: there are no official BIM-Edit 324-task scores and
 the required IFC asset verification, independent scorer, full class engine,
 and matched arm gates are still incomplete. See docs/gates/G1_evidence.md.
+
+## G2 source-only file authoring stub (Issue #17, offline)
+
+A no-LLM adapter applies a tiny textual edit to building.xml, records an
+audited unified diff and gives the accepted source to a separate trusted
+IFC compiler. No BIM authoring API is exposed in the authoring interface.
+
+    .venv/bin/python -m unittest tests.test_source_only_agent -v
+    .venv/bin/python -m tools.source_only_stub_demo --output-ifc data/offline_stub_result.ifc
+
+This demonstration is not a real LLM trial, sandbox or official score.
+See docs/g2/source_only_harness.md and the still-BLOCKED G1 release gate.
