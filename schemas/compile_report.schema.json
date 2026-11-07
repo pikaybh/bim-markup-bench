@@ -20,7 +20,7 @@
       "type":"array",
       "items":{"type":"object","required":["operation","xml_id","ifc_guid","source_line","changed_fields","reason"],
       "properties":{
-        "operation":{"enum":["UPDATE_WALL_HEIGHT","CREATE_WALL","DELETE_WALL"]},
+        "operation":{"enum":["UPDATE_WALL_HEIGHT","UPDATE_WALL_THICKNESS","CREATE_WALL","DELETE_WALL"]},
         "xml_id":{"type":"string","minLength":1},
         "ifc_guid":{"type":"string","pattern":"^[0-9A-Za-z_$]{22}$"},
         "source_line":{"type":"integer","minimum":1},
