@@ -185,3 +185,18 @@ NEVER official BIM-Edit equivalence.
 
 See docs/g2/independent_scorer.md. The main benchmark scoring and paid
 model gates remain disabled pending official corpus/capability calibration.
+
+## G2 independent scorer calibration and blocked release (#22)
+
+The own synthetic calibration suite checks 17 fixed positive/negative
+geometry, IFC semantic and native topology conditions, plus translation/
+rotation sensitivity and strict score-model arm blindness. A 108-strata
+capability matrix accounts for all 324 public metadata task rows without
+claiming official scores.
+
+    .venv/bin/python -m tools.calibrate_g2
+    .venv/bin/python -m tools.calibrate_g2 --enforce
+
+The latter must exit 2; live model/provider and generated Python execution
+remain blocked. See reports/evaluator_calibration.md and
+docs/gates/G2_evidence.md for limitations.

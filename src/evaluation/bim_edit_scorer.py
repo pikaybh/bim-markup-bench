@@ -17,6 +17,7 @@ import re
 from typing import Literal
 
 import ifcopenshell
+import ifcopenshell.util.unit
 import numpy as np
 
 from src.evaluation.geometry_metrics import (
@@ -233,6 +234,22 @@ def score_ifc_result(
     except Exception:
         return _abort(result,"INVALID_OUTPUT_IFC",
                       "PREDICTION_NOT_VALID_IFC4X3",invalid_candidate=True)
+
+    # Unannounced IFC project-length unit changes are not a valid BIM edit
+    # within this independent scorer's frozen source-project convention.
+    try:
+        scales=tuple(float(ifcopenshell.util.unit.calculate_unit_scale(model))
+                     for model in (source,gt,output))
+        if any(not math.isfinite(scale) or scale<=0 for scale in scales):
+            raise ValueError("Nonfinite IFC project unit scale")
+    except Exception:
+        return _abort(result,"BLOCKED_IFC_UNIT_MISMATCH",
+                      "UNSUPPORTED_IFC_LENGTH_UNIT_CONVENTION")
+    if not math.isclose(scales[0],scales[1],abs_tol=1e-12,rel_tol=0.) or not math.isclose(
+        scales[0],scales[2],abs_tol=1e-12,rel_tol=0.
+    ):
+        return _abort(result,"BLOCKED_IFC_UNIT_MISMATCH",
+                      "PREDICTION_OR_REFERENCE_LENGTH_UNIT_CHANGED")
 
     try:
         target=_one_expected_target(task,source,gt)

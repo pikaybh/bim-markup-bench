@@ -1,0 +1,490 @@
+{
+  "all_frozen_expectations_pass": true,
+  "cases": [
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_identical_reference",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "wall_gt",
+      "failure_codes": [],
+      "geometry": 1.0,
+      "semantics": 1.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "task": "wall_update",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_wrong_height",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "source_unchanged",
+      "failure_codes": [
+        "TARGET_GEOMETRY_DIFFERENCE"
+      ],
+      "geometry": 0.9435510831937233,
+      "semantics": 1.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_wall_translated",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "wall_translate",
+      "failure_codes": [
+        "TARGET_GEOMETRY_DIFFERENCE",
+        "TARGET_SEMANTICS_DIFFERENCE",
+        "UNEXPECTED_COLLATERAL_IFC_OBJECT_MUTATION"
+      ],
+      "geometry": 0.8850463207470902,
+      "semantics": 0.5,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_wall_rotated",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "wall_rotate",
+      "failure_codes": [
+        "TARGET_GEOMETRY_DIFFERENCE",
+        "TARGET_SEMANTICS_DIFFERENCE",
+        "UNEXPECTED_COLLATERAL_IFC_OBJECT_MUTATION"
+      ],
+      "geometry": 0.2883226472702767,
+      "semantics": 0.5,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_wrong_ifc_class",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "wall_retype",
+      "failure_codes": [
+        "IFC_TOPOLOGY_DIFFERENCE",
+        "TARGET_SEMANTICS_DIFFERENCE"
+      ],
+      "geometry": 1.0,
+      "semantics": 0.5,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_missing_pset",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "wall_gt",
+      "failure_codes": [
+        "TARGET_SEMANTICS_DIFFERENCE"
+      ],
+      "geometry": 1.0,
+      "semantics": 0.6666666666666666,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_pset",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_missing_host_void",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "remove_void",
+      "failure_codes": [
+        "IFC_TOPOLOGY_DIFFERENCE",
+        "TARGET_GEOMETRY_DIFFERENCE"
+      ],
+      "geometry": 0.9025840698379234,
+      "semantics": 1.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_missing_space_boundary",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "remove_space_boundary",
+      "failure_codes": [
+        "IFC_TOPOLOGY_DIFFERENCE"
+      ],
+      "geometry": 1.0,
+      "semantics": 1.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_collateral_door_deletion",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "delete_door",
+      "failure_codes": [
+        "IFC_TOPOLOGY_DIFFERENCE",
+        "TARGET_SEMANTICS_DIFFERENCE",
+        "UNEXPECTED_COLLATERAL_IFC_OBJECT_MUTATION"
+      ],
+      "geometry": 1.0,
+      "semantics": 0.5,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_wrong_column_changed",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "change_column_only",
+      "failure_codes": [
+        "TARGET_GEOMETRY_DIFFERENCE",
+        "TARGET_SEMANTICS_DIFFERENCE",
+        "UNEXPECTED_COLLATERAL_IFC_OBJECT_MUTATION"
+      ],
+      "geometry": 0.9435510831937233,
+      "semantics": 0.5,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "update_target_globalid_corruption",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "change_wall_guid",
+      "failure_codes": [
+        "IFC_TOPOLOGY_DIFFERENCE",
+        "TARGET_GEOMETRY_DIFFERENCE",
+        "TARGET_NOT_FOUND",
+        "TARGET_SEMANTICS_DIFFERENCE",
+        "UNEXPECTED_COLLATERAL_IFC_OBJECT_MUTATION"
+      ],
+      "geometry": 0.0,
+      "semantics": 0.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "invalid_candidate_bytes",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "invalid_ifc",
+      "failure_codes": [
+        "PREDICTION_NOT_VALID_IFC4X3"
+      ],
+      "geometry": 0.0,
+      "semantics": 0.0,
+      "status": "INVALID_OUTPUT_IFC",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "create_equivalent_new_guid",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "create_different_guid",
+      "failure_codes": [],
+      "geometry": 1.0,
+      "semantics": 1.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "task": "wall_create",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "create_missing_target",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "source_unchanged",
+      "failure_codes": [
+        "IFC_TOPOLOGY_DIFFERENCE",
+        "TARGET_GEOMETRY_DIFFERENCE",
+        "TARGET_NOT_FOUND",
+        "TARGET_SEMANTICS_DIFFERENCE"
+      ],
+      "geometry": 0.0,
+      "semantics": 0.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "wall_create",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "delete_window_correct",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "delete_window",
+      "failure_codes": [],
+      "geometry": 1.0,
+      "semantics": 1.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "task": "window_delete",
+      "topology": 1.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "delete_window_false_success",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "source_unchanged",
+      "failure_codes": [
+        "IFC_TOPOLOGY_DIFFERENCE",
+        "TARGET_GEOMETRY_DIFFERENCE",
+        "TARGET_SEMANTICS_DIFFERENCE"
+      ],
+      "geometry": 0.0,
+      "semantics": 0.0,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task": "window_delete",
+      "topology": 0.0
+    },
+    {
+      "all_expected_properties_pass": true,
+      "case_id": "changed_ifc_length_units",
+      "checks": {
+        "collateral_expected": true,
+        "expected_failed_axes_included": true,
+        "expected_status": true,
+        "expected_strict": true,
+        "independent_provenance": true,
+        "no_model_calls": true,
+        "not_official": true
+      },
+      "condition": "change_length_units",
+      "failure_codes": [
+        "PREDICTION_OR_REFERENCE_LENGTH_UNIT_CHANGED"
+      ],
+      "geometry": null,
+      "semantics": null,
+      "status": "BLOCKED_IFC_UNIT_MISMATCH",
+      "strict_pass": false,
+      "task": "wall_update",
+      "topology": null
+    }
+  ],
+  "evaluated_own_synthetic_cases": 17,
+  "metric_origin": "independent-reimplementation",
+  "model_provider_calls": 0,
+  "official_dataset_cases_scored": 0,
+  "official_paper_score_reproduced": false,
+  "paper_scalar_arithmetic_only": {
+    "door_perfect_mean": 1.0,
+    "source": "paper-rounded-components-only-not-model-reproduction",
+    "wall_length_example_mean": 0.8233333333333333,
+    "wall_thickness_example_mean": 0.7000000000000001
+  },
+  "synthetic_cases_matching_frozen_expectations": 17,
+  "synthetic_detection_ratio": 1.0,
+  "tolerance_sensitivity": {
+    "input_source_IFC_unit": "METRE",
+    "metric_version": "independent-ifc-surface-cd-v0.1",
+    "official_calibration_available": false,
+    "reported_world_units": "m",
+    "rotation": [
+      {
+        "geometry": 1.0,
+        "rotation_degrees": 0.0,
+        "strict_pass": true
+      },
+      {
+        "geometry": 0.619107120612579,
+        "rotation_degrees": 15.0,
+        "strict_pass": false
+      },
+      {
+        "geometry": 0.2883226472702767,
+        "rotation_degrees": 45.0,
+        "strict_pass": false
+      },
+      {
+        "geometry": 0.21152620007323739,
+        "rotation_degrees": 90.0,
+        "strict_pass": false
+      }
+    ],
+    "sample_points": 384,
+    "sampling_seed": 2607,
+    "translation": [
+      {
+        "geometry": 1.0,
+        "strict_pass": true,
+        "translation_m": 0.0
+      },
+      {
+        "geometry": 1.0,
+        "strict_pass": true,
+        "translation_m": 1e-07
+      },
+      {
+        "geometry": 0.9999270167286111,
+        "strict_pass": false,
+        "translation_m": 0.0001
+      },
+      {
+        "geometry": 0.9927371374562407,
+        "strict_pass": false,
+        "translation_m": 0.01
+      },
+      {
+        "geometry": 0.9304715603778168,
+        "strict_pass": false,
+        "translation_m": 0.1
+      },
+      {
+        "geometry": 0.8920314921952364,
+        "strict_pass": false,
+        "translation_m": 0.5
+      },
+      {
+        "geometry": 0.8850463207470902,
+        "strict_pass": false,
+        "translation_m": 1.0
+      }
+    ]
+  },
+  "version": "own-synthetic-IFC4X3-calibration-v0.1"
+}
