@@ -147,3 +147,11 @@ adapter. Proposed solution.py text is syntax-checked and audited but
 
 This is not a paid model experiment or benchmark result. See
 docs/g2/imperative_baseline.md and the still-blocked G1 release gate.
+
+## G2 file staging and withheld process execution (#19, partial)
+
+Each task and arm now gets a distinct reproducible staging directory with
+separate model-input, trusted compiler and grader paths. File integrity and
+source visibility tests pass, but host OS isolation is not certified, so
+untrusted Python and paid experiments remain disabled. See
+docs/SECURITY_ISOLATION.md.
