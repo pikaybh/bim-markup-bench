@@ -230,3 +230,12 @@ Linux image, never a mutable tag, private input or generated agent code.
 The production Python/IfcOpenShell worker, full native IFC tests and paid
 LLM gateway are NOT approved. The enforced live gate remains blocked; see
 docs/SECURITY_ISOLATION.md for evidence, limitations and repeat procedure.
+
+## G2 purpose-built Python IFC worker (Issue #19, partial)
+
+The docker/ifc_worker directory contains a pinned Linux ARM64 Python
+3.12 / IfcOpenShell 0.8.4.post1 image with hash-locked dependencies.
+The owned-fixture-only controller verifies IFC read/write, physical
+Wall editing, network/GT/secret/process denials, per-file size limits
+and forced timeout. Arbitrary LLM-generated code and all paid runs
+remain disabled. See docs/IFC_WORKER.md for build, tests and blockers.
