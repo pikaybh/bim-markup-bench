@@ -1,0 +1,50 @@
+{
+  "status": "DRAFT_CANDIDATE_ONLY_NOT_PREREGISTERED",
+  "purpose": "36-task paired pilot: LLM source-text XML editing versus imperative Python/IfcOpenShell",
+  "task_manifest": "manifests/pilot_36_candidate_v0.json",
+  "required_dataset_revision": "2dc6462bfab145ddf81b43e9954322855b8443dc",
+  "required_dataset_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "tasks": 36,
+  "arms": [
+    "direct_xml",
+    "imperative_python"
+  ],
+  "paired_trial_seeds": [
+    11
+  ],
+  "scheduler_arm_shuffle_seed": 1234,
+  "repetitions": 1,
+  "model_provider": null,
+  "model_id": null,
+  "model_snapshot_id": null,
+  "provider_seed_support": "UNVERIFIED",
+  "temperature": null,
+  "feedback_mode": "one_shot",
+  "max_attempts_per_task": 1,
+  "max_wall_seconds_per_arm_task": 180,
+  "max_input_tokens_per_attempt": 20000,
+  "max_output_tokens_per_attempt": 6000,
+  "max_concurrent_attempts": 1,
+  "price_quote_revision": null,
+  "input_usd_per_million": null,
+  "output_usd_per_million": null,
+  "estimated_cost_usd": null,
+  "maximum_total_spend_usd_proposed": "5.00",
+  "maximum_total_spend_usd_explicitly_authorized": false,
+  "actual_provider_spend_authorized": false,
+  "paid_calls_enabled": false,
+  "study_protocol_status": "DRAFT_NOT_FROZEN",
+  "official_324_IFC_GT_coverage_verified": false,
+  "official_evaluator_reproduced": false,
+  "G2_release_gate_passed": false,
+  "rerun_on_deviation": "NEW_PROTOCOL_REVISION_ONLY",
+  "hard_requirements": [
+    "G0_OFFICIAL_INPUT_GT_CONTENT_AUDIT",
+    "G1_MATCHED_D0_I0_OFFICIAL_CAPABILITY",
+    "G2_REAL_OS_ISOLATION",
+    "G2_LIVE_MODEL_AND_BILLING_BROKER",
+    "G2_INDEPENDENT_OFFICIAL_SCORE_CALIBRATION",
+    "G3_PROSPECTIVE_PREREGISTRATION",
+    "OWNER_MODEL_AND_BUDGET_APPROVAL"
+  ]
+}
