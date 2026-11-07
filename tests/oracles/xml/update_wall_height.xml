@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Building xmlns="urn:bim-markup-bench:toy:v0" version="0.1" sourceModelSha256="10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58" units="m" ifcSchema="IFC4X3">
+  <Levels>
+    <Level id="level_c070cd5ba89ce1" ifcGuid="2DBCiNMsDO0ef25uQLXRAH" elevation="0"/>
+  </Levels>
+  <Elements>
+    <Wall id="wall_69be261dba54d7" ifcGuid="2L_lrSH5fHAgIRV7tit5Pp" level="level_c070cd5ba89ce1" x1="0" y1="0" z1="0" x2="6" y2="0" z2="0" height="3.3" thickness="0.2"/>
+    <Slab id="slab_0eb0f8a10a6af4" ifcGuid="2wR1MWFvbMYvFvsky1SkFh" level="level_c070cd5ba89ce1" x="0" y="0" z="-0.25" width="6" depth="5" thickness="0.25"/>
+    <Column id="column_a70362a96b1686" ifcGuid="3YVXMkignGVPxmw4ANXTyZ" level="level_c070cd5ba89ce1" x="5.55" y="4.55" z="0" width="0.3" depth="0.3" height="3"/>
+    <Opening id="opening_6839d79d0baadf" ifcGuid="0RlhS8NknNXwksquzjKROs" host="wall_69be261dba54d7" offset="1.6" sill="0.9" width="1.2" height="1.5"/>
+    <Opening id="opening_3aff54d5b78b55" ifcGuid="1YY7ORJgDLhfE1KmGALHjG" host="wall_69be261dba54d7" offset="3.7" sill="0" width="0.9" height="2.1"/>
+    <Window id="window_58728c048d06b4" ifcGuid="0OpF3nUSXM4A74oRaddWtv" opening="opening_6839d79d0baadf" width="1.2" height="1.5"/>
+    <Door id="door_6034627908e504" ifcGuid="3T7j8vRbrKARmh162UCmJI" opening="opening_3aff54d5b78b55" width="0.9" height="2.1"/>
+  </Elements>
+  <Relations/>
+</Building>
