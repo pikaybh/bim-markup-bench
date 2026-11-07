@@ -80,3 +80,17 @@ For Mac ARM64, Python 3.12 and uv 0.8.5:
 5. .venv/bin/python tools/cost_budget.py
 
 These are offline-only checks, not a functioning benchmark or model runner. API calls remain blocked and the .env.example template contains no secrets.
+
+## IFC read projection (experimental G1 #11)
+
+Read an existing supported IFC4X3 input without modifying it:
+
+    .venv/bin/python -m tools.project_ifc tests/fixtures/synthetic/input.ifc \
+      --xml-out data/projections/building.xml
+    .venv/bin/python -m tools.validate_markup data/projections/building.xml
+
+The XML is an editable **managed projection**, not a complete source-free BIM
+document; unsupported types, especially missing IfcSpace geometry, remain
+opaque in the immutable original IFC. [Coverage and limitations](reports/ifc_projection_coverage.md).
+A safe byte-identical IFC copy can be made with --noop-copy, but actual edits
+remain blocked until #12/#13 deliver the typed semantic compiler.
