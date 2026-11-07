@@ -1,0 +1,12 @@
+[
+  {
+    "task_id":"OWN-MOCK-WALL-HEIGHT-001",
+    "instruction":"Increase the North Wall height from 3.0m to 3.3m.",
+    "input_file":"input.ifc"
+  },
+  {
+    "task_id":"OWN-MOCK-WALL-HEIGHT-002",
+    "instruction":"Inspect the same pinned IFC projection, keeping source data unchanged.",
+    "input_file":"input.ifc"
+  }
+]
