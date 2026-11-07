@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bim-markup-bench:compile-report:v0",
+  "type": "object",
+  "required": [
+    "status", "scope", "source_sha256", "result_sha256",
+    "source_graph_fingerprint", "result_graph_fingerprint",
+    "operations", "untouched_root_objects_verified",
+    "unexpected_root_changes", "output_file",
+    "write_committed", "general_bim_edit_324_supported"
+  ],
+  "properties": {
+    "status": {"const": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"},
+    "scope": {"type":"string"},
+    "source_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "result_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "source_graph_fingerprint": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "result_graph_fingerprint": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "operations": {
+      "type":"array",
+      "items":{"type":"object","required":["operation","xml_id","ifc_guid","source_line","changed_fields","reason"],
+      "properties":{
+        "operation":{"enum":["UPDATE_WALL_HEIGHT","CREATE_WALL","DELETE_WALL"]},
+        "xml_id":{"type":"string","minLength":1},
+        "ifc_guid":{"type":"string","pattern":"^[0-9A-Za-z_$]{22}$"},
+        "source_line":{"type":"integer","minimum":1},
+        "changed_fields":{"type":"array","items":{"type":"string"}},
+        "reason":{"type":"string"}
+      }}
+    },
+    "untouched_root_objects_verified":{"type":"integer","minimum":0},
+    "unexpected_root_changes":{"type":"array","items":{"type":"string"}},
+    "output_file":{"type":"string","minLength":1},
+    "write_committed":{"const":true},
+    "general_bim_edit_324_supported":{"const":false}
+  },
+  "additionalProperties":false
+}

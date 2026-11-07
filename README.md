@@ -94,3 +94,17 @@ document; unsupported types, especially missing IfcSpace geometry, remain
 opaque in the immutable original IFC. [Coverage and limitations](reports/ifc_projection_coverage.md).
 A safe byte-identical IFC copy can be made with --noop-copy, but actual edits
 remain blocked until #12/#13 deliver the typed semantic compiler.
+
+## Trusted declarative IFC mutation compiler (G1 #13: narrow slice)
+
+An experimental wall-only compiler can now apply **actual IFC geometry changes**
+to a new output file without exposing authoring APIs to the LLM:
+
+    .venv/bin/python -m tools.project_ifc tests/fixtures/synthetic/input.ifc --xml-out data/projections/demo.xml
+    # Edit the declarative wall height attribute in data/projections/demo.xml
+    .venv/bin/python -m tools.compile_markup --source-ifc tests/fixtures/synthetic/input.ifc --edited-xml data/projections/demo.xml --result-ifc data/projections/result.ifc
+
+Current accepted edits: standalone straight Wall create/delete and existing
+Wall swept-solid height change only. All others fail closed. See
+[compiler coverage and safety](docs/compilation/wall_compiler_v0.md).
+This is not yet full BIM-Edit (324 tasks) or standalone native BIXML.
