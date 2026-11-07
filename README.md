@@ -239,3 +239,14 @@ The owned-fixture-only controller verifies IFC read/write, physical
 Wall editing, network/GT/secret/process denials, per-file size limits
 and forced timeout. Arbitrary LLM-generated code and all paid runs
 remain disabled. See docs/IFC_WORKER.md for build, tests and blockers.
+
+## G0 actual pilot IFC bytes, limited offline audit (#3, partial)
+
+The fixed 36-task candidate references 52 unique source/GT IFC files
+(about 1.56 GB). Six small pilot pairs totaling ~1.56MB have been byte-verified
+against pinned remote Git objects and parsed as real IFC4X3. They
+cover seven pilot task IDs spanning all six target classes; the
+remaining 29 candidate tasks remain unverified. New offline tooling audits
+any local files without downloading or exposing reference GT to the
+model; see reports/pilot_asset_audit.md. No full dataset or paid LLM
+experiments were executed.
