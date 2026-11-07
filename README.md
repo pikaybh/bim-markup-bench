@@ -108,3 +108,18 @@ Current accepted edits: standalone straight Wall create/delete and existing
 Wall swept-solid height change only. All others fail closed. See
 [compiler coverage and safety](docs/compilation/wall_compiler_v0.md).
 This is not yet full BIM-Edit (324 tasks) or standalone native BIXML.
+
+## G1 deterministic source markup vs imperative reference (Issue #16)
+
+Before spending on LLM evaluation, the independent, offline synthetic D0
+(XML) and I0 (Python/IfcOpenShell) oracles must agree on six create/update/
+delete, hosted placement and topological relation scenarios:
+
+    .venv/bin/python -m tools.verify_g1_oracles
+    .venv/bin/python -m tools.g1_release_gate --enforce
+
+The first command tests own small IFC-only fixtures and produces
+reports/deterministic_ceiling.json with PASS_SYNTHETIC_ONLY. The second
+**intentionally fails**: there are no official BIM-Edit 324-task scores and
+the required IFC asset verification, independent scorer, full class engine,
+and matched arm gates are still incomplete. See docs/gates/G1_evidence.md.
