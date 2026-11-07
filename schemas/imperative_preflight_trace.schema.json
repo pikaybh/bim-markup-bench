@@ -1,0 +1,36 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:bim-markup-bench:imperative-control-preflight:v0",
+  "type":"object",
+  "required":["task_id","arm","mode","attempt_count","max_attempts","source_ifc_sha256",
+              "model_provider_called","python_executed","OS_sandbox_available","events"],
+  "properties":{
+    "task_id":{"type":"string","minLength":1},
+    "arm":{"const":"imperative_python"},
+    "mode":{"enum":["one_shot","feedback"]},
+    "attempt_count":{"type":"integer","minimum":0},
+    "max_attempts":{"type":"integer","minimum":1,"maximum":5},
+    "source_ifc_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "model_provider_called":{"const":false},
+    "python_executed":{"const":false},
+    "OS_sandbox_available":{"const":false},
+    "events":{"type":"array","items":{
+      "type":"object",
+      "required":["attempt","status","code_sha256","reject_reason","api_runtime_calls",
+                  "actual_model_tokens","source_ifc_sha256","elapsed_wall_ms","executed"],
+      "properties":{
+        "attempt":{"type":"integer","minimum":1},
+        "status":{"enum":["ACCEPTED_SOURCE_ONLY_NOT_EXECUTABLE","REJECTED"]},
+        "code_sha256":{"type":["string","null"]},
+        "reject_reason":{"type":["string","null"]},
+        "api_runtime_calls":{"const":0},
+        "actual_model_tokens":{"type":"null"},
+        "source_ifc_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+        "elapsed_wall_ms":{"type":"integer","minimum":0},
+        "executed":{"const":false}
+      },
+      "additionalProperties":false
+    }}
+  },
+  "additionalProperties":false
+}

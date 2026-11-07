@@ -135,3 +135,15 @@ IFC compiler. No BIM authoring API is exposed in the authoring interface.
 
 This demonstration is not a real LLM trial, sandbox or official score.
 See docs/g2/source_only_harness.md and the still-BLOCKED G1 release gate.
+
+## G2 imperative Python control (Issue #18, preflight only)
+
+The imperative baseline has an input-parity and Python source submission
+adapter. Proposed solution.py text is syntax-checked and audited but
+**never executed** until OS/container isolation is implemented (#19).
+
+    .venv/bin/python -m tools.imperative_preflight_demo
+    .venv/bin/python -m unittest tests.test_imperative_control -v
+
+This is not a paid model experiment or benchmark result. See
+docs/g2/imperative_baseline.md and the still-blocked G1 release gate.
