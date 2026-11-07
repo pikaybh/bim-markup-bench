@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bim-markup-bench:structured-diagnostic:v0",
+  "title": "Safe XML parser diagnostic (no raw document, API key, GT path or grader details)",
+  "type": "object",
+  "required": ["code", "severity", "message", "file", "line", "column", "element_id"],
+  "properties": {
+    "code": {"type": "string", "minLength": 1},
+    "severity": {"enum": ["ERROR", "WARNING", "INFO"]},
+    "message": {"type": "string", "minLength": 1},
+    "file": {"type": "string", "minLength": 1},
+    "line": {"type": "integer", "minimum": 1},
+    "column": {"type": "integer", "minimum": 1},
+    "element_id": {"type": ["string", "null"]},
+    "source_sha256": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

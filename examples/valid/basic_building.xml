@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Building xmlns="urn:bim-markup-bench:toy:v0"
+          version="0.1" sourceModelSha256="0000000000000000000000000000000000000000000000000000000000000000"
+          units="m" ifcSchema="IFC4X3">
+  <Levels>
+    <Level id="level_1" elevation="0"/>
+  </Levels>
+  <Elements>
+    <Wall id="north_wall" level="level_1" x1="0" y1="0" z1="0" x2="6" y2="0" z2="0" height="3" thickness="0.2"/>
+    <Slab id="ground_slab" level="level_1" x="0" y="0" z="-0.25" width="6" depth="5" thickness="0.25"/>
+    <Column id="corner_column" level="level_1" x="5.7" y="4.7" z="0" width="0.3" depth="0.3" height="3"/>
+    <Space id="room_101" level="level_1" x="0" y="0" z="0" width="5.7" depth="4.7" height="3"/>
+    <Opening id="opening_window" host="north_wall" offset="1.6" sill="0.9" width="1.2" height="1.5"/>
+    <Window id="window_1" opening="opening_window" width="1.2" height="1.5"/>
+    <Opening id="opening_door" host="north_wall" offset="3.7" sill="0" width="0.9" height="2.1"/>
+    <Door id="door_1" opening="opening_door" width="0.9" height="2.1"/>
+  </Elements>
+  <Relations>
+    <SpaceBoundary space="room_101" element="north_wall" kind="PHYSICAL"/>
+  </Relations>
+</Building>

@@ -1,0 +1,6 @@
+<Building xmlns="urn:bim-markup-bench:toy:v0" version="0.1"
+ sourceModelSha256="0000000000000000000000000000000000000000000000000000000000000000"
+ units="m" ifcSchema="IFC4X3">
+ <Levels><Level id="l1" elevation="0"/></Levels>
+ <Elements><Wall id="w1" level="l1" x1="0" y1="0" z1="0" x2="6" y2="0" z2="0" height="3" thickness="-0.3"/></Elements>
+</Building>

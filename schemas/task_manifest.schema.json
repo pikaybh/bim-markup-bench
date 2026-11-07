@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bim-markup-bench:bim-edit-task-record:v0",
+  "title": "BIM-Edit raw benchmark task (GRADER-ONLY; never pass whole object to LLM)",
+  "type": "object",
+  "required": ["task_id", "operation", "category", "input_ifc", "ground_truth_ifc", "prompt", "target", "evaluation", "tags"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "operation": {"enum": ["create", "update", "delete"]},
+    "category": {"enum": ["direct", "spatial", "topological"]},
+    "input_ifc": {"type": "string", "pattern": "^data/(realistic|artificial)/[a-zA-Z0-9_.-]+\\.ifc$"},
+    "ground_truth_ifc": {"type": "string", "pattern": "^data/(realistic|artificial)/[a-zA-Z0-9_.-]+\\.ifc$"},
+    "prompt": {"type": "string", "minLength": 1},
+    "target": {"type": "object", "required": ["entity_type", "guids"], "properties": {
+      "entity_type": {"enum": ["IfcWall", "IfcSlab", "IfcSpace", "IfcDoor", "IfcWindow", "IfcColumn"]},
+      "guids": {"type": "array", "items": {"type": "string", "pattern": "^[0-9A-Za-z_$]{22}$"}}
+    }},
+    "evaluation": {"type": "object"},
+    "tags": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  },
+  "additionalProperties": true,
+  "description": "Raw metadata is for the auditor/grader; the agent sees agent_view() ONLY."
+}

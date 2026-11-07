@@ -1,6 +1,6 @@
 # Local IFC corpora and generated benchmark materials
-datasets/
-data/
+/datasets/
+/data/
 cache/
 outputs/
 results/

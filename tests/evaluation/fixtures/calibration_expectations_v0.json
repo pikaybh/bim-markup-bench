@@ -1,0 +1,181 @@
+{
+  "version": "own-synthetic-IFC4X3-calibration-v0.1",
+  "provenance": "post-implementation synthetic regression spec, NOT preregistered official BIM-Edit metric",
+  "known_source_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+  "metric_origin": "independent-reimplementation",
+  "cases": [
+    {
+      "id": "update_identical_reference",
+      "task": "wall_update",
+      "condition": "wall_gt",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "expected_failed_axes": []
+    },
+    {
+      "id": "update_wrong_height",
+      "task": "wall_update",
+      "condition": "source_unchanged",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry"
+      ]
+    },
+    {
+      "id": "update_wall_translated",
+      "task": "wall_update",
+      "condition": "wall_translate",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry"
+      ]
+    },
+    {
+      "id": "update_wall_rotated",
+      "task": "wall_update",
+      "condition": "wall_rotate",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry"
+      ]
+    },
+    {
+      "id": "update_wrong_ifc_class",
+      "task": "wall_update",
+      "condition": "wall_retype",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "semantics"
+      ]
+    },
+    {
+      "id": "update_missing_pset",
+      "task": "wall_pset",
+      "condition": "wall_gt",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "semantics"
+      ]
+    },
+    {
+      "id": "update_missing_host_void",
+      "task": "wall_update",
+      "condition": "remove_void",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry",
+        "topology"
+      ]
+    },
+    {
+      "id": "update_missing_space_boundary",
+      "task": "wall_update",
+      "condition": "remove_space_boundary",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "topology"
+      ]
+    },
+    {
+      "id": "update_collateral_door_deletion",
+      "task": "wall_update",
+      "condition": "delete_door",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "semantics",
+        "topology"
+      ],
+      "requires_collateral": true
+    },
+    {
+      "id": "update_wrong_column_changed",
+      "task": "wall_update",
+      "condition": "change_column_only",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry"
+      ],
+      "requires_collateral": true
+    },
+    {
+      "id": "update_target_globalid_corruption",
+      "task": "wall_update",
+      "condition": "change_wall_guid",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry",
+        "semantics"
+      ]
+    },
+    {
+      "id": "invalid_candidate_bytes",
+      "task": "wall_update",
+      "condition": "invalid_ifc",
+      "status": "INVALID_OUTPUT_IFC",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry",
+        "semantics",
+        "topology"
+      ]
+    },
+    {
+      "id": "create_equivalent_new_guid",
+      "task": "wall_create",
+      "condition": "create_different_guid",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "expected_failed_axes": []
+    },
+    {
+      "id": "create_missing_target",
+      "task": "wall_create",
+      "condition": "source_unchanged",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry",
+        "semantics",
+        "topology"
+      ]
+    },
+    {
+      "id": "delete_window_correct",
+      "task": "window_delete",
+      "condition": "delete_window",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "expected_failed_axes": []
+    },
+    {
+      "id": "delete_window_false_success",
+      "task": "window_delete",
+      "condition": "source_unchanged",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "expected_failed_axes": [
+        "geometry",
+        "semantics",
+        "topology"
+      ]
+    },
+    {
+      "id": "changed_ifc_length_units",
+      "task": "wall_update",
+      "condition": "change_length_units",
+      "status": "BLOCKED_IFC_UNIT_MISMATCH",
+      "strict_pass": false,
+      "expected_failed_axes": []
+    }
+  ]
+}

@@ -68,3 +68,135 @@ No code copy or Git submodule from Xim/BIXML, no changes to those repositories, 
 **Licensing:** This experimental repository has not yet selected its own code license. Do not infer a grant of reuse from its public visibility.
 
 **한국어 요약:** 이 저장소는 BIXML/Xim을 수정하지 않고, LLM의 **XML 원본 직접 편집**과 **Python/IfcOpenShell 코드 생성**을 동일한 IFC 백엔드 및 독립 평가기로 비교하기 위한 토이 연구입니다. 현재는 실행 코드가 아닌 계획·이슈 단계입니다.
+
+## Development environment (G0 #7)
+
+See [Environment](docs/ENVIRONMENT.md) and [Compute / API budget](docs/COMPUTE_BUDGET.md).
+For Mac ARM64, Python 3.12 and uv 0.8.5:
+1. uv python install 3.12
+2. uv sync --frozen --python 3.12
+3. .venv/bin/python tools/doctor.py
+4. .venv/bin/python -m unittest discover -s tests -v
+5. .venv/bin/python tools/cost_budget.py
+
+These are offline-only checks, not a functioning benchmark or model runner. API calls remain blocked and the .env.example template contains no secrets.
+
+## IFC read projection (experimental G1 #11)
+
+Read an existing supported IFC4X3 input without modifying it:
+
+    .venv/bin/python -m tools.project_ifc tests/fixtures/synthetic/input.ifc \
+      --xml-out data/projections/building.xml
+    .venv/bin/python -m tools.validate_markup data/projections/building.xml
+
+The XML is an editable **managed projection**, not a complete source-free BIM
+document; unsupported types, especially missing IfcSpace geometry, remain
+opaque in the immutable original IFC. [Coverage and limitations](reports/ifc_projection_coverage.md).
+A safe byte-identical IFC copy can be made with --noop-copy, but actual edits
+remain blocked until #12/#13 deliver the typed semantic compiler.
+
+## Trusted declarative IFC mutation compiler (G1 #13: narrow slice)
+
+An experimental wall-only compiler can now apply **actual IFC geometry changes**
+to a new output file without exposing authoring APIs to the LLM:
+
+    .venv/bin/python -m tools.project_ifc tests/fixtures/synthetic/input.ifc --xml-out data/projections/demo.xml
+    # Edit the declarative wall height attribute in data/projections/demo.xml
+    .venv/bin/python -m tools.compile_markup --source-ifc tests/fixtures/synthetic/input.ifc --edited-xml data/projections/demo.xml --result-ifc data/projections/result.ifc
+
+Current accepted edits: standalone straight Wall create/delete and existing
+Wall swept-solid height change only. All others fail closed. See
+[compiler coverage and safety](docs/compilation/wall_compiler_v0.md).
+This is not yet full BIM-Edit (324 tasks) or standalone native BIXML.
+
+## G1 deterministic source markup vs imperative reference (Issue #16)
+
+Before spending on LLM evaluation, the independent, offline synthetic D0
+(XML) and I0 (Python/IfcOpenShell) oracles must agree on six create/update/
+delete, hosted placement and topological relation scenarios:
+
+    .venv/bin/python -m tools.verify_g1_oracles
+    .venv/bin/python -m tools.g1_release_gate --enforce
+
+The first command tests own small IFC-only fixtures and produces
+reports/deterministic_ceiling.json with PASS_SYNTHETIC_ONLY. The second
+**intentionally fails**: there are no official BIM-Edit 324-task scores and
+the required IFC asset verification, independent scorer, full class engine,
+and matched arm gates are still incomplete. See docs/gates/G1_evidence.md.
+
+## G2 source-only file authoring stub (Issue #17, offline)
+
+A no-LLM adapter applies a tiny textual edit to building.xml, records an
+audited unified diff and gives the accepted source to a separate trusted
+IFC compiler. No BIM authoring API is exposed in the authoring interface.
+
+    .venv/bin/python -m unittest tests.test_source_only_agent -v
+    .venv/bin/python -m tools.source_only_stub_demo --output-ifc data/offline_stub_result.ifc
+
+This demonstration is not a real LLM trial, sandbox or official score.
+See docs/g2/source_only_harness.md and the still-BLOCKED G1 release gate.
+
+## G2 imperative Python control (Issue #18, preflight only)
+
+The imperative baseline has an input-parity and Python source submission
+adapter. Proposed solution.py text is syntax-checked and audited but
+**never executed** until OS/container isolation is implemented (#19).
+
+    .venv/bin/python -m tools.imperative_preflight_demo
+    .venv/bin/python -m unittest tests.test_imperative_control -v
+
+This is not a paid model experiment or benchmark result. See
+docs/g2/imperative_baseline.md and the still-blocked G1 release gate.
+
+## G2 file staging and withheld process execution (#19, partial)
+
+Each task and arm now gets a distinct reproducible staging directory with
+separate model-input, trusted compiler and grader paths. File integrity and
+source visibility tests pass, but host OS isolation is not certified, so
+untrusted Python and paid experiments remain disabled. See
+docs/SECURITY_ISOLATION.md.
+
+## G2 offline paired trial scheduler (#20, partial)
+
+The local CLI has doctor, validate-data, run, score and report commands.
+Only **nonbilling mock scheduling** is implemented. A fixed
+2-task × 2-arm × 2-seed demo creates eight immutable manifests and
+verifies deterministic pairing, context parity, budgets and resume.
+No real model calls, Python execution or official scores occur.
+
+    .venv/bin/python -m src.runner.cli doctor
+    .venv/bin/python -m src.runner.cli run --offline-mock \
+      --output-root /tmp/bim-g2-offline-demo
+    .venv/bin/python -m src.runner.cli report \
+      --output-root /tmp/bim-g2-offline-demo
+
+Score and doctor --enforce block until isolation and independent official
+scoring are verified. See docs/g2/offline_runner.md.
+
+## G2 independent IFC-native scorer (#21, partial)
+
+An arm-blind, grader-only component now compares native IFC target geometry,
+product properties/materials, typed spatial/topological relationships and
+unexpected collateral edits. Metric provenance is always independent,
+NEVER official BIM-Edit equivalence.
+
+    .venv/bin/python -m unittest tests.test_bim_edit_scorer -v
+    .venv/bin/python -m tools.score_independent_ifc
+
+See docs/g2/independent_scorer.md. The main benchmark scoring and paid
+model gates remain disabled pending official corpus/capability calibration.
+
+## G2 independent scorer calibration and blocked release (#22)
+
+The own synthetic calibration suite checks 17 fixed positive/negative
+geometry, IFC semantic and native topology conditions, plus translation/
+rotation sensitivity and strict score-model arm blindness. A 108-strata
+capability matrix accounts for all 324 public metadata task rows without
+claiming official scores.
+
+    .venv/bin/python -m tools.calibrate_g2
+    .venv/bin/python -m tools.calibrate_g2 --enforce
+
+The latter must exit 2; live model/provider and generated Python execution
+remain blocked. See reports/evaluator_calibration.md and
+docs/gates/G2_evidence.md for limitations.
