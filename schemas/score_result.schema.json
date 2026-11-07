@@ -26,7 +26,7 @@
     "status":{"enum":[
       "INDEPENDENT_IFC_SCORED","INVALID_OUTPUT_IFC",
       "BLOCKED_REFERENCE_IFC_INVALID","BLOCKED_UNSUPPORTED_REFERENCE_TASK",
-      "BLOCKED_REFERENCE_GEOMETRY_UNAVAILABLE","DATA_MUTATED_DURING_SCORING"
+      "BLOCKED_REFERENCE_GEOMETRY_UNAVAILABLE","BLOCKED_IFC_UNIT_MISMATCH","DATA_MUTATED_DURING_SCORING"
     ]},
     "geometry":{"type":["number","null"],"minimum":0,"maximum":1},
     "semantics":{"type":["number","null"],"minimum":0,"maximum":1},

@@ -1,0 +1,35 @@
+{
+  "OS_generated_python_execution_enabled": false,
+  "gates": {
+    "G0_official_IFC_input_GT_324_content_audit": "NO",
+    "G1_full_six_class_official_CRUD_coverage": "NO",
+    "G1_independent_synthetic_D0_I0_six_oracles": "YES_SYNTHETIC_ONLY",
+    "G2_direct_markup_text_only_mock": "YES_OFFLINE_ONLY",
+    "G2_independent_official_score_calibration": "NO",
+    "G2_independent_scorer_calibration": "YES_OWN_SYNTHETIC_ONLY",
+    "G2_official_evaluator_provenance_reproduced": "NO",
+    "G2_offline_paired_schedule": "YES_EIGHT_MOCK_TRIALS",
+    "G2_per_task_file_layout": "YES_SAME_USER_ONLY",
+    "G2_python_baseline_preflight": "YES_CODE_NOT_EXECUTABLE",
+    "G2_real_model_provider_billing_broker": "NO",
+    "G2_verified_OS_network_process_secret_isolation": "NO",
+    "G3_explicit_paid_run_approval": "NO"
+  },
+  "model_API_keys_required": false,
+  "official_tasks_scored": 0,
+  "paid_run_ready": false,
+  "provider_model_calls": 0,
+  "schema_version": "g2-readiness-gate-v0.1",
+  "status": "BLOCKED_FOR_LIVE_MODEL_PILOT",
+  "synthetic_calibration_cases": 17,
+  "synthetic_expected_checks_passed": 17,
+  "unmet_prerequisites": [
+    "Full official 324 source/GT IFC content verification",
+    "Independent official metric implementation or explicitly audited alternative",
+    "Real OS/VM process, filesystem, network and secret isolation",
+    "Official task-level D0/I0 matched capability and full-context auditing",
+    "Durable live provider/budget/token/time enforcement and explicit approval"
+  ],
+  "verified_official_D0_tasks": 0,
+  "verified_official_I0_tasks": 0
+}
