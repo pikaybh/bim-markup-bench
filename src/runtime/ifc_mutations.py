@@ -68,13 +68,17 @@ def plan_wall_mutations(
         old_attrs=dict(old.attributes);new_attrs=dict(new.attributes)
         fields=tuple(sorted(k for k in old_attrs.keys()|new_attrs.keys()
                      if old_attrs.get(k)!=new_attrs.get(k)))
-        if old.kind!="Wall" or new.kind!="Wall" or fields!=("height",):
+        if old.kind!="Wall" or new.kind!="Wall" or fields not in (("height",),("thickness",)):
             raise UnsupportedIFCMutation(
-                "Only in-place Wall.height update is supported by compiler v0")
+                "Only in-place Wall.height and independent Wall.thickness updates are supported")
         if old.provenance!="existing_source" or new.provenance!="existing_source":
             raise UnsupportedIFCMutation("Updating a new uncommitted wall requires a separate source")
-        changes.append(Mutation("UPDATE_WALL_HEIGHT",name,old.ifc_guid,
-                      xml_edited[name].span.line,fields,"single swept-solid wall height"))
+        if fields==("height",):
+            changes.append(Mutation("UPDATE_WALL_HEIGHT",name,old.ifc_guid,
+                          xml_edited[name].span.line,fields,"single swept-solid wall height"))
+        else:
+            changes.append(Mutation("UPDATE_WALL_THICKNESS",name,old.ifc_guid,
+                          xml_edited[name].span.line,fields,"unhosted rectangular wall profile thickness"))
     for name in graph_delta.added_nodes:
         node=new_by_id[name]
         if node.kind!="Wall" or node.provenance!="deterministic_new":
@@ -125,7 +129,7 @@ def _unique_wall_representation(f:ifcopenshell.file,wall) -> Any:
 def validate_source_mutation_eligibility(f:ifcopenshell.file,
                                          changes:tuple[Mutation,...]) -> None:
     for c in changes:
-        if c.operation not in ("UPDATE_WALL_HEIGHT","DELETE_WALL"):
+        if c.operation not in ("UPDATE_WALL_HEIGHT","UPDATE_WALL_THICKNESS","DELETE_WALL"):
             continue
         wall=by_guid_or_none(f,c.ifc_guid)
         if wall is None or not wall.is_a("IfcWall"):
@@ -139,6 +143,10 @@ def validate_source_mutation_eligibility(f:ifcopenshell.file,
                     raise UnsupportedIFCMutation("Wall has geometry-dependent connection")
                 if inv.is_a("IfcRelSpaceBoundary") and inv.ConnectionGeometry is not None:
                     raise UnsupportedIFCMutation("Wall has geometry-dependent space boundary")
+        if c.operation=="UPDATE_WALL_THICKNESS":
+            # Late import avoids a circular dependency in geometry_ops.
+            from src.runtime.geometry_ops import wall_thickness_eligibility
+            wall_thickness_eligibility(f,wall)
         if c.operation=="DELETE_WALL":
             inverses=f.get_inverse(wall)
             if any(not rel.is_a("IfcRelContainedInSpatialStructure") for rel in inverses):

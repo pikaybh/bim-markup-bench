@@ -11,6 +11,7 @@ import hashlib
 import math
 
 import ifcopenshell
+import ifcopenshell.geom
 
 from src.runtime.xml_parser import MarkupParseError,parse_xml
 from src.runtime.ast import semantic_diff
@@ -23,6 +24,7 @@ from src.runtime.ifc_mutations import (
     mutate_wall_height,validate_source_mutation_eligibility,by_guid_or_none,
 )
 from src.runtime.transaction import TransactionError,stage_and_commit
+from src.runtime.geometry_ops import edit_wall_thickness,wall_thickness_eligibility
 
 
 class CompilerError(ValueError):
@@ -43,7 +45,7 @@ class CompileReport:
     def as_dict(self) -> dict:
         return {
             "status":"COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
-            "scope":"Simple straight Wall create/delete and swept-solid height update only",
+            "scope":"Straight Wall create/delete; standalone wall thickness; swept-solid height update only",
             "source_sha256":self.source_sha256,
             "result_sha256":self.result_sha256,
             "source_graph_fingerprint":self.source_graph_fingerprint,
@@ -106,7 +108,7 @@ def _verify_only_approved_swept_solid_changed(source_path:Path,result_path:Path,
     Creation/deletion can legitimately add/remove spatial containment and
     geometry subgraphs, so those require a separate fuller change auditor.
     """
-    if not actions or any(a.operation!="UPDATE_WALL_HEIGHT" for a in actions):
+    if not actions or any(a.operation not in ("UPDATE_WALL_HEIGHT","UPDATE_WALL_THICKNESS") for a in actions):
         return
     from src.runtime.ifc_projection import _body_extrusion
     before=ifcopenshell.open(str(source_path))
@@ -114,14 +116,18 @@ def _verify_only_approved_swept_solid_changed(source_path:Path,result_path:Path,
     allowed=set()
     for op in actions:
         w=before.by_guid(op.ifc_guid)
-        allowed.add(_body_extrusion(w).id())
+        if op.operation=="UPDATE_WALL_HEIGHT":
+            allowed.add(_body_extrusion(w).id())
+        else:
+            _,changed_entity_id=wall_thickness_eligibility(before,w)
+            allowed.add(changed_entity_id)
     old={x.id():str(x) for x in before}
     new={x.id():str(x) for x in after}
     if old.keys()!=new.keys():
-        raise CompilerError("Height-only change added/deleted IFC entities")
+        raise CompilerError("Parametric wall edit added/deleted IFC entities")
     actual={k for k in old if old[k]!=new[k]}
     if actual!=allowed:
-        raise CompilerError("Unexpected IFC entity mutation in height-only update")
+        raise CompilerError("Unexpected IFC entity mutation in bounded parametric wall update")
 
 
 def _validate_typed_result(result:Path,source:IFCSnapshot,
@@ -142,6 +148,19 @@ def _validate_typed_result(result:Path,source:IFCSnapshot,
         else:
             if existing is None or existing.is_a()!="IfcWall":
                 raise CompilerError("Created/updated native IFC Wall missing")
+            if op.operation=="UPDATE_WALL_THICKNESS":
+                # Check physical IFC profile dimensions and meshing after saved
+                # result is opened, independently of LLM-authored XML.
+                from src.runtime.ifc_projection import _body_extrusion,_rect_extents
+                profile=_body_extrusion(existing).SweptArea
+                a,b,c,d=_rect_extents(profile)
+                new=amended_graph.by_id()[op.xml_id]
+                expected=float(dict(new.attributes)["thickness"])
+                if not math.isclose(d-b,expected,rel_tol=0.,abs_tol=1e-6):
+                    raise CompilerError("IFC wall thickness does not match edited XML")
+                mesh=ifcopenshell.geom.create_shape(ifcopenshell.geom.settings(),existing)
+                if len(mesh.geometry.faces)<6:
+                    raise CompilerError("IFC wall thickness geometry degenerate")
             if op.operation=="UPDATE_WALL_HEIGHT":
                 # Physically check changed extrusion, not merely the STEP file header.
                 from src.runtime.ifc_projection import _body_extrusion
@@ -200,6 +219,9 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
                 if op.operation=="UPDATE_WALL_HEIGHT":
                     mutate_wall_height(model,by_guid_or_none(model,op.ifc_guid),
                                        __import__("decimal").Decimal(dict(new[op.xml_id].attributes)["height"]))
+                elif op.operation=="UPDATE_WALL_THICKNESS":
+                    edit_wall_thickness(model,by_guid_or_none(model,op.ifc_guid),
+                        __import__("decimal").Decimal(dict(new[op.xml_id].attributes)["thickness"]))
                 elif op.operation=="CREATE_WALL":
                     attrs=dict(new[op.xml_id].attributes)
                     storey=new[attrs["level"]]

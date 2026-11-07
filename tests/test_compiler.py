@@ -139,7 +139,7 @@ class CompilerSafetyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             dest=Path(tmp)/"never.ifc"
             tampered=source_xml().replace(b'thickness="0.2"',b'thickness="0.3"',1)
-            with self.assertRaisesRegex(CompilerError,"Only in-place"):
+            with self.assertRaisesRegex(CompilerError,"dependencies"):
                 compile_declarative_xml(SOURCE,tampered,dest)
             self.assertFalse(dest.exists())
 

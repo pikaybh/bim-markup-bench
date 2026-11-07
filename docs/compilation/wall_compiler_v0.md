@@ -79,3 +79,17 @@ were unchanged and the original source was never modified. The full
 height-only STEP diff check ensures that only the approved wall extrusion
 entity changed. This is a **single geometry-edit feasibility test**, NOT a
 complete BIM-Edit task score or official evaluation.
+
+## Parametric standalone wall thickness extension (G1 #14, partial)
+
+After the initial Wall create/height/delete implementation, the trusted compiler
+also supports a **non-hosted wall** thickness change. It modifies the existing
+rectangular swept-profile definition or its exact 2D polygon point list. It
+validates the actual IFC profile dimension, triangulated resulting mesh and
+unchanged root inventory; for a thickness-only edit, every STEP entity other
+than the intended profile/point list must remain unchanged.
+
+Any connection, hosted opening, space boundary, material/type relation or other
+dependency on that wall currently blocks a thickness change rather than silently
+leaving the IFC topology out of date. See
+[geometry support matrix](../../reports/geometry_support_matrix.md).
