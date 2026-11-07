@@ -216,3 +216,17 @@ The preflight intentionally exits 2 even when candidate ID/metadata
 integrity is correct. It does not read API credentials or call a
 model. See docs/protocol/pilot_preregistration_v1.md and
 docs/PILOT_36_PREFLIGHT.md. Do not treat this as a scored study.
+
+## G2 Docker kernel isolation measured (Issue #19, further partial)
+
+A trusted, fixed synthetic Docker probe now verifies 15 launch/mount/env
+constraints from Docker inspect BEFORE start, then 15 actual Linux
+UID/cap/seccomp/cgroup/read-only/network/GT-key-denial conditions from
+inside the container. It uses only an explicitly chosen, cached sha256
+Linux image, never a mutable tag, private input or generated agent code.
+
+    .venv/bin/python -m unittest tests.security.test_docker_isolation -v
+
+The production Python/IfcOpenShell worker, full native IFC tests and paid
+LLM gateway are NOT approved. The enforced live gate remains blocked; see
+docs/SECURITY_ISOLATION.md for evidence, limitations and repeat procedure.
