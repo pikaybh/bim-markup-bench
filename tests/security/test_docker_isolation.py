@@ -126,7 +126,13 @@ class DockerStaticSecurityTests(unittest.TestCase):
         with TemporaryDirectory() as tmp:
             root=Path(tmp)
             source=root/"source";source.mkdir()
-            symlink=root/"sym";symlink.symlink_to(source,target_is_directory=True)
+            symlink=root/"sym"
+            try:
+                symlink.symlink_to(source,target_is_directory=True)
+            except OSError as exc:
+                if getattr(exc,"winerror",None)==1314:
+                    self.skipTest("Native Windows symlink privilege unavailable; test on Linux")
+                raise
             with self.assertRaises(DockerIsolationError):
                 build_probe_argv("docker",DockerProbePolicy(FAKE_DIGEST),
                     "bim-bench-probe-0123456789abcdef",symlink,source)

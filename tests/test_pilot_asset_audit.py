@@ -103,7 +103,12 @@ class OneTaskNativeAuditTests(unittest.TestCase):
             p=root/"simple/sample_gt.ifc"
             real=root/"private_gt.ifc"
             p.rename(real)
-            p.symlink_to(real)
+            try:
+                p.symlink_to(real)
+            except OSError as exc:
+                if getattr(exc, "winerror", None)==1314:
+                    self.skipTest("Native Windows symlink privilege unavailable; test on Linux")
+                raise
             with self.assertRaises(AuditError):
                 audit_single_task(own_task(),tree,root)
 

@@ -88,8 +88,23 @@ class IsolationStagingTests(unittest.TestCase):
             with self.assertRaisesRegex(TaskStagingError,"Undeclared"):
                 verify_compartment_files(root)
             malicious.unlink()
-            root.agent_workspace.joinpath("input.ifc").unlink()
-            (root.agent_workspace/"input.ifc").symlink_to(SRC)
+            # Windows denies unlinking a read-only fixture, whereas POSIX
+            # permits deletion via writable parent directory. A denial
+            # already proves the source cannot be replaced in this test.
+            original=root.agent_workspace/"input.ifc"
+            try:
+                original.unlink()
+            except PermissionError:
+                if os.name=="nt":
+                    self.assertTrue(original.is_file())
+                    return
+                raise
+            try:
+                (root.agent_workspace/"input.ifc").symlink_to(SRC)
+            except OSError as exc:
+                if getattr(exc,"winerror",None)==1314:
+                    self.skipTest("Native Windows symlink privilege unavailable; test on Linux")
+                raise
             with self.assertRaisesRegex(TaskStagingError,"symlink"):
                 verify_compartment_files(root)
 
@@ -121,7 +136,13 @@ class IsolationStagingTests(unittest.TestCase):
                 canonical_run_id("task-a","direct_xml",seed,SOURCE_SHA)
         with tempfile.TemporaryDirectory() as temp:
             target=Path(temp)/"target";target.mkdir()
-            link=Path(temp)/"linked";link.symlink_to(target,target_is_directory=True)
+            link=Path(temp)/"linked"
+            try:
+                link.symlink_to(target,target_is_directory=True)
+            except OSError as exc:
+                if getattr(exc,"winerror",None)==1314:
+                    self.skipTest("Native Windows symlink privilege unavailable; test on Linux")
+                raise
             with self.assertRaises(TaskStagingError):
                 stage_task(SRC,link,TASK,"direct_xml",1)
 

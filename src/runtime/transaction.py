@@ -31,7 +31,10 @@ def stage_and_commit(destination: Path, writer: Callable[[Path],None],
         # staged file independently before making it visible to other users.
         snapshot_source(stage)
         validator(stage)
-        with stage.open("rb") as file:
+        # The staged file is our own new artifact. Windows _commit/fsync
+        # requires a write-capable file descriptor; "rb" raises EBADF.
+        # Sync with r+b before publishing the validated file by hardlink.
+        with stage.open("r+b") as file:
             os.fsync(file.fileno())
         try:
             os.link(stage,destination,follow_symlinks=False)

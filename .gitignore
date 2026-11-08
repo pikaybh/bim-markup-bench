@@ -35,3 +35,6 @@ __pycache__/
 # Do not ignore tiny synthetic fixtures intentionally committed under tests/fixtures/
 !tests/fixtures/
 !tests/fixtures/**/*.ifc
+
+# Per-repository Windows uv cache (never commit package contents)
+.uv-cache/
