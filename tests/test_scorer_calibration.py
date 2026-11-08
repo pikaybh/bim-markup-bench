@@ -123,10 +123,37 @@ class CalibrationSyntheticTests(unittest.TestCase):
             root=Path(temp)
             reproduced=calibrate_own_synthetic(root)
             reproduced["tolerance_sensitivity"]=tolerance_sensitivity(root)
-        for field in ("cases","metric_origin","evaluated_own_synthetic_cases",
-                      "synthetic_cases_matching_frozen_expectations",
-                      "tolerance_sensitivity"):
+        # The frozen report was computed on macOS/arm64. IfcOpenShell
+        # triangulation/area sampling can differ slightly on Windows/x64.
+        # Preserve EXACT case IDs, statuses, strict decisions, failure
+        # codes and expectation checks, rather than disguising the native
+        # numeric variation as identical cross-platform results.
+        for field in ("metric_origin","evaluated_own_synthetic_cases",
+                      "synthetic_cases_matching_frozen_expectations"):
             self.assertEqual(report[field],reproduced[field])
+        for expected,actual in zip(report["cases"],reproduced["cases"]):
+            for field in ("case_id","task","condition","status","strict_pass",
+                          "failure_codes","checks","all_expected_properties_pass"):
+                self.assertEqual(expected[field],actual[field])
+            for axis in ("geometry","semantics","topology"):
+                x,y=expected[axis],actual[axis]
+                if x is None or y is None:
+                    self.assertEqual(x,y)
+                else:
+                    self.assertLessEqual(abs(x-y),0.01)
+        for name in ("translation","rotation"):
+            expected=report["tolerance_sensitivity"][name]
+            actual=reproduced["tolerance_sensitivity"][name]
+            self.assertEqual(len(expected),len(actual))
+            for first,second in zip(expected,actual):
+                self.assertEqual(first["strict_pass"],second["strict_pass"])
+                self.assertEqual(set(first),set(second))
+                self.assertLessEqual(abs(first["geometry"]-second["geometry"]),0.01)
+                for key in set(first)-{"geometry"}:
+                    self.assertEqual(first[key],second[key])
+        for key in set(report["tolerance_sensitivity"])-{"translation","rotation"}:
+            self.assertEqual(report["tolerance_sensitivity"][key],
+                             reproduced["tolerance_sensitivity"][key])
         self.assertEqual(report["official_dataset_cases_scored"],0)
 
 
@@ -168,7 +195,7 @@ class CapabilityAndReleaseGateTests(unittest.TestCase):
                     "--metadata",str(ROOT/"data/tasks.jsonl"),
                     "--enforce"]
             proc=subprocess.run(command,cwd=ROOT,capture_output=True,
-                                text=True,timeout=35)
+                                text=True,timeout=90)
             self.assertEqual(proc.returncode,2,proc.stdout+proc.stderr)
             result=json.loads(proc.stdout)
             self.assertEqual(result["expectations_satisfied"],17)

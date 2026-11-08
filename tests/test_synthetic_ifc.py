@@ -74,7 +74,7 @@ class SyntheticRightsLedgerTests(unittest.TestCase):
         repo=Path(__file__).resolve().parents[1]
         rights=json.loads((repo/"manifests/source_rights.json").read_text())
         for p in sorted((repo/"tests/fixtures/synthetic").glob("*.ifc")):
-            line=next(x for x in rights["records"] if x["source"]==str(p.relative_to(repo)))
+            line=next(x for x in rights["records"] if x["source"]==p.relative_to(repo).as_posix())
             self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),line["source_digest_sha256"])
             LicenseRecord(
                 source=line["source"],source_digest_sha256=line["source_digest_sha256"],

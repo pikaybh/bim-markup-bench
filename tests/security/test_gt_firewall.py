@@ -61,7 +61,12 @@ class FilePolicyTests(unittest.TestCase):
 
     def test_symlink_escape_fails(self):
         (self.path.resolve()/"input.ifc").unlink()
-        (self.path.resolve()/"input.ifc").symlink_to("/etc/hosts")
+        try:
+            (self.path.resolve()/"input.ifc").symlink_to("/etc/hosts")
+        except OSError as exc:
+            if getattr(exc,"winerror",None)==1314:
+                self.skipTest("Native Windows symlink privilege unavailable; test on Linux")
+            raise
         with self.assertRaisesRegex(SecurityBoundaryError,"symlink"):
             self.policy.check("read","input.ifc")
 
