@@ -106,26 +106,28 @@ def _docker_cli()->str:
     return binary
 
 
-def _run(args:list[str], timeout:int=12)->subprocess.CompletedProcess:
-    # Windows Docker Desktop requires USERPROFILE and SystemRoot to locate
-    # its trusted engine. Never forward user env wholesale to the worker.
-    env={"OPENAI_API_KEY":"OWN_FAKE_SENTINEL_NOT_A_REAL_KEY"}
+def _host_docker_env()->dict[str,str]:
+    """Fixed Docker-control process environment; never inject provider keys."""
     if os.name=="nt":
+        env={}
         for name in ("SYSTEMROOT","WINDIR","COMSPEC","TEMP","TMP",
                      "USERPROFILE","APPDATA","LOCALAPPDATA"):
             if name in os.environ:
                 env[name]=os.environ[name]
         env["PATH"]=os.pathsep.join((str(Path(_docker_cli()).parent),
-                                    os.environ.get("SYSTEMROOT",r"C:\Windows")
-                                    +r"\System32"))
-    else:
-        env.update({"PATH":"/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin",
-                    "HOME":str(Path.home())})
+                                    os.environ.get("SYSTEMROOT",r"C:\\Windows")
+                                    +r"\\System32"))
+        return env
+    return {"PATH":"/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin",
+            "HOME":str(Path.home())}
+
+
+def _run(args:list[str], timeout:int=12)->subprocess.CompletedProcess:
+    env=_host_docker_env()
     fixed=[_docker_cli() if i==0 and arg=="docker" else arg
            for i,arg in enumerate(args)]
     return subprocess.run(fixed,capture_output=True,text=True,
                           timeout=timeout,env=env)
-
 
 def _sha(path:Path)->str:
     return hashlib.sha256(path.read_bytes()).hexdigest()

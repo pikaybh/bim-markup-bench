@@ -117,3 +117,28 @@ pass/block result. No user API key, official reference IFC data, or
 private model file was used. The scientific release gate remains
 BLOCKED until the model-code interface, independent grader isolation,
 scorer parity, full corpus and billing controls are verified.
+
+
+## Offline dynamic Python + independent OWN Linux grader (partial #19)
+
+The separate src/runner/generated_candidate.py path accepts SHA256-pinned
+arbitrary Python program bytes, but ONLY with repository-created synthetic
+input.ifc. It never imports or executes those bytes on the host.
+A read-only candidate container returns at most one 256KiB IFC with
+bounded stdout/stderr/overall tmpfs quotas. The candidate container is
+removed before a SEPARATE Linux Docker grader is allowed to receive the
+trusted OWN synthetic GT file. The grader does not see the candidate
+Python script, uses three strictly read-only mounts, and checks its own
+HostConfig before running. A host process independently verifies native
+STEP integrity as well. This demonstrates compartment separation
+ONLY for the owned fixture; it does NOT validate the full official
+independent BIM-Edit scorer or enable paid model-generated runs.
+
+Run with an exact immutable image ID:
+
+    .\.venv\Scripts\python.exe -m unittest tests.security.test_generated_candidate -v
+    .\.venv\Scripts\python.exe -m tools.verify_dynamic_candidate --image-id sha256:EXACT_CACHED_NATIVE_WORKER_ID --enforce-live
+
+The enforced verification must exit 2 (BLOCKED). See
+reports/dynamic_own_candidate_evidence.json and
+docs/SECURITY_ISOLATION.md for exact limitations and negative cases.
