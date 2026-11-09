@@ -142,3 +142,43 @@ and other protocol gates have passed.
 - 324/324 full source/GT IFC content and exact target integrity checks
   remain outstanding. G2/G3 gates and paid experiments remain blocked.
 - No production Xim/BIXML, proprietary files or API keys were touched.
+
+## November 9 follow-up: 30 of 36 candidate input/GT integrity checks
+
+Following the first bounded 18/36 checkpoint, two further hash-verified
+public IFC batches were downloaded to ignored trusted scratch:
+
+- Batch A: 9 unique pinned IFC files, 46,477,832 bytes; 7 additional
+  candidate tasks became verifiable (25/36).
+- Batch B: 4 unique pinned IFC files, 34,968,195 bytes; 5 additional
+  candidate tasks became verifiable (30/36).
+
+Together, the fixed 36-task pilot now has **30/36 verified native
+source/GT byte and basic object-class/delta checks**, supported by
+**42 unique pilot IFC files totaling 87,353,128 bytes**. Candidate IDs,
+G0/G1/G2 readiness flags and the official-scoring gate have not changed.
+The latest canonical machine-readable audit is
+reports/pilot_asset_audit_partial.json. No agent saw reference content;
+all raw IFC files remain local-only, gitignored audit scratch.
+
+The **remaining six tasks** require **10 additional unique source/GT
+IFC files totaling 1,476,908,702 bytes**. Minimum per-task incremental
+content needs range from 94MB to about 450MB. Even the cheapest
+remaining case cannot fit under the tool's safe single-batch cap of
+50MB; the dry run returns zero selected tasks. These are NOT marked
+passed or audited. Full corpus provenance/individual model rights
+still require additional research before large-scale reuse.
+
+**No paid LLM calls and no official scores.** This is not a 30/36
+model success rate; it is verified data coverage only. The full 324
+source/GT content review and actual experiment remain blocked.
+
+### 30/36 Windows regression evidence
+
+On November 9, the updated frozen audit and additional optional
+realistic-pair test ran with the full Windows Python 3.12 suite:
+**296 tests executed, 284 passed, 12 skipped, 0 failed**.
+The offline audit --enforce correctly exited 2 (BLOCKED).
+Docker Desktop was left stopped; skipped Linux-only security cases
+are not silently considered passed. Existing independently verified
+Linux AMD64 OWN worker findings remain documented in docs/IFC_WORKER.md.
