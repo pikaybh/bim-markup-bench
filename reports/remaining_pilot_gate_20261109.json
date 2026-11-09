@@ -1,0 +1,65 @@
+{
+  "any_remaining_pair_fits_existing_batch": false,
+  "approval_to_expand_batch": false,
+  "byte_verified_task_input_reference_pair_count": 30,
+  "candidate_sha256": "75b4847814dbefad95340556c0b62f9cda72cac319cd82ecb23ea4933c9ab694",
+  "download_performed": false,
+  "fixed_sample_size": 36,
+  "individual_asset_redistribution_clearance_complete": false,
+  "individual_asset_redistribution_clearance_count": 0,
+  "individual_asset_rights_review_required": true,
+  "max_existing_bounded_batch_bytes": 50000000,
+  "missing_pair_details": [
+    {
+      "incremental_bytes": 449894223,
+      "missing_asset_count": 2,
+      "operation": "create",
+      "target_class": "IfcWall",
+      "task_id": "WAL-CRE-DIR-R-001"
+    },
+    {
+      "incremental_bytes": 94044329,
+      "missing_asset_count": 2,
+      "operation": "create",
+      "target_class": "IfcWall",
+      "task_id": "WAL-CRE-SPA-R-002"
+    },
+    {
+      "incremental_bytes": 322678916,
+      "missing_asset_count": 2,
+      "operation": "create",
+      "target_class": "IfcWindow",
+      "task_id": "WIN-CRE-TOP-R-001"
+    },
+    {
+      "incremental_bytes": 94044329,
+      "missing_asset_count": 2,
+      "operation": "create",
+      "target_class": "IfcWall",
+      "task_id": "WAL-CRE-TOP-R-002"
+    },
+    {
+      "incremental_bytes": 297830341,
+      "missing_asset_count": 2,
+      "operation": "delete",
+      "target_class": "IfcSpace",
+      "task_id": "ROM-DEL-SPA-R-001"
+    },
+    {
+      "incremental_bytes": 312460893,
+      "missing_asset_count": 2,
+      "operation": "update",
+      "target_class": "IfcSlab",
+      "task_id": "SLB-UPD-SPA-R-002"
+    }
+  ],
+  "missing_task_count": 6,
+  "model_revision": "0ae510bd21865def4e2c6145c1244f01a1e3bcb9",
+  "official_tasks_scored": 0,
+  "paid_model_calls": 0,
+  "smallest_remaining_pair_bytes": 94044329,
+  "status": "BLOCKED_MISSING_MODEL_BYTES_AND_INDIVIDUAL_RIGHTS",
+  "task_revision": "2dc6462bfab145ddf81b43e9954322855b8443dc",
+  "unique_missing_asset_count": 10,
+  "unique_missing_bytes": 1476908702
+}
