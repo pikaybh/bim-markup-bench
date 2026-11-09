@@ -60,5 +60,61 @@ class ProjectionPrecisionTests(unittest.TestCase):
                         projection.report()["source_file_preserved"])
 
 
+    @unittest.skipUnless((ROOT/"data/tasks.jsonl").is_file(),
+                         "Pinned public task metadata not cached")
+    def test_pinned_public_opening_dimensions_use_world_geometry_not_depth(self):
+        """IFC extrusion Depth may measure *wall thickness*, not vertical height."""
+        from src.data.bim_edit import read_tasks,repo_asset_path,verify_local_asset_bytes
+        from src.data.pilot_asset_audit import _files_in_root
+        from src.runtime.binder import bind_document
+        import ifcopenshell
+        tasks={r["task_id"]:r for r in read_tasks(ROOT/"data/tasks.jsonl")}
+        task=tasks["WIN-UPD-DIR-A-002"]
+        relative=repo_asset_path(task["input_ifc"])
+        source=_files_in_root(ROOT/"data/ifc",relative)
+        if not source.is_file():
+            self.skipTest("Pinned public IFC source missing from local cache")
+        meta={r["path"]:r for r in json.loads(
+            (ROOT/"data/bim_edit_remote_tree.json").read_text(encoding="utf-8"))
+            if r.get("type")=="file"}
+        verify_local_asset_bytes(source,meta[relative])
+        f=ifcopenshell.open(str(source))
+        window=f.by_guid(task["target"]["guids"][0])
+        opening=window.FillsVoids[0].RelatingOpeningElement
+        projected=project_ifc(source)
+        parsed=parse_xml(projected.xml)
+        node=next(n for n in parsed.elements if n.ifc_guid==opening.GlobalId)
+        self.assertAlmostEqual(float(node.attrs()["width"]),float(window.OverallWidth),places=6)
+        self.assertAlmostEqual(float(node.attrs()["height"]),float(window.OverallHeight),places=6)
+        self.assertLess(float(opening.Representation.Representations[0].Items[0].Depth),
+                        float(node.attrs()["height"]))
+        binder=bind_document(parsed,projection=projected)
+        self.assertTrue(binder.report()["all_ifc_relation_contracts_satisfied"])
+
+
+    @unittest.skipUnless((ROOT/"data/tasks.jsonl").is_file(),
+                         "Pinned public task metadata not cached")
+    def test_pinned_real_input_noop_is_exact_original_ifc_bytes(self):
+        """No-op must not reconstruct model geometry from rounded XML."""
+        from src.data.bim_edit import read_tasks,repo_asset_path
+        from src.runtime.compiler import compile_declarative_xml
+        from src.data.pilot_asset_audit import _files_in_root
+        from tempfile import TemporaryDirectory
+        records={r["task_id"]:r for r in read_tasks(ROOT/"data/tasks.jsonl")}
+        source=_files_in_root(ROOT/"data/ifc",
+            repo_asset_path(records["WIN-UPD-DIR-A-002"]["input_ifc"]))
+        if not source.is_file():
+            self.skipTest("Public IFC input is not cached")
+        original=source.read_bytes()
+        xml=project_ifc(source).xml
+        with TemporaryDirectory(prefix="g1-real-source-noop-") as temp:
+            output=Path(temp)/"out.ifc"
+            report=compile_declarative_xml(source,xml,output)
+            self.assertTrue(report.write_committed)
+            self.assertEqual(report.operations,())
+            self.assertEqual(output.read_bytes(),original)
+        self.assertEqual(source.read_bytes(),original)
+
+
 if __name__=="__main__":
     unittest.main()
