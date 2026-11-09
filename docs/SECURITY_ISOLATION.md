@@ -95,3 +95,93 @@ reports/docker_kernel_probe_evidence.json. See code for exact OCI options.
 BLOCKED, and src/runner/sandbox.py continues to refuse generated Python.**
 Do not treat a passing smoke or an available Docker socket as permission
 to execute untrusted model output.
+
+
+## 2026-11-09 — Dynamic Python candidate on OWN IFC, Linux AMD64 (partial)
+
+The previously fixed-only worker has a separate controlled offline synthetic
+route: src/runner/generated_candidate.py. It accepts opaque UTF-8 Python
+program bytes from a trusted caller, checks a separately provided SHA-256,
+and NEVER imports/evals/executes candidate code on the Windows/Mac host.
+Source data are pinned internally to the own small synthetic
+tests/fixtures/synthetic/input.ifc. No external IFC path is allowed.
+
+The immutable Linux worker image must match the Docker daemon's native
+architecture. Each attempt creates a new namespaced container with only
+two read-only bind mounts: /input/input.ifc and /task/solution.py. The
+/output and /tmp locations are capped at 64MiB/16MiB tmpfs and there is no
+GT/grader or shared host output mount. HostConfig is checked BEFORE start.
+Guest execution uses no network, capabilities dropped, uid 65534, readonly
+root, no-new-privileges, default seccomp, PIDs=1, memory=512MiB,
+CPU=0.75, per-file size=32MiB, stdout cap=512KiB, stderr cap=16KiB,
+and external timeouts <=20s. Docker CLI runs with a minimal host
+environment and no inherited provider keys.
+
+Only one <=256KiB OWN IFC is allowed back. The host checks file encoding
+and size, source/script/hidden OWN-GT canary hashes and explicitly
+removes the candidate container BEFORE invoking the grader. Two OWN
+verification paths then run without importing candidate code:
+(1) a trusted host process in src/runner/own_result_grader.py and
+(2) a SEPARATE Linux container in src/runner/own_grader_container.py.
+The second container has three read-only mounts: own source,
+returned candidate IFC and OWN synthetic expected GT. Its HostConfig
+is independently checked before start: no /task, no executable candidate
+script, no shared writable mount, no network or provider credentials.
+The candidate container never sees the expected GT mount. The narrow
+oracle requires IFC4X3, exactly one Wall, unmodified root IDs/classes,
+height 3.0 to 3.3m and exactly one changed IfcExtrudedAreaSolid STEP
+instance. The independent Linux grader also verifies the OWN reference
+height 3.3m. This is an OWN-only regression oracle, NOT the official
+BIM-Edit scorer.
+
+Actual observed Windows 11 Linux x64 cases: arbitrary owned Python
+program absent from the worker's fixed list changed its synthetic IFC;
+the separate trusted host grader validated it. A different owned
+dynamically supplied adversarial program first attempted original IFC
+write, GT path read, secret env access, outbound socket and subprocess
+and found each denied before performing the same valid IFC edit.
+Same code + seed + source gives identical run ID and result SHA.
+Missing output, duplicate/forged result, unrelated IFC mutation, bad
+candidate hash and stdout flooding were rejected. Grader tests
+separately prove that a script mounted into the grader, writable GT,
+missing GT, inherited API key or changed grader command is rejected
+BEFORE starting. A wrong synthetic GT is rejected during actual Linux
+native grader execution. Both own Docker namespaces are cleaned.
+
+Reproduce on the confirmed Windows project path with Docker Desktop
+running and the cached exact image:
+
+    $env:BIM_BENCH_IFC_WORKER_IMAGE_SHA=(docker image inspect bim-markup-bench/ifc-worker:amd64-0.1.0 --format '{{.Id}}').Trim()
+    .\.venv\Scripts\python.exe -m unittest tests.security.test_generated_candidate -v
+    .\.venv\Scripts\python.exe -m tools.verify_dynamic_candidate --image-id $env:BIM_BENCH_IFC_WORKER_IMAGE_SHA --enforce-live
+
+The enforced command must return code 2. A sanitized owned-proof artifact
+is recorded at reports/dynamic_own_candidate_evidence.json.
+
+NOT production-ready: the real src.runner.sandbox.execute_untrusted_candidate
+entrypoint still unconditionally refuses dynamic execution. External BIM-Edit
+IFC/tasks, actual provider-produced Python, independently validated
+OFFICIAL scorer parity, complete worker/grader image provenance/SBOM/fuzzing,
+cost broker and paid pilot remain unverified or disabled. An independent
+Linux grader container has been shown only for OWN synthetic reference
+data, with the same pinned scientific worker image, NOT the external
+official GT/scoring engine; do not infer real dataset GT safety from the
+own fixture proof. A security and methodology review is required before
+expanding this entrypoint.
+
+### November 9 Windows full regression and release-gate record
+
+The completed Windows 11 Python 3.12 + Docker Linux AMD64 suite
+executed **306 tests; 299 passed, 7 platform/dependency skips, 0
+failures**. This includes the dynamic candidate in its own Linux
+namespace, the independent OWN-reference grader container, denied
+file/network/process/secret probes, stdout flood, wrong GT,
+HostConfig manipulation, deterministic replay and native STEP diff.
+Both the primary pilot preflight and dynamic OWN --enforce-live checks
+returned exit code **2 (BLOCKED)**. No real provider, paid model,
+external benchmark GT or official scorer run occurred.
+
+The experimental image was the locally cached exact native Linux
+AMD64 ID sha256:2ce0d57dff6ea443c7f5ffffd29cf8b1b50a141b77574aae5ca4646f45f3a1ee.
+Source IFC SHA-256: 10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58.
+The test host did not modify production Xim/BIXML or other projects.

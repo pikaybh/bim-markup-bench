@@ -279,3 +279,17 @@ source/GT bytes and a basic native target object change check. The
 remaining six tasks need about 1.48GB of additional data and remain
 unverified. Strict dataset/research gates stay BLOCKED. This is NOT
 an official model pass rate. Details: reports/pilot_asset_audit.md.
+
+
+### G2 #19 dynamic OWN-only candidate sandbox (NOT a live benchmark)
+
+The Windows Linux amd64 setup can now run externally supplied opaque
+Python program bytes against a FIXED OWN synthetic IFC in a separate
+Docker container and verify output with a trusted host process AND an
+independent Linux grader container. Only the separate grader sees
+the OWN synthetic expected IFC; candidate code is never mounted there. Negative tests cover attempted
+source/GT/secret/network/process access, false/no output, excessive
+stdout, deterministic replay and unrelated IFC changes. Official
+dataset, model-generated tasks and paid providers remain BLOCKED.
+See docs/SECURITY_ISOLATION.md and
+reports/dynamic_own_candidate_evidence.json.
