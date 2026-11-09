@@ -5,7 +5,8 @@ research experiment. It does not authorize paid LLM calls or official scoring.
 
 ## Destination and exact version
 
-- Windows: D:\Projects\2026-11_bim-markup-bench
+- Windows: D:\문서\D__1_Projects\202611\bim-markup-bench
+- Corrected on 2026-11-09: initially created in the wrong D:\Projects folder. The complete repository was moved within D:, the former location is absent, and Git/IFC hashes and Python tests passed afterward.
 - Mac source: /Users/pikaybh/Projects/bim-markup-bench, plus its 21 issue worktrees
 - Original GitHub main: 679ecb372fc1a91a9059b83fa1a7dd4e2b6eb12c
 - Windows Git 2.43, Python 3.12.2, uv 0.6.17
@@ -58,8 +59,8 @@ PowerShell (from the Windows destination):
 
     $env:PYTHONUTF8='1'
     $env:PYTHONIOENCODING='utf-8'
-    $env:UV_CACHE_DIR='D:\Projects\2026-11_bim-markup-bench\.uv-cache'
-    cd D:\Projects\2026-11_bim-markup-bench
+    $env:UV_CACHE_DIR='D:\문서\D__1_Projects\202611\bim-markup-bench\.uv-cache'
+    cd D:\문서\D__1_Projects\202611\bim-markup-bench
     & 'C:\Users\Yoo\.local\bin\uv.exe' sync --frozen --python 'D:\AppData\Local\Programs\Python\Python312\python.exe'
     .\.venv\Scripts\python.exe -m unittest discover -s tests -v
     .\.venv\Scripts\python.exe -m tools.pilot_preflight
@@ -84,10 +85,9 @@ preflight intentionally exits 2 and prohibits real paid model runs.
   This is a credential-bearing *candidate* and has NOT been opened,
   transmitted to Windows or committed to Git. Windows key setup remains
   separate and requires secure provisioning.
-- The Mac currently has 22 clean experiment worktrees totalling roughly
-  5.6 GiB, almost entirely rebuildable Python virtual environments.
-  They and the private Mac .env remain untouched pending explicit
-  approval of which exact local paths to delete and validation of
-  the future Windows Linux security runner.
+- The Mac originally had 22 clean experiment worktrees (~5.6 GiB).
+  After confirming remote publication and ignored-file categories,
+  21 auxiliary worktrees were removed. The primary Mac repository and
+  its private ignored .env remain preserved as a fallback.
 
 Nothing in production Xim/BIXML, Revit or other Windows folders was edited.
