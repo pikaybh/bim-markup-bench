@@ -1,0 +1,25 @@
+# Independent, arm-blind G2 scorer image, pinned Linux amd64 Python 3.12.16.
+# DO NOT include the agent runner, model provider, official GT or private files.
+FROM docker.io/library/python:3.12-slim-bookworm@sha256:0f086103b026048cc50cb5da25ec435c023c5241a83fc44daea593377abc61c4
+LABEL org.opencontainers.image.title="bim-markup-bench independent blind IFC scorer" \
+      org.opencontainers.image.version="independent-ifc-three-axis-v0.1"
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONNOUSERSITE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    OPENBLAS_NUM_THREADS=1 \
+    OMP_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1 \
+    NUMEXPR_NUM_THREADS=1 \
+    PYTHONPATH=/opt/blind
+WORKDIR /opt/blind
+COPY docker/ifc_worker/requirements.amd64.lock /opt/blind/requirements.lock
+RUN python -m pip install --disable-pip-version-check --no-cache-dir \
+    --require-hashes --only-binary=:all: -r /opt/blind/requirements.lock \
+    && python -c "import ifcopenshell,numpy; assert ifcopenshell.version == '0.8.4.post1'"
+COPY src/evaluation/ /opt/blind/src/evaluation/
+COPY docker/ifc_blind_grader/worker.py /opt/blind/worker.py
+RUN python -m compileall -q /opt/blind/src/evaluation /opt/blind/worker.py
+USER 65534:65534
+ENTRYPOINT ["/usr/local/bin/python3"]
+CMD ["/opt/blind/worker.py"]

@@ -56,3 +56,28 @@ or target GUIDs. This is an engineering preflight, not a positive trial.
 
 Do not launch live model calls on the strength of these local tests.
 No Xim/BIXML production engine or user server endpoint was modified.
+
+
+## Follow-up, 2026-11-09: independent blind public IFC scorer (partial)
+
+The G2 #19 Linux AMD64 OWN synthetic candidate/GT compartment proof
+has now been extended with a separate G2 #21 pinned public IFC grader
+self-check. A dedicated OCI image contains only the independent IFC
+scorer, not an authoring agent. Three already-hash-audited public
+reference tasks produce the expected perfect GT-vs-GT axis scores;
+unmodified and invalid outputs fail. All four grader mounts are
+read-only; the host checks prestart Docker HostConfig, blocks injected
+secret/env/arm/tool mounts, and sanitizes metric outputs. Unlike the
+original G2 evidence above, real Linux namespace isolation of this
+limited grader has now been executed on Windows. However there
+is still no independently verified OFFICIAL scorer implementation,
+full GT licensing/corpus audit, live agent/model trial or formal
+calibration. The global gate remains BLOCKED_FOR_LIVE_MODEL_PILOT.
+Details: docs/gates/G2_blind_public_scorer_evidence.md.
+
+### Regression result for blind scorer extension
+
+Windows (pinned Linux AMD64 scorer + OWN candidate images) full suite:
+316 tests; 309 passed, 7 platform/dependency skips, 0 failed.
+Primary paid-pilot preflight returned code 2 (BLOCKED).
+No official benchmark model scores or API calls were produced.

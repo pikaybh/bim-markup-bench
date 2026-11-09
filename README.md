@@ -293,3 +293,19 @@ stdout, deterministic replay and unrelated IFC changes. Official
 dataset, model-generated tasks and paid providers remain BLOCKED.
 See docs/SECURITY_ISOLATION.md and
 reports/dynamic_own_candidate_evidence.json.
+
+
+### G2 #21 - pinned public IFC independent blind grader (partial)
+
+A separate Docker Linux AMD64 grader now runs the independently
+reimplemented three-axis IFC scorer against three pinned, audited
+public source/GT pairs. Each reference-vs-reference self-check has
+three 1.0 axes; unmodified and malformed predictions fail. The
+candidate/agent's Python, XML, tools and experiment arm are never
+mounted in the grading container; only trusted, byte-verified
+source/reference/result and grader-only target metadata are readable.
+The Docker image build context is allowlisted and excludes local data,
+GT, API secrets and Git history. This validates independent metric
+mechanics only, NOT official evaluator parity or any real model
+result. Full G2/G3 release gate stays BLOCKED. See
+docs/gates/G2_blind_public_scorer_evidence.md.
