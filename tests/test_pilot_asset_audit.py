@@ -184,15 +184,53 @@ class PinnedPilotAssetAuditTests(unittest.TestCase):
             tree_file=ROOT/"data/bim_edit_remote_tree.json",
             local_root=ROOT/"data/ifc"
         )
-        self.assertEqual(result["native_delta_verified_tasks"],7)
-        self.assertEqual(result["task_status_counts"],{
-            "MISSING_LOCAL_IFC_BYTES":29,
-            "VERIFIED_PINNED_BYTES_AND_CLASS_DELTA":7
-        })
+        self.assertGreaterEqual(result["native_delta_verified_tasks"],7)
+        self.assertEqual(
+            result["task_status_counts"].get("VERIFIED_PINNED_BYTES_AND_CLASS_DELTA"),
+            result["native_delta_verified_tasks"]
+        )
         kinds={x["target_class"] for x in result["tasks"]
                if x["native_target_delta_verified"]}
         self.assertEqual(kinds,{"IfcWall","IfcSlab","IfcSpace","IfcDoor",
                                 "IfcWindow","IfcColumn"})
+        self.assertFalse(result["all_pilot_bytes_and_deltas_verified"])
+        self.assertEqual(result["official_scores_computed"],0)
+
+    def test_expanded_18_small_public_candidate_cases_if_cached(self):
+        if not (ROOT/"data/tasks.jsonl").is_file():
+            self.skipTest("Pinned metadata unavailable")
+        from src.data.bim_edit import read_tasks,repo_asset_path
+        required={
+            "ROM-DEL-DIR-A-001","WIN-UPD-DIR-A-002",
+            "ROM-CRE-TOP-A-002","ROM-UPD-TOP-A-003",
+            "DOR-CRE-TOP-A-002","WIN-UPD-SPA-A-003",
+            "WIN-DEL-SPA-A-002","WIN-DEL-TOP-A-002",
+            "WAL-DEL-TOP-A-001","WAL-UPD-TOP-A-001",
+            "DOR-CRE-DIR-A-001",
+        }
+        by_id={r["task_id"]:r for r in read_tasks(ROOT/"data/tasks.jsonl")}
+        files={
+            repo_asset_path(by_id[tid][key])
+            for tid in required
+            for key in ("input_ifc","ground_truth_ifc")
+        }
+        if not all((ROOT/"data/ifc"/path).is_file() for path in files):
+            self.skipTest("Optional 11 expanded small IFC task pairs absent")
+        result=audit_fixed_candidate(
+            task_file=ROOT/"data/tasks.jsonl",
+            tree_file=ROOT/"data/bim_edit_remote_tree.json",
+            local_root=ROOT/"data/ifc",
+        )
+        self.assertGreaterEqual(result["native_delta_verified_tasks"],18)
+        self.assertEqual(result["locally_verified_both_input_and_GT"],
+                         result["native_delta_verified_tasks"])
+        self.assertEqual(result["task_status_counts"].get(
+            "VERIFIED_PINNED_BYTES_AND_CLASS_DELTA"),
+            result["native_delta_verified_tasks"])
+        self.assertTrue(required.issubset({
+            x["task_id"] for x in result["tasks"]
+            if x["native_target_delta_verified"]
+        }))
         self.assertFalse(result["all_pilot_bytes_and_deltas_verified"])
         self.assertEqual(result["official_scores_computed"],0)
 
