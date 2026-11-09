@@ -176,6 +176,7 @@ def _inspect_config(container_id:str, image_id:str, with_task:bool)->None:
     assert_or_raise(any("no-new-privileges" in s for s in (h.get("SecurityOpt") or [])))
     assert_or_raise(c.get("User")=="65534:65534")
     assert_or_raise(h.get("IpcMode")=="none")
+    assert_or_raise(h.get("CgroupnsMode")=="private")
     assert_or_raise(h.get("PidsLimit")==1)
     assert_or_raise(h.get("Memory")==536870912)
     assert_or_raise(h.get("MemorySwap")==536870912)
@@ -188,6 +189,8 @@ def _inspect_config(container_id:str, image_id:str, with_task:bool)->None:
     mounts=info["Mounts"]
     expected={"/input":False}
     if with_task:expected["/task"]=False
+    # Count all mount types: an injected Docker volume is also forbidden.
+    assert_or_raise(len(mounts)==len(expected))
     bind_mounts=[m for m in mounts if m.get("Type")=="bind"]
     assert_or_raise(len(bind_mounts)==len(expected))
     assert_or_raise({m.get("Destination"):m.get("RW") for m in bind_mounts}==expected)

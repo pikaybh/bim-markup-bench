@@ -53,7 +53,8 @@ class WorkerStaticTests(unittest.TestCase):
                 "NetworkMode":"none","ReadonlyRootfs":True,
                 "Privileged":False,"CapDrop":["ALL"],
                 "SecurityOpt":["no-new-privileges:true"],
-                "IpcMode":"none","PidsLimit":1,"Memory":536870912,
+                "IpcMode":"none","CgroupnsMode":"private",
+                "PidsLimit":1,"Memory":536870912,
                 "MemorySwap":536870912,"NanoCpus":750000000,
                 "PidMode":"","Tmpfs":{
                     "/tmp":"rw,nosuid,nodev,noexec,size=16m",
@@ -85,6 +86,61 @@ class WorkerStaticTests(unittest.TestCase):
         mutated=json.loads(json.dumps(report))
         mutated["HostConfig"]["Tmpfs"]["/output"]="rw,size=4g"
         check(mutated,True)
+
+    def test_unexpected_docker_mount_types_and_host_namespace_are_refused(self):
+        image="sha256:"+"a"*64
+        baseline={
+            "Image":image,
+            "HostConfig":{
+                "NetworkMode":"none","ReadonlyRootfs":True,
+                "Privileged":False,"CapDrop":["ALL"],
+                "SecurityOpt":["no-new-privileges:true"],
+                "IpcMode":"none","CgroupnsMode":"private",
+                "PidsLimit":1,"Memory":536870912,
+                "MemorySwap":536870912,"NanoCpus":750000000,
+                "PidMode":"","Tmpfs":{
+                    "/tmp":"rw,nosuid,nodev,noexec,size=16m",
+                    "/output":"rw,nosuid,nodev,noexec,size=64m",
+                },
+            },
+            "Config":{"User":"65534:65534",
+                      "Entrypoint":["/usr/local/bin/python3"],
+                      "Cmd":["/opt/ifc_worker/run_candidate.py"],
+                      "Env":["HOME=/tmp"]},
+            "Mounts":[
+                {"Destination":"/input","RW":False,"Type":"bind"},
+                {"Destination":"/task","RW":False,"Type":"bind"},
+            ],
+        }
+        def inspect(data, denied=False):
+            fake=subprocess.CompletedProcess(["docker","inspect"],0,
+                                              json.dumps([data]),"")
+            with patch("src.runner.ifc_worker._run",return_value=fake):
+                if denied:
+                    with self.assertRaises(DockerIsolationError):
+                        _inspect_config("own-container",image,True)
+                else:
+                    _inspect_config("own-container",image,True)
+
+        inspect(baseline)
+        for label, change in (
+            ("named_volume",lambda v:v["Mounts"].append({
+                "Destination":"/grader","RW":False,"Type":"volume"
+            })),
+            ("extra_tmpfs_mount",lambda v:v["Mounts"].append({
+                "Destination":"/secrets","RW":True,"Type":"tmpfs"
+            })),
+            ("host_cgroup_namespace",lambda v:v["HostConfig"].update(
+                CgroupnsMode="host")),
+            ("host_secret_environment",lambda v:v["Config"]["Env"].append(
+                "OPENAI_API_KEY=FAKE_TEST_CANARY")),
+            ("wrong_task_mount",lambda v:v["Mounts"][1].update(
+                Destination="/grader")),
+        ):
+            with self.subTest(label=label):
+                mutated=json.loads(json.dumps(baseline))
+                change(mutated)
+                inspect(mutated,denied=True)
 
     def test_no_arbitrary_generated_code_interface(self):
         self.assertEqual(len(TRUSTED_CASES),5)
