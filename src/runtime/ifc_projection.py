@@ -245,6 +245,30 @@ def _box_attrs(entity: Any, known_levels: dict[str,str], scale: float,
     return attrs
 
 
+def _opening_world_dimensions(entity: Any, axis: np.ndarray, scale: float) -> tuple[float,float]:
+    """Native IFC void mesh: wall-parallel width and world-vertical height.
+
+    The extrusion depth often measures wall thickness, not opening height.
+    This is a read-only bounded IFC projection; it is not a geometry mutator.
+    """
+    try:
+        settings=ifcopenshell.geom.settings()
+        settings.set(settings.USE_WORLD_COORDS,True)
+        shape=ifcopenshell.geom.create_shape(settings,entity)
+        points=np.asarray(shape.geometry.verts,dtype=np.float64).reshape((-1,3))
+    except Exception as exc:
+        raise UnsupportedIFCGeometry("Opening world geometry unavailable") from exc
+    if len(points)<4 or not np.isfinite(points).all():
+        raise UnsupportedIFCGeometry("Opening mesh empty or nonfinite")
+    width=float(np.ptp(points@axis))*scale
+    height=float(np.ptp(points[:,2]))*scale
+    normal=np.array([-axis[1],axis[0],0.],dtype=np.float64)
+    thickness=float(np.ptp(points@normal))*scale
+    if not all(math.isfinite(v) and 1e-7<v<10000 for v in (width,height,thickness)):
+        raise UnsupportedIFCGeometry("Opening world dimensions degenerate")
+    return width,height
+
+
 def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,str]:
     hosts=[r.RelatingBuildingElement for r in entity.VoidsElements] if hasattr(entity,"VoidsElements") else []
     if len(hosts)!=1 or hosts[0].is_a()!="IfcWall" or hosts[0].GlobalId not in known:
@@ -252,8 +276,8 @@ def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,
     host=hosts[0]
     item=_body_extrusion(entity)
     x0,y0,x1,y1=_rect_extents(item.SweptArea)
-    if abs(y1-y0)<1e-9:
-        raise UnsupportedIFCGeometry("Opening void has zero thickness")
+    if min(x1-x0,y1-y0)<1e-9:
+        raise UnsupportedIFCGeometry("Opening void has degenerate profile")
     p=_m(entity)
     hostinfo=known[host.GlobalId]
     start=np.array([float(hostinfo[c]) for c in ("x1","y1","z1")])
@@ -263,6 +287,7 @@ def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,
     if length<1e-6:
         raise UnsupportedIFCGeometry("Hosted wall has degenerate axis")
     axis/=length
+    width,height=_opening_world_dimensions(entity,axis,scale)
     origin=np.asarray(_world(p,0,0,0))*scale
     delta=origin-start
     offset=float(np.dot(delta,axis))
@@ -271,7 +296,7 @@ def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,
         raise UnsupportedIFCGeometry("Opening is out of supported host geometry bounds")
     return dict(id=_id(entity),ifcGuid=entity.GlobalId,
         host=_id(host),offset=_number(max(0,offset)),sill=_number(max(0,sill)),
-        width=_number((x1-x0)*scale),height=_number(float(item.Depth)*scale))
+        width=_number(width),height=_number(height))
 
 
 def _filling_attrs(entity: Any, openings: dict[str,dict[str,str]], scale: float) -> dict[str,str]:
