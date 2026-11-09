@@ -32,14 +32,14 @@ class FrozenPilotReadinessTests(unittest.TestCase):
 
     @unittest.skipUnless((ROOT/"data/tasks.jsonl").is_file(),
                          "Pinned public metadata not available")
-    def test_real_source_negative_preconditions_distinct_from_missing_bytes(self):
+    def test_real_source_preconditions_distinct_from_missing_bytes(self):
         tasks={t["task_id"]:t for t in audit_frozen_pilot()["tasks"]}
         for tid,expected in (
             ("WAL-DEL-TOP-A-001","WALL_DELETE_SOURCE_DEPENDENCIES_BLOCKED"),
             ("WAL-UPD-DIR-R-003","WALL_THICKNESS_NATIVE_DEPENDENCIES_BLOCKED"),
             ("WIN-DEL-SPA-A-002","WINDOW_DELETE_NATIVE_RELATIONS_BLOCKED"),
             ("WIN-UPD-SPA-A-003","WINDOW_OPENING_DIMENSION_CHANGE_UNIMPLEMENTED"),
-            ("WIN-UPD-DIR-A-002","OPENING_MOVE_NATIVE_FRAME_OR_DEPENDENCY_BLOCKED"),
+            ("WIN-UPD-DIR-A-002","WINDOW_MOVE_VECTOR_AND_PAIRED_ORACLE_NOT_PROVEN"),
             ("WAL-CRE-SPA-R-002","MISSING_PINNED_INPUT_IFC"),
         ):
             with self.subTest(task_id=tid):

@@ -13,6 +13,7 @@ import math
 import uuid
 
 import ifcopenshell
+import ifcopenshell.geom
 import ifcopenshell.api.root
 import ifcopenshell.util.placement
 import numpy as np
@@ -21,7 +22,7 @@ from src.runtime.ast import BuildingDocument
 from src.runtime.binder import BindingEvidence
 from src.runtime.ifc_mutations import Mutation, UnsupportedIFCMutation, by_guid_or_none
 from src.runtime.semantic_graph import GraphDelta, GraphEdge
-from src.runtime.ifc_projection import _body_extrusion, _rect_extents, _m, _world
+from src.runtime.ifc_projection import _m
 
 REL_NAMESPACE=uuid.UUID("38502454-46ea-44b8-8e87-6c6a7e66c111")
 TOL=1e-6
@@ -59,16 +60,47 @@ def _plain_opening_local_frame(opening,wall):
         raise UnsupportedIFCMutation("Tilted hosted Opening not supported")
     if frame.RefDirection and not np.allclose(frame.RefDirection.DirectionRatios,(1,0,0),atol=TOL):
         raise UnsupportedIFCMutation("Rotated hosted Opening not supported")
-    if not np.allclose(_m(wall)[:3,:3],np.eye(3),atol=TOL):
-        raise UnsupportedIFCMutation("Host Wall world rotation requires geometry-aware frame update")
+    rotation=_m(wall)[:3,:3]
+    # A horizontal wall azimuth changes the world vector of an unchanged
+    # parent-relative X edit. Tilt/reflection requires a different policy.
+    if (not np.allclose(rotation[2,:],(0.,0.,1.),atol=TOL)
+            or not math.isclose(float(np.linalg.det(rotation)),1.,abs_tol=TOL)):
+        raise UnsupportedIFCMutation("Tilted/reflected host Wall frame is unsupported")
     return frame.Location
 
 
-def _validate_opening_move_preflight(f,opening,expected_opening_attrs,all_openings):
+def _opening_axis_bounds(opening,host):
+    """True native void interval in metres along host Wall-local X (world)."""
+    try:
+        settings=ifcopenshell.geom.settings()
+        settings.set(settings.USE_WORLD_COORDS,True)
+        # Hold the shape wrapper alive while reading its SWIG vertex buffer.
+        shape=ifcopenshell.geom.create_shape(settings,opening)
+        vertices=np.asarray(shape.geometry.verts,dtype=np.float64).reshape((-1,3))
+    except Exception as exc:
+        raise UnsupportedIFCMutation("Cannot inspect native Opening geometry") from exc
+    if len(vertices)<4 or not np.isfinite(vertices).all():
+        raise UnsupportedIFCMutation("Native Opening has missing/nonfinite geometry")
+    host_frame=_m(host)
+    along=(vertices-host_frame[:3,3])@host_frame[:3,0]
+    lo=float(np.min(along))
+    hi=float(np.max(along))
+    if not (math.isfinite(lo) and math.isfinite(hi) and hi-lo>TOL):
+        raise UnsupportedIFCMutation("Native Opening has degenerate horizontal extent")
+    return lo,hi
+
+
+def _validate_opening_move_preflight(f,opening,expected_opening_attrs,all_openings,
+                                     *,source_offset=None):
     host=_native_host(opening)
     position=_plain_opening_local_frame(opening,host)
     if len(position.Coordinates)!=3:
         raise UnsupportedIFCMutation("Hosted opening point must be 3D")
+    # Changing this CartesianPoint must never shift unrelated placements.
+    position_owners=f.get_inverse(position)
+    frame=opening.ObjectPlacement.RelativePlacement
+    if len(position_owners)!=1 or next(iter(position_owners)).id()!=frame.id():
+        raise UnsupportedIFCMutation("Opening placement point has shared/unexpected owners")
     fills=list(opening.HasFillings)
     if len(fills)>1:
         raise UnsupportedIFCMutation("Multiple fills per Opening not supported")
@@ -85,8 +117,16 @@ def _validate_opening_move_preflight(f,opening,expected_opening_attrs,all_openin
     new_width=float(expected_opening_attrs["width"])
     if new_offset<0 or new_width<=0:
         raise UnsupportedIFCMutation("Invalid requested Opening offset/width")
-    # Avoid collisions with other source wall openings; not a universal clash
-    # algorithm. This is a hard bounded gate for the simple fixture.
+    old_native_offset=float(position.Coordinates[0])
+    if (source_offset is not None and
+            not math.isclose(float(source_offset),old_native_offset,rel_tol=0.,abs_tol=TOL)):
+        raise UnsupportedIFCMutation("Projected Opening offset differs from native local X")
+    delta=new_offset-old_native_offset
+    prior_start,prior_end=_opening_axis_bounds(opening,host)
+    new_start,new_end=prior_start+delta,prior_end+delta
+    # Source sweeps may encode vertical height along profile X and wall
+    # thickness along extrusion Depth. Compare true void geometry projected
+    # onto the host Wall's world-space longitudinal axis, never raw profile X.
     for other in all_openings:
         if other.GlobalId==opening.GlobalId:
             continue
@@ -96,15 +136,9 @@ def _validate_opening_move_preflight(f,opening,expected_opening_attrs,all_openin
             continue
         if other_host.GlobalId!=host.GlobalId:
             continue
-        native_pos=_plain_opening_local_frame(other,host).Coordinates
-        try:
-            other_profile=_body_extrusion(other).SweptArea
-            a,b,c,d=_rect_extents(other_profile)
-        except Exception as exc:
-            raise UnsupportedIFCMutation("Cannot bound another hosted Opening for clash detection") from exc
-        old_start=float(native_pos[0])+a
-        old_end=float(native_pos[0])+c
-        if max(new_offset,old_start)<min(new_offset+new_width,old_end)-TOL:
+        _plain_opening_local_frame(other,host)
+        other_start,other_end=_opening_axis_bounds(other,host)
+        if max(new_start,other_start)<min(new_end,other_end)-TOL:
             raise UnsupportedIFCMutation("Moved Opening would overlap another wall void")
     return host,position
 
@@ -177,7 +211,8 @@ def plan_topology_changes(
         opening=by_guid_or_none(f,prior.ifc_guid)
         if opening is None or not opening.is_a("IfcOpeningElement"):
             raise UnsupportedIFCMutation("Missing native Opening")
-        _validate_opening_move_preflight(f,opening,rhs,f.by_type("IfcOpeningElement"))
+        _validate_opening_move_preflight(f,opening,rhs,f.by_type("IfcOpeningElement"),
+                                         source_offset=lhs["offset"])
         result.append(Mutation("MOVE_OPENING_WITH_FILLING",name,prior.ifc_guid,
                   new_xml[name].span.line,fields,"local host void translation propagates fill"))
     for edge in delta.added_edges:
@@ -237,12 +272,13 @@ def apply_topology_change(f,op:Mutation,old_graph,new_graph,after_doc):
     elif op.operation=="MOVE_OPENING_WITH_FILLING":
         opening=by_guid_or_none(f,op.ifc_guid)
         expected=dict(new_graph.by_id()[op.xml_id].attributes)
+        source_xml=old_graph.by_id()[op.xml_id]
         host,position=_validate_opening_move_preflight(
-            f,opening,expected,f.by_type("IfcOpeningElement"))
+            f,opening,expected,f.by_type("IfcOpeningElement"),
+            source_offset=dict(source_xml.attributes)["offset"])
         x,y,z=tuple(float(v) for v in position.Coordinates)
         # This frame's x starts at zero on the native wall. The stable
         # original position+delta is only valid when wall local starts at x=0.
-        source_xml=old_graph.by_id()[op.xml_id]
         old_offset=float(dict(source_xml.attributes)["offset"])
         requested=float(expected["offset"])
         position.Coordinates=(x+(requested-old_offset),y,z)
@@ -338,7 +374,14 @@ def verify_topology_result(source_f,result_f,operations,old_graph,new_graph):
                 a_xyz=ifcopenshell.util.placement.get_local_placement(one.ObjectPlacement)[:3,3]
                 b_xyz=ifcopenshell.util.placement.get_local_placement(two.ObjectPlacement)[:3,3]
                 d=float(expected_attrs["offset"])-float(dict(old_graph.by_id()[op.xml_id].attributes)["offset"])
-                if not np.allclose(b_xyz-a_xyz,(d,0.,0.),atol=1e-6):
+                host_before=_native_host(a)
+                host_after=_native_host(b)
+                rotation_before=_m(host_before)[:3,:3]
+                rotation_after=_m(host_after)[:3,:3]
+                if not np.allclose(rotation_before,rotation_after,atol=1e-7):
+                    raise UnsupportedIFCMutation("Host Wall placement changed during Opening move")
+                expected_world_delta=rotation_before[:,0]*d
+                if not np.allclose(b_xyz-a_xyz,expected_world_delta,atol=1e-6):
                     raise UnsupportedIFCMutation("Move failed to propagate to filling global placement")
     removed_members={op.ifc_guid for op in operations
                      if op.operation in ("DELETE_WINDOW","DELETE_WALL")}
