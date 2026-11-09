@@ -250,3 +250,13 @@ remaining 29 candidate tasks remain unverified. New offline tooling audits
 any local files without downloading or exposing reference GT to the
 model; see reports/pilot_asset_audit.md. No full dataset or paid LLM
 experiments were executed.
+
+## Windows Linux AMD64 isolated IFC worker (#19 partial)
+
+Windows now has a separate pinned Linux AMD64 Python 3.12 /
+IfcOpenShell 0.8.4.post1 worker image. A trusted six-case own-synthetic
+security smoke proves native IFC edits, original/GT isolation,
+denied network and child processes, 32MiB file limit, 64MiB
+total-output tmpfs quota, and forced loop termination. Full
+model-generated Python, official benchmark scoring and paid runs
+remain blocked. See docs/IFC_WORKER.md.

@@ -1,0 +1,19 @@
+{
+  "G2_paid_pilot_gate": "BLOCKED",
+  "authorized_live_worker_available": false,
+  "ifcopenshell": "0.8.4.post1",
+  "model_generated_code_executed": false,
+  "official_tasks_scored": 0,
+  "paid_model_calls": 0,
+  "python": "3.12.16",
+  "raw_official_gt_used": false,
+  "status": "CURATED_WORKER_OWN_SYNTHETIC_TESTS_PASS",
+  "validated_own_fixture_cases": {
+    "bounded-output-volume": true,
+    "deny-attacks": true,
+    "edit-wall": true,
+    "infinite-loop": true,
+    "oversize-output": true,
+    "trusted-native-smoke": true
+  }
+}

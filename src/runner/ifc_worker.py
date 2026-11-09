@@ -1,4 +1,4 @@
-"""Curated Linux ARM64 IFC worker runner -- trusted OWN tests ONLY.
+"""Curated Linux ARM64/AMD64 IFC worker runner -- trusted OWN tests ONLY.
 
 This runner deliberately DOES NOT accept arbitrary user/LLM code. Only two
 hardcoded, owned fixture programs execute under Docker. Independent work is
@@ -6,6 +6,8 @@ required before exposing a model-generated code path.
 """
 from __future__ import annotations
 
+import base64
+import binascii
 import hashlib
 import json
 import os
@@ -50,6 +52,21 @@ except OSError:
     blocked=True
 print(json.dumps({"oversize_output_blocked":blocked}))
 ''',
+    "bounded-output-volume": """
+import json
+from pathlib import Path
+blocked=False
+files_written=0
+for i in range(5):
+    try:
+        (Path("/output")/f"bounded_{i}.bin").write_bytes(b"A"*(24*1024*1024))
+        files_written+=1
+    except OSError:
+        blocked=True
+        break
+print(json.dumps({"total_directory_quota_blocked":blocked,
+                  "files_written":files_written}))
+""",
     "deny-attacks": r'''
 import json,os,socket,subprocess
 from pathlib import Path
@@ -76,15 +93,38 @@ print(json.dumps(out,sort_keys=True))
 }
 
 
+def _docker_cli()->str:
+    """Resolve ONLY the host Docker CLI, never a path supplied by a model."""
+    if os.name=="nt":
+        candidate=(Path(os.environ.get("ProgramFiles",r"C:\Program Files"))
+                   /"Docker"/"Docker"/"resources"/"bin"/"docker.exe")
+        if candidate.is_file():
+            return str(candidate)
+    binary=shutil.which("docker")
+    if binary is None:
+        raise DockerIsolationError("Local Docker CLI unavailable; no candidate execution")
+    return binary
+
+
 def _run(args:list[str], timeout:int=12)->subprocess.CompletedProcess:
-    # Docker CLI alone receives a fake sentinel for negative env test.
-    # It must NEVER be forwarded to the container.
-    env={
-        "PATH":"/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin",
-        "HOME":str(Path.home()),
-        "OPENAI_API_KEY":"OWN_FAKE_SENTINEL_NOT_A_REAL_KEY",
-    }
-    return subprocess.run(args,capture_output=True,text=True,timeout=timeout,env=env)
+    # Windows Docker Desktop requires USERPROFILE and SystemRoot to locate
+    # its trusted engine. Never forward user env wholesale to the worker.
+    env={"OPENAI_API_KEY":"OWN_FAKE_SENTINEL_NOT_A_REAL_KEY"}
+    if os.name=="nt":
+        for name in ("SYSTEMROOT","WINDIR","COMSPEC","TEMP","TMP",
+                     "USERPROFILE","APPDATA","LOCALAPPDATA"):
+            if name in os.environ:
+                env[name]=os.environ[name]
+        env["PATH"]=os.pathsep.join((str(Path(_docker_cli()).parent),
+                                    os.environ.get("SYSTEMROOT",r"C:\Windows")
+                                    +r"\System32"))
+    else:
+        env.update({"PATH":"/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin",
+                    "HOME":str(Path.home())})
+    fixed=[_docker_cli() if i==0 and arg=="docker" else arg
+           for i,arg in enumerate(args)]
+    return subprocess.run(fixed,capture_output=True,text=True,
+                          timeout=timeout,env=env)
 
 
 def _sha(path:Path)->str:
@@ -98,8 +138,20 @@ def _verify_local_image(image_id:str)->None:
     if result.returncode!=0:
         raise DockerIsolationError("Pinned worker image is unavailable")
     image=json.loads(result.stdout)[0]
-    if image.get("Id")!=image_id or image.get("Architecture")!="arm64" or image.get("Os")!="linux":
-        raise DockerIsolationError("Invalid worker image OS, arch or digest")
+    # Docker Desktop may identify an OCI image index by its manifest
+    # digest. Only accept a local exact sha256 ID and the engine's native
+    # architecture; emulated ARM64 is not a verified x64 worker.
+    platform=_run(["docker","info","--format","{{.Architecture}}"])
+    if platform.returncode!=0:
+        raise DockerIsolationError("Docker Linux daemon unavailable")
+    host_arch={"x86_64":"amd64","aarch64":"arm64"}.get(
+        platform.stdout.strip(),platform.stdout.strip()
+    )
+    if (image.get("Id")!=image_id
+        or image.get("Architecture")!=host_arch
+        or host_arch not in ("amd64","arm64")
+        or image.get("Os")!="linux"):
+        raise DockerIsolationError("Worker image must match native Linux daemon architecture")
     labels=image.get("Config",{}).get("Labels") or {}
     if labels.get("org.opencontainers.image.title")!="bim-markup-bench isolated IFC4X3 worker":
         raise DockerIsolationError("Image lacks exact named worker provenance")
@@ -132,16 +184,23 @@ def _inspect_config(container_id:str, image_id:str, with_task:bool)->None:
     env=c.get("Env") or []
     assert_or_raise(not any(line.split("=",1)[0] in ("OPENAI_API_KEY","AWS_SECRET_ACCESS_KEY","GH_TOKEN","SSH_AUTH_SOCK") for line in env))
     mounts=info["Mounts"]
-    expected={"/input":False,"/output":True}
+    expected={"/input":False}
     if with_task:expected["/task"]=False
-    assert_or_raise(len(mounts)==len(expected))
-    assert_or_raise({m.get("Destination"):m.get("RW") for m in mounts}==expected)
-    assert_or_raise(all(m.get("Type")=="bind" for m in mounts))
+    bind_mounts=[m for m in mounts if m.get("Type")=="bind"]
+    assert_or_raise(len(bind_mounts)==len(expected))
+    assert_or_raise({m.get("Destination"):m.get("RW") for m in bind_mounts}==expected)
+    assert_or_raise(all(m.get("Type")=="bind" for m in bind_mounts))
+    assert_or_raise(not any(m.get("Destination")=="/output" and
+                        m.get("Type")=="bind" for m in mounts))
+    tmpfs=h.get("Tmpfs") or {}
+    assert_or_raise("/output" in tmpfs and "size=64m" in tmpfs["/output"])
+    assert_or_raise("/tmp" in tmpfs and "size=16m" in tmpfs["/tmp"])
 
 
 def run_own_fixture(image_id:str, case:str="edit-wall", *,wall_seconds:int=20)->dict:
     """Run one fixed program; returned evidence never includes GT or secrets."""
-    if case not in ("edit-wall","deny-attacks","oversize-output","infinite-loop","trusted-native-smoke"):
+    if case not in ("edit-wall","deny-attacks","oversize-output",
+                    "bounded-output-volume","infinite-loop","trusted-native-smoke"):
         raise DockerIsolationError("No arbitrary Python candidate accepted")
     if not 2<=wall_seconds<=25:
         raise DockerIsolationError("Unsafe wall-clock timeout")
@@ -150,8 +209,8 @@ def run_own_fixture(image_id:str, case:str="edit-wall", *,wall_seconds:int=20)->
     container_id=None
     with tempfile.TemporaryDirectory(prefix="bim-bench-worker-") as d:
         root=Path(d)
-        inp=root/"input";out=root/"output";task=root/"task";hidden=root/"hidden_gt"
-        for folder,mode in ((inp,0o755),(out,0o777),(task,0o755),(hidden,0o700)):
+        inp=root/"input";task=root/"task";hidden=root/"hidden_gt"
+        for folder,mode in ((inp,0o755),(task,0o755),(hidden,0o700)):
             folder.mkdir();folder.chmod(mode)
         input_file=inp/"input.ifc"
         shutil.copyfile(OWN_SOURCE,input_file)
@@ -171,9 +230,9 @@ def run_own_fixture(image_id:str, case:str="edit-wall", *,wall_seconds:int=20)->
             "--ulimit=nofile=64:64","--ulimit=fsize=33554432:33554432",
             "--ulimit=core=0:0",
             "--tmpfs=/tmp:rw,nosuid,nodev,noexec,size=16m",
+            "--tmpfs=/output:rw,nosuid,nodev,noexec,size=64m",
             "--log-driver=json-file","--log-opt=max-size=1m","--log-opt=max-file=1",
             "--mount=type=bind,source="+str(inp)+",target=/input,readonly",
-            "--mount=type=bind,source="+str(out)+",target=/output",
             "--env=HOME=/tmp","--env=OPENBLAS_NUM_THREADS=1",
             "--env=OMP_NUM_THREADS=1","--env=MKL_NUM_THREADS=1",
             "--env=NUMEXPR_NUM_THREADS=1",
@@ -198,12 +257,34 @@ def run_own_fixture(image_id:str, case:str="edit-wall", *,wall_seconds:int=20)->
                         "code_executed_inside_container":True,"paid_model_calls":0}
             if started.returncode!=0:
                 raise DockerIsolationError("Trusted worker fixture did not execute correctly: "+started.stderr[-200:])
-            result=json.loads(started.stdout.strip().splitlines()[-1])
+            # The owned script emits a structured result; the trusted
+            # wrapper may additionally emit a tiny, bounded IFC artifact.
+            messages=[json.loads(line) for line in started.stdout.splitlines()
+                      if line.startswith("{")]
+            result=next((m for m in messages if "case" in m or
+                         "oversize_output_blocked" in m or
+                         "total_directory_quota_blocked" in m or
+                         "input_write_denied" in m or
+                         m.get("status")=="TRUSTED_IFC_WORKER_SMOKE_PASS"),None)
+            if result is None:
+                raise DockerIsolationError("Trusted worker emitted no supported result")
             if _sha(input_file)!=before or _sha(hidden_file)!=gt_before:
                 raise DockerIsolationError("Original IFC or hidden GT was modified")
             if case=="edit-wall":
                 import ifcopenshell
-                model=ifcopenshell.open(str(out/"result.ifc"))
+                artifact=next((m.get("trusted_small_ifc_b64")
+                               for m in messages if "trusted_small_ifc_b64" in m),None)
+                if not isinstance(artifact,str) or len(artifact)>350000:
+                    raise DockerIsolationError("Missing/bloated trusted IFC artifact")
+                try:
+                    bytes_out=base64.b64decode(artifact,validate=True)
+                except (ValueError,binascii.Error) as exc:
+                    raise DockerIsolationError("Invalid IFC artifact transport") from exc
+                if not 0<len(bytes_out)<=256*1024:
+                    raise DockerIsolationError("Unbounded IFC output artifact")
+                host_result=root/"trusted_owned_result.ifc"
+                host_result.write_bytes(bytes_out)
+                model=ifcopenshell.open(str(host_result))
                 depth=next(item.Depth for rep in model.by_type("IfcWall")[0].Representation.Representations
                            for item in rep.Items if item.is_a("IfcExtrudedAreaSolid"))
                 if abs(depth-3.3)>1e-7 or result.get("source_unchanged") is not True:
@@ -217,6 +298,10 @@ def run_own_fixture(image_id:str, case:str="edit-wall", *,wall_seconds:int=20)->
             elif case=="oversize-output":
                 if result.get("oversize_output_blocked") is not True:
                     raise DockerIsolationError("Kernel file-size limit was not enforced")
+            elif case=="bounded-output-volume":
+                if (result.get("total_directory_quota_blocked") is not True
+                        or result.get("files_written",6)>=3):
+                    raise DockerIsolationError("Whole-directory tmpfs quota not enforced")
             elif case=="trusted-native-smoke" and result.get("status")!="TRUSTED_IFC_WORKER_SMOKE_PASS":
                 raise DockerIsolationError("Native trusted IFC smoke failed")
             return {"status":"OWN_TRUSTED_WORKER_FIXTURE_PASS","case":case,

@@ -1,4 +1,4 @@
-"""Curated-arm64-native IFC worker, offline static policy and gated real Docker."""
+"""Curated Linux ARM64 and AMD64 IFC workers, gated kernel smoke."""
 from __future__ import annotations
 import os
 from pathlib import Path
@@ -8,8 +8,9 @@ import subprocess
 import sys
 
 from src.runner.ifc_worker import (
-    TRUSTED_CASES, run_own_fixture, _verify_local_image
+    TRUSTED_CASES, run_own_fixture, _verify_local_image, _inspect_config
 )
+from unittest.mock import patch
 from src.runner.docker_isolation import DockerIsolationError
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -32,8 +33,61 @@ class WorkerStaticTests(unittest.TestCase):
         for banned in ("openai==","python-dotenv==","requests=="):
             self.assertNotIn(banned,lock)
 
+    def test_amd64_worker_pinned_base_and_hash_locked_wheels(self):
+        dockerfile=(WORKER/"Dockerfile.amd64").read_text()
+        lock=(WORKER/"requirements.amd64.lock").read_text()
+        self.assertIn("python:3.12-slim-bookworm@sha256:0f086103",dockerfile)
+        self.assertIn("requirements.amd64.lock",dockerfile)
+        self.assertIn("--require-hashes",dockerfile)
+        self.assertIn("--only-binary=:all:",dockerfile)
+        self.assertIn("USER 65534:65534",dockerfile)
+        self.assertIn("ifcopenshell==0.8.4.post1",lock)
+        self.assertIn("--hash=sha256:",lock)
+        self.assertNotIn("openai==",lock)
+
+    def test_missing_output_tmpfs_or_output_bind_refused_before_start(self):
+        image="sha256:"+"a"*64
+        report={
+            "Image":image,
+            "HostConfig":{
+                "NetworkMode":"none","ReadonlyRootfs":True,
+                "Privileged":False,"CapDrop":["ALL"],
+                "SecurityOpt":["no-new-privileges:true"],
+                "IpcMode":"none","PidsLimit":1,"Memory":536870912,
+                "MemorySwap":536870912,"NanoCpus":750000000,
+                "PidMode":"","Tmpfs":{
+                    "/tmp":"rw,nosuid,nodev,noexec,size=16m",
+                    "/output":"rw,nosuid,nodev,noexec,size=64m",
+                },
+            },
+            "Config":{"User":"65534:65534",
+                      "Entrypoint":["/usr/local/bin/python3"],
+                      "Cmd":["/opt/ifc_worker/trusted_probe.py"],
+                      "Env":["HOME=/tmp","OPENBLAS_NUM_THREADS=1"]},
+            "Mounts":[{"Destination":"/input","RW":False,"Type":"bind"}],
+        }
+        def check(item,should_fail=False):
+            result=subprocess.CompletedProcess(["docker","inspect"],0,
+                json.dumps([item]),"")
+            with patch("src.runner.ifc_worker._run",return_value=result):
+                if should_fail:
+                    with self.assertRaises(DockerIsolationError):
+                        _inspect_config("own-container",image,False)
+                else:
+                    _inspect_config("own-container",image,False)
+        check(report)
+        mutated=json.loads(json.dumps(report))
+        del mutated["HostConfig"]["Tmpfs"]["/output"]
+        check(mutated,True)
+        mutated=json.loads(json.dumps(report))
+        mutated["Mounts"].append({"Destination":"/output","RW":True,"Type":"bind"})
+        check(mutated,True)
+        mutated=json.loads(json.dumps(report))
+        mutated["HostConfig"]["Tmpfs"]["/output"]="rw,size=4g"
+        check(mutated,True)
+
     def test_no_arbitrary_generated_code_interface(self):
-        self.assertEqual(len(TRUSTED_CASES),4)
+        self.assertEqual(len(TRUSTED_CASES),5)
         for name,script in TRUSTED_CASES.items():
             compile(script,name,"exec")
         with self.assertRaises(DockerIsolationError):
@@ -49,6 +103,7 @@ class WorkerStaticTests(unittest.TestCase):
                        "DockerIsolationError","--mount=type=bind",
                        "container_name"):
             self.assertIn(strict,source)
+        self.assertIn("--tmpfs=/output:rw,nosuid,nodev,noexec,size=64m",source)
         wrapper=(WORKER/"run_candidate.py").read_text()
         self.assertIn("resource.RLIMIT_FSIZE",wrapper)
         self.assertIn("resource.RLIMIT_CPU",wrapper)
@@ -84,12 +139,16 @@ class WorkerLiveDockerTests(unittest.TestCase):
     def test_file_size_limit_and_wall_clock_timeout_are_enforced(self):
         oversize=run_own_fixture(LOCAL_IMAGE,"oversize-output")
         self.assertTrue(oversize["result"]["oversize_output_blocked"])
+        full=run_own_fixture(LOCAL_IMAGE,"bounded-output-volume")
+        self.assertTrue(full["result"]["total_directory_quota_blocked"])
+        self.assertLess(full["result"]["files_written"],3)
         runaway=run_own_fixture(LOCAL_IMAGE,"infinite-loop",wall_seconds=3)
         self.assertEqual(runaway["status"],"BLOCKED_WALL_CLOCK_TIMEOUT")
         self.assertEqual(runaway["paid_model_calls"],0)
 
     def test_runner_does_not_leave_its_containers(self):
-        p=subprocess.run(["docker","ps","-a","--filter",
+        from src.runner.ifc_worker import _docker_cli
+        p=subprocess.run([_docker_cli(),"ps","-a","--filter",
              "name=bim-bench-own-worker","--format","{{.ID}}"],
              capture_output=True,text=True,timeout=15)
         self.assertEqual(p.returncode,0)

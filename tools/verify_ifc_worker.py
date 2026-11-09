@@ -17,7 +17,7 @@ def main()->int:
                         help="Always fail until approved real generated-code worker and billing broker exist")
     opts=parser.parse_args()
     cases=("trusted-native-smoke","edit-wall","deny-attacks",
-           "oversize-output","infinite-loop")
+           "oversize-output","bounded-output-volume","infinite-loop")
     passed={}
     try:
         for case in cases:
@@ -49,7 +49,7 @@ def main()->int:
         p=opts.output_json
         if p.is_symlink() or p.exists() or not p.parent.is_dir():
             raise SystemExit("Refuse overwrite/symlink/missing evidence directory")
-        with p.open("x",encoding="utf-8") as file:
+        with p.open("x",encoding="utf-8",newline="\n") as file:
             file.write(text)
     print(text,end="")
     if data["status"]!="CURATED_WORKER_OWN_SYNTHETIC_TESTS_PASS":
