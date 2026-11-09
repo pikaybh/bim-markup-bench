@@ -1,0 +1,84 @@
+{
+  "OBB_IoU_Hungarian_equivalence_verified": false,
+  "code_sha256": {
+    "candidate_target_sha256": "d03979e998dab2bf067bdcb028b0cd9277b4ca8c19f622c5d7a0c2cf2d8ddbfc",
+    "strict_pass_sha256": "1fb3d77fc7e151065c9c1ff7b363b34893047d2c149ca2aa3163f4a687bd7ec3",
+    "topology_comparison_sha256": "85430c34ae041f8fde33c5580cad89e4b18475a59d8473fae5bea725ff9ec3d8"
+  },
+  "current_code_evidence": {
+    "create_match_by_nearest_center": true,
+    "explicit_hungarian_match_absent_in_candidate_target": true,
+    "paper_and_independent_threshold_equal": true,
+    "strict_pass_additional_collateral_veto": true,
+    "topology_uses_guid_based_set_deltas": true
+  },
+  "evaluator_version": "independent-ifc-three-axis-v0.1",
+  "greedy_topology_node_alignment_equivalence_verified": false,
+  "independent_default_sample_count": 384,
+  "metric_origin": "independent-reimplementation",
+  "next_required_evidence": [
+    "author_owned_evaluator_source_revision_license_and_entrypoint",
+    "identical_IFC_prediction_output_regraded_in_both_evaluators",
+    "sample_allocation_and_rng_parity",
+    "OBB_Hungarian_matching_and_topology_alignment_parity",
+    "official_task_GT_and_individual_asset_rights"
+  ],
+  "official_evaluator_source_commit_verified": false,
+  "official_metric_numerical_equivalence": false,
+  "official_tasks_scored": 0,
+  "paid_model_calls": 0,
+  "paper_examples_scalar_only": [
+    {
+      "paper_example": "H1_perfect",
+      "raw_ifc_recomputed": false,
+      "rounded_axis_inputs": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scalar_mean": 1.0,
+      "scalar_strict_pass": true,
+      "source": "paper_reported_rounded_component_scores"
+    },
+    {
+      "paper_example": "H2_partial_topology",
+      "raw_ifc_recomputed": false,
+      "rounded_axis_inputs": [
+        1.0,
+        1.0,
+        0.47
+      ],
+      "scalar_mean": 0.8233333333333333,
+      "scalar_strict_pass": false,
+      "source": "paper_reported_rounded_component_scores"
+    },
+    {
+      "paper_example": "H3_partial_geometry_semantics",
+      "raw_ifc_recomputed": false,
+      "rounded_axis_inputs": [
+        0.38,
+        0.72,
+        1.0
+      ],
+      "scalar_mean": 0.7000000000000001,
+      "scalar_strict_pass": false,
+      "source": "paper_reported_rounded_component_scores"
+    },
+    {
+      "paper_example": "H4_failure",
+      "raw_ifc_recomputed": false,
+      "rounded_axis_inputs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scalar_mean": 0.0,
+      "scalar_strict_pass": false,
+      "source": "paper_reported_rounded_component_scores"
+    }
+  ],
+  "paper_sampling_per_object_upper_bound": 4096,
+  "same_strict_threshold": true,
+  "sampling_schedule_equivalence_verified": false,
+  "status": "BLOCKED_OFFICIAL_SCORER_UNVERIFIED"
+}
