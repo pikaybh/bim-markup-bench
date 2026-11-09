@@ -37,7 +37,7 @@ def manual_ifc_reference(
     source:Path,destination:Path,operation:str,
     *,target_guid:str="",new_guid:str="",storey_guid:str="",
     first_guid:str="",second_guid:str="",
-    height:float=0.0,delta_x:float=0.0,
+    height:float=0.0,thickness:float=0.2,delta_x:float=0.0,
     start:tuple[float,float,float]=(0.,5.,0.),
     end:tuple[float,float,float]=(4.,5.,0.),
 ):
@@ -65,6 +65,10 @@ def manual_ifc_reference(
     elif operation=="CREATE_WALL":
         if not new_guid or not storey_guid:
             raise ValueError("Missing reference wall GUID or storey")
+        wall_height=3.0 if height==0 else height
+        if not (math.isfinite(wall_height) and 0<wall_height<10000
+                and math.isfinite(thickness) and 0<thickness<10000):
+            raise ValueError("Independent oracle wall dimensions must be finite positive")
         storey=_entity(model,storey_guid)
         if not storey.is_a("IfcBuildingStorey"):
             raise ValueError("Reference target is not storey")
@@ -84,7 +88,7 @@ def manual_ifc_reference(
                                                 name="Created by declarative XML")
         wall.GlobalId=new_guid
         representation=ifcopenshell.api.geometry.add_wall_representation(
-            model,context=contexts[0],length=length,height=3.0,thickness=0.2)
+            model,context=contexts[0],length=length,height=wall_height,thickness=thickness)
         ifcopenshell.api.geometry.assign_representation(model,product=wall,
                                                         representation=representation)
         frame=np.eye(4,dtype=np.float64)
