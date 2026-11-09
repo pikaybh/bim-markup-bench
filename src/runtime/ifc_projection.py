@@ -9,7 +9,6 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import dataclass
-from decimal import Decimal
 import hashlib
 import math
 from pathlib import Path
@@ -73,10 +72,19 @@ def _id(entity: Any) -> str:
 
 
 def _number(x: float) -> str:
-    if not math.isfinite(float(x)):
-        raise UnsupportedIFCGeometry("Nonfinite IFC dimensions or placement")
-    d=Decimal(str(float(x)))
-    return "0" if d==0 else format(d.normalize(),"f")
+    """Bounded decimal projection of SI metres for the pinned XML schema.
+
+    IFC placement matrices introduce near-zero floating-point noise. The
+    libxml2 xs:decimal validator can reject long float expansions. Nine
+    fractional digits limit rounding error to at most 0.5 nanometres,
+    below the 1 micrometre geometry tolerance. Never emit exponent or -0.
+    Values too large for this restricted projection fail closed.
+    """
+    value=float(x)
+    if not math.isfinite(value) or abs(value)>100_000_000:
+        raise UnsupportedIFCGeometry("Nonfinite/out-of-range IFC dimensions or placement")
+    lexical=format(value,".9f").rstrip("0").rstrip(".")
+    return "0" if lexical in ("", "-0") else lexical
 
 
 def _sub(parent: etree._Element, tag: str, attributes: dict[str,str]) -> None:
