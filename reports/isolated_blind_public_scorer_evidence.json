@@ -1,0 +1,68 @@
+{
+  "G2_G3_live_pilot_gate": "BLOCKED",
+  "GT_mount_only_in_grader": true,
+  "agent_arm_label_provided_to_scorer": false,
+  "agent_python_executed": false,
+  "candidate_task_count": 3,
+  "cases": [
+    {
+      "all_three_axes_one_for_self_check": true,
+      "condition": "reference_self_check",
+      "model_calls": 0,
+      "official_tasks_scored": 0,
+      "run_id": "dade8a6e5b0098cdd502403b",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "task_id": "DOR-CRE-TOP-A-002"
+    },
+    {
+      "all_three_axes_one_for_self_check": true,
+      "condition": "reference_self_check",
+      "model_calls": 0,
+      "official_tasks_scored": 0,
+      "run_id": "d07ad5c1fe4319a561198f45",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "task_id": "WAL-DEL-TOP-A-001"
+    },
+    {
+      "all_three_axes_one_for_self_check": true,
+      "condition": "reference_self_check",
+      "model_calls": 0,
+      "official_tasks_scored": 0,
+      "run_id": "f3555e7ec368a3040eddce9e",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true,
+      "task_id": "WAL-UPD-TOP-A-001"
+    },
+    {
+      "all_three_axes_one_for_self_check": null,
+      "condition": "unchanged_source",
+      "model_calls": 0,
+      "official_tasks_scored": 0,
+      "run_id": "3c7e36fbc6d3bd5dfe11907d",
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false,
+      "task_id": "WAL-UPD-TOP-A-001"
+    },
+    {
+      "all_three_axes_one_for_self_check": null,
+      "condition": "invalid_output",
+      "model_calls": 0,
+      "official_tasks_scored": 0,
+      "run_id": "bdd355d8323e711dc25c85c6",
+      "status": "INVALID_OUTPUT_IFC",
+      "strict_pass": false,
+      "task_id": "WAL-UPD-TOP-A-001"
+    }
+  ],
+  "evaluator_version": "independent-ifc-three-axis-v0.1",
+  "hidden_reference_target_or_path_published": false,
+  "image_id": "sha256:fb16105fe69bb87f0ab15390a14733e2c734f0f13e774b1767c57f5b296dbf8d",
+  "metric_origin": "independent-reimplementation",
+  "official_evaluator_equivalent": false,
+  "official_tasks_scored": 0,
+  "real_model_provider_calls": 0,
+  "smoke_case_count": 5,
+  "status": "INDEPENDENT_BLIND_PUBLIC_IFC_REFERENCE_SMOKE_PASS"
+}

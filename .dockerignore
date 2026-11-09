@@ -1,0 +1,18 @@
+# Fail-closed Docker build contexts for the three audited IFC image recipes.
+# Never send cached public/hidden IFC, .env, Git history or experiment output
+# to Docker Desktop, even if a future COPY accidentally references them.
+**
+!docker/
+!docker/ifc_worker/
+!docker/ifc_worker/Dockerfile
+!docker/ifc_worker/Dockerfile.amd64
+!docker/ifc_worker/requirements.lock
+!docker/ifc_worker/requirements.amd64.lock
+!docker/ifc_worker/trusted_probe.py
+!docker/ifc_worker/run_candidate.py
+!docker/ifc_blind_grader/
+!docker/ifc_blind_grader/Dockerfile.amd64
+!docker/ifc_blind_grader/worker.py
+!src/
+!src/evaluation/
+!src/evaluation/*.py
