@@ -1,0 +1,36 @@
+{
+  "D0_sha256": "b6cfb8e55b1552746625d0a36e390773e67440777baad2992151b2764d61028d",
+  "GT_loaded": false,
+  "I0_sha256": "16b11c4ab82d3f42602fb4ae42b60608c6962280a07a35a9876650f2f864b134",
+  "LLM_provider_calls": 0,
+  "all_input_information_equivalence_proven": false,
+  "critical_room_geometry_visible_in_xml": true,
+  "existing_native_relations_preserved": true,
+  "fixed_task_sample_modified": false,
+  "full_file_sha_equal": false,
+  "manually_resolved_public_prompt_geometry": true,
+  "native_IFC_parity": true,
+  "native_source_relation_inventory_count": 25,
+  "new_IFC_files_committed": false,
+  "new_wall_bbox_max_m": [
+    4.625,
+    5.40775,
+    2.8
+  ],
+  "new_wall_bbox_min_m": [
+    0.175,
+    5.23275,
+    0.0
+  ],
+  "new_wall_native_connects_count": 0,
+  "new_wall_native_space_boundary_count": 0,
+  "new_wall_storey_containment_updates": 1,
+  "new_wall_storey_containment_verified": true,
+  "official_scores": 0,
+  "prompt_room_visible_in_direct_markup": true,
+  "source_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "space_boundary_reconstruction_verified": false,
+  "status": "BLOCKED_FULL_TASK_TOPOLOGY_ORACLE_PENDING_AFTER_MANUAL_GEOMETRY_PARITY_PASS",
+  "task_id": "WAL-CRE-SPA-A-003",
+  "this_is_an_approved_full_task_oracle": false
+}
