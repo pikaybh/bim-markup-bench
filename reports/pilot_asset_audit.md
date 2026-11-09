@@ -36,7 +36,7 @@ The smallest Wall example is WAL-CRE-SPA-A-003 (223,015 bytes):
 - Original data were not edited and the IFC binary contents are NOT
   tracked in the Git repository
 
-The remaining **29 pilot tasks** have NOT been byte-verified.
+At the initial November 7 audit, **29 pilot tasks** remained unverified. The expanded November 9 check below reduces the outstanding count to **18**.
 Verified operation/classes: IfcWall CREATE, IfcSlab CREATE,
 IfcWindow CREATE, IfcDoor DELETE, IfcColumn DELETE, and
 IfcSpace UPDATE (two tasks sharing one pair). All six types
@@ -47,6 +47,54 @@ it contains only task IDs, operation/class, byte sizes, boolean
 checks, scrubbed status codes and aggregate counts. It deliberately
 does not include GT paths, target GUIDs, natural-language task prompts
 or any IFC file bytes.
+
+## November 9, 2026: limited incremental public IFC audit
+
+A deterministic fixed-candidate, bounded-download command was added:
+tools/cache_small_pilot_ifcs.py. It defaults to a no-network plan and
+requires an explicit --apply and --limit-bytes (max 50,000,000 bytes).
+Only files referenced by the previously selected 36 task IDs can be
+fetched from immutable model revision
+0ae510bd21865def4e2c6145c1244f01a1e3bcb9. The tool verifies
+the pinned Git blob SHA-1 or LFS SHA-256 and exact file size before
+exclusive publication, without overwriting any existing source/GT
+bytes. Temporary unverified downloads are removed upon failure.
+
+For this partial audit, the maximum batch allowance was 8,000,000
+bytes. The tool actually downloaded **17 files / 4,349,025 bytes**
+and validated 11 additional small candidate tasks. Together with
+the earlier six pairs, the Windows scratch cache now contains
+**29 distinct fixed-pilot IFC assets / 5,907,101 bytes**, supporting
+**18/36 tasks** across all six target classes. The other **18/36
+candidate tasks** remain without verified input/GT bytes. The entire
+36-task candidate references 52 unique files (1,564,261,830 bytes).
+
+These 18 native checks confirm verified file bytes and basic per-target
+class/identity/delta consistency only. They do NOT score the
+natural-language instruction, full shape/semantic/topology quality,
+the official BIM-Edit metric or actual LLM model outputs.
+Full 324-task source/GT content and individual model redistribution
+rights have not been independently audited.
+
+Reproduce the controlled download on a local machine where trusted
+public benchmark metadata and ignored data/ifc scratch are available:
+
+    python -m tools.cache_small_pilot_ifcs --limit-bytes 8000000
+    python -m tools.cache_small_pilot_ifcs --limit-bytes 8000000 --apply
+    python -m tools.audit_pilot_assets --enforce
+
+The first command is offline planning only. The second explicitly
+allows a bounded, hash-verified fetch. The third must exit 2 because
+the complete study release gate remains blocked. Never move the GT
+scratch into either agent-visible work area.
+
+Windows 11 (Python 3.12.2; IfcOpenShell 0.8.4.post1) full regression
+after the limited cache change: **295 tests executed, 283 passed,
+12 environment/platform skips, 0 failures**. Linux Docker Desktop
+was returned to its original stopped state after the previous
+isolated x64 worker verification. The data-audit strict --enforce
+gate still returned 2 (BLOCKED), with zero paid calls and zero
+official task scores.
 
 ## Auditor behavior and trust boundary
 

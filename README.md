@@ -243,10 +243,11 @@ remain disabled. See docs/IFC_WORKER.md for build, tests and blockers.
 ## G0 actual pilot IFC bytes, limited offline audit (#3, partial)
 
 The fixed 36-task candidate references 52 unique source/GT IFC files
-(about 1.56 GB). Six small pilot pairs totaling ~1.56MB have been byte-verified
-against pinned remote Git objects and parsed as real IFC4X3. They
-cover seven pilot task IDs spanning all six target classes; the
-remaining 29 candidate tasks remain unverified. New offline tooling audits
+(about 1.56 GB). After a bounded November 9 fetch, 29 distinct small IFC assets
+totalling ~5.91MB have been byte-verified against pinned remote Git
+objects and parsed as real IFC4X3. They cover 18 of the 36 fixed
+candidate task IDs spanning all six target classes; the remaining
+18 tasks still require real input/GT verification. New offline tooling audits
 any local files without downloading or exposing reference GT to the
 model; see reports/pilot_asset_audit.md. No full dataset or paid LLM
 experiments were executed.
@@ -260,3 +261,12 @@ denied network and child processes, 32MiB file limit, 64MiB
 total-output tmpfs quota, and forced loop termination. Full
 model-generated Python, official benchmark scoring and paid runs
 remain blocked. See docs/IFC_WORKER.md.
+
+### Bounded public IFC cache (#3)
+
+The fixed pilot candidate can be cached with a mandatory byte budget.
+Run python -m tools.cache_small_pilot_ifcs --limit-bytes 8000000
+to plan only; add --apply to download from the immutable public
+model revision with strict Git/LFS hash and size checks. GT stays in
+ignored local trusted audit scratch, not agent-visible files.
+No official scores or paid model runs are performed.
