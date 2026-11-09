@@ -234,6 +234,37 @@ class PinnedPilotAssetAuditTests(unittest.TestCase):
         self.assertFalse(result["all_pilot_bytes_and_deltas_verified"])
         self.assertEqual(result["official_scores_computed"],0)
 
+    def test_realistic_pilot_30_if_all_required_inputs_cached(self):
+        from src.data.bim_edit import read_tasks,repo_asset_path
+        if not (ROOT/"data/tasks.jsonl").is_file():
+            self.skipTest("Pinned task metadata not cached")
+        new_ids={
+            "ROM-DEL-DIR-R-004","WAL-CRE-DIR-R-004",
+            "WAL-UPD-DIR-R-004","WAL-DEL-TOP-R-003",
+            "ROM-CRE-SPA-R-003","SLB-DEL-SPA-R-003",
+            "SLB-DEL-TOP-R-003","WAL-UPD-DIR-R-003",
+            "WAL-UPD-SPA-R-003","WAL-UPD-TOP-R-003",
+            "SLB-UPD-TOP-R-003","ROM-DEL-DIR-R-002",
+        }
+        by_id={r["task_id"]:r for r in read_tasks(ROOT/"data/tasks.jsonl")}
+        files={repo_asset_path(by_id[tid][key])
+               for tid in new_ids
+               for key in ("input_ifc","ground_truth_ifc")}
+        if not all((ROOT/"data/ifc"/name).is_file() for name in files):
+            self.skipTest("12 optional large task source/GT pairs absent")
+        result=audit_fixed_candidate(
+            task_file=ROOT/"data/tasks.jsonl",
+            tree_file=ROOT/"data/bim_edit_remote_tree.json",
+            local_root=ROOT/"data/ifc",
+        )
+        self.assertGreaterEqual(result["native_delta_verified_tasks"],30)
+        present={x["task_id"] for x in result["tasks"]
+                 if x["native_target_delta_verified"]}
+        self.assertTrue(new_ids.issubset(present))
+        self.assertEqual(result["official_scores_computed"],0)
+        self.assertEqual(result["paid_model_calls"],0)
+        self.assertFalse(result["full_324_IFC_content_audit_complete"])
+
     def test_local_single_pilot_case_is_verified_if_cached(self):
         expected=ROOT/"data/ifc/simple/01_gt.ifc"
         if not expected.is_file():

@@ -270,3 +270,12 @@ to plan only; add --apply to download from the immutable public
 model revision with strict Git/LFS hash and size checks. GT stays in
 ignored local trusted audit scratch, not agent-visible files.
 No official scores or paid model runs are performed.
+
+### Latest 2026-11-09 fixed pilot source/GT audit (G0 #3)
+
+After two additional bounded public IFC cache batches, **30/36**
+fixed pilot tasks (42 unique IFC files; 87.35MB) now have hash-verified
+source/GT bytes and a basic native target object change check. The
+remaining six tasks need about 1.48GB of additional data and remain
+unverified. Strict dataset/research gates stay BLOCKED. This is NOT
+an official model pass rate. Details: reports/pilot_asset_audit.md.
