@@ -19,6 +19,7 @@ import ifcopenshell.validate
 
 from src.runtime.compiler import compile_declarative_xml
 from src.runtime.binder import allocate_new_ifc_guid
+from src.runtime.space_metadata_gate import verify_native_space_metadata
 from tests.test_declarative_space_partition_compiler import (
     make_space_split_state,NEW_FAR_ID,
 )
@@ -82,6 +83,13 @@ def verified_paired_space_partition()->dict:
                 or len(a.by_guid(far).BoundedBy)!=6):
             raise ValueError("Compiled native Space partition relation counts unexpected")
         existing=ifcopenshell.open(str(source))
+        # Independently authored I0 must preserve source SpaceType and Psets
+        # without cloning instance-specific references to the far room.
+        d_meta=verify_native_space_metadata(existing,a,refs[2],far)
+        i_meta=verify_native_space_metadata(
+            existing,ifcopenshell.open(str(i0)),refs[2],far)
+        if d_meta!=i_meta:
+            raise ValueError("D0/I0 native source Space metadata policies diverged")
         original_boundaries={x.GlobalId for x in existing.by_type("IfcRelSpaceBoundary")}
         actual_boundaries={x.GlobalId for x in a.by_type("IfcRelSpaceBoundary")}
         if not original_boundaries <= actual_boundaries:
@@ -117,6 +125,8 @@ def verified_paired_space_partition()->dict:
             "new_ifc_schema_error_categories":0,
             "new_space_independent_type_assignment_proven":len(a.by_guid(far).IsTypedBy)>0,
             "new_space_independent_psets_proven":len(a.by_guid(far).IsDefinedBy)>0,
+            "source_type_pset_qto_semantics_verified_equal_between_arms":True,
+            "source_space_metadata_gate":d_meta.report(),
             "model_interpreted_natural_language":False,
             "input_information_equivalence_proven":False,
             "manual_source_only_geometry_resolution":True,
