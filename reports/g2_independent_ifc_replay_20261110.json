@@ -1,0 +1,179 @@
+{
+  "G2_G3_live_official_pilot_ready": false,
+  "all_input_output_IFC_unchanged": true,
+  "all_repeats_identical": true,
+  "all_scorer_outputs_match_frozen_json_schema": true,
+  "author_executable_scorer_obtained": false,
+  "author_published_csv_used_as_training_target": false,
+  "case_count": 8,
+  "cases": [
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+        "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b"
+      ],
+      "case": "update_identical_reference",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 0,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "c72fe3a423513849171200edfb9f9853ae84c723280572589828a77b437cde1a",
+      "score_fields_present": true,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true
+    },
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58"
+      ],
+      "case": "update_wrong_height",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 1,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "a0ee643408cab8fc9822ed5b646f33698b89e59f494562ab056a0f60e8dfca24",
+      "score_fields_present": true,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false
+    },
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+        "aa9af3105b8efb2e6fb0050ef5d76a3a8b89409dc18514e7986c35e5a80e1ee0"
+      ],
+      "case": "update_missing_space_boundary",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 1,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "45db41c510a133eed9acfb82ba617885a2493957a02a96eb6d873960c1873032",
+      "score_fields_present": true,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false
+    },
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+        "7aa5540f6d6d12c03502e3b9e9c560d5c41f787d4b16fba199f5f048a322822c"
+      ],
+      "case": "update_collateral_door_deletion",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 3,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "0b6eb60c452f494e25bd9debab27293c61784c2817f03f98ba195ffbde5de159",
+      "score_fields_present": true,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": false
+    },
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+        "1acf6cdc7041920367dc8be2a81d64778e91d9bc52a9e4e92815357be8bde21b"
+      ],
+      "case": "invalid_candidate_bytes",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 1,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "9dbb8ce998bd03563892754983f49a7a153c57fbd121e7ca11a90decfcf5ca71",
+      "score_fields_present": true,
+      "status": "INVALID_OUTPUT_IFC",
+      "strict_pass": false
+    },
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "b6fcdb5eef8707ecccb06597b6b074fcf209a541a6cda2ab6e19534df4c585c3",
+        "45ce588399ad209556ec0ed962c2475e103248027081222ac27d0d9ec853097c"
+      ],
+      "case": "create_equivalent_new_guid",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 0,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "c2ea5b5f9cc0e332d03d282ab14347b438cd9003989fe92c2c52f73614a6417c",
+      "score_fields_present": true,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true
+    },
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "eec461363a35201c8160bdef6a625bec1966c9321c8c7783017f98196271e9af",
+        "eec461363a35201c8160bdef6a625bec1966c9321c8c7783017f98196271e9af"
+      ],
+      "case": "delete_window_correct",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 0,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "376e4ce0656776d45669dea03652ff684872a14130303e71deb542443e26d0ec",
+      "score_fields_present": true,
+      "status": "INDEPENDENT_IFC_SCORED",
+      "strict_pass": true
+    },
+    {
+      "IFC_triplet_sha256": [
+        "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+        "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+        "6d47bbe0d2ef6b67e3443b47da9c8cf51e62978e50aa838472b88737e735123e"
+      ],
+      "case": "changed_ifc_length_units",
+      "exact_repeated_result_equal": true,
+      "failure_code_count": 1,
+      "local_three_axis_version": "independent-ifc-three-axis-v0.1",
+      "metric_origin": "independent-reimplementation",
+      "official_equivalence_proven": false,
+      "official_tasks_scored": 0,
+      "record_sha256": "2ed6c8c0eddac69be2f06271b61ed739621a36e2de32a79de634e8b084eb71ac",
+      "score_fields_present": false,
+      "status": "BLOCKED_IFC_UNIT_MISMATCH",
+      "strict_pass": false
+    }
+  ],
+  "frozen_case_catalog_sha256": "678c469281e41de368be1ba4f3f27b8dd1fdaa393278a7b0b15e7952137b5806",
+  "frozen_scorer_implementation_source_sha256": {
+    "bim_edit_scorer.py": "d6e4ccb238a7deaf9bcd6c9d6b0998cfaeb367c1d3036ebd332e503327c12288",
+    "geometry_metrics.py": "47b9bc8d6e6a32f62cb15b15397a57c814d750ad71c897cd929f20b65bb14e2c",
+    "semantic_diff.py": "c67afc9db5f3d647a3e20a17b2970565d0429e97d7761a40557ea4cb6f5f6f33",
+    "topology_metrics.py": "4cddaacc54ff0f0d88ec044212a4185721c57399771bc71928139d373f70ff90"
+  },
+  "geometry_sample_count": 384,
+  "geometry_seed": 2607,
+  "geometry_version": "independent-ifc-surface-cd-v0.1",
+  "metric_origin": "independent-reimplementation",
+  "model_provider_calls": 0,
+  "official_benchmark_tasks_scored": 0,
+  "official_equivalence_numerically_verified": false,
+  "own_reference_ifc_sha256": "bb93df8babb11612f4c81f60145a7cf520ef7e19f3abfe49731bf45d92ccda6b",
+  "own_source_ifc_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+  "own_synthetic_nonpassing_or_blocked_cases": 5,
+  "own_synthetic_strict_pass_cases": 3,
+  "public_benchmark_ifc_or_GT_loaded": false,
+  "published_per_task_csv_regraded": false,
+  "repetitions_per_case": 2,
+  "score_schema_sha256": "06aecf3712faeaf64681c5b5bd7ada41c95c89c9566aea6e18e1f2c62bcdac4d",
+  "scorer_version": "independent-ifc-three-axis-v0.1",
+  "status": "OWN_INDEPENDENT_IFC_REPLAY_VERIFIED_OFFICIAL_PARITY_BLOCKED"
+}
