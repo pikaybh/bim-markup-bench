@@ -211,7 +211,7 @@ def _original_native_relations_preserved(before:dict,after:dict,
     return 2
 
 
-def verify_prompt_grounded_spatial_wall(root:Path=ROOT)->dict:
+def verify_prompt_grounded_spatial_wall(root:Path=ROOT, *, physical_observer=None)->dict:
     """Run real D0 XML -> IFC and independent I0 Python -> IFC, source only."""
     public,original,digest=verified_public_input(root)
     spec=parse_public_wall_spec(public["instruction"])
@@ -340,9 +340,13 @@ def verify_prompt_grounded_spatial_wall(root:Path=ROOT)->dict:
         overlap=float(np.prod(intrusion))
         if overlap<=0.5:
             raise WallPromptGateBlocked("Original room and authored Wall do not overlap")
+        if physical_observer is not None:
+            # Trusted offline callback: original and ephemeral candidate IFCs
+            # are never supplied to a tested model or included in its context.
+            physical_evidence=physical_observer(original,d0,i0,public["instruction"])
     if _sha(original)!=digest:
         raise WallPromptGateBlocked("Public input IFC mutated during manual source oracle")
-    return {
+    result={
         "status":"PASS_PROMPT_GROUNDED_WALL_TWO_JOINS_SOURCE_ONLY_FULL_ORACLE_BLOCKED",
         "frozen_task_id":CASE,
         "source_ifc_sha256":digest,
@@ -381,6 +385,9 @@ def verify_prompt_grounded_spatial_wall(root:Path=ROOT)->dict:
         "paid_spend_authorized":False,
         "G1_G2_G3_experiment_unblocked":False,
     }
+    if physical_observer is not None:
+        result["trusted_source_only_native_spatial_evidence"]=physical_evidence
+    return result
 
 
 def main()->int:
