@@ -200,7 +200,8 @@ def _changed_native_entity_classes(before,after,expected_location_id:int)->int:
 
 
 def _compile_pair_from_public_prompt(
-    public:dict,original:Path,digest:str,move:PublicWindowMove
+    public:dict,original:Path,digest:str,move:PublicWindowMove,
+    *, physical_observer=None,
 )->dict:
     native=ifcopenshell.open(str(original))
     win,opening,_,local_dx=_native_prompt_bindings(native,move)
@@ -294,9 +295,12 @@ def _compile_pair_from_public_prompt(
                         "Native Window or Opening displacement does not match public prompt")
             _changed_native_entity_classes(native,result,point_id)
             produced.append(sha256(result_path.read_bytes()).hexdigest())
+        if physical_observer is not None:
+            # Trusted offline evidence hook. Read-only, never model-visible.
+            mesh_evidence=physical_observer(original,d0,i0,public["instruction"])
     if _sha(original)!=digest:
         raise PromptGroundedOracleBlocked("Original public IFC changed during manual G1 pair")
-    return {
+    output={
         "status":"PASS_PROMPT_DERIVED_SOURCE_ONLY_PAIR_OFFICIAL_TASK_STILL_UNVERIFIED",
         "task_id":FROZEN_TASK,
         "original_public_ifc_sha256":digest,
@@ -335,12 +339,16 @@ def _compile_pair_from_public_prompt(
         "paid_provider_charges_USD":None,
         "G1_G2_G3_live_release_authorized":False,
     }
+    if physical_observer is not None:
+        output["source_only_physical_postcondition_evidence"]=mesh_evidence
+    return output
 
 
-def verify_prompt_grounded_window_pair(root:Path=ROOT)->dict:
+def verify_prompt_grounded_window_pair(root:Path=ROOT, *, physical_observer=None)->dict:
     public,original,digest=verified_public_task_and_source(root)
     move=parse_public_window_move(public["instruction"])
-    return _compile_pair_from_public_prompt(public,original,digest,move)
+    return _compile_pair_from_public_prompt(
+        public,original,digest,move,physical_observer=physical_observer)
 
 
 def main()->int:
