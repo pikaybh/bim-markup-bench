@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:s="urn:bim-markup-bench:space-semantics:v0.2-candidate"
+           targetNamespace="urn:bim-markup-bench:space-semantics:v0.2-candidate"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="0.2-candidate">
+  <xs:annotation>
+    <xs:documentation>
+      Research-only, separately versioned candidate for *read-only source*
+      IfcSpace type/instance Pset visibility. NOT frozen toy v0.1,
+      NOT approved LLM vocabulary, NOT native BIXML/IFC lossless format,
+      and NOT a protocol amendment or authority to score new tasks.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="Sha256"><xs:restriction base="xs:string">
+    <xs:pattern value="[0-9a-f]{64}"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="IfcGuid"><xs:restriction base="xs:string">
+    <xs:pattern value="[0-9A-Za-z_$]{22}"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="NonemptyName"><xs:restriction base="xs:string">
+    <xs:minLength value="1"/><xs:maxLength value="255"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="ValueText"><xs:restriction base="xs:string">
+    <xs:maxLength value="1024"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="ValueType"><xs:restriction base="xs:string">
+    <xs:enumeration value="IfcIdentifier"/>
+    <xs:enumeration value="IfcLabel"/>
+    <xs:enumeration value="IfcText"/>
+    <xs:enumeration value="IfcBoolean"/>
+    <xs:enumeration value="IfcInteger"/>
+    <xs:enumeration value="IfcReal"/>
+  </xs:restriction></xs:simpleType>
+
+  <xs:complexType name="SourceType">
+    <xs:attribute name="relationGuid" type="s:IfcGuid" use="required"/>
+    <xs:attribute name="typeGuid" type="s:IfcGuid" use="required"/>
+    <xs:attribute name="name" type="s:NonemptyName" use="required"/>
+    <xs:attribute name="predefinedType" type="s:NonemptyName" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SourceProperty">
+    <xs:attribute name="name" type="s:NonemptyName" use="required"/>
+    <xs:attribute name="valueType" type="s:ValueType" use="required"/>
+    <xs:attribute name="value" type="s:ValueText" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SourcePset">
+    <xs:sequence><xs:element name="Property" type="s:SourceProperty"
+                              minOccurs="1" maxOccurs="64"/></xs:sequence>
+    <xs:attribute name="relationGuid" type="s:IfcGuid" use="required"/>
+    <xs:attribute name="psetGuid" type="s:IfcGuid" use="required"/>
+    <xs:attribute name="name" type="s:NonemptyName" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SourcePsets">
+    <xs:sequence><xs:element name="PropertySet" type="s:SourcePset"
+                              minOccurs="0" maxOccurs="24"/></xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Quantities">
+    <xs:attribute name="status" use="required" fixed="NONE_IN_SOURCE" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="SourceSpace">
+    <xs:sequence>
+      <xs:element name="Type" type="s:SourceType" minOccurs="0"/>
+      <xs:element name="PropertySets" type="s:SourcePsets"/>
+      <xs:element name="Quantities" type="s:Quantities"/>
+    </xs:sequence>
+    <xs:attribute name="localId" type="xs:ID" use="required"/>
+    <xs:attribute name="ifcGuid" type="s:IfcGuid" use="required"/>
+    <xs:attribute name="name" type="s:NonemptyName" use="required"/>
+    <xs:attribute name="longName" type="s:ValueText" use="optional"/>
+    <xs:attribute name="compositionType" type="s:NonemptyName" use="required"/>
+    <xs:attribute name="predefinedType" type="s:NonemptyName" use="required"/>
+    <xs:attribute name="status" type="xs:string" fixed="SOURCE_OBSERVED" use="required"/>
+  </xs:complexType>
+
+  <xs:element name="SpaceSemantics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Space" type="s:SourceSpace" minOccurs="1" maxOccurs="512"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required" fixed="0.2-candidate"/>
+      <xs:attribute name="sourceModelSha256" type="s:Sha256" use="required"/>
+      <xs:attribute name="baseSchema" type="xs:string" use="required" fixed="toy:v0.1"/>
+      <xs:attribute name="ifcSchema" type="xs:string" use="required" fixed="IFC4X3"/>
+      <xs:attribute name="policy" type="xs:string" use="required" fixed="SOURCE_OBSERVATION_ONLY"/>
+    </xs:complexType>
+    <xs:unique name="uniqueSourceGuid">
+      <xs:selector xpath="s:Space"/><xs:field xpath="@ifcGuid"/>
+    </xs:unique>
+    <xs:unique name="uniqueSourceLocal">
+      <xs:selector xpath="s:Space"/><xs:field xpath="@localId"/>
+    </xs:unique>
+  </xs:element>
+</xs:schema>
