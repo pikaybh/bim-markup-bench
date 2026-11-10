@@ -193,17 +193,23 @@ def run_offline_own_generated_candidate(
     No host exec/eval/import of candidate code. Real model and paid pilot
     entry points remain blocked in src.runner.sandbox.execute_untrusted_candidate.
     """
-    script_digest=candidate_content_sha256(script_bytes)
-    if expected_script_sha256!=script_digest:
-        raise DockerIsolationError("Candidate bytes changed after trusted capture")
     if not isinstance(seed,int) or isinstance(seed,bool) or not 0<=seed<=2**31-1:
         raise DockerIsolationError("Invalid replay seed")
     if not isinstance(wall_seconds,int) or not 3<=wall_seconds<=MAX_WALL_SECONDS:
         raise DockerIsolationError("Invalid worker wall timeout")
+    # Shared strict OWN-only admission is enforced BEFORE checking/using
+    # Docker. The binder only hashes opaque code; it neither imports nor
+    # executes a candidate or exposes any other IFC source path.
+    from src.runner.worker_admission import bind_own_candidate,WorkerAdmissionError
+    try:
+        admitted=bind_own_candidate(
+            script_bytes,expected_script_sha256,_sha(OWN_SOURCE),
+            arm="imperative_python",seed=seed)
+    except (WorkerAdmissionError,OSError) as exc:
+        raise DockerIsolationError("OWN source/candidate admission rejected") from exc
+    script_digest=admitted.script_sha256
+    source_digest=admitted.source_sha256
     _verify_local_image(image_id)
-    if OWN_SOURCE.is_symlink() or not OWN_SOURCE.is_file():
-        raise DockerIsolationError("OWN synthetic fixture unavailable")
-    source_digest=_sha(OWN_SOURCE)
     run_id=sha256(f"g2-own-only|{source_digest}|{script_digest}|{seed}".encode()).hexdigest()[:24]
     container_name="bim-bench-own-dynamic-"+uuid.uuid4().hex[:12]
     with tempfile.TemporaryDirectory(prefix="bim-bench-owned-dynamic-") as directory:
