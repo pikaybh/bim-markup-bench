@@ -1,0 +1,38 @@
+{
+  "both_arms_cover_source_native_type_pset": false,
+  "core_source_text_context_equal": true,
+  "direct_arm_operations": [
+    "read_text",
+    "patch_text",
+    "rewrite_xml_text"
+  ],
+  "fixed_sample_modified": false,
+  "frozen_task_id": "WAL-CRE-SPA-A-003",
+  "ground_truth_loaded": false,
+  "immutable_input_ifc_bytes_preserved": true,
+  "imperative_arm_operations": [
+    "submit_python_text"
+  ],
+  "imperative_extra_api_reference_present": true,
+  "input_source_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "model_context_equal_fields": {
+    "public_instruction": true,
+    "public_task_id": true,
+    "source_input_ifc_sha256": true,
+    "toy_xml_spec_bytes": true,
+    "xml_projection_bytes": true
+  },
+  "model_information_equivalence_proven": false,
+  "model_provider_calls": 0,
+  "native_space_type_and_reference_semantics_eligible": false,
+  "native_type_and_psets_omitted_from_xml_projection": true,
+  "official_evaluator_used": false,
+  "official_scores": 0,
+  "shared_toy_spec_sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+  "shared_xml_projection_sha256": "63256657f665c268ada86a8f8344a9629c66747e5f0b029378d05de6c2b8c02f",
+  "source_ifc_space_association_count": 0,
+  "source_ifc_space_instance_pset_relation_count": 2,
+  "source_ifc_space_type_relation_count": 1,
+  "status": "PASS_CORE_TEXT_CONTEXT_EQUAL_FULL_SEMANTIC_PARITY_BLOCKED",
+  "xml_source_byte_sha256": "63256657f665c268ada86a8f8344a9629c66747e5f0b029378d05de6c2b8c02f"
+}

@@ -22,6 +22,9 @@ from src.runtime.space_partition_preflight import (
 )
 from src.runtime.space_partition_sandbox import sandbox_native_space_split
 from src.runtime.ifc_snapshot import snapshot_source
+from src.runtime.space_metadata_gate import (
+    preflight_source_room_semantics,verify_native_space_metadata,
+)
 from src.runtime.transaction import stage_and_commit
 from src.runtime.ifc_projection import project_ifc
 from src.runtime.xml_parser import parse_xml
@@ -210,6 +213,9 @@ def compile_bounded_space_state(source:Path, destination:Path,
         original=ifcopenshell.open(str(source))
         candidate=ifcopenshell.open(str(joined))
         room_guid=before.graph.by_id()[room_id].ifc_guid
+        # Existing instance identity/type/Pset/QTO must not be silently
+        # duplicated or reclassified by the geometric Space split.
+        preflight_source_room_semantics(original,room_guid)
         wall_guid=after.graph.by_id()[wall_id].ifc_guid
         far_guid=after.graph.by_id()[far_id].ifc_guid
         plan=plan_rectangular_space_partition(original,candidate,room_guid,wall_guid)
@@ -247,6 +253,8 @@ def compile_bounded_space_state(source:Path, destination:Path,
             _root_integrity_space_split(
                 source,stage,plan,wall_result.operations,far_guid,
                 split_result["added_boundary_guids"])
+            verify_native_space_metadata(original,ifcopenshell.open(str(stage)),
+                                         room_guid,far_guid)
 
         stage_and_commit(destination,writer,validator)
         if hashlib.sha256(source.read_bytes()).hexdigest()!=before_sha:

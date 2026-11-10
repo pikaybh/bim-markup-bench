@@ -27,6 +27,7 @@ from src.runtime.transaction import TransactionError,stage_and_commit
 from src.runtime.geometry_ops import edit_wall_thickness,wall_thickness_eligibility
 from src.runtime.semantic_graph import graph_diff
 from src.runtime.space_partition_preflight import UnsupportedSpacePartition
+from src.runtime.space_metadata_gate import SpaceMetadataPolicyError
 from src.runtime.topology_ops import (
     plan_topology_changes,apply_topology_change,verify_topology_result,
 )
@@ -339,6 +340,6 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             projected.source.graph_fingerprint,output.graph_fingerprint,
             plan,untouched,(),destination,True)
     except (MarkupParseError,BindingError,SourceIntegrityError,
-            UnsupportedIFCMutation,UnsupportedSpacePartition,
+            UnsupportedIFCMutation,UnsupportedSpacePartition,SpaceMetadataPolicyError,
             TransactionError,CompilerError) as exc:
         raise CompilerError(type(exc).__name__+": "+str(exc)[:220]) from exc
