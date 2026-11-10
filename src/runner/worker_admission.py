@@ -24,6 +24,7 @@ from src.runner.generated_candidate import candidate_content_sha256
 from src.runner.ifc_worker import OWN_SOURCE,_docker_cli,_host_docker_env
 from src.runner.sandbox import canonical_run_id
 from src.runner.docker_isolation import DockerIsolationError
+from src.runner.local_docker_transport import _local_docker_endpoint,LocalDockerTransportError
 
 IMAGE_ID=re.compile(r"^sha256:[0-9a-f]{64}$")
 SOURCE_DIGEST=re.compile(r"^[0-9a-f]{64}$")
@@ -133,22 +134,6 @@ def _blocked(status:str,*,daemon:bool=False,image_present:bool|None=None,
         linux,user,label,False,False,False,False)
 
 
-def _local_docker_endpoint()->str:
-    # Docker's contexts and DOCKER_HOST are caller-mutable; force a local
-    # engine endpoint instead. Do not accidentally attest remote daemons.
-    if os.name=="nt":
-        return "npipe:////./pipe/dockerDesktopLinuxEngine"
-    if sys.platform=="darwin":
-        # Docker Desktop defaults to a socket under the current *user*.
-        # We deliberately do not discover arbitrary contexts from ~/.docker.
-        home=Path.home()
-        socket=home/".docker"/"run"/"docker.sock"
-        if not socket.is_socket() or socket.is_symlink():
-            raise WorkerAdmissionError("Mac local Docker Desktop socket unavailable")
-        return "unix://"+str(socket)
-    raise WorkerAdmissionError("Unapproved OS for this local worker audit")
-
-
 def _local_readonly_docker(argv:list[str])->subprocess.CompletedProcess:
     binary=_docker_cli()
     env=_host_docker_env()
@@ -232,7 +217,7 @@ def verify_local_own_worker(image_id:str, *,
             "READY_FOR_TRUSTED_OWN_PROBE_ONLY_NOT_GENERATED_PYTHON",
             True,True,normalized_arch,True,True,True,True,
             False,False,False,False)
-    except (ValueError,TypeError,KeyError,WorkerAdmissionError,subprocess.SubprocessError):
+    except (ValueError,TypeError,KeyError,WorkerAdmissionError,LocalDockerTransportError,subprocess.SubprocessError):
         return _blocked("BLOCKED_UNVERIFIED_LOCAL_DOCKER_OR_IMAGE_RESPONSE")
 
 

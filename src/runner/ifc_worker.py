@@ -19,6 +19,9 @@ import tempfile
 import uuid
 
 from src.runner.docker_isolation import DockerIsolationError
+from src.runner.local_docker_transport import (
+    LocalDockerTransportError,pinned_local_docker_argv,
+)
 
 BASE = Path(__file__).resolve().parents[2]
 OWN_SOURCE = BASE / "tests/fixtures/synthetic/input.ifc"
@@ -124,9 +127,16 @@ def _host_docker_env()->dict[str,str]:
 
 def _run(args:list[str], timeout:int=12)->subprocess.CompletedProcess:
     env=_host_docker_env()
-    fixed=[_docker_cli() if i==0 and arg=="docker" else arg
-           for i,arg in enumerate(args)]
-    return subprocess.run(fixed,capture_output=True,text=True,
+    cli=_docker_cli()
+    if (not isinstance(args,list) or len(args)<2
+            or args[0] not in ("docker",cli)):
+        raise DockerIsolationError("Only the trusted local Docker CLI is allowed")
+    fixed=[cli,*args[1:]]
+    try:
+        anchored=pinned_local_docker_argv(fixed)
+    except LocalDockerTransportError as exc:
+        raise DockerIsolationError("Docker control must use fixed local engine") from exc
+    return subprocess.run(anchored,capture_output=True,text=True,
                           timeout=timeout,env=env)
 
 def _sha(path:Path)->str:

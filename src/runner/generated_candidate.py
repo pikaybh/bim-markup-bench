@@ -27,6 +27,9 @@ import time
 import uuid
 
 from src.runner.docker_isolation import DockerIsolationError
+from src.runner.local_docker_transport import (
+    LocalDockerTransportError,pinned_local_docker_argv,
+)
 from src.runner.ifc_worker import (
     _docker_cli, _inspect_config, _sha, _verify_local_image, _run,
     OWN_SOURCE,
@@ -62,7 +65,11 @@ def _limited_attach(container_id:str,timeout_seconds:int)->subprocess.CompletedP
     if not re.fullmatch(r"[a-f0-9]{64}",container_id):
         raise DockerIsolationError("Untrusted container ID")
     from src.runner.ifc_worker import _host_docker_env
-    argv=[_docker_cli(),"start","--attach",container_id]
+    try:
+        argv=pinned_local_docker_argv(
+            [_docker_cli(),"start","--attach",container_id])
+    except LocalDockerTransportError as exc:
+        raise DockerIsolationError("Candidate attach must use fixed local Docker engine") from exc
     child=subprocess.Popen(
         argv,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,env=_host_docker_env(),
