@@ -1,6 +1,8 @@
 # BIM-Edit official evaluator availability audit (G0 Issue #4)
 
-**STATUS: PAPER FORMULA AUDITED; EXECUTABLE OFFICIAL SCORER NOT YET VERIFIED OR INSTALLED. ISSUE REMAINS OPEN.**
+**STATUS (updated 2026-11-10): AUTHOR-PUBLISHED SCORED RUN REPORTS VERIFIED IN PINNED HF RELEASE; EXECUTABLE OFFICIAL SCORER STILL NOT VERIFIED/INSTALLED. ISSUE REMAINS OPEN.**
+
+**Critical updated audit:** [G0 official runs public release 2026-11-10](G0_official_public_runs_release_20261110.md). The exact HF `BIM-Edit-runs` revision `9241abc9b3b4efa3906c0bdabcf3321f1558192f` contains **7 model run folders with evaluation reports** (1,417 file entries), including per-task CSV and aggregate JSON for each model. The original paper's 2026 claim that evaluator **source code** is under MIT is **distinct** from verified executable access. No official source-code revision/entrypoint has been established. The older statement below about only model-output folders is historical and must not be used as the latest release inventory.
 
 ## Primary sources reviewed (no PDF downloaded or altered)
 
