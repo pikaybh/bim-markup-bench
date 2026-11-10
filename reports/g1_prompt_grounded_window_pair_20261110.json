@@ -1,0 +1,70 @@
+{
+  "G1_G2_G3_live_release_authorized": false,
+  "IFC_full_file_d0_i0_equal": true,
+  "LLM_calls": 0,
+  "all_existing_IfcRoot_ids_preserved": true,
+  "all_existing_relationships_preserved": true,
+  "changed_native_entity_count_per_arm": 1,
+  "common_model_facing_observation_byte_identical": true,
+  "common_model_visible_text_fields": {
+    "public_instruction": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "ff98d90daafa34a4979fc942d4d3477a0128526a2cf7c918c419473319078efe",
+      "unicode_codepoints": 163,
+      "utf8_bytes": 163
+    },
+    "public_task_id": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "3071162d4661a8beea2b863a19262947e53af455649abb73ecc642386be5038e",
+      "unicode_codepoints": 17,
+      "utf8_bytes": 17
+    },
+    "source_ifc_digest": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "69a9358a4669f7823133bd8cacfe385d628b3a79e0936899d863413c38f2eede",
+      "unicode_codepoints": 64,
+      "utf8_bytes": 64
+    },
+    "v01_schema_spec": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+      "unicode_codepoints": 7381,
+      "utf8_bytes": 7383
+    },
+    "v01_source_xml": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "18cee5a4c9f6d86e3545adb0bdcd281526ad1cf59595ccd580f93887a9118d17",
+      "unicode_codepoints": 4486,
+      "utf8_bytes": 4486
+    }
+  },
+  "d0_ifc_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+  "declarative_operation": "MOVE_OPENING_WITH_FILLING",
+  "developer_chosen_result_exposed_to_either_model": false,
+  "full_official_reference_IFC_task_success_proven": false,
+  "i0_ifc_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+  "imperative_only_api_notes_utf8_bytes": 1113,
+  "independent_native_D0_I0_observation_parity": true,
+  "input_ifc_bytes_unchanged": true,
+  "model_facing_tool_and_feedback_parity_approved": false,
+  "model_provider_token_counts": null,
+  "official_evaluator_executed": false,
+  "official_tasks_scored": 0,
+  "only_changed_native_entity_class": "IfcCartesianPoint",
+  "original_public_ifc_sha256": "c533767f850a7ba01b73caf4467fae7cc886807a72a900d65cd480e7b877bcc9",
+  "output_IFC_committed": false,
+  "paid_provider_charges_USD": null,
+  "public_instruction_sha256": "ff98d90daafa34a4979fc942d4d3477a0128526a2cf7c918c419473319078efe",
+  "public_window_and_opening_ids_resolved_without_grader_target_field": true,
+  "source_only_deterministic_instruction_pair_demonstrated": true,
+  "source_task_target_metadata_read_for_authoring": false,
+  "status": "PASS_PROMPT_DERIVED_SOURCE_ONLY_PAIR_OFFICIAL_TASK_STILL_UNVERIFIED",
+  "task_id": "WIN-UPD-DIR-A-002",
+  "window_and_opening_native_world_move_matches_instruction": true,
+  "world_move_read_from_public_instruction": true
+}
