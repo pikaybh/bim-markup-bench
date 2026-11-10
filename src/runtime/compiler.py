@@ -51,7 +51,7 @@ class CompileReport:
             "status":("COMMITTED_SCOPED_IFC4X3_TOPOLOGY_EDIT"
                       if any(op.operation in (
                           "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
-                          "ADD_WALL_CONNECTION","REMOVE_WALL_CONNECTION"
+                          "ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION"
                       ) for op in self.operations)
                       else "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"),
             "scope":"Bounded wall CRUD/dimensions and native IFC hosted/window/connection topology",
@@ -75,7 +75,7 @@ def _root_unchanged_integrity(source_path:Path,result_path:Path,
     b=ifcopenshell.open(str(result_path))
     previous={x.GlobalId:x for x in a.by_type("IfcRoot")}
     current={x.GlobalId:x for x in b.by_type("IfcRoot")}
-    created={x.ifc_guid for x in actions if x.operation in ("CREATE_WALL","ADD_WALL_CONNECTION")}
+    created={x.ifc_guid for x in actions if x.operation in ("CREATE_WALL","ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION")}
     deleted={x.ifc_guid for x in actions if x.operation in ("DELETE_WALL","DELETE_WINDOW","REMOVE_WALL_CONNECTION")}
     if any(x.operation=="DELETE_WINDOW" for x in actions):
         for op in actions:
@@ -186,7 +186,7 @@ def _validate_typed_result(result:Path,source:IFCSnapshot,
         if op.operation in ("DELETE_WALL","DELETE_WINDOW","REMOVE_WALL_CONNECTION"):
             if existing is not None:
                 raise CompilerError("Deleted native IFC entity/relationship still exists")
-        elif op.operation in ("ADD_WALL_CONNECTION","MOVE_OPENING_WITH_FILLING"):
+        elif op.operation in ("ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","MOVE_OPENING_WITH_FILLING"):
             if existing is None:
                 raise CompilerError("New/moved native IFC relationship or opening missing")
         else:
@@ -218,7 +218,7 @@ def _validate_typed_result(result:Path,source:IFCSnapshot,
     _verify_only_opening_placement_point_changed(source.source_file,result,operations)
     if previous_graph is not None and any(op.operation in (
         "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
-        "ADD_WALL_CONNECTION","REMOVE_WALL_CONNECTION"
+        "ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION"
     ) for op in operations):
         verify_topology_result(
             ifcopenshell.open(str(source.source_file)),file,
@@ -256,7 +256,7 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             "DELETE_WINDOW":2,
             "REMOVE_WALL_CONNECTION":2,
             "DELETE_WALL":3,
-            "ADD_WALL_CONNECTION":4,
+            "ADD_WALL_CONNECTION":4,"ADD_WALL_PATH_CONNECTION":4,
         }
         plan=tuple(sorted((*wall_plan,*topology_plan),
                           key=lambda op:(priorities[op.operation],op.xml_id)))
@@ -301,7 +301,7 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
                     delete_standalone_wall(model,op.ifc_guid)
                 elif op.operation in (
                     "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
-                    "ADD_WALL_CONNECTION","REMOVE_WALL_CONNECTION"
+                    "ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION"
                 ):
                     apply_topology_change(model,op,before.graph,after.graph,after_doc)
                 else:

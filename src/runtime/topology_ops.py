@@ -173,6 +173,92 @@ def _meet_at_endpoint(left_attrs:dict,right_attrs:dict)->bool:
     return any(math.dist(a,b)<TOL for a in pa for b in pb)
 
 
+def _verified_new_wall_t_path(host_node,branch_node,source_f)->str:
+    """Classify a bounded old-host-path to new-wall endpoint surface contact.
+
+    The XML `Connects` declaration is a *relationship state*, not an
+    instruction to blindly create a join. Native geometry and explicit
+    source/new identity must establish the right-angled T connection.
+    The fixed IFC4X3 source subtype is IfcRelConnectsPathElements.
+    """
+    if (host_node.kind!="Wall" or branch_node.kind!="Wall" or
+            host_node.provenance!="existing_source" or
+            branch_node.provenance!="deterministic_new"):
+        raise UnsupportedIFCMutation("T join requires existing host and newly authored Wall")
+    a=dict(host_node.attributes); b=dict(branch_node.attributes)
+    if a["level"]!=b["level"]:
+        raise UnsupportedIFCMutation("T join crosses IFC building storeys")
+    host=by_guid_or_none(source_f,host_node.ifc_guid)
+    if host is None or not host.is_a("IfcWall"):
+        raise UnsupportedIFCMutation("Existing T-host wall missing")
+    hp=np.array((float(a["x1"]),float(a["y1"])))
+    hq=np.array((float(a["x2"]),float(a["y2"])))
+    bp=np.array((float(b["x1"]),float(b["y1"])))
+    bq=np.array((float(b["x2"]),float(b["y2"])))
+    hl=float(np.linalg.norm(hq-hp)); bl=float(np.linalg.norm(bq-bp))
+    host_th=float(a["thickness"]); branch_th=float(b["thickness"])
+    if (hl<0.5 or bl<0.5 or not math.isfinite(host_th+branch_th)
+            or host_th<=0 or branch_th<=0):
+        raise UnsupportedIFCMutation("T join has invalid host/new wall dimensions")
+    hu=(hq-hp)/hl; bu=(bq-bp)/bl
+    if abs(float(np.dot(hu,bu)))>1e-6:
+        raise UnsupportedIFCMutation("Wall connection must join actual endpoints or a perpendicular T path")
+    hn=np.array((-hu[1],hu[0]))
+    # Host geometry is checked against native IFC, not only XML annotations.
+    try:
+        settings=ifcopenshell.geom.settings()
+        settings.set(settings.USE_WORLD_COORDS,True)
+        shape=ifcopenshell.geom.create_shape(settings,host)
+        vertices=np.asarray(shape.geometry.verts,dtype=np.float64).reshape(-1,3)
+    except Exception as exc:
+        raise UnsupportedIFCMutation("T host native mesh unavailable") from exc
+    if len(vertices)<8 or not np.isfinite(vertices).all():
+        raise UnsupportedIFCMutation("T host has untrusted mesh geometry")
+    hproj=(vertices[:,:2]-hp)@hu
+    nproj=(vertices[:,:2]-hp)@hn
+    if (abs(float(hproj.min()))>1e-5 or abs(float(hproj.max())-hl)>1e-5
+            or abs(float(nproj.min())+host_th/2.)>1e-5
+            or abs(float(nproj.max())-host_th/2.)>1e-5):
+        raise UnsupportedIFCMutation("T host native wall geometry disagrees with XML path")
+    if (abs(float(vertices[:,2].min())-float(a["z1"]))>1e-5
+            or abs(float(vertices[:,2].max())-(float(a["z1"])+float(a["height"])))>1e-5
+            or abs(float(b["z1"])-float(a["z1"]))>1e-5
+            or abs(float(b["z2"])-float(a["z2"]))>1e-5
+            or abs(float(b["height"])-float(a["height"]))>1e-5):
+        raise UnsupportedIFCMutation("T join requires matching native wall vertical span")
+    accepted=[]
+    for end,label,toward in ((bp,"ATSTART",bu),(bq,"ATEND",-bu)):
+        pos=end-hp
+        signed=float(pos@hn)
+        station=float(pos@hu)
+        # New wall occupies one native strip measured from its axis to the
+        # left; the entire face must lie strictly inside the host's path.
+        other_station=station+branch_th*float(np.dot(np.array((-bu[1],bu[0])),hu))
+        if (abs(abs(signed)-host_th/2.)>1e-5
+                or min(station,other_station)<=1e-5
+                or max(station,other_station)>=hl-1e-5
+                or float(np.dot(toward,hn))*signed<=0):
+            continue
+        # Prevent connecting a new wall through an existing hosted void.
+        intersects_opening=False
+        for rel in host.HasOpenings:
+            opening=rel.RelatedOpeningElement
+            try:
+                void_shape=ifcopenshell.geom.create_shape(settings,opening)
+                void_pts=np.asarray(void_shape.geometry.verts,dtype=np.float64).reshape(-1,3)
+            except Exception as exc:
+                raise UnsupportedIFCMutation("T host opening collision cannot be checked") from exc
+            lo,hi=float(((void_pts[:,:2]-hp)@hu).min()),float(((void_pts[:,:2]-hp)@hu).max())
+            if max(min(station,other_station),lo)<min(max(station,other_station),hi)-1e-6:
+                intersects_opening=True
+                break
+        if not intersects_opening:
+            accepted.append(label)
+    if len(accepted)!=1:
+        raise UnsupportedIFCMutation("T join must contact one unobstructed host side at a new Wall endpoint")
+    return accepted[0]
+
+
 def _native_endpoint_guids(old_graph,new_graph,xml_endpoints:str):
     a,b=xml_endpoints.split("|",1)
     graph=new_graph if a in new_graph.by_id() and b in new_graph.by_id() else old_graph
@@ -219,23 +305,30 @@ def plan_topology_changes(
         if edge.relation!="connects":
             continue
         lhs=new[edge.source];rhs=new[edge.target]
-        if not _meet_at_endpoint(dict(lhs.attributes),dict(rhs.attributes)):
-            raise UnsupportedIFCMutation("Wall connection must join actual endpoints")
         if lhs.id==rhs.id or dict(lhs.attributes)["level"]!=dict(rhs.attributes)["level"]:
             raise UnsupportedIFCMutation("Invalid native wall connection endpoint/storey")
+        if lhs.provenance=="existing_source" and rhs.provenance=="deterministic_new":
+            branch_end=_verified_new_wall_t_path(lhs,rhs,f)
+            operation="ADD_WALL_PATH_CONNECTION"
+            reason="native T path junction: host ATPATH, new Wall "+branch_end
+        elif _meet_at_endpoint(dict(lhs.attributes),dict(rhs.attributes)):
+            operation="ADD_WALL_CONNECTION"
+            reason="typed meeting-endpoint wall connection"
+        else:
+            raise UnsupportedIFCMutation("Wall connection must join actual endpoints or verified T path")
         a_guid,b_guid=lhs.ifc_guid,rhs.ifc_guid
         if _one_connection(f,a_guid,b_guid) is not None:
             raise UnsupportedIFCMutation("Wall connection already exists in IFC input")
         rel_guid=connection_guid(before_doc.source_model_sha256,a_guid,b_guid)
         if by_guid_or_none(f,rel_guid) is not None:
-            raise UnsupportedIFCMutation("Generated IfcRelConnectsElements GUID collision")
+            raise UnsupportedIFCMutation("Generated native wall relation GUID collision")
         line=next((r.span.line for r in after_doc.relations
                    if r.kind=="Connects" and
                    r.attrs().get("from")==edge.source and r.attrs().get("to")==edge.target),None)
         if line is None:
             raise UnsupportedIFCMutation("Wall connection declaration lacks an exact XML source node")
-        result.append(Mutation("ADD_WALL_CONNECTION",edge.source+"|"+edge.target,
-               rel_guid,line,("from","to"),"typed meeting-endpoint wall connection"))
+        result.append(Mutation(operation,edge.source+"|"+edge.target,
+               rel_guid,line,("from","to"),reason))
     for edge in delta.removed_edges:
         if edge.relation!="connects":
             continue
@@ -293,6 +386,21 @@ def apply_topology_change(f,op:Mutation,old_graph,new_graph,after_doc):
             raise UnsupportedIFCMutation("Duplicate wall connection")
         f.create_entity("IfcRelConnectsElements",GlobalId=op.ifc_guid,
                         RelatingElement=a,RelatedElement=b)
+    elif op.operation=="ADD_WALL_PATH_CONNECTION":
+        _,_,host_guid,branch_guid=_native_endpoint_guids(old_graph,new_graph,op.xml_id)
+        a=by_guid_or_none(f,host_guid); b=by_guid_or_none(f,branch_guid)
+        if a is None or b is None or not a.is_a("IfcWall") or not b.is_a("IfcWall"):
+            raise UnsupportedIFCMutation("Cannot create T junction to missing IFC Walls")
+        if _one_connection(f,host_guid,branch_guid) is not None:
+            raise UnsupportedIFCMutation("Duplicate native T junction")
+        end=_verified_new_wall_t_path(
+            old_graph.by_id()[op.xml_id.split("|",1)[0]],
+            new_graph.by_id()[op.xml_id.split("|",1)[1]],
+            f)
+        f.create_entity("IfcRelConnectsPathElements",GlobalId=op.ifc_guid,
+                        RelatingElement=a,RelatedElement=b,
+                        RelatingConnectionType="ATPATH",RelatedConnectionType=end,
+                        RelatingPriorities=(),RelatedPriorities=())
     elif op.operation=="REMOVE_WALL_CONNECTION":
         _,_,a_guid,b_guid=_native_endpoint_guids(old_graph,new_graph,op.xml_id)
         rel=_one_connection(f,a_guid,b_guid)
@@ -321,7 +429,9 @@ def native_topology_inventory(f)->dict[str,tuple]:
             if not isinstance(lhs,tuple):lhs=(lhs,)
             a=tuple(sorted(x.GlobalId for x in lhs if x is not None and x.is_a("IfcRoot")))
             b=tuple(sorted(x.GlobalId for x in rhs if x is not None and x.is_a("IfcRoot")))
-            out[rel.GlobalId]=(relation_class,a,b)
+            concrete=(rel.is_a() if relation_class=="IfcRelConnectsElements"
+                      else relation_class)
+            out[rel.GlobalId]=(concrete,a,b)
     return out
 
 
@@ -350,6 +460,50 @@ def verify_topology_result(source_f,result_f,operations,old_graph,new_graph):
             permitted_created.add(op.ifc_guid)
             _,_,a,b=_native_endpoint_guids(old_graph,new_graph,op.xml_id)
             expected[op.ifc_guid]=("IfcRelConnectsElements",(a,),(b,))
+        elif op.operation=="ADD_WALL_PATH_CONNECTION":
+            permitted_created.add(op.ifc_guid)
+            _,_,a,b=_native_endpoint_guids(old_graph,new_graph,op.xml_id)
+            expected[op.ifc_guid]=("IfcRelConnectsPathElements",(a,),(b,))
+            relation=by_guid_or_none(result_f,op.ifc_guid)
+            if relation is None or not relation.is_a("IfcRelConnectsPathElements"):
+                raise UnsupportedIFCMutation("New native T junction has wrong relation class")
+            end=_verified_new_wall_t_path(
+                old_graph.by_id()[op.xml_id.split("|",1)[0]],
+                new_graph.by_id()[op.xml_id.split("|",1)[1]],
+                source_f)
+            if (str(relation.RelatingConnectionType)!="ATPATH"
+                    or str(relation.RelatedConnectionType)!=end
+                    or relation.ConnectionGeometry is not None
+                    or tuple(relation.RelatingPriorities)!=()
+                    or tuple(relation.RelatedPriorities)!=()):
+                raise UnsupportedIFCMutation("Native T path connection subtype/placement mismatch")
+            # Validate the actual saved wall mesh, not merely a declarative
+            # contact claim that a geometry writer could fail to realize.
+            branch_attrs=dict(new_graph.by_id()[op.xml_id.split("|",1)[1]].attributes)
+            bp=np.array((float(branch_attrs["x1"]),float(branch_attrs["y1"])))
+            bq=np.array((float(branch_attrs["x2"]),float(branch_attrs["y2"])))
+            vec=bq-bp
+            leng=float(np.linalg.norm(vec))
+            if leng<=TOL:
+                raise UnsupportedIFCMutation("Saved T branch Wall degenerate")
+            normal=np.array((-vec[1],vec[0]))/leng
+            depth=float(branch_attrs["thickness"])
+            corners=np.array((bp,bq,bp+normal*depth,bq+normal*depth))
+            exp_min=np.array((float(corners[:,0].min()),float(corners[:,1].min()),
+                              float(branch_attrs["z1"])))
+            exp_max=np.array((float(corners[:,0].max()),float(corners[:,1].max()),
+                              float(branch_attrs["z1"])+float(branch_attrs["height"])))
+            try:
+                settings=ifcopenshell.geom.settings()
+                settings.set(settings.USE_WORLD_COORDS,True)
+                shape=ifcopenshell.geom.create_shape(settings,relation.RelatedElement)
+                points=np.asarray(shape.geometry.verts,dtype=np.float64).reshape(-1,3)
+            except Exception as exc:
+                raise UnsupportedIFCMutation("Saved native T branch has no valid IFC shape") from exc
+            if (len(points)<8 or not np.isfinite(points).all()
+                    or not np.allclose(points.min(axis=0),exp_min,atol=1e-6,rtol=0)
+                    or not np.allclose(points.max(axis=0),exp_max,atol=1e-6,rtol=0)):
+                raise UnsupportedIFCMutation("Saved native T branch geometry differs from declarative Wall")
         elif op.operation=="REMOVE_WALL_CONNECTION":
             permitted_removed.add(op.ifc_guid)
         elif op.operation=="MOVE_OPENING_WITH_FILLING":
