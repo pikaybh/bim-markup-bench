@@ -113,7 +113,8 @@ def _update_native_rectangular_space_body(f,space,low,high):
         raise UnsupportedSpacePartition("Native Space profile update did not produce requested body")
 
 
-def sandbox_native_space_split(f,plan:SpacePartitionPreflight,*,source_sha:str):
+def sandbox_native_space_split(f,plan:SpacePartitionPreflight,*,source_sha:str,
+                               validated_new_space_guid:str|None=None):
     """Mutate IN-MEMORY candidate; caller writes only a TemporaryDirectory file.
 
     NOT a method callable by the markup-editing LLM or an advertised task
@@ -150,7 +151,14 @@ def sandbox_native_space_split(f,plan:SpacePartitionPreflight,*,source_sha:str):
     known={r.GlobalId:r for r in space.BoundedBy}
     if set(known)!={p.boundary_id for p in plan.boundary_patches}:
         raise UnsupportedSpacePartition("Source IFC SpaceBoundary identities changed")
-    new_guid=_allocate_guid("IfcSpace",source_sha,space.GlobalId,wall.GlobalId)
+    new_guid=(_allocate_guid("IfcSpace",source_sha,space.GlobalId,wall.GlobalId)
+              if validated_new_space_guid is None else validated_new_space_guid)
+    # Only a trusted binder can supply a GUID different from the sandbox
+    # prototype's deterministic reference identity. No arbitrary IFC IDs.
+    if (not isinstance(new_guid,str) or len(new_guid)!=22
+            or any(x not in "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_$"
+                   for x in new_guid)):
+        raise UnsupportedSpacePartition("Malformed bound new IFC Space GlobalId")
     try:
         f.by_guid(new_guid)
     except RuntimeError:

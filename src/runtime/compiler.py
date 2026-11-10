@@ -26,6 +26,7 @@ from src.runtime.ifc_mutations import (
 from src.runtime.transaction import TransactionError,stage_and_commit
 from src.runtime.geometry_ops import edit_wall_thickness,wall_thickness_eligibility
 from src.runtime.semantic_graph import graph_diff
+from src.runtime.space_partition_preflight import UnsupportedSpacePartition
 from src.runtime.topology_ops import (
     plan_topology_changes,apply_topology_change,verify_topology_result,
 )
@@ -51,10 +52,13 @@ class CompileReport:
             "status":("COMMITTED_SCOPED_IFC4X3_TOPOLOGY_EDIT"
                       if any(op.operation in (
                           "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
-                          "ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION"
+                          "ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION",
+                          "SPLIT_SPACE"
                       ) for op in self.operations)
                       else "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"),
-            "scope":"Bounded wall CRUD/dimensions and native IFC hosted/window/connection topology",
+            "scope":("Source-pinned bounded two-Space state diff with oriented first-level boundary reconciliation"
+                     if any(op.operation=="SPLIT_SPACE" for op in self.operations)
+                     else "Bounded wall CRUD/dimensions and native IFC hosted/window/connection topology"),
             "source_sha256":self.source_sha256,
             "result_sha256":self.result_sha256,
             "source_graph_fingerprint":self.source_graph_fingerprint,
@@ -242,6 +246,18 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
         before=bind_document(before_doc,projection=projected)
         # Intentional graph edits may differ from native *input* relations.
         after=bind_document(after_doc,projection=projected,verify_native_edges=False)
+        delta=graph_diff(before.graph,after.graph)
+        prior_nodes=before.graph.by_id()
+        new_nodes=after.graph.by_id()
+        if (any(prior_nodes[name].kind=="Space" for name in delta.changed_nodes)
+                or any(new_nodes[name].kind=="Space" for name in delta.added_nodes)):
+            # Preserve the source snapshot and the existing wall compiler as
+            # a reusable verified phase. Only a whole-document, narrowly
+            # verified declarative two-Space diff can enter this path.
+            from src.runtime.space_partition_compiler import compile_bounded_space_state
+            return compile_bounded_space_state(
+                source,destination,before_doc,after_doc,before,after,
+                compile_declarative_xml)
         wall_plan=plan_wall_mutations(before_doc,after_doc,before,after)
         model=ifcopenshell.open(str(source))
         delta=graph_diff(before.graph,after.graph)
@@ -323,5 +339,6 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             projected.source.graph_fingerprint,output.graph_fingerprint,
             plan,untouched,(),destination,True)
     except (MarkupParseError,BindingError,SourceIntegrityError,
-            UnsupportedIFCMutation,TransactionError,CompilerError) as exc:
+            UnsupportedIFCMutation,UnsupportedSpacePartition,
+            TransactionError,CompilerError) as exc:
         raise CompilerError(type(exc).__name__+": "+str(exc)[:220]) from exc
