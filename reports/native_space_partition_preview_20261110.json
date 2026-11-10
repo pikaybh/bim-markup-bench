@@ -1,0 +1,62 @@
+{
+  "declarative_xml_compiler_space_split_supported": false,
+  "existing_ifc_root_guids_preserved": true,
+  "existing_native_space_boundary_guids_preserved": true,
+  "existing_oriented_surface_reconciliation_validated": true,
+  "expected_total_boundary_count_after_split": 13,
+  "far_room_bbox_max": [
+    4.625,
+    6.025,
+    2.8
+  ],
+  "far_room_bbox_min": [
+    0.175,
+    5.40775,
+    0.0
+  ],
+  "far_room_volume_m3": 7.690935,
+  "far_space_boundary_count": 6,
+  "fixed_36_sample_changed": false,
+  "fixed_public_task_id": "WAL-CRE-SPA-A-003",
+  "ground_truth_loaded": false,
+  "independent_python_space_split_parity_verified": false,
+  "keep_near_count": 2,
+  "native_ifc_writes_performed": true,
+  "native_ifc_written_only_to_disposable_temp_dir": true,
+  "native_joined_input_sha256": "aa7cca89a704eda15bd0bd75ea5d5f98bebbaf2ff8eff4e2c14aaa5a861cc59a",
+  "native_new_space_property_sets_verified": false,
+  "native_new_space_type_assignment_verified": false,
+  "native_partition_preview_sha256": "3df7e51ea416c403f51751667beef42e1cecbfc1af0a4b1c1ae2b7387100a08e",
+  "near_room_bbox_max": [
+    4.625,
+    5.23275,
+    2.8
+  ],
+  "near_room_bbox_min": [
+    0.175,
+    2.9,
+    0.0
+  ],
+  "near_room_volume_m3": 29.066065,
+  "near_space_boundary_count": 7,
+  "new_ifc_space_boundaries_committed": false,
+  "new_native_ifc_space_count": 1,
+  "new_native_space_boundary_count": 6,
+  "new_partition_wall_face_orientations_verified": true,
+  "new_schema_error_categories": 0,
+  "official_scores": 0,
+  "official_task_succeeded": false,
+  "original_boundary_count": 7,
+  "original_room_volume_m3": 38.9375,
+  "original_space_identity_preserved": true,
+  "paid_model_calls": 0,
+  "partition_wall_volume_m3": 2.1805,
+  "pinned_original_input_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "preview_schema_error_count": 4,
+  "rehome_far_count": 1,
+  "required_new_partition_boundary_count": 2,
+  "saved_ifc_reopened_and_geometry_verified": true,
+  "source_schema_error_count": 6,
+  "split_both_count": 4,
+  "status": "PASS_NATIVE_TEMPORARY_SPACE_PARTITION_NOT_XML_AGENT_TASK"
+}
