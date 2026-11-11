@@ -31,6 +31,9 @@ from src.runtime.space_metadata_gate import SpaceMetadataPolicyError
 from src.runtime.topology_ops import (
     plan_topology_changes,apply_topology_change,verify_topology_result,
 )
+from src.runtime.hosted_door_delete import (
+    preflight_door_opening_deletion, verify_scoped_door_delete_output,
+)
 
 
 class CompilerError(ValueError):
@@ -52,8 +55,8 @@ class CompileReport:
         return {
             "status":("COMMITTED_SCOPED_IFC4X3_TOPOLOGY_EDIT"
                       if any(op.operation in (
-                          "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
-                          "ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION",
+                          "DELETE_WINDOW","DELETE_HOSTED_DOOR_OPENING",
+                          "MOVE_OPENING_WITH_FILLING","ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION",
                           "SPLIT_SPACE"
                       ) for op in self.operations)
                       else "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"),
@@ -78,6 +81,16 @@ def _root_unchanged_integrity(source_path:Path,result_path:Path,
     """Fail for unexpected changes to IFC root entities and their IDs."""
     a=ifcopenshell.open(str(source_path))
     b=ifcopenshell.open(str(result_path))
+    if (len(actions)==1 and actions[0].operation=="DELETE_HOSTED_DOOR_OPENING"):
+        pair_op=actions[0]
+        door_id,opening_id=pair_op.xml_id.split("|",1)
+        # Resolve the original native opening from the Door's source link.
+        door=by_guid_or_none(a,pair_op.ifc_guid)
+        if door is None or not door.is_a("IfcDoor") or len(door.FillsVoids)!=1:
+            raise CompilerError("Deleted Door has no unique original Opening")
+        opening_guid=door.FillsVoids[0].RelatingOpeningElement.GlobalId
+        pair=preflight_door_opening_deletion(a,pair_op.ifc_guid,opening_guid)
+        return verify_scoped_door_delete_output(a,b,pair)
     previous={x.GlobalId:x for x in a.by_type("IfcRoot")}
     current={x.GlobalId:x for x in b.by_type("IfcRoot")}
     created={x.ifc_guid for x in actions if x.operation in ("CREATE_WALL","ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION")}
@@ -185,6 +198,12 @@ def _validate_typed_result(result:Path,source:IFCSnapshot,
     if actual.source_sha256==source.source_sha256 and operations:
         raise CompilerError("Expected change but output IFC byte hash is unchanged")
     file=ifcopenshell.open(str(result))
+    if (len(operations)==1
+            and operations[0].operation=="DELETE_HOSTED_DOOR_OPENING"):
+        # Full native root/membership/geometry comparison, including
+        # owned properties, one deleted SpaceBoundary and host void closure.
+        _root_unchanged_integrity(source.source_file,result,operations)
+        return
     expected_guid=set(node.ifc_guid for node in amended_graph.nodes)
     for op in operations:
         existing=by_guid_or_none(file,op.ifc_guid)
@@ -270,7 +289,7 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             "CREATE_WALL":0,
             "UPDATE_WALL_HEIGHT":1,"UPDATE_WALL_THICKNESS":1,
             "MOVE_OPENING_WITH_FILLING":1,
-            "DELETE_WINDOW":2,
+            "DELETE_WINDOW":2,"DELETE_HOSTED_DOOR_OPENING":2,
             "REMOVE_WALL_CONNECTION":2,
             "DELETE_WALL":3,
             "ADD_WALL_CONNECTION":4,"ADD_WALL_PATH_CONNECTION":4,
@@ -317,8 +336,8 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
                 elif op.operation=="DELETE_WALL":
                     delete_standalone_wall(model,op.ifc_guid)
                 elif op.operation in (
-                    "DELETE_WINDOW","MOVE_OPENING_WITH_FILLING",
-                    "ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION"
+                    "DELETE_WINDOW","DELETE_HOSTED_DOOR_OPENING",
+                    "MOVE_OPENING_WITH_FILLING","ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION"
                 ):
                     apply_topology_change(model,op,before.graph,after.graph,after_doc)
                 else:

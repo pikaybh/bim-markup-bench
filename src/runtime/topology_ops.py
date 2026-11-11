@@ -23,6 +23,9 @@ from src.runtime.binder import BindingEvidence
 from src.runtime.ifc_mutations import Mutation, UnsupportedIFCMutation, by_guid_or_none
 from src.runtime.semantic_graph import GraphDelta, GraphEdge
 from src.runtime.ifc_projection import _m
+from src.runtime.hosted_door_delete import (
+    preflight_door_opening_deletion, remove_scoped_door_opening,
+)
 
 REL_NAMESPACE=uuid.UUID("38502454-46ea-44b8-8e87-6c6a7e66c111")
 TOL=1e-6
@@ -278,6 +281,39 @@ def plan_topology_changes(
     old=before.graph.by_id(); new=after.graph.by_id()
     old_xml=before_doc.managed_by_id()
     new_xml=after_doc.managed_by_id()
+    removed_typed={name:old[name] for name in delta.removed_nodes
+                   if old[name].kind in ("Door","Opening")}
+    if removed_typed:
+        # The only supported Door/Opening operation is an exact paired,
+        # stand-alone declarative state deletion. A Door-only XML edit,
+        # Opening-only edit, unrelated geometry change or an extra
+        # relation delta is never silently accepted.
+        if (len(removed_typed)!=2 or len(delta.removed_nodes)!=2
+                or {n.kind for n in removed_typed.values()}!={"Door","Opening"}
+                or delta.added_nodes or delta.changed_nodes or delta.added_edges):
+            raise UnsupportedIFCMutation(
+                "Door+Opening delete must be an isolated exact paired state diff")
+        door_id=next(name for name,node in removed_typed.items()
+                     if node.kind=="Door")
+        opening_id=next(name for name,node in removed_typed.items()
+                        if node.kind=="Opening")
+        door=removed_typed[door_id]; opening=removed_typed[opening_id]
+        host_edges=[e for e in before.graph.edges
+                    if e.relation=="host_void" and e.target==opening_id]
+        fill_edges=[e for e in before.graph.edges
+                    if e.relation=="opening_fill" and e.target==door_id]
+        if (len(host_edges)!=1 or len(fill_edges)!=1
+                or fill_edges[0].source!=opening_id
+                or set(delta.removed_edges)!={host_edges[0],fill_edges[0]}):
+            raise UnsupportedIFCMutation(
+                "Door+Opening removal must preserve all other declarative relations")
+        preflight_door_opening_deletion(f,door.ifc_guid,opening.ifc_guid)
+        return (Mutation(
+            "DELETE_HOSTED_DOOR_OPENING",door_id+"|"+opening_id,
+            door.ifc_guid,old_xml[door_id].span.line,
+            ("Door","Opening","native_dependent_relations"),
+            "source-only hosted Door+Opening pair with exact native cascade"),
+        )
     result=[]
     for name in delta.removed_nodes:
         node=old[name]
@@ -348,7 +384,16 @@ def plan_topology_changes(
 
 def apply_topology_change(f,op:Mutation,old_graph,new_graph,after_doc):
     """Only apply operations already preflighted against immutable source."""
-    if op.operation=="DELETE_WINDOW":
+    if op.operation=="DELETE_HOSTED_DOOR_OPENING":
+        door_id,opening_id=op.xml_id.split("|",1)
+        old=old_graph.by_id()
+        if (door_id not in old or opening_id not in old
+                or old[door_id].ifc_guid!=op.ifc_guid):
+            raise UnsupportedIFCMutation("Paired native deletion lost source graph identity")
+        pair=preflight_door_opening_deletion(
+            f,op.ifc_guid,old[opening_id].ifc_guid)
+        remove_scoped_door_opening(f,pair)
+    elif op.operation=="DELETE_WINDOW":
         window,rel,opening=check_window_deletion(f,op.ifc_guid)
         # CRITICAL: removed IfcOpenShell SWIG entity wrappers MUST NOT be
         # dereferenced after remove_product; record all required GUIDs first.
