@@ -93,6 +93,11 @@ def plan_wall_mutations(
         if node.kind=="Window" and node.provenance=="existing_source":
             # #15 verifies and applies its fill relationship deletion.
             continue
+        if node.kind in ("Door","Opening") and node.provenance=="existing_source":
+            # Only the *paired* graph removal can be planned downstream by
+            # the dedicated conservative native #15 topology preflight.
+            # An unpaired/combined edit is rejected by that planner.
+            continue
         if node.kind!="Wall" or node.provenance!="existing_source":
             raise UnsupportedIFCMutation("Only safe removal of a standalone Wall or existing hosted Window is supported")
         changes.append(Mutation("DELETE_WALL",name,node.ifc_guid,
@@ -111,10 +116,19 @@ def plan_wall_mutations(
             raise UnsupportedIFCMutation("Unsupported IFC relationship addition")
     deleted_windows={name for name in graph_delta.removed_nodes
                      if old_by_id[name].kind=="Window"}
+    deleted_doors={name for name in graph_delta.removed_nodes
+                   if old_by_id[name].kind=="Door"}
+    deleted_openings={name for name in graph_delta.removed_nodes
+                      if old_by_id[name].kind=="Opening"}
     for edge in graph_delta.removed_edges:
         if edge.relation=="connects":
             continue
         if edge.relation=="opening_fill" and edge.target in deleted_windows:
+            continue
+        if edge.relation=="host_void" and edge.target in deleted_openings:
+            continue
+        if (edge.relation=="opening_fill" and edge.target in deleted_doors
+                and edge.source in deleted_openings):
             continue
         if (edge.relation,edge.target) not in allowed_removed:
             raise UnsupportedIFCMutation("Unsupported IFC relationship deletion")

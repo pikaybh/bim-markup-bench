@@ -1,7 +1,8 @@
-"""G1 #16: trusted source-only public Door+Opening DELETE capability gate.
+"""G1 #15: source-only D0/I0 Door+Opening native dependency slice.
 
-The report is a blocked scientific readiness audit, NOT a solved official
-task. No hidden GT is opened and no LLM code/model call is executed.
+Historical v0.1 report remains unchanged. This re-run emits v0.2 native
+evidence on the new explicitly bounded D0 compiler policy. Neither arm's
+developer-authored reference counts as official task success.
 """
 from __future__ import annotations
 
@@ -101,27 +102,31 @@ def _stage_and_probe_d0(original: Path, public: dict, guids: dict,
     ))
     if result["status"] != "ACCEPTED_VALID_XML":
         raise PublicDoorDeleteBlocked("Declarative source delete candidate was not accepted")
-    candidate = scratch / "forbidden-D0.ifc"
-    try:
-        TrustedCompilationController.compile_accepted(session, original, candidate)
-    except CompilerError as exc:
-        if ("UnsupportedIFCMutation" not in str(exc)
-                or "standalone Wall or existing hosted Window" not in str(exc)):
-            raise PublicDoorDeleteBlocked("Unexpected D0 compiler failure") from exc
-    else:
-        raise PublicDoorDeleteBlocked("D0 unexpectedly compiles unsupported Door+Opening deletion")
-    if candidate.exists() or candidate.is_symlink():
-        raise PublicDoorDeleteBlocked("D0 compiler wrote partial native output despite rejection")
+    candidate = scratch / "trusted-D0-output.ifc"
+    compilation = TrustedCompilationController.compile_accepted(
+        session, original, candidate)
+    if (not candidate.is_file() or not compilation.write_committed
+            or len(compilation.operations) != 1
+            or compilation.operations[0].operation != "DELETE_HOSTED_DOOR_OPENING"):
+        raise PublicDoorDeleteBlocked("Unexpected native D0 deletion plan/result")
+    checked = check_native_i0_result(original, candidate, public["instruction"])
+    if checked["official_tasks_scored"] != 0:
+        raise PublicDoorDeleteBlocked("D0 native evidence misclassified as official")
     common = create_matched_observations(original, public)
     matched_shared_components(view, common, INPUT_SHA)
     return {
         "D0_XML_both_public_objects_visible_and_removed": True,
         "D0_valid_declarative_snapshot_accepted": True,
-        "D0_trusted_compiler_failed_closed_before_write": True,
-        "D0_native_output_written": False,
+        "D0_trusted_compiler_scoped_deletion_committed": True,
+        "D0_native_output_written": True,
+        "D0_independent_native_checker_passed": True,
         "D0_shared_public_source_view_bytes_matched_I0": True,
         "D0_XML_source_sha256": view.xml_byte_sha256,
-        "D0_deletion_result_sha256": None,
+        "D0_deletion_result_sha256": checked["i0_ifc_sha256"],
+        "D0_IfcRoot_deleted": checked["native_IfcRoot_deleted"],
+        "D0_host_wall_opening_void_closed": checked["host_wall_opening_void_closed"],
+        "D0_native_unrelated_world_meshes_preserved":
+            checked["native_unrelated_world_meshes_preserved"],
     }
 
 
@@ -140,16 +145,23 @@ def verify_public_door_delete_gate(root: Path = ROOT) -> dict:
     if _sha(original) != original_sha:
         raise PublicDoorDeleteBlocked("Original public IFC mutated during source-only preflight")
     return {
-        "version": "G1_PUBLIC_DOOR_DELETE_DEPENDENCY_GATE_V0.1",
+        "version": "G1_PUBLIC_DOOR_DELETE_DEPENDENCY_GATE_V0.2",
         "frozen_task_id": CASE,
-        "status": "BLOCKED_D0_DELETE_COMPILER_AND_PUBLIC_SPACE_BOUNDARY_POLICY",
+        "status": "PASS_BOUNDED_D0_I0_NATIVE_DELETION_OFFICIAL_TASK_BLOCKED",
         "source_only_observations": True,
         "input_ifc_sha256": original_sha,
         "public_instruction_sha256": sha256(public["instruction"].encode("utf8")).hexdigest(),
         **d0,
         **native,
-        "status": "BLOCKED_D0_DELETE_COMPILER_AND_PUBLIC_SPACE_BOUNDARY_POLICY",
-        "D0_I0_both_native_success_proven": False,
+        "status": "PASS_BOUNDED_D0_I0_NATIVE_DELETION_OFFICIAL_TASK_BLOCKED",
+        "D0_I0_both_native_success_proven": True,
+        "D0_I0_common_dependency_counts_match": (
+            d0["D0_IfcRoot_deleted"] == native["native_IfcRoot_deleted"]
+            and d0["D0_native_unrelated_world_meshes_preserved"]
+                == native["native_unrelated_world_meshes_preserved"]
+            and d0["D0_host_wall_opening_void_closed"]
+                == native["host_wall_opening_void_closed"]),
+        "unmentioned_space_boundary_cleanup_is_declared_native_policy": True,
         "source_Opening_direct_storey_assignment_does_not_exist": True,
         "I0_unmentioned_door_space_boundary_was_deleted": True,
         "I0_derived_dependency_cleanup_is_not_official_task_success": True,
@@ -178,8 +190,8 @@ def main() -> int:
     print(json.dumps({
         "status": report["status"],
         "frozen_task_id": CASE,
-        "D0_trusted_compiler_failed_closed_before_write":
-            report["D0_trusted_compiler_failed_closed_before_write"],
+        "D0_trusted_compiler_scoped_deletion_committed":
+            report["D0_trusted_compiler_scoped_deletion_committed"],
         "native_IfcRoot_deleted": report["native_IfcRoot_deleted"],
         "native_IfcRelSpaceBoundary_deleted": report["native_IfcRelSpaceBoundary_deleted"],
         "source_Opening_direct_storey_assignment_does_not_exist": True,
