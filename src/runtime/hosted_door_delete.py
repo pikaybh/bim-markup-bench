@@ -22,6 +22,7 @@ import ifcopenshell.util.shape
 import numpy as np
 
 from src.runtime.ifc_mutations import UnsupportedIFCMutation, by_guid_or_none
+from src.runtime.space_boundary_footprint import verify_door_delete_boundary_footprints
 
 _REQUIRED_DOOR_INVERSES = Counter({
     "IfcRelFillsElement": 1,
@@ -261,4 +262,9 @@ def verify_scoped_door_delete_output(before, after,
             or len(before.by_type("IfcRelSpaceBoundary")) -
                len(after.by_type("IfcRelSpaceBoundary")) != 1):
         raise UnsupportedIFCMutation("Unapproved Space or boundary topology mutation")
+    # Root row and product-mesh parity alone cannot detect corruption of an
+    # IfcConnectionSurfaceGeometry's underlying STEP points. Independently
+    # check the retained first-level Wall boundary *footprint* surfaces.
+    # This proves only the 2D wall perimeter, never full 3D shell closure.
+    verify_door_delete_boundary_footprints(before, after, pair.boundary_guid)
     return preserved

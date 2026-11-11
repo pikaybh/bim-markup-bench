@@ -78,7 +78,7 @@ def verified_public_source(root: Path = ROOT):
 
 
 def _stage_and_probe_d0(original: Path, public: dict, guids: dict,
-                        scratch: Path) -> dict:
+                        scratch: Path, *, spatial_observer=None) -> dict:
     session = stage_source_only_workspace(
         original, scratch / "D0_workspace", public, SourceOnlySettings())
     view = session.agent_visible_context()
@@ -114,7 +114,9 @@ def _stage_and_probe_d0(original: Path, public: dict, guids: dict,
         raise PublicDoorDeleteBlocked("D0 native evidence misclassified as official")
     common = create_matched_observations(original, public)
     matched_shared_components(view, common, INPUT_SHA)
-    return {
+    spatial = (spatial_observer(original, candidate, public["instruction"])
+               if spatial_observer is not None else None)
+    result = {
         "D0_XML_both_public_objects_visible_and_removed": True,
         "D0_valid_declarative_snapshot_accepted": True,
         "D0_trusted_compiler_scoped_deletion_committed": True,
@@ -128,23 +130,31 @@ def _stage_and_probe_d0(original: Path, public: dict, guids: dict,
         "D0_native_unrelated_world_meshes_preserved":
             checked["native_unrelated_world_meshes_preserved"],
     }
+    if spatial_observer is not None:
+        result["trusted_D0_planar_boundary_evidence"] = spatial
+    return result
 
 
-def verify_public_door_delete_gate(root: Path = ROOT) -> dict:
+def verify_public_door_delete_gate(root: Path = ROOT,
+                                   *, spatial_observer=None) -> dict:
     public, guids, original = verified_public_source(root)
     original_sha = _sha(original)
     with TemporaryDirectory(prefix="G1-public-Door-Delete-") as td:
         scratch = Path(td)
-        d0 = _stage_and_probe_d0(original, public, guids, scratch)
+        d0 = _stage_and_probe_d0(
+            original, public, guids, scratch,
+            spatial_observer=spatial_observer)
         i0_path = scratch / "trusted-I0.ifc"
         native_door_opening_delete(
             original, i0_path, guids["door"], guids["opening"])
         native = check_native_i0_result(original, i0_path, public["instruction"])
+        spatial_i0 = (spatial_observer(original, i0_path, public["instruction"])
+                      if spatial_observer is not None else None)
         if native["official_task_oracle_proven"] or native["official_tasks_scored"] != 0:
             raise PublicDoorDeleteBlocked("I0 observation incorrectly promoted to official task success")
     if _sha(original) != original_sha:
         raise PublicDoorDeleteBlocked("Original public IFC mutated during source-only preflight")
-    return {
+    result = {
         "version": "G1_PUBLIC_DOOR_DELETE_DEPENDENCY_GATE_V0.2",
         "frozen_task_id": CASE,
         "status": "PASS_BOUNDED_D0_I0_NATIVE_DELETION_OFFICIAL_TASK_BLOCKED",
@@ -173,6 +183,9 @@ def verify_public_door_delete_gate(root: Path = ROOT) -> dict:
         "paid_spend_authorized": False,
         "G1_G2_G3_release_allowed": False,
     }
+    if spatial_observer is not None:
+        result["trusted_I0_planar_boundary_evidence"] = spatial_i0
+    return result
 
 
 def main() -> int:
