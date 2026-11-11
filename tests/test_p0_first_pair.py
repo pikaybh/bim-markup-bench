@@ -122,8 +122,38 @@ class FakeTransportIntegrationTests(unittest.TestCase):
             self.assertTrue((folder/"D_result.ifc").is_file())
             self.assertTrue((folder/"I_model_generated.py").is_file())
             self.assertTrue((folder/"I_result.ifc").is_file())
+            # Exact model-output bytes (not Windows CRLF translated text).
+            from hashlib import sha256
+            for arm,name in (("D_XML","D_model_generated.xml"),
+                             ("I_PYTHON","I_model_generated.py")):
+                self.assertEqual(
+                    sha256((folder/name).read_bytes()).hexdigest(),
+                    out["arms"][arm]["source_sha256"])
             self.assertEqual(
                 json.loads((folder/"results.json").read_text("utf8"))["actual_model_calls_attempted"],2)
+
+    def test_exact_provider_source_bytes_without_docker_dependency(self):
+        # A source-serialization regression: mock execution/grade only.
+        # No LLM API calls or arbitrary Python execution occurs here.
+        from unittest.mock import patch
+        from hashlib import sha256
+        texts=("<Building>\n  <Wall height='3.3'/>\n</Building>\n",
+               "import ifcopenshell\nmodel = ifcopenshell.open('input.ifc')\n")
+        fake=FakeResponses(list(texts))
+        with TemporaryDirectory(prefix="p0-source-byte-roundtrip-") as td:
+            folder=Path(td)/"new_run"
+            with (patch.object(p0,"_d_output",return_value={"passed":True}),
+                  patch.object(p0,"_i_output",return_value={"passed":True})):
+                report=p0.run(fake_approved(),folder,client=fake)
+            for arm,name,expected in (
+                    ("D_XML","D_model_generated.xml",texts[0]),
+                    ("I_PYTHON","I_model_generated.py",texts[1])):
+                raw=(folder/name).read_bytes()
+                self.assertEqual(raw,expected.encode("utf8"))
+                self.assertEqual(sha256(raw).hexdigest(),
+                                 report["arms"][arm]["source_sha256"])
+                self.assertNotIn(b"\r\n",raw)
+            self.assertEqual(fake.count,2)
 
     def test_failed_python_is_explicit_not_hidden_or_retried(self):
         d=(p0.ROOT/"tests/oracles/xml/update_wall_height.xml").read_text("utf8")

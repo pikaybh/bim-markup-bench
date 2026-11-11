@@ -1,8 +1,71 @@
 # Issue #97 / P0 — First actual model-generated XML vs Python IFC edit
 
-## Status (2026-11-12 KST)
+## Verified P0 actual results — 2026-11-12 (KST)
 
-**P0 not yet complete. Actual provider calls: 0. Real LLM solutions: 0.
+**P0's first real LLM paired attempt is COMPLETE.** Actual provider
+calls = **2**, generated model sources = **2**, paired trials = **1**,
+actual strict native outcomes: **D/XML PASS, I/Python FAIL**. Model:
+`gpt-5.4-mini-2026-03-17`. **No real model retries**.
+
+| Arm | Model input tokens | Output tokens | Estimated API usage USD | Actual result |
+| --- | ---: | ---: | ---: | --- |
+| D/XML | 2,336 | 679 | $0.0048075 | **PASS** — model-generated full XML compiled; trusted native IFC checker passed |
+| I/Python | 2,602 | 120 | $0.0024915 | **FAIL** — model-generated Python blocked by the recorded AST preflight |
+| **Total** | **4,938** | **799** | **$0.0072990** | one real paired attempt |
+
+The owner explicitly authorized a $1 spend ceiling for this **one
+D+I pair**. Conservatively reserved maximum token-envelope price:
+$0.049485. Both the planned maximum and measured usage-derived
+estimate are under $1. Provider invoice reconciliation has not been
+performed; the $0.0072990 figure is **not** an invoice.
+
+**Why imperative failed:** original model output used `getattr`
+and `hasattr`, which the existing fixed Python static policy rejects.
+The output also tried to set `IfcWall.Height`, which is *not* an
+attribute of the source IFC Wall; actual wall geometry in this OWN IFC
+is represented by an `IfcExtrudedAreaSolid.Depth` starting at 3.0 m.
+This is evidence of both a policy/affordance mismatch and an LLM-generated
+semantic mistake, not a pure test of a model's general Python ability.
+No successful I-arm IFC was produced in the original strict trial.
+A **post-hoc** sandbox diagnostic was separately performed *without
+additional model calls* but its trusted grader timed out: therefore
+there is **no additional independent native verdict** from that
+post-hoc run. It does not alter the original I-arm failure.
+
+**Artifact integrity correction:** original API response hashes were
+recorded before writing to disk. The Windows text writer initially
+changed LF line endings to CRLF. Both original texts were losslessly
+reconstructed by universal-newline normalization and verified against
+those previously recorded **pre-serialization SHA-256** values.
+The writer is now fixed to write exact UTF-8 source bytes with
+`newline="\n"`, and a regression test checks bytes on disk.
+This repair did not change any actual model response, IFC outcome
+or charge. Private raw LLM source and IFC artifacts stay in the
+ignored `results/p0_first_real_pair_20261112_run01/` directory.
+The audit JSON contains only hashes, statuses, token usage and
+experiment metadata, no API keys or hidden benchmark GT.
+
+Evidence:
+`reports/p0_first_real_llm_pair_evidence_20261112.json`
+SHA-256:
+`647bd2c7b170e5ffe506d4d9df2cd3206c8ac390701cf3b4957e2b7f6bbb366b`.
+
+**Interpretation boundary:** one trivial OWN synthetic wall-height task
+is exploratory research infrastructure validation, **not** a
+BIM-Edit official benchmark score and **not** evidence of statistical
+XML superiority. The original 36-case research candidate list has
+not been modified.
+
+**Next research priority:** P1 diagnosis/repair of the observed
+Python affordance/API-reference weakness and fixed AST policy, followed
+by a separately approved prospective repeated matched test.
+The previous $1 approval covered **exactly the two P0 calls already
+made**; it does not authorize further API calls.
+
+
+## Pre-execution status — historical preparation record (superseded)
+
+**At the time of this preparation record, P0 was not yet complete. Actual provider calls: 0. Real LLM solutions: 0.
 Paid spend: $0. Actual head-to-head results: 0.**
 
 We have deliberately stopped adding new BIM features or full benchmark
@@ -140,3 +203,7 @@ D0/I0 oracle parity as a successful real-model comparison.
 - Syntax compilation and staged Git whitespace checks PASS.
 - Full legacy suite was not rerun in this P0 change; previous baseline
   668 tests PASS including 21 skipped belonged to the prior branch.
+
+### Post-result regression follow-up
+
+A re-run of the pre-existing Docker-backed FakeClient integration suite after the newline fix reported **6 tests, 1 failure**: the test that previously expected both fake-source results to succeed now observed an I-side worker/grade non-success. This is not a second LLM test and is kept as an unresolved environment-dependent regression; earlier OWN Linux sandbox health probes passed. A separate **Docker-free byte preservation test** now covers the real source-artifact writer without weakening the OS isolation evidence. No extra paid API calls were made.

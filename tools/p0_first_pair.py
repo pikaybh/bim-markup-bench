@@ -214,7 +214,10 @@ def run(cfg:dict,folder:Path,*,client=None)->dict:
                 raise ValueError("Model did not provide raw source")
             attempt["model_output_available"]=True
             name="D_model_generated.xml" if arm=="D_XML" else "I_model_generated.py"
-            (folder/name).write_text(source,encoding="utf8")
+            # Preserve the provider's source text byte-for-byte on Windows.
+            # Path.write_text() with newline=None would silently turn LF into CRLF.
+            with (folder/name).open("x",encoding="utf8",newline="\n") as saved:
+                saved.write(source)
             attempt["source_file"]=name
             attempt["source_sha256"]=sha(source.encode("utf8"))
             if getattr(answer,"usage",None) is None:
