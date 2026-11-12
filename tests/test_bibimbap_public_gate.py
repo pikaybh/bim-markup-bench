@@ -78,6 +78,13 @@ class PublicPacketBoundaryTests(unittest.TestCase):
             __import__("hashlib").sha256(
                 json.dumps(packet, ensure_ascii=False, sort_keys=True).encode("utf-8")
             ).hexdigest())
+        saved = json.loads((ROOT / "reports/bibimbap_test05_public_packet_preflight_20261112.json")
+                           .read_text(encoding="utf8"))
+        # Confirm independent reruns reproduce exact serialized model input
+        # and trusted normalized IFC source, not just a self-consistent hash.
+        self.assertEqual(summary["model_packet_sha256"], saved["model_packet_sha256"])
+        self.assertEqual(summary["normalized_input_ifc_sha256"],
+                         saved["normalized_input_ifc_sha256"])
 
 
 class LaunchEligibilityTests(unittest.TestCase):
