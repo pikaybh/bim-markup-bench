@@ -191,4 +191,36 @@ class BadCodeStaticPolicyTests(unittest.TestCase):
             self.assertEqual(before,SOURCE.read_bytes())
             self.assertFalse(runner.trace()["OS_sandbox_available"])
 
+
+class ProspectiveP1SafeIfcReflectionPolicyTests(unittest.TestCase):
+    """A versioned, prospective policy change, not a P0-score revision."""
+
+    def test_allow_only_literal_readonly_ifc_attribute_queries(self):
+        source=(b'import ifcopenshell\n'
+                b'obj = ifcopenshell.open("/input/input.ifc").by_type("IfcWall")[0]\n'
+                b'identity = getattr(obj, "GlobalId", None)\n'
+                b'has_height = hasattr(obj, "Height")\n')
+        outcome=preflight_generated_python(source)
+        self.assertTrue(outcome.syntax_only_pass)
+        self.assertFalse(outcome.execution_authorized)
+
+    def test_reject_dynamic_or_non_ifc_reflection_and_dunder(self):
+        blocked=(
+            b'field = "GlobalId"\ngetattr(obj,field)\n',
+            b'getattr(obj,"__class__")\n',
+            b'getattr(obj,"__globals__")\n',
+            b'getattr(obj,"system")\n',
+            b'getattr(obj,"GlobalId",None,42)\n',
+            b'getattr(obj,"GlobalId",default=None)\n',
+            b'hasattr(obj,"__dict__")\n',
+            b'hasattr(obj,field)\n',
+            b'getattr\n',
+            b'f = getattr\n',
+            b'obj.getattr("GlobalId")\n',
+            b'setattr(obj,"Height",3.3)\n',
+        )
+        for code in blocked:
+            with self.subTest(code=code), self.assertRaises(ImperativePreflightError):
+                preflight_generated_python(code)
+
 if __name__=="__main__":unittest.main()

@@ -94,6 +94,22 @@ class FirstRealPairPrepTests(unittest.TestCase):
                     seed=97,export_verified_own_ifc=target)
             self.assertEqual(target.read_bytes(),original)
 
+    def test_actual_live_run_refuses_approval_model_different_from_env(self):
+        # Replicates the accidental P0 GPT-5.4 versus configured GPT-6 mismatch.
+        # No provider client is instantiated and no paid request is made.
+        import os
+        from unittest.mock import patch
+        cfg=fake_approved()
+        cfg["model"]="gpt-5.4-mini-2026-03-17"
+        with TemporaryDirectory(prefix="p0-model-mismatch-") as td:
+            folder=Path(td)/"no_run_should_be_created"
+            with patch.dict(os.environ,{
+                    "OPENAI_MODEL":"gpt-6-luna",
+                    "OPENAI_API_KEY":"TEST_KEY_NEVER_USED"},clear=False):
+                with self.assertRaisesRegex(ValueError,"Model mismatch"):
+                    p0.run(cfg,folder)
+            self.assertFalse(folder.exists())
+
     def test_own_source_and_output_code_are_not_embedded_in_provider_input(self):
         p=p0.packets()
         for key in ("D_XML","I_PYTHON"):

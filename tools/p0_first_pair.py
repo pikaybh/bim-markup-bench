@@ -181,6 +181,15 @@ def run(cfg:dict,folder:Path,*,client=None)->dict:
     p=packets()
     approved_budget(cfg,p)
     if client is None:
+        # The user's configured model is authoritative. Never silently
+        # substitute a cheaper/different provider model via an approval file.
+        configured_model=os.environ.get("OPENAI_MODEL","").strip()
+        if not configured_model:
+            raise ValueError("OPENAI_MODEL is missing; refuse live model selection")
+        if configured_model!=cfg["model"]:
+            raise ValueError(
+                "Model mismatch between OPENAI_MODEL and approved P0 model; "
+                "refuse any paid model call")
         if not os.environ.get("OPENAI_API_KEY"):
             raise ValueError("No API key; paid requests not permitted")
         from openai import OpenAI
@@ -273,6 +282,10 @@ def main()->int:
         return 0
     if args.approval_file is None or args.out is None:
         ap.error("Live run requires --approval-file and new --out dir")
+    # Local .env is ignored by Git; load it only for the explicit paid
+    # entrypoint. An already-set process environment takes precedence.
+    from dotenv import load_dotenv
+    load_dotenv(ROOT/".env",override=False)
     cfg=json.loads(args.approval_file.read_text(encoding="utf8"))
     info=run(cfg,args.out)
     print(json.dumps({k:info[k] for k in (
