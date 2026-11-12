@@ -24,8 +24,8 @@ All instructions below use this OWN model, not the third-party BIM-Edit dataset.
 
 | Frozen candidate | Required action | Current independent D0/I0 ceiling | Status |
 | --- | --- | --- | --- |
-| OWN-P1-WINDOW-MOVE-001 | Move the North Window and hosted Opening +0.5 m along wall local X, preserve everything else | move_hosted_opening: native parity PASS | Supported for future LLM testing |
-| OWN-P1-WALL-CREATE-002 | Add straight Wall (0,5,0) to (4,5,0), height 3.0 m, thickness 0.2 m, Level 1; preserve others | create_standalone_wall: native parity PASS | Supported for future LLM testing |
+| OWN-P1-WINDOW-MOVE-001 | Move the North Window and hosted Opening +0.5 m along wall local X, preserve everything else | move_hosted_opening: native parity PASS | D0/I0 supported ONLY; live isolated scorer pending |
+| OWN-P1-WALL-CREATE-002 | Add straight Wall (0,5,0) to (4,5,0), height 3.0 m, thickness 0.2 m, Level 1; preserve others | create_standalone_wall: native parity PASS | D0/I0 supported ONLY; live isolated scorer pending |
 | OWN-P1-DOOR-DELETE-003 | Remove Entrance Door and hosted Opening, close void, preserve unrelated IFC objects/relations | OWN model lacks required inverse relations for current scoped native Door deletion; compiler refuses without output | **BLOCKED** — no LLM trial until resolved |
 
 Door detail: this source Door has only IfcRelFillsElement and
@@ -43,11 +43,11 @@ Evidence: reports/p1_g1_own_ceiling_20261112.json,
 SHA256 0c96351f066b85e7642a45537a7fdaa9306bf6c5fb0efdcc2e9b3d23ad4a904e.
 Offline attribution and eligibility:
 reports/p1_offline_attribution_eligibility_20261112.json,
-SHA256 ec484f07f14904f45e72031cdba33a88f723503345194903efa3906b2812bdfa.
+SHA256 32ee58d46989d7c72771190a4a758c7f7e548184f503c9118977a99ddff2837d.
 
 ## Next actions, in priority order
 
-1. Resolve the **OWN source fixture vs scoped Door deletion** incompatibility
+1. First extend the verified OWN-only Docker candidate execution and independent grader beyond the P0 wall-height task for the two D0/I0-passing cases. Current worker/grader is still fixed to wall height 3.3 m; therefore **0 P1 tasks are ready for paid live model scoring**. Keep failures separate from valid model failures. Then assess the **OWN source fixture vs scoped Door deletion** incompatibility
    without widening required features just to obtain a passing model score.
    If a new synthetic Door input is necessary, version/freeze it separately
    and independently prove D0/I0 operation before LLM inference.
@@ -59,5 +59,5 @@ SHA256 ec484f07f14904f45e72031cdba33a88f723503345194903efa3906b2812bdfa.
    calls. The previous $1 limit was specific to **two P0 calls** and is
    NOT ongoing permission for the additional 3x2 P1 trial.
 
-**Verified P1 at present: 2 eligible native cases; 1 blocked; 0 additional
+**Verified P1 at present: 2 D0/I0-only eligible native cases; 1 blocked; 0 P1 live worker-ready cases; 0 additional
 model calls; $0 additional API cost; official benchmark scores 0.**
