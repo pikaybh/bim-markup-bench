@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from hashlib import sha256
+from math import hypot, isfinite
 import json
 from pathlib import Path
 import subprocess
@@ -28,7 +29,9 @@ from tools.audit_bibimbap_author import (
 WALL_LOCAL_ID = "wall_bibimbap000001"
 
 
-def run_witness(author: Path, dataset: Path) -> dict:
+def run_witness(author: Path, dataset: Path, *, end_xy: tuple[float, float] = (15.0, -10.0)) -> dict:
+    if len(end_xy) != 2 or not all(isfinite(float(x)) for x in end_xy) or hypot(end_xy[0], end_xy[1] + 10.0) <= 0:
+        raise ValueError("A finite nonzero wall length is required")
     if _head(author) != AUTHOR_SHA or _head(dataset) != DATA_SHA:
         raise ValueError("Upstream source/data SHA drift")
     source = dataset / "ifc" / "basic_tasks.ifc"
@@ -63,7 +66,7 @@ def run_witness(author: Path, dataset: Path) -> dict:
 
             "level": chosen_level,
             "x1": "0", "y1": "-10", "z1": "0",
-            "x2": "15", "y2": "-10", "z2": "0",
+            "x2": format(end_xy[0], ".12g"), "y2": format(end_xy[1], ".12g"), "z2": "0",
             "height": "3.0", "thickness": "0.2",
         }
         etree.SubElement(elements, "{" + ns + "}Wall", attrib=wall_attrs)
@@ -108,6 +111,9 @@ def run_witness(author: Path, dataset: Path) -> dict:
                 if observations["xml_wall_created"]["scorer"].get("status") == "SCORED"
                 else "XML_AUTHOR_WITNESS_BLOCKED",
             "task_id": "test_05",
+            "developer_wall_start_xy_m": [0.0, -10.0],
+            "developer_wall_end_xy_m": [float(end_xy[0]), float(end_xy[1])],
+            "developer_wall_horizontal_length_m": hypot(end_xy[0], end_xy[1] + 10.0),
             "source_type": "external_original_BIBIMBAP",
             "edited_type": "DEVELOPER_AUTHORED_XML_NOT_LLM",
             "author_sha": AUTHOR_SHA, "dataset_sha": DATA_SHA,
