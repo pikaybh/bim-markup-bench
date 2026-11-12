@@ -1,0 +1,34 @@
+{
+  "actual_luna_attempts_in_source_report": 1,
+  "difference": {
+    "dropped_existing_id_count": 0,
+    "modified_existing_id_count": 0,
+    "new_element_types": [
+      "Wall"
+    ],
+    "new_id_count": 1,
+    "new_wall_declared_geometry": {
+      "declared_centerline_length_m": 15.0,
+      "declared_height_m": 3.3,
+      "declared_thickness_m": 0.15,
+      "declared_x1": 0.0,
+      "declared_x2": 15.0,
+      "declared_y1": -10.0,
+      "declared_y2": -10.0,
+      "level_reference_present": true
+    },
+    "new_wall_geometry_matches_public": true,
+    "old_relation_container_and_nonid_nodes_unchanged": true,
+    "section_order_unchanged": true,
+    "semantic_model_id_count": 26,
+    "semantic_source_id_count": 25,
+    "source_only_add_one_wall": true
+  },
+  "grader_consulted_this_audit": false,
+  "model_calls_this_audit": 0,
+  "model_output_exact_sha256": "fb15728d7c4952878d4424e33003804f92d36f3c86f50d3ee97eb0c1dc7c6d02",
+  "original_model_prompt_sha256": "2a483f97bf36726c2930ed9df8e80e1106f34bde460416a0c0b11fb3ea736959",
+  "original_source_xml_sha256": "932ad4890d2ca16c2dd38c020bba9353955ecdcf6298202efd4b5297802098c3",
+  "raw_model_output_edited_or_corrected": false,
+  "status": "REAL_ONE_SHOT_SOURCE_SEMANTIC_DIFF_REPRODUCED"
+}
