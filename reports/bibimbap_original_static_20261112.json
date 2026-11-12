@@ -1,0 +1,489 @@
+{
+  "author_evaluator_code_present_for_45": true,
+  "author_source": "https://github.com/nbharathik/bibimbap",
+  "claimed_author_baseline_reproduction": false,
+  "code_license_unverified": true,
+  "dataset_source": "https://huggingface.co/datasets/clemenskujat/bibimbap-data",
+  "editing_tasks": [
+    {
+      "category": "basic",
+      "crud": "create",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 0,
+      "original_scorer_execute_test": true,
+      "test_id": "test_01",
+      "test_sha256": "402bbc3355ba6da58b216571e2cbfdbfc22632c7e5c829fc968e8ea22b593e90"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 1,
+      "original_scorer_execute_test": true,
+      "test_id": "test_02",
+      "test_sha256": "24480c867ec6b6cead2481afa83d9ae260ef7dc395a4dbcf8f1459bb440e4374"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 2,
+      "original_scorer_execute_test": true,
+      "test_id": "test_03",
+      "test_sha256": "d1e8f0df05e7ef2944a8837f69504ff0f4de35903d20f48f601fbcd832362a93"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 3,
+      "original_scorer_execute_test": true,
+      "test_id": "test_04",
+      "test_sha256": "5dfdb6968a56c04ad8068af367d93de753e128fd75f0af612aa3cdfba670def1"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 4,
+      "original_scorer_execute_test": true,
+      "test_id": "test_05",
+      "test_sha256": "70a570bae47ddf599a561a2f5f6a817dca398841473dc27f63190a00bec14e72"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 10,
+      "original_scorer_execute_test": true,
+      "test_id": "test_11",
+      "test_sha256": "d99b477648bba8b6a5db00d2416dbc2b0756e541992bd22049d1b041de8d221c"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 11,
+      "original_scorer_execute_test": true,
+      "test_id": "test_12",
+      "test_sha256": "3f99aa9b14b40c664fd093679795212c0a4436d2483ac401ef285473963a5869"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 12,
+      "original_scorer_execute_test": true,
+      "test_id": "test_13",
+      "test_sha256": "9f4cbe7c2900b4108185e6473fd246ff42613f6f3aa37132ebe570cadbbbeafe"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 13,
+      "original_scorer_execute_test": true,
+      "test_id": "test_14",
+      "test_sha256": "3396173383d0043972dd95b03559734215ddfcbe96739d27cc171a7d3e03c98b"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 14,
+      "original_scorer_execute_test": true,
+      "test_id": "test_15",
+      "test_sha256": "8f8135dd2f30f0d6ca25ea202882f0d249c56d3ece947aeb8d43bd9602926c77"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 15,
+      "original_scorer_execute_test": true,
+      "test_id": "test_16",
+      "test_sha256": "ebecd33292ad5e2bf069fc891a7ece23a70b5453d1be496daddfdb2b32753e1b"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 16,
+      "original_scorer_execute_test": true,
+      "test_id": "test_17",
+      "test_sha256": "3391c79bdc0b9d73ad9843f230670bc266f52860f53ea198337908ddba92675d"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 17,
+      "original_scorer_execute_test": true,
+      "test_id": "test_18",
+      "test_sha256": "a8d327e10d7bccdacb8dc44b4759e4f9babb82f1140233d1a115fdb1e2cf6dda"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 18,
+      "original_scorer_execute_test": true,
+      "test_id": "test_19",
+      "test_sha256": "63cb9484f0dd7e94b7aaffa2246d5ad7f223691d94bbf24837686d0959aca047"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "ifc_relpath": "basic_tasks.ifc",
+      "ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "index": 19,
+      "original_scorer_execute_test": true,
+      "test_id": "test_20",
+      "test_sha256": "15d0cef9a075b2a9b1a537389f6801addfec02b8cbf81ce7ed04b300578311b4"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "ifc_relpath": "01/01/01_01_001.ifc",
+      "ifc_sha256": "d7a0c0bda9572787b5b8e7a57b48f8157d898a9f444ac28978e9f9b9a8ff9702",
+      "index": 20,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_01",
+      "test_sha256": "a9e534518cd80461e0b95e51c0dded08911d3822a83620b3cd78c4eaebe5fef3"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "ifc_relpath": "01/01/01_01_002.ifc",
+      "ifc_sha256": "58833e0bdf80e2207b8c221fc8195e5411f9f94e0d7f1cb39633b3c447eb4767",
+      "index": 21,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_02",
+      "test_sha256": "3b5119f7f3a0fc581f87f64376390f5c9b3ca95ee49223eaf995970700ea4186"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "ifc_relpath": "01/01/01_01_003.ifc",
+      "ifc_sha256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "index": 22,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_03",
+      "test_sha256": "d226fc48233c9d91b8a592cd218794d9c488a982aa95d40eb16b4e8f4dad6c3b"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "ifc_relpath": "01/01/01_01_004.ifc",
+      "ifc_sha256": "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea",
+      "index": 23,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_04",
+      "test_sha256": "587801445c1876969e5de58e6e1fe41bc4813e78a5ed06fe8388c26ca8c0bdfd"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "ifc_relpath": "empty.ifc",
+      "ifc_sha256": "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc",
+      "index": 24,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_05",
+      "test_sha256": "bd62e3433395cd0d083aef673e3a7b745b04d8499954ac600f3b834943b9471c"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "ifc_relpath": "01/01/01_01_011.ifc",
+      "ifc_sha256": "9f5ed71eb1ba912ec2ec83b944f17091ecebf3d6c5dcb00f6732661a29baf728",
+      "index": 30,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_11",
+      "test_sha256": "4a5f65f04204e8a9351474c443b378c0fbf5789b0e36e9d0a5e32e5da7182f39"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "ifc_relpath": "01/01/01_01_012.ifc",
+      "ifc_sha256": "7f77e6dfba0bbaf508b316b6f7846d40d7b812e63edcffc1114ed9c2a6455793",
+      "index": 31,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_12",
+      "test_sha256": "7798437db9f2b62d69eba09fa1a16078bf3d8d7a8ca441c291e6c34c9647acd0"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "ifc_relpath": "01/01/01_01_013.ifc",
+      "ifc_sha256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "index": 32,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_13",
+      "test_sha256": "b2ab7d5d599cedcd26a1eeed52356cfd88bd1dcd36a44db99863d8ddf741c694"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "ifc_relpath": "01/01/01_01_014.ifc",
+      "ifc_sha256": "67ac42ca988bdfd44a2afe3ebaff8be11da913b281338ec127f4897e3f42f6a3",
+      "index": 33,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_14",
+      "test_sha256": "893818951d15d180f45ff3102a7be4355660f13c350f990c1795de481a87140b"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "ifc_relpath": "01/01/01_01_015.ifc",
+      "ifc_sha256": "318fb45af8142c164c1fc53eeadc472008ff9c42e9c1b6398e9c95aa744374af",
+      "index": 34,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_15",
+      "test_sha256": "51f352f75ad52aac3b66b08fa6ef3197c47c2b6482c405f3bc6d34739cc8a01d"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "ifc_relpath": "01/01/01_01_016.ifc",
+      "ifc_sha256": "d3340378c0a81c392b166ce9954daa471b34856e970dd536c8e7ebe36c6221ab",
+      "index": 35,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_16",
+      "test_sha256": "e9b2dce9bbd283a702a930dc45abdae62b5a44264890fbcfb148feb679059cf4"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "ifc_relpath": "01/01/01_01_017.ifc",
+      "ifc_sha256": "5aa7252ae511fe33e30f5702b771a654ac57852724c7fe6c5c54502ec1042c04",
+      "index": 36,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_17",
+      "test_sha256": "407aee6e86be1df566405bbe559812f83c1fd49af719d87cc16bc2370bd1db16"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "ifc_relpath": "01/01/01_01_018.ifc",
+      "ifc_sha256": "a4da98bf78ce8d5a27043ff317aa7fa7a4cfe53a63dbb8d998ac3496410fcce8",
+      "index": 37,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_18",
+      "test_sha256": "464f85052d4873f3ca75247ab5d3683e8a1e05739e6b0152040291aa49a23a53"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "ifc_relpath": "01/01/01_01_019.ifc",
+      "ifc_sha256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "index": 38,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_19",
+      "test_sha256": "447ccf22fd4c8c1d98795b3d1bf2eb116d1eb0bf5c4330fcb07510e9774dca24"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "ifc_relpath": "01/01/01_01_020.ifc",
+      "ifc_sha256": "4c16c170729a7370520be4a8b0c0729dc8e494b0785a6baaa721f9c338235356",
+      "index": 39,
+      "original_scorer_execute_test": true,
+      "test_id": "geometry_test_20",
+      "test_sha256": "ee615ab9b9b18457a074fd42226e93298eb127534d34b2279f8a8a58555265c0"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "ifc_relpath": "01/02/01_02_001.ifc",
+      "ifc_sha256": "2cb6cc753784c13fcd1f6f037b97431294cc3c91db9bcc75213ba61b8e3a18ac",
+      "index": 40,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_01",
+      "test_sha256": "8733ca8778ae28bb8a20bed8a3823c6c2e2cc6d953bbcd770c86adac7f91e054"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "ifc_relpath": "01/02/01_02_002.ifc",
+      "ifc_sha256": "8f1d9e885603f8680cb79f2a373fa36b4ecd52634ac920f2ec53c60ac465ad72",
+      "index": 41,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_02",
+      "test_sha256": "7ec5273aefd88dc3169f49d29df7ff67a97e30958c03f8bf5dc0dd47d7851cb7"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "ifc_relpath": "01/02/01_02_003.ifc",
+      "ifc_sha256": "1035e999dd8579b7d2c33950498eea1f50bd9ff81e1816bdf4b9893901969466",
+      "index": 42,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_03",
+      "test_sha256": "e77949b42ba6547bde1b93b26326c7ef589e424dea6fb4df00e3751c95de5875"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "ifc_relpath": "01/02/01_02_004.ifc",
+      "ifc_sha256": "29cd44b72639ba9573aa1698a4efab4adcfbc5461c19dd85259e6a9505d303e5",
+      "index": 43,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_04",
+      "test_sha256": "04a7bbee812923a5b6ae8b08b63022a7c0193392268f185113b78c129f294836"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "ifc_relpath": "01/02/01_02_005.ifc",
+      "ifc_sha256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "index": 44,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_05",
+      "test_sha256": "a04476c2f98e308ea326c520a30b1b85076325c8f64039a5f06b0dd238bdd50b"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "ifc_relpath": "01/02/01_02_011.ifc",
+      "ifc_sha256": "c85a8b90f1b2d22f1e27428e38c54ba7a0d1bdcfbd9d5cef8db06ad97712032e",
+      "index": 50,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_11",
+      "test_sha256": "e9e5043e84fbb4b52ae7e60fea52fb34b03ccb30e9fe04e76ead02a83ce3cbc3"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "ifc_relpath": "01/02/01_02_012.ifc",
+      "ifc_sha256": "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+      "index": 51,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_12",
+      "test_sha256": "70b2ef6dd429e423d62d7a1e839a111752ee10945d466631a97f2038cb799806"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "ifc_relpath": "01/02/01_02_013.ifc",
+      "ifc_sha256": "6f6e0e02f8f9da3b23892650ec700000566b0cd1ceb8641732d99212b7c40ea3",
+      "index": 52,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_13",
+      "test_sha256": "3ed7fc13215470009e02990168b2bdb8d9972aa9f895f1d4d3aea22b3f5864c7"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "ifc_relpath": "01/02/01_02_014.ifc",
+      "ifc_sha256": "06462f56bb97d656dc4a8599de297b953e6056923b4262bdd18d7a77a4ffad73",
+      "index": 53,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_14",
+      "test_sha256": "68e093466f42453c7a040bf135f776fc3764db2d17da70599aa628a5decf6aa1"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "ifc_relpath": "01/02/01_02_015.ifc",
+      "ifc_sha256": "a6b064aa62adacb6dc383d5d2338caf241e0453a33b96f2c50cbb7828edacd9e",
+      "index": 54,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_15",
+      "test_sha256": "8c7761518ab5eb58a7b3800fc23e54f39eef9dcae54f0ea550a7d325739ef443"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "ifc_relpath": "01/02/01_02_016.ifc",
+      "ifc_sha256": "59a6f1bf0b93f75cc37f959c6812034461c68a8dbd0b4c6f3c2ef2a9ab562f4e",
+      "index": 55,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_16",
+      "test_sha256": "807c60f5a44234277097af9d4ab91931aea26d8765c92b82742c1fb9b0e94180"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "ifc_relpath": "01/02/01_02_017.ifc",
+      "ifc_sha256": "a052ec0377c437f28f0a1b8be4dd4ce4f78bf877bde7e51d10eb2d72310230bd",
+      "index": 56,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_17",
+      "test_sha256": "107210226e420ec1dc69ade25e0d5ff89a7dfbb1bfe6cf12a212780297ae3a18"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "ifc_relpath": "01/02/01_02_018.ifc",
+      "ifc_sha256": "cd731db3ca41f3f18840aafb3fbfcb5a7d1b734a5961d06cb797563502d592d0",
+      "index": 57,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_18",
+      "test_sha256": "29358fe3d1d587de7e4bcfa3af91d2a83ed43fa35056aab516487ee667936c4d"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "ifc_relpath": "01/02/01_02_019.ifc",
+      "ifc_sha256": "a8aefcd0c688c36a4bd0d9dc4b7783fdfb6bd49e225a14623e82869c18b4f89a",
+      "index": 58,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_19",
+      "test_sha256": "0abf6fe8ffc22d6955b92306a47a199459afa10b48a5c908c730097effecc2a0"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "ifc_relpath": "01/02/01_02_020.ifc",
+      "ifc_sha256": "68074f17687622859bbf4aba233a1f37b72e4f6bc634e808c8ab03c3a65ca3c0",
+      "index": 59,
+      "original_scorer_execute_test": true,
+      "test_id": "topological_test_20",
+      "test_sha256": "dedec3977626b871f05563862c969d3cea5eb952b032f4ee24413e16cdb856c6"
+    }
+  ],
+  "llm_inference_count": 0,
+  "noncausal_external_paper_comparison_only": true,
+  "original_editing_distribution": {
+    "category": {
+      "basic": 15,
+      "geometry": 15,
+      "topological": 15
+    },
+    "operation": {
+      "create": 15,
+      "delete": 15,
+      "update": 15
+    }
+  },
+  "original_editing_tasks": 45,
+  "original_retrieval_tasks_excluded_from_edit_experiment": 55,
+  "original_scorer_runtime_tested": false,
+  "paper": "BIBIMBAP (Kujat et al., 2026)",
+  "pinned": {
+    "author_commit_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+    "data_commit_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+    "original_csv_sha256": "21c07f08c923cdb748255d7960535bab05e2887e4d093d64f87f76ff6d6d100b",
+    "original_edited_test_count": 45,
+    "original_ifc_file_count": 81,
+    "source_license_file_present": false
+  },
+  "research_mode": "XML_direct_editing_vs_published_external_baselines",
+  "schema": "bibimbap-original-author-grader-audit/v0.1",
+  "task_population_total": 100,
+  "xml_to_ifc_production_integration_verified": false
+}
