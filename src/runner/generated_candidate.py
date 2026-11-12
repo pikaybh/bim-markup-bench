@@ -192,6 +192,7 @@ def _trusted_separate_own_grader(source:Path,result:Path)->dict:
 def run_offline_own_generated_candidate(
     image_id:str,script_bytes:bytes,expected_script_sha256:str,
     *,wall_seconds:int=15,seed:int=0,
+    export_verified_own_ifc:Path|None=None,
 )->dict:
     """Safely isolate *arbitrary bytes* only against a fixed OWN synthetic IFC.
 
@@ -204,6 +205,14 @@ def run_offline_own_generated_candidate(
         raise DockerIsolationError("Invalid replay seed")
     if not isinstance(wall_seconds,int) or not 3<=wall_seconds<=MAX_WALL_SECONDS:
         raise DockerIsolationError("Invalid worker wall timeout")
+    if export_verified_own_ifc is not None:
+        dest=Path(export_verified_own_ifc)
+        if (dest.is_symlink() or dest.exists()
+                or not dest.parent.is_dir() or dest.parent.is_symlink()
+                or dest.suffix.lower()!=".ifc"):
+            raise DockerIsolationError("OWN verified IFC export must be a fresh file in an existing directory")
+    else:
+        dest=None
     # Shared strict OWN-only admission is enforced BEFORE checking/using
     # Docker. The binder only hashes opaque code; it neither imports nor
     # executes a candidate or exposes any other IFC source path.
@@ -295,6 +304,15 @@ def run_offline_own_generated_candidate(
                     or isolated_grade.get("candidate_script_mounted_in_grader") is not False
                     or isolated_grade.get("GT_mounted_in_separate_grader_only") is not True):
                 raise DockerIsolationError("Independent isolated OWN grading did not pass")
+            # Only an independently graded OWN result may be copied out.
+            # The model cannot select its destination; the trusted caller
+            # supplies a new path. Never overwrite or export external IFCs.
+            if dest is not None:
+                with dest.open("xb") as delivered:
+                    delivered.write(ifc_bytes)
+                if _sha(dest)!=result_digest:
+                    dest.unlink(missing_ok=True)
+                    raise DockerIsolationError("Verified OWN IFC export digest mismatch")
             return {
                 "status":"OWN_SYNTHETIC_DYNAMIC_CANDIDATE_VERIFIED",
                 "run_id":run_id,"candidate_sha256":script_digest,
