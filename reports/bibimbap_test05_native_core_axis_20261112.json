@@ -1,0 +1,98 @@
+{
+  "author_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "claimed_original_paper_comparison": false,
+  "compile_status": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+  "dataset_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "developer_wall_end_xy_m": [
+    15.0,
+    -10.0
+  ],
+  "developer_wall_horizontal_length_m": 15.0,
+  "developer_wall_start_xy_m": [
+    0.0,
+    -10.0
+  ],
+  "edited_type": "DEVELOPER_AUTHORED_XML_NOT_LLM",
+  "input_source_hash_unmodified": true,
+  "model_calls": 0,
+  "native_public_task_core": {
+    "added_ifcwall_count": 1,
+    "author_grader_consulted": false,
+    "clash_nonregression_verified": false,
+    "exactly_one_new_wall": true,
+    "existing_root_class_identity_preserved": true,
+    "full_independent_strict_task_success": null,
+    "llm_calls": 0,
+    "native_max_horizontal_vertex_span_m": 15.001333274079341,
+    "native_nearest_start_vertex_m": 0.0,
+    "predicted_result_sha256": "f26805393e8d0f5478f1faef01b024b707d8b6dc606039b5ae0fd0f3e7139663",
+    "public_length_pass": true,
+    "public_start_pass": true,
+    "public_task_core_success": true,
+    "source_original_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+    "status": "IFC_NATIVE_PUBLIC_TASK_CORE_ONLY",
+    "unit_scale_to_m": 0.001,
+    "untouched_geometry_identical_verified": false
+  },
+  "native_public_task_noop_negative_control": {
+    "added_ifcwall_count": 0,
+    "author_grader_consulted": false,
+    "clash_nonregression_verified": false,
+    "exactly_one_new_wall": false,
+    "existing_root_class_identity_preserved": true,
+    "full_independent_strict_task_success": null,
+    "llm_calls": 0,
+    "native_max_horizontal_vertex_span_m": null,
+    "native_nearest_start_vertex_m": null,
+    "predicted_result_sha256": "21ccd6fa4958fdd3291d5d1c4518c07c80d402ab64a9abf1eec343d6b7f311b0",
+    "public_length_pass": false,
+    "public_start_pass": false,
+    "public_task_core_success": false,
+    "source_original_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+    "status": "IFC_NATIVE_PUBLIC_TASK_CORE_ONLY",
+    "unit_scale_to_m": 0.001,
+    "untouched_geometry_identical_verified": false
+  },
+  "normalized_ifc_scale": 1.0,
+  "observations": {
+    "unit_roundtrip_noop": {
+      "scorer": {
+        "metrics": {
+          "integrity_constraint": 0.0,
+          "object_exists": 0.0,
+          "right_dimensions": 0.0,
+          "right_location": 0.0
+        },
+        "score": 0.0,
+        "status": "SCORED"
+      },
+      "worker_exit": 0
+    },
+    "xml_wall_created": {
+      "scorer": {
+        "metrics": {
+          "integrity_constraint": 1.0,
+          "object_exists": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "score": 1.0,
+        "status": "SCORED"
+      },
+      "worker_exit": 0
+    }
+  },
+  "original_ifc_scale": 0.001,
+  "projection_opaque_count": 18,
+  "projection_projected_count": 25,
+  "restored_ifc_scale": 0.001,
+  "root_inventory": {
+    "added_guids": 1,
+    "edited_wall": 17,
+    "lost_guids": 0,
+    "source_wall": 16
+  },
+  "source_type": "external_original_BIBIMBAP",
+  "status": "XML_AUTHOR_WITNESS_SCORED",
+  "task_id": "test_05"
+}

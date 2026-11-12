@@ -55,6 +55,8 @@ def audit(author: Path, data: Path) -> dict:
                 "original_source_unchanged": result["input_source_hash_unmodified"],
                 "guids_removed": result["root_inventory"]["lost_guids"],
                 "measured_declared_centerline_m": result["developer_wall_horizontal_length_m"],
+                "independent_native_task_core": result["native_public_task_core"],
+                "independent_native_noop_core": result["native_public_task_noop_negative_control"],
             })
         except Exception as exc:
             entry.update({
@@ -70,8 +72,8 @@ def audit(author: Path, data: Path) -> dict:
         and x.get("scorer_status") == "SCORED"
     ]
     return {
-        "schema": "bibimbap-test05-orientation-validity/v0.1",
-        "issue": 104,
+        "schema": "bibimbap-test05-orientation-validity/v0.2",
+        "issue": 108,
         "test_id": "test_05",
         "public_task": "Add a wall with a length of 15m beginning in (0, -10).",
         "author_sha256": pins["author_commit_sha"],
@@ -83,6 +85,18 @@ def audit(author: Path, data: Path) -> dict:
         "paid_api_cost": 0,
         "author_scorer_modified": False,
         "original_full_benchmark_score_reproduced": False,
+        "independent_full_strict_task_success_implemented": False,
+        "independent_native_valid_core_count": sum(
+            x.get("independent_native_task_core", {}).get("public_task_core_success") is True
+            for x in results if x["correct_by_public_length_and_start"]
+        ),
+        "independent_native_invalid_core_rejected": (
+            results[-1].get("independent_native_task_core", {}).get("public_task_core_success") is False
+        ),
+        "independent_native_noop_rejected_all": all(
+            x.get("independent_native_noop_core", {}).get("public_task_core_success") is False
+            for x in results if x.get("scorer_status") == "SCORED"
+        ),
         "results": results,
         "all_variants_scored": len([x for x in results if x.get("scorer_status") == "SCORED"]) == len(CASES),
         "valid_heading_dimension_pass_count": sum(
@@ -96,7 +110,7 @@ def audit(author: Path, data: Path) -> dict:
         "negative_short_wall_dimensions_rejected": (
             float((results[-1].get("author_metric_vector") or {}).get("right_dimensions", 1)) < 0.5
         ),
-        "warning": "Author rubric is not a strict task-success metric; rotated false negatives must be separated from LLM errors.",
+        "warning": "Author continuous score differs from independent public-task geometry core. Clash/non-target shape invariance and full strict success are NOT verified; no LLM outputs.",
     }
 
 

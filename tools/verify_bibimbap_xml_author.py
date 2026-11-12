@@ -25,6 +25,7 @@ from src.runtime.compiler import compile_declarative_xml
 from tools.audit_bibimbap_author import (
     AUTHOR_SHA, DATA_SHA, WORKER, _head, _sha,
 )
+from tools.bibimbap_test05_native_core import evaluate_public_test05_core
 
 WALL_LOCAL_ID = "wall_bibimbap000001"
 
@@ -106,6 +107,8 @@ def run_witness(author: Path, dataset: Path, *, end_xy: tuple[float, float] = (1
             "added_guids": len(final_guids - orig_guids),
             "lost_guids": len(orig_guids - final_guids),
         }
+        native_core = evaluate_public_test05_core(source, mm_result)
+        no_op_native_core = evaluate_public_test05_core(source, unchanged_mm)
         report = {
             "status": "XML_AUTHOR_WITNESS_SCORED"
                 if observations["xml_wall_created"]["scorer"].get("status") == "SCORED"
@@ -119,6 +122,8 @@ def run_witness(author: Path, dataset: Path, *, end_xy: tuple[float, float] = (1
             "author_sha": AUTHOR_SHA, "dataset_sha": DATA_SHA,
             "input_source_hash_unmodified": sha_before == _sha(source),
             "original_ifc_scale": old_scale,
+            "native_public_task_core": native_core,
+            "native_public_task_noop_negative_control": no_op_native_core,
             "normalized_ifc_scale": 1.0,
             "restored_ifc_scale": ifcopenshell.util.unit.calculate_unit_scale(final_ifc),
             "projection_projected_count": len(projection.projected_global_ids),
