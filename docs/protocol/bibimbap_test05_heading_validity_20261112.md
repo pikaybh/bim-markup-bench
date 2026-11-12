@@ -1,6 +1,6 @@
 # BIBIMBAP `test_05`: heading sensitivity in original author grading (2026-11-12)
 
-**Issue:** [#104](https://github.com/pikaybh/bim-markup-bench/issues/104), stacked on [#102](https://github.com/pikaybh/bim-markup-bench/issues/102).  
+**Issue:** [#104](https://github.com/pikaybh/bim-markup-bench/issues/104), stacked on [#102](https://github.com/pikaybh/bim-markup-bench/issues/102).
 **Evidence classification:** developer-authored non-LLM IFC controls graded by the original pinned author code; **zero LLM calls**, no model success statistic.
 
 ## Scientific question
