@@ -1,0 +1,170 @@
+{
+  "api_cost_usd": "0",
+  "full_original_45_native_backend_parity": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/122",
+  "model_requests": 0,
+  "not_a_new_model_benchmark_result": true,
+  "status": "BIBIMBAP_PUBLIC_SLAB_EXPERIMENTAL_V04_DEVELOPER_D0_ONLY",
+  "tasks": [
+    {
+      "candidate_native_mm_sha256": "0c192710f9884f5b59c3508d4bddf649aa5c9acb427eb48ec67e9ae52e613dcb",
+      "compiler": "experimental-slab-v0.4",
+      "developer_fixed_input_not_model": true,
+      "developer_fixture": {
+        "fixed_plan_bbox_max_m": [
+          -25.0,
+          2.5,
+          0.2
+        ],
+        "fixed_plan_bbox_min_m": [
+          -35.0,
+          -2.5,
+          0.0
+        ],
+        "operation": "CREATE_SLAB"
+      },
+      "full_45_native_backend_parity": false,
+      "full_independent_clash_oracle": null,
+      "independent_native_slab_oracle": {
+        "full_building_collision_oracle": null,
+        "new_slab_guid": "336APYHVjGeBLDYFKGDzlK",
+        "original_root_preserved_count": 358,
+        "output_sha256": "ad0c91c0b9a2aa160ecbdc4cad1e26c490110745559d1ed5a7ec19f182d3234a",
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_NATIVE_SLAB_CREATE_PHYSICAL_IFC_VALIDATED",
+        "world_native_bbox_max_m": [
+          -25.0,
+          2.5,
+          0.2
+        ],
+        "world_native_bbox_min_m": [
+          -35.0,
+          -2.5,
+          0.0
+        ]
+      },
+      "model_requests": 0,
+      "native_compiler_operation": "CREATE_SLAB",
+      "old_luna_45_outcome_unchanged": true,
+      "original_author_grade_after_compilation": {
+        "original_author_full_mark": true,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "object_exists": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 1.0,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_public_task_id": "test_02",
+      "original_source_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "public_question_sha256": "b11d1746b2a59a6b346bbcf643aa5ae738f6719d31babe9468ca8d90209592d3"
+    },
+    {
+      "candidate_native_mm_sha256": "1b0e811327765bf4f9f85545de64260da19e421f1707d005d8e9ac30e7914b18",
+      "compiler": "experimental-slab-v0.4",
+      "developer_fixed_input_not_model": true,
+      "developer_fixture": {
+        "developer_interpretation": "lower world-Z elevation by 0.5m",
+        "fixed_global_z_change_m": -0.5,
+        "operation": "MOVE_SLAB",
+        "public_slab_guid": "11kJIqz$n2Jf_DfJV1SCVP"
+      },
+      "full_45_native_backend_parity": false,
+      "full_independent_clash_oracle": null,
+      "independent_native_slab_oracle": {
+        "actual_world_native_bbox_max_m": [
+          10.2,
+          10.2,
+          3.6
+        ],
+        "actual_world_native_bbox_min_m": [
+          -0.20000000000000018,
+          -0.17499999999999982,
+          3.3000000000000003
+        ],
+        "full_building_collision_oracle": null,
+        "native_new_copy_on_write_points": 1,
+        "native_original_step_changed_count": 1,
+        "native_original_step_changed_types": [
+          "IfcAxis2Placement3D"
+        ],
+        "original_root_preserved_count": 358,
+        "output_sha256": "86d0650b07e9248811005e4ea9e4814e28db9d2694269570aa1f7565442d071f",
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_NATIVE_SLAB_MOVE_PHYSICAL_IFC_VALIDATED",
+        "verified_non_target_slab_count": 1
+      },
+      "model_requests": 0,
+      "native_compiler_operation": "MOVE_SLAB",
+      "old_luna_45_outcome_unchanged": true,
+      "original_author_grade_after_compilation": {
+        "original_author_full_mark": true,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 1.0,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_public_task_id": "test_14",
+      "original_source_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "public_question_sha256": "844c0b82724a3803132ecf262ae3a18ca0f7b2b6fe911c895ac59334dd775425"
+    },
+    {
+      "candidate_native_mm_sha256": "04ae70751ffbf6af577334fa3ed6418103aed92750d2c24acbe5535b735bbb74",
+      "compiler": "experimental-slab-v0.4",
+      "developer_fixed_input_not_model": true,
+      "developer_fixture": {
+        "computed_input_only_z_delta_m": -0.050000000000000266,
+        "developer_rule": "bottom of upper touches top of lower; XY untouched",
+        "operation": "MOVE_SLAB",
+        "public_lower_slab_guid": "0CJwXarnHAeA7eFXxxI_hO",
+        "public_upper_slab_guid": "0CJwXarnHAeA7eFXxxI_is"
+      },
+      "full_45_native_backend_parity": false,
+      "full_independent_clash_oracle": null,
+      "independent_native_slab_oracle": {
+        "actual_world_native_bbox_max_m": [
+          4.999999999999995,
+          7.900000000000015,
+          3.3
+        ],
+        "actual_world_native_bbox_min_m": [
+          4.884981308350689e-15,
+          3.2999999999999847,
+          3.0
+        ],
+        "full_building_collision_oracle": null,
+        "native_new_copy_on_write_points": 1,
+        "native_original_step_changed_count": 1,
+        "native_original_step_changed_types": [
+          "IfcAxis2Placement3D"
+        ],
+        "original_root_preserved_count": 115,
+        "output_sha256": "6fbbea5ddccd22b85c407de17bdb08681ac602574a3402869cb32ae00127c798",
+        "source_sha256": "2d7b0d4661e13713f09dd32ef7e76beb53cb0d1e94051d27f13cce8c8d537b32",
+        "status": "INDEPENDENT_NATIVE_SLAB_MOVE_PHYSICAL_IFC_VALIDATED",
+        "verified_non_target_slab_count": 1
+      },
+      "model_requests": 0,
+      "native_compiler_operation": "MOVE_SLAB",
+      "old_luna_45_outcome_unchanged": true,
+      "original_author_grade_after_compilation": {
+        "original_author_full_mark": true,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 1.0,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_public_task_id": "topological_test_15",
+      "original_source_ifc_sha256": "a6b064aa62adacb6dc383d5d2338caf241e0453a33b96f2c50cbb7828edacd9e",
+      "public_question_sha256": "059167d6b504c3fed38f920090cc55837191ae4c59b208dbefef9547d1167e7f"
+    }
+  ]
+}
