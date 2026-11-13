@@ -1,0 +1,196 @@
+{
+  "api_cost_usd": "0",
+  "historical_luna_original_scores_unchanged": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/124",
+  "model_calls": 0,
+  "not_a_new_model_benchmark": true,
+  "original_paper_full45_feature_parity": false,
+  "status": "BIBIMBAP_ORIGINAL_PUBLIC_WALL_V05_DEVELOPER_FIXED_D0_ONLY",
+  "tasks": [
+    {
+      "candidate_native_mm_sha256": "161076f95370bba8dc5e6dce8a8b40cb13b06d857c30fed217ae9192604d40e0",
+      "compiler_version": "experimental-wall-v0.5",
+      "developer_authored_input_not_LLM_output": true,
+      "full_45_native_parity_achieved": false,
+      "independent_native_oracle": {
+        "actual_wall_axis_after_m": [
+          [
+            7.5,
+            13.9952,
+            0.0
+          ],
+          [
+            7.5,
+            8.9952,
+            0.0
+          ]
+        ],
+        "all_45_task_oracle_coverage": false,
+        "candidate_sha256": "5484fa34b9221d7615420c19c35b162da3d04ca1eb565f32e9956f17e079cc69",
+        "changed_original_step_types": [
+          "IfcAxis2Placement3D"
+        ],
+        "native_copy_on_write_direction_entities": 1,
+        "native_original_step_change_count": 1,
+        "original_root_inventory_unchanged": 358,
+        "original_wall_axis_before_m": [
+          [
+            7.5,
+            13.9952,
+            0.0
+          ],
+          [
+            2.5,
+            13.9952,
+            0.0
+          ]
+        ],
+        "other_original_ifc_products_preserved": 42,
+        "other_original_wall_meshes_unchanged": 15,
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_NATIVE_WALL_ROTATE_IFC_VALIDATED"
+      },
+      "original_author_score_after_compilation": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 0.0,
+          "right_dimensions": 1.0,
+          "right_location": 0.0
+        },
+        "original_author_score": 0.3333333333333333,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_native_source_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "original_wall_axis_xy_m": [
+        7.5,
+        13.9952,
+        2.5,
+        13.9952
+      ],
+      "original_wall_length_m": 5.0,
+      "public_input_selected_task": {
+        "action": "rotate",
+        "fixed_pivot": "first public source axis endpoint",
+        "public_rotation_deg": 90,
+        "target": "22hyxvAPr65PFt9WZfHSP3"
+      },
+      "question_sha256": "6cf1fe94f7d3ddcdc95169b63b929cdf20bdabf1dfd14aa3549a869cff2630bf",
+      "task_id": "test_11",
+      "trusted_native_operation": "ROTATE_WALL"
+    },
+    {
+      "candidate_native_mm_sha256": "cce8637aa122e97f4ebbf094ec129ca72d2e78bf487a8209a4543eb426e2c585",
+      "compiler_version": "experimental-wall-v0.5",
+      "developer_authored_input_not_LLM_output": true,
+      "full_45_native_parity_achieved": false,
+      "independent_native_oracle": {
+        "actual_wall_axis_after_m": [
+          [
+            7.6,
+            0.187357197165373,
+            0.0
+          ],
+          [
+            7.6,
+            1.187357197165373,
+            0.0
+          ]
+        ],
+        "all_45_task_oracle_coverage": false,
+        "candidate_sha256": "a591e19bf08849f950dc963e04e52cab30c659ab9e8b6f2f6355a9235c247e4c",
+        "changed_original_step_types": [
+          "IfcCartesianPoint",
+          "IfcRectangleProfileDef"
+        ],
+        "native_copy_on_write_direction_entities": 0,
+        "native_original_step_change_count": 2,
+        "original_root_inventory_unchanged": 147,
+        "original_wall_axis_before_m": [
+          [
+            7.6,
+            0.187357197165373,
+            0.0
+          ],
+          [
+            7.6,
+            2.187357197165373,
+            0.0
+          ]
+        ],
+        "other_original_ifc_products_preserved": 16,
+        "other_original_wall_meshes_unchanged": 7,
+        "source_sha256": "93b9db112270dcbb45ef9b61ed73bb6bfa2f688cb1fd435b1b17dd5c1f56d09b",
+        "status": "INDEPENDENT_NATIVE_WALL_SHORTEN_IFC_VALIDATED"
+      },
+      "original_author_score_after_compilation": {
+        "original_author_full_mark": true,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 1.0,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_native_source_sha256": "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+      "original_wall_axis_xy_m": [
+        7.6,
+        0.187357197,
+        7.6,
+        2.187357197
+      ],
+      "original_wall_length_m": 1.9999999999999998,
+      "public_input_selected_task": {
+        "action": "shorten",
+        "public_shortening_m": 1.0,
+        "selection": "Only detached wall outside six explicitly named input wall IDs",
+        "target": "2c8iwp2JP1ox_Asrwk4CZr"
+      },
+      "question_sha256": "c72c3c2b259aebd524bebf43c667b67a2dad631395a0847e03a02e9171c84b2b",
+      "task_id": "topological_test_12",
+      "trusted_native_operation": "CHANGE_WALL_LENGTH"
+    },
+    {
+      "candidate_native_mm_sha256": "56306579107dde03d97b41faf813647020db807674feb982ea11e0f4e343843b",
+      "compiler_version": "experimental-wall-v0.5",
+      "developer_authored_input_not_LLM_output": true,
+      "full_45_native_parity_achieved": false,
+      "independent_native_oracle": {
+        "all_45_task_oracle_coverage": false,
+        "candidate_sha256": "ed5ff99028e6e741739b3b34e84e10928219148d5646deed47987e8c4c401c4c",
+        "deleted_wall_guid": "2UsXAbj6n0fwEWqdkVuHyn",
+        "hosted_opening_and_filling_delete_supported": false,
+        "other_original_ifc_products_preserved": 42,
+        "other_original_wall_meshes_unchanged": 15,
+        "removed_only_target_owned_and_connection_roots": 9,
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_NATIVE_WALL_SAFE_RELATION_DELETE_VALIDATED"
+      },
+      "original_author_score_after_compilation": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 0.0,
+          "object_not_exists": 1.0
+        },
+        "original_author_score": 0.5,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_native_source_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "original_wall_axis_xy_m": [
+        49.0,
+        -0.2,
+        49.0,
+        15.0
+      ],
+      "original_wall_length_m": 15.2,
+      "public_input_selected_task": {
+        "action": "delete",
+        "public_guid": "2UsXAbj6n0fwEWqdkVuHyn",
+        "target": "2UsXAbj6n0fwEWqdkVuHyn"
+      },
+      "question_sha256": "8deb425761eb96bf9185e3789fda48428678e229f658c895054f9693bffe2487",
+      "task_id": "test_19",
+      "trusted_native_operation": "DELETE_WALL_WITH_SAFE_RELATIONS"
+    }
+  ]
+}
