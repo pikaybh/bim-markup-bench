@@ -1,0 +1,272 @@
+{
+  "additional_paid_inference_usd": "0",
+  "backend_all45_python_IFC_full_parity": false,
+  "developer_original_native_contact_plan": {
+    "full_original_native_source_column_geometry": {
+      "2IIWDJ6bzEPxU4iXeUX9_B": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          0.0,
+          7.199999999999999,
+          3.0
+        ],
+        "native_support_contact": false,
+        "native_upper_corner_m": [
+          0.3,
+          7.5,
+          6.0
+        ],
+        "source_native_storey_guid": "1ZGO8hrFCHqw0v0026FpFv",
+        "source_original_mapped_representation_guid": 252
+      },
+      "2IIWDJ6bzEPxU4iXeUX9cP": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          0.0,
+          7.199999999999999,
+          0.0
+        ],
+        "native_support_contact": true,
+        "native_upper_corner_m": [
+          0.3,
+          7.5,
+          2.7
+        ],
+        "source_native_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+        "source_original_mapped_representation_guid": 113
+      },
+      "2IIWDJ6bzEPxU4iXeUX9ow": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          7.199999999999999,
+          7.199999999999999,
+          3.0
+        ],
+        "native_support_contact": false,
+        "native_upper_corner_m": [
+          7.5,
+          7.5,
+          6.0
+        ],
+        "source_native_storey_guid": "1ZGO8hrFCHqw0v0026FpFv",
+        "source_original_mapped_representation_guid": 280
+      },
+      "2IIWDJ6bzEPxU4iXeUX9rK": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          7.199999999999999,
+          0.0,
+          3.0
+        ],
+        "native_support_contact": false,
+        "native_upper_corner_m": [
+          7.5,
+          0.3,
+          6.0
+        ],
+        "source_native_storey_guid": "1ZGO8hrFCHqw0v0026FpFv",
+        "source_original_mapped_representation_guid": 336
+      },
+      "2IIWDJ6bzEPxU4iXeUX9rM": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "native_support_contact": false,
+        "native_upper_corner_m": [
+          0.3,
+          0.3,
+          6.0
+        ],
+        "source_native_storey_guid": "1ZGO8hrFCHqw0v0026FpFv",
+        "source_original_mapped_representation_guid": 308
+      },
+      "2IIWDJ6bzEPxU4iXeUX9rk": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          3.6,
+          0.0,
+          0.0
+        ],
+        "native_support_contact": true,
+        "native_upper_corner_m": [
+          3.9,
+          0.3,
+          2.0
+        ],
+        "source_native_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+        "source_original_mapped_representation_guid": 364
+      },
+      "2IIWDJ6bzEPxU4iXeUX9ti": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          3.6,
+          0.0,
+          3.0
+        ],
+        "native_support_contact": false,
+        "native_upper_corner_m": [
+          3.9,
+          0.3,
+          6.0
+        ],
+        "source_native_storey_guid": "1ZGO8hrFCHqw0v0026FpFv",
+        "source_original_mapped_representation_guid": 391
+      },
+      "2IIWDJ6bzEPxU4iXeUX9wF": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          7.199999999999999,
+          0.0,
+          0.0
+        ],
+        "native_support_contact": true,
+        "native_upper_corner_m": [
+          7.5,
+          0.3,
+          2.7
+        ],
+        "source_native_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+        "source_original_mapped_representation_guid": 178
+      },
+      "2IIWDJ6bzEPxU4iXeUX9wJ": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          7.199999999999999,
+          7.199999999999999,
+          0.0
+        ],
+        "native_support_contact": true,
+        "native_upper_corner_m": [
+          7.5,
+          7.5,
+          2.7
+        ],
+        "source_native_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+        "source_original_mapped_representation_guid": 151
+      },
+      "2IIWDJ6bzEPxU4iXeUX9zS": {
+        "bottom_face_slab_XY_overlap_fraction": 1.0,
+        "native_lower_corner_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "native_support_contact": true,
+        "native_upper_corner_m": [
+          0.3,
+          0.3,
+          2.7
+        ],
+        "source_native_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+        "source_original_mapped_representation_guid": 205
+      }
+    },
+    "original_contacting_support_columns": [
+      "2IIWDJ6bzEPxU4iXeUX9cP",
+      "2IIWDJ6bzEPxU4iXeUX9rk",
+      "2IIWDJ6bzEPxU4iXeUX9wF",
+      "2IIWDJ6bzEPxU4iXeUX9wJ",
+      "2IIWDJ6bzEPxU4iXeUX9zS"
+    ],
+    "original_named_Slab_unchanged": true,
+    "original_noncontact_delete_columns": [
+      "2IIWDJ6bzEPxU4iXeUX9_B",
+      "2IIWDJ6bzEPxU4iXeUX9ow",
+      "2IIWDJ6bzEPxU4iXeUX9rK",
+      "2IIWDJ6bzEPxU4iXeUX9rM",
+      "2IIWDJ6bzEPxU4iXeUX9ti"
+    ],
+    "original_slab_top_world_z_m": 0.0,
+    "original_source_relation_interpretation": "physical bottom face / full native box + 99% XY overlap + actual source Storey"
+  },
+  "developer_source_only_public_named_reference_slab": "2IIWDJ6bzEPxU4iXeUX9Z5",
+  "direct_mark_up_developer_deleted_original_XML_node_IDs": [
+    [
+      "column_70127a43499d18",
+      "2IIWDJ6bzEPxU4iXeUX9ti"
+    ],
+    [
+      "column_87d41ebf2883d8",
+      "2IIWDJ6bzEPxU4iXeUX9ow"
+    ],
+    [
+      "column_b1a15fcc3086ab",
+      "2IIWDJ6bzEPxU4iXeUX9_B"
+    ],
+    [
+      "column_c00b21467f0567",
+      "2IIWDJ6bzEPxU4iXeUX9rK"
+    ],
+    [
+      "column_cd6ad373efce34",
+      "2IIWDJ6bzEPxU4iXeUX9rM"
+    ]
+  ],
+  "direct_markup_model_generated_output": false,
+  "independent_original_native_IFC_oracle": {
+    "all_original_surviving_type_map_material_relations_preserved": true,
+    "all_surviving_original_native_world_meshes_preserved": 7,
+    "candidate_sha256": "a645feb56e72dd17515ec973064f94408a31457ae0b880b497505542457382eb",
+    "full_45_backend_parity_proven": false,
+    "modified_original_native_step_entities": 2,
+    "new_LLM_model_run": false,
+    "not_an_explicit_IfcRelConnectsElements": true,
+    "original_named_slab_top_world_z_m": 0.0,
+    "original_native_columns_count": 10,
+    "original_native_contact_columns_preserved": [
+      "2IIWDJ6bzEPxU4iXeUX9cP",
+      "2IIWDJ6bzEPxU4iXeUX9rk",
+      "2IIWDJ6bzEPxU4iXeUX9wF",
+      "2IIWDJ6bzEPxU4iXeUX9wJ",
+      "2IIWDJ6bzEPxU4iXeUX9zS"
+    ],
+    "original_native_ifc4x3_schema_preserved": true,
+    "original_native_noncontact_columns_deleted": [
+      "2IIWDJ6bzEPxU4iXeUX9_B",
+      "2IIWDJ6bzEPxU4iXeUX9ow",
+      "2IIWDJ6bzEPxU4iXeUX9rK",
+      "2IIWDJ6bzEPxU4iXeUX9rM",
+      "2IIWDJ6bzEPxU4iXeUX9ti"
+    ],
+    "public_original_reference_slab_globalid": "2IIWDJ6bzEPxU4iXeUX9Z5",
+    "relationship_evidence": "actual original world Slab upper face + each Column lower face with >=99 percent native XY footprint overlap and original Storey",
+    "removed_original_native_roots_by_class": {
+      "IfcColumn": 5,
+      "IfcPropertySet": 15,
+      "IfcRelDefinesByProperties": 15,
+      "IfcRelDefinesByType": 5
+    },
+    "removed_original_native_step_entities": 75,
+    "source_sha256": "c3be36a685b1117f16005419f40ec02d0daaf2065e56dbd46efeec79f24c19d9",
+    "status": "INDEPENDENT_ORIGINAL_SOURCE_SLAB_CONTACT_MULTI_COLUMN_DELETE_PASS"
+  },
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/134",
+  "native_candidate_sha256": "a645feb56e72dd17515ec973064f94408a31457ae0b880b497505542457382eb",
+  "native_trusted_compiler_operation_count": 5,
+  "native_trusted_compiler_original_source_hash": "c3be36a685b1117f16005419f40ec02d0daaf2065e56dbd46efeec79f24c19d9",
+  "new_model_provider_calls": 0,
+  "normalized_original_ifc_sha256": "c3be36a685b1117f16005419f40ec02d0daaf2065e56dbd46efeec79f24c19d9",
+  "original_author_D0_score_after_candidate_frozen": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_grader_edited": false,
+  "original_author_source_revision": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_dataset_bytes_edited": false,
+  "original_mm_candidate_sha256": "837495567a93744b38d0736f9254868f7d30cb34df77162471cf46cbea00a513",
+  "original_native_schema": "IFC4X3",
+  "original_public_dataset_revision": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_ifc_sha256": "a052ec0377c437f28f0a1b8be4dd4ce4f78bf877bde7e51d10eb2d72310230bd",
+  "original_public_question_sha256": "987c24e896b8cdeb609d4e2d167c642f3f4e7fd7f1c1744be326c54b72888a53",
+  "original_public_task_id": "topological_test_17",
+  "original_real_GPT6_Luna_45_scores_unchanged": true,
+  "status": "ORIGINAL_SOURCE_IFC4X3_V010_MULTICOLUMN_DEVELOPER_D0_NOT_LLM"
+}
