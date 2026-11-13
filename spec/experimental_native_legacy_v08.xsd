@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:l="urn:bim-markup-bench:legacy:v0.8"
+    targetNamespace="urn:bim-markup-bench:legacy:v0.8"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+  <xs:annotation><xs:documentation>
+    Research-only partial native IFC2X3/IFC4 declarative model snapshot.
+    It does NOT re-label original IFC native schema as IFC4X3.
+    Original opaque IFC shapes and their inverse relations stay authoritative.
+    This is not the published BIM markup language nor an imperative API surface.
+  </xs:documentation></xs:annotation>
+  <xs:simpleType name="Hash"><xs:restriction base="xs:string"><xs:pattern value="[0-9a-f]{64}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Guid"><xs:restriction base="xs:string"><xs:pattern value="[0-9A-Za-z_$]{22}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Positive"><xs:restriction base="xs:decimal"><xs:minExclusive value="0"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Nonnegative"><xs:restriction base="xs:decimal"><xs:minInclusive value="0"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="SchemaName"><xs:restriction base="xs:string"><xs:enumeration value="IFC2X3"/><xs:enumeration value="IFC4"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="ElevationStatus"><xs:restriction base="xs:string"><xs:enumeration value="EXPLICIT"/><xs:enumeration value="MISSING"/></xs:restriction></xs:simpleType>
+
+  <xs:attributeGroup name="EntityID">
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+    <xs:attribute name="ifcGuid" type="l:Guid" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Coords">
+    <xs:attribute name="x" type="xs:decimal" use="required"/>
+    <xs:attribute name="y" type="xs:decimal" use="required"/>
+    <xs:attribute name="z" type="xs:decimal" use="required"/>
+  </xs:attributeGroup>
+  <xs:complexType name="Level">
+    <xs:attributeGroup ref="l:EntityID"/>
+    <xs:attribute name="elevationState" type="l:ElevationStatus" use="required"/>
+    <xs:attribute name="elevation" type="xs:decimal" use="optional"/>
+    <xs:attribute name="placementZ" type="xs:decimal" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Wall">
+    <xs:attributeGroup ref="l:EntityID"/>
+    <xs:attribute name="level" type="xs:IDREF" use="required"/>
+    <xs:attribute name="x1" type="xs:decimal" use="required"/>
+    <xs:attribute name="y1" type="xs:decimal" use="required"/>
+    <xs:attribute name="z1" type="xs:decimal" use="required"/>
+    <xs:attribute name="x2" type="xs:decimal" use="required"/>
+    <xs:attribute name="y2" type="xs:decimal" use="required"/>
+    <xs:attribute name="z2" type="xs:decimal" use="required"/>
+    <xs:attribute name="height" type="l:Positive" use="required"/>
+    <xs:attribute name="thickness" type="l:Positive" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Column">
+    <xs:attributeGroup ref="l:EntityID"/>
+    <xs:attribute name="level" type="xs:IDREF" use="required"/>
+    <xs:attributeGroup ref="l:Coords"/>
+    <xs:attribute name="width" type="l:Positive" use="required"/>
+    <xs:attribute name="depth" type="l:Positive" use="required"/>
+    <xs:attribute name="height" type="l:Positive" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Space">
+    <xs:attributeGroup ref="l:EntityID"/>
+    <xs:attribute name="level" type="xs:IDREF" use="required"/>
+    <xs:attributeGroup ref="l:Coords"/>
+    <xs:attribute name="width" type="l:Positive" use="required"/>
+    <xs:attribute name="depth" type="l:Positive" use="required"/>
+    <xs:attribute name="height" type="l:Positive" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Opening">
+    <xs:attributeGroup ref="l:EntityID"/>
+    <xs:attribute name="host" type="xs:IDREF" use="required"/>
+    <xs:attribute name="offset" type="l:Nonnegative" use="required"/>
+    <xs:attribute name="sill" type="l:Nonnegative" use="required"/>
+    <xs:attribute name="width" type="l:Positive" use="required"/>
+    <xs:attribute name="height" type="l:Positive" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Door">
+    <xs:attributeGroup ref="l:EntityID"/>
+    <xs:attribute name="opening" type="xs:IDREF" use="required"/>
+    <xs:attribute name="width" type="l:Positive" use="required"/>
+    <xs:attribute name="height" type="l:Positive" use="required"/>
+  </xs:complexType>
+  <xs:element name="Building">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Levels"><xs:complexType><xs:sequence>
+          <xs:element name="Level" type="l:Level" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence></xs:complexType></xs:element>
+        <xs:element name="Elements"><xs:complexType><xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Wall" type="l:Wall"/>
+          <xs:element name="Column" type="l:Column"/>
+          <xs:element name="Space" type="l:Space"/>
+          <xs:element name="Opening" type="l:Opening"/>
+          <xs:element name="Door" type="l:Door"/>
+        </xs:choice></xs:complexType></xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" fixed="0.8" use="required"/>
+      <xs:attribute name="sourceModelSha256" type="l:Hash" use="required"/>
+      <xs:attribute name="sourceIfcSchema" type="l:SchemaName" use="required"/>
+      <xs:attribute name="units" type="xs:string" fixed="m" use="required"/>
+    </xs:complexType>
+    <xs:unique name="sourceGuidsAreUnique"><xs:selector xpath="l:Levels/l:Level | l:Elements/*"/><xs:field xpath="@ifcGuid"/></xs:unique>
+    <xs:key name="levelKeys"><xs:selector xpath="l:Levels/l:Level"/><xs:field xpath="@id"/></xs:key>
+    <xs:key name="wallKeys"><xs:selector xpath="l:Elements/l:Wall"/><xs:field xpath="@id"/></xs:key>
+    <xs:key name="openingKeys"><xs:selector xpath="l:Elements/l:Opening"/><xs:field xpath="@id"/></xs:key>
+    <xs:keyref name="levelReferences" refer="l:levelKeys"><xs:selector xpath="l:Elements/l:Wall | l:Elements/l:Column | l:Elements/l:Space"/><xs:field xpath="@level"/></xs:keyref>
+    <xs:keyref name="openingHostReferences" refer="l:wallKeys"><xs:selector xpath="l:Elements/l:Opening"/><xs:field xpath="@host"/></xs:keyref>
+    <xs:keyref name="doorOpeningReferences" refer="l:openingKeys"><xs:selector xpath="l:Elements/l:Door"/><xs:field xpath="@opening"/></xs:keyref>
+  </xs:element>
+</xs:schema>
