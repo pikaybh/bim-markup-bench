@@ -1,0 +1,38 @@
+{
+  "automatic_copy_or_original_data_modification": false,
+  "fixture_admission_is_not_full_suite_success": true,
+  "fixtures": [
+    {
+      "admission_status": "MISSING_ISOLATED_WORKTREE_MOUNT",
+      "logical_fixture": "frozen_bim_edit_public_task_catalog",
+      "source_file_available": true,
+      "source_file_content_in_report": false,
+      "source_hash_actual_if_available": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+      "source_hash_expected_if_pinned": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+      "worktree_file_available": false,
+      "worktree_hash_actual_if_available": null,
+      "worktree_relative_path": "data/tasks.jsonl"
+    },
+    {
+      "admission_status": "MISSING_ISOLATED_WORKTREE_MOUNT",
+      "logical_fixture": "historical_bibimbap_model_preflight",
+      "source_file_available": true,
+      "source_file_content_in_report": false,
+      "source_hash_actual_if_available": "c304e09a84ba275ed6b6e499f1be36a94795484287191b51b7c1b5c3244cd041",
+      "source_hash_expected_if_pinned": null,
+      "worktree_file_available": false,
+      "worktree_hash_actual_if_available": null,
+      "worktree_relative_path": "results/bibimbap_original_45_luna_20261112_issue112/preflight.json"
+    }
+  ],
+  "official_scores_or_model_calls": 0,
+  "prior_832_case_run_had": {
+    "errors": 65,
+    "failures": 9,
+    "run_origin": "independent_existing_v014_isolated_worktree_run_20261114",
+    "skipped": 67,
+    "tests_run": 832
+  },
+  "status": "BLOCKED_KNOWN_FIXTURES_NOT_ADMITTED",
+  "unresolved_legacy_gate_and_code_page_failures_require_separate_evidence": true
+}
