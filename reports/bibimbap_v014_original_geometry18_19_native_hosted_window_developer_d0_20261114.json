@@ -1,0 +1,233 @@
+{
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/142",
+  "new_paid_cost_usd": "0",
+  "new_paid_model_calls": 0,
+  "old_D0_research_evidence_unchanged": true,
+  "original_GPT6_Luna_real45_scores_unchanged": true,
+  "original_Python_matched_I0_models_run": 0,
+  "original_author_model_scores_not_new_LLM_scores": true,
+  "original_author_revision": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_test_score_used_only_post_candidate_freeze": true,
+  "original_dataset_revision": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_hidden_target_reference_not_accessed_during_authoring": true,
+  "original_public_45_denominator_retained": 45,
+  "real_matched_XML_Python_LLM_runs": 0,
+  "source_original_IFC4X3_geometry_test_18_19_original_frozen_D0_cases": [
+    {
+      "developer_XML_whole_Window_inventory_after_deleting_nodes_sha256": "cb31b6413072dd5029a0ad3dc699474ec694f64dcf6954d07d586948beb500dd",
+      "developer_prompt_semantics_are_not_a_held_out_model_trial": true,
+      "developer_source_only_native_geometric_Window_selection": {
+        "developer_fixed_source_native_Window_Guids": [
+          "1xzI3PuNvF1RRUjZb8YINr",
+          "1xzI3PuNvF1RRUjZb8YIUz"
+        ],
+        "native_selection_only": "Original westmost north/south oriented Window host Wall",
+        "original_native_source_west_wall_center_x_m": 0.1,
+        "original_question_direction_semantics": "+X east, west is minimum original world X",
+        "selected_original_native_source_west_wall_guids": [
+          "1u4oG4Ltr15fMWjwJ4pNV8"
+        ],
+        "source_public_question_excludes_hidden_target": true
+      },
+      "developer_source_only_original_public_selected_window_guids": [
+        "1xzI3PuNvF1RRUjZb8YINr",
+        "1xzI3PuNvF1RRUjZb8YIUz"
+      ],
+      "independent_original_native_ifc_oracle": {
+        "actual_world_native_product_meshes_preserved": 53,
+        "candidate_independent_native_scene_proof_not_original_author_grade": true,
+        "candidate_native_sha256": "daf1e45fff599d0868e83b46e6a2d1b22274111feb190f62b172077dc94283dc",
+        "full_original45_semantic_edit_equivalence_proven": false,
+        "hidden_ground_truth_not_used": true,
+        "independently_expected_deleted_owned_root_guids": [
+          "0AgR0FpRBRJ8D5bmFshn2U",
+          "0GanUFG2ErqrfSvF6dAh04",
+          "0aBy5CwKmPeWhgscD3_8ZT",
+          "1EbZKuYjgvGSa91GkDbqp6",
+          "1GM49EluSziFFgONa9PRjn",
+          "1NXOH4_2ei5Q4hRdNcKWMr",
+          "1Wj1Qlft6dHN2NbgfCnit8",
+          "1q2l$y5DjK1PbupeQDHbhC",
+          "1xzI3PuNvF1RRUjZb8YINr",
+          "1xzI3PuNvF1RRUjZb8YIUz",
+          "2C8hbHuKkGzdKsB_yhBN6C",
+          "3Nca8ctBjFPtml_oxiu44v",
+          "3RQVV6oeYnuA8u6gEY4O_h",
+          "3tlI6byWKDD0PG3Ns37VOw"
+        ],
+        "independently_original_host_wall_guids_preserved": [
+          "1u4oG4Ltr15fMWjwJ4pNV8"
+        ],
+        "independently_original_source_openings_retained": [
+          "0$7ZoHdpCLCIPqzzgj22se",
+          "3bGb4Hg19nVXzQZ6nBvF6T"
+        ],
+        "independently_source_shared_membership_relation_guids": [
+          "1bUfuaMUxXfkW2ZKHBOkav",
+          "2JF4e6axWHqu3u0C5FZlmi",
+          "2_zFpmh9XqrthVoA76O5La"
+        ],
+        "model_calls": 0,
+        "non_target_original_root_count_preserved": 343,
+        "original_IfcRelVoids_and_Window_fill_semantics_preserved": true,
+        "original_author_scorer_not_invoked": true,
+        "original_host_wall_opening_unchanged": true,
+        "original_requested_windows_removed": [
+          "1xzI3PuNvF1RRUjZb8YINr",
+          "1xzI3PuNvF1RRUjZb8YIUz"
+        ],
+        "original_source_sha256": "688fbee637c7a47409df4c6138335e7efbc364804687c683e8898d5506a8fb7a",
+        "source_original_ifc_schema_and_units_retained": true,
+        "status": "INDEPENDENT_ORIGINAL_NATIVE_IFC4X3_WINDOW_ONLY_DELETE_ORACLE_PASS_V014"
+      },
+      "native_target_only_Window_delete_implemented": true,
+      "new_paid_model_calls": 0,
+      "original_Python_matched_I0_baseline_run": false,
+      "original_author_score_AFTER_frozen_developer_D0": {
+        "error_type": "RuntimeError",
+        "status": "AUTHOR_WORKER_FAILED"
+      },
+      "original_author_score_influenced_candidate_generation": false,
+      "original_declarative_full_Window_source_state_sha256": "eafbc7dd50f78d59efca0673e03ede7d221dfb15e7119531018fd9a386dfd2a8",
+      "original_hidden_author_target_used_for_selection": false,
+      "original_native_candidate_sha256": "daf1e45fff599d0868e83b46e6a2d1b22274111feb190f62b172077dc94283dc",
+      "original_native_opening_and_host_geometry_preserved": true,
+      "original_native_readonly_v13_catalog_sha256": "1dd7ddba32be3941d0fb3e28847c8834dd7c316239b19516f8f336e702e4027f",
+      "original_native_schema": "IFC4X3",
+      "original_normalized_metres_source_sha256": "688fbee637c7a47409df4c6138335e7efbc364804687c683e8898d5506a8fb7a",
+      "original_originalunit_mm_candidate_sha256": "98575c3fc21bc8cafbf6248017bdbfbee5de786d71f6ead2676cef876c054b4c",
+      "original_public_ifc_sha256": "a4da98bf78ce8d5a27043ff317aa7fa7a4cfe53a63dbb8d998ac3496410fcce8",
+      "original_public_question_sha256": "dde714e4148bf439295ed9ef8fa3868d4eb1807d62113fcbb08571ebc041cf77",
+      "original_public_task_id": "geometry_test_18",
+      "original_semantic_full45_edit_parity_claim": false,
+      "postfreeze_original_author_source_target_missing_diagnostic": {
+        "original_author_static_declared_target_count": 6,
+        "original_author_target_GUID_values_excluded_from_report": true,
+        "original_author_targets_absent_from_original_source": 4,
+        "original_author_targets_found_in_original_source": 2,
+        "postfreeze_forensics_does_not_modify_candidate_or_score": true,
+        "scorer_exception_class": "RuntimeError",
+        "status": "PINNED_ORIGINAL_AUTHOR_TARGET_NOT_IN_ORIGINAL_PUBLIC_IFC",
+        "the_original_author_implementation_is_not_modified": true,
+        "this_is_not_a_replacement_grade": true
+      }
+    },
+    {
+      "developer_XML_whole_Window_inventory_after_deleting_nodes_sha256": "1a3424e30b9a3100fdadbbb33e6218a35c90b2f993293d126f858755340a6867",
+      "developer_prompt_semantics_are_not_a_held_out_model_trial": true,
+      "developer_source_only_native_geometric_Window_selection": {
+        "developer_fixed_source_native_Window_Guids": [
+          "1mRYVM4YfFFBRkcbz1hH$2",
+          "1mRYVM4YfFFBRkcbz1hH_L"
+        ],
+        "developer_original_native_opposite_host_wall_guids": [
+          "1mRYVM4YfFFBRkcbz1hHaA"
+        ],
+        "developer_original_opposite_wall_window_overlap_m": {
+          "1mRYVM4YfFFBRkcbz1hH$2": 0.9,
+          "1mRYVM4YfFFBRkcbz1hH_L": 0.6
+        },
+        "original_source_named_reference_wall_length_m": 3.7,
+        "public_original_named_reference_wall_guid": "1mRYVM4YfFFBRkcbz1hHbM",
+        "source_original_named_reference_wall_axis_m": [
+          [
+            9.0,
+            -2.8,
+            0.0
+          ],
+          [
+            5.3,
+            -2.8,
+            0.0
+          ]
+        ],
+        "source_public_question_excludes_hidden_target": true
+      },
+      "developer_source_only_original_public_selected_window_guids": [
+        "1mRYVM4YfFFBRkcbz1hH$2",
+        "1mRYVM4YfFFBRkcbz1hH_L"
+      ],
+      "independent_original_native_ifc_oracle": {
+        "actual_world_native_product_meshes_preserved": 20,
+        "candidate_independent_native_scene_proof_not_original_author_grade": true,
+        "candidate_native_sha256": "13edba43f031406c88331cf089f137734c67d8128aea38075e49a2ee0ca8a3cb",
+        "full_original45_semantic_edit_equivalence_proven": false,
+        "hidden_ground_truth_not_used": true,
+        "independently_expected_deleted_owned_root_guids": [
+          "0Eo5j0r3EQfVPZDt2UzJpZ",
+          "0XJDZt34GIkZrjQEoP4DlL",
+          "0pDBCy9uy7YKDlcqx_cUEs",
+          "1YFR0VMShl0hOrTCPj7V$w",
+          "1mRYVM4YfFFBRkcbz1hH$2",
+          "1mRYVM4YfFFBRkcbz1hH_L",
+          "2Crl2NXR_EOLcvs6t1DFeF",
+          "2Kv2$SumXj5dCwFSkW0EhR",
+          "2P94Gz0gtuecpXcyGr2XDU",
+          "2XwGuzThFD$sS5kXK7K2Am",
+          "2b2Y8K7MUxQAtjCDUM1tY9",
+          "3aSFVGzPgv5xmVf2pZmiSj",
+          "3cGky49zHlKvNHz7yhTuj6",
+          "3m9mvXiByy2q1rLdmYwvhf"
+        ],
+        "independently_original_host_wall_guids_preserved": [
+          "1mRYVM4YfFFBRkcbz1hHaA"
+        ],
+        "independently_original_source_openings_retained": [
+          "0Ub6rca1u_p5PdNYHvpRHV",
+          "20UNRRDp_InaW8_dq7ad4F"
+        ],
+        "independently_source_shared_membership_relation_guids": [
+          "1FWcDxrBKWQE6D_YUt5q9l",
+          "2JF4e6axWHqu3u0C5FZlmi",
+          "2bCYf4mME1UXDQABL3rObx"
+        ],
+        "model_calls": 0,
+        "non_target_original_root_count_preserved": 157,
+        "original_IfcRelVoids_and_Window_fill_semantics_preserved": true,
+        "original_author_scorer_not_invoked": true,
+        "original_host_wall_opening_unchanged": true,
+        "original_requested_windows_removed": [
+          "1mRYVM4YfFFBRkcbz1hH$2",
+          "1mRYVM4YfFFBRkcbz1hH_L"
+        ],
+        "original_source_sha256": "52a07386689b6d48fd074a2f3ca42af7b0f00463289b8efd094f7c15f3aca47a",
+        "source_original_ifc_schema_and_units_retained": true,
+        "status": "INDEPENDENT_ORIGINAL_NATIVE_IFC4X3_WINDOW_ONLY_DELETE_ORACLE_PASS_V014"
+      },
+      "native_target_only_Window_delete_implemented": true,
+      "new_paid_model_calls": 0,
+      "original_Python_matched_I0_baseline_run": false,
+      "original_author_score_AFTER_frozen_developer_D0": {
+        "error_type": "RuntimeError",
+        "status": "AUTHOR_WORKER_FAILED"
+      },
+      "original_author_score_influenced_candidate_generation": false,
+      "original_declarative_full_Window_source_state_sha256": "fb3ead7663d20dc787bb075ca726d4b18f0679d8d2bd29d3671893137f893719",
+      "original_hidden_author_target_used_for_selection": false,
+      "original_native_candidate_sha256": "13edba43f031406c88331cf089f137734c67d8128aea38075e49a2ee0ca8a3cb",
+      "original_native_opening_and_host_geometry_preserved": true,
+      "original_native_readonly_v13_catalog_sha256": "283bdb916c4f846e0132e2af02aad8eb21f02547af570bde4f2a55cd22b16b4c",
+      "original_native_schema": "IFC4X3",
+      "original_normalized_metres_source_sha256": "52a07386689b6d48fd074a2f3ca42af7b0f00463289b8efd094f7c15f3aca47a",
+      "original_originalunit_mm_candidate_sha256": "e226d9cb2ad8457ccf4ceced1534becce49b718347f7654c0784891a5534804e",
+      "original_public_ifc_sha256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "original_public_question_sha256": "877b249c656fb4237aff31299ae86bef1338b0318c0b12f028ff59db4d59dfb6",
+      "original_public_task_id": "geometry_test_19",
+      "original_semantic_full45_edit_parity_claim": false,
+      "postfreeze_original_author_source_target_missing_diagnostic": {
+        "original_author_static_declared_target_count": 2,
+        "original_author_target_GUID_values_excluded_from_report": true,
+        "original_author_targets_absent_from_original_source": 1,
+        "original_author_targets_found_in_original_source": 1,
+        "postfreeze_forensics_does_not_modify_candidate_or_score": true,
+        "scorer_exception_class": "RuntimeError",
+        "status": "PINNED_ORIGINAL_AUTHOR_TARGET_NOT_IN_ORIGINAL_PUBLIC_IFC",
+        "the_original_author_implementation_is_not_modified": true,
+        "this_is_not_a_replacement_grade": true
+      }
+    }
+  ],
+  "source_original_native_window_only_deletion_not_opening_repair": true,
+  "status": "ORIGINAL_BIBIMBAP_GEOMETRY18_19_WINDOW_SOURCE_ONLY_V014_D0_NOT_LLM",
+  "true_semantic_write_parity_45_not_proven": true
+}

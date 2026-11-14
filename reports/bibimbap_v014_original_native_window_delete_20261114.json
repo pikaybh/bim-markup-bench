@@ -1,0 +1,80 @@
+{
+  "LLM_trials": 0,
+  "Python_I0_oracles": 0,
+  "benchmarks_scored": 0,
+  "cases": [
+    {
+      "metre_normalized_source_sha256": "688fbee637c7a47409df4c6138335e7efbc364804687c683e8898d5506a8fb7a",
+      "offline_d0_candidate_observations": {
+        "one_v013_opaque_window": {
+          "declarative_xml_sha256": "fffcccd766c4e5b1016117c059ac559d6ab5cf8b33920025a34ccf047b0ad29e",
+          "exclusive_source_ifc_roots_removed_count": 7,
+          "host_void_and_opening_preserved": true,
+          "independent_ifc_oracle_status": "INDEPENDENT_ORIGINAL_NATIVE_IFC4X3_WINDOW_ONLY_DELETE_ORACLE_PASS_V014",
+          "native_candidate_ifc_sha256": "57ed39777028dddcc2d0af2d6456c8772c6dd238ecaa79e4c88b80930d263846",
+          "original_native_world_meshes_preserved": 54,
+          "unrelated_ifc_root_count_preserved": 350,
+          "windows_removed_count": 1
+        },
+        "six_source_windows": {
+          "declarative_xml_sha256": "c8a940657c7fec30131bfab258e4f5741327cb7851edb1a33a2399689a2b6a6c",
+          "exclusive_source_ifc_roots_removed_count": 42,
+          "host_void_and_opening_preserved": true,
+          "independent_ifc_oracle_status": "INDEPENDENT_ORIGINAL_NATIVE_IFC4X3_WINDOW_ONLY_DELETE_ORACLE_PASS_V014",
+          "native_candidate_ifc_sha256": "016b8bc840a3ffb727682c5dd8b3f55cff88b48590a333175a6370f74ad17159",
+          "original_native_world_meshes_preserved": 49,
+          "unrelated_ifc_root_count_preserved": 315,
+          "windows_removed_count": 6
+        }
+      },
+      "original_full_window_inventory_count": 19,
+      "original_native_catalog_sha256": "1dd7ddba32be3941d0fb3e28847c8834dd7c316239b19516f8f336e702e4027f",
+      "original_public_asset_relative_path": "01/01/01_01_018.ifc",
+      "original_public_asset_sha256": "a4da98bf78ce8d5a27043ff317aa7fa7a4cfe53a63dbb8d998ac3496410fcce8",
+      "public_case": "geometry_test_18",
+      "v013_readonly_demoted_windows_count": 1,
+      "v014_full_declarative_window_state_sha256": "eafbc7dd50f78d59efca0673e03ede7d221dfb15e7119531018fd9a386dfd2a8"
+    },
+    {
+      "metre_normalized_source_sha256": "52a07386689b6d48fd074a2f3ca42af7b0f00463289b8efd094f7c15f3aca47a",
+      "offline_d0_candidate_observations": {
+        "one_v013_opaque_window": {
+          "declarative_xml_sha256": "6d15e18b984ac09b4d45e3487460664b0d793f402474a0dd23511b10854a4372",
+          "exclusive_source_ifc_roots_removed_count": 7,
+          "host_void_and_opening_preserved": true,
+          "independent_ifc_oracle_status": "INDEPENDENT_ORIGINAL_NATIVE_IFC4X3_WINDOW_ONLY_DELETE_ORACLE_PASS_V014",
+          "native_candidate_ifc_sha256": "38a8fb5adc81eff2570a0409e7b282d3f7fd7a6f9e8b28f27f1a04748af07944",
+          "original_native_world_meshes_preserved": 21,
+          "unrelated_ifc_root_count_preserved": 164,
+          "windows_removed_count": 1
+        },
+        "six_source_windows": {
+          "declarative_xml_sha256": "2ee7457436b2a2198649a65c2c5f85a63c9e803a99e2f28146978acabcb466da",
+          "exclusive_source_ifc_roots_removed_count": 42,
+          "host_void_and_opening_preserved": true,
+          "independent_ifc_oracle_status": "INDEPENDENT_ORIGINAL_NATIVE_IFC4X3_WINDOW_ONLY_DELETE_ORACLE_PASS_V014",
+          "native_candidate_ifc_sha256": "cbea1a795bb233fba50779cd3a9910bd7132f5c8a6c1ed42bb588ac5f868537c",
+          "original_native_world_meshes_preserved": 16,
+          "unrelated_ifc_root_count_preserved": 129,
+          "windows_removed_count": 6
+        }
+      },
+      "original_full_window_inventory_count": 7,
+      "original_native_catalog_sha256": "283bdb916c4f846e0132e2af02aad8eb21f02547af570bde4f2a55cd22b16b4c",
+      "original_public_asset_relative_path": "01/01/01_01_019.ifc",
+      "original_public_asset_sha256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "public_case": "geometry_test_19",
+      "v013_readonly_demoted_windows_count": 3,
+      "v014_full_declarative_window_state_sha256": "fb3ead7663d20dc787bb075ca726d4b18f0679d8d2bd29d3671893137f893719"
+    }
+  ],
+  "full_BIM_XML_source_claim": false,
+  "hidden_ground_truth_access": false,
+  "hosted_opening_delete_supported": false,
+  "hosted_window_native_delete_only": true,
+  "model_or_paid_API_calls": 0,
+  "official_author_grader_runs": 0,
+  "origin": "independent-source-only-experimental-no-official-score",
+  "original_BIBIMBAP_45_edit_parity_proven": false,
+  "status": "V014_OFFLINE_SOURCE_ONLY_D0_AND_INDEPENDENT_IFC_ORACLE"
+}
