@@ -57,7 +57,7 @@ class CompileReport:
                       if any(op.operation in (
                           "DELETE_WINDOW","DELETE_HOSTED_DOOR_OPENING",
                           "MOVE_OPENING_WITH_FILLING","ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION",
-                          "SPLIT_SPACE", "DELETE_SPACE"
+                          "SPLIT_SPACE", "DELETE_SPACE", "DELETE_HOSTED_WINDOW_OPENING"
                       ) for op in self.operations)
                       else "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"),
             "scope":("Source-pinned bounded two-Space state diff with oriented first-level boundary reconciliation"
@@ -269,6 +269,14 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
         delta=graph_diff(before.graph,after.graph)
         prior_nodes=before.graph.by_id()
         new_nodes=after.graph.by_id()
+        if (any(prior_nodes[name].kind=="Opening" for name in delta.removed_nodes)
+                and any(prior_nodes[name].kind=="Window" for name in delta.removed_nodes)):
+            # Exact two-node original Window+Opening source-state deletion.
+            # The trusted backend rejects unrelated changes, shared
+            # ownership, unverified native descendants and schema drift.
+            from src.runtime.opening_window_delete import compile_existing_window_opening_delete
+            return compile_existing_window_opening_delete(
+                source,destination,before_doc,after_doc,before,after)
         if any(prior_nodes[name].kind=="Space" for name in delta.removed_nodes):
             # A single removed existing <Space> is an ordinary declarative
             # document-state diff. Dedicated narrow preflight refuses
