@@ -1,0 +1,21 @@
+{
+  "actual_code_execution_or_original_author_scoring_in_this_preflight": false,
+  "causal_pure_representation_comparison_ready": false,
+  "docker_cli_actually_started_or_modified_containers": false,
+  "docker_desktop_or_wsl_service_restarted": false,
+  "docker_first_image_inspect_seconds": 0.469,
+  "docker_first_probe_exceeded_prior_12_second_limit": false,
+  "docker_linux_engine_attested_by_readonly_info": true,
+  "docker_second_image_inspect_seconds": 0.109,
+  "host_readiness_is_a_point_in_time_not_availability_guarantee": true,
+  "no_real_LLM_trial_or_paid_model_run_authorized": true,
+  "original_sources_or_scorer_modified": false,
+  "pinned_local_image_sha256": "sha256:2ce0d57dff6ea443c7f5ffffd29cf8b1b50a141b77574aae5ca4646f45f3a1ee",
+  "pinned_original_author_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "pinned_original_data_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "schema": "bibimbap.original_public.v021_nondestructive_readiness",
+  "status": "READY_FOR_SCOPED_OFFLINE_ORIGINAL_DOCKER_REGRESSION_ONLY",
+  "total_original_intention_to_test": 45,
+  "v019_container_orphan_detected": false,
+  "windows_venv_IfcOpenShell_version": "0.8.4.post1"
+}
