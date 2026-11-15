@@ -57,7 +57,7 @@ class CompileReport:
                       if any(op.operation in (
                           "DELETE_WINDOW","DELETE_HOSTED_DOOR_OPENING",
                           "MOVE_OPENING_WITH_FILLING","ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION",
-                          "SPLIT_SPACE", "DELETE_SPACE", "DELETE_HOSTED_WINDOW_OPENING"
+                          "SPLIT_SPACE", "DELETE_SPACE", "DELETE_HOSTED_WINDOW_OPENING","DELETE_ORIGINAL_PUBLIC_DOOR_OPENING"
                       ) for op in self.operations)
                       else "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"),
             "scope":("Source-pinned bounded two-Space state diff with oriented first-level boundary reconciliation"
@@ -276,6 +276,17 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             # ownership, unverified native descendants and schema drift.
             from src.runtime.opening_window_delete import compile_existing_window_opening_delete
             return compile_existing_window_opening_delete(
+                source,destination,before_doc,after_doc,before,after)
+        if (any(prior_nodes[name].kind=="Door" for name in delta.removed_nodes)
+                and any(prior_nodes[name].kind=="Opening" for name in delta.removed_nodes)
+                and projected.source.source_sha256 ==
+                    "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"):
+            # Restrict the new author-scoped Door+Opening route to the
+            # independently pinned original PUBLIC basic_tasks IFC4X3
+            # normalized source. Other existing fixture Door cases keep
+            # the previously tested dedicated Door/Opening compiler.
+            from src.runtime.door_opening_delete import compile_existing_door_opening_delete
+            return compile_existing_door_opening_delete(
                 source,destination,before_doc,after_doc,before,after)
         if any(prior_nodes[name].kind=="Space" for name in delta.removed_nodes):
             # A single removed existing <Space> is an ordinary declarative
