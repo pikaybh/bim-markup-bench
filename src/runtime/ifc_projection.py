@@ -390,7 +390,8 @@ def _filling_attrs(entity: Any, openings: dict[str,dict[str,str]], scale: float)
                 width=_number(width*scale),height=_number(height*scale))
 
 
-def project_ifc(source: Path, *, strict_on_opaque: bool=False) -> Projection:
+def project_ifc(source: Path, *, strict_on_opaque: bool=False,
+                allow_original_flipped_slab: bool=False) -> Projection:
     snapshot=snapshot_source(source)
     if snapshot.ifc_schema != "IFC4X3":
         raise UnsupportedIFCGeometry("Current experimental grammar supports IFC4X3 only")
@@ -428,7 +429,19 @@ def project_ifc(source: Path, *, strict_on_opaque: bool=False) -> Projection:
                 if typ=="IfcWall":
                     attrs=_wall_attrs(entity,known_levels,scale)
                 elif typ in ("IfcSlab","IfcColumn","IfcSpace"):
-                    attrs=_box_attrs(entity,known_levels,scale,typ.removeprefix("Ifc"))
+                    if typ=="IfcSlab" and allow_original_flipped_slab:
+                        # Keep v0.28 and earlier representation/benchmarks
+                        # unchanged by default. This opt-in is trusted host
+                        # read projection, NOT an LLM action.
+                        try:
+                            attrs=_box_attrs(entity,known_levels,scale,"Slab")
+                        except UnsupportedIFCGeometry as exc:
+                            if "Tilted swept extrusion frame" not in str(exc):
+                                raise
+                            from src.runtime.original_slab_projection import verified_flipped_slab_attrs
+                            attrs=verified_flipped_slab_attrs(entity,known_levels,scale)
+                    else:
+                        attrs=_box_attrs(entity,known_levels,scale,typ.removeprefix("Ifc"))
                 elif typ=="IfcOpeningElement":
                     attrs=_opening_attrs(entity,attrs_by_guid,scale)
                 elif typ in ("IfcWindow","IfcDoor"):

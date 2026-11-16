@@ -260,7 +260,14 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
     creating destination. Do not call with LLM-generated Python.
     """
     try:
-        projected=project_ifc(source)
+        projected=project_ifc(
+            source,
+            allow_original_flipped_slab=(
+                os.environ.get("BMB_V029_ORIGINAL_SLAB_TRANSLATE")=="1"
+                and snapshot_source(source).source_sha256==
+                "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"
+            ),
+        )
         before_doc=parse_xml(projected.xml,
             expected_source_sha256=projected.source.source_sha256)
         after_doc=parse_xml(edited_xml,
@@ -329,6 +336,17 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             # mutation or model-facing imperative operations.
             from src.runtime.original_wall_rotation import compile_original_wall_center_rotation
             return compile_original_wall_center_rotation(
+                source,destination,before_doc,after_doc,before,after)
+        if (os.environ.get("BMB_V029_ORIGINAL_SLAB_TRANSLATE")=="1"
+                and len(delta.changed_nodes)==1
+                and prior_nodes[delta.changed_nodes[0]].kind=="Slab"
+                and projected.source.source_sha256==
+                    "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"):
+            # Trusted source-slice-only editable inverted-Z Slab:
+            # ordinary complete XML with exactly one original z update.
+            # All shared original native placement points remain immutable.
+            from src.runtime.original_slab_translate import compile_original_slab_down
+            return compile_original_slab_down(
                 source,destination,before_doc,after_doc,before,after)
         wall_plan=plan_wall_mutations(before_doc,after_doc,before,after)
         model=ifcopenshell.open(str(source))
