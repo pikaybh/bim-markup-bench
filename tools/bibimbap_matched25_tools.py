@@ -83,7 +83,14 @@ class XmlSourceEditSession:
         self.normalized=folder/"normalized_original_m.ifc"
         meter.write(str(self.normalized))
         try:
-            snapshot=project_ifc(self.normalized,strict_on_opaque=False)
+            snapshot=project_ifc(
+                self.normalized,strict_on_opaque=False,
+                allow_original_flipped_slab=(
+                    os.environ.get("BMB_V029_ORIGINAL_SLAB_TRANSLATE")=="1"
+                    and file_hash(self.normalized)==
+                    "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"
+                ),
+            )
         except Exception as exc:
             raise UnsupportedArm(type(exc).__name__) from exc
         self.original_xml=snapshot.xml
