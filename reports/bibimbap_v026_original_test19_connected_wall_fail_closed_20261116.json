@@ -1,0 +1,84 @@
+{
+  "connected_wall_source_model_compiler_supported": false,
+  "cumulative_actual_developer_D0_I0_equal_original_pairs": 8,
+  "cumulative_original_author_callable_developer_pairs": 6,
+  "current_D0_compiler_status": "FAIL_CLOSED_UNSUPPORTED_CONNECTED_WALL_DELETE",
+  "diagnostic_low_level_native_only": {
+    "additional_original_orphaned_entities": {
+      "IfcLocalPlacement": 1,
+      "IfcProductDefinitionShape": 1,
+      "IfcShapeRepresentation": 0
+    },
+    "diagnostic_original_IfcProduct_count": 42,
+    "exact_original_native_roots_removed_class_inventory": [
+      "IfcPropertySet",
+      "IfcPropertySet",
+      "IfcPropertySet",
+      "IfcRelConnectsPathElements",
+      "IfcRelConnectsPathElements",
+      "IfcRelDefinesByProperties",
+      "IfcRelDefinesByProperties",
+      "IfcRelDefinesByProperties",
+      "IfcWall"
+    ],
+    "native_candidate_sha256": "4c7c9bf30cdf4b6c6ec2dbb05946befecf6880947cef2a318fa6fc9c7542bc56",
+    "original_author_diagnostic_score": {
+      "original_author_full_mark": false,
+      "original_author_metrics": {
+        "integrity_constraint": 0.0,
+        "object_not_exists": 1.0
+      },
+      "original_author_score": 0.5,
+      "status": "AUTHOR_SCORED"
+    },
+    "original_target_wall_absent_in_diagnostic": true,
+    "orphaned_native_step_entities_baseline": {
+      "IfcLocalPlacement": 0,
+      "IfcProductDefinitionShape": 0,
+      "IfcShapeRepresentation": 0
+    },
+    "orphaned_native_step_entities_diagnostic": {
+      "IfcLocalPlacement": 1,
+      "IfcProductDefinitionShape": 1,
+      "IfcShapeRepresentation": 0
+    },
+    "remaining_native_product_classes_and_GUIDs_unchanged": true,
+    "result_is_not_an_admitted_D0_or_I0_original_public_edit": true,
+    "retained_original_Wall_shapes_not_owned_by_surviving_products": 2,
+    "source_original_IfcProduct_count": 43,
+    "status": "DIAGNOSTIC_NATIVE_REMOVAL_INADMISSIBLE_ORPHANED_GEOMETRY"
+  },
+  "full_original45_information_and_write_parity_proven": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/166",
+  "new_native_original_developer_D0_I0_byte_equal_pairs": 0,
+  "no_private_original_answer_or_public_target_GUID_in_report": true,
+  "original_IFC_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_missing_Window_reference_cases": 2,
+  "original_author_scorer_source_or_original_IFC_modified": false,
+  "original_benchmark_denominator": 45,
+  "original_case_id": "test_19",
+  "original_normalized_IFC_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+  "original_public_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_question_sha256": "8deb425761eb96bf9185e3789fda48428678e229f658c895054f9693bffe2487",
+  "other_original_tasks_unverified_same_protocol": 37,
+  "paid_provider_usd": 0,
+  "prior_actual_developer_D0_I0_equal_original_pairs": 8,
+  "prior_frozen_reports_sha256": {
+    "reports/bibimbap_v023_original_test20_space_delete_D0_I0_native_parity_20261115.json": "9abcc4ebd21c18891bf08307624a19f6012a981455eca7db89051ae70ce86102",
+    "reports/bibimbap_v024_original_test18_opening_window_D0_I0_20261115.json": "a31e74dacdece9924304de6c74c5d9e8769497a8ad68287779ddd4a37bac6a67",
+    "reports/bibimbap_v025_original_test17_door_opening_D0_I0_20261115.json": "4ea264519d011288acf6d059fc15b3ca49aa7d4d21315ccb5cbebe5bb17f3f4a"
+  },
+  "prior_original_author_callable_developer_pairs": 6,
+  "public_declarative_complete_XML_candidate_graph": {
+    "original_existing_connects_edges_removed": 2,
+    "original_existing_in_storey_edge_removed": 1,
+    "original_existing_wall_node_removed": 1,
+    "status": "VALID_BUT_UNSUPPORTED_COMPLETE_DECLARATIVE_STATE_DIFF",
+    "unrelated_graph_edge_edits": 0,
+    "unrelated_graph_node_edits": 0
+  },
+  "real_LLM_calls": 0,
+  "status": "V026_TEST19_BLOCKED_NATIVE_ORPHANED_GEOMETRY_NO_SAFE_D0_I0_PARITY",
+  "untrusted_ifcopenshell_writer_enabled": false
+}
