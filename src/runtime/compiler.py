@@ -319,6 +319,17 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             from src.runtime.connected_wall_delete import compile_existing_original_connected_wall
             return compile_existing_original_connected_wall(
                 source,destination,before_doc,after_doc,before,after)
+        if (os.environ.get("BMB_V028_ORIGINAL_WALL_CENTER_ROTATE")=="1"
+                and len(delta.changed_nodes)==1
+                and prior_nodes[delta.changed_nodes[0]].kind=="Wall"
+                and projected.source.source_sha256==
+                    "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"):
+            # Trusted, opt-in source-specific +90deg Wall center-rotation
+            # writer; one new private native direction, no shared IFC
+            # mutation or model-facing imperative operations.
+            from src.runtime.original_wall_rotation import compile_original_wall_center_rotation
+            return compile_original_wall_center_rotation(
+                source,destination,before_doc,after_doc,before,after)
         wall_plan=plan_wall_mutations(before_doc,after_doc,before,after)
         model=ifcopenshell.open(str(source))
         delta=graph_diff(before.graph,after.graph)
