@@ -1,0 +1,74 @@
+{
+  "D0_complete_native_original_mm_IFC_sha256": "5a3bf2626f32219cc770b5b8d68277f6e959aa7822a5ad92974931eb47b9941d",
+  "I0_complete_native_original_mm_IFC_sha256": "5a3bf2626f32219cc770b5b8d68277f6e959aa7822a5ad92974931eb47b9941d",
+  "all45_semantic_source_and_write_access_parity_proven": false,
+  "frozen_original_public45_denominator": 45,
+  "frozen_parent_v026_git_commit": "8e3564ca19606d82b0880a279e0fd4c5dbed137d",
+  "frozen_v026_previous_reports_sha256": {
+    "reports/bibimbap_v026_non_docker_284_pass_and_docker_http500_20261116.json": "cff946ffde62bb2fe9ff453cd8318933a8edbbe4e10b7b3f5b93ecce7ff64fc1",
+    "reports/bibimbap_v026_original_test19_connected_wall_fail_closed_20261116.json": "fe6137a71789bf0d6c55dcf6c62a43a70f86fa5614e5c87faee2894e855ac848"
+  },
+  "historical_original_missing_Window_reference_scorer_cases_unchanged": 2,
+  "independent_developer_Python_I0_no_declarative_XML_compiler": true,
+  "independent_original_native_IfcProduct_oracle": {
+    "all_other_original_native_products_preserved": true,
+    "candidate_product_count": 42,
+    "original_product_count": 43,
+    "original_schema_and_length_unit_preserved": true,
+    "removed_original_native_Product_count": 1,
+    "status": "INDEPENDENT_ORIGINAL_IFC_PRODUCT_CLASS_AND_GUID_ORACLE_PASS"
+  },
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/168",
+  "native_child_worker_crash_timeout_isolation": true,
+  "new_cumulative_developer_original_native_D0_I0_byte_equal": 9,
+  "new_cumulative_original_author_callable_developer_pairs": 7,
+  "no_new_native_orphan_shape_or_local_placement": true,
+  "normalized_original_public_IFC_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+  "original_D0_I0_full_IFC_bytes_equal": true,
+  "original_IFC4X3_mm_source_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_author_full_mark_achieved": false,
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_scorer_or_source_IFC_modified": false,
+  "original_declarative_XML_proposal": {
+    "original_existing_connects_edges_removed": 2,
+    "original_existing_in_storey_edge_removed": 1,
+    "original_existing_wall_node_removed": 1,
+    "status": "VALID_BUT_UNSUPPORTED_COMPLETE_DECLARATIVE_STATE_DIFF",
+    "unrelated_graph_edge_edits": 0,
+    "unrelated_graph_node_edits": 0
+  },
+  "original_full_STEP_survivor_changes_restricted_to_four_relations_and_one_layer": true,
+  "original_native_surviving_roots_fully_verified": 345,
+  "original_public_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_question_sha256": "8deb425761eb96bf9185e3789fda48428678e229f658c895054f9693bffe2487",
+  "original_public_task_id": "test_19",
+  "original_target_two_shape_reps_and_placement_deep_cleaned": true,
+  "other_original_same_protocol_tasks_not_verified": 36,
+  "paid_provider_USD": 0,
+  "prior_frozen_developer_original_native_D0_I0_byte_equal": 8,
+  "prior_frozen_original_author_callable_developer_pairs": 6,
+  "raw_original_public_target_GUID_or_full_public_question_in_report": false,
+  "real_matching_LLM_XML_vs_Python_causal_performance_proven": false,
+  "real_model_calls": 0,
+  "status": "V027_ORIGINAL_TEST19_MATCHED_D0_I0_FULL_NATIVE_BYTES_IDENTICAL_SAFE",
+  "trusted_model_invisible_v027_native_compiler_opt_in": true,
+  "unchanged_original_author_D0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "unchanged_original_author_I0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "untrusted_native_Wall_mutator_exposed_to_model": false
+}

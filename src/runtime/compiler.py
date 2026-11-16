@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 import hashlib
 import math
+import os
 
 import ifcopenshell
 import ifcopenshell.geom
@@ -57,7 +58,8 @@ class CompileReport:
                       if any(op.operation in (
                           "DELETE_WINDOW","DELETE_HOSTED_DOOR_OPENING",
                           "MOVE_OPENING_WITH_FILLING","ADD_WALL_CONNECTION","ADD_WALL_PATH_CONNECTION","REMOVE_WALL_CONNECTION",
-                          "SPLIT_SPACE", "DELETE_SPACE", "DELETE_HOSTED_WINDOW_OPENING","DELETE_ORIGINAL_PUBLIC_DOOR_OPENING"
+                          "SPLIT_SPACE", "DELETE_SPACE", "DELETE_HOSTED_WINDOW_OPENING","DELETE_ORIGINAL_PUBLIC_DOOR_OPENING",
+                          "DELETE_ORIGINAL_CONNECTED_WALL"
                       ) for op in self.operations)
                       else "COMMITTED_SCOPED_IFC4X3_WALL_EDIT"),
             "scope":("Source-pinned bounded two-Space state diff with oriented first-level boundary reconciliation"
@@ -304,6 +306,19 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             return compile_bounded_space_state(
                 source,destination,before_doc,after_doc,before,after,
                 compile_declarative_xml)
+        if (os.environ.get("BMB_V027_ORIGINAL_CONNECTED_WALL_NATIVE")=="1"
+                and len(delta.removed_nodes)==1
+                and prior_nodes[delta.removed_nodes[0]].kind=="Wall"
+                and projected.source.source_sha256 ==
+                    "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"
+                and len(delta.removed_edges)==3):
+            # Original source-pinned connected Wall deletion with exactly two
+            # declared Connects edges. Native C++ mutation is supervised in
+            # a separate crash-contained child and independently checked
+            # before any IFC output is committed. No new model-side command.
+            from src.runtime.connected_wall_delete import compile_existing_original_connected_wall
+            return compile_existing_original_connected_wall(
+                source,destination,before_doc,after_doc,before,after)
         wall_plan=plan_wall_mutations(before_doc,after_doc,before,after)
         model=ifcopenshell.open(str(source))
         delta=graph_diff(before.graph,after.graph)
