@@ -288,6 +288,17 @@ def compile_declarative_xml(source: Path, edited_xml: bytes,
             from src.runtime.door_opening_delete import compile_existing_door_opening_delete
             return compile_existing_door_opening_delete(
                 source,destination,before_doc,after_doc,before,after)
+        if (len(delta.removed_nodes)==1
+                and prior_nodes[delta.removed_nodes[0]].kind=="Wall"
+                and projected.source.source_sha256 ==
+                    "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"):
+            # Original-public connected Wall only: remove one source Wall
+            # and exactly its two declared Connects. Native cleanup lives
+            # in a hard-timeout child and is independently IFC validated.
+            # Other source Walls still use the existing safer generic path.
+            from src.runtime.connected_wall_delete import compile_original_connected_wall
+            return compile_original_connected_wall(
+                source,destination,before_doc,after_doc,before,after)
         if any(prior_nodes[name].kind=="Space" for name in delta.removed_nodes):
             # A single removed existing <Space> is an ordinary declarative
             # document-state diff. Dedicated narrow preflight refuses

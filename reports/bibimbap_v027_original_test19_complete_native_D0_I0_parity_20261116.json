@@ -1,0 +1,77 @@
+{
+  "D0_I0_entire_IFC_bytes_identical": true,
+  "D0_native_child_parent_root_STEP_physical_and_full_XML_graph_validated": true,
+  "D0_native_child_process_supervised_with_timeout_and_crash_fail_closed": true,
+  "D0_new_original_native_entire_IFC_SHA256": "5a3bf2626f32219cc770b5b8d68277f6e959aa7822a5ad92974931eb47b9941d",
+  "I0_independent_original_native_entire_IFC_SHA256": "5a3bf2626f32219cc770b5b8d68277f6e959aa7822a5ad92974931eb47b9941d",
+  "actual_causal_XML_Python_LLM_performance_comparison": false,
+  "declarative_full_XML_removed_original_wall_and_two_connections": {
+    "original_existing_connects_edges_removed": 2,
+    "original_existing_in_storey_edge_removed": 1,
+    "original_existing_wall_node_removed": 1,
+    "status": "VALID_BUT_UNSUPPORTED_COMPLETE_DECLARATIVE_STATE_DIFF",
+    "unrelated_graph_edge_edits": 0,
+    "unrelated_graph_node_edits": 0
+  },
+  "frozen_v024_v025_v026_evidence_sha256": {
+    "reports/bibimbap_v024_original_test18_opening_window_D0_I0_20261115.json": "a31e74dacdece9924304de6c74c5d9e8769497a8ad68287779ddd4a37bac6a67",
+    "reports/bibimbap_v025_original_test17_door_opening_D0_I0_20261115.json": "4ea264519d011288acf6d059fc15b3ca49aa7d4d21315ccb5cbebe5bb17f3f4a",
+    "reports/bibimbap_v026_non_docker_284_pass_and_docker_http500_20261116.json": "cff946ffde62bb2fe9ff453cd8318933a8edbbe4e10b7b3f5b93ecce7ff64fc1",
+    "reports/bibimbap_v026_original_test19_connected_wall_fail_closed_20261116.json": "fe6137a71789bf0d6c55dcf6c62a43a70f86fa5614e5c87faee2894e855ac848"
+  },
+  "full_original45_source_information_write_and_feedback_parity_proven": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/169",
+  "new_cumulative_developer_original_D0_I0_native_byte_equal": 9,
+  "new_cumulative_original_author_callable_developer_pairs": 7,
+  "older_original_author_missing_Window_reference_cases_unmodified": 2,
+  "original_IFC2X3_or_IFC4_XML_write_supported_here": false,
+  "original_author_pinned_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_data_pinned_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_native_IFC_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_native_IFC_untouched_root_count": 345,
+  "original_normalized_IFC_SHA256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+  "original_public_intention_to_test_denominator": 45,
+  "original_public_question_sha256": "8deb425761eb96bf9185e3789fda48428678e229f658c895054f9693bffe2487",
+  "original_source_IfcProduct_native_oracle": {
+    "every_remaining_original_product_GUID_and_class_preserved": true,
+    "original_IfcProducts": 43,
+    "original_and_after_orphaned_geometries": {
+      "IfcLocalPlacement": 0,
+      "IfcProductDefinitionShape": 0,
+      "IfcShapeRepresentation": 0
+    },
+    "original_connected_wall_absent": true,
+    "original_neighbour_walls_preserved": 2,
+    "result_IfcProducts": 42,
+    "status": "ORIGINAL_NATIVE_PRODUCT_CLASS_IDENTITY_AND_NEIGHBOR_PATHS_PASS"
+  },
+  "original_source_scorer_or_frozen_reports_modified": false,
+  "original_task_id": "test_19",
+  "other_original_public_original45_cases_not_paired_under_same_protocol": 36,
+  "previous_actual_developer_original_D0_I0_native_byte_equal": 8,
+  "previous_original_author_callable_developer_pairs": 6,
+  "provider_paid_USD": 0,
+  "public_original_target_GUID_or_full_question_or_hidden_answers_in_report": false,
+  "real_model_LLM_calls": 0,
+  "status": "ACTUAL_ORIGINAL_TEST19_CRASH_ISOLATED_D0_I0_FULL_NATIVE_BYTES_IDENTICAL",
+  "unchanged_original_author_D0_score": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "unchanged_original_author_I0_score": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "unchanged_original_author_full_mark": false,
+  "v026_inadmissible_native_wall_diagnostic_still_historical_not_paired": true
+}
