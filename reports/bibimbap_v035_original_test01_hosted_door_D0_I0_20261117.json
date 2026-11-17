@@ -1,0 +1,105 @@
+{
+  "causal_representation_effect_permitted": false,
+  "frozen_previous_report_hashes": {
+    "reports/bibimbap_v031_original45_eligibility_and_overlap_20261117.json": "d6680b3eadb5733be547c09ab8deed58dd48c7feaccbc3cb562b6e60b475c7dd",
+    "reports/bibimbap_v032_original_test04_column_D0_I0_native_semantic_pair_20261117.json": "65cd592b83b06ac161ff420982cb2f3378e850613f4645419690e06764987b2b",
+    "reports/bibimbap_v033_original_test02_slab_D0_I0_semantic_pair_20261117.json": "998064e23a0b3955b20a0ca1a7cabcb4424a612af1d633e42cd179f5e68ce660",
+    "reports/bibimbap_v034_original_test05_wall_D0_I0_native_semantic_pair_20261117.json": "d4bc58a426fd30b6215fef0c2c8d0907c109df1127fa64d44f7d8ab911d4073d"
+  },
+  "full_original_declarative_XML_D0_typed_two_node_diff": true,
+  "full_original_native_STEP_bytes_or_entities_preserved_claimed": false,
+  "independent_native_Python_I0_validated_before_XML_D0": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/185",
+  "matched_real_LLM_D_I_trials": 0,
+  "model_host_scoped_v07_registered": false,
+  "native_actual_independent_oracle_both_arms": {
+    "full_original_native_STEP_lossless_preservation_claimed": false,
+    "host_wall_cut_volume_m3": 0.40000000000000036,
+    "host_wall_new_volume_m3": 6.943999999999833,
+    "host_wall_old_volume_m3": 7.343999999999833,
+    "host_wall_triangle_count_after": 28,
+    "host_wall_triangle_count_before": 12,
+    "native_door_actual_width_height_m": [
+      1.0,
+      2.0
+    ],
+    "new_door_triangle_count": 12,
+    "new_native_door_world_bbox_m": [
+      23.8,
+      15.08,
+      0.0,
+      24.8,
+      15.12,
+      2.0
+    ],
+    "new_native_opening_world_bbox_m": [
+      23.8,
+      14.9,
+      0.0,
+      24.8,
+      15.299999999999999,
+      2.0
+    ],
+    "new_opening_triangle_count": 12,
+    "original_host_wall_physically_cut": true,
+    "original_nonhost_triangle_face_count": 1640,
+    "original_storey_containment_preserved_and_door_added": true,
+    "original_unchanged_nonhost_mesh_bearing_product_count": 38,
+    "original_wall_void_and_door_fills_relationships_present": true,
+    "source_IfcRoot_identifiers_classes_names_preserved": true,
+    "source_existing_IfcProduct_count": 43,
+    "source_existing_IfcRoot_count": 358,
+    "source_original_mesh_bearing_product_count": 39,
+    "status": "V035_INDEPENDENT_REAL_NATIVE_HOSTED_DOOR_VOID_FILL_AND_SOURCE_PASS"
+  },
+  "native_independent_two_arm_semantic_equivalence": true,
+  "native_whole_IFC_D0_sha256": "1d98ae1e5f2e363e1c1918e32d2f8e975404d3ac8c8c13ee19c67f0544ceebc2",
+  "native_whole_IFC_I0_sha256": "57ce03b39b0f41fece6c066c9cff3c32a9f0ae13c8ed8bdb757ebb157e610b38",
+  "native_whole_IFC_byte_equal": false,
+  "new_distinct_original_Create_semantic_only_developer_pair": true,
+  "new_paid_model_provider_calls": 0,
+  "original45_full_information_read_parity_proven": 0,
+  "original45_full_native_edit_write_parity_proven": 0,
+  "original_45_intention_to_test_denominator": 45,
+  "original_Create_task_specific_semantic_paired_count": 4,
+  "original_Create_tasks_without_positive_native_semantic_pair": 11,
+  "original_author_D0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_D0_full_mark": true,
+  "original_author_I0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_I0_full_mark": true,
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_score_equivalent": true,
+  "original_benchmark_data_GT_evaluator_changed": false,
+  "original_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_test_id": "test_01",
+  "original_question_sha256": "6047b505112d7c9da219957e74a955d259c67148f019250b0722605db6610c31",
+  "original_source_IFC_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "predeclared_door_leaf_thickness_m": 0.04,
+  "predeclared_opening_position_offset_m": 5.1,
+  "predeclared_opening_through_depth_m": 0.4,
+  "prior_full_native_byte_equal_11_witnesses_unchanged": 11,
+  "public_fixed_2_by_1_interpreted_height_2m_width_1m": true,
+  "public_referenced_existing_host_class": "IfcWall",
+  "status": "V035_ORIGINAL_PUBLIC_TEST01_HOSTED_DOOR_OPENING_D0_I0_NATIVE_PAIR",
+  "unrequested_centered_wall_zero_sill_predeclared": true
+}
