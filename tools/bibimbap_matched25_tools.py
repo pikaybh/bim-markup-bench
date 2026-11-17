@@ -68,7 +68,8 @@ class XmlSourceEditSession:
                  experimental_original_room_v040:bool=False,
                  experimental_original_p3_v041:bool=False,
                  experimental_original_native_slab_v042:bool=False,
-                 experimental_original_native_readonly_v044:bool=False):
+                 experimental_original_native_readonly_v044:bool=False,
+                 experimental_original_native_mutations_v045:bool=False):
         if folder.exists():
             raise ValueError("XML session destination already exists")
         if not original_ifc.is_file() or original_ifc.is_symlink():
@@ -86,6 +87,7 @@ class XmlSourceEditSession:
         self.experimental_original_p3_v041=experimental_original_p3_v041
         self.experimental_original_native_slab_v042=experimental_original_native_slab_v042
         self.experimental_original_native_readonly_v044=experimental_original_native_readonly_v044
+        self.experimental_original_native_mutations_v045=experimental_original_native_mutations_v045
         self.original_native_schema=original.schema
         self.legacy_original_task_id=None
         self.complex_original_task_id=None
@@ -93,13 +95,23 @@ class XmlSourceEditSession:
         self.p3_original_task_id=None
         self.slab_original_task_id=None
         self.native_readonly_original_task_id=None
+        self.native_mutation_original_task_id=None
         if sum(bool(v) for v in (
             experimental_original_legacy_v08,experimental_original_complex_v039,
             experimental_original_room_v040,experimental_original_p3_v041,
             experimental_original_native_slab_v042,
-            experimental_original_native_readonly_v044))>1:
+            experimental_original_native_readonly_v044,
+            experimental_original_native_mutations_v045))>1:
             raise UnsupportedArm("Original XML experimental opt-ins are mutually exclusive")
-        if experimental_original_native_readonly_v044:
+        if experimental_original_native_mutations_v045:
+            from src.runtime.experimental_v45_original_native_mutations import (
+                check_source)
+            try:
+                self.native_mutation_original_task_id=check_source(
+                    self.original_ifc,self.source_sha,original)
+            except Exception as exc:
+                raise UnsupportedArm(str(exc)) from exc
+        elif experimental_original_native_readonly_v044:
             from src.runtime.experimental_v44_original_native_step_readonly import (
                 check_original_native_readonly_source,NativeSourceReadOnly044Error)
             try:
@@ -156,7 +168,9 @@ class XmlSourceEditSession:
         unit=ifcopenshell.util.unit.calculate_unit_scale(original)
         if not abs(unit-.001)<1e-12:
             raise UnsupportedArm("XML compiler requires original millimetres")
-        if self.native_readonly_original_task_id is not None:
+        if (self.native_readonly_original_task_id is not None
+                or self.native_mutation_original_task_id is not None):
+            # No normalized-metre copy for source-native-mm read/edit modes.
             # No temporary new IFC file is needed for a purely model-visible
             # original-native-mm STEP read. Keep all prior authoring modes as is.
             self.normalized=None
@@ -165,7 +179,14 @@ class XmlSourceEditSession:
             self.normalized=folder/"normalized_original_m.ifc"
             meter.write(str(self.normalized))
         try:
-            if self.native_readonly_original_task_id is not None:
+            if self.native_mutation_original_task_id is not None:
+                from src.runtime.experimental_v45_original_native_mutations import (
+                    project_original_native_mutations_v045)
+                snapshot=project_original_native_mutations_v045(
+                    self.original_ifc,source_sha=self.source_sha)
+                if snapshot.native_schema!=self.original_native_schema:
+                    raise ValueError("v0.45 original native IFC4X3 schema changed")
+            elif self.native_readonly_original_task_id is not None:
                 from src.runtime.experimental_v44_original_native_step_readonly import (
                     project_native_readonly_source_v044)
                 snapshot=project_native_readonly_source_v044(
@@ -224,6 +245,19 @@ class XmlSourceEditSession:
 
     @property
     def tools(self):
+        if self.native_mutation_original_task_id is not None:
+            return [
+                {
+                    "type":"function","name":"read_building_xml",
+                    "description":"Read original source immutable native STEP/metadata/world geometry with editable NativeEditPlan; source evidence is never editable, original author evaluator and correct answer unavailable.",
+                    "parameters":{"type":"object","properties":{},"additionalProperties":False},"strict":True,
+                },
+                {
+                    "type":"function","name":"submit_building_xml",
+                    "description":"Submit COMPLETE XML with exactly one typed NativeEditPlan. Only original task-associated Slab dimensions, Column move, shared column depth, or list of original Column GUIDs to delete; trusted native source-mm writer followed by INDEPENDENT physical IFC oracle, otherwise last valid state preserved. Editing does NOT imply original public task correctness or original benchmark score.",
+                    "parameters":{"type":"object","properties":{"xml_text":{"type":"string","description":"Whole original XML with unchanged original source section and one typed NativeEditPlan command"}},"required":["xml_text"],"additionalProperties":False},"strict":True,
+                },
+            ]
         if self.native_readonly_original_task_id is not None:
             return [
                 {
@@ -276,6 +310,44 @@ class XmlSourceEditSession:
         _no_overwrite(candidate_dir/"submitted_exact.xml",payload)
         if not 0<len(payload)<=MAX_XML_BYTES:
             return _stateless_result("error",error="XML payload size exceeded")
+        if self.native_mutation_original_task_id is not None:
+            # v0.45 writer consumes and outputs ORIGINAL native IFC4X3 millimetres.
+            # Never send it through the old normalise/convert-to-mm writer path.
+            native_mm=candidate_dir/"candidate_original_native_mm.ifc"
+            try:
+                from src.security.agent_boundary import check_xml_bytes
+                check_xml_bytes(payload)
+                from src.runtime.experimental_v45_original_native_mutations import (
+                    compile_original_native_mutation_v045)
+                compilation=compile_original_native_mutation_v045(
+                    self.original_ifc,payload,native_mm,source_sha=self.source_sha)
+                from tools.bibimbap_v045_independent_native_mutation_oracle import (
+                    verify_original_native_mutation_v045)
+                oracle=verify_original_native_mutation_v045(
+                    self.original_ifc,native_mm,submitted_xml=payload,
+                    source_sha=self.source_sha,
+                    task_id=self.native_mutation_original_task_id)
+                if file_hash(self.original_ifc)!=self.source_sha:
+                    raise SecurityGate("Original public native IFC mutated by editor")
+                self.current_xml=payload
+                self.output_ifc=native_mm
+                return _stateless_result(
+                    "ok",native_ifc_committed=True,
+                    native_ifc_sha256=file_hash(native_mm),
+                    current_xml_sha256=hashlib.sha256(payload).hexdigest(),
+                    compile_status=compilation.as_dict()["status"],
+                    independent_native_oracle_status=oracle["status"],
+                    original_author_benchmark_task_success_claimed=False,
+                    original_source_unchanged=True,model_can_revise_again=True)
+            except Exception as exc:
+                if native_mm.is_file():
+                    native_mm.unlink()
+                return _stateless_result(
+                    "error",error_type=type(exc).__name__,
+                    error=str(exc)[:900],native_ifc_committed=False,
+                    last_valid_xml_preserved=True,
+                    original_source_unchanged=file_hash(self.original_ifc)==self.source_sha,
+                    current_xml_sha256=hashlib.sha256(self.current_xml).hexdigest())
         candidate_m=candidate_dir/"candidate_m.ifc"
         try:
             from src.security.agent_boundary import check_xml_bytes
