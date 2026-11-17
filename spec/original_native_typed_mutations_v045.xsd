@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:b="urn:bim-markup-bench:toy:v0"
+ targetNamespace="urn:bim-markup-bench:toy:v0"
+ elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+ <xs:simpleType name="Sha256"><xs:restriction base="xs:string"><xs:pattern value="[0-9a-f]{64}"/></xs:restriction></xs:simpleType>
+ <xs:simpleType name="IfcGuid"><xs:restriction base="xs:string"><xs:pattern value="[A-Za-z0-9_$]{22}"/></xs:restriction></xs:simpleType>
+ <xs:simpleType name="Readonly"><xs:restriction base="xs:string"><xs:enumeration value="NONE_READ_ONLY"/></xs:restriction></xs:simpleType>
+ <xs:complexType name="Product">
+  <xs:attribute name="ifcGuid" type="b:IfcGuid" use="required"/>
+  <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="originalName" type="xs:string" use="required"/>
+  <xs:attribute name="originalDescription" type="xs:string" use="required"/>
+  <xs:attribute name="nativeMutationPermission" type="b:Readonly" use="required"/>
+  <xs:attribute name="sourceObjectPlacementStepId" type="xs:positiveInteger"/>
+  <xs:attribute name="sourceRepresentationStepId" type="xs:positiveInteger"/>
+  <xs:attribute name="originalObjectType" type="xs:string"/>
+  <xs:attribute name="originalPredefinedType" type="xs:string"/>
+ </xs:complexType>
+ <xs:complexType name="NativeRef">
+  <xs:attribute name="attribute" type="xs:string" use="required"/>
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  <xs:attribute name="ifcGuid" type="b:IfcGuid"/>
+ </xs:complexType>
+ <xs:complexType name="Relation">
+  <xs:sequence><xs:element name="NativeRef" type="b:NativeRef" minOccurs="0" maxOccurs="unbounded"/></xs:sequence>
+  <xs:attribute name="ifcGuid" type="b:IfcGuid" use="required"/>
+  <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="originalName" type="xs:string" use="required"/>
+  <xs:attribute name="nativeMutationPermission" type="b:Readonly" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="Property">
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  <xs:attribute name="originalName" type="xs:string" use="required"/>
+  <xs:attribute name="nominalIfcClass" type="xs:string"/>
+  <xs:attribute name="sourceNominalValue" type="xs:string"/>
+ </xs:complexType>
+ <xs:complexType name="PropertySet">
+  <xs:sequence><xs:element name="Property" type="b:Property" minOccurs="0" maxOccurs="unbounded"/></xs:sequence>
+  <xs:attribute name="ifcGuid" type="b:IfcGuid" use="required"/>
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="originalName" type="xs:string" use="required"/>
+  <xs:attribute name="originalDescription" type="xs:string" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="Material">
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="originalName" type="xs:string" use="required"/>
+  <xs:attribute name="originalDescription" type="xs:string" use="required"/>
+  <xs:attribute name="originalCategory" type="xs:string"/>
+ </xs:complexType>
+ <xs:complexType name="LocalPlacement">
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="relativePlacementStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="parentPlacementStepId" type="xs:positiveInteger"/>
+  <xs:attribute name="m00" type="xs:decimal" use="required"/><xs:attribute name="m01" type="xs:decimal" use="required"/><xs:attribute name="m02" type="xs:decimal" use="required"/><xs:attribute name="m03" type="xs:decimal" use="required"/>
+  <xs:attribute name="m10" type="xs:decimal" use="required"/><xs:attribute name="m11" type="xs:decimal" use="required"/><xs:attribute name="m12" type="xs:decimal" use="required"/><xs:attribute name="m13" type="xs:decimal" use="required"/>
+  <xs:attribute name="m20" type="xs:decimal" use="required"/><xs:attribute name="m21" type="xs:decimal" use="required"/><xs:attribute name="m22" type="xs:decimal" use="required"/><xs:attribute name="m23" type="xs:decimal" use="required"/>
+  <xs:attribute name="m30" type="xs:decimal" use="required"/><xs:attribute name="m31" type="xs:decimal" use="required"/><xs:attribute name="m32" type="xs:decimal" use="required"/><xs:attribute name="m33" type="xs:decimal" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="WorldVertex">
+  <xs:attribute name="index" type="xs:nonNegativeInteger" use="required"/>
+  <xs:attribute name="x" type="xs:decimal" use="required"/>
+  <xs:attribute name="y" type="xs:decimal" use="required"/>
+  <xs:attribute name="z" type="xs:decimal" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="WorldTriangle">
+  <xs:attribute name="a" type="xs:nonNegativeInteger" use="required"/>
+  <xs:attribute name="b" type="xs:nonNegativeInteger" use="required"/>
+  <xs:attribute name="c" type="xs:nonNegativeInteger" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="ProductGeometry">
+  <xs:sequence>
+   <xs:element name="WorldVertices" minOccurs="0">
+    <xs:complexType><xs:sequence><xs:element name="V" type="b:WorldVertex" minOccurs="1" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+   </xs:element>
+   <xs:element name="WorldTriangles" minOccurs="0">
+    <xs:complexType><xs:sequence><xs:element name="T" type="b:WorldTriangle" minOccurs="1" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+   </xs:element>
+  </xs:sequence>
+  <xs:attribute name="ifcGuid" type="b:IfcGuid" use="required"/>
+  <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  <xs:attribute name="sourceRepresentationStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="meshStatus" type="xs:string" use="required"/>
+  <xs:attribute name="errorType" type="xs:string"/>
+  <xs:attribute name="worldMeshSha256" type="b:Sha256"/>
+  <xs:attribute name="worldVertexCount" type="xs:nonNegativeInteger"/>
+  <xs:attribute name="worldTriangleCount" type="xs:nonNegativeInteger"/>
+  <xs:attribute name="minX" type="xs:decimal"/><xs:attribute name="minY" type="xs:decimal"/><xs:attribute name="minZ" type="xs:decimal"/>
+  <xs:attribute name="maxX" type="xs:decimal"/><xs:attribute name="maxY" type="xs:decimal"/><xs:attribute name="maxZ" type="xs:decimal"/>
+ </xs:complexType>
+ <xs:complexType name="StepEntity">
+  <xs:simpleContent><xs:extension base="xs:string">
+   <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+   <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  </xs:extension></xs:simpleContent>
+ </xs:complexType>
+ <xs:element name="Building">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="OriginalNativeIFCSource">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="Products">
+        <xs:complexType><xs:sequence><xs:element name="Product" type="b:Product" minOccurs="1" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+       </xs:element>
+       <xs:element name="Relations">
+        <xs:complexType><xs:sequence><xs:element name="Relation" type="b:Relation" minOccurs="1" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+       </xs:element>
+       <xs:element name="PropertySets">
+        <xs:complexType><xs:sequence><xs:element name="PropertySet" type="b:PropertySet" minOccurs="0" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+       </xs:element>
+       <xs:element name="Materials">
+        <xs:complexType><xs:sequence><xs:element name="Material" type="b:Material" minOccurs="0" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+       </xs:element>
+       <xs:element name="LocalPlacements">
+        <xs:complexType><xs:sequence><xs:element name="LocalPlacement" type="b:LocalPlacement" minOccurs="0" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+       </xs:element>
+       <xs:element name="WorldGeometry">
+        <xs:complexType><xs:sequence><xs:element name="ProductGeometry" type="b:ProductGeometry" minOccurs="0" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+       </xs:element>
+       <xs:element name="NativeStepRecords">
+        <xs:complexType><xs:sequence><xs:element name="StepEntity" type="b:StepEntity" minOccurs="1" maxOccurs="unbounded"/></xs:sequence></xs:complexType>
+       </xs:element>
+      </xs:sequence>
+      <xs:attribute name="readOnly" type="xs:boolean" use="required"/>
+      <xs:attribute name="sourceOriginalIFCSha256" type="b:Sha256" use="required"/>
+      <xs:attribute name="nativeIfcSchema" type="xs:string" use="required"/>
+      <xs:attribute name="nativeEntityCount" type="xs:nonNegativeInteger" use="required"/>
+      <xs:attribute name="nativeProductCount" type="xs:nonNegativeInteger" use="required"/>
+      <xs:attribute name="nativeRelationCount" type="xs:nonNegativeInteger" use="required"/>
+      <xs:attribute name="sourceDataLinesAreComplete" type="xs:boolean" use="required"/>
+      <xs:attribute name="nativeMutationPermission" type="b:Readonly" use="required"/>
+     </xs:complexType>
+    </xs:element>
+    <xs:element name="NativeEditPlan">
+     <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="1">
+       <xs:element name="SetSlabRectangleDimensions">
+        <xs:complexType>
+         <xs:attribute name="ifcGuid" type="b:IfcGuid" use="required"/>
+         <xs:attribute name="newXDimM" type="xs:decimal" use="required"/>
+         <xs:attribute name="newYDimM" type="xs:decimal" use="required"/>
+        </xs:complexType>
+       </xs:element>
+       <xs:element name="MoveColumnPlacement">
+        <xs:complexType>
+         <xs:attribute name="ifcGuid" type="b:IfcGuid" use="required"/>
+         <xs:attribute name="newWorldOriginXM" type="xs:decimal" use="required"/>
+         <xs:attribute name="newWorldOriginYM" type="xs:decimal" use="required"/>
+        </xs:complexType>
+       </xs:element>
+       <xs:element name="SetAllMappedColumnDepth">
+        <xs:complexType>
+         <xs:attribute name="newDepthM" type="xs:decimal" use="required"/>
+        </xs:complexType>
+       </xs:element>
+       <xs:element name="DeleteColumnsByGuid">
+        <xs:complexType>
+         <xs:sequence>
+          <xs:element name="DeleteColumn" minOccurs="1" maxOccurs="9">
+           <xs:complexType>
+            <xs:attribute name="ifcGuid" type="b:IfcGuid" use="required"/>
+           </xs:complexType>
+          </xs:element>
+         </xs:sequence>
+        </xs:complexType>
+       </xs:element>
+      </xs:choice>
+      <xs:attribute name="planVersion" type="xs:string" use="required" fixed="0.45"/>
+      <xs:attribute name="sourceOriginalIFCSha256" type="b:Sha256" use="required"/>
+      <xs:attribute name="editAuthority" type="xs:string" use="required" fixed="SINGLE_TYPED_PLAN_NATIVE_MUTATION"/>
+     </xs:complexType>
+    </xs:element>
+   </xs:sequence>
+   <xs:attribute name="version" type="xs:string" use="required"/>
+   <xs:attribute name="sourceOriginalIFCSha256" type="b:Sha256" use="required"/>
+   <xs:attribute name="sourceIfcSchema" type="xs:string" use="required"/>
+   <xs:attribute name="sourceLengthUnit" type="xs:string" use="required"/>
+   <xs:attribute name="sourceCompleteness" type="xs:string" use="required"/>
+   <xs:attribute name="nativeMutationPermission" type="xs:string" use="required"/>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>
