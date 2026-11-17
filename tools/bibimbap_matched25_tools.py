@@ -62,7 +62,8 @@ class ToolSession(Protocol):
 class XmlSourceEditSession:
     """Authoring model controls only complete XML text, never IFC mutator APIs."""
 
-    def __init__(self, original_ifc:Path, folder:Path):
+    def __init__(self, original_ifc:Path, folder:Path, *,
+                 experimental_original_legacy_v08:bool=False):
         if folder.exists():
             raise ValueError("XML session destination already exists")
         if not original_ifc.is_file() or original_ifc.is_symlink():
@@ -74,7 +75,21 @@ class XmlSourceEditSession:
         self.submissions=0
         self.source_sha=file_hash(self.original_ifc)
         original=ifcopenshell.open(str(original_ifc))
-        if original.schema!="IFC4X3":
+        self.experimental_original_legacy_v08=experimental_original_legacy_v08
+        self.original_native_schema=original.schema
+        self.legacy_original_task_id=None
+        if experimental_original_legacy_v08:
+            # Source-pinned and explicitly opt-in; no general IFC version
+            # conversion, model-visible mutator or pretrained answer surface.
+            from tools.bibimbap_v038_legacy_live_gate import (
+                check_original_legacy_source,LegacyLiveGateError)
+            try:
+                task,schema,klass=check_original_legacy_source(
+                    self.original_ifc,self.source_sha,original)
+            except LegacyLiveGateError as exc:
+                raise UnsupportedArm(str(exc)) from exc
+            self.legacy_original_task_id=task
+        elif original.schema!="IFC4X3":
             raise UnsupportedArm("XML source compiler only accepts IFC4X3")
         unit=ifcopenshell.util.unit.calculate_unit_scale(original)
         if not abs(unit-.001)<1e-12:
@@ -83,14 +98,20 @@ class XmlSourceEditSession:
         self.normalized=folder/"normalized_original_m.ifc"
         meter.write(str(self.normalized))
         try:
-            snapshot=project_ifc(
-                self.normalized,strict_on_opaque=False,
-                allow_original_flipped_slab=(
-                    os.environ.get("BMB_V029_ORIGINAL_SLAB_TRANSLATE")=="1"
-                    and file_hash(self.normalized)==
-                    "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"
-                ),
-            )
+            if self.legacy_original_task_id is not None:
+                from src.runtime.experimental_v8_legacy_projection import project_legacy_v8
+                snapshot=project_legacy_v8(self.normalized)
+                if snapshot.native_schema!=self.original_native_schema:
+                    raise ValueError("Original IFC2X3/IFC4 schema changed during opt-in projection")
+            else:
+                snapshot=project_ifc(
+                    self.normalized,strict_on_opaque=False,
+                    allow_original_flipped_slab=(
+                        os.environ.get("BMB_V029_ORIGINAL_SLAB_TRANSLATE")=="1"
+                        and file_hash(self.normalized)==
+                        "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac"
+                    ),
+                )
         except Exception as exc:
             raise UnsupportedArm(type(exc).__name__) from exc
         self.original_xml=snapshot.xml
@@ -137,7 +158,12 @@ class XmlSourceEditSession:
         try:
             from src.security.agent_boundary import check_xml_bytes
             check_xml_bytes(payload)
-            compilation=compile_declarative_xml(self.normalized,payload,candidate_m)
+            if self.legacy_original_task_id is None:
+                compilation=compile_declarative_xml(self.normalized,payload,candidate_m)
+            else:
+                from src.runtime.experimental_v8_legacy_compiler import compile_declarative_xml_v8
+                compilation=compile_declarative_xml_v8(
+                    self.normalized,payload,candidate_m)
             if not candidate_m.is_file():
                 raise ValueError("Trusted compiler produced no IFC result")
             candidate_native=ifcopenshell.util.unit.convert_file_length_units(
@@ -148,6 +174,12 @@ class XmlSourceEditSession:
             reread=ifcopenshell.open(str(candidate_mm))
             if abs(ifcopenshell.util.unit.calculate_unit_scale(reread)-.001)>1e-12:
                 raise ValueError("Native IFC units not restored")
+            if self.legacy_original_task_id is not None:
+                from tools.bibimbap_v038_legacy_live_gate import verify_native_original_restored
+                verify_native_original_restored(
+                    self.original_ifc,candidate_mm,
+                    task_id=self.legacy_original_task_id,
+                    expected_schema=self.original_native_schema)
             if file_hash(self.original_ifc)!=self.source_sha:
                 raise SecurityGate("Source IFC changed during XML trial")
             self.current_xml=payload
