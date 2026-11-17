@@ -1,0 +1,83 @@
+{
+  "D0_uses_full_declarative_XML_not_imperative_wrapper": true,
+  "benchmark_author_grader_private_targets_not_used_to_construct_either_arm": true,
+  "causal_representational_performance_inference_permitted": false,
+  "developer_only_new_actual_original_create_pair": true,
+  "frozen_v031_source_gate_sha256": "d6680b3eadb5733be547c09ab8deed58dd48c7feaccbc3cb562b6e60b475c7dd",
+  "full_original_45_create_coverage_claimed": false,
+  "independent_imperative_python_i0_executed_before_declarative_d0": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/179",
+  "llm_model_success_estimate": null,
+  "matched_real_D_I_LLM_trials": 0,
+  "native_full_D0_I0_bytes_equal": false,
+  "native_full_D0_IFC_sha256": "0ef81697f2b613006fce4baf41bc17a7086634fbe80f640be2e29673c9bac688",
+  "native_full_I0_IFC_sha256": "37139501d358117b329ce1194c813daa1cb76a02c1fef1b50843c684fe35694c",
+  "native_independent_oracle_both_arms": {
+    "all_original_product_geometry_preserved": true,
+    "new_column_contained_in_original_L1_storey": true,
+    "new_native_column_swept_solid_depth_mm": 3000.0,
+    "new_native_column_world_bbox_m": [
+      12.0,
+      8.0,
+      0.0,
+      12.3,
+      8.3,
+      3.0
+    ],
+    "new_root_type_only_Column_and_optional_spatial_containment": true,
+    "one_and_only_one_created_physical_IfcColumn": true,
+    "original_root_guids_classes_names_descriptions_preserved": true,
+    "original_source_native_product_count": 43,
+    "original_source_native_root_count": 358,
+    "original_source_product_geometry_verified_count": 39,
+    "original_source_product_without_geometry_count": 4,
+    "status": "INDEPENDENT_NATIVE_ORIGINAL_CREATE_COLUMN_AND_SOURCE_PRESERVATION_PASS"
+  },
+  "native_new_Column_GUIDs_same_between_arms": false,
+  "native_task_specific_Column_geometry_and_original_product_preservation_equal": true,
+  "new_cumulative_original45_full_native_byte_equal_witness_count": 11,
+  "new_paid_provider_requests": 0,
+  "new_separate_semantic_only_original_public_create_pair_count": 1,
+  "original45_full_information_equivalence_proven": 0,
+  "original45_full_native_write_capability_equivalence_proven": 0,
+  "original45_intention_to_test_denominator": 45,
+  "original_author_score_D0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_score_I0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_scores_equal_full": true,
+  "original_public_question_sha256": "bdc610efa790a67c601a0c3d9056c47c702a7af9bcb05d3b8e3acb3d9771ce57",
+  "original_public_task_id": "test_04",
+  "original_source_mm_IFC_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_source_schema": "IFC4X3",
+  "original_sources_and_previous_reports_modified": false,
+  "original_test04_historic_developer_D0_only_before_this_checkpoint": true,
+  "pinned_original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "pinned_original_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "predeclared_unrequested_width_and_depth_m": [
+    0.3,
+    0.3
+  ],
+  "prior_v031_original45_full_native_D0_I0_byte_equal_witness_count": 11,
+  "public_create_operation": "CREATE_ABSOLUTE_COLUMN",
+  "source_original_roots_identity_and_world_product_geometries_preserved": true,
+  "status": "V032_ORIGINAL_PUBLIC_TEST04_DEVELOPER_D0_I0_NATIVE_COLUMN_SEMANTIC_PARITY_AUTHOR_1_0"
+}
