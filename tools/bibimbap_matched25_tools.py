@@ -63,7 +63,8 @@ class XmlSourceEditSession:
     """Authoring model controls only complete XML text, never IFC mutator APIs."""
 
     def __init__(self, original_ifc:Path, folder:Path, *,
-                 experimental_original_legacy_v08:bool=False):
+                 experimental_original_legacy_v08:bool=False,
+                 experimental_original_complex_v039:bool=False):
         if folder.exists():
             raise ValueError("XML session destination already exists")
         if not original_ifc.is_file() or original_ifc.is_symlink():
@@ -76,9 +77,22 @@ class XmlSourceEditSession:
         self.source_sha=file_hash(self.original_ifc)
         original=ifcopenshell.open(str(original_ifc))
         self.experimental_original_legacy_v08=experimental_original_legacy_v08
+        self.experimental_original_complex_v039=experimental_original_complex_v039
         self.original_native_schema=original.schema
         self.legacy_original_task_id=None
-        if experimental_original_legacy_v08:
+        self.complex_original_task_id=None
+        if experimental_original_legacy_v08 and experimental_original_complex_v039:
+            raise UnsupportedArm("Original XML experiments v0.8/v0.39 are mutually exclusive")
+        if experimental_original_complex_v039:
+            from src.runtime.experimental_v39_complex_overlay import (
+                check_pinned_original,ComplexV039Error)
+            try:
+                task,kind=check_pinned_original(
+                    self.original_ifc,self.source_sha,original)
+            except ComplexV039Error as exc:
+                raise UnsupportedArm(str(exc)) from exc
+            self.complex_original_task_id=task
+        elif experimental_original_legacy_v08:
             # Source-pinned and explicitly opt-in; no general IFC version
             # conversion, model-visible mutator or pretrained answer surface.
             from tools.bibimbap_v038_legacy_live_gate import (
@@ -98,7 +112,13 @@ class XmlSourceEditSession:
         self.normalized=folder/"normalized_original_m.ifc"
         meter.write(str(self.normalized))
         try:
-            if self.legacy_original_task_id is not None:
+            if self.complex_original_task_id is not None:
+                from src.runtime.experimental_v39_complex_overlay import project_complex_v039
+                snapshot=project_complex_v039(
+                    self.normalized,original_input_sha256=self.source_sha)
+                if snapshot.native_schema!=self.original_native_schema:
+                    raise ValueError("Original complex IFC4X3 native schema changed")
+            elif self.legacy_original_task_id is not None:
                 from src.runtime.experimental_v8_legacy_projection import project_legacy_v8
                 snapshot=project_legacy_v8(self.normalized)
                 if snapshot.native_schema!=self.original_native_schema:
@@ -158,7 +178,12 @@ class XmlSourceEditSession:
         try:
             from src.security.agent_boundary import check_xml_bytes
             check_xml_bytes(payload)
-            if self.legacy_original_task_id is None:
+            if self.complex_original_task_id is not None:
+                from src.runtime.experimental_v39_complex_overlay import compile_complex_v039
+                compilation=compile_complex_v039(
+                    self.normalized,payload,candidate_m,
+                    original_input_sha256=self.source_sha)
+            elif self.legacy_original_task_id is None:
                 compilation=compile_declarative_xml(self.normalized,payload,candidate_m)
             else:
                 from src.runtime.experimental_v8_legacy_compiler import compile_declarative_xml_v8
@@ -174,6 +199,11 @@ class XmlSourceEditSession:
             reread=ifcopenshell.open(str(candidate_mm))
             if abs(ifcopenshell.util.unit.calculate_unit_scale(reread)-.001)>1e-12:
                 raise ValueError("Native IFC units not restored")
+            if self.complex_original_task_id is not None:
+                from tools.bibimbap_v039_complex_native_oracle import verify_complex_original_restored
+                verify_complex_original_restored(
+                    self.original_ifc,candidate_mm,
+                    task_id=self.complex_original_task_id,submitted_xml=payload)
             if self.legacy_original_task_id is not None:
                 from tools.bibimbap_v038_legacy_live_gate import verify_native_original_restored
                 verify_native_original_restored(
