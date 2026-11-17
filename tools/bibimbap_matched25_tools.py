@@ -66,7 +66,8 @@ class XmlSourceEditSession:
                  experimental_original_legacy_v08:bool=False,
                  experimental_original_complex_v039:bool=False,
                  experimental_original_room_v040:bool=False,
-                 experimental_original_p3_v041:bool=False):
+                 experimental_original_p3_v041:bool=False,
+                 experimental_original_native_slab_v042:bool=False):
         if folder.exists():
             raise ValueError("XML session destination already exists")
         if not original_ifc.is_file() or original_ifc.is_symlink():
@@ -82,16 +83,27 @@ class XmlSourceEditSession:
         self.experimental_original_complex_v039=experimental_original_complex_v039
         self.experimental_original_room_v040=experimental_original_room_v040
         self.experimental_original_p3_v041=experimental_original_p3_v041
+        self.experimental_original_native_slab_v042=experimental_original_native_slab_v042
         self.original_native_schema=original.schema
         self.legacy_original_task_id=None
         self.complex_original_task_id=None
         self.room_original_task_id=None
         self.p3_original_task_id=None
+        self.slab_original_task_id=None
         if sum(bool(v) for v in (
             experimental_original_legacy_v08,experimental_original_complex_v039,
-            experimental_original_room_v040,experimental_original_p3_v041))>1:
+            experimental_original_room_v040,experimental_original_p3_v041,
+            experimental_original_native_slab_v042))>1:
             raise UnsupportedArm("Original XML experimental opt-ins are mutually exclusive")
-        if experimental_original_p3_v041:
+        if experimental_original_native_slab_v042:
+            from src.runtime.experimental_v42_native_slab_readonly import (
+                check_original_slab_source,OriginalSlabEvidence042Error)
+            try:
+                self.slab_original_task_id=check_original_slab_source(
+                    self.original_ifc,self.source_sha,original)
+            except OriginalSlabEvidence042Error as exc:
+                raise UnsupportedArm(str(exc)) from exc
+        elif experimental_original_p3_v041:
             from src.runtime.experimental_v41_p3_column_slab import (
                 check_p3_original_source,P3NativeCreateError)
             try:
@@ -136,7 +148,14 @@ class XmlSourceEditSession:
         self.normalized=folder/"normalized_original_m.ifc"
         meter.write(str(self.normalized))
         try:
-            if self.p3_original_task_id is not None:
+            if self.slab_original_task_id is not None:
+                from src.runtime.experimental_v42_native_slab_readonly import project_original_slab_v042
+                snapshot=project_original_slab_v042(
+                    self.normalized,original_native_sha256=self.source_sha,
+                    original_source_mm=self.original_ifc)
+                if snapshot.native_schema!=self.original_native_schema:
+                    raise ValueError("v0.42 original Slab source IFC native schema mismatch")
+            elif self.p3_original_task_id is not None:
                 from src.runtime.experimental_v41_p3_column_slab import project_p3_source
                 snapshot=project_p3_source(
                     self.normalized,original_native_sha256=self.source_sha,
@@ -216,7 +235,13 @@ class XmlSourceEditSession:
         try:
             from src.security.agent_boundary import check_xml_bytes
             check_xml_bytes(payload)
-            if self.p3_original_task_id is not None:
+            if self.slab_original_task_id is not None:
+                from src.runtime.experimental_v42_native_slab_readonly import compile_original_slab_v042
+                compilation=compile_original_slab_v042(
+                    self.normalized,payload,candidate_m,
+                    original_native_sha256=self.source_sha,
+                    original_source_mm=self.original_ifc)
+            elif self.p3_original_task_id is not None:
                 from src.runtime.experimental_v41_p3_column_slab import compile_p3_create
                 compilation=compile_p3_create(
                     self.normalized,payload,candidate_m,
@@ -249,6 +274,12 @@ class XmlSourceEditSession:
             reread=ifcopenshell.open(str(candidate_mm))
             if abs(ifcopenshell.util.unit.calculate_unit_scale(reread)-.001)>1e-12:
                 raise ValueError("Native IFC units not restored")
+            if self.slab_original_task_id is not None:
+                from tools.bibimbap_v042_native_slab_source_oracle import (
+                    verify_v042_output_original_native)
+                verify_v042_output_original_native(
+                    self.original_ifc,candidate_mm,
+                    task_id=self.slab_original_task_id,submitted_xml=payload)
             if self.p3_original_task_id is not None:
                 from tools.bibimbap_v041_p3_native_oracle import verify_p3_original_native_add
                 verify_p3_original_native_add(
