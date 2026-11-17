@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:t="urn:bim-markup-bench:toy:v0"
+           targetNamespace="urn:bim-markup-bench:toy:v0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified" version="1.0">
+  <xs:annotation><xs:documentation>Research-only v0.42 source-pinned READ-ONLY native IfcSlab evidence plus unchanged default v0.1 authoring grammar; no commands or Xim/BIXML schema claim.</xs:documentation></xs:annotation>
+
+  <xs:simpleType name="Sha256Type"><xs:restriction base="xs:string">
+    <xs:pattern value="[0-9a-f]{64}"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="IfcGuidType"><xs:restriction base="xs:string">
+    <xs:pattern value="[0-9A-Za-z_$]{22}"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="PositiveMeasure"><xs:restriction base="xs:decimal">
+    <xs:minExclusive value="0"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="NonnegativeMeasure"><xs:restriction base="xs:decimal">
+    <xs:minInclusive value="0"/>
+  </xs:restriction></xs:simpleType>
+
+  <xs:attributeGroup name="IdentityAttrs">
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+    <xs:attribute name="ifcGuid" type="t:IfcGuidType" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="OriginAttrs">
+    <xs:attribute name="x" type="xs:decimal" use="required"/>
+    <xs:attribute name="y" type="xs:decimal" use="required"/>
+    <xs:attribute name="z" type="xs:decimal" use="required"/>
+  </xs:attributeGroup>
+  <xs:complexType name="LevelType">
+    <xs:attributeGroup ref="t:IdentityAttrs"/>
+    <xs:attribute name="elevation" type="xs:decimal" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="WallType">
+    <xs:attributeGroup ref="t:IdentityAttrs"/>
+    <xs:attribute name="level" type="xs:IDREF" use="required"/>
+    <xs:attribute name="x1" type="xs:decimal" use="required"/>
+    <xs:attribute name="y1" type="xs:decimal" use="required"/>
+    <xs:attribute name="z1" type="xs:decimal" use="required"/>
+    <xs:attribute name="x2" type="xs:decimal" use="required"/>
+    <xs:attribute name="y2" type="xs:decimal" use="required"/>
+    <xs:attribute name="z2" type="xs:decimal" use="required"/>
+    <xs:attribute name="height" type="t:PositiveMeasure" use="required"/>
+    <xs:attribute name="thickness" type="t:PositiveMeasure" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="BoxElementType">
+    <xs:attributeGroup ref="t:IdentityAttrs"/>
+    <xs:attribute name="level" type="xs:IDREF" use="required"/>
+    <xs:attributeGroup ref="t:OriginAttrs"/>
+    <xs:attribute name="width" type="t:PositiveMeasure" use="required"/>
+    <xs:attribute name="depth" type="t:PositiveMeasure" use="required"/>
+    <xs:attribute name="height" type="t:PositiveMeasure" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="SlabType">
+    <xs:attributeGroup ref="t:IdentityAttrs"/>
+    <xs:attribute name="level" type="xs:IDREF" use="required"/>
+    <xs:attributeGroup ref="t:OriginAttrs"/>
+    <xs:attribute name="width" type="t:PositiveMeasure" use="required"/>
+    <xs:attribute name="depth" type="t:PositiveMeasure" use="required"/>
+    <xs:attribute name="thickness" type="t:PositiveMeasure" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="OpeningType">
+    <xs:attributeGroup ref="t:IdentityAttrs"/>
+    <xs:attribute name="host" type="xs:IDREF" use="required"/>
+    <xs:attribute name="offset" type="xs:decimal" use="required"/>
+    <xs:attribute name="sill" type="t:NonnegativeMeasure" use="required"/>
+    <xs:attribute name="width" type="t:PositiveMeasure" use="required"/>
+    <xs:attribute name="height" type="t:PositiveMeasure" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="FillingType">
+    <xs:attributeGroup ref="t:IdentityAttrs"/>
+    <xs:attribute name="opening" type="xs:IDREF" use="required"/>
+    <xs:attribute name="width" type="t:PositiveMeasure" use="required"/>
+    <xs:attribute name="height" type="t:PositiveMeasure" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="BoundaryType">
+    <xs:attribute name="space" type="xs:IDREF" use="required"/>
+    <xs:attribute name="element" type="xs:IDREF" use="required"/>
+    <xs:attribute name="kind" type="xs:string" fixed="PHYSICAL"/>
+  </xs:complexType>
+  <xs:complexType name="ConnectivityType">
+    <xs:attribute name="from" type="xs:IDREF" use="required"/>
+    <xs:attribute name="to" type="xs:IDREF" use="required"/>
+  </xs:complexType>
+
+  <!-- v0.42 original-native-mm existing IfcSlab source facts: READ-ONLY. -->
+  <xs:complexType name="NativeWorldVertex042">
+    <xs:attribute name="index" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="x" type="xs:decimal" use="required"/>
+    <xs:attribute name="y" type="xs:decimal" use="required"/>
+    <xs:attribute name="z" type="xs:decimal" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="NativeWorldTriangle042">
+    <xs:attribute name="a" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="b" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="c" type="xs:nonNegativeInteger" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="OriginalNativeSlab042">
+    <xs:sequence>
+      <xs:element name="WorldVertices"><xs:complexType><xs:sequence>
+        <xs:element name="Vertex" type="t:NativeWorldVertex042" minOccurs="8" maxOccurs="100"/>
+      </xs:sequence></xs:complexType></xs:element>
+      <xs:element name="WorldTriangles"><xs:complexType><xs:sequence>
+        <xs:element name="Triangle" type="t:NativeWorldTriangle042" minOccurs="12" maxOccurs="200"/>
+      </xs:sequence></xs:complexType></xs:element>
+    </xs:sequence>
+    <xs:attribute name="ifcGuid" type="t:IfcGuidType" use="required"/>
+    <xs:attribute name="nativeIfcClass" type="xs:string" fixed="IfcSlab" use="required"/>
+    <xs:attribute name="originalName" type="xs:string" use="required"/>
+    <xs:attribute name="originalObjectType" type="xs:string" use="required"/>
+    <xs:attribute name="originalPredefinedType" type="xs:string" fixed="FLOOR" use="required"/>
+    <xs:attribute name="sourceContainedStoreyGuid" type="t:IfcGuidType" use="required"/>
+    <xs:attribute name="sourceContainmentRelationGuid" type="t:IfcGuidType" use="required"/>
+    <xs:attribute name="worldMeshSha256" type="t:Sha256Type" use="required"/>
+    <xs:attribute name="worldMinX" type="xs:decimal" use="required"/>
+    <xs:attribute name="worldMinY" type="xs:decimal" use="required"/>
+    <xs:attribute name="worldMinZ" type="xs:decimal" use="required"/>
+    <xs:attribute name="worldMaxX" type="xs:decimal" use="required"/>
+    <xs:attribute name="worldMaxY" type="xs:decimal" use="required"/>
+    <xs:attribute name="worldMaxZ" type="xs:decimal" use="required"/>
+    <xs:attribute name="compilerEditPermission" type="xs:string" fixed="NONE_READ_ONLY" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="OriginalNativeSlabRelation042">
+    <xs:attribute name="ifcClass" type="xs:string" fixed="IfcRelContainedInSpatialStructure" use="required"/>
+    <xs:attribute name="relationGuid" type="t:IfcGuidType" use="required"/>
+    <xs:attribute name="originalRelatingGuid" type="t:IfcGuidType" use="required"/>
+    <xs:attribute name="originalRelatedGuid" type="t:IfcGuidType" use="required"/>
+    <xs:attribute name="origin" type="xs:string" fixed="EXPLICIT_SOURCE_IFC_ONLY" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="OriginalNativeSlabEvidence042">
+    <xs:sequence>
+      <xs:element name="NativeSlabs"><xs:complexType><xs:sequence>
+        <xs:element name="NativeSlab" type="t:OriginalNativeSlab042" minOccurs="1" maxOccurs="2"/>
+      </xs:sequence></xs:complexType></xs:element>
+      <xs:element name="OriginalExplicitSlabRelations"><xs:complexType><xs:sequence>
+        <xs:element name="Relation" type="t:OriginalNativeSlabRelation042" minOccurs="1" maxOccurs="2"/>
+      </xs:sequence></xs:complexType></xs:element>
+    </xs:sequence>
+    <xs:attribute name="evidenceVersion" type="xs:string" fixed="0.42" use="required"/>
+    <xs:attribute name="sourceModelSha256" type="t:Sha256Type" use="required"/>
+    <xs:attribute name="originalIFCSha256" type="t:Sha256Type" use="required"/>
+    <xs:attribute name="sourceIfcSchema" type="xs:string" fixed="IFC4X3" use="required"/>
+    <xs:attribute name="compilerEditPermission" type="xs:string" fixed="NONE_READ_ONLY" use="required"/>
+    <xs:attribute name="sourceStateCompleteness" type="xs:string" fixed="PARTIAL_ORIGINAL_SLAB_REFERENCE_NOT_LOSSLESS_IFC" use="required"/>
+    <xs:attribute name="originalExplicitSpaceBoundaryCount" type="xs:nonNegativeInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:element name="Building">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Levels">
+          <xs:complexType>
+            <xs:sequence><xs:element name="Level" type="t:LevelType" maxOccurs="unbounded"/></xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="Wall" type="t:WallType"/>
+              <xs:element name="Slab" type="t:SlabType"/>
+              <xs:element name="Column" type="t:BoxElementType"/>
+              <xs:element name="Space" type="t:BoxElementType"/>
+              <xs:element name="Opening" type="t:OpeningType"/>
+              <xs:element name="Window" type="t:FillingType"/>
+              <xs:element name="Door" type="t:FillingType"/>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Relations" minOccurs="0">
+          <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="SpaceBoundary" type="t:BoundaryType"/>
+              <xs:element name="Connects" type="t:ConnectivityType"/>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OriginalNativeSlabEvidence" type="t:OriginalNativeSlabEvidence042"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required" fixed="0.1"/>
+      <xs:attribute name="sourceModelSha256" type="t:Sha256Type" use="required"/>
+      <xs:attribute name="units" type="xs:string" use="required" fixed="m"/>
+      <xs:attribute name="ifcSchema" type="xs:string" use="required" fixed="IFC4X3"/>
+    </xs:complexType>
+    <xs:unique name="uniqueIfcGuids">
+      <xs:selector xpath="t:Levels/t:Level | t:Elements/*"/>
+      <xs:field xpath="@ifcGuid"/>
+    </xs:unique>
+    <xs:key name="knownLevels">
+      <xs:selector xpath="t:Levels/t:Level"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:key name="knownWalls">
+      <xs:selector xpath="t:Elements/t:Wall"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:key name="knownOpenings">
+      <xs:selector xpath="t:Elements/t:Opening"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:key name="knownSpaces">
+      <xs:selector xpath="t:Elements/t:Space"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:keyref name="levelReferences" refer="t:knownLevels">
+      <xs:selector xpath="t:Elements/t:Wall | t:Elements/t:Slab | t:Elements/t:Column | t:Elements/t:Space"/>
+      <xs:field xpath="@level"/>
+    </xs:keyref>
+    <xs:keyref name="openingHostReferences" refer="t:knownWalls">
+      <xs:selector xpath="t:Elements/t:Opening"/>
+      <xs:field xpath="@host"/>
+    </xs:keyref>
+    <xs:keyref name="fillingOpeningReferences" refer="t:knownOpenings">
+      <xs:selector xpath="t:Elements/t:Window | t:Elements/t:Door"/>
+      <xs:field xpath="@opening"/>
+    </xs:keyref>
+    <xs:keyref name="boundarySpaceReferences" refer="t:knownSpaces">
+      <xs:selector xpath="t:Relations/t:SpaceBoundary"/>
+      <xs:field xpath="@space"/>
+    </xs:keyref>
+    <xs:keyref name="boundaryWallReferences" refer="t:knownWalls">
+      <xs:selector xpath="t:Relations/t:SpaceBoundary"/>
+      <xs:field xpath="@element"/>
+    </xs:keyref>
+    <xs:keyref name="connectedWallsFrom" refer="t:knownWalls">
+      <xs:selector xpath="t:Relations/t:Connects"/>
+      <xs:field xpath="@from"/>
+    </xs:keyref>
+    <xs:keyref name="connectedWallsTo" refer="t:knownWalls">
+      <xs:selector xpath="t:Relations/t:Connects"/>
+      <xs:field xpath="@to"/>
+    </xs:keyref>
+  </xs:element>
+</xs:schema>
