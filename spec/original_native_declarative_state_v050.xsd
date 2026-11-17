@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:b="urn:bim-markup-bench:toy:v0"
+ targetNamespace="urn:bim-markup-bench:toy:v0"
+ elementFormDefault="qualified" attributeFormDefault="unqualified">
+ <xs:simpleType name="PinnedSHA"><xs:restriction base="xs:string"><xs:pattern value="[a-f0-9]{64}"/></xs:restriction></xs:simpleType>
+ <xs:simpleType name="OriginalGUID"><xs:restriction base="xs:string"><xs:pattern value="[A-Za-z0-9_$]{22}"/></xs:restriction></xs:simpleType>
+ <xs:complexType name="SlabState">
+  <xs:attribute name="ifcGuid" type="b:OriginalGUID" use="required"/>
+  <xs:attribute name="dimXM" type="xs:decimal" use="required"/>
+  <xs:attribute name="dimYM" type="xs:decimal" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="ColumnState">
+  <xs:attribute name="ifcGuid" type="b:OriginalGUID" use="required"/>
+  <xs:attribute name="worldXM" type="xs:decimal"/>
+  <xs:attribute name="worldYM" type="xs:decimal"/>
+  <xs:attribute name="extrusionDepthM" type="xs:decimal"/>
+ </xs:complexType>
+ <xs:element name="BuildingState">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="OriginalNativeIFCSource">
+     <xs:complexType>
+      <!-- The separately validated original v0.44 source subtree is canonical-
+           byte/structure matched against the SHA-pinned original source. -->
+      <xs:sequence><xs:any namespace="##targetNamespace" processContents="skip" minOccurs="7" maxOccurs="7"/></xs:sequence>
+      <xs:anyAttribute processContents="skip"/>
+     </xs:complexType>
+    </xs:element>
+    <xs:element name="ManagedElements">
+     <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+       <xs:element name="Slab" type="b:SlabState"/>
+       <xs:element name="Column" type="b:ColumnState"/>
+      </xs:choice>
+      <xs:attribute name="boundary" type="xs:string" use="required"/>
+     </xs:complexType>
+    </xs:element>
+   </xs:sequence>
+   <xs:attribute name="version" type="xs:string" use="required" fixed="0.50"/>
+   <xs:attribute name="sourceOriginalIFCSha256" type="b:PinnedSHA" use="required"/>
+   <xs:attribute name="nativeSchema" type="xs:string" use="required" fixed="IFC4X3"/>
+   <xs:attribute name="nativeUnit" type="xs:string" use="required" fixed="MILLIMETER"/>
+   <xs:attribute name="representation" type="xs:string" use="required" fixed="DECLARATIVE_STATE_SNAPSHOT"/>
+   <xs:attribute name="managedSemantics" type="xs:string" use="required" fixed="EXPLICIT_SUBSET_ONLY"/>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>
