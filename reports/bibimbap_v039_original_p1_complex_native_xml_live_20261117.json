@@ -1,0 +1,170 @@
+{
+  "Docker_code_execution_invoked": false,
+  "causal_LLM_representation_performance_claim_supported": false,
+  "complete_IFC_STEP_bytes_preserved_proven": false,
+  "complete_original_native_source_state_visible_in_XML_proven": false,
+  "default_XML_source_P1_admissions": 0,
+  "explicit_P1_optin_actual_model_facing_XML_reads": 2,
+  "explicit_P1_optin_actual_native_IFC_writes": 2,
+  "full_original_task_write_equivalence_between_D_and_I_proven": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/193",
+  "new_paid_provider_requests": 0,
+  "next_priority": "P2 source IfcSpace visibility and public room GUID/native class ambiguity; P3 generic matched host Column/Slab capabilities",
+  "original_10_CREATE_without_new_task_specific_native_D0_I0_pair": 10,
+  "original_15_CREATE_denominator": 15,
+  "original_45_public_ITT_denominator": 45,
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_native_geometry_of_mapped_or_clipped_source_simplified_or_replaced": false,
+  "original_task_specific_author_scores_run": 0,
+  "previous_P1_original_schema_valid_complex_geometry_rejections": 2,
+  "previous_task_specific_original_developer_D0_I0_pairs": 5,
+  "prior_v038_P0_legacy_cases_still_optin_only": 3,
+  "real_paired_LLM_XML_Python_model_trials": 0,
+  "rows": [
+    {
+      "actual_candidate_native_mm_sha256": "068723a7ab0752f4009dd8a3a83ac4ef1f6379405797110dbd650b35d869fb72",
+      "actual_native_schema_restored_write_committed": true,
+      "causal_XML_vs_Python_impact_supported": false,
+      "default_typed_xml_session_admitted": false,
+      "explicit_v039_p1_source_admitted": true,
+      "model_visible_XML_byte_length": 4754,
+      "model_visible_complete_XML_partial_overlay_sha256": "e194c1da14b066fa6a1821d4ba22e9e4ce9775d580b76847acef751513ed8a57",
+      "model_visible_tools": [
+        "read_building_xml",
+        "submit_building_xml"
+      ],
+      "native_compilation_status": "COMMITTED_SOURCE_SCHEMA_PRESERVED_CREATE_ORIGINAL_IFC4X3_COMPLEX_V039",
+      "original_author_grader_invoked": false,
+      "original_opaque_geometry_is_readonly_not_simplified_typed_rectangle": true,
+      "original_source_bytes_unchanged": true,
+      "original_source_native_ifc_schema": "IFC4X3",
+      "original_source_native_length_unit_to_m": 0.001,
+      "public_original_ifc_sha256": "d7a0c0bda9572787b5b8e7a57b48f8157d898a9f444ac28978e9f9b9a8ff9702",
+      "public_question_sha256": "a22a5d9d5f1c2cdb0c76c60797e1c29574f3393514619f16e50ef0e4262d502a",
+      "real_model_inference_called": false,
+      "separate_independent_restored_native_physical_oracle": {
+        "complete_original_BIM_data_visible_in_XML": false,
+        "complete_original_IFC_STEP_byte_parity_proven": false,
+        "native_created_physical_extents": {
+          "IfcSlab": {
+            "max_m": [
+              2.0,
+              2.0,
+              3.2
+            ],
+            "min_m": [
+              1.0,
+              1.0,
+              3.0
+            ],
+            "triangles": 12
+          }
+        },
+        "native_created_products_by_class": {
+          "IfcSlab": 1
+        },
+        "old_native_relationship_edges_preserved": 8,
+        "old_original_Products_preserved": 8,
+        "old_original_Roots_preserved": 63,
+        "original_native_schema": "IFC4X3",
+        "original_native_units_to_m": 0.001,
+        "physical_original_clipped_wall_void_created": false,
+        "source_IFC_file_unchanged": true,
+        "unchanged_original_physical_mesh_products_verified": 4,
+        "unchanged_original_physical_mesh_triangles_verified": 48
+      },
+      "source_original_ifc_explicit_relationship_entries_in_readonly_catalog": 8,
+      "source_original_ifc_product_count_in_readonly_catalog": 8,
+      "source_original_opaque_product_class": "IfcColumn",
+      "source_original_opaque_product_count": 4,
+      "source_original_opaque_representation_type": "MappedRepresentation",
+      "submitted_illustrative_full_xml_sha256": "0949c9e72ec4ccf7387f61aae8fe2c037f15dcecefa99de2a92f3765276469cb",
+      "submitted_illustrative_is_original_task_solution": false,
+      "task_id": "geometry_test_01",
+      "v037_source_gate": "BLOCKED_NATIVE_PROJECTION",
+      "v037_source_reason": "UNSUPPORTED_GEOMETRY"
+    },
+    {
+      "actual_candidate_native_mm_sha256": "59344c62e813ce08929871ac29eb18f20ed4bc1e883911579261b9d23c9f8d19",
+      "actual_native_schema_restored_write_committed": true,
+      "causal_XML_vs_Python_impact_supported": false,
+      "default_typed_xml_session_admitted": false,
+      "explicit_v039_p1_source_admitted": true,
+      "model_visible_XML_byte_length": 8642,
+      "model_visible_complete_XML_partial_overlay_sha256": "88f034d8d0db19ff7273acabdbc01c184b436546a5092305d3350c7138a86a78",
+      "model_visible_tools": [
+        "read_building_xml",
+        "submit_building_xml"
+      ],
+      "native_compilation_status": "COMMITTED_SOURCE_SCHEMA_PRESERVED_CREATE_ORIGINAL_IFC4X3_COMPLEX_V039",
+      "original_author_grader_invoked": false,
+      "original_opaque_geometry_is_readonly_not_simplified_typed_rectangle": true,
+      "original_source_bytes_unchanged": true,
+      "original_source_native_ifc_schema": "IFC4X3",
+      "original_source_native_length_unit_to_m": 0.001,
+      "public_original_ifc_sha256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "public_question_sha256": "00c2fb588e63ab807431a8798294516994f3ededd9a2ab3023d38ffe725a0904",
+      "real_model_inference_called": false,
+      "separate_independent_restored_native_physical_oracle": {
+        "complete_original_BIM_data_visible_in_XML": false,
+        "complete_original_IFC_STEP_byte_parity_proven": false,
+        "native_created_physical_extents": {
+          "IfcDoor": {
+            "max_m": [
+              3.5,
+              0.14,
+              2.0
+            ],
+            "min_m": [
+              2.5,
+              0.06,
+              0.0
+            ],
+            "triangles": 12
+          },
+          "IfcOpeningElement": {
+            "max_m": [
+              3.5,
+              0.3,
+              2.0
+            ],
+            "min_m": [
+              2.5,
+              -0.1,
+              0.0
+            ],
+            "triangles": 12
+          }
+        },
+        "native_created_products_by_class": {
+          "IfcDoor": 1,
+          "IfcOpeningElement": 1
+        },
+        "old_native_relationship_edges_preserved": 13,
+        "old_original_Products_preserved": 13,
+        "old_original_Roots_preserved": 116,
+        "original_native_schema": "IFC4X3",
+        "original_native_units_to_m": 0.001,
+        "physical_original_clipped_wall_void_created": true,
+        "source_IFC_file_unchanged": true,
+        "unchanged_original_physical_mesh_products_verified": 8,
+        "unchanged_original_physical_mesh_triangles_verified": 96
+      },
+      "source_original_ifc_explicit_relationship_entries_in_readonly_catalog": 13,
+      "source_original_ifc_product_count_in_readonly_catalog": 13,
+      "source_original_opaque_product_class": "IfcWall",
+      "source_original_opaque_product_count": 7,
+      "source_original_opaque_representation_type": "Clipping",
+      "submitted_illustrative_full_xml_sha256": "f72f3d08aa00514c64d8fdd4e8ba695b3e1f46a6f7a8cb653fec397442b0858c",
+      "submitted_illustrative_is_original_task_solution": false,
+      "task_id": "topological_test_05",
+      "v037_source_gate": "BLOCKED_NATIVE_PROJECTION",
+      "v037_source_reason": "UNSUPPORTED_GEOMETRY"
+    }
+  ],
+  "stacked_parent_v038_head": "769b4013d1af1c0abce4f24d3305a231854fc685",
+  "status": "V039_ORIGINAL_P1_TWO_COMPLEX_SOURCE_XML_HOST_OPTIN_NATIVE_CREATE_PROVEN",
+  "v037_original10_frozen_report_sha256": "33d99e6fb624e6a5e89dc301791c269bd5ca7d2666d8618fc67379664938501f",
+  "v038_original_P0_frozen_report_sha256": "c04448087528aa07b9cee64830defe61e5b3a7836fc4cae8f073dac4bfc7aad4"
+}
