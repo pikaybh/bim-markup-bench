@@ -1,0 +1,634 @@
+{
+  "Docker_executions": 0,
+  "admitted_but_generic_new_class_writer_rejections": 3,
+  "admitted_but_public_room_source_visibility_or_noun_mismatch": 2,
+  "causal_XML_vs_Python_representation_effect_supported": false,
+  "current_matched_default_compiler_file_sha256": "d031727f1e5c5fcad81205167547d26ef062c8be805e2fb0383bcc8ab4751ed4",
+  "current_matched_host_file_sha256": "e1e7607883c0a6669fc39ae92273c70a99dab71c311af0060807b55559eed9c1",
+  "current_v037_applies_no_changes_to_matched_host_or_original_IFC": true,
+  "frozen_previous_reports_sha256": {
+    "reports/bibimbap_v031_original45_eligibility_and_overlap_20261117.json": "d6680b3eadb5733be547c09ab8deed58dd48c7feaccbc3cb562b6e60b475c7dd",
+    "reports/bibimbap_v032_original_test04_column_D0_I0_native_semantic_pair_20261117.json": "65cd592b83b06ac161ff420982cb2f3378e850613f4645419690e06764987b2b",
+    "reports/bibimbap_v033_original_test02_slab_D0_I0_semantic_pair_20261117.json": "998064e23a0b3955b20a0ca1a7cabcb4424a612af1d633e42cd179f5e68ce660",
+    "reports/bibimbap_v034_original_test05_wall_D0_I0_native_semantic_pair_20261117.json": "d4bc58a426fd30b6215fef0c2c8d0907c109df1127fa64d44f7d8ab911d4073d",
+    "reports/bibimbap_v035_original_test01_hosted_door_D0_I0_20261117.json": "7ba3a9465996a90d4d324c8e31bc3ff18f3487cb890431e3c30989a516ac82c9",
+    "reports/bibimbap_v036_original_test03_slab_opening_D0_I0_20261117.json": "04def65798913aab267b4894f234b2d8ba8f173baff001b3059eed55bdade138"
+  },
+  "generic_writer_commit_means_task_success": false,
+  "illustrative_GENERIC_Column_Slab_mutations_rejected": 3,
+  "illustrative_GENERIC_Wall_natives_committed_not_task_success": 2,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/189",
+  "live_XML_admission_means_task_success": false,
+  "live_source_rejection_means_benchmark_failure": false,
+  "native_geometry_projection_hard_rejections": 2,
+  "original45_developer_native_byte_equal_11_unchanged": 11,
+  "original45_full_native_write_capability_parity_proven": 0,
+  "original45_full_task_relevant_read_information_parity_proven": 0,
+  "original_author_evaluator_invocations": 0,
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_all_CREATE_15": 15,
+  "original_public_full_ITT_45": 45,
+  "previous_5_nonblinded_original_CREATE_semantic_pairs_still_5": 5,
+  "priority_tier_population": [
+    {
+      "task_ids": [
+        "geometry_test_03",
+        "geometry_test_04",
+        "geometry_test_05"
+      ],
+      "tier": "P0_LIVE_XML_SOURCE_SCHEMA_REJECTED"
+    },
+    {
+      "task_ids": [
+        "geometry_test_01",
+        "topological_test_05"
+      ],
+      "tier": "P1_LIVE_XML_GEOMETRY_PROJECTION_BLOCKED"
+    },
+    {
+      "task_ids": [
+        "topological_test_01",
+        "topological_test_03"
+      ],
+      "tier": "P2_NAMED_ROOM_OR_SOURCE_SPACE_NOT_IN_XML"
+    },
+    {
+      "task_ids": [
+        "geometry_test_02",
+        "topological_test_02",
+        "topological_test_04"
+      ],
+      "tier": "P3_ACTUAL_HOST_NEW_CLASS_WRITER_BLOCKED"
+    }
+  ],
+  "real_matched_LLM_D_I_trials": 0,
+  "real_model_or_paid_inference_calls": 0,
+  "remaining_CREATE_live_source_XML_admitted_count": 5,
+  "remaining_CREATE_live_source_XML_rejected_count": 5,
+  "remaining_original_CREATE_not_yet_native_D0_I0_paired": 10,
+  "rows": [
+    {
+      "actual_XML_session_admission": "BLOCKED_NATIVE_PROJECTION",
+      "actual_XML_session_block_reason": "UNSUPPORTED_GEOMETRY",
+      "actual_generic_native_create_probe": "NOT_ATTEMPTED_SOURCE_REJECTED",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Slab",
+      "generic_probe_is_original_task_solution": false,
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": null,
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 63,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcColumn": 4,
+        "IfcSite": 1
+      },
+      "native_source_IfcProduct_count": 8,
+      "next_engineering_priority_tier": "P1_LIVE_XML_GEOMETRY_PROJECTION_BLOCKED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "geometry",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4X3",
+      "original_public_IFC_sha256": "d7a0c0bda9572787b5b8e7a57b48f8157d898a9f444ac28978e9f9b9a8ff9702",
+      "original_public_named_IfcProduct_references": [],
+      "public_operation_family": "CREATE_SLAB_ON_FOUR_COLUMN_TOPS",
+      "public_question_sha256": "a22a5d9d5f1c2cdb0c76c60797e1c29574f3393514619f16e50ef0e4262d502a",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "geometry_test_01",
+      "unrepresented_original_native_IfcProduct_classes": null,
+      "visible_typed_XML_product_count": null
+    },
+    {
+      "actual_XML_session_admission": "ADMITTED_SOURCE_ONLY",
+      "actual_XML_session_block_reason": null,
+      "actual_generic_native_create_probe": "BLOCKED_UNSUPPORTED_NEW_CLASS",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Column",
+      "generic_probe_is_original_task_solution": false,
+      "illustrative_generic_whole_XML_sha256": "8a60f61639deeaac56cc41cb4aa37f050421fff83288cf9a1918ddafda952f54",
+      "live_XML_typed_node_class_counts": {
+        "Level": 2,
+        "Wall": 4
+      },
+      "live_model_visible_XML_sha256": "0a23b66eb138cfa8546e657e7738dbb23387a97688b7f70fb4766517fd9c8ed8",
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": [],
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 68,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcSite": 1,
+        "IfcWall": 4
+      },
+      "native_source_IfcProduct_count": 8,
+      "next_engineering_priority_tier": "P3_ACTUAL_HOST_NEW_CLASS_WRITER_BLOCKED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "geometry",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4X3",
+      "original_public_IFC_sha256": "58833e0bdf80e2207b8c221fc8195e5411f9f94e0d7f1cb39633b3c447eb4767",
+      "original_public_named_IfcProduct_references": [],
+      "public_operation_family": "CREATE_COLUMN_AT_FOUR_WALL_CENTROID",
+      "public_question_sha256": "bd7465f6f246b8662c62cb2830292ace4cee09e3a5f53a34d79bf9cc5a27d9e2",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "geometry_test_02",
+      "unrepresented_original_native_IfcProduct_classes": {
+        "IfcBuilding": 1,
+        "IfcSite": 1
+      },
+      "visible_typed_XML_product_count": 6
+    },
+    {
+      "actual_XML_session_admission": "BLOCKED_NON_IFC4X3",
+      "actual_XML_session_block_reason": "SCHEMA_GATE",
+      "actual_generic_native_create_probe": "NOT_ATTEMPTED_SOURCE_REJECTED",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Door",
+      "generic_probe_is_original_task_solution": false,
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": null,
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 52,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcSite": 1,
+        "IfcWallStandardCase": 3
+      },
+      "native_source_IfcProduct_count": 7,
+      "next_engineering_priority_tier": "P0_LIVE_XML_SOURCE_SCHEMA_REJECTED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "geometry",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC2X3",
+      "original_public_IFC_sha256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "original_public_named_IfcProduct_references": [
+        {
+          "guid": "3YQ$1CPXD2Mh2vQ18vV$hw",
+          "ifc_class": "IfcWallStandardCase"
+        }
+      ],
+      "public_operation_family": "CREATE_HOSTED_DOOR_IN_RELATIVE_NORTH_WALL",
+      "public_question_sha256": "0c7dff429fadc8286e33f157bc3a46181f800271a99fe645f493a9e37463094d",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "geometry_test_03",
+      "unrepresented_original_native_IfcProduct_classes": null,
+      "visible_typed_XML_product_count": null
+    },
+    {
+      "actual_XML_session_admission": "BLOCKED_NON_IFC4X3",
+      "actual_XML_session_block_reason": "SCHEMA_GATE",
+      "actual_generic_native_create_probe": "NOT_ATTEMPTED_SOURCE_REJECTED",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Space",
+      "generic_probe_is_original_task_solution": false,
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": null,
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 93,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcColumn": 1,
+        "IfcSite": 1,
+        "IfcWallStandardCase": 6
+      },
+      "native_source_IfcProduct_count": 11,
+      "next_engineering_priority_tier": "P0_LIVE_XML_SOURCE_SCHEMA_REJECTED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "geometry",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC2X3",
+      "original_public_IFC_sha256": "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea",
+      "original_public_named_IfcProduct_references": [
+        {
+          "guid": "3A5GfH23DBvBYpavCfWh4z",
+          "ifc_class": "IfcColumn"
+        }
+      ],
+      "public_operation_family": "CREATE_SPACE_LEFT_OF_NAMED_COLUMN",
+      "public_question_sha256": "8ee8935b70896b8d8116bf4929a7fbbfa30dc6d595bd419eb2c110367b14b291",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "geometry_test_04",
+      "unrepresented_original_native_IfcProduct_classes": null,
+      "visible_typed_XML_product_count": null
+    },
+    {
+      "actual_XML_session_admission": "BLOCKED_NON_IFC4X3",
+      "actual_XML_session_block_reason": "SCHEMA_GATE",
+      "actual_generic_native_create_probe": "NOT_ATTEMPTED_SOURCE_REJECTED",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Wall",
+      "generic_probe_is_original_task_solution": false,
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": null,
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 76,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 1,
+        "IfcSite": 1
+      },
+      "native_source_IfcProduct_count": 3,
+      "next_engineering_priority_tier": "P0_LIVE_XML_SOURCE_SCHEMA_REJECTED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "geometry",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4",
+      "original_public_IFC_sha256": "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc",
+      "original_public_named_IfcProduct_references": [],
+      "public_operation_family": "CREATE_WALL_AT_ABSOLUTE_COORDINATES",
+      "public_question_sha256": "d781dbbc052adeafa42c9a291013965422be49ddeaf17ccfb35ad49ab115385b",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "geometry_test_05",
+      "unrepresented_original_native_IfcProduct_classes": null,
+      "visible_typed_XML_product_count": null
+    },
+    {
+      "actual_XML_session_admission": "ADMITTED_SOURCE_ONLY",
+      "actual_XML_session_block_reason": null,
+      "actual_generic_native_create_probe": "ILLUSTRATIVE_WALL_SAVED_NATIVE",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Wall",
+      "generic_probe_is_original_task_solution": false,
+      "illustrative_generic_whole_XML_sha256": "b351438ce36c86d38bf6ed53404e310184819da3b76d95a00c546ff72df0ee48",
+      "live_XML_typed_node_class_counts": {
+        "Level": 2,
+        "Wall": 3
+      },
+      "live_model_visible_XML_sha256": "677b0920ac3d6376178a27382c9a24747f4a3c1943d40199228cc8995b8955a8",
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": [
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiH4s",
+          "native_ifc_class": "IfcSpace",
+          "visible": false
+        }
+      ],
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 88,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcSite": 1,
+        "IfcSlab": 2,
+        "IfcSpace": 1,
+        "IfcWall": 3
+      },
+      "native_source_IfcProduct_count": 10,
+      "next_engineering_priority_tier": "P2_NAMED_ROOM_OR_SOURCE_SPACE_NOT_IN_XML",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": true,
+      "original_author_evaluator_called": false,
+      "original_category": "topological",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4X3",
+      "original_public_IFC_sha256": "2cb6cc753784c13fcd1f6f037b97431294cc3c91db9bcc75213ba61b8e3a18ac",
+      "original_public_named_IfcProduct_references": [
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiH4s",
+          "ifc_class": "IfcSpace"
+        }
+      ],
+      "public_operation_family": "CREATE_WALL_ENCLOSING_ROOM",
+      "public_question_sha256": "379fb62b18234d7090b413d0b916739eb7c109ed0f56e300786232f0700423ac",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [
+        "Space"
+      ],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "topological_test_01",
+      "unrepresented_original_native_IfcProduct_classes": {
+        "IfcBuilding": 1,
+        "IfcSite": 1,
+        "IfcSlab": 2,
+        "IfcSpace": 1
+      },
+      "visible_typed_XML_product_count": 5
+    },
+    {
+      "actual_XML_session_admission": "ADMITTED_SOURCE_ONLY",
+      "actual_XML_session_block_reason": null,
+      "actual_generic_native_create_probe": "BLOCKED_UNSUPPORTED_NEW_CLASS",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Column",
+      "generic_probe_is_original_task_solution": false,
+      "illustrative_generic_whole_XML_sha256": "290c7b9e9788208ea96cbaa1cb0175b542c3b7dc8176396de78ce56e3c47a176",
+      "live_XML_typed_node_class_counts": {
+        "Level": 2,
+        "Wall": 4
+      },
+      "live_model_visible_XML_sha256": "123b128816d8af47c16f3fd69961b327b9b128a0ab589a822fed1e7f9656f424",
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": [
+        {
+          "guid": "1IMYx2Ej12vu3iYKHoTn08",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiH5o",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHOP",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHR$",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        }
+      ],
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 89,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcSite": 1,
+        "IfcSlab": 2,
+        "IfcWall": 4
+      },
+      "native_source_IfcProduct_count": 10,
+      "next_engineering_priority_tier": "P3_ACTUAL_HOST_NEW_CLASS_WRITER_BLOCKED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "topological",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4X3",
+      "original_public_IFC_sha256": "8f1d9e885603f8680cb79f2a373fa36b4ecd52634ac920f2ec53c60ac465ad72",
+      "original_public_named_IfcProduct_references": [
+        {
+          "guid": "1IMYx2Ej12vu3iYKHoTn08",
+          "ifc_class": "IfcWall"
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiH5o",
+          "ifc_class": "IfcWall"
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHOP",
+          "ifc_class": "IfcWall"
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHR$",
+          "ifc_class": "IfcWall"
+        }
+      ],
+      "public_operation_family": "CREATE_COLUMN_INSIDE_WALL_BOUNDS",
+      "public_question_sha256": "8d9053bf43826d2354f8053fb9e23b147c13e496c3cdb79b063443e237f297ff",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "topological_test_02",
+      "unrepresented_original_native_IfcProduct_classes": {
+        "IfcBuilding": 1,
+        "IfcSite": 1,
+        "IfcSlab": 2
+      },
+      "visible_typed_XML_product_count": 6
+    },
+    {
+      "actual_XML_session_admission": "ADMITTED_SOURCE_ONLY",
+      "actual_XML_session_block_reason": null,
+      "actual_generic_native_create_probe": "ILLUSTRATIVE_WALL_SAVED_NATIVE",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Wall",
+      "generic_probe_is_original_task_solution": false,
+      "illustrative_generic_whole_XML_sha256": "c99b43fa37e9aa089f77a26646dd02a54fd1acea5473e76063b3c4211251dd80",
+      "live_XML_typed_node_class_counts": {
+        "Level": 2,
+        "Wall": 6
+      },
+      "live_model_visible_XML_sha256": "fda7058f6c4954b668341e05ee1100727095826eeb1085d426943a49becd1843",
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": [
+        {
+          "guid": "0rMMWWDi1E0Qbe7dlPjRaK",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        },
+        {
+          "guid": "0rMMWWDi1E0Qbe7dlPjRcx",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        }
+      ],
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 112,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcSite": 1,
+        "IfcSlab": 1,
+        "IfcSpace": 2,
+        "IfcWall": 6
+      },
+      "native_source_IfcProduct_count": 13,
+      "next_engineering_priority_tier": "P2_NAMED_ROOM_OR_SOURCE_SPACE_NOT_IN_XML",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": true,
+      "original_author_evaluator_called": false,
+      "original_category": "topological",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4X3",
+      "original_public_IFC_sha256": "1035e999dd8579b7d2c33950498eea1f50bd9ff81e1816bdf4b9893901969466",
+      "original_public_named_IfcProduct_references": [
+        {
+          "guid": "0rMMWWDi1E0Qbe7dlPjRaK",
+          "ifc_class": "IfcWall"
+        },
+        {
+          "guid": "0rMMWWDi1E0Qbe7dlPjRcx",
+          "ifc_class": "IfcWall"
+        }
+      ],
+      "public_operation_family": "CREATE_WALL_SEPARATING_TWO_ROOMS",
+      "public_question_sha256": "b1fda9428591148d872ce6e760ca58d66120ed8768d4ef1966725eb43aacda5f",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": true,
+      "required_public_source_roles_missing_in_prior_typed_XML": [
+        "Space"
+      ],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "topological_test_03",
+      "unrepresented_original_native_IfcProduct_classes": {
+        "IfcBuilding": 1,
+        "IfcSite": 1,
+        "IfcSlab": 1,
+        "IfcSpace": 2
+      },
+      "visible_typed_XML_product_count": 8
+    },
+    {
+      "actual_XML_session_admission": "ADMITTED_SOURCE_ONLY",
+      "actual_XML_session_block_reason": null,
+      "actual_generic_native_create_probe": "BLOCKED_UNSUPPORTED_NEW_CLASS",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Slab",
+      "generic_probe_is_original_task_solution": false,
+      "illustrative_generic_whole_XML_sha256": "42225ba20a80024f62d02fed0410ad9a1b25726c5ac2dbf340cdd1c844c76481",
+      "live_XML_typed_node_class_counts": {
+        "Level": 2,
+        "Wall": 7
+      },
+      "live_model_visible_XML_sha256": "336abc0033772237dac7a8b2db273bd24008e8cc0b65d794e1d42b5bbff6e4c1",
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": [
+        {
+          "guid": "1IMYx2Ej12vu3iYKHoTn08",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiH5o",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHOP",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHR$",
+          "native_ifc_class": "IfcWall",
+          "visible": true
+        }
+      ],
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 108,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcSite": 1,
+        "IfcSlab": 1,
+        "IfcWall": 7
+      },
+      "native_source_IfcProduct_count": 12,
+      "next_engineering_priority_tier": "P3_ACTUAL_HOST_NEW_CLASS_WRITER_BLOCKED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "topological",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4X3",
+      "original_public_IFC_sha256": "29cd44b72639ba9573aa1698a4efab4adcfbc5461c19dd85259e6a9505d303e5",
+      "original_public_named_IfcProduct_references": [
+        {
+          "guid": "1IMYx2Ej12vu3iYKHoTn08",
+          "ifc_class": "IfcWall"
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiH5o",
+          "ifc_class": "IfcWall"
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHOP",
+          "ifc_class": "IfcWall"
+        },
+        {
+          "guid": "3_DHXxtdb3wRKlXgyMiHR$",
+          "ifc_class": "IfcWall"
+        }
+      ],
+      "public_operation_family": "CREATE_SLAB_CLOSING_FOUR_WALLS",
+      "public_question_sha256": "c587dae1444490eb2be2e92ea2359039e5099b87690828dfd4cbe81c7cf46fba",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "topological_test_04",
+      "unrepresented_original_native_IfcProduct_classes": {
+        "IfcBuilding": 1,
+        "IfcSite": 1,
+        "IfcSlab": 1
+      },
+      "visible_typed_XML_product_count": 9
+    },
+    {
+      "actual_XML_session_admission": "BLOCKED_NATIVE_PROJECTION",
+      "actual_XML_session_block_reason": "UNSUPPORTED_GEOMETRY",
+      "actual_generic_native_create_probe": "NOT_ATTEMPTED_SOURCE_REJECTED",
+      "claimed_complete_current_D_I_causal_trial_eligibility": false,
+      "full_task_relevant_information_parity_proven": false,
+      "full_task_relevant_native_write_parity_proven": false,
+      "generic_authoring_class_probed": "Door",
+      "generic_probe_is_original_task_solution": false,
+      "matched_LLM_execution": false,
+      "named_GUID_in_current_full_XML": null,
+      "native_millimetre_units": true,
+      "native_root_GUID_count": 116,
+      "native_source_IfcProduct_class_counts": {
+        "IfcBuilding": 1,
+        "IfcBuildingStorey": 2,
+        "IfcSite": 1,
+        "IfcSlab": 2,
+        "IfcWall": 7
+      },
+      "native_source_IfcProduct_count": 13,
+      "next_engineering_priority_tier": "P1_LIVE_XML_GEOMETRY_PROJECTION_BLOCKED",
+      "original_IfcSpace_required_for_room_reference_but_not_visible_in_XML": false,
+      "original_author_evaluator_called": false,
+      "original_category": "topological",
+      "original_crud": "create",
+      "original_ifc_schema": "IFC4X3",
+      "original_public_IFC_sha256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "original_public_named_IfcProduct_references": [],
+      "public_operation_family": "CREATE_EXTERIOR_BOOLEAN_HOSTED_DOOR",
+      "public_question_sha256": "00c2fb588e63ab807431a8798294516994f3ededd9a2ab3023d38ffe725a0904",
+      "public_room_named_GUIDs_refer_to_native_IfcWall_not_IfcSpace": false,
+      "required_public_source_roles_missing_in_prior_typed_XML": [],
+      "scored_original_author_result": false,
+      "source_native_sha256_unchanged_after_probe": true,
+      "task_id": "topological_test_05",
+      "unrepresented_original_native_IfcProduct_classes": null,
+      "visible_typed_XML_product_count": null
+    }
+  ],
+  "source_schema_hard_rejections": 3,
+  "stack_parent_v036_commit": "ca60e56a0a4fca331a093cbda2dc2074bc140ade",
+  "status": "V037_ORIGINAL_PUBLIC_10_REMAINING_CREATE_LIVE_SOURCE_AND_WRITER_GATES"
+}
