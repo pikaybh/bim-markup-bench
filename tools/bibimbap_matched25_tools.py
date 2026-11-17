@@ -67,7 +67,8 @@ class XmlSourceEditSession:
                  experimental_original_complex_v039:bool=False,
                  experimental_original_room_v040:bool=False,
                  experimental_original_p3_v041:bool=False,
-                 experimental_original_native_slab_v042:bool=False):
+                 experimental_original_native_slab_v042:bool=False,
+                 experimental_original_native_readonly_v044:bool=False):
         if folder.exists():
             raise ValueError("XML session destination already exists")
         if not original_ifc.is_file() or original_ifc.is_symlink():
@@ -84,18 +85,29 @@ class XmlSourceEditSession:
         self.experimental_original_room_v040=experimental_original_room_v040
         self.experimental_original_p3_v041=experimental_original_p3_v041
         self.experimental_original_native_slab_v042=experimental_original_native_slab_v042
+        self.experimental_original_native_readonly_v044=experimental_original_native_readonly_v044
         self.original_native_schema=original.schema
         self.legacy_original_task_id=None
         self.complex_original_task_id=None
         self.room_original_task_id=None
         self.p3_original_task_id=None
         self.slab_original_task_id=None
+        self.native_readonly_original_task_id=None
         if sum(bool(v) for v in (
             experimental_original_legacy_v08,experimental_original_complex_v039,
             experimental_original_room_v040,experimental_original_p3_v041,
-            experimental_original_native_slab_v042))>1:
+            experimental_original_native_slab_v042,
+            experimental_original_native_readonly_v044))>1:
             raise UnsupportedArm("Original XML experimental opt-ins are mutually exclusive")
-        if experimental_original_native_slab_v042:
+        if experimental_original_native_readonly_v044:
+            from src.runtime.experimental_v44_original_native_step_readonly import (
+                check_original_native_readonly_source,NativeSourceReadOnly044Error)
+            try:
+                self.native_readonly_original_task_id=check_original_native_readonly_source(
+                    self.original_ifc,self.source_sha,original)
+            except NativeSourceReadOnly044Error as exc:
+                raise UnsupportedArm(str(exc)) from exc
+        elif experimental_original_native_slab_v042:
             from src.runtime.experimental_v42_native_slab_readonly import (
                 check_original_slab_source,OriginalSlabEvidence042Error)
             try:
@@ -144,11 +156,23 @@ class XmlSourceEditSession:
         unit=ifcopenshell.util.unit.calculate_unit_scale(original)
         if not abs(unit-.001)<1e-12:
             raise UnsupportedArm("XML compiler requires original millimetres")
-        meter=ifcopenshell.util.unit.convert_file_length_units(original,"METER")
-        self.normalized=folder/"normalized_original_m.ifc"
-        meter.write(str(self.normalized))
+        if self.native_readonly_original_task_id is not None:
+            # No temporary new IFC file is needed for a purely model-visible
+            # original-native-mm STEP read. Keep all prior authoring modes as is.
+            self.normalized=None
+        else:
+            meter=ifcopenshell.util.unit.convert_file_length_units(original,"METER")
+            self.normalized=folder/"normalized_original_m.ifc"
+            meter.write(str(self.normalized))
         try:
-            if self.slab_original_task_id is not None:
+            if self.native_readonly_original_task_id is not None:
+                from src.runtime.experimental_v44_original_native_step_readonly import (
+                    project_native_readonly_source_v044)
+                snapshot=project_native_readonly_source_v044(
+                    self.original_ifc,original_native_sha256=self.source_sha)
+                if snapshot.native_schema!=self.original_native_schema:
+                    raise ValueError("v0.44 original native IFC4X3 schema mismatch")
+            elif self.slab_original_task_id is not None:
                 from src.runtime.experimental_v42_native_slab_readonly import project_original_slab_v042
                 snapshot=project_original_slab_v042(
                     self.normalized,original_native_sha256=self.source_sha,
@@ -200,6 +224,19 @@ class XmlSourceEditSession:
 
     @property
     def tools(self):
+        if self.native_readonly_original_task_id is not None:
+            return [
+                {
+                    "type":"function", "name":"read_building_xml",
+                    "description":"Read the complete immutable original IFC4X3 native STEP DATA records, GUIDs, materials, properties, source relationships, placements and world meshes as XML. Every source fact is READ ONLY; no original question answer or grader included.",
+                    "parameters":{"type":"object","properties":{},"additionalProperties":False},"strict":True,
+                },
+                {
+                    "type":"function", "name":"submit_building_xml",
+                    "description":"NATIVE IFC UPDATE/DELETE IS UNSUPPORTED for this read-only source-only research variant. Every submit is rejected with explicit failure. This tool cannot write a native IFC or edit the original source.",
+                    "parameters":{"type":"object","properties":{"xml_text":{"type":"string","description":"Full replacement source XML; always rejected"}},"required":["xml_text"],"additionalProperties":False},"strict":True,
+                },
+            ]
         return [
             {
                 "type":"function", "name":"read_building_xml",
@@ -226,6 +263,14 @@ class XmlSourceEditSession:
             return _stateless_result("error",error="Complete xml_text string required")
         payload=arguments["xml_text"].encode("utf8")
         self.submissions+=1
+        if self.native_readonly_original_task_id is not None:
+            # No attempt directory, compiler, writer, or false-success artifact.
+            return _stateless_result(
+                "error",error_type="UnsupportedArm",
+                error="V044_READ_ONLY_ORIGINAL_NATIVE_SOURCE_UPDATE_DELETE_MUTATION_UNSUPPORTED",
+                native_ifc_committed=False,native_candidate_available=False,
+                last_valid_xml_preserved=True,
+                original_source_unchanged=file_hash(self.original_ifc)==self.source_sha)
         candidate_dir=self.folder/f"attempt_{self.submissions:02d}"
         candidate_dir.mkdir()
         _no_overwrite(candidate_dir/"submitted_exact.xml",payload)
