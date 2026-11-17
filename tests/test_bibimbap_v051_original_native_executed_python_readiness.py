@@ -340,8 +340,37 @@ class V051IndependentNativePythonReadiness(unittest.TestCase):
             self.assertNotIn("start",args)
 
     def test_28_full_report_exact_replay(self):
-        self.assertEqual(audit.canonical(audit.build_report()),
-                         audit.REPORT.read_bytes())
+        # The v0.51 snapshot was intentionally frozen while Docker was OFF.
+        # A later v0.52 session can legitimately start the EXACT pinned local
+        # Docker engine. Revalidate EVERY invariant except that one observed
+        # historical host-environment status; NEVER overwrite v0.51 evidence.
+        frozen_bytes=audit.REPORT.read_bytes()
+        frozen=json.loads(frozen_bytes.decode("utf8"))
+        current=audit.build_report()
+        if (current["docker_runtime_readonly_probe"] !=
+                frozen["docker_runtime_readonly_probe"]):
+            self.assertEqual(frozen["status"],
+                             "BLOCKED_RUNTIME_NOT_LLM_EXECUTED")
+            self.assertEqual(frozen["docker_runtime_readonly_probe"]["status"],
+                             "BLOCKED_RUNTIME")
+            # The older Docker info preflight can itself transiently TIME OUT
+            # after Docker starts, giving a different BLOCKED reason. Both are
+            # dynamic host conditions, not changes to any original IFC result.
+            observed=current["docker_runtime_readonly_probe"]["status"]
+            self.assertIn(observed,("RUNTIME_ADMITTED","BLOCKED_RUNTIME"))
+            self.assertEqual(
+                current["status"],
+                ("RUNTIME_PRESENT_NOT_YET_LIVE_WORKER_TESTED"
+                 if observed=="RUNTIME_ADMITTED" else
+                 "BLOCKED_RUNTIME_NOT_LLM_EXECUTED"))
+            # No genuine model generated code had been executed at v0.51
+            # regardless of the CURRENT Docker runtime state.
+            self.assertEqual(current["actual_model_python_executed_in_sandbox"],0)
+            self.assertEqual(frozen["actual_model_python_executed_in_sandbox"],0)
+            current["docker_runtime_readonly_probe"]=(
+                frozen["docker_runtime_readonly_probe"])
+            current["status"]=frozen["status"]
+        self.assertEqual(audit.canonical(current),frozen_bytes)
 
     def test_29_report_cannot_be_overwritten(self):
         with self.assertRaises(FileExistsError):
