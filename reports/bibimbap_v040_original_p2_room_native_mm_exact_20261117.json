@@ -1,0 +1,221 @@
+{
+  "Docker_worker_executions": 0,
+  "actual_original_task_specific_grader_scores_in_v040": 0,
+  "actual_real_matched_LLM_XML_Python_trials": 0,
+  "causal_original_45_XML_vs_imperative_LLM_performance_effect_proven": false,
+  "complete_original45_model_visible_source_facts_equal_across_D_I_proven": 0,
+  "complete_original45_native_edit_rights_equal_across_D_I_proven": 0,
+  "default_typed_XML_host_modified_or_enabled_v040_automatically": false,
+  "full_original_IFC_STEP_entity_byte_equivalence_proven": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/195",
+  "new_paid_provider_requests": 0,
+  "next_priority": "P3 actual model-facing Column/Slab CREATE support, followed by fair matched LLM input/write parity",
+  "original15_CREATE_denominator": 15,
+  "original45_public_ITT_denominator": 45,
+  "original_10_CREATE_without_task_specific_native_D0_I0_pairs": 10,
+  "original_5_previous_task_specific_developer_D0_I0_semantic_pairs": 5,
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_frozen_v037_report_sha256": "33d99e6fb624e6a5e89dc301791c269bd5ca7d2666d8618fc67379664938501f",
+  "original_frozen_v039_report_sha256": "3d7a5e642b22b024c938d5c1f712c0eaab8e11ffb6fbe274b0c90ddef074b09a",
+  "prior_v037_P2_room_information_blocker_cases": 2,
+  "public_room_identifier_semantic_conflict_repaired_by_editing_original_dataset": false,
+  "rows": [
+    {
+      "actual_model_facing_native_Wall_written": true,
+      "default_source_XML_admitted_but_missing_native_IfcSpaces": true,
+      "illustrative_wall_XML_digest": "8e2ba4983884366d98194f6d30788666ef3dd66ea742efe42f9a4482bc3c09cd",
+      "illustrative_wall_is_original_topological_task_answer": false,
+      "independent_reopened_native_IFC_oracle": {
+        "all_original_native_Space_meshes_and_Storey_aggregates_unchanged": true,
+        "full_original_STEP_entity_byte_parity_proven": false,
+        "new_wall_world_bounds_m": {
+          "max": [
+            9.0,
+            0.2,
+            2.5
+          ],
+          "min": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "triangles": 12
+        },
+        "one_new_original_native_IfcWall_saved": true,
+        "original_Root_guids_and_classes_names_preserved": 88,
+        "original_explicit_IfcRelSpaceBoundary_count": 0,
+        "original_explicit_topology_edges_preserved": 10,
+        "original_native_IfcProducts_preserved": 10,
+        "original_native_schema_and_mm_preserved": true,
+        "original_room_adjacency_inferred_or_fabricated": false,
+        "original_source_IFC_mutated": false,
+        "original_world_mesh_products_preserved": 6,
+        "original_world_mesh_triangles_preserved": 72,
+        "output_explicit_IfcRelSpaceBoundary_count": 0,
+        "source_native_IfcSpaces_preserved": 1,
+        "status": "INDEPENDENT_ORIGINAL_IFC4X3_ROOM_AND_WALL_NATIVE_PRESERVATION_PASS"
+      },
+      "matched_LLM_D_I_trial": false,
+      "model_facing_XML_tool_names": [
+        "read_building_xml",
+        "submit_building_xml"
+      ],
+      "model_visible_XML_full_state_sha256": "ee5580502664a098a4fdf5d0ed87c300bda2e3659a413bd9ae6be18c04cf2156",
+      "model_visible_original_IfcSpace_explicit_aggregate_relations": 1,
+      "model_visible_original_IfcSpace_readonly_count": 1,
+      "model_visible_real_original_IfcSpace_meshes": [
+        {
+          "editable_as_fake_rectangular_XML_Space": false,
+          "explicit_original_IfcRelSpaceBoundary_count": 0,
+          "ifc_guid": "3_DHXxtdb3wRKlXgyMiH4s",
+          "native_ifc_class": "IfcSpace",
+          "native_room_source_long_name": "room",
+          "native_room_source_name": "132",
+          "original_aggregate_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+          "read_only_XML_indexed_mesh_matches_original_native_mm_IFC_exactly": true,
+          "read_only_original_physical_triangle_count": 12,
+          "read_only_world_vertex_count": 8,
+          "world_bounds_m": [
+            0.2,
+            0.2,
+            0.0,
+            4.85,
+            6.2,
+            2.7
+          ],
+          "world_mesh_source_digest": "eea33865dbafcf69762b198270a4630caaf60344cd44822842d8535e26bb8548"
+        }
+      ],
+      "original_IFC_source_unchanged": true,
+      "original_IfcRelSpaceBoundary_count": 0,
+      "original_author_evaluator_called": false,
+      "original_native_length_unit_to_m": 0.001,
+      "original_native_schema": "IFC4X3",
+      "original_public_guid_remapped_to_different_IfcSpace": false,
+      "original_public_native_IFC_sha256": "2cb6cc753784c13fcd1f6f037b97431294cc3c91db9bcc75213ba61b8e3a18ac",
+      "original_public_question_sha256": "379fb62b18234d7090b413d0b916739eb7c109ed0f56e300786232f0700423ac",
+      "original_public_room_noun_mismatch_explicit": false,
+      "original_room_adjacency_inferred_from_proximity": false,
+      "public_guid_actual_IFC_class": {
+        "3_DHXxtdb3wRKlXgyMiH4s": "IfcSpace"
+      },
+      "source_IfcSpace_typed_XML_authorable": false,
+      "task_id": "topological_test_01",
+      "v040_explicit_optin_source_XML_admitted": true
+    },
+    {
+      "actual_model_facing_native_Wall_written": true,
+      "default_source_XML_admitted_but_missing_native_IfcSpaces": true,
+      "illustrative_wall_XML_digest": "a37c9ed70b3847a217ad4dc8858abf5a52de6db1e70770df42913733d30dd0a1",
+      "illustrative_wall_is_original_topological_task_answer": false,
+      "independent_reopened_native_IFC_oracle": {
+        "all_original_native_Space_meshes_and_Storey_aggregates_unchanged": true,
+        "full_original_STEP_entity_byte_parity_proven": false,
+        "new_wall_world_bounds_m": {
+          "max": [
+            9.0,
+            0.2,
+            2.5
+          ],
+          "min": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "triangles": 12
+        },
+        "one_new_original_native_IfcWall_saved": true,
+        "original_Root_guids_and_classes_names_preserved": 112,
+        "original_explicit_IfcRelSpaceBoundary_count": 0,
+        "original_explicit_topology_edges_preserved": 13,
+        "original_native_IfcProducts_preserved": 13,
+        "original_native_schema_and_mm_preserved": true,
+        "original_room_adjacency_inferred_or_fabricated": false,
+        "original_source_IFC_mutated": false,
+        "original_world_mesh_products_preserved": 9,
+        "original_world_mesh_triangles_preserved": 124,
+        "output_explicit_IfcRelSpaceBoundary_count": 0,
+        "source_native_IfcSpaces_preserved": 2,
+        "status": "INDEPENDENT_ORIGINAL_IFC4X3_ROOM_AND_WALL_NATIVE_PRESERVATION_PASS"
+      },
+      "matched_LLM_D_I_trial": false,
+      "model_facing_XML_tool_names": [
+        "read_building_xml",
+        "submit_building_xml"
+      ],
+      "model_visible_XML_full_state_sha256": "e23126a686cd1c4774e3811e5906069177f0a7f8e30dd495e177b9bd348fc72e",
+      "model_visible_original_IfcSpace_explicit_aggregate_relations": 2,
+      "model_visible_original_IfcSpace_readonly_count": 2,
+      "model_visible_real_original_IfcSpace_meshes": [
+        {
+          "editable_as_fake_rectangular_XML_Space": false,
+          "explicit_original_IfcRelSpaceBoundary_count": 0,
+          "ifc_guid": "0rMMWWDi1E0Qbe7dlPjRlq",
+          "native_ifc_class": "IfcSpace",
+          "native_room_source_long_name": "room",
+          "native_room_source_name": "133",
+          "original_aggregate_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+          "read_only_XML_indexed_mesh_matches_original_native_mm_IFC_exactly": true,
+          "read_only_original_physical_triangle_count": 20,
+          "read_only_world_vertex_count": 12,
+          "world_bounds_m": [
+            0.2,
+            3.3,
+            0.0,
+            4.85,
+            6.2,
+            2.7
+          ],
+          "world_mesh_source_digest": "b4ec7d8a89f13169300e746475cc55cdf2cf787906bc5af538d84cfaf4a7dbb7"
+        },
+        {
+          "editable_as_fake_rectangular_XML_Space": false,
+          "explicit_original_IfcRelSpaceBoundary_count": 0,
+          "ifc_guid": "0rMMWWDi1E0Qbe7dlPjRlx",
+          "native_ifc_class": "IfcSpace",
+          "native_room_source_long_name": "room",
+          "native_room_source_name": "134",
+          "original_aggregate_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+          "read_only_XML_indexed_mesh_matches_original_native_mm_IFC_exactly": true,
+          "read_only_original_physical_triangle_count": 20,
+          "read_only_world_vertex_count": 12,
+          "world_bounds_m": [
+            0.2,
+            0.2,
+            0.0,
+            4.85,
+            3.1,
+            2.7
+          ],
+          "world_mesh_source_digest": "cf266bb945d568dea23118691bf67a587e6f31a9a4aabeee94a2a6da0b017b16"
+        }
+      ],
+      "original_IFC_source_unchanged": true,
+      "original_IfcRelSpaceBoundary_count": 0,
+      "original_author_evaluator_called": false,
+      "original_native_length_unit_to_m": 0.001,
+      "original_native_schema": "IFC4X3",
+      "original_public_guid_remapped_to_different_IfcSpace": false,
+      "original_public_native_IFC_sha256": "1035e999dd8579b7d2c33950498eea1f50bd9ff81e1816bdf4b9893901969466",
+      "original_public_question_sha256": "b1fda9428591148d872ce6e760ca58d66120ed8768d4ef1966725eb43aacda5f",
+      "original_public_room_noun_mismatch_explicit": true,
+      "original_room_adjacency_inferred_from_proximity": false,
+      "public_guid_actual_IFC_class": {
+        "0rMMWWDi1E0Qbe7dlPjRaK": "IfcWall",
+        "0rMMWWDi1E0Qbe7dlPjRcx": "IfcWall"
+      },
+      "source_IfcSpace_typed_XML_authorable": false,
+      "task_id": "topological_test_03",
+      "v040_explicit_optin_source_XML_admitted": true
+    }
+  ],
+  "stacked_parent_v039_commit": "071c97b380b5a25821aff5b41e071cb33a1daf93",
+  "status": "V040_ORIGINAL_P2_IFCSPACE_ROOM_READONLY_SOURCE_AND_NATIVE_WALL_WRITER_VERIFIED",
+  "v040_all_original_IfcSpace_ordered_vertices_and_indexed_triangles_verbatim_from_native_mm": true,
+  "v040_new_IfcRelSpaceBoundary_records_invented": 0,
+  "v040_original_P2_illustrative_native_Wall_writes": 2,
+  "v040_original_P2_source_room_evidence_XML_admitted": 2,
+  "v040_original_native_IfcSpace_entities_readonly_exposed": 3,
+  "v040_original_public_wrong_room_GUID_class_instances_disclosed": 2
+}

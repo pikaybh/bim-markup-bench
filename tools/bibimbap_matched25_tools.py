@@ -64,7 +64,8 @@ class XmlSourceEditSession:
 
     def __init__(self, original_ifc:Path, folder:Path, *,
                  experimental_original_legacy_v08:bool=False,
-                 experimental_original_complex_v039:bool=False):
+                 experimental_original_complex_v039:bool=False,
+                 experimental_original_room_v040:bool=False):
         if folder.exists():
             raise ValueError("XML session destination already exists")
         if not original_ifc.is_file() or original_ifc.is_symlink():
@@ -78,12 +79,24 @@ class XmlSourceEditSession:
         original=ifcopenshell.open(str(original_ifc))
         self.experimental_original_legacy_v08=experimental_original_legacy_v08
         self.experimental_original_complex_v039=experimental_original_complex_v039
+        self.experimental_original_room_v040=experimental_original_room_v040
         self.original_native_schema=original.schema
         self.legacy_original_task_id=None
         self.complex_original_task_id=None
-        if experimental_original_legacy_v08 and experimental_original_complex_v039:
-            raise UnsupportedArm("Original XML experiments v0.8/v0.39 are mutually exclusive")
-        if experimental_original_complex_v039:
+        self.room_original_task_id=None
+        if sum(bool(v) for v in (
+            experimental_original_legacy_v08,experimental_original_complex_v039,
+            experimental_original_room_v040))>1:
+            raise UnsupportedArm("Original XML experimental opt-ins are mutually exclusive")
+        if experimental_original_room_v040:
+            from src.runtime.experimental_v40_native_room_evidence import (
+                check_original_native_room_input,NativeRoomV040Error)
+            try:
+                self.room_original_task_id=check_original_native_room_input(
+                    self.original_ifc,self.source_sha,original)
+            except NativeRoomV040Error as exc:
+                raise UnsupportedArm(str(exc)) from exc
+        elif experimental_original_complex_v039:
             from src.runtime.experimental_v39_complex_overlay import (
                 check_pinned_original,ComplexV039Error)
             try:
@@ -112,7 +125,14 @@ class XmlSourceEditSession:
         self.normalized=folder/"normalized_original_m.ifc"
         meter.write(str(self.normalized))
         try:
-            if self.complex_original_task_id is not None:
+            if self.room_original_task_id is not None:
+                from src.runtime.experimental_v40_native_room_evidence import project_native_room_v040
+                snapshot=project_native_room_v040(
+                    self.normalized,original_native_sha256=self.source_sha,
+                    original_source_mm=self.original_ifc)
+                if snapshot.source_ifc_schema!=self.original_native_schema:
+                    raise ValueError("Original source P2 native IFC4X3 schema changed")
+            elif self.complex_original_task_id is not None:
                 from src.runtime.experimental_v39_complex_overlay import project_complex_v039
                 snapshot=project_complex_v039(
                     self.normalized,original_input_sha256=self.source_sha)
@@ -178,7 +198,13 @@ class XmlSourceEditSession:
         try:
             from src.security.agent_boundary import check_xml_bytes
             check_xml_bytes(payload)
-            if self.complex_original_task_id is not None:
+            if self.room_original_task_id is not None:
+                from src.runtime.experimental_v40_native_room_evidence import compile_native_room_v040
+                compilation=compile_native_room_v040(
+                    self.normalized,payload,candidate_m,
+                    original_native_sha256=self.source_sha,
+                    original_source_mm=self.original_ifc)
+            elif self.complex_original_task_id is not None:
                 from src.runtime.experimental_v39_complex_overlay import compile_complex_v039
                 compilation=compile_complex_v039(
                     self.normalized,payload,candidate_m,
@@ -199,6 +225,11 @@ class XmlSourceEditSession:
             reread=ifcopenshell.open(str(candidate_mm))
             if abs(ifcopenshell.util.unit.calculate_unit_scale(reread)-.001)>1e-12:
                 raise ValueError("Native IFC units not restored")
+            if self.room_original_task_id is not None:
+                from tools.bibimbap_v040_native_room_oracle import verify_p2_native_wall_create
+                verify_p2_native_wall_create(
+                    self.original_ifc,candidate_mm,
+                    task_id=self.room_original_task_id,submitted_xml=payload)
             if self.complex_original_task_id is not None:
                 from tools.bibimbap_v039_complex_native_oracle import verify_complex_original_restored
                 verify_complex_original_restored(
