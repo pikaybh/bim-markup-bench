@@ -71,7 +71,8 @@ def _check_endpoint(elements: dict[str, ElementNode], target: str,kind: str) -> 
     return node
 
 
-def _geometry_preconditions(elements: dict[str,ElementNode], source_sha: str) -> None:
+def _geometry_preconditions(elements: dict[str,ElementNode], source_sha: str,
+                            *, allow_slab_opening_hosts: bool=False) -> None:
     for element in elements.values():
         attrs=element.attrs()
         if element.kind=="Wall":
@@ -86,18 +87,29 @@ def _geometry_preconditions(elements: dict[str,ElementNode], source_sha: str) ->
                 if _as_decimal(attrs,dim)<=0:
                     raise BindingError("Wall has nonpositive dimension")
         elif element.kind=="Opening":
-            host=_check_endpoint(elements,attrs.get("host"),"Wall")
+            host=elements.get(attrs.get("host"))
+            if host is None or (host.kind!="Wall" and
+                    not (allow_slab_opening_hosts and host.kind=="Slab")):
+                raise BindingError("Wrong or missing Wall/opt-in Slab opening host")
             host_attrs=host.attrs()
-            length=((_as_decimal(host_attrs,"x2")-_as_decimal(host_attrs,"x1"))**2+
-                    (_as_decimal(host_attrs,"y2")-_as_decimal(host_attrs,"y1"))**2).sqrt()
             offset=_as_decimal(attrs,"offset")
             width=_as_decimal(attrs,"width")
             sill=_as_decimal(attrs,"sill")
             height=_as_decimal(attrs,"height")
-            if offset<0 or offset+width>length+Decimal("0.000001"):
-                raise BindingError("Opening is outside the hosted wall's horizontal extent")
-            if sill<0 or sill+height>_as_decimal(host_attrs,"height")+Decimal("0.000001"):
-                raise BindingError("Opening exceeds the hosted wall's vertical extent")
+            if host.kind=="Wall":
+                length=((_as_decimal(host_attrs,"x2")-_as_decimal(host_attrs,"x1"))**2+
+                        (_as_decimal(host_attrs,"y2")-_as_decimal(host_attrs,"y1"))**2).sqrt()
+                if offset<0 or offset+width>length+Decimal("0.000001"):
+                    raise BindingError("Opening is outside the hosted wall's horizontal extent")
+                if sill<0 or sill+height>_as_decimal(host_attrs,"height")+Decimal("0.000001"):
+                    raise BindingError("Opening exceeds the hosted wall's vertical extent")
+            else:
+                # Only v0.8: offset/sill are X/Y planar offsets from Slab min.
+                # Width/height are horizontal X/Y extents, not wall height.
+                if (offset<0 or sill<0 or
+                    offset+width>_as_decimal(host_attrs,"width")+Decimal("0.000001") or
+                    sill+height>_as_decimal(host_attrs,"depth")+Decimal("0.000001")):
+                    raise BindingError("Opening exceeds the hosted Slab's XY footprint")
         elif element.kind in ("Window","Door"):
             opening=_check_endpoint(elements,attrs.get("opening"),"Opening")
             opening_attrs=opening.attrs()
@@ -153,7 +165,8 @@ def _source_relation_evidence(graph: SemanticGraph, model_path) -> tuple[tuple,t
 
 
 def bind_document(document: BuildingDocument, *, source: IFCSnapshot|None=None,
-                  projection: Projection|None=None, verify_native_edges: bool=True) -> BindingEvidence:
+                  projection: Projection|None=None, verify_native_edges: bool=True,
+                  allow_slab_opening_hosts: bool=False) -> BindingEvidence:
     if projection is not None:
         if source is None:
             source=projection.source
@@ -203,7 +216,8 @@ def bind_document(document: BuildingDocument, *, source: IFCSnapshot|None=None,
         assigned_guids.add(guid)
         attrs=tuple(sorted((str(k),canonical_value(v)) for k,v in element.attrs().items()))
         nodes.append(GraphNode(element.id,element.kind,guid,provenance,attrs))
-    _geometry_preconditions(elements,document.source_model_sha256)
+    _geometry_preconditions(elements,document.source_model_sha256,
+                            allow_slab_opening_hosts=allow_slab_opening_hosts)
     edges=[]
     deps=[]
     levels={x.id for x in document.levels}
@@ -217,7 +231,10 @@ def bind_document(document: BuildingDocument, *, source: IFCSnapshot|None=None,
             edges.append(GraphEdge(kind,str(level),element.id,"derived"))
         elif element.kind=="Opening":
             host=str(a.get("host"))
-            _check_endpoint(elements,host,"Wall")
+            endpoint=elements.get(host)
+            if endpoint is None or (endpoint.kind!="Wall" and
+                    not (allow_slab_opening_hosts and endpoint.kind=="Slab")):
+                raise BindingError("Opening host must be Wall or opt-in Slab")
             edges.append(GraphEdge("host_void",host,element.id,"derived"))
             deps.append((host,element.id))
         elif element.kind in ("Window","Door"):
