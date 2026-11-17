@@ -69,7 +69,8 @@ class XmlSourceEditSession:
                  experimental_original_p3_v041:bool=False,
                  experimental_original_native_slab_v042:bool=False,
                  experimental_original_native_readonly_v044:bool=False,
-                 experimental_original_native_mutations_v045:bool=False):
+                 experimental_original_native_mutations_v045:bool=False,
+                 experimental_original_native_catalog_v046:bool=False):
         if folder.exists():
             raise ValueError("XML session destination already exists")
         if not original_ifc.is_file() or original_ifc.is_symlink():
@@ -88,6 +89,7 @@ class XmlSourceEditSession:
         self.experimental_original_native_slab_v042=experimental_original_native_slab_v042
         self.experimental_original_native_readonly_v044=experimental_original_native_readonly_v044
         self.experimental_original_native_mutations_v045=experimental_original_native_mutations_v045
+        self.experimental_original_native_catalog_v046=experimental_original_native_catalog_v046
         self.original_native_schema=original.schema
         self.legacy_original_task_id=None
         self.complex_original_task_id=None
@@ -96,14 +98,24 @@ class XmlSourceEditSession:
         self.slab_original_task_id=None
         self.native_readonly_original_task_id=None
         self.native_mutation_original_task_id=None
+        self.native_catalog_v046=None
         if sum(bool(v) for v in (
             experimental_original_legacy_v08,experimental_original_complex_v039,
             experimental_original_room_v040,experimental_original_p3_v041,
             experimental_original_native_slab_v042,
             experimental_original_native_readonly_v044,
-            experimental_original_native_mutations_v045))>1:
+            experimental_original_native_mutations_v045,
+            experimental_original_native_catalog_v046))>1:
             raise UnsupportedArm("Original XML experimental opt-ins are mutually exclusive")
-        if experimental_original_native_mutations_v045:
+        if experimental_original_native_catalog_v046:
+            from src.runtime.experimental_v46_original_native_catalog import (
+                build_original_source_catalog,NativeCatalog046Error)
+            try:
+                self.native_catalog_v046=build_original_source_catalog(
+                    self.original_ifc,sha=self.source_sha)
+            except NativeCatalog046Error as exc:
+                raise UnsupportedArm(str(exc)) from exc
+        elif experimental_original_native_mutations_v045:
             from src.runtime.experimental_v45_original_native_mutations import (
                 check_source)
             try:
@@ -169,7 +181,8 @@ class XmlSourceEditSession:
         if not abs(unit-.001)<1e-12:
             raise UnsupportedArm("XML compiler requires original millimetres")
         if (self.native_readonly_original_task_id is not None
-                or self.native_mutation_original_task_id is not None):
+                or self.native_mutation_original_task_id is not None
+                or self.native_catalog_v046 is not None):
             # No normalized-metre copy for source-native-mm read/edit modes.
             # No temporary new IFC file is needed for a purely model-visible
             # original-native-mm STEP read. Keep all prior authoring modes as is.
@@ -179,7 +192,10 @@ class XmlSourceEditSession:
             self.normalized=folder/"normalized_original_m.ifc"
             meter.write(str(self.normalized))
         try:
-            if self.native_mutation_original_task_id is not None:
+            if self.native_catalog_v046 is not None:
+                from types import SimpleNamespace
+                snapshot=SimpleNamespace(xml=self.native_catalog_v046.manifest())
+            elif self.native_mutation_original_task_id is not None:
                 from src.runtime.experimental_v45_original_native_mutations import (
                     project_original_native_mutations_v045)
                 snapshot=project_original_native_mutations_v045(
@@ -245,6 +261,27 @@ class XmlSourceEditSession:
 
     @property
     def tools(self):
+        if self.native_catalog_v046 is not None:
+            return [
+                {
+                    "type":"function","name":"read_building_xml",
+                    "description":"Read immutable ORIGINAL IFC4X3/IFC4/IFC2X3 native source manifest. Shows all eight original source catalogs, exact original root, relationship, material, property, placement, physical world mesh digests, literal STEP source pages. This v0.46 source catalog is READ ONLY, not a native edit interface; original task answer and grader are not present.",
+                    "parameters":{"type":"object","properties":{},"additionalProperties":False},"strict":True,
+                },
+                {
+                    "type":"function","name":"read_native_ifc_page",
+                    "description":"Read one model-visible original-source IFC catalog page (zero-based). catalog=roots/products/relationships/property_sets/materials/placements/geometry/step. STEP pages reveal literal original source IFC DATA lines; all pages together cover all original IFC entities. Source is immutable, no native writer.",
+                    "parameters":{"type":"object","properties":{
+                        "catalog":{"type":"string","enum":["roots","products","relationships","property_sets","materials","placements","geometry","step"]},
+                        "page":{"type":"integer","minimum":0},
+                    },"required":["catalog","page"],"additionalProperties":False},"strict":True,
+                },
+                {
+                    "type":"function","name":"submit_building_xml",
+                    "description":"UNSUPPORTED: THIS v0.46 NATIVE SOURCE CATALOG IS READ ONLY. All submissions fail closed, cannot produce or alter a native IFC, original source, or XML state. Use a separate explicitly validated native editing experimental arm when permitted.",
+                    "parameters":{"type":"object","properties":{"xml_text":{"type":"string","description":"Any XML; will be rejected as unsupported source-catalog mutation"}},"required":["xml_text"],"additionalProperties":False},"strict":True,
+                },
+            ]
         if self.native_mutation_original_task_id is not None:
             return [
                 {
@@ -285,7 +322,28 @@ class XmlSourceEditSession:
         ]
 
     def call(self,name:str,arguments:dict)->dict:
+        if name=="read_native_ifc_page" and self.native_catalog_v046 is not None:
+            if file_hash(self.original_ifc)!=self.source_sha:
+                return _stateless_result("error",error_type="OriginalSourceSHAChanged",
+                    error="Original immutable native IFC input changed after source catalog initialization",
+                    native_candidate_available=False)
+            from src.runtime.experimental_v46_original_native_catalog import NativeCatalog046Error
+            if set(arguments)!={"catalog","page"}:
+                return _stateless_result("error",error_type="InvalidPageArgs",
+                                         error="Provide exactly catalog and zero-based integer page")
+            try:
+                page=self.native_catalog_v046.page(arguments["catalog"],arguments["page"])
+                return _stateless_result("ok",xml=page.decode("utf8"),
+                    page_sha256=hashlib.sha256(page).hexdigest(),
+                    native_candidate_available=False,
+                    original_source_unchanged=file_hash(self.original_ifc)==self.source_sha)
+            except NativeCatalog046Error as exc:
+                return _stateless_result("error",error_type=type(exc).__name__,
+                                         error=str(exc),native_candidate_available=False)
         if name=="read_building_xml":
+            if self.native_catalog_v046 is not None and file_hash(self.original_ifc)!=self.source_sha:
+                return _stateless_result("error",error_type="OriginalSourceSHAChanged",
+                    error="Original source IFC no longer matches original research source SHA")
             if arguments:
                 return _stateless_result("error",error="Unexpected read arguments")
             return _stateless_result("ok",xml=self.current_xml.decode("utf8"),
@@ -297,6 +355,13 @@ class XmlSourceEditSession:
             return _stateless_result("error",error="Complete xml_text string required")
         payload=arguments["xml_text"].encode("utf8")
         self.submissions+=1
+        if self.native_catalog_v046 is not None:
+            return _stateless_result(
+                "error",error_type="UnsupportedArm",
+                error="V046_IMMUTABLE_ORIGINAL_NATIVE_CATALOG_READ_ONLY_NATIVE_MUTATION_UNSUPPORTED",
+                native_ifc_committed=False,native_candidate_available=False,
+                last_valid_xml_preserved=True,
+                original_source_unchanged=file_hash(self.original_ifc)==self.source_sha)
         if self.native_readonly_original_task_id is not None:
             # No attempt directory, compiler, writer, or false-success artifact.
             return _stateless_result(
