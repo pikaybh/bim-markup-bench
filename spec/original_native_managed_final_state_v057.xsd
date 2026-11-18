@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:b="urn:bim-markup-bench:toy:v0"
+ targetNamespace="urn:bim-markup-bench:toy:v0"
+ elementFormDefault="qualified" attributeFormDefault="unqualified">
+ <xs:simpleType name="PinnedSHA"><xs:restriction base="xs:string"><xs:pattern value="[a-f0-9]{64}"/></xs:restriction></xs:simpleType>
+ <xs:simpleType name="OriginalGUID"><xs:restriction base="xs:string"><xs:pattern value="[A-Za-z0-9_$]{22}"/></xs:restriction></xs:simpleType>
+ <xs:complexType name="SlabFinal">
+  <xs:attribute name="ifcGuid" type="b:OriginalGUID" use="required"/>
+  <xs:attribute name="present" type="xs:boolean" use="required"/>
+  <xs:attribute name="dimXM" type="xs:decimal" use="required"/>
+  <xs:attribute name="dimYM" type="xs:decimal" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="ColumnFinal">
+  <xs:attribute name="ifcGuid" type="b:OriginalGUID" use="required"/>
+  <xs:attribute name="present" type="xs:boolean" use="required"/>
+  <xs:attribute name="worldXM" type="xs:decimal"/>
+  <xs:attribute name="worldYM" type="xs:decimal"/>
+  <xs:attribute name="extrusionDepthM" type="xs:decimal"/>
+ </xs:complexType>
+ <xs:element name="ManagedFinalState">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:choice minOccurs="1" maxOccurs="10">
+     <xs:element name="Slab" type="b:SlabFinal"/>
+     <xs:element name="Column" type="b:ColumnFinal"/>
+    </xs:choice>
+   </xs:sequence>
+   <xs:attribute name="version" type="xs:string" use="required" fixed="0.57"/>
+   <xs:attribute name="representation" type="xs:string" use="required" fixed="D_MANAGED_FINAL_STATE"/>
+   <xs:attribute name="sourceOriginalIFCSha256" type="b:PinnedSHA" use="required"/>
+   <xs:attribute name="sourceBuildingStateSha256" type="b:PinnedSHA" use="required"/>
+   <xs:attribute name="managedBoundary" type="xs:string" use="required" fixed="EXACT_ORIGINAL_SOURCE_GUID_SUBSET"/>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>
