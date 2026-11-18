@@ -1,0 +1,3577 @@
+{
+  "I_baseline_must_be_re_run_for_each_separate_comparison": true,
+  "all_original_45_task_capability_matrix": [
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "a9e534518cd80461e0b95e51c0dded08911d3822a83620b3cd78c4eaebe5fef3",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_01.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/01/01_01_001.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "a22a5d9d5f1c2cdb0c76c60797e1c29574f3393514619f16e50ef0e4262d502a",
+      "original_test_id": "geometry_test_01",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "d7a0c0bda9572787b5b8e7a57b48f8157d898a9f444ac28978e9f9b9a8ff9702",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "3b5119f7f3a0fc581f87f64376390f5c9b3ca95ee49223eaf995970700ea4186",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_02.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/01/01_01_002.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "bd7465f6f246b8662c62cb2830292ace4cee09e3a5f53a34d79bf9cc5a27d9e2",
+      "original_test_id": "geometry_test_02",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "58833e0bdf80e2207b8c221fc8195e5411f9f94e0d7f1cb39633b3c447eb4767",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "d226fc48233c9d91b8a592cd218794d9c488a982aa95d40eb16b4e8f4dad6c3b",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_03.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/01/01_01_003.ifc",
+      "original_input_native_schema": "IFC2X3",
+      "original_question_SHA256": "0c7dff429fadc8286e33f157bc3a46181f800271a99fe645f493a9e37463094d",
+      "original_test_id": "geometry_test_03",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "source_cluster_ifc_SHA256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "587801445c1876969e5de58e6e1fe41bc4813e78a5ed06fe8388c26ca8c0bdfd",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_04.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/01/01_01_004.ifc",
+      "original_input_native_schema": "IFC2X3",
+      "original_question_SHA256": "8ee8935b70896b8d8116bf4929a7fbbfa30dc6d595bd419eb2c110367b14b291",
+      "original_test_id": "geometry_test_04",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": false,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs; production v0.55 source/schema delta requires IFC4X3",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "bd62e3433395cd0d083aef673e3a7b745b04d8499954ac600f3b834943b9471c",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_05.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "empty.ifc",
+      "original_input_native_schema": "IFC4",
+      "original_question_SHA256": "d781dbbc052adeafa42c9a291013965422be49ddeaf17ccfb35ad49ab115385b",
+      "original_test_id": "geometry_test_05",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "4a5f65f04204e8a9351474c443b378c0fbf5789b0e36e9d0a5e32e5da7182f39",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_11.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/01/01_01_011.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "edcdcff6af424da9d869c16100bfdfbbadb0e3a6606cc08a42ebdf045564a0cf",
+      "original_test_id": "geometry_test_11",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9f5ed71eb1ba912ec2ec83b944f17091ecebf3d6c5dcb00f6732661a29baf728",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "7798437db9f2b62d69eba09fa1a16078bf3d8d7a8ca441c291e6c34c9647acd0",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_12.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/01/01_01_012.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "79be1a9ad2bb94f6f9782958ba06abcb699ababaad0d612963eec334df2d8761",
+      "original_test_id": "geometry_test_12",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "7f77e6dfba0bbaf508b316b6f7846d40d7b812e63edcffc1114ed9c2a6455793",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "b2ab7d5d599cedcd26a1eeed52356cfd88bd1dcd36a44db99863d8ddf741c694",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_13.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/01/01_01_013.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "9185b94cb8f46356f2d72d8245a3e57c90bce08a5128c4d1765a6496611ff4bf",
+      "original_test_id": "geometry_test_13",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "source_cluster_ifc_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "893818951d15d180f45ff3102a7be4355660f13c350f990c1795de481a87140b",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_14.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "FOUR_ORIGINAL_DEVELOPER_CONTROLS_ONLY",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/01/01_01_014.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "b59ec5fa8ade37d69b6c600022824415dfaf1e97b28facfc6998a4c95f91dfaa",
+      "original_test_id": "geometry_test_14",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": true,
+      "source_cluster_assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "source_cluster_ifc_SHA256": "67ac42ca988bdfd44a2afe3ebaff8be11da913b281338ec127f4897e3f42f6a3",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "51f352f75ad52aac3b66b08fa6ef3197c47c2b6482c405f3bc6d34739cc8a01d",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_15.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "FOUR_ORIGINAL_DEVELOPER_CONTROLS_ONLY",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/01/01_01_015.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "178269bc5998194ba8566140de75afd4e9f8e065cfe8f6561141156b739b4126",
+      "original_test_id": "geometry_test_15",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": true,
+      "source_cluster_assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "source_cluster_ifc_SHA256": "318fb45af8142c164c1fc53eeadc472008ff9c42e9c1b6398e9c95aa744374af",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "e9b2dce9bbd283a702a930dc45abdae62b5a44264890fbcfb148feb679059cf4",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_16.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/01/01_01_016.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "cfb3fdda1b3f7652dbbe79452d75510d49ce86cc139b2891330b78f422c0d01f",
+      "original_test_id": "geometry_test_16",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "d3340378c0a81c392b166ce9954daa471b34856e970dd536c8e7ebe36c6221ab",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "407aee6e86be1df566405bbe559812f83c1fd49af719d87cc16bc2370bd1db16",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_17.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/01/01_01_017.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "1397f231902b25271cb057e9962c10a0bc0024d8ba8be350d1943db905c63948",
+      "original_test_id": "geometry_test_17",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "5aa7252ae511fe33e30f5702b771a654ac57852724c7fe6c5c54502ec1042c04",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "464f85052d4873f3ca75247ab5d3683e8a1e05739e6b0152040291aa49a23a53",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_18.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/01/01_01_018.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "dde714e4148bf439295ed9ef8fa3868d4eb1807d62113fcbb08571ebc041cf77",
+      "original_test_id": "geometry_test_18",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "a4da98bf78ce8d5a27043ff317aa7fa7a4cfe53a63dbb8d998ac3496410fcce8",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "447ccf22fd4c8c1d98795b3d1bf2eb116d1eb0bf5c4330fcb07510e9774dca24",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_19.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/01/01_01_019.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "877b249c656fb4237aff31299ae86bef1338b0318c0b12f028ff59db4d59dfb6",
+      "original_test_id": "geometry_test_19",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "source_cluster_ifc_SHA256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "ee615ab9b9b18457a074fd42226e93298eb127534d34b2279f8a8a58555265c0",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/geometry_test_20.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "geometry",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/01/01_01_020.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "2977827751511c8b34a27338370781cd94d82337462f7468beaec4b375caeed2",
+      "original_test_id": "geometry_test_20",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "4c16c170729a7370520be4a8b0c0729dc8e494b0785a6baaa721f9c338235356",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "402bbc3355ba6da58b216571e2cbfdbfc22632c7e5c829fc968e8ea22b593e90",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_01.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "6047b505112d7c9da219957e74a955d259c67148f019250b0722605db6610c31",
+      "original_test_id": "test_01",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "24480c867ec6b6cead2481afa83d9ae260ef7dc395a4dbcf8f1459bb440e4374",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_02.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "b11d1746b2a59a6b346bbcf643aa5ae738f6719d31babe9468ca8d90209592d3",
+      "original_test_id": "test_02",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "d1e8f0df05e7ef2944a8837f69504ff0f4de35903d20f48f601fbcd832362a93",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_03.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "a887b002fe9606743cf68dcc2914cd6ef136c16f78083999184f901ccf57c289",
+      "original_test_id": "test_03",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "5dfdb6968a56c04ad8068af367d93de753e128fd75f0af612aa3cdfba670def1",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_04.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "bdc610efa790a67c601a0c3d9056c47c702a7af9bcb05d3b8e3acb3d9771ce57",
+      "original_test_id": "test_04",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "70a570bae47ddf599a561a2f5f6a817dca398841473dc27f63190a00bec14e72",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_05.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "222cd92c3b4d9eae335aadda7511eadac9e65e5b1f22776ba8f7c1beb13cf4d0",
+      "original_test_id": "test_05",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "d99b477648bba8b6a5db00d2416dbc2b0756e541992bd22049d1b041de8d221c",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_11.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "6cf1fe94f7d3ddcdc95169b63b929cdf20bdabf1dfd14aa3549a869cff2630bf",
+      "original_test_id": "test_11",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "3f99aa9b14b40c664fd093679795212c0a4436d2483ac401ef285473963a5869",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_12.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "2e388b9193bd38e844b63d3418f73c74230a161edd01c9828260abb7b566b45a",
+      "original_test_id": "test_12",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "9f4cbe7c2900b4108185e6473fd246ff42613f6f3aa37132ebe570cadbbbeafe",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_13.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "dbb995b3c9b51c31860b42bcd3d61f86fc77fc9a81bdaaabf9d209aa74e67d5e",
+      "original_test_id": "test_13",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "3396173383d0043972dd95b03559734215ddfcbe96739d27cc171a7d3e03c98b",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_14.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "844c0b82724a3803132ecf262ae3a18ca0f7b2b6fe911c895ac59334dd775425",
+      "original_test_id": "test_14",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "8f8135dd2f30f0d6ca25ea202882f0d249c56d3ece947aeb8d43bd9602926c77",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_15.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "400afeab88ecd336af43ca37d96db0a7dfbe692e50edc83409259927d4c2b938",
+      "original_test_id": "test_15",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "ebecd33292ad5e2bf069fc891a7ece23a70b5453d1be496daddfdb2b32753e1b",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_16.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "b747e08abaed9204098d515e59b77a1eb232e378c11b2a9d9b12843fab26987b",
+      "original_test_id": "test_16",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "3391c79bdc0b9d73ad9843f230670bc266f52860f53ea198337908ddba92675d",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_17.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "07186f99fde397f1c7896f51a7e2d8ba7492cfc53f384948d353a9a558a25bab",
+      "original_test_id": "test_17",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "a8d327e10d7bccdacb8dc44b4759e4f9babb82f1140233d1a115fdb1e2cf6dda",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_18.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "5aeba46c7e07ce6f64de630a909af2239a2bfcc477677b4a99bc79f44da0f9be",
+      "original_test_id": "test_18",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "63cb9484f0dd7e94b7aaffa2246d5ad7f223691d94bbf24837686d0959aca047",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_19.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "8deb425761eb96bf9185e3789fda48428678e229f658c895054f9693bffe2487",
+      "original_test_id": "test_19",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "15d0cef9a075b2a9b1a537389f6801addfec02b8cbf81ce7ed04b300578311b4",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/test_20.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "basic",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "basic_tasks.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "b7bcd87baf27bdf7ae3d30f885020918a1d489bd9b0dda23e1c58a9a09f96f2e",
+      "original_test_id": "test_20",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "source_cluster_task_count": 15
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "8733ca8778ae28bb8a20bed8a3823c6c2e2cc6d953bbcd770c86adac7f91e054",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_01.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/02/01_02_001.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "379fb62b18234d7090b413d0b916739eb7c109ed0f56e300786232f0700423ac",
+      "original_test_id": "topological_test_01",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "2cb6cc753784c13fcd1f6f037b97431294cc3c91db9bcc75213ba61b8e3a18ac",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "7ec5273aefd88dc3169f49d29df7ff67a97e30958c03f8bf5dc0dd47d7851cb7",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_02.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/02/01_02_002.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "8d9053bf43826d2354f8053fb9e23b147c13e496c3cdb79b063443e237f297ff",
+      "original_test_id": "topological_test_02",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "8f1d9e885603f8680cb79f2a373fa36b4ecd52634ac920f2ec53c60ac465ad72",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "e77949b42ba6547bde1b93b26326c7ef589e424dea6fb4df00e3751c95de5875",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_03.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/02/01_02_003.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "b1fda9428591148d872ce6e760ca58d66120ed8768d4ef1966725eb43aacda5f",
+      "original_test_id": "topological_test_03",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "1035e999dd8579b7d2c33950498eea1f50bd9ff81e1816bdf4b9893901969466",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "04a7bbee812923a5b6ae8b08b63022a7c0193392268f185113b78c129f294836",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_04.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/02/01_02_004.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "c587dae1444490eb2be2e92ea2359039e5099b87690828dfd4cbe81c7cf46fba",
+      "original_test_id": "topological_test_04",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "29cd44b72639ba9573aa1698a4efab4adcfbc5461c19dd85259e6a9505d303e5",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "a04476c2f98e308ea326c520a30b1b85076325c8f64039a5f06b0dd238bdd50b",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_05.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "create",
+      "original_input_IFC_relative_path": "01/02/01_02_005.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "00c2fb588e63ab807431a8798294516994f3ededd9a2ab3023d38ffe725a0904",
+      "original_test_id": "topological_test_05",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "source_cluster_ifc_SHA256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "e9e5043e84fbb4b52ae7e60fea52fb34b03ccb30e9fe04e76ead02a83ce3cbc3",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_11.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "FOUR_ORIGINAL_DEVELOPER_CONTROLS_ONLY",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/02/01_02_011.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "ccacd1a116c22e55969394cde358ce4e831c1f26e9e78b87d72a5b7fbda5c311",
+      "original_test_id": "topological_test_11",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": true,
+      "source_cluster_assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "source_cluster_ifc_SHA256": "c85a8b90f1b2d22f1e27428e38c54ba7a0d1bdcfbd9d5cef8db06ad97712032e",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "70b2ef6dd429e423d62d7a1e839a111752ee10945d466631a97f2038cb799806",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_12.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/02/01_02_012.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "c72c3c2b259aebd524bebf43c667b67a2dad631395a0847e03a02e9171c84b2b",
+      "original_test_id": "topological_test_12",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "source_cluster_ifc_SHA256": "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "3ed7fc13215470009e02990168b2bdb8d9972aa9f895f1d4d3aea22b3f5864c7",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_13.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/02/01_02_013.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "63d09597246b75827e4cc66d7199804b16e4e523f59f69bb46e2d7ca262dac3b",
+      "original_test_id": "topological_test_13",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "6f6e0e02f8f9da3b23892650ec700000566b0cd1ceb8641732d99212b7c40ea3",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "68e093466f42453c7a040bf135f776fc3764db2d17da70599aa628a5decf6aa1",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_14.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/02/01_02_014.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "9e6037ba0db2d981fedaaa740272641e4534b6ff4cedf42ee9b04a18fe809a81",
+      "original_test_id": "topological_test_14",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "06462f56bb97d656dc4a8599de297b953e6056923b4262bdd18d7a77a4ffad73",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "8c7761518ab5eb58a7b3800fc23e54f39eef9dcae54f0ea550a7d325739ef443",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_15.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "update",
+      "original_input_IFC_relative_path": "01/02/01_02_015.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "059167d6b504c3fed38f920090cc55837191ae4c59b208dbefef9547d1167e7f",
+      "original_test_id": "topological_test_15",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "a6b064aa62adacb6dc383d5d2338caf241e0453a33b96f2c50cbb7828edacd9e",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "807c60f5a44234277097af9d4ab91931aea26d8765c92b82742c1fb9b0e94180",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_16.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/02/01_02_016.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "56eda24f93dec11be060764111ce4210a0b23e4aa237aa311132b2466e4c412d",
+      "original_test_id": "topological_test_16",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "59a6f1bf0b93f75cc37f959c6812034461c68a8dbd0b4c6f3c2ef2a9ab562f4e",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": true,
+          "evidence": "Real original IFC positive/negative developer controls validated by v0.55/v0.56/v0.57, not model trial",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": false,
+          "state": "VERIFIED_NATIVE_DEVELOPER_CONTROL_ONLY"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "107210226e420ec1dc69ade25e0d5ff89a7dfbb1bfe6cf12a212780297ae3a18",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_17.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "FOUR_ORIGINAL_DEVELOPER_CONTROLS_ONLY",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "BLOCKED",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/02/01_02_017.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "987c24e896b8cdeb609d4e2d167c642f3f4e7fd7f1c1744be326c54b72888a53",
+      "original_test_id": "topological_test_17",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": true,
+      "source_cluster_assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "source_cluster_ifc_SHA256": "a052ec0377c437f28f0a1b8be4dd4ce4f78bf877bde7e51d10eb2d72310230bd",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "29358fe3d1d587de7e4bcfa3af91d2a83ed43fa35056aab516487ee667936c4d",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_18.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/02/01_02_018.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "bf87ac7809ce0c5c6ba1638d2693503458dcdc449cb92dc0271edeb924ef925b",
+      "original_test_id": "topological_test_18",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "source_cluster_ifc_SHA256": "cd731db3ca41f3f18840aafb3fbfcb5a7d1b734a5961d06cb797563502d592d0",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "0abf6fe8ffc22d6955b92306a47a199459afa10b48a5c908c730097effecc2a0",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_19.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/02/01_02_019.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "8864d9e7cf4891363abc72b1ae0eac0fabbae07756c823fe8b9d7a35ec666d98",
+      "original_test_id": "topological_test_19",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "a8aefcd0c688c36a4bd0d9dc4b7783fdfb6bd49e225a14623e82869c18b4f89a",
+      "source_cluster_task_count": 1
+    },
+    {
+      "arms": {
+        "D_COMPLETE_XML": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_COMPLETE_XML_STREAMED": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "D_MANAGED_FINAL_STATE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "Current frozen original-state/managed-diff native compiler accepts only four independently validated task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "NOT_SUPPORTED_BY_CURRENT_FOUR_TASK_FINAL_STATE_COMPILER"
+        },
+        "I_NATIVE": {
+          "current_production_native_ifc_schema_compatible": true,
+          "current_task_bound_executable_and_admissible": false,
+          "evidence": "General pinned Docker Python/IfcOpenShell can execute code; the currently frozen independent native source/scope task admission only accepts four original task IDs",
+          "model_generated_success_rate": null,
+          "provider_paid_execution_count": 0,
+          "requires_new_independent_task_native_contract": true,
+          "state": "GENERIC_EXECUTOR_EXISTS_BUT_ORIGINAL_TASK_ORACLE_UNVERIFIED"
+        }
+      },
+      "author_evaluator_source_only": {
+        "author_module_was_EXECUTED_during_v058": false,
+        "author_repository_metric_available_POST_RUN_ONLY": true,
+        "author_source_test_module_SHA256": "dedec3977626b871f05563862c969d3cea5eb952b032f4ee24413e16cdb856c6",
+        "original_author_checkout_module_exists": true,
+        "path_relative_to_pinned_author_checkout": "data/tests/topological_test_20.py",
+        "published_paper_official_scorer_version_verified": false
+      },
+      "category": "topological",
+      "current_frozen_native_edit_task_scope": "UNTESTED_NOT_ADMITTED",
+      "historical_XML_readability_IS_NOT_edit_support": true,
+      "historical_XML_readonly_source_projection": "PROJECTABLE",
+      "model_generated_any_arm_run": false,
+      "original_author_score_this_checkpoint": null,
+      "original_crud": "delete",
+      "original_input_IFC_relative_path": "01/02/01_02_020.ifc",
+      "original_input_native_schema": "IFC4X3",
+      "original_question_SHA256": "502f87fd3fa4bd431510d3d55e0fc0f2f7b02ca12e5bfeff726e96d32dcb60a3",
+      "original_test_id": "topological_test_20",
+      "paper_official_published_score": null,
+      "previously_exposed_four_developer_controls": false,
+      "source_cluster_assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "source_cluster_ifc_SHA256": "68074f17687622859bbf4aba233a1f37b72e4f6bc634e808c8ab03c3a65ca3c0",
+      "source_cluster_task_count": 1
+    }
+  ],
+  "all_other_41_original_tasks_not_covered_by_current_task_oracle": 41,
+  "author_repository_correct_5_column_deletion_score_possible_0_50": true,
+  "billable_provider_calls": 0,
+  "budget_equivalent_error_feedback_protocol_frozen": false,
+  "candidate_holdout_ITT_denominator": 6,
+  "cannot_derive_model_accuracy_or_success_from_capability_matrix": true,
+  "current_supported_developer_control_task_count_each_arm": 4,
+  "frozen_parent_original_four_report_SHA256": "22b3f30166ba2164278cdc1b2b25e5e4c4d0d0cddb74c25f7b759287bd127e57",
+  "frozen_parent_v057_head": "661d733b77e801a491e56fee5b362ca59c44c9e7",
+  "frozen_source_rights_report_SHA256": "6b8e983a80a88a06f8de9ebefaeee3c52a71231583bbfeb164c05e0c1b17137c",
+  "full_population_ITT_denominator_IF_full_supported_and_approved": 45,
+  "historical_XML_readability_does_not_establish_native_EDIT_coverage": true,
+  "historical_XML_readonly_blocked_tasks": 9,
+  "historical_XML_readonly_projectable_tasks": 36,
+  "holdout_is_not_CURRENTLY_EXPERIMENTALLY_ADMISSIBLE": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/231",
+  "missing_or_refused_task_must_remain_in_ITT_denominator": true,
+  "model_generated_trial_slots_executed": 0,
+  "native_IFC_admission_reporting": "INDEPENDENT_SOURCE_SCOPE_PLUS_IFC_SCHEMA_ERROR_DELTA",
+  "one_shared_original_source_cluster_spans_basic_CREATE_UPDATE_DELETE": true,
+  "original_HF_data_card_declares_cc_by_4_0": true,
+  "original_author_code_checkout_commit": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_code_git_repository": "https://github.com/nbharathik/bibimbap",
+  "original_author_code_version_paper_official_equivalence_proven": false,
+  "original_author_evaluator_45_modules_SHA_pinned_not_invoked": true,
+  "original_author_repository_metric_reporting": "BOOLEANS_AND_MEAN_UNMODIFIED_EVALUATOR_ONLY_POST_RUN",
+  "original_category_counts": {
+    "basic": 15,
+    "geometry": 15,
+    "topological": 15
+  },
+  "original_code_license_verified": false,
+  "original_crud_counts": {
+    "create": 15,
+    "delete": 15,
+    "update": 15
+  },
+  "original_individual_IFC_chain_of_rights_verified": false,
+  "original_source_cluster_sizes": {
+    "1": 30,
+    "15": 1
+  },
+  "original_unique_IFC_SHA_clusters": 31,
+  "paid_usd_cap_authorized": null,
+  "paired_schedule": [
+    {
+      "comparison_run_plan": [
+        {
+          "arm_order": [
+            "D_COMPLETE_XML",
+            "I_NATIVE"
+          ],
+          "comparison_id": "PRIMARY_FULL_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        },
+        {
+          "arm_order": [
+            "I_NATIVE",
+            "D_MANAGED_FINAL_STATE"
+          ],
+          "comparison_id": "ALTERNATIVE_MANAGED_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        }
+      ],
+      "no_run_authorized": true,
+      "preregistration_approved": false,
+      "source_cluster_ifc_SHA256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "stratum": "topological:create",
+      "task_id": "topological_test_05",
+      "task_is_CURRENTLY_UNSUPPORTED_IN_ALL_THREE_COMPARISON_ARMS": true
+    },
+    {
+      "comparison_run_plan": [
+        {
+          "arm_order": [
+            "I_NATIVE",
+            "D_COMPLETE_XML"
+          ],
+          "comparison_id": "PRIMARY_FULL_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        },
+        {
+          "arm_order": [
+            "D_MANAGED_FINAL_STATE",
+            "I_NATIVE"
+          ],
+          "comparison_id": "ALTERNATIVE_MANAGED_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        }
+      ],
+      "no_run_authorized": true,
+      "preregistration_approved": false,
+      "source_cluster_ifc_SHA256": "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+      "stratum": "topological:update",
+      "task_id": "topological_test_12",
+      "task_is_CURRENTLY_UNSUPPORTED_IN_ALL_THREE_COMPARISON_ARMS": true
+    },
+    {
+      "comparison_run_plan": [
+        {
+          "arm_order": [
+            "I_NATIVE",
+            "D_COMPLETE_XML"
+          ],
+          "comparison_id": "PRIMARY_FULL_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        },
+        {
+          "arm_order": [
+            "I_NATIVE",
+            "D_MANAGED_FINAL_STATE"
+          ],
+          "comparison_id": "ALTERNATIVE_MANAGED_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        }
+      ],
+      "no_run_authorized": true,
+      "preregistration_approved": false,
+      "source_cluster_ifc_SHA256": "cd731db3ca41f3f18840aafb3fbfcb5a7d1b734a5961d06cb797563502d592d0",
+      "stratum": "topological:delete",
+      "task_id": "topological_test_18",
+      "task_is_CURRENTLY_UNSUPPORTED_IN_ALL_THREE_COMPARISON_ARMS": true
+    },
+    {
+      "comparison_run_plan": [
+        {
+          "arm_order": [
+            "I_NATIVE",
+            "D_COMPLETE_XML"
+          ],
+          "comparison_id": "PRIMARY_FULL_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        },
+        {
+          "arm_order": [
+            "D_MANAGED_FINAL_STATE",
+            "I_NATIVE"
+          ],
+          "comparison_id": "ALTERNATIVE_MANAGED_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        }
+      ],
+      "no_run_authorized": true,
+      "preregistration_approved": false,
+      "source_cluster_ifc_SHA256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "stratum": "geometry:delete",
+      "task_id": "geometry_test_19",
+      "task_is_CURRENTLY_UNSUPPORTED_IN_ALL_THREE_COMPARISON_ARMS": true
+    },
+    {
+      "comparison_run_plan": [
+        {
+          "arm_order": [
+            "D_COMPLETE_XML",
+            "I_NATIVE"
+          ],
+          "comparison_id": "PRIMARY_FULL_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        },
+        {
+          "arm_order": [
+            "I_NATIVE",
+            "D_MANAGED_FINAL_STATE"
+          ],
+          "comparison_id": "ALTERNATIVE_MANAGED_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        }
+      ],
+      "no_run_authorized": true,
+      "preregistration_approved": false,
+      "source_cluster_ifc_SHA256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "stratum": "geometry:create",
+      "task_id": "geometry_test_03",
+      "task_is_CURRENTLY_UNSUPPORTED_IN_ALL_THREE_COMPARISON_ARMS": true
+    },
+    {
+      "comparison_run_plan": [
+        {
+          "arm_order": [
+            "I_NATIVE",
+            "D_COMPLETE_XML"
+          ],
+          "comparison_id": "PRIMARY_FULL_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        },
+        {
+          "arm_order": [
+            "D_MANAGED_FINAL_STATE",
+            "I_NATIVE"
+          ],
+          "comparison_id": "ALTERNATIVE_MANAGED_D_vs_I",
+          "fresh_provider_context_per_arm": true,
+          "fresh_source_clone_per_arm": true,
+          "independent_I_baseline_RUN_PER_COMPARISON": true,
+          "max_TOTAL_tool_calls_per_arm": 25,
+          "model_requests": 0,
+          "no_reuse_of_prior_model_result": true,
+          "original_author_grade_POST_RUN_only": true,
+          "scheduled_run": false
+        }
+      ],
+      "no_run_authorized": true,
+      "preregistration_approved": false,
+      "source_cluster_ifc_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "stratum": "geometry:update",
+      "task_id": "geometry_test_13",
+      "task_is_CURRENTLY_UNSUPPORTED_IN_ALL_THREE_COMPARISON_ARMS": true
+    }
+  ],
+  "physical_task_correctness_reporting": "INDEPENDENT_PUBLIC_SOURCE_RESEARCH_PREDICATE_SEPARATE",
+  "planned_comparison_ids": [
+    "PRIMARY_FULL_D_vs_I",
+    "ALTERNATIVE_MANAGED_D_vs_I"
+  ],
+  "planned_independent_arm_task_run_slots_if_admitted": 24,
+  "planned_pair_comparison_count_if_admitted": 12,
+  "previously_developer_control_verified_4_original_tasks": [
+    "geometry_test_14",
+    "geometry_test_15",
+    "topological_test_11",
+    "topological_test_17"
+  ],
+  "prospective_randomized_task_order": [
+    "topological_test_05",
+    "topological_test_12",
+    "topological_test_18",
+    "geometry_test_19",
+    "geometry_test_03",
+    "geometry_test_13"
+  ],
+  "prospective_selection_blind_to_model_outputs_and_author_grades": true,
+  "prospective_selection_seed": "BIBIMBAP-v058-public-original-untouched-source-six-strata-holdout-20261118",
+  "prospective_six_source_heldout_IFC_sha256": [
+    "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+    "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+    "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+    "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+    "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+    "cd731db3ca41f3f18840aafb3fbfcb5a7d1b734a5961d06cb797563502d592d0"
+  ],
+  "prospective_six_source_heldout_task_ids": [
+    "geometry_test_03",
+    "geometry_test_13",
+    "geometry_test_19",
+    "topological_test_05",
+    "topological_test_12",
+    "topological_test_18"
+  ],
+  "prospective_six_task_holdout_selected_before_ANY_LLM_trial": true,
+  "provider_billed_D_I_completion_tokens": null,
+  "provider_billed_D_I_input_tokens": null,
+  "provider_context_and_output_max_tokens": null,
+  "provider_data_transfer_authorization": null,
+  "provider_exact_model_snapshot": null,
+  "retry_timeout_and_seed_pre_registration_approved": false,
+  "six_source_holdout_selection_algorithm": "For each original geometry/topological x create/update/delete stratum, select untouched single-source task minimizing SHA256(seed|HOLDOUT|stratum|source_IFC_SHA|task_id), excluding all prior developer-control source SHA clusters",
+  "source_cluster_assignment_counts": {
+    "DEVELOPMENT_UNTESTED_CURRENT_ARMS": 21,
+    "PRIOR_DEVELOPER_EXPOSED": 4,
+    "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT": 6
+  },
+  "source_cluster_holdout_is_stratified_NOT_representative_of_basic_tasks": true,
+  "source_cluster_registry": {
+    "06462f56bb97d656dc4a8599de297b953e6056923b4262bdd18d7a77a4ffad73": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_14"
+      ],
+      "source_ifc_SHA256": "06462f56bb97d656dc4a8599de297b953e6056923b4262bdd18d7a77a4ffad73",
+      "task_count": 1
+    },
+    "1035e999dd8579b7d2c33950498eea1f50bd9ff81e1816bdf4b9893901969466": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_03"
+      ],
+      "source_ifc_SHA256": "1035e999dd8579b7d2c33950498eea1f50bd9ff81e1816bdf4b9893901969466",
+      "task_count": 1
+    },
+    "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83": {
+      "assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_12"
+      ],
+      "source_ifc_SHA256": "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+      "task_count": 1
+    },
+    "29cd44b72639ba9573aa1698a4efab4adcfbc5461c19dd85259e6a9505d303e5": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_04"
+      ],
+      "source_ifc_SHA256": "29cd44b72639ba9573aa1698a4efab4adcfbc5461c19dd85259e6a9505d303e5",
+      "task_count": 1
+    },
+    "2cb6cc753784c13fcd1f6f037b97431294cc3c91db9bcc75213ba61b8e3a18ac": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_01"
+      ],
+      "source_ifc_SHA256": "2cb6cc753784c13fcd1f6f037b97431294cc3c91db9bcc75213ba61b8e3a18ac",
+      "task_count": 1
+    },
+    "318fb45af8142c164c1fc53eeadc472008ff9c42e9c1b6398e9c95aa744374af": {
+      "assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_15"
+      ],
+      "source_ifc_SHA256": "318fb45af8142c164c1fc53eeadc472008ff9c42e9c1b6398e9c95aa744374af",
+      "task_count": 1
+    },
+    "4c16c170729a7370520be4a8b0c0729dc8e494b0785a6baaa721f9c338235356": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_20"
+      ],
+      "source_ifc_SHA256": "4c16c170729a7370520be4a8b0c0729dc8e494b0785a6baaa721f9c338235356",
+      "task_count": 1
+    },
+    "58833e0bdf80e2207b8c221fc8195e5411f9f94e0d7f1cb39633b3c447eb4767": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_02"
+      ],
+      "source_ifc_SHA256": "58833e0bdf80e2207b8c221fc8195e5411f9f94e0d7f1cb39633b3c447eb4767",
+      "task_count": 1
+    },
+    "59a6f1bf0b93f75cc37f959c6812034461c68a8dbd0b4c6f3c2ef2a9ab562f4e": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_16"
+      ],
+      "source_ifc_SHA256": "59a6f1bf0b93f75cc37f959c6812034461c68a8dbd0b4c6f3c2ef2a9ab562f4e",
+      "task_count": 1
+    },
+    "5aa7252ae511fe33e30f5702b771a654ac57852724c7fe6c5c54502ec1042c04": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_17"
+      ],
+      "source_ifc_SHA256": "5aa7252ae511fe33e30f5702b771a654ac57852724c7fe6c5c54502ec1042c04",
+      "task_count": 1
+    },
+    "67ac42ca988bdfd44a2afe3ebaff8be11da913b281338ec127f4897e3f42f6a3": {
+      "assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_14"
+      ],
+      "source_ifc_SHA256": "67ac42ca988bdfd44a2afe3ebaff8be11da913b281338ec127f4897e3f42f6a3",
+      "task_count": 1
+    },
+    "68074f17687622859bbf4aba233a1f37b72e4f6bc634e808c8ab03c3a65ca3c0": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_20"
+      ],
+      "source_ifc_SHA256": "68074f17687622859bbf4aba233a1f37b72e4f6bc634e808c8ab03c3a65ca3c0",
+      "task_count": 1
+    },
+    "6f6e0e02f8f9da3b23892650ec700000566b0cd1ceb8641732d99212b7c40ea3": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_13"
+      ],
+      "source_ifc_SHA256": "6f6e0e02f8f9da3b23892650ec700000566b0cd1ceb8641732d99212b7c40ea3",
+      "task_count": 1
+    },
+    "7f77e6dfba0bbaf508b316b6f7846d40d7b812e63edcffc1114ed9c2a6455793": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_12"
+      ],
+      "source_ifc_SHA256": "7f77e6dfba0bbaf508b316b6f7846d40d7b812e63edcffc1114ed9c2a6455793",
+      "task_count": 1
+    },
+    "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59": {
+      "assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "native_ifc_schema": "IFC2X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_03"
+      ],
+      "source_ifc_SHA256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "task_count": 1
+    },
+    "8f1d9e885603f8680cb79f2a373fa36b4ecd52634ac920f2ec53c60ac465ad72": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_02"
+      ],
+      "source_ifc_SHA256": "8f1d9e885603f8680cb79f2a373fa36b4ecd52634ac920f2ec53c60ac465ad72",
+      "task_count": 1
+    },
+    "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "test_01",
+        "test_02",
+        "test_03",
+        "test_04",
+        "test_05",
+        "test_11",
+        "test_12",
+        "test_13",
+        "test_14",
+        "test_15",
+        "test_16",
+        "test_17",
+        "test_18",
+        "test_19",
+        "test_20"
+      ],
+      "source_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "task_count": 15
+    },
+    "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f": {
+      "assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_19"
+      ],
+      "source_ifc_SHA256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "task_count": 1
+    },
+    "9f5ed71eb1ba912ec2ec83b944f17091ecebf3d6c5dcb00f6732661a29baf728": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_11"
+      ],
+      "source_ifc_SHA256": "9f5ed71eb1ba912ec2ec83b944f17091ecebf3d6c5dcb00f6732661a29baf728",
+      "task_count": 1
+    },
+    "a052ec0377c437f28f0a1b8be4dd4ce4f78bf877bde7e51d10eb2d72310230bd": {
+      "assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_17"
+      ],
+      "source_ifc_SHA256": "a052ec0377c437f28f0a1b8be4dd4ce4f78bf877bde7e51d10eb2d72310230bd",
+      "task_count": 1
+    },
+    "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5": {
+      "assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_13"
+      ],
+      "source_ifc_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "task_count": 1
+    },
+    "a4da98bf78ce8d5a27043ff317aa7fa7a4cfe53a63dbb8d998ac3496410fcce8": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_18"
+      ],
+      "source_ifc_SHA256": "a4da98bf78ce8d5a27043ff317aa7fa7a4cfe53a63dbb8d998ac3496410fcce8",
+      "task_count": 1
+    },
+    "a6b064aa62adacb6dc383d5d2338caf241e0453a33b96f2c50cbb7828edacd9e": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_15"
+      ],
+      "source_ifc_SHA256": "a6b064aa62adacb6dc383d5d2338caf241e0453a33b96f2c50cbb7828edacd9e",
+      "task_count": 1
+    },
+    "a8aefcd0c688c36a4bd0d9dc4b7783fdfb6bd49e225a14623e82869c18b4f89a": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_19"
+      ],
+      "source_ifc_SHA256": "a8aefcd0c688c36a4bd0d9dc4b7783fdfb6bd49e225a14623e82869c18b4f89a",
+      "task_count": 1
+    },
+    "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca": {
+      "assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_05"
+      ],
+      "source_ifc_SHA256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "task_count": 1
+    },
+    "c85a8b90f1b2d22f1e27428e38c54ba7a0d1bdcfbd9d5cef8db06ad97712032e": {
+      "assignment": "PRIOR_DEVELOPER_EXPOSED",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_11"
+      ],
+      "source_ifc_SHA256": "c85a8b90f1b2d22f1e27428e38c54ba7a0d1bdcfbd9d5cef8db06ad97712032e",
+      "task_count": 1
+    },
+    "cd731db3ca41f3f18840aafb3fbfcb5a7d1b734a5961d06cb797563502d592d0": {
+      "assignment": "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "topological_test_18"
+      ],
+      "source_ifc_SHA256": "cd731db3ca41f3f18840aafb3fbfcb5a7d1b734a5961d06cb797563502d592d0",
+      "task_count": 1
+    },
+    "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC2X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_04"
+      ],
+      "source_ifc_SHA256": "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea",
+      "task_count": 1
+    },
+    "d3340378c0a81c392b166ce9954daa471b34856e970dd536c8e7ebe36c6221ab": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_16"
+      ],
+      "source_ifc_SHA256": "d3340378c0a81c392b166ce9954daa471b34856e970dd536c8e7ebe36c6221ab",
+      "task_count": 1
+    },
+    "d7a0c0bda9572787b5b8e7a57b48f8157d898a9f444ac28978e9f9b9a8ff9702": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4X3",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_01"
+      ],
+      "source_ifc_SHA256": "d7a0c0bda9572787b5b8e7a57b48f8157d898a9f444ac28978e9f9b9a8ff9702",
+      "task_count": 1
+    },
+    "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc": {
+      "assignment": "DEVELOPMENT_UNTESTED_CURRENT_ARMS",
+      "native_ifc_schema": "IFC4",
+      "no_source_cluster_leakage_across_splits": true,
+      "original_task_ids": [
+        "geometry_test_05"
+      ],
+      "source_ifc_SHA256": "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc",
+      "task_count": 1
+    }
+  },
+  "source_input_schema_task_counts": {
+    "IFC2X3": 2,
+    "IFC4": 1,
+    "IFC4X3": 42
+  },
+  "source_input_schema_unique_cluster_counts": {
+    "IFC2X3": 2,
+    "IFC4": 1,
+    "IFC4X3": 28
+  },
+  "status": "V058_OFFLINE_45_TASK_CAPABILITY_CENSUS_AND_PROSPECTIVE_HOLDOUT_FROZEN_NOT_LAUNCHABLE",
+  "streaming_D_auxiliary_identity": "D_COMPLETE_XML_STREAMED",
+  "strict_IFC_schema_success_is_not_same_as_original_author_score": true,
+  "structurally_ineligible_tasks_reported_separately_from_model_failure": true,
+  "task_assignment_counts": {
+    "DEVELOPMENT_UNTESTED_CURRENT_ARMS": 35,
+    "PRIOR_DEVELOPER_EXPOSED": 4,
+    "PROSPECTIVE_UNTOUCHED_SOURCE_HOLDOUT": 6
+  },
+  "three_separate_arm_identities": [
+    "D_COMPLETE_XML",
+    "D_MANAGED_FINAL_STATE",
+    "I_NATIVE"
+  ],
+  "total_original_public_edit_tasks": 45,
+  "trial_launch_blocked_even_with_all_TRUE_approvals": true,
+  "user_approved_provider_data_transfer_and_retention": false
+}
