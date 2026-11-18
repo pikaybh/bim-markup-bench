@@ -1,0 +1,96 @@
+{
+  "actual_provider_calls": 0,
+  "all_original_provider_transfers_blocked": true,
+  "cases": [
+    {
+      "D_I_reindexed_native_physical_semantic_digest_equal": true,
+      "author_scorer_called": false,
+      "exposed_original_task": "geometry_test_03",
+      "native_edit_physical_semantic_SHA256": "3e55f4b6fc710c2f012273fb59885435c800adaa448ca11eb01c3fc3021849b3",
+      "negative_real_native_IFC_mutation_rejected": {
+        "added_orphan_anonymous_geometry": "New orphan / root-unreachable IFC native entities are forbidden",
+        "added_unauthorized_root": "Only one new Door, Opening, void, fill, and containment Roots admitted",
+        "changed_existing_source_wall_name": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 0)",
+        "incorrect_real_door_width": "Door physical dimensions disagree with source project units",
+        "modified_existing_anonymous_geometry": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 1)",
+        "modified_existing_native_relationship": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 0)",
+        "modified_existing_source_owner_history": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 0)",
+        "wrong_hosted_wall_relation": "Native Door outside Aperture or Wall no longer fully cut"
+      },
+      "new_model_calls": 0,
+      "original_source_ifc_sha256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "real_native_D_source_preservation_pass": "V066_IFC2X3_IFC4X3_BOUNDED_STEP_INDEPENDENT_NATIVE_ADMISSION_PASS",
+      "real_native_reindexed_source_preservation_pass": "V066_IFC2X3_IFC4X3_BOUNDED_STEP_INDEPENDENT_NATIVE_ADMISSION_PASS",
+      "real_pinned_linux_docker_independent_python_I_pass": "V066_IFC2X3_IFC4X3_BOUNDED_STEP_INDEPENDENT_NATIVE_ADMISSION_PASS",
+      "root_GUID_classes_retained": 52,
+      "schema": "IFC2X3",
+      "source_entities_graph_depths": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "source_global_guid_redacted": true,
+      "wall_CSG_removed_m3": 0.418
+    },
+    {
+      "D_I_reindexed_native_physical_semantic_digest_equal": true,
+      "author_scorer_called": false,
+      "exposed_original_task": "topological_test_05",
+      "native_edit_physical_semantic_SHA256": "c5a2b1332abd53198f32050dc25b31fcb1d7ec5cb4800153b99944a89b95572f",
+      "negative_real_native_IFC_mutation_rejected": {
+        "added_orphan_anonymous_geometry": "New orphan / root-unreachable IFC native entities are forbidden",
+        "added_unauthorized_root": "Only one new Door, Opening, void, fill, and containment Roots admitted",
+        "changed_existing_source_wall_name": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 0)",
+        "incorrect_real_door_width": "Door physical dimensions disagree with source project units",
+        "modified_existing_anonymous_geometry": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 1)",
+        "modified_existing_native_relationship": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 0)",
+        "modified_existing_source_owner_history": "Existing native IFC entity/attribute/reference graph changed (STEP-independent refinement depth 0)",
+        "wrong_hosted_wall_relation": "Native Door outside Aperture or Wall no longer fully cut"
+      },
+      "new_model_calls": 0,
+      "original_source_ifc_sha256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "real_native_D_source_preservation_pass": "V066_IFC2X3_IFC4X3_BOUNDED_STEP_INDEPENDENT_NATIVE_ADMISSION_PASS",
+      "real_native_reindexed_source_preservation_pass": "V066_IFC2X3_IFC4X3_BOUNDED_STEP_INDEPENDENT_NATIVE_ADMISSION_PASS",
+      "real_pinned_linux_docker_independent_python_I_pass": "V066_IFC2X3_IFC4X3_BOUNDED_STEP_INDEPENDENT_NATIVE_ADMISSION_PASS",
+      "root_GUID_classes_retained": 116,
+      "schema": "IFC4X3",
+      "source_entities_graph_depths": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "source_global_guid_redacted": true,
+      "wall_CSG_removed_m3": 0.418
+    }
+  ],
+  "external_original_IFC_uploads": 0,
+  "frozen_parent_v065_report_sha256": "cc55f6623fc65d3936cf6ee9bbacf1c46d3893aa94122317632d9f90d009382d",
+  "hard_limitations": [
+    "Still rejects legal old-entity modifications not part of this bounded Door-create family",
+    "Fingerprints are conservative bounded graph invariants, not a complete arbitrary IFC graph-isomorphism or semantic proof",
+    "This validates physical scope, source integrity and legal encoding, not target-specific public task correctness",
+    "No original author scorer imported or invoked, no GT and no unseen source visited",
+    "No paid LLM or official benchmark matched D/I trials",
+    "No source-license or independent unseen certification"
+  ],
+  "independently_certified_unseen_original_source_families": 0,
+  "issue": 247,
+  "physical_evidence": "Original source native mesh unchanged except host source Wall real CSG; hosted door+opening full source relations; two schema validator delta",
+  "real_native_illegal_candidates_rejected": 16,
+  "real_native_legal_D_full_cases": 2,
+  "real_native_legal_step_reindexed_cases": 2,
+  "real_pinned_linux_Docker_I_python_native_semantic_pass_cases": 2,
+  "source_graph_evidence": "All original typed root/anonymous entity attribute/reference fingerprints subset across depths 0,1,2,4,8,16; root GUID/class preserving; no added orphan",
+  "source_research_original_IFC_not_modified": true,
+  "status": "V066_BOUNDED_NATIVE_STEP_INDEPENDENT_SEMANTIC_ADMISSION_PASS",
+  "two_already_developer_exposed_native_source_schemas": [
+    "IFC2X3",
+    "IFC4X3"
+  ]
+}
