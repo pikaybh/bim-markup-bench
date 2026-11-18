@@ -45,3 +45,22 @@ The audit code opens exactly four already-committed, SHA-verified reports. It ha
 5. Verify original IFC per-file provenance and published scorer revision before any model-provider/paid comparison, and obtain explicit owner authorization. **Do not launch or transmit existing original IFCs while blocked.**
 
 This additive evidence-only initial PR deliberately does **not** claim Issue #247 is fully implemented or ready to close.
+
+## Follow-up: independent STEP-number false-rejection counterexample (still offline)
+
+The second additive audit addresses one narrow native D/I acceptance asymmetry. A final IFC has meaningful entity GUIDs/relations/geometry and arbitrary **STEP serialization labels**. The frozen v0.65 `post_native_ifc_gate` requires *original STEP numeric IDs* to match exactly and can therefore reject a physically and semantically unchanged legal re-encoding.
+
+In `tools/audit_bibimbap_v066_step_identity_fairness.py`, each of the **two already task-specific developer-exposed original sources** (`geometry_test_03`, IFC2X3; `topological_test_05`, IFC4X3) is used to produce a real independently reopened v0.65-native D full-state edited IFC (baseline v0.65 gate PASS). Its *entire* STEP Physical File then undergoes a deterministic one-to-one **numeric #ID relabeling**, without modifying any other byte. A lexer excludes STEP quoted literals and comments, validates complete bijective entity/reference mapping, and verifies the exact inverse returns the identical baseline bytes. This is not an added edit or substituted author answer.
+
+Both native IFCs reopen successfully under IfcOpenShell, preserve **all original Root GUID/class mappings**, have **no new native schema errors** and preserve all geometry product world bounding boxes and volumes checked by the frozen engine. IFC2X3: **212 STEP entities, 57 Root IDs changed, 5 geometry products physically equal**. IFC4X3: **456 entities, 121 Root IDs changed, 11 geometry products physically equal**. Nevertheless, v0.65 rejects both *only* with `ALL ORIGINAL native STEP IDs, geometry and attributes must remain`.
+
+This is a reproducible **false rejection attributable to a serialization-specific acceptance policy** under this bounded, exact reversibility equivalence. It shows that the old gate is too strict for *some* lawful IFC representations, not that all arbitrary Python rewrites or extra semantic changes are legitimate. We deliberately DO NOT weaken the existing primary gate or modify original author scoring and cannot claim that an actual LLM/Python agent has produced these variants. A source-neutral semantic-preservation policy must be independently designed and preregistered before scored D/I comparison.
+
+Reproduce with an offline Python 3.12 environment and existing permitted local developer-exposed IFC copies:
+
+```powershell
+& $py -m tools.audit_bibimbap_v066_step_identity_fairness --check
+& $py -m unittest -q tests.test_bibimbap_v066_step_identity_fairness
+```
+
+Frozen report: `reports/bibimbap_v066_step_number_false_rejection_20261118.json` SHA-256 `90e4a99c0dda3d551de0a59abdf66cba5beb42fc10e0f471337488060c358253`. New focused lexer/native positive-negative regression: **13 tests**. No new unseen original source, original author grader, private answer, provider call or IFC upload. Future steps remain real distinct native write strategies, source-neutral move/delete, matched tool budgets, rights and independently blind source acquisition.
