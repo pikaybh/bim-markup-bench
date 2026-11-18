@@ -1,0 +1,146 @@
+{
+  "D_I_normalized_native_semantic_digests_match_each_case": true,
+  "D_complete_state_good_then_bad_last_IFC_and_XML_preserved": true,
+  "actual_LLM_generated_trial_count": 0,
+  "actual_original_native_IFC_D_FULL_cases": 3,
+  "actual_original_native_IFC_D_MANAGED_cases": 3,
+  "actual_original_native_IFC_genuine_Docker_python_cases": 3,
+  "actual_source_only_correctness_is_separate_from_original_author_repo_score": true,
+  "all_original_four_managed_independent_placement_points_per_assembly": true,
+  "all_three_current_v058_selected_source_native_developer_supported": [
+    "geometry_test_13",
+    "geometry_test_19",
+    "topological_test_18"
+  ],
+  "approved_original_underlying_IFC_owner_permission_and_provider_transfer": false,
+  "approved_paid_model_snapshot_budget_protocol": null,
+  "current_original_task_specific_native_engineering_controls": 7,
+  "full_original_source_managed_elements_explicit": 10,
+  "genuine_Docker_good_then_invalid_second_group_last_IFC_preserved": true,
+  "genuine_Docker_opening_only_missing_proxies_rejected": true,
+  "geometry13_source_developer_exposed": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/237",
+  "native_source_scope_IFC_schema_introduced_errors": 0,
+  "native_source_window_local_origin_shared": true,
+  "new_original_native_task_supported_in_v061": [
+    "geometry_test_13"
+  ],
+  "original_D_FULL_and_D_MANAGED_and_Docker_I_identical_source_XML": true,
+  "original_IFC_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+  "original_IFC_length_unit_native_mm_WORLD_geometry_m": true,
+  "original_IFC_provider_upload_count": 0,
+  "original_IFC_schema": "IFC4X3",
+  "original_author_repo_evaluator_module_SHA256": "b2ab7d5d599cedcd26a1eeed52356cfd88bd1dcd36a44db99863d8ddf741c694",
+  "original_native_IfcBuildingElementProxy_count": 6,
+  "original_native_IfcOpeningElement_count": 2,
+  "original_native_IfcWindow_count": 2,
+  "original_public_question_SHA256": "9185b94cb8f46356f2d72d8245a3e57c90bce08a5128c4d1765a6496611ff4bf",
+  "original_public_task_count": 45,
+  "original_unique_IFC_input_SHA_cluster_count": 31,
+  "original_v058_six_source_holdout_selection_report_SHA256": "0d8e7ca07a08af0afa3a08c10de5a76427e179d41cd1ca9b9df508f40fcc96c8",
+  "original_v058_six_task_selection_unchanged": [
+    "geometry_test_03",
+    "geometry_test_13",
+    "geometry_test_19",
+    "topological_test_05",
+    "topological_test_12",
+    "topological_test_18"
+  ],
+  "paid_model_provider_calls": 0,
+  "parent_v060_exact_HEAD": "e317a3965899274535d807e39ea8de64fe0fa3dd",
+  "parent_v060_report_SHA256": "e40204f381ccd17876708dd861c7031c1836cc41b7335e49909e797647f042ae",
+  "public_source_window_threshold_m": 1.5,
+  "published_paper_official_model_score": null,
+  "remaining_original_public_tasks_unverified": 38,
+  "remaining_original_six_source_tasks_not_admitted": [
+    "geometry_test_03",
+    "topological_test_05",
+    "topological_test_12"
+  ],
+  "source_compact_original_complete_managed_UTF8_bytes": 1437,
+  "source_correct_window_positive_count": 1,
+  "source_full_original_BuildingState_UTF8_bytes": 4947,
+  "source_native_window_widths_metres": [
+    0.6,
+    1.6
+  ],
+  "source_wrong_window_negative_count": 1,
+  "status": "V061_ORIGINAL_WINDOW_OPENING_THREE_DETAILS_NATIVE_D_FULL_D_MANAGED_REAL_DOCKER_I_PASS",
+  "strict_source_STEP_placegraph_limits_other_equivalent_encoding_support": true,
+  "three_original_source_developer_controls": [
+    {
+      "D_full_final_XML_bytes": 4947,
+      "D_managed_final_XML_bytes": 1437,
+      "I_developer_python_code_bytes": 768,
+      "actual_LLM_model_generated": false,
+      "actual_genuine_Docker_code_executed": true,
+      "actual_native_products_world_X_moved": 5,
+      "all_three_native_D_I_actual_original_semantics_match": true,
+      "developer_only_public_source_physical_label": "PUBLIC_SOURCE_PHYSICAL_CORRECT_WIDE_PLUS_3M",
+      "original_author_repository_metric_evaluator_only": {
+        "author_repository_boolean_metrics": {
+          "integrity_constraint": true,
+          "right_dimensions": true,
+          "right_location": true
+        },
+        "author_repository_mean_boolean_score": 1.0,
+        "official_paper_grader_revision_verified": false,
+        "status": "EVALUATOR_RETURNED_BOOLEAN_METRICS"
+      },
+      "original_native_IfcOpenShell_new_schema_errors": 0,
+      "source_native_IFC_semantic_SHA256_all_D_and_I": "0158d4c64a73c959640cd83718fb8d441aff8d8d74693cb9526416f5ba99f109",
+      "target_original_window_GUID_redacted": true,
+      "target_window_source_index_redacted": true
+    },
+    {
+      "D_full_final_XML_bytes": 4947,
+      "D_managed_final_XML_bytes": 1437,
+      "I_developer_python_code_bytes": 768,
+      "actual_LLM_model_generated": false,
+      "actual_genuine_Docker_code_executed": true,
+      "actual_native_products_world_X_moved": 5,
+      "all_three_native_D_I_actual_original_semantics_match": true,
+      "developer_only_public_source_physical_label": "PUBLIC_SOURCE_PHYSICAL_WRONG_NARROW_PLUS_3M",
+      "original_author_repository_metric_evaluator_only": {
+        "author_repository_boolean_metrics": {
+          "integrity_constraint": false,
+          "right_dimensions": true,
+          "right_location": false
+        },
+        "author_repository_mean_boolean_score": 0.333333,
+        "official_paper_grader_revision_verified": false,
+        "status": "EVALUATOR_RETURNED_BOOLEAN_METRICS"
+      },
+      "original_native_IfcOpenShell_new_schema_errors": 0,
+      "source_native_IFC_semantic_SHA256_all_D_and_I": "2079c419bc282c1e36991c0123f3c3cf044f45c977d399ea94dd2796b9076c04",
+      "target_original_window_GUID_redacted": true,
+      "target_window_source_index_redacted": true
+    },
+    {
+      "D_full_final_XML_bytes": 4947,
+      "D_managed_final_XML_bytes": 1437,
+      "I_developer_python_code_bytes": 768,
+      "actual_LLM_model_generated": false,
+      "actual_genuine_Docker_code_executed": true,
+      "actual_native_products_world_X_moved": 5,
+      "all_three_native_D_I_actual_original_semantics_match": true,
+      "developer_only_public_source_physical_label": "PUBLIC_SOURCE_PHYSICAL_WRONG_WIDE_PLUS_2M",
+      "original_author_repository_metric_evaluator_only": {
+        "author_repository_boolean_metrics": {
+          "integrity_constraint": false,
+          "right_dimensions": true,
+          "right_location": false
+        },
+        "author_repository_mean_boolean_score": 0.333333,
+        "official_paper_grader_revision_verified": false,
+        "status": "EVALUATOR_RETURNED_BOOLEAN_METRICS"
+      },
+      "original_native_IfcOpenShell_new_schema_errors": 0,
+      "source_native_IFC_semantic_SHA256_all_D_and_I": "8e67ec7bbd851a8c7fcd8da66e261a7d466ff960d380e97eceb1269367cf70f1",
+      "target_original_window_GUID_redacted": true,
+      "target_window_source_index_redacted": true
+    }
+  ],
+  "total_native_original_IFC_successful_developer_controls": 9,
+  "v058_preselected_original_six_no_longer_developer_blind": true
+}
