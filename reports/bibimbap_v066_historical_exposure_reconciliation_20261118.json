@@ -1,0 +1,643 @@
+{
+  "all_confirmatory_original_source_admissions": "BLOCKED",
+  "documented_task_specific_developer_exposed_families": 10,
+  "families": [
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_14"
+      ],
+      "original_source_ifc_SHA256": "06462f56bb97d656dc4a8599de297b953e6056923b4262bdd18d7a77a4ffad73",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_03"
+      ],
+      "original_source_ifc_SHA256": "1035e999dd8579b7d2c33950498eea1f50bd9ff81e1816bdf4b9893901969466",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_12"
+      ],
+      "original_source_ifc_SHA256": "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_04"
+      ],
+      "original_source_ifc_SHA256": "29cd44b72639ba9573aa1698a4efab4adcfbc5461c19dd85259e6a9505d303e5",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_01"
+      ],
+      "original_source_ifc_SHA256": "2cb6cc753784c13fcd1f6f037b97431294cc3c91db9bcc75213ba61b8e3a18ac",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_15"
+      ],
+      "original_source_ifc_SHA256": "318fb45af8142c164c1fc53eeadc472008ff9c42e9c1b6398e9c95aa744374af",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": false,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_20"
+      ],
+      "original_source_ifc_SHA256": "4c16c170729a7370520be4a8b0c0729dc8e494b0785a6baaa721f9c338235356",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_02"
+      ],
+      "original_source_ifc_SHA256": "58833e0bdf80e2207b8c221fc8195e5411f9f94e0d7f1cb39633b3c447eb4767",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_16"
+      ],
+      "original_source_ifc_SHA256": "59a6f1bf0b93f75cc37f959c6812034461c68a8dbd0b4c6f3c2ef2a9ab562f4e",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_17"
+      ],
+      "original_source_ifc_SHA256": "5aa7252ae511fe33e30f5702b771a654ac57852724c7fe6c5c54502ec1042c04",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_14"
+      ],
+      "original_source_ifc_SHA256": "67ac42ca988bdfd44a2afe3ebaff8be11da913b281338ec127f4897e3f42f6a3",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": false,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_20"
+      ],
+      "original_source_ifc_SHA256": "68074f17687622859bbf4aba233a1f37b72e4f6bc634e808c8ab03c3a65ca3c0",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_13"
+      ],
+      "original_source_ifc_SHA256": "6f6e0e02f8f9da3b23892650ec700000566b0cd1ceb8641732d99212b7c40ea3",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_12"
+      ],
+      "original_source_ifc_SHA256": "7f77e6dfba0bbaf508b316b6f7846d40d7b812e63edcffc1114ed9c2a6455793",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_03"
+      ],
+      "original_source_ifc_SHA256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "schema": "IFC2X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_02"
+      ],
+      "original_source_ifc_SHA256": "8f1d9e885603f8680cb79f2a373fa36b4ecd52634ac920f2ec53c60ac465ad72",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 6,
+      "historical_20261112_XML_only_provider_calls": 15,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "test_01",
+        "test_02",
+        "test_03",
+        "test_04",
+        "test_05",
+        "test_11",
+        "test_12",
+        "test_13",
+        "test_14",
+        "test_15",
+        "test_16",
+        "test_17",
+        "test_18",
+        "test_19",
+        "test_20"
+      ],
+      "original_source_ifc_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 15,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_19"
+      ],
+      "original_source_ifc_SHA256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_11"
+      ],
+      "original_source_ifc_SHA256": "9f5ed71eb1ba912ec2ec83b944f17091ecebf3d6c5dcb00f6732661a29baf728",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_17"
+      ],
+      "original_source_ifc_SHA256": "a052ec0377c437f28f0a1b8be4dd4ce4f78bf877bde7e51d10eb2d72310230bd",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": false,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_13"
+      ],
+      "original_source_ifc_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_18"
+      ],
+      "original_source_ifc_SHA256": "a4da98bf78ce8d5a27043ff317aa7fa7a4cfe53a63dbb8d998ac3496410fcce8",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_15"
+      ],
+      "original_source_ifc_SHA256": "a6b064aa62adacb6dc383d5d2338caf241e0453a33b96f2c50cbb7828edacd9e",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 1,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_19"
+      ],
+      "original_source_ifc_SHA256": "a8aefcd0c688c36a4bd0d9dc4b7783fdfb6bd49e225a14623e82869c18b4f89a",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_05"
+      ],
+      "original_source_ifc_SHA256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_11"
+      ],
+      "original_source_ifc_SHA256": "c85a8b90f1b2d22f1e27428e38c54ba7a0d1bdcfbd9d5cef8db06ad97712032e",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": false,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "DOCUMENTED_BY_V065",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "topological_test_18"
+      ],
+      "original_source_ifc_SHA256": "cd731db3ca41f3f18840aafb3fbfcb5a7d1b734a5961d06cb797563502d592d0",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": true,
+      "v065_no_explicit_task_specific_control_evidence": false
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_04"
+      ],
+      "original_source_ifc_SHA256": "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea",
+      "schema": "IFC2X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 1,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_16"
+      ],
+      "original_source_ifc_SHA256": "d3340378c0a81c392b166ce9954daa471b34856e970dd536c8e7ebe36c6221ab",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_01"
+      ],
+      "original_source_ifc_SHA256": "d7a0c0bda9572787b5b8e7a57b48f8157d898a9f444ac28978e9f9b9a8ff9702",
+      "schema": "IFC4X3",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    },
+    {
+      "confirmatory_source_admission": "BLOCKED",
+      "external_original_IFC_transfer_rights": "UNVERIFIED_BLOCKED",
+      "historical_20261112_XML_only_author_scored_tasks": 0,
+      "historical_20261112_XML_only_provider_calls": 0,
+      "historical_model_facing_XML_was_not_full_native_IFC": true,
+      "human_task_specific_inspection_status": "POSSIBLE_NOT_CLEARED_BY_INDEPENDENT_AUDITOR",
+      "independently_certified_untouched": false,
+      "original_public_task_ids": [
+        "geometry_test_05"
+      ],
+      "original_source_ifc_SHA256": "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc",
+      "schema": "IFC4",
+      "task_rows_sharing_family": 1,
+      "v043_automated_native_IFC_product_and_representation_read": true,
+      "v046_automated_native_paged_STEP_geometry_read": true,
+      "v065_explicit_task_specific_developer_control_evidence": false,
+      "v065_no_explicit_task_specific_control_evidence": true
+    }
+  ],
+  "historical_XML_only_Python_matched_control_trials": 0,
+  "historical_XML_only_author_full_score_tasks": 3,
+  "historical_XML_only_independent_strict_success_rate": null,
+  "historical_XML_only_model_calls_20261112": 36,
+  "historical_XML_only_original_author_scored_tasks": 15,
+  "historical_XML_only_provider_exposed_source_families": 22,
+  "historical_XML_only_scored_source_families": 10,
+  "independently_certified_blind_families": 0,
+  "input_report_SHA256": {
+    "luna45": "719e3c2fbdbaee36e08249b7d671fe8b4a22a8f6e9d109101f87f2e0b34b86fb",
+    "v043": "eb05633d152b1ff15e4fdd888bb62924b31b126f6cddd05fb23e54fce3ef8dbf",
+    "v046": "beab50998c1f2f984342cf784fe910adc384752a16b8f0eed40623421c38509f",
+    "v065": "cc55f6623fc65d3936cf6ee9bbacf1c46d3893aa94122317632d9f90d009382d"
+  },
+  "interpretation_limits": [
+    "Programmatic IFC metadata/geometry census is proven, but does not by itself establish that human developers opened task-specific grader answers",
+    "The 21 not-explicitly-controlled families cannot be certified unseen from repository reports; an independent auditor and source-history review remain required",
+    "The earlier 36 GPT-6 Luna XML-only calls were not matched against Python and their reported 3/45 author full marks are not independently verified strict success",
+    "Earlier source preprocessing and model-facing XML exposure must be disclosed even if a future independent source-holdout uses other criteria",
+    "No rights to transmit original IFC content to a commercial model provider were established"
+  ],
+  "issue": 247,
+  "method": "Read only four SHA-frozen existing research JSON reports; no new source IFC, hidden answer, original grader, network, or model execution",
+  "new_original_IFC_files_opened_during_this_v066_audit": 0,
+  "new_original_author_grader_files_opened_during_this_v066_audit": 0,
+  "new_provider_calls_during_this_v066_audit": 0,
+  "not_independently_audited_for_task_specific_human_inspection": 21,
+  "original_edit_task_population": 45,
+  "original_per_source_IFC_rights_verified_count": 0,
+  "original_source_SHA_families": 31,
+  "parent_v065_head": "03c21572dfb09929eaf69c87e9e1bf2841833ac8",
+  "previously_automatically_native_IFC_examined_families_v043": 31,
+  "previously_paged_native_IFC_examined_families_v046": 27,
+  "status": "V066_OFFLINE_HISTORICAL_EXPOSURE_RECONCILED_NOT_BLIND_CERTIFIED"
+}
