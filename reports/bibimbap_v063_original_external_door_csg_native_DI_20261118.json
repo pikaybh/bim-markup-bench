@@ -1,0 +1,187 @@
+{
+  "D_complete_final_good_then_incomplete_7_Wall_roster_last_SHA_XML_preserved": true,
+  "actual_Docker_shallow_non_through_wall_opening_rejected": true,
+  "actual_Docker_unfilled_door_relation_rejected": true,
+  "actual_Docker_valid_then_second_door_rejected_last_IFC_sha_preserved": true,
+  "actual_model_generated_trials": 0,
+  "actual_original_native_IFC_D_I_developer_cases": 9,
+  "all_three_D_I_original_native_semantic_DIGESTS_equal": true,
+  "approved_model_snapshot_D_I_actual_tokens_cost_budget": null,
+  "developer_only_real_source_door_opening_controls": [
+    {
+      "actual_model_generated_output": false,
+      "actual_pinned_isolated_Linux_Docker_general_Python_executed": true,
+      "all_D_I_original_native_semantic_digest_SHA256": "ac5ffa23fbbe7df6c4637f691f326e7491fc14836b0e60470bee3dfe1ecf4d7c",
+      "developer_source_only_physical_case": "PUBLIC_EXTERIOR_CSG_THROUGH_DOOR_VALID",
+      "host_original_Wall_GUID_redacted": true,
+      "native_D_full_XML_bytes": 4365,
+      "native_D_managed_XML_bytes": 1368,
+      "native_I_developer_Python_bytes": 2347,
+      "native_original_IFC_full_wall_CSG_cut_confirmed": true,
+      "new_door_opening_IFC_GUIDs_redacted": true,
+      "original_author_repository_mixed_score_evaluator_only": {
+        "mean_score": 1.0,
+        "original_repo_metrics": {
+          "integrity_constraint": 1.0,
+          "object_exists": true,
+          "right_dimensions": true,
+          "right_location": true
+        },
+        "published_paper_scorer_revision_identical_verified": false,
+        "status": "ORIGINAL_REPOSITORY_EVALUATOR_MIXED_BOOL_FLOAT_METRICS"
+      },
+      "public_source_exterior_physical_semantic_evaluator_only": {
+        "author_repository_scorer_equivalence": false,
+        "door_wall_is_outer_envelope_boundary": true,
+        "native_original_wall_fully_pierced": true,
+        "new_door_reasonable_dimensions": true,
+        "original_source_has_explicit_IfcSpace": false,
+        "outside_true_topological_room_graph_verified": false,
+        "physically_outside_connection_proxy_pass": true,
+        "status": "PUBLIC_SOURCE_OUTER_BOUNDARY_DOOR_PHYSICAL_PREDICATE"
+      },
+      "source_IFC4X3_schema_new_errors": 0,
+      "source_original_Wall_and_other_416_STEP_entities_unchanged": true
+    },
+    {
+      "actual_model_generated_output": false,
+      "actual_pinned_isolated_Linux_Docker_general_Python_executed": true,
+      "all_D_I_original_native_semantic_digest_SHA256": "77b326fe05b1caf0640c2c19c654aa00a09a6a98ebf63530a5f370d433bda1e6",
+      "developer_source_only_physical_case": "PUBLIC_INTERIOR_WALL_DOOR_SEMANTICALLY_WRONG",
+      "host_original_Wall_GUID_redacted": true,
+      "native_D_full_XML_bytes": 4364,
+      "native_D_managed_XML_bytes": 1367,
+      "native_I_developer_Python_bytes": 2346,
+      "native_original_IFC_full_wall_CSG_cut_confirmed": true,
+      "new_door_opening_IFC_GUIDs_redacted": true,
+      "original_author_repository_mixed_score_evaluator_only": {
+        "mean_score": 1.0,
+        "original_repo_metrics": {
+          "integrity_constraint": 1.0,
+          "object_exists": true,
+          "right_dimensions": true,
+          "right_location": true
+        },
+        "published_paper_scorer_revision_identical_verified": false,
+        "status": "ORIGINAL_REPOSITORY_EVALUATOR_MIXED_BOOL_FLOAT_METRICS"
+      },
+      "public_source_exterior_physical_semantic_evaluator_only": {
+        "author_repository_scorer_equivalence": false,
+        "door_wall_is_outer_envelope_boundary": false,
+        "native_original_wall_fully_pierced": true,
+        "new_door_reasonable_dimensions": true,
+        "original_source_has_explicit_IfcSpace": false,
+        "outside_true_topological_room_graph_verified": false,
+        "physically_outside_connection_proxy_pass": false,
+        "status": "PUBLIC_SOURCE_OUTER_BOUNDARY_DOOR_PHYSICAL_PREDICATE"
+      },
+      "source_IFC4X3_schema_new_errors": 0,
+      "source_original_Wall_and_other_416_STEP_entities_unchanged": true
+    },
+    {
+      "actual_model_generated_output": false,
+      "actual_pinned_isolated_Linux_Docker_general_Python_executed": true,
+      "all_D_I_original_native_semantic_digest_SHA256": "7923d0278018978ec62052bd8c44495d9b60bfbcc445ad0cff3e29b0e1695fea",
+      "developer_source_only_physical_case": "PUBLIC_EXTERIOR_TOO_NARROW_TOO_SHORT_DOOR_WRONG",
+      "host_original_Wall_GUID_redacted": true,
+      "native_D_full_XML_bytes": 4365,
+      "native_D_managed_XML_bytes": 1368,
+      "native_I_developer_Python_bytes": 2347,
+      "native_original_IFC_full_wall_CSG_cut_confirmed": true,
+      "new_door_opening_IFC_GUIDs_redacted": true,
+      "original_author_repository_mixed_score_evaluator_only": {
+        "mean_score": 0.75,
+        "original_repo_metrics": {
+          "integrity_constraint": 1.0,
+          "object_exists": true,
+          "right_dimensions": false,
+          "right_location": true
+        },
+        "published_paper_scorer_revision_identical_verified": false,
+        "status": "ORIGINAL_REPOSITORY_EVALUATOR_MIXED_BOOL_FLOAT_METRICS"
+      },
+      "public_source_exterior_physical_semantic_evaluator_only": {
+        "author_repository_scorer_equivalence": false,
+        "door_wall_is_outer_envelope_boundary": true,
+        "native_original_wall_fully_pierced": true,
+        "new_door_reasonable_dimensions": false,
+        "original_source_has_explicit_IfcSpace": false,
+        "outside_true_topological_room_graph_verified": false,
+        "physically_outside_connection_proxy_pass": false,
+        "status": "PUBLIC_SOURCE_OUTER_BOUNDARY_DOOR_PHYSICAL_PREDICATE"
+      },
+      "source_IFC4X3_schema_new_errors": 0,
+      "source_original_Wall_and_other_416_STEP_entities_unchanged": true
+    }
+  ],
+  "explicit_ONE_new_door_and_ONE_new_opening_final_entities": true,
+  "five_of_six_original_fixed_source_native_developer_supported": [
+    "geometry_test_13",
+    "geometry_test_19",
+    "topological_test_05",
+    "topological_test_12",
+    "topological_test_18"
+  ],
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/241",
+  "new_native_original_task_admitted_v063": [
+    "topological_test_05"
+  ],
+  "original_31_unique_IFC_source_model_count": 31,
+  "original_45_public_task_count": 45,
+  "original_IFC_new_schema_error_count": 0,
+  "original_author_repo_evaluator_module_SHA256": "a04476c2f98e308ea326c520a30b1b85076325c8f64039a5f06b0dd238bdd50b",
+  "original_author_repo_mixed_Boolean_float_metrics_preserved": true,
+  "original_author_score_equal_for_valid_exterior_and_invalid_interior": true,
+  "original_compact_managed_source_xml_utf8_bytes": 974,
+  "original_existing_seven_Wall_full_roster_immutable": true,
+  "original_full_source_read_identical_all_D_I": true,
+  "original_full_source_xml_utf8_bytes": 3971,
+  "original_public_question_SHA256": "00c2fb588e63ab807431a8798294516994f3ededd9a2ab3023d38ffe725a0904",
+  "original_source_IFC_SHA256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+  "original_source_IFC_provider_uploads": 0,
+  "original_source_IFC_schema": "IFC4X3",
+  "original_source_IfcDoor_count": 0,
+  "original_source_IfcOpeningElement_count": 0,
+  "original_source_IfcSpace_count": 0,
+  "original_source_Root_GUID_count": 116,
+  "original_source_STEP_entity_count": 416,
+  "original_source_Slab_count": 2,
+  "original_source_Wall_count": 7,
+  "original_source_path_connection_count": 9,
+  "other_original_45_tasks_not_native_developer_verified": 36,
+  "paid_provider_calls": 0,
+  "parent_v062_exact_HEAD": "65864f57688313cc3276cb0c6e87321b2662683a",
+  "parent_v062_frozen_report_SHA256": "c80b6d4c6b39c51eaac96177515f0f6cd93f36e37298bae973ae4f7e57c11842",
+  "public_source_outer_envelope_proxy_physically_independent_of_author_grader": true,
+  "published_paper_official_model_score": null,
+  "published_paper_official_scoring_version_parity_verified": false,
+  "real_D_FULL_original_native_IFC_cases": 3,
+  "real_D_MANAGED_original_native_IFC_cases": 3,
+  "real_pinned_Linux_Docker_I_native_IFC_cases": 3,
+  "remaining_original_fixed_task_UNSUPPORTED": [
+    "geometry_test_03"
+  ],
+  "source_developer_exposure_destroys_unseen_original_six_confirmatory_holdout": true,
+  "source_native_IfcOpenShell_compiler_versus_arbitrary_I_edit_affordance_not_equivalent": true,
+  "source_native_length_unit": "MILLIMETER",
+  "source_original_IFC_has_NO_IfcSpace_true_inside_room_graph_not_verifiable": true,
+  "source_world_exterior_envelope_bbox_M": [
+    -0.0,
+    7.7,
+    -0.0,
+    8.1
+  ],
+  "status": "V063_SOURCE_CSG_EXTERIOR_DOOR_D_FULL_MANAGED_REAL_DOCKER_I_AND_AUTHOR_METRIC_DIVERGENCE_PASS",
+  "total_original_task_specific_native_developer_supported": 9,
+  "underlying_original_IFC_rights_and_provider_transfer_approval": false,
+  "v058_preselected_six_frozen_SHA256": "0d8e7ca07a08af0afa3a08c10de5a76427e179d41cd1ca9b9df508f40fcc96c8",
+  "v058_six_task_selection_preserved": [
+    "geometry_test_03",
+    "geometry_test_13",
+    "geometry_test_19",
+    "topological_test_05",
+    "topological_test_12",
+    "topological_test_18"
+  ],
+  "world_mesh_length_unit": "METRE"
+}
