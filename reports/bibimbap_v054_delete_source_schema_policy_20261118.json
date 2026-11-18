@@ -1,0 +1,128 @@
+{
+  "LLM_trials": 0,
+  "SCHEMA_BASELINE_EXISTING_ISSUE_NOT_ATTRIBUTABLE_TO_CANDIDATE": true,
+  "billable_provider_calls": 0,
+  "candidate_evidence": {
+    "D_STATE": {
+      "actual_LLM_generated": false,
+      "augmented_strict_native_admission": true,
+      "original_author_repository_metric": {
+        "author_repo_score": 0.5,
+        "boolean_metrics": {
+          "integrity_constraint": false,
+          "object_not_exists": true
+        }
+      },
+      "real_IFC_schema_delta": {
+        "candidate_schema_error_count": 1,
+        "introduced_schema_error_by_attribute": {},
+        "introduced_schema_error_count": 0,
+        "original_input_hash_unchanged": true,
+        "output_is_IFC4X3": true,
+        "resolved_schema_error_count": 0,
+        "source_existing_schema_error_count": 1,
+        "source_is_IFC4X3": true,
+        "status": "PASS_NO_NEW_IFC_SCHEMA_ERRORS"
+      },
+      "real_native_IFC4X3_SHA256": "59a0a844edc874a5a2246f9c5773b2aa5e0e0efb3bb14700746fa57d76f1ebfc",
+      "research_physical_task_predicate": true,
+      "source_native_physical_oracle": "V051_INDEPENDENT_SOURCE_NATIVE_IFC_SCOPE_ORACLE_PASS"
+    },
+    "I_NATIVE_API": {
+      "actual_LLM_generated": false,
+      "augmented_strict_native_admission": true,
+      "original_author_repository_metric": {
+        "author_repo_score": 0.5,
+        "boolean_metrics": {
+          "integrity_constraint": false,
+          "object_not_exists": true
+        }
+      },
+      "real_IFC_schema_delta": {
+        "candidate_schema_error_count": 1,
+        "introduced_schema_error_by_attribute": {},
+        "introduced_schema_error_count": 0,
+        "original_input_hash_unchanged": true,
+        "output_is_IFC4X3": true,
+        "resolved_schema_error_count": 0,
+        "source_existing_schema_error_count": 1,
+        "source_is_IFC4X3": true,
+        "status": "PASS_NO_NEW_IFC_SCHEMA_ERRORS"
+      },
+      "real_native_IFC4X3_SHA256": "59a0a844edc874a5a2246f9c5773b2aa5e0e0efb3bb14700746fa57d76f1ebfc",
+      "research_physical_task_predicate": true,
+      "source_native_physical_oracle": "V051_INDEPENDENT_SOURCE_NATIVE_IFC_SCOPE_ORACLE_PASS"
+    },
+    "RAW_REMOVE_INVALID_NEGATIVE_CONTROL": {
+      "actual_LLM_generated": false,
+      "augmented_strict_native_admission": false,
+      "original_author_repository_metric": {
+        "author_repo_score": 1.0,
+        "boolean_metrics": {
+          "integrity_constraint": true,
+          "object_not_exists": true
+        }
+      },
+      "real_IFC_schema_delta": {
+        "candidate_schema_error_count": 26,
+        "introduced_schema_error_by_attribute": {
+          "IfcProductDefinitionShape.ShapeOfProduct": 5,
+          "RelatedObjects": 20
+        },
+        "introduced_schema_error_count": 25,
+        "original_input_hash_unchanged": true,
+        "output_is_IFC4X3": true,
+        "resolved_schema_error_count": 0,
+        "source_existing_schema_error_count": 1,
+        "source_is_IFC4X3": true,
+        "status": "REJECT_NEW_IFC_SCHEMA_ERRORS"
+      },
+      "real_native_IFC4X3_SHA256": "c5a906a8b2a621bd8c28327dc58d0f383745a893687dad6a96303a41eb99d2c1",
+      "research_physical_task_predicate": true,
+      "source_native_physical_oracle": "V051_INDEPENDENT_SOURCE_NATIVE_IFC_SCOPE_ORACLE_PASS"
+    }
+  },
+  "frozen_parent_v053_commit": "8ac34a03648fd3987ec171bb5dcca9e2d2b3fb09",
+  "frozen_v053_author_report_SHA256": "40742725e59f7b0909f2d1ff061a7d68bcfcf1f35da829c3d15d0624928366e4",
+  "frozen_v053_prereg_candidate_SHA256": "600a951bfb0733a79f09e9db43376526ceaa9e1a66cc3e800e2ca00601862524",
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/223",
+  "original_IFC_changed": false,
+  "original_author_code_commit": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_deleted_target_count_not_ids": 5,
+  "original_author_score_1_possible_using_schema_invalid_graph": true,
+  "original_author_score_promoted_to_published_paper_OFFICIAL": false,
+  "original_public_question_sha256": "987c24e896b8cdeb609d4e2d167c642f3f4e7fd7f1c1744be326c54b72888a53",
+  "published_paper_score": null,
+  "raw_direct_remove_is_NOT_valid_or_admissible_scientific_edit": true,
+  "raw_direct_remove_new_IFC_schema_cardinality_errors": 25,
+  "recommended_scoring_policies": [
+    "original_author_repo_fractional_boolean_metric_separate",
+    "independent_IFC4X3_schema_no_new_errors",
+    "independent_non_target_source_preservation",
+    "separate_independent_public_source_physical_task_predicate"
+  ],
+  "source_existing_schema_error_count": 1,
+  "source_original_IFC_sha256": "a052ec0377c437f28f0a1b8be4dd4ce4f78bf877bde7e51d10eb2d72310230bd",
+  "source_relationship_ownership_counts_no_GUIDs": {
+    "IfcRelContainedInSpatialStructure": {
+      "deleted_reference_counts": 5,
+      "relations_exclusively_related_to_deleted_columns": 0,
+      "relations_with_deleted_columns": 1,
+      "relations_with_surviving_shared_objects": 1
+    },
+    "IfcRelDefinesByProperties": {
+      "deleted_reference_counts": 15,
+      "relations_exclusively_related_to_deleted_columns": 15,
+      "relations_with_deleted_columns": 15,
+      "relations_with_surviving_shared_objects": 0
+    },
+    "IfcRelDefinesByType": {
+      "deleted_reference_counts": 5,
+      "relations_exclusively_related_to_deleted_columns": 5,
+      "relations_with_deleted_columns": 5,
+      "relations_with_surviving_shared_objects": 0
+    }
+  },
+  "status": "V054_AUTHOR_DELETE_POLICY_GAMING_DETECTED_AND_SCHEMA_GATE_PROVEN",
+  "valid_D_and_I_controls_same_author_score": true
+}
