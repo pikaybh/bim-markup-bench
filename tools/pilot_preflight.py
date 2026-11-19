@@ -40,7 +40,7 @@ def preflight(*,metadata:Path=ROOT/"data/tasks.jsonl",
     evidence={}
     config=json.loads(plan.read_text())
     manifest=json.loads(candidate.read_text())
-    draft=yaml.safe_load(protocol.read_text())
+    draft=yaml.safe_load(protocol.read_text(encoding="utf-8"))
     revision=json.loads(pinned.read_text())
     g2_report=json.loads(g2.read_text())
     expected_sha=revision["task_jsonl_sha256"]
