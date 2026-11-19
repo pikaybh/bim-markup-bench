@@ -1,0 +1,329 @@
+{
+  "actual_native_D_FULL_outputs": 8,
+  "actual_native_D_MANAGED_outputs": 8,
+  "actual_native_pinned_Linux_Docker_I_outputs": 8,
+  "bad_final_XML_controls_rejected": 32,
+  "bad_native_IFC_mutations_rejected": 24,
+  "case_results": [
+    {
+      "independently_blind_evaluation": false,
+      "native_real_operations": [
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3397,
+          "D_FULL_initial_xml_utf8_bytes": 3397,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1124,
+          "D_MANAGED_initial_xml_utf8_bytes": 1124,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 779,
+          "model_generated_trials": 0,
+          "operation_family": "move",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "f700f0043cf68870b54872f1c13358d90288d8aaad85bef9eb4a187a826fef7a",
+          "source_only_world_offset_metres": [
+            0.25,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3399,
+          "D_FULL_initial_xml_utf8_bytes": 3397,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1126,
+          "D_MANAGED_initial_xml_utf8_bytes": 1124,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 404,
+          "model_generated_trials": 0,
+          "operation_family": "delete",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "3733b320d2e841d9f3c2996e3fed7131d89f744207fea659018388621c6e882a",
+          "source_only_world_offset_metres": null
+        }
+      ],
+      "source_initial_unmodified_windows": 2,
+      "source_original_ifc_bytes": 6000,
+      "source_original_ifc_sha256": "fc932427e54f5740b879fc17c382963b2188175c9031843a0f107173328b428a",
+      "source_original_schema": "IFC4",
+      "source_original_unrelated_slabs": 1,
+      "synthetic_unit": "metre",
+      "synthetic_wall_axis": "X"
+    },
+    {
+      "independently_blind_evaluation": false,
+      "native_real_operations": [
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3404,
+          "D_FULL_initial_xml_utf8_bytes": 3404,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1126,
+          "D_MANAGED_initial_xml_utf8_bytes": 1126,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 779,
+          "model_generated_trials": 0,
+          "operation_family": "move",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "c30313f215d2f9df09aec1a2bae3b68324443169293a010f761838bda44fb1a4",
+          "source_only_world_offset_metres": [
+            0.0,
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3406,
+          "D_FULL_initial_xml_utf8_bytes": 3404,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1128,
+          "D_MANAGED_initial_xml_utf8_bytes": 1126,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 404,
+          "model_generated_trials": 0,
+          "operation_family": "delete",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "9c3d81c5fb7d83161ee0b048280ba2c7b0f69cc2d9334eb3aeac1be253ec7c56",
+          "source_only_world_offset_metres": null
+        }
+      ],
+      "source_initial_unmodified_windows": 2,
+      "source_original_ifc_bytes": 6000,
+      "source_original_ifc_sha256": "c1bbfe9000174ddaa97bc1c15bcb70a2182aac26e070569986635a3e6b4ab020",
+      "source_original_schema": "IFC4",
+      "source_original_unrelated_slabs": 1,
+      "synthetic_unit": "metre",
+      "synthetic_wall_axis": "Y"
+    },
+    {
+      "independently_blind_evaluation": false,
+      "native_real_operations": [
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3402,
+          "D_FULL_initial_xml_utf8_bytes": 3402,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1124,
+          "D_MANAGED_initial_xml_utf8_bytes": 1124,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 779,
+          "model_generated_trials": 0,
+          "operation_family": "move",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "9ca680a392729408b1d7aee61d7752b35c8a36f12e43492b1dfa04a52e460ee8",
+          "source_only_world_offset_metres": [
+            0.25,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3404,
+          "D_FULL_initial_xml_utf8_bytes": 3402,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1126,
+          "D_MANAGED_initial_xml_utf8_bytes": 1124,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 404,
+          "model_generated_trials": 0,
+          "operation_family": "delete",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "d990db60e109535447e79a961532371f81b9f6222438d7e3593c5e12bc333d09",
+          "source_only_world_offset_metres": null
+        }
+      ],
+      "source_initial_unmodified_windows": 2,
+      "source_original_ifc_bytes": 6099,
+      "source_original_ifc_sha256": "370e83184cfb69a9430a021ece1bf069673d0e1b5118eae1a7cbc69bb77eb6f8",
+      "source_original_schema": "IFC4",
+      "source_original_unrelated_slabs": 1,
+      "synthetic_unit": "millimetre",
+      "synthetic_wall_axis": "X"
+    },
+    {
+      "independently_blind_evaluation": false,
+      "native_real_operations": [
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3409,
+          "D_FULL_initial_xml_utf8_bytes": 3409,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1126,
+          "D_MANAGED_initial_xml_utf8_bytes": 1126,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 779,
+          "model_generated_trials": 0,
+          "operation_family": "move",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "bbbc929979896027befcca007e241ebd9119ab87dd6cf71b684854cf051b7f76",
+          "source_only_world_offset_metres": [
+            0.0,
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "D_FULL_complete_final_xml_utf8_bytes": 3411,
+          "D_FULL_initial_xml_utf8_bytes": 3409,
+          "D_MANAGED_complete_final_xml_utf8_bytes": 1128,
+          "D_MANAGED_initial_xml_utf8_bytes": 1126,
+          "actual_native_STEP_reencoded_variant": true,
+          "bad_native_mutations_all_rejected": {
+            "extra_unapproved_native_operation": true,
+            "original_wall_metadata_mutated": true,
+            "orphan_anonymous_cartesian_point": true
+          },
+          "bad_xml_controls_all_rejected": {
+            "forged_XML_move_command": true,
+            "one_managed_element_missing": true,
+            "partial_window_group_change": true,
+            "source_SHA_tampered": true
+          },
+          "independent_I_source_python_UTF8_bytes": 404,
+          "model_generated_trials": 0,
+          "operation_family": "delete",
+          "original_IFC_unchanged": true,
+          "original_selected_group_members": 2,
+          "original_source_2_window_groups": 2,
+          "real_linux_pinned_Docker_I_committed": true,
+          "real_native_D_full_managed_I_semantically_equal": true,
+          "same_physical_native_edit_digest": "c4b2373ad780ec40733759a3d6014f37187822e86c69f19996e843e16bc5a7ef",
+          "source_only_world_offset_metres": null
+        }
+      ],
+      "source_initial_unmodified_windows": 2,
+      "source_original_ifc_bytes": 6099,
+      "source_original_ifc_sha256": "cc4742e8e65ad36ffe480ad119da09f30fa68ca2b823c68e59bbdf45126b191a",
+      "source_original_schema": "IFC4",
+      "source_original_unrelated_slabs": 1,
+      "synthetic_unit": "millimetre",
+      "synthetic_wall_axis": "Y"
+    }
+  ],
+  "external_original_ifc_uploads": 0,
+  "frozen_synthetic_ifc4_door_parent_SHA256": "40149f8f4f86f8e86421926d71d11ccdfb9bb0d99b573c943127395dcebcb378",
+  "independent_native_step_neutral_gate_SHA256": "21ce15977f66467e451337c1bc89372adf22ba0b9f9e367424063dffaafca9cf",
+  "independently_untouched_sample_count": 0,
+  "issue": 247,
+  "known_uncovered": [
+    "IFC2X3 Window move/delete",
+    "IFC4 hosted detailed proxies, joined/curved/shared placements",
+    "multi-edit operation combinations and arbitrary representations",
+    "independent blind source acquisition/rights/actual GNI IFCs"
+  ],
+  "model_generated_attempts": 0,
+  "not_universal_IFC4_support": true,
+  "original_BIBIMBAP_or_GNI_ifc_inputs_read": 0,
+  "original_author_hidden_grader_or_GT_read": 0,
+  "owner_provider_or_scorer_trial_authorized": false,
+  "per_IFC_rights_or_transfer_approved": false,
+  "pinned_local_Docker_image": "sha256:2ce0d57dff6ea443c7f5ffffd29cf8b1b50a141b77574aae5ca4646f45f3a1ee",
+  "self_authored_IFC4_source_count": 4,
+  "source_generator_SHA256": "a5848cd5360e97d1b3b0cc11729c6312e23cc3ed81de2ebe75741e913db5eed0",
+  "source_neutral_final_xml_compiler_SHA256": "053fa12163b09d902eb02e20a0edf93c040f63605909ae573d9752eda76caa55",
+  "source_operation_pairs_executed": 8,
+  "source_units": [
+    "metre",
+    "millimetre"
+  ],
+  "status": "V066_IFC4_SYNTHETIC_WINDOW_MOVE_DELETE_REAL_D_I_SCOPE_PASS_NONBLIND",
+  "step_relabel_physically_admissible_outputs": 8,
+  "wall_axes": [
+    "X",
+    "Y"
+  ]
+}
