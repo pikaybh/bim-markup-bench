@@ -1,0 +1,321 @@
+{
+  "all_task_rows": 324,
+  "all_unique_exact_input_paths": 88,
+  "group_multiplicity_distribution": {
+    "1": 20,
+    "2": 3,
+    "3": 1,
+    "7": 1
+  },
+  "groups": [
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "190c82437a4ecc9027a961b65753416bfe46cdcf95eac65763809345ab174f57",
+      "public_input_path": "complex/0e29802b440f-input-create_wall.ifc",
+      "public_task_ids": [
+        "WAL-CRE-DIR-R-001"
+      ],
+      "remote_file_size_metadata_bytes": 224946499,
+      "remote_lfs_sha256_pointer_unverified": "e24ab42577bf489ec3ee86a1728e4560b92bb2468a981f314ebf3931447e92e8",
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "010aca64851856f857c330711d24901396bbe532d11c1ae99c4daac607df1759",
+      "public_input_path": "complex/354198cb90b3.ifc",
+      "public_task_ids": [
+        "ROM-CRE-SPA-R-003"
+      ],
+      "remote_file_size_metadata_bytes": 5320714,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "5618ad7cfe6fe42f563fe8050619d1e7c25fa80b095ecaba845e210fab4178b6",
+      "public_input_path": "complex/3d3be0535ad2.ifc",
+      "public_task_ids": [
+        "WAL-CRE-DIR-R-004"
+      ],
+      "remote_file_size_metadata_bytes": 5252946,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "cc3be5184e182267c5f1248db270c98b81dc1fb8ff850850adf45486ba4fb82f",
+      "public_input_path": "complex/605ddb973206.ifc",
+      "public_task_ids": [
+        "WAL-UPD-DIR-R-004"
+      ],
+      "remote_file_size_metadata_bytes": 5258250,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "61b3ae19fef83c91f45df039797516c5a1fd0d3f6aa6a9e09179cec33a1863be",
+      "public_input_path": "complex/65dc48e7147a-update-input.ifc",
+      "public_task_ids": [
+        "SLB-UPD-SPA-R-002"
+      ],
+      "remote_file_size_metadata_bytes": 154677453,
+      "remote_lfs_sha256_pointer_unverified": "4dd25071cba83443a8d729b2cf149c7855bcdbfe8d77d674fa04c5d7ca377b79",
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "56d92796cbdba4870cc559eae3ad6411afdf4f81dc7a622a489441b6e2d0ba45",
+      "public_input_path": "complex/6dc4da160a96.ifc",
+      "public_task_ids": [
+        "ROM-DEL-SPA-R-001"
+      ],
+      "remote_file_size_metadata_bytes": 148917608,
+      "remote_lfs_sha256_pointer_unverified": "706d9295bc26b64025172c2d40f6c0fb656ffe132ae57555da852a69d3565d61",
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "0403ede69904aa47ca3b4f95cf575f7c0961dc7d357648db5ff2df57ad4ccf3f",
+      "public_input_path": "complex/91ced022fd65-create-ground-truth.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-R-002"
+      ],
+      "remote_file_size_metadata_bytes": 12157617,
+      "remote_lfs_sha256_pointer_unverified": "2a04d35994be3814b89303b84457a5b82bfef55b5a83e398414e3de0f290c6c4",
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "990a88d66a8bbbee480b808372867e096b54367c8ca3ee1f984bb1c552fadce2",
+      "public_input_path": "complex/9517aa154f71.ifc",
+      "public_task_ids": [
+        "SLB-DEL-SPA-R-003",
+        "SLB-DEL-TOP-R-003",
+        "SLB-UPD-TOP-R-003",
+        "WAL-DEL-TOP-R-003",
+        "WAL-UPD-DIR-R-003",
+        "WAL-UPD-SPA-R-003",
+        "WAL-UPD-TOP-R-003"
+      ],
+      "remote_file_size_metadata_bytes": 5328401,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 7
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "2cd86bff25c6ebd3dcff8c4f82b4221062317c9b1a2a83f06e574eee2df44224",
+      "public_input_path": "complex/9d81a20e025d-create-input.ifc",
+      "public_task_ids": [
+        "WAL-CRE-SPA-R-002",
+        "WAL-CRE-TOP-R-002"
+      ],
+      "remote_file_size_metadata_bytes": 47021412,
+      "remote_lfs_sha256_pointer_unverified": "848966a8e7af67cbebceeccc25c1fba292178268dd8224d6ade0a4583f9f6b08",
+      "task_count": 2
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "6e1b61bd13be9c2ff5a6fd19f5caca873981e435a4942bc541d996969d1c4497",
+      "public_input_path": "complex/9fc9f7d62d4a-create-input.ifc",
+      "public_task_ids": [
+        "WIN-CRE-TOP-R-001"
+      ],
+      "remote_file_size_metadata_bytes": 161247958,
+      "remote_lfs_sha256_pointer_unverified": "601ae334e7e9df3b16c190f32f161c04e8cd4a9c3cfd56b30a308c92e01a8f4f",
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "5b57ad84a1de2fd2fe57b1337de6743074f3e442fd7a2dda5cc11a10d5a5d231",
+      "public_input_path": "complex/e32c75df5608.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-R-004"
+      ],
+      "remote_file_size_metadata_bytes": 4716346,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "b06413d476119c53200a247cf358ed5583573de73e28587679a2ed8fc17de8be",
+      "public_input_path": "simple/01_input.ifc",
+      "public_task_ids": [
+        "WAL-CRE-SPA-A-003"
+      ],
+      "remote_file_size_metadata_bytes": 110571,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "f5fdac57c4b41dd7c3b331ee7a22bce387c0e9b5e83f8a63acc3965f5cc2ab4f",
+      "public_input_path": "simple/04_input.ifc",
+      "public_task_ids": [
+        "DOR-CRE-TOP-A-002"
+      ],
+      "remote_file_size_metadata_bytes": 195305,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "bbdd2c82343fe1ebaadea64b8fe380bdddbe2eedb4e64b676abafde9597c40a7",
+      "public_input_path": "simple/05_input.ifc",
+      "public_task_ids": [
+        "WIN-UPD-SPA-A-003"
+      ],
+      "remote_file_size_metadata_bytes": 226070,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "442cd5098d563a4567493ff1c09ccf0ea591a837e44abdb175964ab2d32ae9b2",
+      "public_input_path": "simple/06_input.ifc",
+      "public_task_ids": [
+        "WIN-DEL-SPA-A-002",
+        "WIN-DEL-TOP-A-002"
+      ],
+      "remote_file_size_metadata_bytes": 239591,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 2
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "d22c4a193d0960adf58e4ba42121144e1edbd82ef4311a4756020e015669a305",
+      "public_input_path": "simple/14_input.ifc",
+      "public_task_ids": [
+        "ROM-UPD-TOP-A-003"
+      ],
+      "remote_file_size_metadata_bytes": 159559,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "0dd5cbd016178109d54b7007145c601619a73793abea5e498cce22740010b5ad",
+      "public_input_path": "simple/task001-create-ground-truth.ifc",
+      "public_task_ids": [
+        "WAL-DEL-TOP-A-001",
+        "WAL-UPD-TOP-A-001"
+      ],
+      "remote_file_size_metadata_bytes": 408236,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 2
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "4839851dc67e07524a6615a979355fb022ade870da41389125c0b5059cc6a4fc",
+      "public_input_path": "simple/task002-create-input.ifc",
+      "public_task_ids": [
+        "DOR-CRE-DIR-A-001"
+      ],
+      "remote_file_size_metadata_bytes": 411901,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "70e0f03ada58fe6c96409a4d6c87e711e9c077f96d735bec19740bdb554cf7ae",
+      "public_input_path": "simple/task002-delete-input.ifc",
+      "public_task_ids": [
+        "DOR-DEL-DIR-A-001"
+      ],
+      "remote_file_size_metadata_bytes": 136436,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "34141e2081a34a984a678f91ba513be2b5b44cfe5a2d98fc9b52d75dddb0c00b",
+      "public_input_path": "simple/task003-create-input.ifc",
+      "public_task_ids": [
+        "SLB-CRE-SPA-A-001"
+      ],
+      "remote_file_size_metadata_bytes": 118800,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "b41f4c1b2f9b7ff1467d15d1920b124e42f674c3190a22056f460a347283c53b",
+      "public_input_path": "simple/task004-create-ground-truth.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-A-001",
+        "ROM-UPD-DIR-A-001",
+        "ROM-UPD-SPA-A-001"
+      ],
+      "remote_file_size_metadata_bytes": 133616,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 3
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "a3182fbb06c12af495013b2eaf68b47c392c48488fbe7cae9f10f8dc2696ec38",
+      "public_input_path": "simple/task005-create-ground-truth.ifc",
+      "public_task_ids": [
+        "COL-DEL-SPA-A-001"
+      ],
+      "remote_file_size_metadata_bytes": 132873,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "d54084683fa06ff12100047dfdba955c39fba6d7764f89630bdaaab69ac48011",
+      "public_input_path": "simple/task007-create-input.ifc",
+      "public_task_ids": [
+        "WIN-CRE-DIR-A-001"
+      ],
+      "remote_file_size_metadata_bytes": 144983,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "7b5532ef500503a8d0e205a6d23b9d987cc14d4451e4041be4d49bf80419d741",
+      "public_input_path": "simple/task007-update-input.ifc",
+      "public_task_ids": [
+        "WIN-UPD-DIR-A-002"
+      ],
+      "remote_file_size_metadata_bytes": 150487,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    },
+    {
+      "content_hash_verified_from_downloaded_ifc": false,
+      "path_group_key_sha256": "f04e7eff602dc92c056cc438f6c07a7000e1fe5bc06a90b3bc933da00d75284c",
+      "public_input_path": "simple/task009-create-input.ifc",
+      "public_task_ids": [
+        "ROM-CRE-TOP-A-002"
+      ],
+      "remote_file_size_metadata_bytes": 141666,
+      "remote_lfs_sha256_pointer_unverified": null,
+      "task_count": 1
+    }
+  ],
+  "input_metadata_sha256": {
+    "older_remote_audit": "913bcc9fafcbb3e5da85e04d2280e6d6282318d2bd35fbb3cab203ce91a0ca06",
+    "pilot_manifest": "75b4847814dbefad95340556c0b62f9cda72cac319cd82ecb23ea4933c9ab694",
+    "remote_tree": "f1b150a576f3d72045819768215c34fd84602ab4f6a5f4d2f0202a0ae3a92a39",
+    "revision_manifest": "fa5728db08ed6e85434d0d1593f9f5df2ec18223a28242ded7842c84f19fc4fb"
+  },
+  "largest_single_input_path_task_count": 7,
+  "model_revision": "0ae510bd21865def4e2c6145c1244f01a1e3bcb9",
+  "nonclaims": [
+    "Equal input IFC repo paths imply shared input asset metadata but different paths may still be the same original building",
+    "25 path groups is an upper bound on independently distinct pilot source families, not certified 25 independent source SHA clusters",
+    "Git object IDs, path hashes, and unverified LFS pointer digests are NOT independently computed local IFC SHA256",
+    "No IFC bytes, GT IFCs, target GUIDs, original scorer, model run, licensed-data acceptance, or independent blind certification",
+    "Original pilot cohort unchanged; no release, provider, owner, data-rights or preregistration approval"
+  ],
+  "pilot_repeated_input_task_rows": 11,
+  "pilot_status_unchanged": "CANDIDATE_NOT_PREREGISTERED",
+  "pilot_task_rows": 36,
+  "pilot_unique_exact_input_paths": 25,
+  "remote_total_metadata_bytes_of_distinct_pilot_inputs": 777555298,
+  "status": "METADATA_ONLY_NOT_INDEPENDENT_SOURCE_FAMILIES_OR_SCORER_VALIDATION",
+  "task_jsonl_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "task_revision": "2dc6462bfab145ddf81b43e9954322855b8443dc"
+}
