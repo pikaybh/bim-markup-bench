@@ -14,12 +14,13 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from src.data.bim_edit import read_tasks, repo_asset_path, verify_local_asset_bytes
+from src.data.bim_edit import agent_view, read_tasks, repo_asset_path, verify_local_asset_bytes
 from src.data.pilot_asset_audit import _files_in_root
 from src.direct_markup.agent_runner import SourceOnlySettings, stage_source_only_workspace
 from src.imperative_control.agent_runner import (
     ControlConfig, ImperativeControlSession, create_matched_observations,
 )
+from src.data.pilot_workspace import _frozen_inputs, pilot_staging_preflight
 from src.runner.offline_context_cost_gate import component, matched_shared_components
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -167,3 +168,204 @@ def audit_frozen_source_contexts(root: Path = ROOT) -> dict:
     if len(outcomes) != 36 or sum(counts.values()) != 36:
         raise FrozenContextAuditError("Incomplete fixed-pilot disposition")
     return report
+
+
+def audit_current_pilot_information_and_tool_parity(root: Path = ROOT) -> dict:
+    """New G3 audit of ALL 36 frozen candidate rows: 30 cached IFCs, 6 missing.
+
+    Uses actual independently-rendered D and I source views, NOT scored trials.
+    No reference/target/evaluation metadata or source IFC bytes go into report.
+    Reports differences instead of asserting full parity from common XML hashes.
+    """
+    from src.data.bim_edit import AuditError
+    from src.imperative_control.agent_runner import API_NOTES
+    from src.security.agent_boundary import validate_agent_payload
+
+    selected,audited,remote,pilot=_frozen_inputs(root)
+    preflight=pilot_staging_preflight(root)
+    if (len(selected)!=36 or len(audited)!=25
+            or preflight["input_available_tasks"]!=30
+            or preflight["blocked_input_tasks"]!=6
+            or preflight["llm_launch_allowed"] is not False):
+        raise FrozenContextAuditError("Expected frozen 36/25/30/6 input-denominator gate")
+    # Read the exact current draft limits, but DO NOT register or approve them.
+    plan=json.loads((root/"configs/pilot_36_plan_v0.json").read_text("utf8"))
+    if (plan.get("status")!="DRAFT_CANDIDATE_ONLY_NOT_PREREGISTERED"
+            or plan.get("study_protocol_status")!="DRAFT_NOT_FROZEN"
+            or plan.get("arms")!=["direct_xml","imperative_python"]
+            or plan.get("feedback_mode")!="one_shot"
+            or type(plan.get("max_attempts_per_task")) is not int
+            or plan["max_attempts_per_task"]!=1
+            or plan.get("max_wall_seconds_per_arm_task")!=180
+            or plan.get("max_input_tokens_per_attempt")!=20000
+            or plan.get("max_output_tokens_per_attempt")!=6000
+            or plan.get("actual_provider_spend_authorized") is not False):
+        raise FrozenContextAuditError("Unexpected prospective D/I trial plan mutation")
+    d_policy=SourceOnlySettings()
+    i_policy=ControlConfig()
+    if (d_policy.mode!=i_policy.mode
+            or d_policy.max_attempts!=i_policy.max_attempts
+            or d_policy.max_wall_seconds!=i_policy.max_wall_seconds
+            or d_policy.max_edit_bytes!=i_policy.max_output_bytes):
+        raise FrozenContextAuditError("Existing D/I attempt/seconds/UTF8 output limits diverged")
+    if not API_NOTES.is_file() or API_NOTES.is_symlink():
+        raise FrozenContextAuditError("Imperative reference notes changed or disappeared")
+    extra_api_note=component(API_NOTES.read_text(encoding="utf8")).as_dict()
+    outcomes=[]
+    for tid,task in sorted(selected.items()):
+        source_path=repo_asset_path(task["input_ifc"])
+        audited_source=audited[source_path]
+        status=preflight["task_status"][tid]
+        base={
+            "task_id":tid,
+            "source_is_other_task_reference_path":
+                audited_source.get("is_cross_task_reference_alias_in_original_324") is True,
+        }
+        if status!="STAGING_INPUT_AVAILABLE_NO_LAUNCH":
+            outcomes.append({
+                **base,"status":"BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID",
+                "shared_source_text_sha256":None,
+                "total_common_text_utf8_bytes":None,
+            })
+            continue
+        cached=root/"data/ifc"/source_path
+        if cached.is_symlink() or not cached.is_file() or cached.parent.is_symlink():
+            outcomes.append({**base,"status":"BLOCKED_CACHE_SYMLINK_OR_ABSENT"})
+            continue
+        try:
+            verify_local_asset_bytes(cached,remote[source_path])
+            digest=_digest(cached)
+            if digest!=audited_source["byte_sha256_verified"]:
+                raise FrozenContextAuditError("Actual input bytes mismatch frozen publisher proof")
+            public=validate_agent_payload(agent_view(task))
+            with TemporaryDirectory(prefix="g3-pilot-context-parity-") as temp:
+                d=stage_source_only_workspace(
+                    cached,Path(temp)/"D",public,d_policy
+                ).agent_visible_context()
+                i_observation=create_matched_observations(cached,public)
+                i_view=ImperativeControlSession(i_observation,i_policy).model_visible_context()
+                shared=matched_shared_components(d,i_observation,digest)
+                if (d.allowed_operations!=ALLOWED_D
+                        or i_view.get("allowed_authoring_operations")!=["submit_python_text"]
+                        or i_view.get("allowed_execution_operations")!=[]
+                        or i_view.get("OS_sandbox_available") is not False
+                        or i_view["api_reference_notes"]!=API_NOTES.read_text("utf8")):
+                    raise FrozenContextAuditError("Unexpected authoring permissions or I API docs")
+                common_text=sum(entry["utf8_bytes"] for entry in shared.values())
+                xml=shared["v01_source_xml"]
+                if (d.task_id!=i_view["task_id"]
+                        or d.instruction!=i_view["instruction"]
+                        or sha256(d.xml_text.encode("utf8")).hexdigest()!=xml["sha256"]):
+                    raise FrozenContextAuditError("D/I common model-visible context diverged")
+                # XML is an incomplete IFC projection for many native entity classes.
+                # Common XML bytes do NOT prove D can see/edit everything I can
+                # inspect from the original IFC if given Python and the same input.
+                outcomes.append({
+                    **base,
+                    "status":"COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+                    "source_ifc_byte_sha256":digest,
+                    "source_ifc_bytes":cached.stat().st_size,
+                    "shared_source_text_sha256":xml["sha256"],
+                    "shared_source_xml_utf8_bytes":xml["utf8_bytes"],
+                    "shared_language_spec_utf8_bytes":shared["v01_schema_spec"]["utf8_bytes"],
+                    "shared_instruction_utf8_bytes":shared["public_instruction"]["utf8_bytes"],
+                    "total_common_text_utf8_bytes":common_text,
+                    "I_only_extra_api_notes_utf8_bytes":extra_api_note["utf8_bytes"],
+                    "D_observed_allowed_authoring_actions":list(d.allowed_operations),
+                    "I_observed_allowed_authoring_actions":
+                        list(i_view["allowed_authoring_operations"]),
+                    "I_observed_executable_actions":list(i_view["allowed_execution_operations"]),
+                    "D_native_ifc_model_completeness_verified":False,
+                    "actual_rendered_provider_prompt_bytes":None,
+                    "actual_provider_tokens":None,
+                    "both_arms_have_identical_model_visible_documents":False,
+                })
+        except (AuditError,ValueError,OSError,KeyError,TypeError):
+            outcomes.append({**base,"status":"BLOCKED_ACTUAL_SOURCE_OR_V01_PROJECTION"})
+    counts=dict(sorted(Counter(row["status"] for row in outcomes).items()))
+    audited_rows=counts.get(
+        "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",0
+    )
+    if len(outcomes)!=36 or sum(counts.values())!=36:
+        raise FrozenContextAuditError("Failed complete 36-task accounting")
+    tested=[row for row in outcomes if row["status"].startswith("COMMON_V01")]
+    if tested:
+        extra_note_sizes={r["I_only_extra_api_notes_utf8_bytes"] for r in tested}
+        if extra_note_sizes!={extra_api_note["utf8_bytes"]}:
+            raise FrozenContextAuditError("I-only API note bytes diverged")
+    return {
+        "version":"pinned-bim-edit-36-current-d-i-information-and-tool-audit-v0.1",
+        "source_task_jsonl_sha256":TASK_SHA,
+        "frozen_candidate_sha256":SAMPLE_SHA,
+        "task_total":36,
+        "distinct_original_input_paths":25,
+        "cached_input_tasks":30,
+        "missing_input_tasks":6,
+        "actual_independent_d_and_i_source_text_matches":audited_rows,
+        "cached_input_tasks_not_validated":30-audited_rows,
+        "status_counts":counts,
+        "same_one_shot_attempts_and_180s":True,
+        "shared_max_utf8_submission_bytes":d_policy.max_edit_bytes,
+        "same_max_output_provider_tokens_configured":plan["max_output_tokens_per_attempt"],
+        "same_max_input_provider_tokens_configured":plan["max_input_tokens_per_attempt"],
+        "fixed_draft_two_arm_protocol":plan["arms"],
+        "new_three_arm_stager_labels":list(preflight["arms"]),
+        "three_arm_representation_semantics_preregistered":False,
+        "same_source_xml_text_for_verified_pairs":audited_rows>0,
+        "I_only_extra_api_notes":extra_api_note,
+        "all_model_visible_documents_identical_between_arms":False,
+        "same_effective_native_IFC_query_capability_verified":False,
+        "same_feedback_and_retries_in_real_runner_verified":False,
+        "same_exact_provider_tokens_measured":False,
+        "same_model_and_seed_verified":False,
+        "actual_model_prompt_transport_verified":False,
+        "independent_executable_tool_budget_fairness_verified":False,
+        "all_36_original_tasks_eligible_for_live_trial":False,
+        "official_benchmark_tasks_scored":0,
+        "real_model_provider_called":False,
+        "provider_spend_authorized":False,
+        "model_launch_allowed":False,
+        "gate":"BLOCKED_INFORMATION_AND_TOOL_PARITY_NOT_ESTABLISHED",
+        "per_task_source_only_metadata":outcomes,
+        "nonclaims":[
+            "Common XML/source text equality does not prove source model semantic fidelity or native IFC capability parity",
+            "I exposes extra IfcOpenShell API notes; D uses XML file edits, I uses code submission: neither is an identical tool",
+            "Three-arm D_FULL/D_MANAGED/I_NATIVE staged labels are not the approved two-arm direct_xml/imperative_python protocol",
+            "UTF8 byte limits and configured token ceilings are not actual tokenizer/provider input or output tokens",
+            "Six tasks with unavailable original inputs remain in all fixed study denominators",
+            "No GT/model-generated code/LLM/provider request or official benchmark evaluator was invoked",
+        ],
+    }
+
+
+def main() -> int:
+    """Offline current pilot context differential report; never invoke provider."""
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    mode=parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--write-current",action="store_true",
+                      help="Create a new, non-overwriting 36-task G3 audit JSON")
+    mode.add_argument("--check-current",action="store_true",
+                      help="Recompute current source views and compare exact stored JSON")
+    args=parser.parse_args()
+    payload=audit_current_pilot_information_and_tool_parity(ROOT)
+    encoded=(json.dumps(payload,sort_keys=True,indent=2,ensure_ascii=False)+"\n").encode("utf8")
+    destination=ROOT/"reports/g3_bim_edit_36_task_information_and_tool_parity_20261119.json"
+    if args.write_current:
+        with destination.open("xb") as stream:
+            stream.write(encoded)
+    elif (not destination.is_file() or destination.is_symlink()
+          or destination.read_bytes()!=encoded):
+        raise FrozenContextAuditError("Current parity evidence missing or changed")
+    print(
+        "G3_OFFLINE_PILOT_CONTEXT_DIFFERENTIAL=PASS "
+        f"candidate_rows={payload['task_total']} "
+        f"source_view_pairs={payload['actual_independent_d_and_i_source_text_matches']} "
+        f"blocked_or_unverified={payload['task_total']-payload['actual_independent_d_and_i_source_text_matches']} "
+        "tool_parity_verified=false model_calls=0"
+    )
+    return 0
+
+
+if __name__=="__main__":
+    raise SystemExit(main())
