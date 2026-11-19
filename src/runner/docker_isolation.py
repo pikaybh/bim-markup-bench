@@ -30,6 +30,8 @@ class DockerIsolationError(RuntimeError):
 
 IMAGE_ID=re.compile(r"^sha256:[0-9a-f]{64}$")
 KNOWN_PROBE_ID="g2-docker-kernel-probe-v0.1"
+# Two fixed, audited paths; never accept a caller-supplied arbitrary executable.
+PYTHON_ENTRYPOINTS=("/usr/bin/python3","/usr/local/bin/python3")
 TRUSTED_MARKER=b"BIM_MARKUP_BENCH_OWN_IMMUTABLE_PROBE_INPUT_V1"
 SECRET_NAMES=("OPENAI_API_KEY","AWS_SECRET_ACCESS_KEY","GITHUB_TOKEN",
               "GH_TOKEN","SSH_AUTH_SOCK","AZURE_CLIENT_SECRET")
@@ -87,6 +89,7 @@ class DockerProbePolicy:
     pid_limit:int=16
     cpu_share:float=0.5
     wall_timeout_seconds:int=25
+    python_entrypoint:str="/usr/bin/python3"
 
     def __post_init__(self):
         if not isinstance(self.image_id,str) or not IMAGE_ID.fullmatch(self.image_id):
@@ -97,6 +100,8 @@ class DockerProbePolicy:
             raise DockerIsolationError("Probe cgroup limits must match frozen policy")
         if self.cpu_share!=0.5 or self.wall_timeout_seconds!=25:
             raise DockerIsolationError("Probe CPU/wall-time limits must match frozen policy")
+        if self.python_entrypoint not in PYTHON_ENTRYPOINTS:
+            raise DockerIsolationError("Probe Python entrypoint must be one of two fixed trusted paths")
 
 
 def _docker_binary()->str:
@@ -183,7 +188,7 @@ def build_probe_argv(binary:str,policy:DockerProbePolicy,
         "--workdir=/",
         "--env=HOME=/tmp",
         "--env=PYTHONDONTWRITEBYTECODE=1",
-        "--entrypoint=/usr/bin/python3",
+        "--entrypoint="+policy.python_entrypoint,
         policy.image_id,"-c",TRUSTED_PROBE,
     ]
 
@@ -214,7 +219,7 @@ def _validate_created(container:dict,policy:DockerProbePolicy)->dict:
             line.split("=",1)[0] in SECRET_NAMES for line in cfg.get("Env",[])
         ),
         "trusted_probe_only":(
-            cfg.get("Entrypoint")==["/usr/bin/python3"]
+            cfg.get("Entrypoint")==[policy.python_entrypoint]
             and (cfg.get("Cmd") or [])==["-c",TRUSTED_PROBE]
         ),
     }
@@ -317,6 +322,8 @@ def run_trusted_docker_probe(policy:DockerProbePolicy)->dict:
                 "probe_id":KNOWN_PROBE_ID,
                 "status":"KERNEL_ISOLATION_PROBE_PASS",
                 "docker_server_version":_docker_version(binary),
+                "image_id":policy.image_id,
+                "python_entrypoint":policy.python_entrypoint,
                 "image_digest_matches_pinned_local_id":True,
                 "worker_image_scientifically_approved":False,
                 "production_scored_python_enabled":False,

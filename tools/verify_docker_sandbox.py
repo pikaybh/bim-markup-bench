@@ -20,13 +20,21 @@ def main()->int:
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--image-id",required=True,
         help="Exact local Docker image ID sha256:... ; NOT a tag or mutable image name")
+    parser.add_argument(
+        "--python-entrypoint",
+        choices=("/usr/bin/python3","/usr/local/bin/python3"),
+        default="/usr/bin/python3",
+        help="Select a fixed trusted Python path present in the pinned image; no arbitrary command",
+    )
     parser.add_argument("--output-json",type=Path,
         help="Write a new sanitized evidence JSON; fail rather than overwrite")
     parser.add_argument("--enforce-live",action="store_true",
         help="Always return code 2: full approved Python worker and model broker absent")
     options=parser.parse_args()
     try:
-        data=run_trusted_docker_probe(DockerProbePolicy(options.image_id))
+        data=run_trusted_docker_probe(DockerProbePolicy(
+            options.image_id,python_entrypoint=options.python_entrypoint
+        ))
     except (DockerIsolationError,OSError,ValueError,KeyError,TypeError):
         data={
             "status":"BLOCKED_OS_PROBE_FAILED",
@@ -43,7 +51,7 @@ def main()->int:
             raise SystemExit("Refusing to overwrite existing probe evidence")
         if not destination.parent.is_dir():
             raise SystemExit("Probe evidence parent directory must preexist")
-        with destination.open("x",encoding="utf-8") as output:
+        with destination.open("x",encoding="utf-8",newline="\n") as output:
             output.write(text)
     print(text,end="")
     if data["status"]!="KERNEL_ISOLATION_PROBE_PASS":
