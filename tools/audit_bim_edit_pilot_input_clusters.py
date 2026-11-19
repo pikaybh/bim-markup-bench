@@ -190,14 +190,189 @@ def run_audit(root: Path) -> dict:
     return report
 
 
+def _potential_family_label(path: str) -> str:
+    """A filename-prefix *review clue*, NEVER a certified source/building identity."""
+    match = re.fullmatch(r"(simple/task[0-9]{3})-(?:create|delete|update)-[^/]+[.]ifc", path)
+    if match:
+        return match.group(1)
+    match = re.fullmatch(r"(complex/[0-9a-f]{12})-(?:create|delete|update|input|gt)[^/]*[.]ifc", path)
+    if match:
+        return match.group(1)
+    return path
+
+
+def build_lineage_review_queue(
+    report: dict, remote_tree: list[dict], rights_ledger: dict
+) -> dict:
+    """Produce PUBLIC-METADATA-only questions for a future *external* source steward.
+
+    No IFC bytes are read, no per-file approvals synthesized and no verified
+    source_ifc_sha256 derived from Git/LFS/path identifiers.
+    """
+    if report.get("status") != "METADATA_ONLY_NOT_INDEPENDENT_SOURCE_FAMILIES_OR_SCORER_VALIDATION":
+        raise PilotMetadataError("Not an approved pinned source-path audit input")
+    groups = report.get("groups")
+    if not isinstance(groups, list) or len(groups) != 25:
+        raise PilotMetadataError("Fixed pilot exact input-path groups changed")
+    rights = rights_ledger.get("records", [])
+    source_rights = [r for r in rights if r.get("source") == "BIM-Edit/BIM-Edit"]
+    if len(source_rights) != 1:
+        raise PilotMetadataError("No unambiguous original asset rights source record")
+    source = source_rights[0]
+    if source.get("rights_checked") is not False or source.get("redistribution_permitted") is not False or source.get("consent_documented") is not False:
+        raise PilotMetadataError("Existing frozen unverified rights contract changed: require new review version")
+    if source.get("source_revision") != MODEL_REVISION:
+        raise PilotMetadataError("Original asset-rights revision changed")
+    paths = [g["public_input_path"] for g in groups]
+    if len(set(paths)) != len(paths):
+        raise PilotMetadataError("Duplicate exact input-path group")
+    remote_files = {row.get("path"): row for row in remote_tree if row.get("type") == "file"}
+    if len(remote_files) != 154:
+        raise PilotMetadataError("Remote file inventory not the original pinned 154-file tree")
+    by_label = defaultdict(list)
+    pointers = []
+    git_oids = []
+    for g in groups:
+        path = g["public_input_path"]
+        remote = remote_files.get(path)
+        if remote is None or remote.get("size") != g.get("remote_file_size_metadata_bytes"):
+            raise PilotMetadataError("Unpinned remote source size/path")
+        oid = remote.get("oid")
+        if not isinstance(oid, str) or not re.fullmatch(r"[0-9a-f]{40}", oid):
+            raise PilotMetadataError("Invalid public Git object identifier")
+        git_oids.append(oid)
+        lfs = remote.get("lfs")
+        pointer = None
+        if lfs is not None:
+            if not isinstance(lfs, dict) or not re.fullmatch(
+                r"[0-9a-f]{64}", str(lfs.get("oid", ""))
+            ):
+                raise PilotMetadataError("Malformed LFS SHA256 pointer")
+            pointer = lfs["oid"]
+            if pointer != g.get("remote_lfs_sha256_pointer_unverified"):
+                raise PilotMetadataError("LFS pointer differs from previous frozen source-path report")
+            pointers.append(pointer)
+        elif g.get("remote_lfs_sha256_pointer_unverified") is not None:
+            raise PilotMetadataError("Unrecognized LFS pointer disappeared")
+        by_label[_potential_family_label(path)].append(path)
+    if len(set(git_oids)) != len(git_oids):
+        raise PilotMetadataError("Distinct input paths share a Git object ID: require fresh dedicated audit")
+    if len(set(pointers)) != len(pointers):
+        raise PilotMetadataError("Distinct input paths share a claimed LFS content SHA: review before continuing")
+
+    candidate_pairs = []
+    for label, paths_of_label in sorted(by_label.items()):
+        if len(paths_of_label) > 1:
+            candidate_pairs.append({
+                "filename_stem_clue": label,
+                "public_input_paths_needing_independent_lineage_review": sorted(paths_of_label),
+                "interpretation": "UNVERIFIED_FILENAME_HEURISTIC_NOT_CONFIRMED_COMMON_SOURCE",
+            })
+    review_queue = sorted(
+        ({
+            "public_input_path": g["public_input_path"],
+            "public_task_ids": g["public_task_ids"],
+            "task_count": g["task_count"],
+            "remote_metadata_size_bytes": g["remote_file_size_metadata_bytes"],
+            "public_git_oid_sha1_unverified_for_ifc_content": remote_files[g["public_input_path"]]["oid"],
+            "lfs_sha256_pointer_not_byte_verified": g["remote_lfs_sha256_pointer_unverified"],
+            "potential_filename_family_label_not_certified": _potential_family_label(g["public_input_path"]),
+            "verified_original_ifc_sha256": None,
+            "verified_original_building_lineage": None,
+            "per_file_rights_verified": False,
+            "explicit_provider_transfer_retention_approved": False,
+            "recommended_review_priority": (
+                "cross_path_stem_match"
+                if len(by_label[_potential_family_label(g["public_input_path"])]) > 1
+                else "reused_exact_input_path"
+                if g["task_count"] > 1
+                else "single_pilot_task"
+            ),
+        } for g in groups),
+        key=lambda g: (
+            {"cross_path_stem_match": 0, "reused_exact_input_path": 1, "single_pilot_task": 2}[g["recommended_review_priority"]],
+            -g["task_count"],
+            g["public_input_path"],
+        ),
+    )
+    return {
+        "verdict": "EXTERNAL_REVIEW_QUEUE_ONLY_ALL_DATA_RIGHTS_AND_SOURCE_LINEAGE_BLOCKED",
+        "pinned_36_pilot_task_count": report["pilot_task_rows"],
+        "exact_input_paths": len(groups),
+        "public_git_sha1_oid_count": len(git_oids),
+        "distinct_public_git_sha1_oids": len(set(git_oids)),
+        "unverified_lfs_sha256_pointer_count": len(pointers),
+        "distinct_unverified_lfs_sha256_pointers": len(set(pointers)),
+        "filenames_suggesting_cross_path_lineage_review": candidate_pairs,
+        "filename_clue_group_count_not_independent_sources": len(by_label),
+        "source_ifc_content_sha256_independently_verified": 0,
+        "source_building_lineages_independently_verified": 0,
+        "per_original_ifc_rights_verified": 0,
+        "trial_launch_authorized": False,
+        "external_steward_questions": [
+            "Are two different IFC paths variants of the same underlying building or project?",
+            "Which verified original IFC content SHA256 matches each public pinned file?",
+            "Who can verify creator consent, embedded third-party content and per-file attribution?",
+            "Is a named provider permitted to receive and retain/delete the specific IFC under its stated terms?",
+            "Can a separately access-controlled reviewer seal source lineage and hidden reference scoring without developer exposure?",
+        ],
+        "review_queue": review_queue,
+        "nonclaims": [
+            "Git SHA1 OIDs are publisher source-tree metadata, not hashes checked against local IFC bytes",
+            "Only 6 LFS SHA256 pointers in this pilot, and none were verified against downloaded bytes",
+            "A filename stem is not proof of source lineage: 23 clue-groups are NOT 23 independent buildings",
+            "No unseen source/blind cohort, dataset rights, official scorer release or external provider authorization certified",
+            "No original IFC, reference IFC, private grader, task prompt or target GUID opened by this review",
+        ],
+    }
+
+
+def run_lineage_review(root: Path) -> dict:
+    original = run_audit(root)
+    remote_bytes = (root / "data/bim_edit_remote_tree.json").read_bytes()
+    rights_bytes = (root / "manifests/source_rights.json").read_bytes()
+    report = build_lineage_review_queue(
+        original, _load_json_bytes(remote_bytes), _load_json_bytes(rights_bytes)
+    )
+    report["pinned_input_sha256"] = {
+        "original_source_path_report": sha256(
+            (root / "reports/bim_edit_pilot_source_path_independence_20261119.json").read_bytes()
+        ).hexdigest(),
+        "public_remote_tree": sha256(remote_bytes).hexdigest(),
+        "existing_rights_ledger": sha256(rights_bytes).hexdigest(),
+    }
+    if report["pinned_input_sha256"]["original_source_path_report"] != (
+        "6511d1f3783b9f031bd80060ce3e751730839683a9f2a7cc1ce2bd9f95ca9d01"
+    ):
+        raise PilotMetadataError("Frozen prior report hash changed")
+    return report
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--write", action="store_true")
+    parser.add_argument("--write-review", action="store_true")
+    parser.add_argument("--check-review", action="store_true")
     args = parser.parse_args()
-    if args.check == args.write:
-        parser.error("Exactly one of --check or --write is required")
+    if sum((args.check, args.write, args.write_review, args.check_review)) != 1:
+        parser.error("Exactly one of --check, --write, --check-review, --write-review is required")
     root = Path(__file__).resolve().parents[1]
+    if args.check_review or args.write_review:
+        report = run_lineage_review(root)
+        raw = (json.dumps(report, sort_keys=True, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+        output = root / "reports/bim_edit_pilot_lineage_review_queue_20261119.json"
+        if args.write_review:
+            with output.open("xb") as f:
+                f.write(raw)
+        elif not output.exists() or output.read_bytes() != raw:
+            raise PilotMetadataError("Missing/mismatched immutable external-review queue")
+        print(
+            f"BIM_EDIT_LINEAGE_REVIEW=PASS exact_paths={report['exact_input_paths']} "
+            f"filename_clue_groups={report['filename_clue_group_count_not_independent_sources']} "
+            "rights_verified=0 original_IFC_bytes_read=0"
+        )
+        return 0
     report = run_audit(root)
     raw = (json.dumps(report, sort_keys=True, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
     output = root / "reports/bim_edit_pilot_source_path_independence_20261119.json"

@@ -62,3 +62,29 @@ Run from the existing single bim-markup-bench repository:
     .\.venv\Scripts\python.exe -m unittest -q tests.test_bim_edit_pilot_input_clusters
 
 The --check script compares canonical frozen report bytes and refuses to overwrite an existing report. Mutation tests reject changed task SHA, revisions, sample, strata, paths, duplicate cohort IDs, missing tree assets, malformed JSON and false preregistration claims.
+
+
+## D. November 19 source-lineage review queue — metadata-only follow-up
+
+This additive checkpoint preserves the earlier frozen source-path report (SHA256 6511d1f3783b9f031bd80060ce3e751730839683a9f2a7cc1ce2bd9f95ca9d01). Instead of creating another agent/harness/repository, the original tools/audit_bim_edit_pilot_input_clusters.py now generates a limited, non-answer-bearing **external steward review queue** using the same pinned public dataset revision.
+
+- New report: reports/bim_edit_pilot_lineage_review_queue_20261119.json, SHA256 35273b3951882ceae197912ee66b85404f82ef14af050425902c7c0197924216.
+- Existing 36-task pilot and 25 exact input paths unchanged. Remote Git file-object SHA-1 IDs: 25 distinct; publicly recorded LFS SHA256 pointers: 6 distinct; 19 other files have no recorded LFS pointer. None was checked against original IFC bytes in this review.
+- Two *filename-only* review hints: simple/task002-create-input.ifc versus simple/task002-delete-input.ifc; and simple/task007-create-input.ifc versus simple/task007-update-input.ifc. Such matching stems are not proof of common native IFC, common real-world building, or independent-source equivalence.
+- Applying only these *unverified* clues produces **23 candidate filename groups**, explicitly NOT 23 independent buildings or a valid bootstrap source-family count. Independently verified source-IFC SHA256: 0; verified original-building lineages: 0.
+- External review priorities: 4 candidate cross-path items, 5 additional repeated-input paths, 16 single-task input paths. These are just scheduling metadata for a separate trusted reviewer.
+- Per-original-IFC rights verified: 0. Neither a CC BY 4.0 dataset-level tag nor a Git object ID establishes creator/legal authority, third-party embedded components, lawful external-model-provider transfer or retention/deletion rights.
+- The review queue rejects fabricated rights approvals, changed model revisions, altered remote Git/LFS identifiers, duplicate path groups and any attempt to relabel the unregistered cohort as independently blind. No task prompt, target GUID, GT file, original IFC bytes or private scorer were read or exported.
+
+Read-only external evidence checked November 19:
+- https://huggingface.co/datasets/BIM-Edit/BIM-Edit/tree/main — 4.31 GB archive, CC BY 4.0 dataset card, public pinned commit 0ae510b.
+- https://huggingface.co/blog/ONESTRUCTION/construction-ai-leaderboard — external independent evaluator reconstruction because BIM-Edit's official executable evaluator was not public; this source does not establish our scorer is numerically equal to the author scorer.
+- https://arxiv.org/abs/2611.22307 — newly published IfcGym/IfcEdit code-editing prior work; not a replacement for our prospective matched D/I arm evaluation.
+
+**Next independent actions (not performed or self-approved here):** original rights-holder and external source steward authenticate individual source IFC rights/attribution and source-building lineage; a separate evaluator steward seals hidden ground truth and a publication-backed official scorer version or explicitly releases an independent metric; study owner subsequently freezes model/provider/actual-token/cost conditions. Keep the 36-task cohort unchanged and apply intention-to-treat to all tasks, including missing/unsupported cases. No new provider trial, paid model call, IFC download or public author outreach occurred.
+
+Offline reproduction (same existing checkout):
+
+    .\.venv\Scripts\python.exe -m tools.audit_bim_edit_pilot_input_clusters --check
+    .\.venv\Scripts\python.exe -m tools.audit_bim_edit_pilot_input_clusters --check-review
+    .\.venv\Scripts\python.exe -m unittest -q tests.test_bim_edit_pilot_input_clusters
