@@ -125,7 +125,7 @@ class PilotCandidateAuditTests(unittest.TestCase):
         import yaml
         with TemporaryDirectory() as tmp:
             yaml_path=Path(tmp)/"experiment.yaml"
-            data=yaml.safe_load(DRAFT.read_text())
+            data=yaml.safe_load(DRAFT.read_text(encoding="utf-8"))
             data["estimated_input_usd_per_million"]=0.10
             data["pilot_frozen"]=True
             yaml_path.write_text(yaml.safe_dump(data))

@@ -1,0 +1,62 @@
+{
+  "@context": {
+  "@vocab": "https://schema.org/",
+  "@language": "en",
+  "cr": "http://mlcommons.org/schema/",
+  "rai": "http://mlcommons.org/croissant/rai/"
+},
+  "@type": "Dataset",
+  "name": "BIMEdit",
+  "description": "A dataset of IFC building models categorized into simple and complex structures for the BIM Edit Benchmark.",
+  "url": "https://huggingface.co/datasets/BIM-Edit/BIM-Edit",
+  "version": "1.0",
+  "datePublished": "2026-01-01",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "citation": "BIM Edit Benchmark Dataset, 2026.",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+
+  "distribution": [
+    {
+        "@type": "https://schema.org/FileSet",
+        "@id": "simple_files",
+        "name": "Simple",
+        "cr:includes": "simple/*.ifc",
+        "encodingFormat": "application/x-step"
+    },
+    {
+        "@type": "https://schema.org/FileSet",
+        "@id": "complex_files",
+        "name": "Complex",
+        "cr:includes": "complex/*.ifc",
+        "encodingFormat": "application/x-step"
+    }
+  ],
+
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "ifc_models",
+      "name": "IFC Models Metadata",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "file_path",
+          "dataType": "Text",
+          "source": {
+            "fileSet": [
+              { "@id": "simple_files" },
+              { "@id": "complex_files" }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+
+  "rai:dataLimitations": "The dataset contains a limited number of building designs and may not generalize to all architectural styles or construction standards.",
+  "rai:dataBiases": "The dataset may be biased toward specific architectural styles or modeling practices.",
+  "rai:personalSensitiveInformation": "No personal or sensitive information is contained in this dataset.",
+  "rai:dataUseCases": "Input and Ground Truth files for the Benchmark.",
+  "rai:dataSocialImpact": "Supports automation in building modeling.",
+  "rai:hasSyntheticData": false
+}

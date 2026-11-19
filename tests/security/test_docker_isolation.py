@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from hashlib import sha256
 import json
 import os
 from pathlib import Path
@@ -9,6 +10,7 @@ import subprocess
 import sys
 from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 from src.runner.docker_isolation import (
     DockerIsolationError,DockerProbePolicy,KNOWN_PROBE_ID,TRUSTED_PROBE,
@@ -19,6 +21,7 @@ from src.runner.docker_isolation import (
 ROOT=Path(__file__).resolve().parents[2]
 FAKE_DIGEST="sha256:"+"a"*64
 LOCAL_IMAGE=os.environ.get("BIM_BENCH_DOCKER_PROBE_IMAGE_SHA","")
+LOCAL_ENTRYPOINT=os.environ.get("BIM_BENCH_DOCKER_PROBE_PYTHON_ENTRYPOINT","/usr/bin/python3")
 
 
 def inspect_stub():
@@ -77,6 +80,28 @@ class DockerStaticSecurityTests(unittest.TestCase):
             with self.subTest(bad=bad[:25]),self.assertRaises(DockerIsolationError):
                 DockerProbePolicy(bad)
         self.assertEqual(DockerProbePolicy(FAKE_DIGEST).image_id,FAKE_DIGEST)
+
+    def test_two_audited_python_paths_and_no_arbitrary_entrypoints(self):
+        for allowed in ("/usr/bin/python3","/usr/local/bin/python3"):
+            with self.subTest(allowed=allowed):
+                policy=DockerProbePolicy(FAKE_DIGEST,python_entrypoint=allowed)
+                with TemporaryDirectory() as tmp:
+                    root=Path(tmp)
+                    (root/"input").mkdir(); (root/"output").mkdir()
+                    argv=build_probe_argv(
+                        "docker",policy,"bim-bench-probe-0123456789abcdef",
+                        root/"input",root/"output"
+                    )
+                    self.assertIn("--entrypoint="+allowed,argv)
+                    info=inspect_stub()
+                    info["Config"]["Entrypoint"]=[allowed]
+                    self.assertTrue(all(_validate_created(info,policy).values()))
+                    info["Config"]["Entrypoint"]=["/bin/sh"]
+                    self.assertFalse(_validate_created(info,policy)["trusted_probe_only"])
+        for forbidden in ("/bin/sh","/usr/bin/env","python3","/usr/local/bin/python3;sh",""):
+            with self.subTest(forbidden=forbidden):
+                with self.assertRaises(DockerIsolationError):
+                    DockerProbePolicy(FAKE_DIGEST,python_entrypoint=forbidden)
 
     def test_limits_cannot_be_relaxed_by_caller(self):
         for update in (
@@ -196,6 +221,61 @@ class DockerStaticSecurityTests(unittest.TestCase):
                 data=runtime_stub();data[key]=bad
                 self.assertFalse(all(_validate_runtime(data,policy).values()))
 
+    def test_cli_proof_writer_is_cross_platform_lf_and_never_overwrites(self):
+        from tools import verify_docker_sandbox
+        with TemporaryDirectory() as tmp:
+            destination=Path(tmp)/"evidence.json"
+            fake={
+                "status":"KERNEL_ISOLATION_PROBE_PASS",
+                "paid_model_pilot_ready":False,
+                "probe_id":"g2-docker-kernel-probe-v0.1",
+            }
+            argv=[
+                "verify_docker_sandbox", "--image-id", FAKE_DIGEST,
+                "--python-entrypoint", "/usr/local/bin/python3",
+                "--output-json", str(destination), "--enforce-live",
+            ]
+            with patch("sys.argv",argv), patch.object(
+                verify_docker_sandbox,"run_trusted_docker_probe",return_value=fake
+            ) as run:
+                self.assertEqual(verify_docker_sandbox.main(),2)
+                run.assert_called_once()
+                self.assertEqual(run.call_args.args[0].python_entrypoint,"/usr/local/bin/python3")
+                data=destination.read_bytes()
+                self.assertIn(b"\n",data)
+                self.assertNotIn(b"\r\n",data)
+                self.assertEqual(json.loads(data),fake)
+                with self.assertRaises(SystemExit):
+                    verify_docker_sandbox.main()
+                self.assertEqual(destination.read_bytes(),data)
+
+    def test_frozen_nov19_real_kernel_evidence_is_nonrelease(self):
+        """Previously observed live kernel checks must not silently become release approval."""
+        path=ROOT/"reports/g2_local_linux_docker_kernel_probe_20261119.json"
+        raw=path.read_bytes()
+        self.assertEqual(
+            sha256(raw).hexdigest(),
+            "c7cda6d98623d2c608a2bc4c4f471f6c4c060b6b718dfd50bb6dac85d8dc7790",
+        )
+        report=json.loads(raw)
+        self.assertEqual(report["status"],"KERNEL_ISOLATION_PROBE_PASS")
+        self.assertEqual(report["docker_server_version"],"28.3.2")
+        self.assertEqual(report["python_entrypoint"],"/usr/local/bin/python3")
+        self.assertEqual(
+            report["image_id"],
+            "sha256:2ce0d57dff6ea443c7f5ffffd29cf8b1b50a141b77574aae5ca4646f45f3a1ee",
+        )
+        for key in ("independent_created_host_config_checks","actual_container_kernel_checks"):
+            with self.subTest(checks=key):
+                self.assertEqual(len(report[key]),15)
+                self.assertTrue(all(value is True for value in report[key].values()))
+        for key in ("paid_model_pilot_ready","worker_image_scientifically_approved",
+                    "production_scored_python_enabled","real_model_provider_called"):
+            self.assertIs(report[key],False)
+        self.assertTrue(report["docker_container_cleaned_after_probe"])
+        self.assertTrue(report["host_input_unchanged"])
+        self.assertTrue(report["hidden_gt_unchanged"])
+
     def test_probe_contains_only_owned_static_checks_no_backend_api(self):
         self.assertEqual(KNOWN_PROBE_ID,"g2-docker-kernel-probe-v0.1")
         self.assertNotIn("ifcopenshell",TRUSTED_PROBE)
@@ -210,7 +290,9 @@ class DockerStaticSecurityTests(unittest.TestCase):
 @unittest.skipUnless(LOCAL_IMAGE,"Set BIM_BENCH_DOCKER_PROBE_IMAGE_SHA for live OS smoke test")
 class LiveDockerProbeTests(unittest.TestCase):
     def test_restrictions_verified_against_real_docker_kernel(self):
-        result=run_trusted_docker_probe(DockerProbePolicy(LOCAL_IMAGE))
+        result=run_trusted_docker_probe(DockerProbePolicy(
+            LOCAL_IMAGE,python_entrypoint=LOCAL_ENTRYPOINT
+        ))
         self.assertEqual(result["status"],"KERNEL_ISOLATION_PROBE_PASS")
         self.assertEqual(len(result["independent_created_host_config_checks"]),15)
         self.assertTrue(all(result["independent_created_host_config_checks"].values()))
@@ -227,7 +309,8 @@ class LiveDockerProbeTests(unittest.TestCase):
     def test_live_enforce_gate_returns_two_even_after_successful_probe(self):
         result=subprocess.run(
             [sys.executable,"-m","tools.verify_docker_sandbox",
-             "--image-id",LOCAL_IMAGE,"--enforce-live"],
+             "--image-id",LOCAL_IMAGE,
+             "--python-entrypoint",LOCAL_ENTRYPOINT,"--enforce-live"],
             cwd=ROOT,capture_output=True,text=True,timeout=35
         )
         self.assertEqual(result.returncode,2,result.stderr)

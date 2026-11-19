@@ -1,0 +1,464 @@
+{
+  "distinct_public_git_sha1_oids": 25,
+  "distinct_unverified_lfs_sha256_pointers": 6,
+  "exact_input_paths": 25,
+  "external_steward_questions": [
+    "Are two different IFC paths variants of the same underlying building or project?",
+    "Which verified original IFC content SHA256 matches each public pinned file?",
+    "Who can verify creator consent, embedded third-party content and per-file attribution?",
+    "Is a named provider permitted to receive and retain/delete the specific IFC under its stated terms?",
+    "Can a separately access-controlled reviewer seal source lineage and hidden reference scoring without developer exposure?"
+  ],
+  "filename_clue_group_count_not_independent_sources": 23,
+  "filenames_suggesting_cross_path_lineage_review": [
+    {
+      "filename_stem_clue": "simple/task002",
+      "interpretation": "UNVERIFIED_FILENAME_HEURISTIC_NOT_CONFIRMED_COMMON_SOURCE",
+      "public_input_paths_needing_independent_lineage_review": [
+        "simple/task002-create-input.ifc",
+        "simple/task002-delete-input.ifc"
+      ]
+    },
+    {
+      "filename_stem_clue": "simple/task007",
+      "interpretation": "UNVERIFIED_FILENAME_HEURISTIC_NOT_CONFIRMED_COMMON_SOURCE",
+      "public_input_paths_needing_independent_lineage_review": [
+        "simple/task007-create-input.ifc",
+        "simple/task007-update-input.ifc"
+      ]
+    }
+  ],
+  "nonclaims": [
+    "Git SHA1 OIDs are publisher source-tree metadata, not hashes checked against local IFC bytes",
+    "Only 6 LFS SHA256 pointers in this pilot, and none were verified against downloaded bytes",
+    "A filename stem is not proof of source lineage: 23 clue-groups are NOT 23 independent buildings",
+    "No unseen source/blind cohort, dataset rights, official scorer release or external provider authorization certified",
+    "No original IFC, reference IFC, private grader, task prompt or target GUID opened by this review"
+  ],
+  "per_original_ifc_rights_verified": 0,
+  "pinned_36_pilot_task_count": 36,
+  "pinned_input_sha256": {
+    "existing_rights_ledger": "43f85c4ebf17184bfaea3fa749b565337e34f4fd397ec1b9536a8f242b2add06",
+    "original_source_path_report": "6511d1f3783b9f031bd80060ce3e751730839683a9f2a7cc1ce2bd9f95ca9d01",
+    "public_remote_tree": "f1b150a576f3d72045819768215c34fd84602ab4f6a5f4d2f0202a0ae3a92a39"
+  },
+  "public_git_sha1_oid_count": 25,
+  "review_queue": [
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task002",
+      "public_git_oid_sha1_unverified_for_ifc_content": "7ff1685d56c9749b8935ed5fbf88c4c731632c65",
+      "public_input_path": "simple/task002-create-input.ifc",
+      "public_task_ids": [
+        "DOR-CRE-DIR-A-001"
+      ],
+      "recommended_review_priority": "cross_path_stem_match",
+      "remote_metadata_size_bytes": 411901,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task002",
+      "public_git_oid_sha1_unverified_for_ifc_content": "925d8290c5ea331a0dfdcfe32a7188cc593a33b9",
+      "public_input_path": "simple/task002-delete-input.ifc",
+      "public_task_ids": [
+        "DOR-DEL-DIR-A-001"
+      ],
+      "recommended_review_priority": "cross_path_stem_match",
+      "remote_metadata_size_bytes": 136436,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task007",
+      "public_git_oid_sha1_unverified_for_ifc_content": "ec7ac566a0705a9f2a24bec696a696e70ccda67a",
+      "public_input_path": "simple/task007-create-input.ifc",
+      "public_task_ids": [
+        "WIN-CRE-DIR-A-001"
+      ],
+      "recommended_review_priority": "cross_path_stem_match",
+      "remote_metadata_size_bytes": 144983,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task007",
+      "public_git_oid_sha1_unverified_for_ifc_content": "abd50ee7df6433a82d008b0fd13fbfe7dce73573",
+      "public_input_path": "simple/task007-update-input.ifc",
+      "public_task_ids": [
+        "WIN-UPD-DIR-A-002"
+      ],
+      "recommended_review_priority": "cross_path_stem_match",
+      "remote_metadata_size_bytes": 150487,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/9517aa154f71.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "3a5746772684cfa696a77b4f1a3ebff78cbbbc53",
+      "public_input_path": "complex/9517aa154f71.ifc",
+      "public_task_ids": [
+        "SLB-DEL-SPA-R-003",
+        "SLB-DEL-TOP-R-003",
+        "SLB-UPD-TOP-R-003",
+        "WAL-DEL-TOP-R-003",
+        "WAL-UPD-DIR-R-003",
+        "WAL-UPD-SPA-R-003",
+        "WAL-UPD-TOP-R-003"
+      ],
+      "recommended_review_priority": "reused_exact_input_path",
+      "remote_metadata_size_bytes": 5328401,
+      "task_count": 7,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task004",
+      "public_git_oid_sha1_unverified_for_ifc_content": "240abb153ea69c6997d2c62ffe0d13990159fa30",
+      "public_input_path": "simple/task004-create-ground-truth.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-A-001",
+        "ROM-UPD-DIR-A-001",
+        "ROM-UPD-SPA-A-001"
+      ],
+      "recommended_review_priority": "reused_exact_input_path",
+      "remote_metadata_size_bytes": 133616,
+      "task_count": 3,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": "848966a8e7af67cbebceeccc25c1fba292178268dd8224d6ade0a4583f9f6b08",
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/9d81a20e025d",
+      "public_git_oid_sha1_unverified_for_ifc_content": "73ed060acbec1a443ce38dec438d57194cd13cd8",
+      "public_input_path": "complex/9d81a20e025d-create-input.ifc",
+      "public_task_ids": [
+        "WAL-CRE-SPA-R-002",
+        "WAL-CRE-TOP-R-002"
+      ],
+      "recommended_review_priority": "reused_exact_input_path",
+      "remote_metadata_size_bytes": 47021412,
+      "task_count": 2,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/06_input.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "8f178b3ee357fb1885d8768a12e44a866a03c408",
+      "public_input_path": "simple/06_input.ifc",
+      "public_task_ids": [
+        "WIN-DEL-SPA-A-002",
+        "WIN-DEL-TOP-A-002"
+      ],
+      "recommended_review_priority": "reused_exact_input_path",
+      "remote_metadata_size_bytes": 239591,
+      "task_count": 2,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task001",
+      "public_git_oid_sha1_unverified_for_ifc_content": "f74d4456941945fb582a7a334c69e1ea4c9446da",
+      "public_input_path": "simple/task001-create-ground-truth.ifc",
+      "public_task_ids": [
+        "WAL-DEL-TOP-A-001",
+        "WAL-UPD-TOP-A-001"
+      ],
+      "recommended_review_priority": "reused_exact_input_path",
+      "remote_metadata_size_bytes": 408236,
+      "task_count": 2,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": "e24ab42577bf489ec3ee86a1728e4560b92bb2468a981f314ebf3931447e92e8",
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/0e29802b440f",
+      "public_git_oid_sha1_unverified_for_ifc_content": "f9def27bcceb8c4389e3425a2029504911dec332",
+      "public_input_path": "complex/0e29802b440f-input-create_wall.ifc",
+      "public_task_ids": [
+        "WAL-CRE-DIR-R-001"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 224946499,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/354198cb90b3.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "cb149d7e298d75872158d9c82b758a05111fdb8f",
+      "public_input_path": "complex/354198cb90b3.ifc",
+      "public_task_ids": [
+        "ROM-CRE-SPA-R-003"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 5320714,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/3d3be0535ad2.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "8c821ee5357c1e8bbd5d12ab85e6a2228cda1255",
+      "public_input_path": "complex/3d3be0535ad2.ifc",
+      "public_task_ids": [
+        "WAL-CRE-DIR-R-004"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 5252946,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/605ddb973206.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "e37aebe04d4e204c1fe7ac7f4835ec53d892637d",
+      "public_input_path": "complex/605ddb973206.ifc",
+      "public_task_ids": [
+        "WAL-UPD-DIR-R-004"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 5258250,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": "4dd25071cba83443a8d729b2cf149c7855bcdbfe8d77d674fa04c5d7ca377b79",
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/65dc48e7147a",
+      "public_git_oid_sha1_unverified_for_ifc_content": "1725bfc7044ba6dff0848b317321ec8bd7e976c9",
+      "public_input_path": "complex/65dc48e7147a-update-input.ifc",
+      "public_task_ids": [
+        "SLB-UPD-SPA-R-002"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 154677453,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": "706d9295bc26b64025172c2d40f6c0fb656ffe132ae57555da852a69d3565d61",
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/6dc4da160a96.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "4ed3238a27149906f7e5b2bf1cb956175cc763e6",
+      "public_input_path": "complex/6dc4da160a96.ifc",
+      "public_task_ids": [
+        "ROM-DEL-SPA-R-001"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 148917608,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": "2a04d35994be3814b89303b84457a5b82bfef55b5a83e398414e3de0f290c6c4",
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/91ced022fd65",
+      "public_git_oid_sha1_unverified_for_ifc_content": "d71c5e7dcedb88aefa3ae9c9f2ad97216e0e9266",
+      "public_input_path": "complex/91ced022fd65-create-ground-truth.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-R-002"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 12157617,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": "601ae334e7e9df3b16c190f32f161c04e8cd4a9c3cfd56b30a308c92e01a8f4f",
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/9fc9f7d62d4a",
+      "public_git_oid_sha1_unverified_for_ifc_content": "62b9c2a095db3ac2e9ef2d44d836a0e964c05929",
+      "public_input_path": "complex/9fc9f7d62d4a-create-input.ifc",
+      "public_task_ids": [
+        "WIN-CRE-TOP-R-001"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 161247958,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "complex/e32c75df5608.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "b5eb028f92bca09f26381cc65562e1f6984c0816",
+      "public_input_path": "complex/e32c75df5608.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-R-004"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 4716346,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/01_input.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "802dbf7d81d3690b76071d5d50bd57dbb54ad445",
+      "public_input_path": "simple/01_input.ifc",
+      "public_task_ids": [
+        "WAL-CRE-SPA-A-003"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 110571,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/04_input.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "5445da6bc370c4838d5da52283454a407234313e",
+      "public_input_path": "simple/04_input.ifc",
+      "public_task_ids": [
+        "DOR-CRE-TOP-A-002"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 195305,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/05_input.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "7fbef2e2fce60ed065808c9a05eece857a78e67e",
+      "public_input_path": "simple/05_input.ifc",
+      "public_task_ids": [
+        "WIN-UPD-SPA-A-003"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 226070,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/14_input.ifc",
+      "public_git_oid_sha1_unverified_for_ifc_content": "74c34dda0db8ba1eaa0ac4fca7ba5a369410b8d0",
+      "public_input_path": "simple/14_input.ifc",
+      "public_task_ids": [
+        "ROM-UPD-TOP-A-003"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 159559,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task003",
+      "public_git_oid_sha1_unverified_for_ifc_content": "a257c70fb18ed826d59b5109a29f0b6e18fee6ec",
+      "public_input_path": "simple/task003-create-input.ifc",
+      "public_task_ids": [
+        "SLB-CRE-SPA-A-001"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 118800,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task005",
+      "public_git_oid_sha1_unverified_for_ifc_content": "d3d42a9b22c96b2d8bce51ff46a466157ed8a9dd",
+      "public_input_path": "simple/task005-create-ground-truth.ifc",
+      "public_task_ids": [
+        "COL-DEL-SPA-A-001"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 132873,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    },
+    {
+      "explicit_provider_transfer_retention_approved": false,
+      "lfs_sha256_pointer_not_byte_verified": null,
+      "per_file_rights_verified": false,
+      "potential_filename_family_label_not_certified": "simple/task009",
+      "public_git_oid_sha1_unverified_for_ifc_content": "dec01083cd57f5f79635d64880ab9f381536f7d6",
+      "public_input_path": "simple/task009-create-input.ifc",
+      "public_task_ids": [
+        "ROM-CRE-TOP-A-002"
+      ],
+      "recommended_review_priority": "single_pilot_task",
+      "remote_metadata_size_bytes": 141666,
+      "task_count": 1,
+      "verified_original_building_lineage": null,
+      "verified_original_ifc_sha256": null
+    }
+  ],
+  "source_building_lineages_independently_verified": 0,
+  "source_ifc_content_sha256_independently_verified": 0,
+  "trial_launch_authorized": false,
+  "unverified_lfs_sha256_pointer_count": 6,
+  "verdict": "EXTERNAL_REVIEW_QUEUE_ONLY_ALL_DATA_RIGHTS_AND_SOURCE_LINEAGE_BLOCKED"
+}

@@ -1,0 +1,882 @@
+{
+  "I_only_extra_api_notes": {
+    "billable_provider_tokens": null,
+    "provider_input_tokens": null,
+    "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+    "unicode_codepoints": 1111,
+    "utf8_bytes": 1113
+  },
+  "actual_independent_d_and_i_source_text_matches": 30,
+  "actual_model_prompt_transport_verified": false,
+  "all_36_original_tasks_eligible_for_live_trial": false,
+  "all_model_visible_documents_identical_between_arms": false,
+  "cached_input_tasks": 30,
+  "cached_input_tasks_not_validated": 0,
+  "distinct_original_input_paths": 25,
+  "fixed_draft_two_arm_protocol": [
+    "direct_xml",
+    "imperative_python"
+  ],
+  "frozen_candidate_sha256": "75b4847814dbefad95340556c0b62f9cda72cac319cd82ecb23ea4933c9ab694",
+  "gate": "BLOCKED_INFORMATION_AND_TOOL_PARITY_NOT_ESTABLISHED",
+  "independent_executable_tool_budget_fairness_verified": false,
+  "missing_input_tasks": 6,
+  "model_launch_allowed": false,
+  "new_three_arm_stager_labels": [
+    "D_FULL",
+    "D_MANAGED",
+    "I_NATIVE"
+  ],
+  "nonclaims": [
+    "Common XML/source text equality does not prove source model semantic fidelity or native IFC capability parity",
+    "I exposes extra IfcOpenShell API notes; D uses XML file edits, I uses code submission: neither is an identical tool",
+    "Three-arm D_FULL/D_MANAGED/I_NATIVE staged labels are not the approved two-arm direct_xml/imperative_python protocol",
+    "UTF8 byte limits and configured token ceilings are not actual tokenizer/provider input or output tokens",
+    "Six tasks with unavailable original inputs remain in all fixed study denominators",
+    "No GT/model-generated code/LLM/provider request or official benchmark evaluator was invoked"
+  ],
+  "official_benchmark_tasks_scored": 0,
+  "per_task_source_only_metadata": [
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 133,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "d66d13ca0b95a675386f9c5360976932bf7f3d331bb78fca03481a974449ee58",
+      "shared_source_xml_utf8_bytes": 624,
+      "source_ifc_byte_sha256": "88de67de1f28a64ce0f1ca7eb330a129178ae7a97f52cdeddf0bc1de033cc0a3",
+      "source_ifc_bytes": 132873,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "COL-DEL-SPA-A-001",
+      "total_common_text_utf8_bytes": 8221
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 496,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "c2b3cd99937747bbb3a7113fafcf70db1102594b44090314db327550a56995c7",
+      "shared_source_xml_utf8_bytes": 3769,
+      "source_ifc_byte_sha256": "80657019b6eaed8efacf74fa04e7b2b9ce3e2eb094d5274bf107a13a26f117a0",
+      "source_ifc_bytes": 411901,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "DOR-CRE-DIR-A-001",
+      "total_common_text_utf8_bytes": 11729
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 249,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "9302d81ef34dc7f3b28851e177f3951e6fff6126749364500e0cc7c561d41d67",
+      "shared_source_xml_utf8_bytes": 3476,
+      "source_ifc_byte_sha256": "4edfd5c016bff2608708437cfd295ffd4da25822afe53dd4239346eaa1439348",
+      "source_ifc_bytes": 195305,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "DOR-CRE-TOP-A-002",
+      "total_common_text_utf8_bytes": 11189
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 291,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "cbe86d234bc617f2e3dccee2ea8fc027a469fd5ed4b1ee152e208d964ce845e3",
+      "shared_source_xml_utf8_bytes": 3181,
+      "source_ifc_byte_sha256": "170d9ed9c10a31d86c3ff2207a450fd552166af21472486f11004f6e2b14defb",
+      "source_ifc_bytes": 136436,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "DOR-DEL-DIR-A-001",
+      "total_common_text_utf8_bytes": 10936
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 235,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "8c7d9ca24c2f5dcf8b179e48e5420b2f1da9c39435530383ff9942c26a2f6d63",
+      "shared_source_xml_utf8_bytes": 4313,
+      "source_ifc_byte_sha256": "dc85fb9a923dc87a303d8f2d360baed9a9215c5b637557e1f5a482251366a70d",
+      "source_ifc_bytes": 5320714,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-CRE-SPA-R-003",
+      "total_common_text_utf8_bytes": 12012
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 200,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "55bf2a724970a4970f8b01996e78f9a26744effc22a8b31f946cd6d0db2edc4c",
+      "shared_source_xml_utf8_bytes": 3813,
+      "source_ifc_byte_sha256": "03e4f92c6434e74d1166a3293b835fe9de790e8d80f05c4898bb4991eb8a685b",
+      "source_ifc_bytes": 141666,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-CRE-TOP-A-002",
+      "total_common_text_utf8_bytes": 11477
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 287,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "5f4f0bac57ef88454d7007a620b453f6ecfa760b6cbd12aec9643f1865a82cef",
+      "shared_source_xml_utf8_bytes": 2899,
+      "source_ifc_byte_sha256": "2b717cd6c3d9b73c8f0cba12843280d425b277e3d8e1a4b0377c91e74e9144bf",
+      "source_ifc_bytes": 133616,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-DEL-DIR-A-001",
+      "total_common_text_utf8_bytes": 10650
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 354,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "1fe9790b0690f9b37398578d7ad3681264e1cf87b2a892d44b2b6471c4a4ccb5",
+      "shared_source_xml_utf8_bytes": 6892,
+      "source_ifc_byte_sha256": "2a04d35994be3814b89303b84457a5b82bfef55b5a83e398414e3de0f290c6c4",
+      "source_ifc_bytes": 12157617,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-DEL-DIR-R-002",
+      "total_common_text_utf8_bytes": 14710
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 296,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "e5845e763faf647543b63b2bc7a214d04cad723294c630ec34a885cb703ff7a5",
+      "shared_source_xml_utf8_bytes": 11503,
+      "source_ifc_byte_sha256": "100688f9eea150557cad1a985fe000a97a2007224d2c247b67bb171d25c239b1",
+      "source_ifc_bytes": 4716346,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-DEL-DIR-R-004",
+      "total_common_text_utf8_bytes": 19263
+    },
+    {
+      "shared_source_text_sha256": null,
+      "source_is_other_task_reference_path": true,
+      "status": "BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID",
+      "task_id": "ROM-DEL-SPA-R-001",
+      "total_common_text_utf8_bytes": null
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 339,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "5f4f0bac57ef88454d7007a620b453f6ecfa760b6cbd12aec9643f1865a82cef",
+      "shared_source_xml_utf8_bytes": 2899,
+      "source_ifc_byte_sha256": "2b717cd6c3d9b73c8f0cba12843280d425b277e3d8e1a4b0377c91e74e9144bf",
+      "source_ifc_bytes": 133616,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-UPD-DIR-A-001",
+      "total_common_text_utf8_bytes": 10702
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 147,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "5f4f0bac57ef88454d7007a620b453f6ecfa760b6cbd12aec9643f1865a82cef",
+      "shared_source_xml_utf8_bytes": 2899,
+      "source_ifc_byte_sha256": "2b717cd6c3d9b73c8f0cba12843280d425b277e3d8e1a4b0377c91e74e9144bf",
+      "source_ifc_bytes": 133616,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-UPD-SPA-A-001",
+      "total_common_text_utf8_bytes": 10510
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 258,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "5010ecab70f8d25878f06e1d904e850c54d51cbfa9586d47f63bd09f0bbaa68a",
+      "shared_source_xml_utf8_bytes": 957,
+      "source_ifc_byte_sha256": "ea1a4dcb18c621fde9079c57145a77b07327441b6305aed0e6504d84952e7985",
+      "source_ifc_bytes": 159559,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "ROM-UPD-TOP-A-003",
+      "total_common_text_utf8_bytes": 8679
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 104,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "6d6a729fdd068137264da8fd9cb095a8c07b99a2de4619fbc8ec1555ce6ef7dd",
+      "shared_source_xml_utf8_bytes": 1474,
+      "source_ifc_byte_sha256": "02f704673f0ca96afa9bc548508811fd1a5da6a292100a2ed2ab1f2f92104a18",
+      "source_ifc_bytes": 118800,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "SLB-CRE-SPA-A-001",
+      "total_common_text_utf8_bytes": 9042
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 154,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "source_ifc_bytes": 5328401,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "SLB-DEL-SPA-R-003",
+      "total_common_text_utf8_bytes": 12104
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 154,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "source_ifc_bytes": 5328401,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "SLB-DEL-TOP-R-003",
+      "total_common_text_utf8_bytes": 12104
+    },
+    {
+      "shared_source_text_sha256": null,
+      "source_is_other_task_reference_path": false,
+      "status": "BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID",
+      "task_id": "SLB-UPD-SPA-R-002",
+      "total_common_text_utf8_bytes": null
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 232,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "source_ifc_bytes": 5328401,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "SLB-UPD-TOP-R-003",
+      "total_common_text_utf8_bytes": 12182
+    },
+    {
+      "shared_source_text_sha256": null,
+      "source_is_other_task_reference_path": false,
+      "status": "BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID",
+      "task_id": "WAL-CRE-DIR-R-001",
+      "total_common_text_utf8_bytes": null
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 501,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "f20542a7f8f63679cbf4dce4f11b085e0bc81b29f8c4311eca30ada14bf7dcd1",
+      "shared_source_xml_utf8_bytes": 30043,
+      "source_ifc_byte_sha256": "23303179788b70d10b3b2754ade6a10797f594f08c4ba1262b1d098f7c181ae7",
+      "source_ifc_bytes": 5252946,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-CRE-DIR-R-004",
+      "total_common_text_utf8_bytes": 38008
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 313,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "63256657f665c268ada86a8f8344a9629c66747e5f0b029378d05de6c2b8c02f",
+      "shared_source_xml_utf8_bytes": 2684,
+      "source_ifc_byte_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+      "source_ifc_bytes": 110571,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-CRE-SPA-A-003",
+      "total_common_text_utf8_bytes": 10461
+    },
+    {
+      "shared_source_text_sha256": null,
+      "source_is_other_task_reference_path": true,
+      "status": "BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID",
+      "task_id": "WAL-CRE-SPA-R-002",
+      "total_common_text_utf8_bytes": null
+    },
+    {
+      "shared_source_text_sha256": null,
+      "source_is_other_task_reference_path": true,
+      "status": "BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID",
+      "task_id": "WAL-CRE-TOP-R-002",
+      "total_common_text_utf8_bytes": null
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 220,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "a558093e482acfedf58cf0d471b90dd998b9965c043effef072690f739987a90",
+      "shared_source_xml_utf8_bytes": 2899,
+      "source_ifc_byte_sha256": "6cf0f8b8c77241f215afdd1796626b1138ad4d3224425d2b446242e4560b3f3a",
+      "source_ifc_bytes": 408236,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-DEL-TOP-A-001",
+      "total_common_text_utf8_bytes": 10583
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 150,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "source_ifc_bytes": 5328401,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-DEL-TOP-R-003",
+      "total_common_text_utf8_bytes": 12100
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 127,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "source_ifc_bytes": 5328401,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-UPD-DIR-R-003",
+      "total_common_text_utf8_bytes": 12077
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 125,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "32591381b142483b19431cc42c2016431ae4c39239101afb895666ef907a2754",
+      "shared_source_xml_utf8_bytes": 30043,
+      "source_ifc_byte_sha256": "e2a63a8e29b43819960be1567b6c3e013483f54187675f3e5de70919f241d62c",
+      "source_ifc_bytes": 5258250,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-UPD-DIR-R-004",
+      "total_common_text_utf8_bytes": 37632
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 202,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "source_ifc_bytes": 5328401,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-UPD-SPA-R-003",
+      "total_common_text_utf8_bytes": 12152
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 233,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "a558093e482acfedf58cf0d471b90dd998b9965c043effef072690f739987a90",
+      "shared_source_xml_utf8_bytes": 2899,
+      "source_ifc_byte_sha256": "6cf0f8b8c77241f215afdd1796626b1138ad4d3224425d2b446242e4560b3f3a",
+      "source_ifc_bytes": 408236,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-UPD-TOP-A-001",
+      "total_common_text_utf8_bytes": 10596
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 219,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "source_ifc_bytes": 5328401,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WAL-UPD-TOP-R-003",
+      "total_common_text_utf8_bytes": 12169
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 475,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "172b51f8b6c010af5c0e323d8b3e5d3b4af865dcc6ce04044dacea39d755f229",
+      "shared_source_xml_utf8_bytes": 4201,
+      "source_ifc_byte_sha256": "bc30a74d2fa776a7dc9cd62589dc32582e8e4fce621fa62d69419ff7cc212083",
+      "source_ifc_bytes": 144983,
+      "source_is_other_task_reference_path": true,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WIN-CRE-DIR-A-001",
+      "total_common_text_utf8_bytes": 12140
+    },
+    {
+      "shared_source_text_sha256": null,
+      "source_is_other_task_reference_path": true,
+      "status": "BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID",
+      "task_id": "WIN-CRE-TOP-R-001",
+      "total_common_text_utf8_bytes": null
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 108,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "7510b939e67cab8704889e225a239341daea7b7be102aa7c89b7fc7866684b48",
+      "shared_source_xml_utf8_bytes": 1444,
+      "source_ifc_byte_sha256": "26cb13eb69b4b25a74b17475ccbc4458472327376dba727db095e50e9a55e9f7",
+      "source_ifc_bytes": 239591,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WIN-DEL-SPA-A-002",
+      "total_common_text_utf8_bytes": 9016
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 178,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "7510b939e67cab8704889e225a239341daea7b7be102aa7c89b7fc7866684b48",
+      "shared_source_xml_utf8_bytes": 1444,
+      "source_ifc_byte_sha256": "26cb13eb69b4b25a74b17475ccbc4458472327376dba727db095e50e9a55e9f7",
+      "source_ifc_bytes": 239591,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WIN-DEL-TOP-A-002",
+      "total_common_text_utf8_bytes": 9086
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 163,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "18cee5a4c9f6d86e3545adb0bdcd281526ad1cf59595ccd580f93887a9118d17",
+      "shared_source_xml_utf8_bytes": 4486,
+      "source_ifc_byte_sha256": "c533767f850a7ba01b73caf4467fae7cc886807a72a900d65cd480e7b877bcc9",
+      "source_ifc_bytes": 150487,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WIN-UPD-DIR-A-002",
+      "total_common_text_utf8_bytes": 12113
+    },
+    {
+      "D_native_ifc_model_completeness_verified": false,
+      "D_observed_allowed_authoring_actions": [
+        "read_text",
+        "patch_text",
+        "rewrite_xml_text"
+      ],
+      "I_observed_allowed_authoring_actions": [
+        "submit_python_text"
+      ],
+      "I_observed_executable_actions": [],
+      "I_only_extra_api_notes_utf8_bytes": 1113,
+      "actual_provider_tokens": null,
+      "actual_rendered_provider_prompt_bytes": null,
+      "both_arms_have_identical_model_visible_documents": false,
+      "shared_instruction_utf8_bytes": 181,
+      "shared_language_spec_utf8_bytes": 7383,
+      "shared_source_text_sha256": "db08278620fe8652e3cc778709fa84f7e3cd69e26686af6440f1913ee6b5ad6e",
+      "shared_source_xml_utf8_bytes": 794,
+      "source_ifc_byte_sha256": "522aa55959dc5b18e98c1c9cea917afea25fcbccb0f409b252c3a71cce963bc6",
+      "source_ifc_bytes": 226070,
+      "source_is_other_task_reference_path": false,
+      "status": "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE",
+      "task_id": "WIN-UPD-SPA-A-003",
+      "total_common_text_utf8_bytes": 8439
+    }
+  ],
+  "provider_spend_authorized": false,
+  "real_model_provider_called": false,
+  "same_effective_native_IFC_query_capability_verified": false,
+  "same_exact_provider_tokens_measured": false,
+  "same_feedback_and_retries_in_real_runner_verified": false,
+  "same_max_input_provider_tokens_configured": 20000,
+  "same_max_output_provider_tokens_configured": 6000,
+  "same_model_and_seed_verified": false,
+  "same_one_shot_attempts_and_180s": true,
+  "same_source_xml_text_for_verified_pairs": true,
+  "shared_max_utf8_submission_bytes": 32768,
+  "source_task_jsonl_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "status_counts": {
+    "BLOCKED_ORIGINAL_INPUT_MISSING_OR_INVALID": 6,
+    "COMMON_V01_SOURCE_TEXT_MATCHED_UNEQUAL_EXECUTION_AND_API_GUIDANCE": 30
+  },
+  "task_total": 36,
+  "three_arm_representation_semantics_preregistered": false,
+  "version": "pinned-bim-edit-36-current-d-i-information-and-tool-audit-v0.1"
+}

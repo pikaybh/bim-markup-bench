@@ -1,0 +1,69 @@
+{
+  "status": "DRAFT_3ARM_NOT_PREREGISTERED",
+  "proposal_id": "bim-edit-36-three-arm-candidate-v0",
+  "original_two_arm_plan_sha256": "dfc1b27ff933a73834c18d16b16e1ff822a729e801d70e26d4d4dd28efdf77a1",
+  "original_36_task_pilot_sha256": "75b4847814dbefad95340556c0b62f9cda72cac319cd82ecb23ea4933c9ab694",
+  "original_g3_source_differential_sha256": "c78650e8e30f50029237e927ae6006e18a92e9872416e9e75c03290db22abad8",
+  "arms": [
+    "D_FULL",
+    "D_MANAGED",
+    "I_NATIVE"
+  ],
+  "arm_contracts": {
+    "D_FULL": {
+      "input_view": "CURRENT_G2_V01_XML_SOURCE_PROJECTION",
+      "authoring": "XML_FILE_EDIT",
+      "api_guidance": "SHARED_XML_LANGUAGE_SPEC_ONLY",
+      "native_capability": "FULL_DECLARATIVE_NOT_IMPLEMENTED",
+      "tool_status": "NOT_APPROVED_FOR_BENCHMARK"
+    },
+    "D_MANAGED": {
+      "input_view": "CURRENT_G2_V01_XML_SOURCE_PROJECTION",
+      "authoring": "XML_FILE_EDIT",
+      "api_guidance": "SHARED_XML_LANGUAGE_SPEC_ONLY",
+      "native_capability": "MANAGED_AND_FULL_CONTRAST_NOT_VERIFIED",
+      "tool_status": "NOT_APPROVED_FOR_BENCHMARK"
+    },
+    "I_NATIVE": {
+      "input_view": "CURRENT_G2_V01_XML_SOURCE_PROJECTION",
+      "authoring": "PYTHON_TEXT_SUBMISSION",
+      "api_guidance": "SHARED_XML_SPEC_PLUS_I_ONLY_1113_BYTE_IFCOPENSHELL_REFERENCE",
+      "native_capability": "ORIGINAL_TASK_PYTHON_RUNNER_NOT_ENABLED",
+      "tool_status": "NOT_APPROVED_FOR_BENCHMARK"
+    }
+  },
+  "shared_limits": {
+    "max_attempts_per_task_arm": 1,
+    "max_wall_seconds_per_task_arm": 180,
+    "max_submission_utf8_bytes": 32768,
+    "max_model_input_tokens_per_attempt": 20000,
+    "max_model_output_tokens_per_attempt": 6000,
+    "max_model_authored_submissions": 1,
+    "feedback_rounds": 0,
+    "max_concurrent_model_calls": 1
+  },
+  "randomized_order": {
+    "seed": 1234,
+    "allocation": "BALANCED_6_PERMUTATIONS_REPEATED_6_TIMES",
+    "full_sample_includes_blocked": true
+  },
+  "provider": {
+    "provider_id": null,
+    "model_snapshot_id": null,
+    "verified_exact_tokenizer_revision": null,
+    "provider_usage_receipts": false,
+    "verified_price_revision": null,
+    "external_IFC_transfer_approved": false,
+    "maximum_total_spend_usd_authorized": false,
+    "paid_calls_enabled": false
+  },
+  "execution": {
+    "dataset_original_tasks": 36,
+    "available_source_rows": 30,
+    "missing_input_rows": 6,
+    "original_GT_opened": false,
+    "model_generated_code_enabled": false,
+    "experiment_registered": false,
+    "scientific_release_enabled": false
+  }
+}

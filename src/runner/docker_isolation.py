@@ -30,6 +30,8 @@ class DockerIsolationError(RuntimeError):
 
 IMAGE_ID=re.compile(r"^sha256:[0-9a-f]{64}$")
 KNOWN_PROBE_ID="g2-docker-kernel-probe-v0.1"
+# Two fixed, audited paths; never accept a caller-supplied arbitrary executable.
+PYTHON_ENTRYPOINTS=("/usr/bin/python3","/usr/local/bin/python3")
 TRUSTED_MARKER=b"BIM_MARKUP_BENCH_OWN_IMMUTABLE_PROBE_INPUT_V1"
 SECRET_NAMES=("OPENAI_API_KEY","AWS_SECRET_ACCESS_KEY","GITHUB_TOKEN",
               "GH_TOKEN","SSH_AUTH_SOCK","AZURE_CLIENT_SECRET")
@@ -80,6 +82,63 @@ print(json.dumps(evidence,sort_keys=True))
 '''
 
 
+def _make_trusted_pilot_probe() -> str:
+    """Reuse the vetted kernel checks, with an exact input/payload hash variant.
+
+    This script has NO programmable inputs other than fixed, public SHA256s.
+    It cannot import, evaluate or run the model's generated Python.
+    """
+    code=TRUSTED_PROBE
+    transformations=(
+        ("import json,os,socket", "import hashlib,json,os,socket"),
+        ("source=Path('/input/read_only_probe.txt')", "source=Path('/input/input.ifc')"),
+        ("source.read_bytes()==b'BIM_MARKUP_BENCH_OWN_IMMUTABLE_PROBE_INPUT_V1'",
+         "hashlib.sha256(source.read_bytes()).hexdigest()==os.environ.get('BIM_STAGE_SOURCE_SHA256')"),
+    )
+    for old,new in transformations:
+        if code.count(old)!=1:
+            raise DockerIsolationError("Trusted source-only pilot probe base drifted")
+        code=code.replace(old,new)
+    insert_before="Path('/output/probe_result.json').write_text"
+    if code.count(insert_before)!=1:
+        raise DockerIsolationError("Trusted source-only pilot probe output boundary drifted")
+    supplemental=r"""
+task_file=Path('/input/task.json')
+raw_payload=task_file.read_bytes()
+payload=json.loads(raw_payload.decode('utf-8'))
+input_entries=sorted(p.name for p in Path('/input').iterdir())
+safe_fields=(isinstance(payload,dict)
+             and set(payload)=={'task_id','instruction','input_file'}
+             and payload.get('input_file')=='input.ifc'
+             and isinstance(payload.get('task_id'),str)
+             and isinstance(payload.get('instruction'),str))
+evidence.update({
+    'only_staged_source_and_task_visible':input_entries==['input.ifc','task.json'],
+    'payload_sha256_matches_pinned_host':hashlib.sha256(raw_payload).hexdigest()==os.environ.get('BIM_STAGE_PAYLOAD_SHA256'),
+    'agent_fields_exactly_allowlisted':safe_fields,
+    'task_file_readonly':denied(lambda:task_file.write_text('ATTACK')),
+    'other_task_not_mounted':not Path('/other-task/marker').exists(),
+    'original_dataset_not_mounted':not Path('/repo/data/tasks.jsonl').exists(),
+    'reference_not_in_staged_directory':not Path('/input/ground_truth.ifc').exists(),
+})
+"""
+    code=code.replace(insert_before,supplemental+"\n"+insert_before)
+    return code
+
+
+TRUSTED_PILOT_INPUT_PROBE=_make_trusted_pilot_probe()
+PILOT_PROBE_ID="g2-pinned-bim-edit-input-mount-v0.1"
+PILOT_CHECK_NAMES=(
+    "only_staged_source_and_task_visible",
+    "payload_sha256_matches_pinned_host",
+    "agent_fields_exactly_allowlisted",
+    "task_file_readonly",
+    "other_task_not_mounted",
+    "original_dataset_not_mounted",
+    "reference_not_in_staged_directory",
+)
+
+
 @dataclass(frozen=True)
 class DockerProbePolicy:
     image_id:str
@@ -87,6 +146,7 @@ class DockerProbePolicy:
     pid_limit:int=16
     cpu_share:float=0.5
     wall_timeout_seconds:int=25
+    python_entrypoint:str="/usr/bin/python3"
 
     def __post_init__(self):
         if not isinstance(self.image_id,str) or not IMAGE_ID.fullmatch(self.image_id):
@@ -97,6 +157,8 @@ class DockerProbePolicy:
             raise DockerIsolationError("Probe cgroup limits must match frozen policy")
         if self.cpu_share!=0.5 or self.wall_timeout_seconds!=25:
             raise DockerIsolationError("Probe CPU/wall-time limits must match frozen policy")
+        if self.python_entrypoint not in PYTHON_ENTRYPOINTS:
+            raise DockerIsolationError("Probe Python entrypoint must be one of two fixed trusted paths")
 
 
 def _docker_binary()->str:
@@ -183,12 +245,15 @@ def build_probe_argv(binary:str,policy:DockerProbePolicy,
         "--workdir=/",
         "--env=HOME=/tmp",
         "--env=PYTHONDONTWRITEBYTECODE=1",
-        "--entrypoint=/usr/bin/python3",
+        "--entrypoint="+policy.python_entrypoint,
         policy.image_id,"-c",TRUSTED_PROBE,
     ]
 
 
-def _validate_created(container:dict,policy:DockerProbePolicy)->dict:
+def _validate_created(container:dict,policy:DockerProbePolicy,
+                      expected_probe:str=TRUSTED_PROBE)->dict:
+    if expected_probe not in (TRUSTED_PROBE,TRUSTED_PILOT_INPUT_PROBE):
+        raise DockerIsolationError("Unapproved probe program or model-generated code")
     h=container.get("HostConfig") or {}
     cfg=container.get("Config") or {}
     mounts=container.get("Mounts") or []
@@ -214,10 +279,72 @@ def _validate_created(container:dict,policy:DockerProbePolicy)->dict:
             line.split("=",1)[0] in SECRET_NAMES for line in cfg.get("Env",[])
         ),
         "trusted_probe_only":(
-            cfg.get("Entrypoint")==["/usr/bin/python3"]
-            and (cfg.get("Cmd") or [])==["-c",TRUSTED_PROBE]
+            cfg.get("Entrypoint")==[policy.python_entrypoint]
+            and (cfg.get("Cmd") or [])==["-c",expected_probe]
         ),
     }
+    return checks
+
+
+def build_pilot_input_probe_argv(
+    binary:str,policy:DockerProbePolicy,name:str,stage_root:Path,
+    output_root:Path,source_sha256:str,payload_sha256:str,
+)->list[str]:
+    """Construct *fixed trusted* source-input-only kernel probe, NEVER an LLM executor."""
+    for digest in (source_sha256,payload_sha256):
+        if not isinstance(digest,str) or not re.fullmatch(r"[0-9a-f]{64}",digest):
+            raise DockerIsolationError("Pinned task/source SHA256 missing or malformed")
+    argv=build_probe_argv(binary,policy,name,stage_root,output_root)
+    if argv[-1]!=TRUSTED_PROBE:
+        raise DockerIsolationError("Trusted probe base was unexpectedly replaced")
+    argv[-1]=TRUSTED_PILOT_INPUT_PROBE
+    idx=argv.index("--entrypoint="+policy.python_entrypoint)
+    argv[idx:idx]=[
+        "--env=BIM_STAGE_SOURCE_SHA256="+source_sha256,
+        "--env=BIM_STAGE_PAYLOAD_SHA256="+payload_sha256,
+    ]
+    return argv
+
+
+def _validate_pilot_created(
+    container:dict,policy:DockerProbePolicy,stage_root:Path,
+    output_root:Path,source_sha256:str,payload_sha256:str,
+)->dict:
+    """Independent created-container checks, including actual HOST source mount origins."""
+    checks=_validate_created(container,policy,TRUSTED_PILOT_INPUT_PROBE)
+    env=container.get("Config",{}).get("Env") or []
+    actual=[v for v in env if v.startswith("BIM_STAGE_")]
+    checks["only_expected_public_sha_env"]=sorted(actual)==sorted((
+        "BIM_STAGE_SOURCE_SHA256="+source_sha256,
+        "BIM_STAGE_PAYLOAD_SHA256="+payload_sha256,
+    ))
+    host_mounts=(container.get("HostConfig") or {}).get("Mounts") or []
+    observed=set()
+    for item in host_mounts:
+        if item.get("Type")!="bind":
+            observed.add(("INVALID",True,""))
+            continue
+        origin=item.get("Source","")
+        if not isinstance(origin,str) or not origin:
+            observed.add(("INVALID",True,""))
+            continue
+        # HostConfig.Mounts.Source preserves the original native host path.
+        observed.add((
+            item.get("Target"),
+            item.get("ReadOnly") is True,
+            str(Path(origin).resolve()).casefold(),
+        ))
+    expected={
+        ("/input",True,str(stage_root.resolve(strict=True)).casefold()),
+        ("/output",False,str(output_root.resolve(strict=True)).casefold()),
+    }
+    checks["exact_host_stage_and_output_mount_origins"]=(len(host_mounts)==2 and observed==expected)
+    return checks
+
+
+def _validate_pilot_runtime(data:dict,policy:DockerProbePolicy)->dict:
+    checks=_validate_runtime(data,policy)
+    checks.update({key:data.get(key) is True for key in PILOT_CHECK_NAMES})
     return checks
 
 
@@ -317,6 +444,8 @@ def run_trusted_docker_probe(policy:DockerProbePolicy)->dict:
                 "probe_id":KNOWN_PROBE_ID,
                 "status":"KERNEL_ISOLATION_PROBE_PASS",
                 "docker_server_version":_docker_version(binary),
+                "image_id":policy.image_id,
+                "python_entrypoint":policy.python_entrypoint,
                 "image_digest_matches_pinned_local_id":True,
                 "worker_image_scientifically_approved":False,
                 "production_scored_python_enabled":False,
@@ -336,6 +465,170 @@ def run_trusted_docker_probe(policy:DockerProbePolicy)->dict:
                 raise DockerIsolationError(
                     "Failed to remove own probe container after verification"
                 )
+
+
+def run_pinned_pilot_input_mount_probe(policy:DockerProbePolicy,root:Path)->dict:
+    """Use ONE original cached IFC solely as opaque bytes in three fixed trusted probes.
+
+    Strict read-only Docker local-engine mount proof; no model-generated code,
+    no GT/evaluator access, no network, no inference and no IFC parsing.
+    """
+    from src.data.bim_edit import repo_asset_path
+    from src.data.pilot_workspace import (
+        _frozen_inputs, pilot_staging_preflight, stage_verified_pilot_input
+    )
+
+    root=root.resolve(strict=True)
+    if not root.is_dir() or not (root/"AGENTS.md").is_file():
+        raise DockerIsolationError("Not the established frozen research checkout")
+    statuses=pilot_staging_preflight(root)
+    if (statuses["original_tasks"]!=36 or statuses["input_available_tasks"]!=30
+            or statuses["blocked_input_tasks"]!=6
+            or statuses["llm_launch_allowed"] is not False):
+        raise DockerIsolationError("Original full-denominator pilot admission unexpectedly changed")
+    selected,audited,_,_=_frozen_inputs(root)
+    # Exercise a REAL original source also used as another task's GT by filename.
+    # It is accessed exclusively in this task's own INPUT role, as opaque bytes.
+    task_id=next((
+        tid for tid in sorted(selected)
+        if statuses["task_status"][tid]=="STAGING_INPUT_AVAILABLE_NO_LAUNCH"
+        and audited[repo_asset_path(selected[tid]["input_ifc"])].get(
+            "is_cross_task_reference_alias_in_original_324"
+        ) is True
+    ),None)
+    if task_id is None:
+        raise DockerIsolationError("No pinned, cached cross-task-reference-alias input")
+    _ensure_cached_image(_docker_binary(),policy.image_id)
+    binary=_docker_binary()
+    arm_results=[]
+    source_shas=set()
+    payload_shas=set()
+    with tempfile.TemporaryDirectory(prefix="bim-bench-pilot-mount-trusted-") as tmp:
+        work=Path(tmp)
+        scratch=work/"staged"
+        scratch.mkdir()
+        # OWN fake canaries are outside all Docker mounts, not real reference assets.
+        canary_dirs=(work/"grader",work/"other-task",work/"repo"/"data")
+        for folder in canary_dirs:
+            folder.mkdir(parents=True)
+        canaries=(
+            (canary_dirs[0]/"ground_truth.ifc",b"OWN_FAKE_REFERENCE_NOT_MOUNTED"),
+            (canary_dirs[1]/"marker",b"OWN_FAKE_OTHER_TASK_NOT_MOUNTED"),
+            (canary_dirs[2]/"tasks.jsonl",b"OWN_FAKE_FULL_CORPUS_NOT_MOUNTED"),
+        )
+        for file,contents in canaries:
+            file.write_bytes(contents)
+        originals={str(file):sha256(file.read_bytes()).hexdigest()
+                   for file,_ in canaries}
+        for arm in statuses["arms"]:
+            stage=stage_verified_pilot_input(root,scratch,task_id,arm)
+            stage_file=stage.workspace/"input.ifc"
+            payload_file=stage.workspace/"task.json"
+            source_digest=stage.source_byte_sha256
+            task_digest=sha256(payload_file.read_bytes()).hexdigest()
+            if sha256(stage_file.read_bytes()).hexdigest()!=source_digest:
+                raise DockerIsolationError("Original pinned source copy digest changed")
+            source_shas.add(source_digest)
+            payload_shas.add(task_digest)
+            output=work/("out-"+arm)
+            output.mkdir(mode=0o777)
+            output.chmod(0o777)
+            name="bim-bench-probe-"+uuid.uuid4().hex[:16]
+            argv=build_pilot_input_probe_argv(
+                binary,policy,name,stage.workspace,output,source_digest,task_digest
+            )
+            container_id=None
+            try:
+                created=_invoke(argv,timeout=15)
+                if created.returncode!=0:
+                    raise DockerIsolationError("Trusted pilot source-only container create failed")
+                container_id=created.stdout.strip()
+                if not re.fullmatch(r"[0-9a-f]{64}",container_id):
+                    raise DockerIsolationError("Untrusted container identifier")
+                inspection=_invoke([binary,"inspect",container_id],timeout=10)
+                if inspection.returncode!=0:
+                    raise DockerIsolationError("Cannot inspect created source-only container")
+                try:
+                    records=json.loads(inspection.stdout)
+                except (TypeError,ValueError) as exc:
+                    raise DockerIsolationError("Invalid Docker inspect JSON") from exc
+                if not isinstance(records,list) or len(records)!=1:
+                    raise DockerIsolationError("Docker inspect must return exactly one container")
+                config_checks=_validate_pilot_created(
+                    records[0],policy,stage.workspace,output,source_digest,task_digest
+                )
+                if not all(config_checks.values()):
+                    raise DockerIsolationError(
+                        "Pinned pilot Docker HostConfig, mount origin or env policy violated"
+                    )
+                started=_invoke(
+                    [binary,"start","--attach",container_id],
+                    timeout=policy.wall_timeout_seconds
+                )
+                if started.returncode!=0:
+                    raise DockerIsolationError("Fixed pilot mount probe process failed")
+                try:
+                    run=json.loads(started.stdout.strip())
+                except (ValueError,TypeError) as exc:
+                    raise DockerIsolationError("Invalid trusted pilot probe stdout") from exc
+                evidence=output/"probe_result.json"
+                if (evidence.is_symlink() or not evidence.is_file()
+                        or {f.name for f in output.iterdir()}!={"probe_result.json"}):
+                    raise DockerIsolationError("Unexpected or missing trusted pilot output")
+                if json.loads(evidence.read_text(encoding="utf8"))!=run:
+                    raise DockerIsolationError("Container stdout and output evidence disagree")
+                runtime_checks=_validate_pilot_runtime(run,policy)
+                if not all(runtime_checks.values()):
+                    raise DockerIsolationError("Actual OS or task-isolation restriction failed")
+                if (sha256(stage_file.read_bytes()).hexdigest()!=source_digest
+                        or sha256(payload_file.read_bytes()).hexdigest()!=task_digest):
+                    raise DockerIsolationError("Staged input or sanitized task mutated")
+                arm_results.append({
+                    "arm":arm,
+                    "staged_source_sha256":source_digest,
+                    "staged_payload_sha256":task_digest,
+                    "container_prestart_checks":config_checks,
+                    "actual_kernel_and_task_file_checks":runtime_checks,
+                    "original_staged_files_unchanged":True,
+                    "passed":True,
+                })
+            finally:
+                cleanup=_invoke([binary,"rm","--force",name],timeout=12)
+                if container_id and cleanup.returncode!=0:
+                    raise DockerIsolationError("Failed cleaning own trusted pilot probe container")
+        if len(source_shas)!=1 or len(payload_shas)!=1 or len(arm_results)!=3:
+            raise DockerIsolationError("Paired arm task input or prompt differs")
+        for file,_ in canaries:
+            if sha256(file.read_bytes()).hexdigest()!=originals[str(file)]:
+                raise DockerIsolationError("Unmounted original fake reference canary modified")
+
+    return {
+        "probe_id":PILOT_PROBE_ID,
+        "status":"PINNED_PILOT_DOCKER_INPUT_MOUNT_PROBE_PASS",
+        "original_pilot_denominator":36,
+        "locally_ready_task_rows":30,
+        "missing_or_blocked_task_rows":6,
+        "single_pinned_task_id":task_id,
+        "input_also_other_task_reference_path":True,
+        "arm_count":len(arm_results),
+        "same_original_IFC_sha256_across_arms":True,
+        "same_sanitized_prompt_sha256_across_arms":True,
+        "image_id":policy.image_id,
+        "python_entrypoint":policy.python_entrypoint,
+        "docker_server_version":_docker_version(binary),
+        "arm_probes":arm_results,
+        "OWN_hidden_reference_and_other_task_canaries_unchanged":True,
+        "temporary_task_workspaces_and_containers_cleaned":True,
+        "original_IFC_native_geometry_parsed":False,
+        "original_GT_role_file_opened":False,
+        "official_tasks_scored":0,
+        "model_generated_python_executed":False,
+        "real_model_provider_called":False,
+        "rights_for_model_provider_verified":False,
+        "worker_image_scientifically_approved":False,
+        "paid_model_pilot_ready":False,
+        "production_scored_python_enabled":False,
+    }
 
 
 def _docker_version(binary:str)->str:
