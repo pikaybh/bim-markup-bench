@@ -1,0 +1,65 @@
+{
+  "alternative_IFC_full_original_SPF_semantic_payload_invertibly_same": true,
+  "alternative_IFC_geometry_same": true,
+  "alternative_IFC_natively_reopened": true,
+  "cases": [
+    {
+      "already_developer_exposed_original_task": "geometry_test_03",
+      "input_source_IFC_preserved_by_sha": true,
+      "native_original_wall_CSG_cut_m3": 0.418,
+      "original_source_sha256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "same_native_IFC_after_one_to_one_STEP_ID_only_relabel": {
+        "native_IFC_schema_error_delta": 0,
+        "native_geometry_products_physically_equal": 5,
+        "native_root_STEP_IDs_reassigned": 57,
+        "native_root_guids_and_classes_preserved": 57,
+        "native_schema_identifier": "IFC2X3",
+        "native_total_ifc_entities": 212,
+        "original_result_and_alternative_ROOT_semantics_equal": true,
+        "source_semantic_payload_inverse_byte_identical": true
+      },
+      "v065_rejection_reason": "ALL ORIGINAL native STEP IDs, geometry and attributes must remain",
+      "v065_strict_gate_rejects_legal_reencoding": true,
+      "v065_strict_original_D_full_gate_passed": true
+    },
+    {
+      "already_developer_exposed_original_task": "topological_test_05",
+      "input_source_IFC_preserved_by_sha": true,
+      "native_original_wall_CSG_cut_m3": 0.418,
+      "original_source_sha256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "same_native_IFC_after_one_to_one_STEP_ID_only_relabel": {
+        "native_IFC_schema_error_delta": 0,
+        "native_geometry_products_physically_equal": 11,
+        "native_root_STEP_IDs_reassigned": 121,
+        "native_root_guids_and_classes_preserved": 121,
+        "native_schema_identifier": "IFC4X3",
+        "native_total_ifc_entities": 456,
+        "original_result_and_alternative_ROOT_semantics_equal": true,
+        "source_semantic_payload_inverse_byte_identical": true
+      },
+      "v065_rejection_reason": "ALL ORIGINAL native STEP IDs, geometry and attributes must remain",
+      "v065_strict_gate_rejects_legal_reencoding": true,
+      "v065_strict_original_D_full_gate_passed": true
+    }
+  ],
+  "independent_validator_scope": "Bytewise inversion plus native GUID/class/count, mesh bbox/volume and schema-error equality; not arbitrary edit equivalence",
+  "issue": 247,
+  "no_model_paid_calls_or_provider_upload": true,
+  "no_original_author_scorer_or_GT_read": true,
+  "not_yet_proven": [
+    "Arbitrary Python IFC native edits that use different legal geometry representations",
+    "Semantically equivalent non-STEP-identity preservation of existing material/placement/relations",
+    "Native edit source-neutral move or delete parity",
+    "Full task-specific author-grader correctness",
+    "LLM D-vs-I fairness or superiority"
+  ],
+  "parent_v065_frozen_report_sha256": "cc55f6623fc65d3936cf6ee9bbacf1c46d3893aa94122317632d9f90d009382d",
+  "real_native_alternative_encoding_cases": 2,
+  "source_cohort": "Only two already developer-exposed original IFC source files; NO unseen IFC",
+  "status": "V066_NATIVE_IFC_STEP_NUMBERS_NOT_SEMANTIC_IDENTITY_COUNTEREXAMPLE_PASS",
+  "strict_gate_false_rejections_due_to_STEP_number_only": 2,
+  "two_IFC_schemas": [
+    "IFC2X3",
+    "IFC4X3"
+  ]
+}

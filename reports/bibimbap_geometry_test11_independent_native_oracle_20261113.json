@@ -1,0 +1,89 @@
+{
+  "candidate_sha256": "9bc8c872f3294a1be1fcc1782902324b0e5624e5b5a06727d7a3ca6ea045fb5c",
+  "exact_step_changed_entity_count": 6,
+  "full_collision_and_building_topology_independently_verified": false,
+  "metric_origin": "INDEPENDENT_TASK_SPECIFIC_IFC_STEP_AND_WORLD_MESH_ORACLE",
+  "native_world_mesh_each_target_verified": true,
+  "native_world_mesh_geometry_evidence": [
+    {
+      "after_z_span_m": [
+        3.0,
+        6.0
+      ],
+      "before_z_span_m": [
+        3.0,
+        6.5
+      ],
+      "verified_top_drop_m": 0.5,
+      "wall_guid": "3PQZwOmmD1hgPWgX4XFLJO"
+    },
+    {
+      "after_z_span_m": [
+        3.0,
+        6.0
+      ],
+      "before_z_span_m": [
+        3.0,
+        6.5
+      ],
+      "verified_top_drop_m": 0.5,
+      "wall_guid": "3PQZwOmmD1hgPWgX4XFLJP"
+    },
+    {
+      "after_z_span_m": [
+        3.0,
+        6.0
+      ],
+      "before_z_span_m": [
+        3.0,
+        6.5
+      ],
+      "verified_top_drop_m": 0.5,
+      "wall_guid": "3PQZwOmmD1hgPWgX4XFLJQ"
+    },
+    {
+      "after_z_span_m": [
+        3.0,
+        6.0
+      ],
+      "before_z_span_m": [
+        3.0,
+        6.5
+      ],
+      "verified_top_drop_m": 0.5,
+      "wall_guid": "3PQZwOmmD1hgPWgX4XFLJR"
+    },
+    {
+      "after_z_span_m": [
+        3.0,
+        6.0
+      ],
+      "before_z_span_m": [
+        3.0,
+        6.5
+      ],
+      "verified_top_drop_m": 0.5,
+      "wall_guid": "3PQZwOmmD1hgPWgX4XFLJU"
+    },
+    {
+      "after_z_span_m": [
+        3.0,
+        6.0
+      ],
+      "before_z_span_m": [
+        3.0,
+        6.5
+      ],
+      "verified_top_drop_m": 0.5,
+      "wall_guid": "3PQZwOmmD1hgPWgX4XFLJV"
+    }
+  ],
+  "only_target_extrusions_modified": true,
+  "source_sha256": "0ec25786fd4aea7d13040c6db4c24c49764e035cc540514f572cfa472a01c078",
+  "status": "INDEPENDENT_IFC_NATIVE_6_WALL_HEIGHT_EDIT_VALIDATED",
+  "step_entity_inventory_unchanged": true,
+  "task_id": "geometry_test_11",
+  "verified_modified_second_storey_walls": 6,
+  "verified_second_storey_height_decrease_m": 0.5,
+  "verified_unchanged_non_target_walls": 6
+}

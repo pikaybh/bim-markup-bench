@@ -1,0 +1,120 @@
+{
+  "api_cost_usd": "0",
+  "compiler_full_45_task_parity": false,
+  "developer_fixed_public_task_d0": [
+    {
+      "after_world_bbox_m": [
+        [
+          -10.1,
+          -8.1,
+          0.0
+        ],
+        [
+          -9.9,
+          -7.9,
+          3.6
+        ]
+      ],
+      "before_world_bbox_m": [
+        [
+          -10.1,
+          -5.1,
+          0.0
+        ],
+        [
+          -9.9,
+          -4.9,
+          3.6
+        ]
+      ],
+      "candidate_native_mm_sha256": "85d5b2702f3cfc6ef2b759a2c84a9bd6df229ce03a6703af2d3a979cb5d4f0fb",
+      "compiler_version": "experimental-column-v0.3",
+      "fixed_developer_input_not_LLM_response": true,
+      "historical_luna_outcome_unchanged": true,
+      "independent_45_task_full_success_oracle": false,
+      "independent_native_task_specific_oracle": {
+        "changed_native_step_entity_count": 1,
+        "changed_native_step_entity_kind": "IfcCartesianPoint",
+        "full_45_task_oracle_coverage": false,
+        "metric_origin": "INDEPENDENT_IFC_NATIVE_STEP_WORLD_MESH_ORACLE",
+        "non_target_original_native_roots_preserved": 357,
+        "original_public_task": "test_15",
+        "output_sha256": "04f117bedf5d3924d97cd6fae3fd29098c3b68ddc2daeff62a54ef056ce0d9b8",
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_REAL_IFC_TEST15_COLUMN_MOVE_VALIDATED",
+        "unaffected_original_columns": 9,
+        "verified_translation_y_m": -3.0
+      },
+      "new_model_requests": 0,
+      "not_a_new_LLM_benchmark_score": true,
+      "operation": "MOVE_COLUMN",
+      "original_author_result": {
+        "original_author_full_mark": true,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 1.0,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_column_guid_from_public_question": "22hyxvAPr65PFt9WZfHSMu",
+      "original_public_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "original_public_question_sha256": "400afeab88ecd336af43ca37d96db0a7dfbe692e50edc83409259927d4c2b938",
+      "task_id": "test_15"
+    },
+    {
+      "after_world_bbox_m": null,
+      "before_world_bbox_m": [
+        [
+          2.35,
+          2.35,
+          0.0
+        ],
+        [
+          2.65,
+          2.65,
+          3.3
+        ]
+      ],
+      "candidate_native_mm_sha256": "942f1f02afa981b18a317ae675fc08f781b2624584fb016a4240d2778ea70a8a",
+      "compiler_version": "experimental-column-v0.3",
+      "fixed_developer_input_not_LLM_response": true,
+      "historical_luna_outcome_unchanged": true,
+      "independent_45_task_full_success_oracle": false,
+      "independent_native_task_specific_oracle": {
+        "deleted_native_globalid": "22hyxvAPr65PFt9WZfHS2x",
+        "full_45_task_oracle_coverage": false,
+        "metric_origin": "INDEPENDENT_IFC_NATIVE_PRODUCTS_RELATIONSHIP_MESH_ORACLE",
+        "original_author_integrity_metric_may_disagree": true,
+        "original_public_task": "test_16",
+        "output_sha256": "5e51ef491f29c8fc6e9bff23965c0ebb6b8d293d3b76196367384316862f2ded",
+        "owned_property_and_relation_root_deletions": 7,
+        "preserved_original_other_columns": 9,
+        "preserved_original_other_ifc_products": 42,
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_REAL_IFC_TEST16_COLUMN_DELETE_SEMANTICS_VALIDATED"
+      },
+      "new_model_requests": 0,
+      "not_a_new_LLM_benchmark_score": true,
+      "operation": "DELETE_COLUMN",
+      "original_author_result": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 0.0,
+          "object_not_exists": 1.0
+        },
+        "original_author_score": 0.5,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_column_guid_from_public_question": "22hyxvAPr65PFt9WZfHS2x",
+      "original_public_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "original_public_question_sha256": "b747e08abaed9204098d515e59b77a1eb232e378c11b2a9d9b12843fab26987b",
+      "task_id": "test_16"
+    }
+  ],
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/120",
+  "model_requests": 0,
+  "real_public_original_ifc_files_untouched": true,
+  "status": "TWO_PUBLIC_ORIGINAL_COLUMN_D0_CONTROLS_NOT_MODEL_EVALUATIONS"
+}

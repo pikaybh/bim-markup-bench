@@ -9,7 +9,6 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import dataclass
-from decimal import Decimal
 import hashlib
 import math
 from pathlib import Path
@@ -73,10 +72,19 @@ def _id(entity: Any) -> str:
 
 
 def _number(x: float) -> str:
-    if not math.isfinite(float(x)):
-        raise UnsupportedIFCGeometry("Nonfinite IFC dimensions or placement")
-    d=Decimal(str(float(x)))
-    return "0" if d==0 else format(d.normalize(),"f")
+    """Bounded decimal projection of SI metres for the pinned XML schema.
+
+    IFC placement matrices introduce near-zero floating-point noise. The
+    libxml2 xs:decimal validator can reject long float expansions. Nine
+    fractional digits limit rounding error to at most 0.5 nanometres,
+    below the 1 micrometre geometry tolerance. Never emit exponent or -0.
+    Values too large for this restricted projection fail closed.
+    """
+    value=float(x)
+    if not math.isfinite(value) or abs(value)>100_000_000:
+        raise UnsupportedIFCGeometry("Nonfinite/out-of-range IFC dimensions or placement")
+    lexical=format(value,".9f").rstrip("0").rstrip(".")
+    return "0" if lexical in ("", "-0") else lexical
 
 
 def _sub(parent: etree._Element, tag: str, attributes: dict[str,str]) -> None:
@@ -215,6 +223,72 @@ def _wall_attrs(entity: Any, known_levels: dict[str,str], scale: float) -> dict[
         height=_number(float(item.Depth)*scale),thickness=_number(thickness*scale))
 
 
+def _world_axis_aligned_space_box(entity: Any, known_levels: dict[str,str],
+                                  scale: float) -> dict[str,str]:
+    """Project a Space only when its native mesh is *exactly* a world AABB.
+
+    A rotated IFC swept-solid placement can still yield an axis-aligned
+    cuboid.  The bounding box alone is not sufficient: verify eight corners,
+    all twelve triangles and the six complete rectangular faces so an
+    oblique shape is never silently replaced by a larger AABB.
+    """
+    try:
+        settings=ifcopenshell.geom.settings()
+        settings.set(settings.USE_WORLD_COORDS,True)
+        shape=ifcopenshell.geom.create_shape(settings,entity)
+        points=np.asarray(shape.geometry.verts,dtype=np.float64).reshape((-1,3))
+        triangles=np.asarray(shape.geometry.faces,dtype=np.int64).reshape((-1,3))
+    except Exception as exc:
+        raise UnsupportedIFCGeometry("Native Space mesh unavailable for exact cuboid projection") from exc
+    if (len(points)!=8 or len(triangles)!=12 or
+            not np.isfinite(points).all() or
+            np.any(triangles<0) or np.any(triangles>=len(points))):
+        raise UnsupportedIFCGeometry("Space is not a complete eight-vertex cuboid")
+    low=points.min(axis=0)
+    high=points.max(axis=0)
+    sizes=high-low
+    tol=1e-7
+    if not np.all(np.isfinite(sizes)) or np.any(sizes<=tol) or np.any(sizes>10000):
+        raise UnsupportedIFCGeometry("Space has degenerate or excessive world extents")
+    from itertools import product
+    expected=np.array(list(product(*zip(low,high))),dtype=np.float64)
+    if any(not np.any(np.all(np.abs(points-corner)<=tol,axis=1))
+           for corner in expected):
+        raise UnsupportedIFCGeometry("Space rotated or skewed outside world AABB")
+    # A complete box surface has two nondegenerate triangles per face.
+    # Require four distinct corners per face and full face area; simply
+    # checking the bounding box would falsely accept tilted shapes.
+    counts={(axis,side):0 for axis in range(3) for side in (0,1)}
+    face_corners={key:set() for key in counts}
+    face_areas={key:0. for key in counts}
+    for triangle in triangles:
+        face=points[triangle]
+        area=np.linalg.norm(np.cross(face[1]-face[0],face[2]-face[0]))/2.
+        if not math.isfinite(float(area)) or area<=tol:
+            raise UnsupportedIFCGeometry("Space has degenerate mesh triangles")
+        candidates=[(axis,side) for axis in range(3) for side,bound in
+                    ((0,low[axis]),(1,high[axis]))
+                    if np.all(np.abs(face[:,axis]-bound)<=tol)]
+        if len(candidates)!=1:
+            raise UnsupportedIFCGeometry("Space mesh has an oblique/interior face")
+        key=candidates[0]
+        counts[key]+=1
+        face_areas[key]+=float(area)
+        face_corners[key].update(tuple(np.round(pt,7)) for pt in face)
+    for (axis,side),count in counts.items():
+        axes=[idx for idx in range(3) if idx!=axis]
+        expected_area=float(sizes[axes[0]]*sizes[axes[1]])
+        if (count!=2 or len(face_corners[(axis,side)])!=4 or
+                not math.isclose(face_areas[(axis,side)],expected_area,
+                                 abs_tol=1e-6,rel_tol=1e-8)):
+            raise UnsupportedIFCGeometry("Space native cuboid faces incomplete or overlapped")
+    return dict(id=_id(entity),ifcGuid=entity.GlobalId,
+        level=_level(entity,known_levels),
+        x=_number(low[0]*scale),y=_number(low[1]*scale),z=_number(low[2]*scale),
+        width=_number(sizes[0]*scale),depth=_number(sizes[1]*scale),
+        height=_number(sizes[2]*scale))
+
+
 def _box_attrs(entity: Any, known_levels: dict[str,str], scale: float,
                kind: str) -> dict[str,str]:
     item=_body_extrusion(entity)
@@ -222,8 +296,15 @@ def _box_attrs(entity: Any, known_levels: dict[str,str], scale: float,
     p=_m(entity)
     # Boxes in v0.1 have axis-aligned horizontal footprints.
     if not np.allclose(p[:3,:3],np.eye(3),atol=1e-6):
+        if kind=="Space":
+            return _world_axis_aligned_space_box(entity,known_levels,scale)
         raise UnsupportedIFCGeometry("Oriented 3D box unsupported by rectangular v0.1 XML")
-    ex,ey,ez=_extrusion_offset(item)
+    try:
+        ex,ey,ez=_extrusion_offset(item)
+    except UnsupportedIFCGeometry as exc:
+        if kind!="Space" or "Rotated swept extrusion frame" not in str(exc):
+            raise
+        return _world_axis_aligned_space_box(entity,known_levels,scale)
     x,y,z=_world(p,x0+ex,y0+ey,ez)
     # For centered rectangle column, XML origin is the lower-left
     # footprint corner; not necessarily the IFC ObjectPlacement origin.
@@ -237,6 +318,30 @@ def _box_attrs(entity: Any, known_levels: dict[str,str], scale: float,
     return attrs
 
 
+def _opening_world_dimensions(entity: Any, axis: np.ndarray, scale: float) -> tuple[float,float]:
+    """Native IFC void mesh: wall-parallel width and world-vertical height.
+
+    The extrusion depth often measures wall thickness, not opening height.
+    This is a read-only bounded IFC projection; it is not a geometry mutator.
+    """
+    try:
+        settings=ifcopenshell.geom.settings()
+        settings.set(settings.USE_WORLD_COORDS,True)
+        shape=ifcopenshell.geom.create_shape(settings,entity)
+        points=np.asarray(shape.geometry.verts,dtype=np.float64).reshape((-1,3))
+    except Exception as exc:
+        raise UnsupportedIFCGeometry("Opening world geometry unavailable") from exc
+    if len(points)<4 or not np.isfinite(points).all():
+        raise UnsupportedIFCGeometry("Opening mesh empty or nonfinite")
+    width=float(np.ptp(points@axis))*scale
+    height=float(np.ptp(points[:,2]))*scale
+    normal=np.array([-axis[1],axis[0],0.],dtype=np.float64)
+    thickness=float(np.ptp(points@normal))*scale
+    if not all(math.isfinite(v) and 1e-7<v<10000 for v in (width,height,thickness)):
+        raise UnsupportedIFCGeometry("Opening world dimensions degenerate")
+    return width,height
+
+
 def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,str]:
     hosts=[r.RelatingBuildingElement for r in entity.VoidsElements] if hasattr(entity,"VoidsElements") else []
     if len(hosts)!=1 or hosts[0].is_a()!="IfcWall" or hosts[0].GlobalId not in known:
@@ -244,8 +349,8 @@ def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,
     host=hosts[0]
     item=_body_extrusion(entity)
     x0,y0,x1,y1=_rect_extents(item.SweptArea)
-    if abs(y1-y0)<1e-9:
-        raise UnsupportedIFCGeometry("Opening void has zero thickness")
+    if min(x1-x0,y1-y0)<1e-9:
+        raise UnsupportedIFCGeometry("Opening void has degenerate profile")
     p=_m(entity)
     hostinfo=known[host.GlobalId]
     start=np.array([float(hostinfo[c]) for c in ("x1","y1","z1")])
@@ -255,6 +360,7 @@ def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,
     if length<1e-6:
         raise UnsupportedIFCGeometry("Hosted wall has degenerate axis")
     axis/=length
+    width,height=_opening_world_dimensions(entity,axis,scale)
     origin=np.asarray(_world(p,0,0,0))*scale
     delta=origin-start
     offset=float(np.dot(delta,axis))
@@ -263,7 +369,7 @@ def _opening_attrs(entity: Any, known: dict[str,Any], scale: float) -> dict[str,
         raise UnsupportedIFCGeometry("Opening is out of supported host geometry bounds")
     return dict(id=_id(entity),ifcGuid=entity.GlobalId,
         host=_id(host),offset=_number(max(0,offset)),sill=_number(max(0,sill)),
-        width=_number((x1-x0)*scale),height=_number(float(item.Depth)*scale))
+        width=_number(width),height=_number(height))
 
 
 def _filling_attrs(entity: Any, openings: dict[str,dict[str,str]], scale: float) -> dict[str,str]:
@@ -284,7 +390,8 @@ def _filling_attrs(entity: Any, openings: dict[str,dict[str,str]], scale: float)
                 width=_number(width*scale),height=_number(height*scale))
 
 
-def project_ifc(source: Path, *, strict_on_opaque: bool=False) -> Projection:
+def project_ifc(source: Path, *, strict_on_opaque: bool=False,
+                allow_original_flipped_slab: bool=False) -> Projection:
     snapshot=snapshot_source(source)
     if snapshot.ifc_schema != "IFC4X3":
         raise UnsupportedIFCGeometry("Current experimental grammar supports IFC4X3 only")
@@ -322,7 +429,19 @@ def project_ifc(source: Path, *, strict_on_opaque: bool=False) -> Projection:
                 if typ=="IfcWall":
                     attrs=_wall_attrs(entity,known_levels,scale)
                 elif typ in ("IfcSlab","IfcColumn","IfcSpace"):
-                    attrs=_box_attrs(entity,known_levels,scale,typ.removeprefix("Ifc"))
+                    if typ=="IfcSlab" and allow_original_flipped_slab:
+                        # Keep v0.28 and earlier representation/benchmarks
+                        # unchanged by default. This opt-in is trusted host
+                        # read projection, NOT an LLM action.
+                        try:
+                            attrs=_box_attrs(entity,known_levels,scale,"Slab")
+                        except UnsupportedIFCGeometry as exc:
+                            if "Tilted swept extrusion frame" not in str(exc):
+                                raise
+                            from src.runtime.original_slab_projection import verified_flipped_slab_attrs
+                            attrs=verified_flipped_slab_attrs(entity,known_levels,scale)
+                    else:
+                        attrs=_box_attrs(entity,known_levels,scale,typ.removeprefix("Ifc"))
                 elif typ=="IfcOpeningElement":
                     attrs=_opening_attrs(entity,attrs_by_guid,scale)
                 elif typ in ("IfcWindow","IfcDoor"):

@@ -1,0 +1,18 @@
+{
+  "actual_host_admission_check": "BLOCKED_LOCAL_DOCKER_ENGINE_UNAVAILABLE",
+  "actual_image_cache_verified": null,
+  "actual_kernel_os_isolation_verified": false,
+  "actual_local_engine_reachable": false,
+  "candidate_python_executed": false,
+  "execution_endpoint": "npipe:////./pipe/dockerDesktopLinuxEngine",
+  "mocked_candidate_attach_commands": 1,
+  "mocked_kernel_probe_commands": 1,
+  "mocked_worker_inspect_create_start_cleanup_commands": 5,
+  "official_BIM_Edit_evaluator_verified": false,
+  "official_tasks_scored": 0,
+  "paid_model_calls": 0,
+  "production_i_arm_worker_approved": false,
+  "real_docker_commands_executed_by_routing_mock": 0,
+  "same_endpoint_all_control_operations": true,
+  "status": "PASS_MOCKED_LOCAL_DOCKER_CONTROL_ROUTING_LIVE_WORKER_BLOCKED"
+}

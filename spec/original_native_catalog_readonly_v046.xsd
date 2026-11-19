@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:b="urn:bim-markup-bench:toy:v0"
+ targetNamespace="urn:bim-markup-bench:toy:v0"
+ elementFormDefault="qualified" attributeFormDefault="unqualified">
+ <xs:simpleType name="Sha256"><xs:restriction base="xs:string"><xs:pattern value="[0-9a-f]{64}"/></xs:restriction></xs:simpleType>
+ <xs:simpleType name="IfcGuid"><xs:restriction base="xs:string"><xs:pattern value="[A-Za-z0-9_$]{22}"/></xs:restriction></xs:simpleType>
+ <xs:simpleType name="CatalogName"><xs:restriction base="xs:string">
+  <xs:enumeration value="roots"/><xs:enumeration value="products"/>
+  <xs:enumeration value="relationships"/><xs:enumeration value="property_sets"/>
+  <xs:enumeration value="materials"/><xs:enumeration value="placements"/>
+  <xs:enumeration value="geometry"/><xs:enumeration value="step"/>
+ </xs:restriction></xs:simpleType>
+ <xs:attributeGroup name="SourceHeader">
+  <xs:attribute name="version" type="xs:string" use="required" fixed="0.46"/>
+  <xs:attribute name="sourceOriginalIFCSha256" type="b:Sha256" use="required"/>
+  <xs:attribute name="sourceNativeIfcSchema" type="xs:string" use="required"/>
+  <xs:attribute name="sourceNativeLengthUnit" type="xs:string" use="required" fixed="MILLIMETER"/>
+  <xs:attribute name="sourceMode" type="xs:string" use="required" fixed="IMMUTABLE_ORIGINAL_IFC_INDEX_READ_ONLY"/>
+  <xs:attribute name="nativeMutationPermission" type="xs:string" use="required" fixed="NONE_READ_ONLY"/>
+ </xs:attributeGroup>
+ <xs:element name="Building">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="OriginalNativeSourceCatalog">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="Catalog" minOccurs="8" maxOccurs="8">
+        <xs:complexType>
+         <xs:attribute name="name" type="b:CatalogName" use="required"/>
+         <xs:attribute name="recordCount" type="xs:nonNegativeInteger" use="required"/>
+         <xs:attribute name="pageSize" type="xs:positiveInteger" use="required"/>
+         <xs:attribute name="pageCount" type="xs:nonNegativeInteger" use="required"/>
+         <xs:attribute name="canonicalSourceRecordsSha256" type="b:Sha256" use="required"/>
+        </xs:complexType>
+       </xs:element>
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+   </xs:sequence>
+   <xs:attributeGroup ref="b:SourceHeader"/>
+  </xs:complexType>
+ </xs:element>
+ <xs:complexType name="Field">
+  <xs:attribute name="name" type="xs:string" use="required"/>
+  <xs:attribute name="value" type="xs:string" use="required"/>
+ </xs:complexType>
+ <xs:complexType name="Ref">
+  <xs:attribute name="role" type="xs:string" use="required"/>
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  <xs:attribute name="ifcGuid" type="b:IfcGuid"/>
+ </xs:complexType>
+ <xs:complexType name="Entry">
+  <xs:sequence>
+   <xs:element name="Field" type="b:Field" minOccurs="0" maxOccurs="unbounded"/>
+   <xs:element name="Ref" type="b:Ref" minOccurs="0" maxOccurs="unbounded"/>
+   <xs:element name="LiteralStepText" type="xs:string" minOccurs="0" maxOccurs="1"/>
+  </xs:sequence>
+  <xs:attribute name="sourceStepId" type="xs:positiveInteger" use="required"/>
+  <xs:attribute name="nativeIfcClass" type="xs:string" use="required"/>
+  <xs:attribute name="ifcGuid" type="b:IfcGuid"/>
+  <xs:attribute name="originalName" type="xs:string"/>
+  <xs:attribute name="originalDescription" type="xs:string"/>
+  <xs:attribute name="literalSha256" type="b:Sha256"/>
+  <xs:attribute name="meshStatus" type="xs:string"/>
+  <xs:attribute name="unavailableClass" type="xs:string"/>
+  <xs:attribute name="worldVertexCount" type="xs:nonNegativeInteger"/>
+  <xs:attribute name="worldTriangleCount" type="xs:nonNegativeInteger"/>
+  <xs:attribute name="worldMeshSHA256" type="b:Sha256"/>
+  <xs:attribute name="bboxMinX" type="xs:decimal"/>
+  <xs:attribute name="bboxMinY" type="xs:decimal"/>
+  <xs:attribute name="bboxMinZ" type="xs:decimal"/>
+  <xs:attribute name="bboxMaxX" type="xs:decimal"/>
+  <xs:attribute name="bboxMaxY" type="xs:decimal"/>
+  <xs:attribute name="bboxMaxZ" type="xs:decimal"/>
+ </xs:complexType>
+ <xs:element name="OriginalNativeSourcePage">
+  <xs:complexType>
+   <xs:sequence><xs:element name="Entry" type="b:Entry" minOccurs="1" maxOccurs="unbounded"/></xs:sequence>
+   <xs:attributeGroup ref="b:SourceHeader"/>
+   <xs:attribute name="catalog" type="b:CatalogName" use="required"/>
+   <xs:attribute name="page" type="xs:nonNegativeInteger" use="required"/>
+   <xs:attribute name="pageSize" type="xs:positiveInteger" use="required"/>
+   <xs:attribute name="totalPages" type="xs:positiveInteger" use="required"/>
+   <xs:attribute name="totalRecords" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>

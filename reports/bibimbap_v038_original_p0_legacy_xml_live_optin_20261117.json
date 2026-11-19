@@ -1,0 +1,176 @@
+{
+  "Docker_or_isolated_Python_LLM_trials": 0,
+  "P1_P2_P3_other_remaining_CREATE_gates_resolved": false,
+  "actual_original_model_scored_LLM_trials": 0,
+  "causal_XML_vs_imperative_model_claim_supported": false,
+  "default_existing_IFC4X3_model_host_changed": false,
+  "five_old_original_CREATE_developer_semantic_pairs": 5,
+  "frozen_prior_v008_native_controls_sha256": "1264e33403a8b7e554913a34fc79b031890fd0aee832bc6b8f2010f912a5b4e0",
+  "frozen_prior_v037_ITT_and_P0_gates_sha256": "33d99e6fb624e6a5e89dc301791c269bd5ca7d2666d8618fc67379664938501f",
+  "full_original_STEP_byte_or_entity_preservation_proven": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/191",
+  "new_paid_provider_requests": 0,
+  "original45_entire_source_visible_information_parity_proven": 0,
+  "original45_full_approved_native_edit_capability_parity_proven": 0,
+  "original_15_CREATE_denominator": 15,
+  "original_45_ITT_denominator": 45,
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_public_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "prior_v037_P0_actual_schema_rejected_count": 3,
+  "rows": [
+    {
+      "LLM_tool_names": [
+        "read_building_xml",
+        "submit_building_xml"
+      ],
+      "actual_matched_LLM_trial_eligible_for_causal_claim": false,
+      "agent_or_paid_model_invoked": false,
+      "default_model_host_original_schema_admitted": false,
+      "frozen_previous_v037_blocker": "P0_LIVE_XML_SOURCE_SCHEMA_REJECTED",
+      "illustrative_benchmark_task_answer": false,
+      "illustrative_new_declarative_nodes": [
+        "Opening",
+        "Door"
+      ],
+      "illustrative_new_xml_sha256": "d6637bbc671829353f389c6c3e92a12526e6b20fbd0ad47f6d59f5ee8dcccc97",
+      "input_native_source_unchanged": true,
+      "model_visible_XML_opaque_partial_view_not_entire_IFC": true,
+      "model_visible_XML_schema": "legacy-0.8",
+      "model_visible_XML_source_byte_length": 1091,
+      "model_visible_complete_XML_source_sha256": "0c0a09c655e412512596d3690807e2ca7b648964e2cb337b5429e5d8f908bca7",
+      "native_source_restored_oracle": {
+        "all_original_products_preserved": 7,
+        "all_original_root_GUIDs_preserved": 52,
+        "full_original_IFC_information_parity_proven": false,
+        "full_original_step_text_byte_equality_proven": false,
+        "full_same_triangle_vertex_triples_across_unit_roundtrip": true,
+        "native_output_length_unit_to_m": 0.001,
+        "native_output_schema": "IFC2X3",
+        "new_native_products_by_class": {
+          "IfcDoor": 1,
+          "IfcOpeningElement": 1
+        },
+        "original_products_with_different_coplanar_triangle_diagonal": 0,
+        "original_wall_physically_voided": true,
+        "physical_surface_preservation_verified_by_vertex_multiset_and_planar_area": true,
+        "source_original_units_and_schema_preserved": true,
+        "unchanged_original_product_verified_surface_triangle_count": 24
+      },
+      "optin_model_host_exact_original_pinned_source_only": true,
+      "optin_model_host_source_admitted": true,
+      "original_author_scorer_invoked": false,
+      "original_native_schema": "IFC2X3",
+      "original_source_length_unit_to_m": 0.001,
+      "public_original_ifc_sha256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "public_original_question_sha256": "0c7dff429fadc8286e33f157bc3a46181f800271a99fe645f493a9e37463094d",
+      "real_compiler_status": "COMMITTED_SOURCE_SCHEMA_PRESERVED_CREATE_ORIGINAL_IFC2X3_HOSTED_DOOR_V08",
+      "real_model_facing_native_write_committed": true,
+      "real_original_native_result_sha256": "867081f76b0998d1774af3c51b2ae81a26b5f7a6a067e996dd9e9acfada29ff9",
+      "task_id": "geometry_test_03"
+    },
+    {
+      "LLM_tool_names": [
+        "read_building_xml",
+        "submit_building_xml"
+      ],
+      "actual_matched_LLM_trial_eligible_for_causal_claim": false,
+      "agent_or_paid_model_invoked": false,
+      "default_model_host_original_schema_admitted": false,
+      "frozen_previous_v037_blocker": "P0_LIVE_XML_SOURCE_SCHEMA_REJECTED",
+      "illustrative_benchmark_task_answer": false,
+      "illustrative_new_declarative_nodes": [
+        "Space"
+      ],
+      "illustrative_new_xml_sha256": "07f6636dd6549a53fbc449e2d4efa44a5cc805d5c2fed2ba9b2d88e9cdae17e7",
+      "input_native_source_unchanged": true,
+      "model_visible_XML_opaque_partial_view_not_entire_IFC": true,
+      "model_visible_XML_schema": "legacy-0.8",
+      "model_visible_XML_source_byte_length": 1761,
+      "model_visible_complete_XML_source_sha256": "aeaa9ff6dcf9a47575b7c83f6b1e40e4e627f60de33cf4f8859a1b8134428ec7",
+      "native_source_restored_oracle": {
+        "all_original_products_preserved": 11,
+        "all_original_root_GUIDs_preserved": 93,
+        "full_original_IFC_information_parity_proven": false,
+        "full_original_step_text_byte_equality_proven": false,
+        "full_same_triangle_vertex_triples_across_unit_roundtrip": true,
+        "native_output_length_unit_to_m": 0.001,
+        "native_output_schema": "IFC2X3",
+        "new_native_products_by_class": {
+          "IfcSpace": 1
+        },
+        "original_products_with_different_coplanar_triangle_diagonal": 0,
+        "original_wall_physically_voided": false,
+        "physical_surface_preservation_verified_by_vertex_multiset_and_planar_area": true,
+        "source_original_units_and_schema_preserved": true,
+        "unchanged_original_product_verified_surface_triangle_count": 84
+      },
+      "optin_model_host_exact_original_pinned_source_only": true,
+      "optin_model_host_source_admitted": true,
+      "original_author_scorer_invoked": false,
+      "original_native_schema": "IFC2X3",
+      "original_source_length_unit_to_m": 0.001,
+      "public_original_ifc_sha256": "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea",
+      "public_original_question_sha256": "8ee8935b70896b8d8116bf4929a7fbbfa30dc6d595bd419eb2c110367b14b291",
+      "real_compiler_status": "COMMITTED_SOURCE_SCHEMA_PRESERVED_CREATE_ORIGINAL_IFC2X3_SPACE_V08",
+      "real_model_facing_native_write_committed": true,
+      "real_original_native_result_sha256": "1a627b499cceda48edce05df525c5bd2c4b7f96340c678e2547c69abdf1f53e2",
+      "task_id": "geometry_test_04"
+    },
+    {
+      "LLM_tool_names": [
+        "read_building_xml",
+        "submit_building_xml"
+      ],
+      "actual_matched_LLM_trial_eligible_for_causal_claim": false,
+      "agent_or_paid_model_invoked": false,
+      "default_model_host_original_schema_admitted": false,
+      "frozen_previous_v037_blocker": "P0_LIVE_XML_SOURCE_SCHEMA_REJECTED",
+      "illustrative_benchmark_task_answer": false,
+      "illustrative_new_declarative_nodes": [
+        "Wall"
+      ],
+      "illustrative_new_xml_sha256": "6ccd1d3f51f6b953bf83c2cf56570572cf767e3511aae7d39657ef647e4e3e3d",
+      "input_native_source_unchanged": true,
+      "model_visible_XML_opaque_partial_view_not_entire_IFC": true,
+      "model_visible_XML_schema": "legacy-0.8",
+      "model_visible_XML_source_byte_length": 383,
+      "model_visible_complete_XML_source_sha256": "ff98816bc24368cf2059e2d470ec3374f4c931233e3f404d08e8c63f14d55074",
+      "native_source_restored_oracle": {
+        "all_original_products_preserved": 3,
+        "all_original_root_GUIDs_preserved": 76,
+        "full_original_IFC_information_parity_proven": false,
+        "full_original_step_text_byte_equality_proven": false,
+        "full_same_triangle_vertex_triples_across_unit_roundtrip": true,
+        "native_output_length_unit_to_m": 0.001,
+        "native_output_schema": "IFC4",
+        "new_native_products_by_class": {
+          "IfcWall": 1
+        },
+        "original_products_with_different_coplanar_triangle_diagonal": 0,
+        "original_wall_physically_voided": false,
+        "physical_surface_preservation_verified_by_vertex_multiset_and_planar_area": true,
+        "source_original_units_and_schema_preserved": true,
+        "unchanged_original_product_verified_surface_triangle_count": 0
+      },
+      "optin_model_host_exact_original_pinned_source_only": true,
+      "optin_model_host_source_admitted": true,
+      "original_author_scorer_invoked": false,
+      "original_native_schema": "IFC4",
+      "original_source_length_unit_to_m": 0.001,
+      "public_original_ifc_sha256": "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc",
+      "public_original_question_sha256": "d781dbbc052adeafa42c9a291013965422be49ddeaf17ccfb35ad49ab115385b",
+      "real_compiler_status": "COMMITTED_SOURCE_SCHEMA_PRESERVED_CREATE_ORIGINAL_IFC4_WALL_V08",
+      "real_model_facing_native_write_committed": true,
+      "real_original_native_result_sha256": "616d25dbd6fb76f8b88b53a575535bf4d72c307638635ec51567d84a5c0abcd5",
+      "task_id": "geometry_test_05"
+    }
+  ],
+  "scope": "EXPLICIT_RESEARCH_OPT_IN_ONLY_EXACT_THREE_PUBLIC_IFCS_NO_LLM",
+  "stacked_parent_v037_head": "030b45716d48d9f4fbc093709b0d0c973e1b13b3",
+  "status": "V038_ORIGINAL_P0_THREE_LEGACY_XML_MODEL_HOST_OPT_IN_CREATE_PROVEN",
+  "task_specific_original_author_results_obtained_in_v038": 0,
+  "ten_original_CREATE_still_without_task_specific_native_pair": 10,
+  "v038_P0_explicit_optin_real_XML_source_admitted_count": 3,
+  "v038_P0_explicit_optin_real_native_IFC_write_count": 3,
+  "v038_default_no_optin_original_schema_admitted_count": 0
+}

@@ -1,0 +1,294 @@
+{
+  "G2_G3_live_model_or_official_scoring_gate_ready": false,
+  "full_324_row_models": 6,
+  "local_independent_scorer_metric_origin": "independent-reimplementation",
+  "models": {
+    "claude-sonnet": {
+      "independent_scorer_executed_against_public_IFC": false,
+      "instruction_category_counts": {
+        "direct": 108,
+        "spatial": 108,
+        "topological": 108
+      },
+      "max_mean_rounding_difference": "0.0000453703703703703703703704",
+      "max_per_row_rounding_difference": "0.0000666666666666666666666667",
+      "means_match_published_summary_within_rounding": true,
+      "missing_id_count_vs_six_full_runs": 0,
+      "model": "claude-sonnet",
+      "official_score_reproduced_from_IFC": false,
+      "operation_counts": {
+        "create": 108,
+        "delete": 108,
+        "update": 108
+      },
+      "per_row_final_arithmetic_within_rounding": true,
+      "per_task_model_prompts_or_GT_paths_exported": false,
+      "public_summary_scene_labels": {
+        "realistic": 324
+      },
+      "published_rows": 324,
+      "published_rows_short_of_full_324": 0,
+      "raw_csv_sha256": "c0736ec8c653b914f2ba8dd733394453e8bd961bd08400b16a3d320f63b35b96",
+      "raw_csv_utf8_bytes": 188222,
+      "scene_summary_label_mismatch_warning": true,
+      "source_kind": "author-published-per-task-CSV-not-official-code",
+      "strict_three_axis_count_from_published_rows": 6,
+      "strict_threshold": "0.98",
+      "task_count_expected_from_full_benchmark": 324,
+      "task_id_scene_counts": {
+        "A": 162,
+        "R": 162
+      },
+      "task_ids_match_full_reference_set": true,
+      "unique_public_task_ids": 324
+    },
+    "deepseek-v3.2": {
+      "independent_scorer_executed_against_public_IFC": false,
+      "instruction_category_counts": {
+        "direct": 108,
+        "spatial": 108,
+        "topological": 108
+      },
+      "max_mean_rounding_difference": "0.0000302469135802469135802469",
+      "max_per_row_rounding_difference": "0.0000666666666666666666666667",
+      "means_match_published_summary_within_rounding": true,
+      "missing_id_count_vs_six_full_runs": 0,
+      "model": "deepseek-v3.2",
+      "official_score_reproduced_from_IFC": false,
+      "operation_counts": {
+        "create": 108,
+        "delete": 108,
+        "update": 108
+      },
+      "per_row_final_arithmetic_within_rounding": true,
+      "per_task_model_prompts_or_GT_paths_exported": false,
+      "public_summary_scene_labels": {
+        "realistic": 324
+      },
+      "published_rows": 324,
+      "published_rows_short_of_full_324": 0,
+      "raw_csv_sha256": "d98505946013bebbdfab897489ba2a69d8c53d15be5f35e5d737581bb391555b",
+      "raw_csv_utf8_bytes": 179053,
+      "scene_summary_label_mismatch_warning": true,
+      "source_kind": "author-published-per-task-CSV-not-official-code",
+      "strict_three_axis_count_from_published_rows": 7,
+      "strict_threshold": "0.98",
+      "task_count_expected_from_full_benchmark": 324,
+      "task_id_scene_counts": {
+        "A": 162,
+        "R": 162
+      },
+      "task_ids_match_full_reference_set": true,
+      "unique_public_task_ids": 324
+    },
+    "gemini-flash-3.0": {
+      "independent_scorer_executed_against_public_IFC": false,
+      "instruction_category_counts": {
+        "direct": 108,
+        "spatial": 108,
+        "topological": 108
+      },
+      "max_mean_rounding_difference": "0.0000327160493827160493827160",
+      "max_per_row_rounding_difference": "0.0000666666666666666666666667",
+      "means_match_published_summary_within_rounding": true,
+      "missing_id_count_vs_six_full_runs": 0,
+      "model": "gemini-flash-3.0",
+      "official_score_reproduced_from_IFC": false,
+      "operation_counts": {
+        "create": 108,
+        "delete": 108,
+        "update": 108
+      },
+      "per_row_final_arithmetic_within_rounding": true,
+      "per_task_model_prompts_or_GT_paths_exported": false,
+      "public_summary_scene_labels": {
+        "realistic": 324
+      },
+      "published_rows": 324,
+      "published_rows_short_of_full_324": 0,
+      "raw_csv_sha256": "ce5526dc0ffa9c0bd2d72ccbdd0a6352032052fb80fddcc987bac7d786b3efcd",
+      "raw_csv_utf8_bytes": 187757,
+      "scene_summary_label_mismatch_warning": true,
+      "source_kind": "author-published-per-task-CSV-not-official-code",
+      "strict_three_axis_count_from_published_rows": 5,
+      "strict_threshold": "0.98",
+      "task_count_expected_from_full_benchmark": 324,
+      "task_id_scene_counts": {
+        "A": 162,
+        "R": 162
+      },
+      "task_ids_match_full_reference_set": true,
+      "unique_public_task_ids": 324
+    },
+    "gemma4-31B": {
+      "independent_scorer_executed_against_public_IFC": false,
+      "instruction_category_counts": {
+        "direct": 108,
+        "spatial": 108,
+        "topological": 108
+      },
+      "max_mean_rounding_difference": "0.0000404320987654320987654321",
+      "max_per_row_rounding_difference": "0.0000666666666666666666666667",
+      "means_match_published_summary_within_rounding": true,
+      "missing_id_count_vs_six_full_runs": 0,
+      "model": "gemma4-31B",
+      "official_score_reproduced_from_IFC": false,
+      "operation_counts": {
+        "create": 108,
+        "delete": 108,
+        "update": 108
+      },
+      "per_row_final_arithmetic_within_rounding": true,
+      "per_task_model_prompts_or_GT_paths_exported": false,
+      "public_summary_scene_labels": {
+        "realistic": 324
+      },
+      "published_rows": 324,
+      "published_rows_short_of_full_324": 0,
+      "raw_csv_sha256": "f2dd62ad623a111b03982137d4a27e6a401cbc82489227a82a6f75434a50a2b0",
+      "raw_csv_utf8_bytes": 178993,
+      "scene_summary_label_mismatch_warning": true,
+      "source_kind": "author-published-per-task-CSV-not-official-code",
+      "strict_three_axis_count_from_published_rows": 3,
+      "strict_threshold": "0.98",
+      "task_count_expected_from_full_benchmark": 324,
+      "task_id_scene_counts": {
+        "A": 162,
+        "R": 162
+      },
+      "task_ids_match_full_reference_set": true,
+      "unique_public_task_ids": 324
+    },
+    "gpt-5.4": {
+      "independent_scorer_executed_against_public_IFC": false,
+      "instruction_category_counts": {
+        "direct": 108,
+        "spatial": 108,
+        "topological": 108
+      },
+      "max_mean_rounding_difference": "0.0000472222222222222222222222",
+      "max_per_row_rounding_difference": "0.0000666666666666666666666667",
+      "means_match_published_summary_within_rounding": true,
+      "missing_id_count_vs_six_full_runs": 0,
+      "model": "gpt-5.4",
+      "official_score_reproduced_from_IFC": false,
+      "operation_counts": {
+        "create": 108,
+        "delete": 108,
+        "update": 108
+      },
+      "per_row_final_arithmetic_within_rounding": true,
+      "per_task_model_prompts_or_GT_paths_exported": false,
+      "public_summary_scene_labels": {
+        "realistic": 324
+      },
+      "published_rows": 324,
+      "published_rows_short_of_full_324": 0,
+      "raw_csv_sha256": "b2347fb2afedf047352d1b3a0275d65ed45dbb1f7b3a28aa8d7a6d1c920c5558",
+      "raw_csv_utf8_bytes": 188673,
+      "scene_summary_label_mismatch_warning": true,
+      "source_kind": "author-published-per-task-CSV-not-official-code",
+      "strict_three_axis_count_from_published_rows": 4,
+      "strict_threshold": "0.98",
+      "task_count_expected_from_full_benchmark": 324,
+      "task_id_scene_counts": {
+        "A": 162,
+        "R": 162
+      },
+      "task_ids_match_full_reference_set": true,
+      "unique_public_task_ids": 324
+    },
+    "gpt-5.4-mini": {
+      "independent_scorer_executed_against_public_IFC": false,
+      "instruction_category_counts": {
+        "direct": 108,
+        "spatial": 108,
+        "topological": 108
+      },
+      "max_mean_rounding_difference": "0.00005",
+      "max_per_row_rounding_difference": "0.0000666666666666666666666667",
+      "means_match_published_summary_within_rounding": true,
+      "missing_id_count_vs_six_full_runs": 0,
+      "model": "gpt-5.4-mini",
+      "official_score_reproduced_from_IFC": false,
+      "operation_counts": {
+        "create": 108,
+        "delete": 108,
+        "update": 108
+      },
+      "per_row_final_arithmetic_within_rounding": true,
+      "per_task_model_prompts_or_GT_paths_exported": false,
+      "public_summary_scene_labels": {
+        "realistic": 324
+      },
+      "published_rows": 324,
+      "published_rows_short_of_full_324": 0,
+      "raw_csv_sha256": "a7b8ab3213db2cce22073e365c8e6258910944c594092a37b75a00a85d61eab0",
+      "raw_csv_utf8_bytes": 188349,
+      "scene_summary_label_mismatch_warning": true,
+      "source_kind": "author-published-per-task-CSV-not-official-code",
+      "strict_three_axis_count_from_published_rows": 2,
+      "strict_threshold": "0.98",
+      "task_count_expected_from_full_benchmark": 324,
+      "task_id_scene_counts": {
+        "A": 162,
+        "R": 162
+      },
+      "task_ids_match_full_reference_set": true,
+      "unique_public_task_ids": 324
+    },
+    "qwen3.6-plus": {
+      "independent_scorer_executed_against_public_IFC": false,
+      "instruction_category_counts": {
+        "direct": 108,
+        "spatial": 107,
+        "topological": 108
+      },
+      "max_mean_rounding_difference": "0.0000411764705882352941176471",
+      "max_per_row_rounding_difference": "0.0000666666666666666666666667",
+      "means_match_published_summary_within_rounding": true,
+      "missing_id_count_vs_six_full_runs": 1,
+      "model": "qwen3.6-plus",
+      "official_score_reproduced_from_IFC": false,
+      "operation_counts": {
+        "create": 108,
+        "delete": 108,
+        "update": 107
+      },
+      "per_row_final_arithmetic_within_rounding": true,
+      "per_task_model_prompts_or_GT_paths_exported": false,
+      "public_summary_scene_labels": {
+        "realistic": 323
+      },
+      "published_rows": 323,
+      "published_rows_short_of_full_324": 1,
+      "raw_csv_sha256": "6052de5d3b0d15e198c81c70e7306f689ce6d90d81bde6ed178b701b75e33843",
+      "raw_csv_utf8_bytes": 178873,
+      "scene_summary_label_mismatch_warning": true,
+      "source_kind": "author-published-per-task-CSV-not-official-code",
+      "strict_three_axis_count_from_published_rows": 11,
+      "strict_threshold": "0.98",
+      "task_count_expected_from_full_benchmark": 324,
+      "task_id_scene_counts": {
+        "A": 162,
+        "R": 161
+      },
+      "task_ids_match_full_reference_set": false,
+      "unique_public_task_ids": 323
+    }
+  },
+  "native_IFC_or_GT_files_downloaded": 0,
+  "numerical_official_evaluator_equivalence_verified": false,
+  "official_executable_scorer_verified": false,
+  "official_release_gate": "BLOCKED_OFFICIAL_EXECUTABLE_EVALUATOR_NOT_VERIFIED",
+  "official_tasks_scored_by_this_project": 0,
+  "paid_model_provider_calls": 0,
+  "per_task_results_exported_or_committed": false,
+  "published_models_with_missing_rows": [
+    "qwen3.6-plus"
+  ],
+  "release_revision": "9241abc9b3b4efa3906c0bdabcf3321f1558192f",
+  "status": "AUTHOR_REPORTED_CSV_ARITHMETIC_VERIFIED_SCORER_STILL_BLOCKED",
+  "total_missing_published_task_rows": 1,
+  "verified_published_models": 7
+}

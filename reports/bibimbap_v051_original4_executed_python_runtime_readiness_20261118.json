@@ -1,0 +1,134 @@
+{
+  "actual_model_python_executed_in_sandbox": 0,
+  "causal_D_vs_I_accuracy_result": null,
+  "docker_runtime_readonly_probe": {
+    "actual_python_executed": false,
+    "reason": "LOCAL_DOCKER_LINUX_DAEMON_NOT_AVAILABLE",
+    "status": "BLOCKED_RUNTIME"
+  },
+  "frozen_base_v050_commit": "ca53e6a6d9ecd1f2dd5ee7e57a02fae580382f82",
+  "frozen_v050_report_sha256": "eb6bef852eabf12ed76b5c5df861a8e5a355a5142e5ad0d3732d646b25dfb28a",
+  "implementation_sha256": {
+    "tools/bibimbap_v051_executed_original_native_python_session.py": "1d636784d6a38ef97020cc1b844c88efe79a8b7d2ff2ffedd5ec568e4539f11c",
+    "tools/bibimbap_v051_independent_native_python_oracle.py": "313df952307c3a75b3e159114a9f6af527cc5229d447f53a1d7c25b2bd00f9b8",
+    "tools/bibimbap_v051_trusted_developer_python_controls.py": "39ba41ebb65d5cbe760ae94498515ee85df01464b70b3cf2438f31ac40eb6406"
+  },
+  "initial_model_source_XML_exact_D_I_byte_parity": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/217",
+  "official_author_grader_invocations": 0,
+  "official_author_task_success_scores": null,
+  "offline_host_contract_double_not_real_execution": true,
+  "original_four_selected_exploratory_tasks": 4,
+  "original_public_45_tasks": 45,
+  "original_unique_IFC_sources": 31,
+  "other_41_original_public_tasks_not_attempted": 41,
+  "paid_model_calls": 0,
+  "real_native_developer_Python_IFC_controls": 8,
+  "records": [
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "positive_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": true,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "2a918f0eda59f355adacef9111fff8a6aaf13bc5d7afd0a8f99faa66b0e792de",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "geometry_test_14"
+    },
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "negative_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": false,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "e934b59f40e31e8c2342724f43120a168179cfc272c8234ea0f5e36f51b6986b",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "geometry_test_14"
+    },
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "positive_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": true,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "98d8d93de5d56885b86485af705ebd067ec391a58a8ff22d2acd33710911596d",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "geometry_test_15"
+    },
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "negative_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": false,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "913d84076699b6bd08c9d95c2f09d226cb873926282e19c19ba998be45eb6b41",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "geometry_test_15"
+    },
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "positive_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": true,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "6a3e052bac203e877f53c36196d44f2a4dcba15e8c7d2d9a97500f1b01af2d1a",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "topological_test_11"
+    },
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "negative_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": false,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "36990c699da87f54c03bd6835d3198d367049d7b1b2899f77aa77fc59e40d089",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "topological_test_11"
+    },
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "positive_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": true,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "59a0a844edc874a5a2246f9c5773b2aa5e0e0efb3bb14700746fa57d76f1ebfc",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "topological_test_17"
+    },
+    {
+      "Python_IfcOpenShell_trusted_offline_developer_code_executed": true,
+      "control": "negative_TRUSTED_PYTHON_DEVELOPER_ONLY",
+      "independent_original_native_scope_oracle_pass": true,
+      "independent_research_semantic_predicate_pass": false,
+      "model_authored_Python_executed_in_container": false,
+      "native_IFC_candidate_sha256": "78dc7d0ccd4d752eab25f5dca15c589b10eb975d375329d111cca63e61898f24",
+      "offline_host_test_double_is_not_an_execution_attestation": true,
+      "original_author_benchmark_score": null,
+      "task_id": "topological_test_17"
+    }
+  ],
+  "sandbox_cli_policy_offline_only": {
+    "bind_mount_count": 2,
+    "cap_drop": "ALL",
+    "cpu_count": 1,
+    "daemon_level_live_attestation": false,
+    "fixed_local_Docker_host": "npipe:////./pipe/dockerDesktopLinuxEngine",
+    "image_sha256_pinned": "sha256:2ce0d57dff6ea443c7f5ffffd29cf8b1b50a141b77574aae5ca4646f45f3a1ee",
+    "memory_mebibytes": 768,
+    "network": "none",
+    "rootfs_read_only": true,
+    "user": "65534:65534",
+    "worker_is_readonly_mount": true
+  },
+  "status": "BLOCKED_RUNTIME_NOT_LLM_EXECUTED",
+  "tool_names_both_read_same_evidence_but_different_edit_authority": true,
+  "trusted_developer_research_semantic_negative": 4,
+  "trusted_developer_research_semantic_positive": 4
+}

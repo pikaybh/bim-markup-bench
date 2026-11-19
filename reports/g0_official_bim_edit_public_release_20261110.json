@@ -1,0 +1,111 @@
+{
+  "G2_G3_paid_or_official_scoring_gate_ready": false,
+  "current_local_scorer_metric_origin": "independent-reimplementation",
+  "hidden_ground_truth_accessed": false,
+  "official_executable_scorer_available_to_this_project": false,
+  "official_scorer_numerically_equivalent_to_local": false,
+  "official_tasks_scored_by_this_project": 0,
+  "paid_model_provider_calls": 0,
+  "paper_formula_only_is_not_full_ifc_evaluator": true,
+  "public_reports_confirmed": true,
+  "published_aggregate_check": {
+    "independent_evaluator_numerical_parity_tested": false,
+    "mean_axis_arithmetic_within_publication_rounding": true,
+    "model": "claude-sonnet",
+    "n_tasks": 324,
+    "official_evaluator_executed": false,
+    "paper_table1_rounded_values_match": true,
+    "release_summary_recomputed_from_raw_IFC": false,
+    "reported_table1_means": {
+      "final_score_mean": "0.4531",
+      "geometry_mean": "0.559",
+      "semantics_mean": "0.3385",
+      "topology_mean": "0.4619"
+    },
+    "scene_type_summary_label_may_be_inconsistent_with_task_card": true,
+    "source": "author-published-released-eval-summary",
+    "summary_scene_type_label_counts": {
+      "realistic": 324
+    }
+  },
+  "released_reports_do_not_prove_cross_implementation_parity": true,
+  "source_content_integrity": {
+    "claude_summary_raw_json_sha256": "e9379c8b21b1e7cf39d9568f04bd5fc668847f59f08eb75aba79ea4009783096",
+    "metadata_raw_json_sha256": "95eee942e1213b47e31d79cd979cdb6b05a641cb1cc033fdeb0102d2c4843884",
+    "source_version": "2026-11-10_PINNED_RUNS_SHA",
+    "two_whitelisted_public_JSON_requests": true
+  },
+  "source_inventory": {
+    "author_report_model_count": 7,
+    "executables_in_THIS_runs_revision": [],
+    "models": {
+      "claude-sonnet": {
+        "evaluation_report_file_count": 11,
+        "has_per_task_csv": true,
+        "has_summary_json": true,
+        "model_output_files_not_downloaded": true,
+        "named_evaluation_reports_present": true,
+        "required_eval_file_count": 4
+      },
+      "deepseek-v3.2": {
+        "evaluation_report_file_count": 11,
+        "has_per_task_csv": true,
+        "has_summary_json": true,
+        "model_output_files_not_downloaded": true,
+        "named_evaluation_reports_present": true,
+        "required_eval_file_count": 4
+      },
+      "gemini-flash-3.0": {
+        "evaluation_report_file_count": 11,
+        "has_per_task_csv": true,
+        "has_summary_json": true,
+        "model_output_files_not_downloaded": true,
+        "named_evaluation_reports_present": true,
+        "required_eval_file_count": 4
+      },
+      "gemma4-31B": {
+        "evaluation_report_file_count": 11,
+        "has_per_task_csv": true,
+        "has_summary_json": true,
+        "model_output_files_not_downloaded": true,
+        "named_evaluation_reports_present": true,
+        "required_eval_file_count": 4
+      },
+      "gpt-5.4": {
+        "evaluation_report_file_count": 11,
+        "has_per_task_csv": true,
+        "has_summary_json": true,
+        "model_output_files_not_downloaded": true,
+        "named_evaluation_reports_present": true,
+        "required_eval_file_count": 4
+      },
+      "gpt-5.4-mini": {
+        "evaluation_report_file_count": 11,
+        "has_per_task_csv": true,
+        "has_summary_json": true,
+        "model_output_files_not_downloaded": true,
+        "named_evaluation_reports_present": true,
+        "required_eval_file_count": 4
+      },
+      "qwen3.6-plus": {
+        "evaluation_report_file_count": 11,
+        "has_per_task_csv": true,
+        "has_summary_json": true,
+        "model_output_files_not_downloaded": true,
+        "named_evaluation_reports_present": true,
+        "required_eval_file_count": 4
+      }
+    },
+    "official_evaluator_entrypoint_verified": false,
+    "official_evaluator_equivalence_verified": false,
+    "official_evaluator_version_or_license_file_verified": false,
+    "other_repos_or_submission_code_availability": "NOT_ESTABLISHED",
+    "pinned_revision": "9241abc9b3b4efa3906c0bdabcf3321f1558192f",
+    "possible_executable_artifacts_in_THIS_runs_revision": 0,
+    "public_file_count": 1417,
+    "repo_id": "BIM-Edit/BIM-Edit-runs",
+    "source": "author-published-huggingface-runs-metadata"
+  },
+  "status": "BLOCKED_OFFICIAL_EXECUTABLE_EVALUATOR_NOT_VERIFIED",
+  "task_solutions_accessed": false
+}

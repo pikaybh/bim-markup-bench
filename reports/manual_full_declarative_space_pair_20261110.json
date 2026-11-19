@@ -1,0 +1,42 @@
+{
+  "LLM_provider_calls": 0,
+  "declarative_compiler_operations": [
+    "CREATE_WALL",
+    "ADD_WALL_PATH_CONNECTION",
+    "ADD_WALL_PATH_CONNECTION",
+    "SPLIT_SPACE"
+  ],
+  "declarative_ifc_schema_error_count": 4,
+  "declarative_result_sha256": "e4fc28d9d4220da3972f8fd8ffe39b0b95bc731cdb545a960bb6ece4b9d34124",
+  "far_native_space_boundary_count": 6,
+  "frozen_sample_modified": false,
+  "frozen_task_id": "WAL-CRE-SPA-A-003",
+  "ground_truth_loaded": false,
+  "imperative_result_sha256": "641cf4090af55f7359a681f6055ccd13c387792938b7ca15d001adc16f92fa0c",
+  "input_information_equivalence_proven": false,
+  "manual_source_only_geometry_resolution": true,
+  "model_interpreted_natural_language": false,
+  "native_ifc_comparison_categories": [
+    "ifc_schema",
+    "identities",
+    "products",
+    "relations",
+    "property_sets",
+    "materials"
+  ],
+  "native_independent_ifc_parity": true,
+  "native_space_boundaries_total": 19,
+  "native_space_objects_total": 3,
+  "new_ifc_schema_error_categories": 0,
+  "new_native_boundary_relations": 6,
+  "new_native_space_count": 1,
+  "new_space_independent_psets_proven": false,
+  "new_space_independent_type_assignment_proven": false,
+  "official_evaluator_executed": false,
+  "official_tasks_scored": 0,
+  "original_ifc_schema_error_count": 6,
+  "original_input_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "result_ifc_committed_to_repository": false,
+  "same_pinned_public_source": true,
+  "status": "PASS_ONE_TRUSTED_PAIRED_DECLARATIVE_SPACE_ORACLE_NOT_OFFICIAL_BIM_EDIT"
+}

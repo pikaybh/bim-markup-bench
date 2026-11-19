@@ -1,0 +1,86 @@
+{
+  "G0_G1_G2_G3_release_allowed": false,
+  "author_original_evaluator_callable_on_arbitrary_prediction": false,
+  "author_original_evaluator_cli_entrypoint_verified": false,
+  "author_original_evaluator_lockfile_verified": false,
+  "author_original_evaluator_mit_license_file_verified": false,
+  "author_original_evaluator_scored_output_reproduced": false,
+  "author_original_evaluator_source_commit_verified": false,
+  "author_original_evaluator_source_uri_verified": false,
+  "author_published_hf_runs_revision": "9241abc9b3b4efa3906c0bdabcf3321f1558192f",
+  "author_published_run_file_count": 1417,
+  "author_published_run_model_count": 7,
+  "author_run_reports_available": true,
+  "independent_scorer_metrics_reclassified_as_official": false,
+  "next_gate": "Obtain author-controlled repository URL/commit, license file, dependency lock and CLI; validate offline with author-published raw IFC predictions and reference files under isolated grader once source/GT rights are resolved",
+  "official_tasks_scored": 0,
+  "original_author_public_repo_search_scopes": [
+    "GitHub repository search: user:nbharathik",
+    "GitHub repository search: user:Tsesterh",
+    "GitHub repository search: org:Show2Instruct",
+    "GitHub repository search: org:bartelt-lab",
+    "GitHub code search: BIM-Edit-runs, BIM-Edit-Tasks, 2606.20146"
+  ],
+  "original_author_public_repo_search_was_exhaustive": false,
+  "original_evaluator_scoring_of_unmentioned_space_boundaries_known": false,
+  "original_or_gt_ifc_opened": false,
+  "paid_model_calls": 0,
+  "paper": "https://arxiv.org/html/2606.20146v3",
+  "paper_claim_is_not_license_proof_for_unlocated_code": true,
+  "paper_claimed_author_code_license": "MIT",
+  "paper_describes_code_folder_but_executable_repository_url_unverified": true,
+  "published_official_metric_vs_third_party_alternatives_not_equivalent_by_provenance": true,
+  "research_project": "independent-bim-markup-bench",
+  "source_run_inventory_sha256": "f7232a0217617b54c97c8ae7f8efd965e2e7a8b051a04490ea05c1af87ad3e48",
+  "status": "BLOCKED_OFFICIAL_AUTHOR_CODE_ENTRYPOINT_AND_SCORE_PARITY_UNVERIFIED",
+  "third_party_files_fetched_or_imported_by_this_audit": false,
+  "third_party_reimplementation": {
+    "claim_origin": "third-party public README and config at pinned commit, not certified author evaluator behavior",
+    "cli_documented": "python -m modifc_score.cli",
+    "executed_on_original_bim_edit_gt_or_any_ifc": false,
+    "inspected_bounded_source_files": {
+      "LICENSE": {
+        "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "url": "https://github.com/NTUZZH/VeriBIM/blob/cd3fe8cb18e8d33f76e73906253cf896cb5d4d3b/LICENSE"
+      },
+      "README.md": {
+        "git_blob_sha1": "59c8719521ca104449d8a4ba307bbc6ca7fa1836",
+        "url": "https://github.com/NTUZZH/VeriBIM/blob/cd3fe8cb18e8d33f76e73906253cf896cb5d4d3b/README.md"
+      },
+      "code/modifc_score/README.md": {
+        "git_blob_sha1": "3baba7221bbf80a3fa2d8f64dbda93910759b0b8",
+        "url": "https://github.com/NTUZZH/VeriBIM/blob/cd3fe8cb18e8d33f76e73906253cf896cb5d4d3b/code/modifc_score/README.md"
+      },
+      "code/modifc_score/cli.py": {
+        "git_blob_sha1": "68a915116a7323b8ee898dee9864e6638d410088",
+        "url": "https://github.com/NTUZZH/VeriBIM/blob/cd3fe8cb18e8d33f76e73906253cf896cb5d4d3b/code/modifc_score/cli.py"
+      },
+      "code/modifc_score/config.py": {
+        "git_blob_sha1": "6bb236cbc9542cd011344121062b4bd24481ec2b",
+        "url": "https://github.com/NTUZZH/VeriBIM/blob/cd3fe8cb18e8d33f76e73906253cf896cb5d4d3b/code/modifc_score/config.py"
+      },
+      "code/modifc_score/scorer.py": {
+        "git_blob_sha1": "83b3f3176ba0b239e85193727434a602ae87a130",
+        "url": "https://github.com/NTUZZH/VeriBIM/blob/cd3fe8cb18e8d33f76e73906253cf896cb5d4d3b/code/modifc_score/scorer.py"
+      }
+    },
+    "license_is_not_original_bim_edit_license": true,
+    "license_observed_in_its_own_repository": "Apache-2.0",
+    "paper_v3_delete_semantics": "1.0 if the intended target object is removed, else 0.0",
+    "paper_v3_topology": "0.3 * node_f1 + 0.7 * edge_f1",
+    "pinned_git_commit": "cd3fe8cb18e8d33f76e73906253cf896cb5d4d3b",
+    "repository": "https://github.com/NTUZZH/VeriBIM",
+    "repository_full_name": "NTUZZH/VeriBIM",
+    "source_authors_distinct_from_original_bim_edit_authors": true,
+    "source_classification": "third-party-independent-reimplementation",
+    "strict_official_binary_parity_verified": false,
+    "third_party_claim_checked_against_author_IFCs": false,
+    "third_party_claims_to_reproduce_author_runs_independently": true,
+    "third_party_documented_delete_alternative": "removal",
+    "third_party_documented_delete_default": "matcher",
+    "third_party_documented_topology_alternative": "paper",
+    "third_party_documented_topology_default": "mean_rules",
+    "this_is_original_bim_edit_executable_evaluator": false
+  },
+  "version": "G0_BIM_EDIT_PUBLIC_ORIGINAL_SCORER_SOURCE_REAUDIT_20261111"
+}

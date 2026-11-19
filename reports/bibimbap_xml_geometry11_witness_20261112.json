@@ -1,0 +1,26 @@
+{
+  "added_root_guid_count": 0,
+  "author_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "compile_status": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+  "condition": "DEVELOPER_AUTHORED_XML_NOT_LLM",
+  "dataset_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "llm_calls": 0,
+  "original_author_scorer": {
+    "metrics": {
+      "integrity_constraint": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "score": 1.0,
+    "status": "SCORED"
+  },
+  "original_guid_preserved": true,
+  "original_source_unmodified": true,
+  "removed_root_guid_count": 0,
+  "result_ifc_schema": "IFC4X3",
+  "result_unit_scale": 0.001,
+  "source_visible_level_name": "L2",
+  "status": "XML_AUTHOR_GEOMETRY11_SCORED",
+  "task_id": "geometry_test_11",
+  "wall_changes_source_derived": 6
+}

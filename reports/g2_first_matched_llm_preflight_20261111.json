@@ -1,0 +1,77 @@
+{
+  "approved_original_bim_edit_external_model_count": 0,
+  "candidate_python_isolation_verified": false,
+  "cases": [
+    {
+      "d0_output_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+      "d0_source_relative_native_pass": true,
+      "full_task_scored": false,
+      "i0_output_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+      "i0_source_relative_native_pass": true,
+      "native_postcondition": "WORLD_TRANSLATION_AND_PRESERVED_SEMANTICS",
+      "source_sha256": "c533767f850a7ba01b73caf4467fae7cc886807a72a900d65cd480e7b877bcc9",
+      "surrogate_metric_origin": "surrogate",
+      "task_id": "WIN-UPD-DIR-A-002",
+      "unproven_full_task_condition": "NO_FULL_OFFICIAL_TASK_ORACLE"
+    },
+    {
+      "d0_output_sha256": "282419843c9f67667ea39699e6d32fb3f9f6fd5c3070c4e8dc21012099fbaa51",
+      "d0_source_relative_native_pass": true,
+      "full_task_scored": false,
+      "i0_output_sha256": "f64fe764e39cef9bdac84578e376a7acd6e3870d8510deb9da399c5cd87341e8",
+      "i0_source_relative_native_pass": true,
+      "native_postcondition": "WALL_GEOMETRY_AND_TWO_JOINS_NO_UNREQUESTED_ROOT_CHANGE",
+      "source_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+      "surrogate_metric_origin": "surrogate",
+      "task_id": "WAL-CRE-SPA-A-003",
+      "unproven_full_task_condition": "ROOM_PARTITION_AND_METADATA_NOT_ORACLE_PROVEN"
+    },
+    {
+      "d0_output_sha256": "34712615dffde295ea9df166a3a33e53b9e6085c06194294d4456b98ca477e70",
+      "d0_source_relative_native_pass": true,
+      "full_task_scored": false,
+      "i0_output_sha256": "5dd7fb0c17973ada6abf43fdf52b71d18401e1241124432cb5c9ad6c09310914",
+      "i0_source_relative_native_pass": true,
+      "native_postcondition": "TEN_NATIVE_ROOT_DELETIONS_AND_UNRELATED_MESH_PRESERVATION",
+      "source_sha256": "170d9ed9c10a31d86c3ff2207a450fd552166af21472486f11004f6e2b14defb",
+      "surrogate_metric_origin": "surrogate",
+      "task_id": "DOR-DEL-DIR-A-001",
+      "unproven_full_task_condition": "UNMENTIONED_BOUNDARY_POLICY_AND_ABSENT_OPENING_STOREY_UNKNOWN"
+    }
+  ],
+  "expected_step_before_pilot": "Prospectively review independent full-task evaluator/eligibility; clear IFC model rights; approve model, cost cap and exact token envelope; verify isolated I-arm Linux worker and D/I feedback parity.",
+  "explicit_paid_spend_authorization": false,
+  "frozen_candidate_population_modified": false,
+  "full_task_instruction_oracles_approved": 0,
+  "independent_full_task_evaluator_prospectively_approved": false,
+  "linked_evidence_hashes": {
+    "common_context": "6e19fac000df3601e14710d2d994b693286d727419edbc7c833de12d730630c6",
+    "fixed_36": "f96eda3fb23e549e7274105429049e99d8ee998e31548ff5b61c0bac42c4c16c",
+    "local_worker": "a27fd255f8d499cec63b08056cfaa5802a781488b17aa67544841a0ca8e0f592",
+    "model_rights": "93ccd8f716b1a9dcd48fdd9967013977e1fbbdd3453a55a62dbaea755a01539a",
+    "offline_budget": "63bac4bacad02c66b36d90bf4c066b3bf6c7842c5ec6dfdf5e3192fc5621526e"
+  },
+  "model_context_tool_feedback_parity_approved": false,
+  "model_generated_attempts": 0,
+  "model_provider_and_exact_tokenizer_selected": false,
+  "official_bim_edit_scores_computed": 0,
+  "offline_d0_i0_ifc_pairs_rerun": 3,
+  "offline_native_outputs_scored_by_surrogate": 6,
+  "original_fixed_pilot_task_count": 36,
+  "posthoc_demonstration_cases": [
+    "WIN-UPD-DIR-A-002",
+    "WAL-CRE-SPA-A-003",
+    "DOR-DEL-DIR-A-001"
+  ],
+  "price_snapshot_verified": false,
+  "provider_input_output_tokens_measured": false,
+  "provider_or_network_calls": 0,
+  "real_matched_llm_trial_allowed": false,
+  "real_paid_spend_usd": 0,
+  "source_model_rights_cleared": false,
+  "source_relative_rubric_posthoc_not_preregistered": true,
+  "status": "TECHNICAL_SOURCE_RELATIVE_PAIRS_PASS_REAL_LLM_PILOT_BLOCKED",
+  "surrogate_postconditions_passed": 6,
+  "version": "FIRST_MATCHED_PILOT_SOURCE_ONLY_PRECHECK_V0.1",
+  "worker_linux_engine_available": false
+}

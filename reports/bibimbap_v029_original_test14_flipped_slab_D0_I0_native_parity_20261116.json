@@ -1,0 +1,68 @@
+{
+  "actual_native_Source_IfcSlab_count": 2,
+  "actual_real_LLM_calls": 0,
+  "all45_semantic_read_write_feedback_parity_proven": false,
+  "causal_XML_vs_Python_LLM_performance_supported": false,
+  "frozen_previous_v028_report_hashes": {
+    "reports/bibimbap_v028_original_test11_wall_center_rotate_D0_I0_native_parity_20261116.json": "6818e6bfa2990f8dc9ee3730ba9a7197c72d6f3131af9bae9fbda8d22fefd8cb",
+    "reports/bibimbap_v028_selected_351_nondocker_regression_and_original11_native_QA_20261116.json": "8ad99438f24aa6e8cd34145439fdeb57aec24a59653fe4f007ab87cafd0170db"
+  },
+  "full_native_D0_I0_IFC_bytes_identical": true,
+  "full_original_native_D0_IFC_SHA256": "1b0e811327765bf4f9f85545de64260da19e421f1707d005d8e9ac30e7914b18",
+  "full_original_native_I0_IFC_SHA256": "1b0e811327765bf4f9f85545de64260da19e421f1707d005d8e9ac30e7914b18",
+  "independent_imperative_Python_I0_no_D0_XML_or_scorer_imports": true,
+  "independent_original_native_Root_Product_identity_oracle": {
+    "every_original_IfcProduct_GUID_class_preserved": true,
+    "every_original_IfcRoot_GUID_class_preserved": true,
+    "original_Product_count": 43,
+    "original_Root_count": 358,
+    "status": "INDEPENDENT_ORIGINAL_SOURCE_ROOT_PRODUCT_IDENTITY_PASS"
+  },
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/173",
+  "native_all_original_Roots_and_existing_STEP_bytes_verified": true,
+  "new_cumulative_developer_native_byte_equal_original_cases": 11,
+  "new_cumulative_original_author_callable_developer_pairs": 9,
+  "new_paid_provider_USD": 0,
+  "normalized_original_IFC_SHA256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+  "original_author_pinned_git_SHA": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_score_1_0_both": true,
+  "original_author_scorer_data_or_raw_original_IFC_modified": false,
+  "original_complete_XML_only_target_existing_Slab_z_changed_3_8_to_3_3": true,
+  "original_mm_IFC_source_SHA256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_native_Roots_preserved_count": 358,
+  "original_native_only_private_new_IfcCartesianPoint_created": true,
+  "original_public45_denominator": 45,
+  "original_public_author_explicit_height_wording_interpreted_as_vertical_translation": true,
+  "original_public_data_pinned_git_SHA": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_question_SHA256": "844c0b82724a3803132ecf262ae3a18ca0f7b2b6fe911c895ac59334dd775425",
+  "original_public_task_id": "test_14",
+  "original_source_shared_56_reference_CartesianPoint_preserved": true,
+  "other_original_public_tasks_not_yet_same_protocol_paired": 34,
+  "parent_v028_git_sha": "6505cc8ffd9907d8f4fc477e8424ea4bfcfd8788",
+  "previous_developer_native_byte_equal_original_cases": 10,
+  "previous_original_author_callable_developer_pairs": 8,
+  "raw_original_public_question_target_GUID_hidden_GT_or_IFC_in_report": false,
+  "source_flipped_Z_rectangle_presents_as_existing_typed_Slab": true,
+  "status": "V029_ORIGINAL_PUBLIC_TEST14_FLIPPED_SLAB_TYPED_XML_NATIVE_D0_I0_BYTE_IDENTICAL_AUTHOR_1_0",
+  "trusted_read_and_write_feature_flag_default_OFF": true,
+  "unchanged_original_author_D0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "unchanged_original_author_I0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  }
+}

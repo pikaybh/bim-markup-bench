@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:bim-markup-bench:source-window-delete:v0.14"
+           xmlns="urn:bim-markup-bench:source-window-delete:v0.14"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+  <!-- Experimental original-native source-only declarative entire Window inventory.
+       This is NOT the full lossless IFC model nor a Window CREATE/UPDATE API.
+       A Windows/Window node's omission expresses its deletion. -->
+  <xs:simpleType name="Sha256">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-f]{64}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IFCGlobalId">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Za-z_$]{22}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NativeWindowState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Windows">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Window" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="ifcGuid" type="IFCGlobalId" use="required"/>
+                  <xs:attribute name="originalOpeningGuid" type="IFCGlobalId" use="required"/>
+                  <xs:attribute name="originalHostWallGuid" type="IFCGlobalId" use="required"/>
+                  <xs:attribute name="originalIfcClass" use="required" fixed="IfcWindow" type="xs:string"/>
+                  <xs:attribute name="ownership" use="required" fixed="ORIGINAL_NATIVE_SOURCE" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" fixed="0.14" type="xs:string"/>
+      <xs:attribute name="sourceModelSha256" type="Sha256" use="required"/>
+      <xs:attribute name="sourceCatalogSha256" type="Sha256" use="required"/>
+      <xs:attribute name="sourceIfcSchema" use="required" fixed="IFC4X3" type="xs:string"/>
+      <xs:attribute name="units" use="required" fixed="m" type="xs:string"/>
+      <xs:attribute name="editScope" use="required" fixed="FULL_ORIGINAL_WINDOW_INVENTORY_DELETE_ONLY" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

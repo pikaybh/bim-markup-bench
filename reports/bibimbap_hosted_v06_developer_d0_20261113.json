@@ -1,0 +1,182 @@
+{
+  "historical_luna45_scores_unchanged": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/126",
+  "native_full45_equivalent_to_ifcopenshell_python": false,
+  "new_model_calls": 0,
+  "original_author_dataset_revision": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_author_source_revision": "667004e16bd38fd7d538bcee56191465429fd975",
+  "paid_cost_usd": "0",
+  "status": "PUBLIC_HOSTED_V06_DEVELOPER_FIXED_D0_ONLY",
+  "tasks": [
+    {
+      "candidate_ifc_original_units_sha256": "a44808f333e3aff07acc7a6424354cbbec81e01c0ca019948eb8086be2197490",
+      "compiler_version": "experimental-hosted-v0.6",
+      "developer_authored_not_llm": true,
+      "developer_predeclared_action": {
+        "explicit_native_filling_guid": "11kJIqz$n2Jf_DfJV1SDY7",
+        "explicit_native_opening_guid": "1U$$kq6emLyOkmIlVkRzzn",
+        "native_delete_semantics": "delete filling plus exclusively-filled opening; host preserved",
+        "public_task": "Remove the public-ID Door"
+      },
+      "full_45_native_expressivity_parity": false,
+      "independent_native_ifc_oracle": {
+        "all_remaining_classification_relations_nonempty": true,
+        "candidate_sha256": "6f63a40d070e69f3ec0fdbcab7a59621637b9cf8fac21a7b1d90b1fe0741d140",
+        "deleted_step_objects_verified": 27,
+        "filling_guid_removed": "11kJIqz$n2Jf_DfJV1SDY7",
+        "host_wall_guid_preserved": "11kJIqz$n2Jf_DfJV1SDYu",
+        "opening_guid_removed": "1U$$kq6emLyOkmIlVkRzzn",
+        "original_author_45_task_parity": false,
+        "original_other_ifc_products_preserved": 41,
+        "rooted_deleted_dependency_count": 11,
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_IFC4X3_HOSTED_FILLING_AND_OPENING_DELETE_VALIDATED",
+        "unrelated_native_product_meshes_preserved": 36
+      },
+      "original_author_grade_after_d0": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 0.0,
+          "object_not_exists": 1.0
+        },
+        "original_author_score": 0.5,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "original_public_task_id": "test_17",
+      "public_question_sha256": "07186f99fde397f1c7896f51a7e2d8ba7492cfc53f384948d353a9a558a25bab",
+      "trusted_native_operation": "DELETE_HOSTED_FILLING_AND_OPENING"
+    },
+    {
+      "candidate_ifc_original_units_sha256": "c6a2525b597125068751626a66327cec633ce8eba1b1b598dd95890755776065",
+      "compiler_version": "experimental-hosted-v0.6",
+      "developer_authored_not_llm": true,
+      "developer_predeclared_action": {
+        "explicit_cascade_semantics_note": "Also removes filled Window; this is a developer choice, not original evaluator truth",
+        "explicit_native_filling_guid": "11kJIqz$n2Jf_DfJV1SDbS",
+        "explicit_native_opening_guid": "0APGbZXNKfgPNB$VQQZ0pi",
+        "native_delete_semantics": "delete filling plus exclusively-filled opening; host preserved",
+        "public_task": "Remove the public-ID Opening"
+      },
+      "full_45_native_expressivity_parity": false,
+      "independent_native_ifc_oracle": {
+        "all_remaining_classification_relations_nonempty": true,
+        "candidate_sha256": "069a99ceef530453b5ebd85cc808079e5677edfeccc473736ed7dec9b4094fb2",
+        "deleted_step_objects_verified": 28,
+        "filling_guid_removed": "11kJIqz$n2Jf_DfJV1SDbS",
+        "host_wall_guid_preserved": "2UsXAbj6n0fwEWqdkVuHvg",
+        "opening_guid_removed": "0APGbZXNKfgPNB$VQQZ0pi",
+        "original_author_45_task_parity": false,
+        "original_other_ifc_products_preserved": 41,
+        "rooted_deleted_dependency_count": 11,
+        "source_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+        "status": "INDEPENDENT_IFC4X3_HOSTED_FILLING_AND_OPENING_DELETE_VALIDATED",
+        "unrelated_native_product_meshes_preserved": 36
+      },
+      "original_author_grade_after_d0": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 0.0,
+          "object_not_exists": 1.0
+        },
+        "original_author_score": 0.5,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+      "original_public_task_id": "test_18",
+      "public_question_sha256": "5aeba46c7e07ce6f64de630a909af2239a2bfcc477677b4a99bc79f44da0f9be",
+      "trusted_native_operation": "DELETE_HOSTED_FILLING_AND_OPENING"
+    },
+    {
+      "candidate_ifc_original_units_sha256": "d469342e77e812f81dd59b84d2b32e84e067c4a11314db1bb9afc7a041dd9309",
+      "compiler_version": "experimental-hosted-v0.6",
+      "developer_authored_not_llm": true,
+      "developer_predeclared_action": {
+        "candidate_opening_host_local_x_m": 4.45,
+        "opening_guid": "2FgYNxuD5JBSJ92imotdSQ",
+        "original_opening_host_local_x_m": 1.45,
+        "original_window_width_m": 1.6,
+        "public_task": "Move wider-than-1.50m original Window by global +3m X",
+        "selected_original_window_guid": "2KbOAL4v52mv2YJ6fTql5A",
+        "world_x_offset_m": 3.0
+      },
+      "full_45_native_expressivity_parity": false,
+      "independent_native_ifc_oracle": {
+        "candidate_sha256": "968e4fd52d10ae13c55c782fe1a27eadeddfe10787459329feeeeb42b10f527c",
+        "host_wall_guid": "2KbOAL4v52mv2YJ6fTqlOA",
+        "native_filling_guid": "2KbOAL4v52mv2YJ6fTql5A",
+        "native_opening_guid": "2FgYNxuD5JBSJ92imotdSQ",
+        "original_author_45_task_parity": false,
+        "original_root_count_preserved": 120,
+        "other_original_native_product_meshes_preserved": 8,
+        "source_sha256": "03bac6415ecac45fe3402d2cf5eead73779ca60c1c7e370b9a461be2c1838a8c",
+        "source_step_changed_point_only": 1052,
+        "status": "INDEPENDENT_IFC4X3_HOSTED_OPENING_WITH_FILLING_TRANSLATION_VALIDATED",
+        "world_delta_m": [
+          3.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_author_grade_after_d0": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 0.0
+        },
+        "original_author_score": 0.6666666666666666,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_ifc_sha256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "original_public_task_id": "geometry_test_13",
+      "public_question_sha256": "9185b94cb8f46356f2d72d8245a3e57c90bce08a5128c4d1765a6496611ff4bf",
+      "trusted_native_operation": "MOVE_FILLED_OPENING"
+    },
+    {
+      "candidate_ifc_original_units_sha256": "c8d3a67848c651a501ba28df571c25bdb2ca4779ba648a1b00c35c3f73b29d40",
+      "compiler_version": "experimental-hosted-v0.6",
+      "developer_authored_not_llm": true,
+      "developer_predeclared_action": {
+        "explicit_native_filling_guid": "1g0NIEjcH1lfGqbYWRqt6L",
+        "explicit_native_opening_guid": "0GJ5vHxGEC4l1pTWzlPYoU",
+        "native_delete_semantics": "delete filling plus exclusively-filled opening; host preserved",
+        "original_public_native_door_center_x_m": {
+          "1g0NIEjcH1lfGqbYWRqt6L": 4.518670370868549,
+          "1g0NIEjcH1lfGqbYWRqt8M": 7.7686703708685485,
+          "1g0NIEjcH1lfGqbYWRqtDg": 0.068670370868551
+        },
+        "public_task": "Remove the original Door strictly between two named Door IDs"
+      },
+      "full_45_native_expressivity_parity": false,
+      "independent_native_ifc_oracle": {
+        "all_remaining_classification_relations_nonempty": true,
+        "candidate_sha256": "671608d38ac95d6f448f3296eb61e3ce7b788ce6a4c22f9035247630350f2222",
+        "deleted_step_objects_verified": 25,
+        "filling_guid_removed": "1g0NIEjcH1lfGqbYWRqt6L",
+        "host_wall_guid_preserved": "1g0NIEjcH1lfGqbYWRqt6K",
+        "opening_guid_removed": "0GJ5vHxGEC4l1pTWzlPYoU",
+        "original_author_45_task_parity": false,
+        "original_other_ifc_products_preserved": 13,
+        "rooted_deleted_dependency_count": 9,
+        "source_sha256": "5fc5440f0954f4647e49a9ed4c550b789d40b8820ed8f1a8458e213eb316b726",
+        "status": "INDEPENDENT_IFC4X3_HOSTED_FILLING_AND_OPENING_DELETE_VALIDATED",
+        "unrelated_native_product_meshes_preserved": 8
+      },
+      "original_author_grade_after_d0": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 0.0,
+          "object_not_exists": 1.0
+        },
+        "original_author_score": 0.5,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_ifc_sha256": "d3340378c0a81c392b166ce9954daa471b34856e970dd536c8e7ebe36c6221ab",
+      "original_public_task_id": "geometry_test_16",
+      "public_question_sha256": "cfb3fdda1b3f7652dbbe79452d75510d49ce86cc139b2891330b78f422c0d01f",
+      "trusted_native_operation": "DELETE_HOSTED_FILLING_AND_OPENING"
+    }
+  ],
+  "this_is_NOT_a_new_LLM_benchmark_score": true
+}

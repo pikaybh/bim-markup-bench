@@ -1,0 +1,88 @@
+{
+  "causal_source_representation_effect_claim_permitted": false,
+  "frozen_historical_D0_v04_sha256": "98166dc3a6c606996a5f9bd43e3b0b26fb2852fb61e1c64ea1154aaefc630fec",
+  "frozen_prior_v031_sha256": "d6680b3eadb5733be547c09ab8deed58dd48c7feaccbc3cb562b6e60b475c7dd",
+  "frozen_prior_v032_sha256": "65cd592b83b06ac161ff420982cb2f3378e850613f4645419690e06764987b2b",
+  "full_building_collision_oracle_complete": false,
+  "full_original45_original_author_scorer_parity_established": false,
+  "independent_Python_I0_wrote_actual_IFC_before_D0_XML_compilation": true,
+  "independent_task_specific_native_geometric_semantic_pair_equivalent": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/181",
+  "matched_real_D_I_LLM_trials": 0,
+  "native_IfcProduct_and_IfcRoot_source_preservation_both_arms": true,
+  "native_entire_D0_I0_IFC_byte_equal": false,
+  "native_independent_slab_verification_both_arms": {
+    "all_original_product_native_world_shapes_preserved": true,
+    "all_original_product_native_world_triangle_meshes_preserved": true,
+    "native_new_slab_bbox_m": [
+      -35.0,
+      -2.5,
+      0.0,
+      -25.0,
+      2.5,
+      0.2
+    ],
+    "native_new_slab_extrusion_thickness_mm": 200.0,
+    "new_native_slab_PredefinedType": "FLOOR",
+    "one_and_only_one_new_physical_native_IfcSlab": true,
+    "original_IfcRoot_identity_class_name_description_preserved": true,
+    "original_native_product_count": 43,
+    "original_native_product_world_shapes_verified": 39,
+    "original_native_products_without_shape": 4,
+    "original_native_root_count": 358,
+    "original_product_triangle_faces_independently_compared": 1652,
+    "original_storey_L1_containment_preserved_extended_by_one": true,
+    "status": "INDEPENDENT_ORIGINAL_PUBLIC_NATIVE_SLAB_CREATE_GEOMETRY_AND_SOURCE_PASS"
+  },
+  "native_original_full_IFC_D0_SHA256": "0520cca51fb0b42192d2e23bc54850f15fabc374d06c10b460a8da0371d33473",
+  "native_original_full_IFC_I0_SHA256": "e0af89216662926dd52c4b8fde5726935fc48bbe9ee533d75502e7d47d45a92b",
+  "new_original_native_full_IFC_byte_equal_developer_cases": 11,
+  "no_original_IFC_author_data_or_past_result_modified": true,
+  "original45_full_native_write_capability_equivalence_proven": 0,
+  "original45_full_source_information_equivalence_proven": 0,
+  "original_CREATE_cases_without_test_specific_semantic_pair": 13,
+  "original_CREATE_semantic_only_developer_pairs_after_v033": 2,
+  "original_author_D0_score": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_I0_score": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_full_score_equal_both_arms": true,
+  "original_author_pinned_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_dataset_pinned_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public45_denominator_unchanged": 45,
+  "original_public_IFC_schema_units": "IFC4X3_NATIVE_MILLIMETRES",
+  "original_public_question_sha256": "b11d1746b2a59a6b346bbcf643aa5ae738f6719d31babe9468ca8d90209592d3",
+  "original_public_source_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_public_test_id": "test_02",
+  "paid_model_requests": 0,
+  "predeclared_public_slab_xyz_dimensions_thickness_m": [
+    -35.0,
+    -2.5,
+    0.0,
+    10.0,
+    5.0,
+    0.2
+  ],
+  "prior_11_original_native_full_IFC_byte_equal_developer_cases_unchanged": 11,
+  "status": "V033_ORIGINAL_PUBLIC_TEST02_PHYSICAL_SLAB_CREATE_INDEPENDENT_D0_I0_SEMANTIC_PAIR",
+  "trusted_D0_source_is_full_declarative_XML_state": true,
+  "underlying_model_host_enables_this_v04_D0_backend": false
+}

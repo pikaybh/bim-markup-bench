@@ -1,0 +1,89 @@
+{
+  "D0": "Trusted compiler from declarative XML-only edits",
+  "I0": "Separate manually authored IfcOpenShell reference; no compiler helper imports",
+  "all_scenarios_native_ifc_semantic_parity": true,
+  "api_model_calls": 0,
+  "blocked_reasons": [
+    "Only own synthetic IFC input was used for paired deterministic oracle",
+    "Most official six-class CRUD operations remain unsupported",
+    "Pinned official IFC asset content audit and blind evaluator incomplete",
+    "Matched model observation and secured trial execution pending"
+  ],
+  "checks": [
+    "IFC schema and IfcRoot GlobalId/class inventories",
+    "Native storey/void/fill/space/connect IFC relationships",
+    "IFC world placements and B-rep-derived triangulated bounding boxes/volumes",
+    "Psets and source material records",
+    "Byte-identical IFC no-op and unchanged source"
+  ],
+  "four_static_case_output_proofs": {
+    "create_standalone_wall": {
+      "D0_output_sha256": "9db398a87f1b649d93a918e6797a8806be19c70f7b693042e87687fe27cafa55",
+      "I0_output_sha256": "7cddaa0897c4306a7364cfa4490b359b8f461dfd7b352ca8dd2035d0109df6ef",
+      "input_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+      "intended_operations": [
+        "CREATE_WALL"
+      ],
+      "native_ifc_parity": true,
+      "native_relation_count": 10,
+      "unintended_root_changes": [],
+      "untouched_root_objects_verified": 21
+    },
+    "delete_hosted_window": {
+      "D0_output_sha256": "eec461363a35201c8160bdef6a625bec1966c9321c8c7783017f98196271e9af",
+      "I0_output_sha256": "eec461363a35201c8160bdef6a625bec1966c9321c8c7783017f98196271e9af",
+      "input_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+      "intended_operations": [
+        "DELETE_WINDOW"
+      ],
+      "native_ifc_parity": true,
+      "native_relation_count": 9,
+      "unintended_root_changes": [],
+      "untouched_root_objects_verified": 19
+    },
+    "move_hosted_opening": {
+      "D0_output_sha256": "feb0bf8ba8ed90cf302298277ca2617ce31eac8def6a1810f414b04cbbedaa0b",
+      "I0_output_sha256": "feb0bf8ba8ed90cf302298277ca2617ce31eac8def6a1810f414b04cbbedaa0b",
+      "input_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+      "intended_operations": [
+        "MOVE_OPENING_WITH_FILLING"
+      ],
+      "native_ifc_parity": true,
+      "native_relation_count": 10,
+      "unintended_root_changes": [],
+      "untouched_root_objects_verified": 22
+    },
+    "update_wall_height": {
+      "D0_output_sha256": "c30fee1b2900ab0c8c3f17d846850acd189a717c1558689290cdb1e1fa4b5cdd",
+      "I0_output_sha256": "c30fee1b2900ab0c8c3f17d846850acd189a717c1558689290cdb1e1fa4b5cdd",
+      "input_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+      "intended_operations": [
+        "UPDATE_WALL_HEIGHT"
+      ],
+      "native_ifc_parity": true,
+      "native_relation_count": 10,
+      "unintended_root_changes": [],
+      "untouched_root_objects_verified": 22
+    }
+  },
+  "independent_checker": "tests/oracles/python/independent_ifc_checker.py",
+  "official_bim_edit_tasks_tested": 0,
+  "official_full_324_engine_ceiling": null,
+  "own_fixture": "tests/fixtures/synthetic/input.ifc",
+  "own_fixture_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+  "paid_model_pilot_ready": false,
+  "release_gate": "BLOCKED_PILOT_UNTIL_G0_G1_G2_EVIDENCE",
+  "scenarios": [
+    "IfcWall.create_with_native_storey",
+    "IfcWall.update_height",
+    "IfcWall.delete_standalone",
+    "IfcOpeningElement.move_with_window",
+    "IfcWindow.delete_fill_preserve_void",
+    "IfcRelConnectsElements.create"
+  ],
+  "scenarios_verified": 6,
+  "schema_version": "g1-08-independent-synthetic-oracle-v0.1",
+  "status": "PASS_SYNTHETIC_ONLY",
+  "unit_tests_executed": 6,
+  "world_geometry_tolerance_m": 1e-06
+}

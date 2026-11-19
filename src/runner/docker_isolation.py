@@ -19,6 +19,10 @@ import subprocess
 import tempfile
 import uuid
 
+from src.runner.local_docker_transport import (
+    LocalDockerTransportError,pinned_local_docker_argv,
+)
+
 
 class DockerIsolationError(RuntimeError):
     pass
@@ -105,14 +109,23 @@ def _docker_binary()->str:
 def _invoke(args:list[str],*,timeout:int=12)->subprocess.CompletedProcess:
     # Only a minimal host environment reaches the Docker client. The sentinel
     # exercises the guarantee it does NOT flow into the worker container.
-    env={
-        "HOME":str(Path.home()),
-        "PATH":"/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin",
-        "OPENAI_API_KEY":"BIM_BENCH_FAKE_LOCAL_PROBE_SENTINEL",
-    }
+    if os.name=="nt":
+        env={key:os.environ[key] for key in (
+            "SYSTEMROOT","WINDIR","COMSPEC","TEMP","TMP","USERPROFILE"
+        ) if key in os.environ}
+        env["PATH"]=str(Path(args[0]).parent)
+    else:
+        env={"HOME":str(Path.home()),
+             "PATH":"/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin"}
+    # Deliberately fake sentinel reaches Docker client only, never container.
+    env["OPENAI_API_KEY"]="BIM_BENCH_FAKE_LOCAL_PROBE_SENTINEL"
+    try:
+        anchored=pinned_local_docker_argv(args)
+    except LocalDockerTransportError as exc:
+        raise DockerIsolationError("Trusted probe must use fixed local Docker engine") from exc
     try:
         return subprocess.run(
-            args,capture_output=True,text=True,timeout=timeout,
+            anchored,capture_output=True,text=True,timeout=timeout,
             env=env,check=False
         )
     except subprocess.TimeoutExpired as exc:

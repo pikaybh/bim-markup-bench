@@ -1,0 +1,23 @@
+{
+  "G1_G2_G3_unblocked": false,
+  "LLM_calls": 0,
+  "approved_llm_runs": 0,
+  "d0_native_ifc_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+  "frozen_task_id": "WIN-UPD-DIR-A-002",
+  "full_official_task_oracle_proven": false,
+  "host_wall_outer_bounds_and_volume_preserved_both_arms": true,
+  "host_wall_regenerated_void_rim_both_arms": true,
+  "i0_native_ifc_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+  "native_physical_postconditions_are_not_official_evaluator": true,
+  "official_tasks_scored": 0,
+  "public_instruction_sha256": "ff98d90daafa34a4979fc942d4d3477a0128526a2cf7c918c419473319078efe",
+  "reference_GT_ifc_or_scorer_loaded": false,
+  "represented_products_checked_per_arm": 28,
+  "research_gate": "BLOCKED_OFFICIAL_GT_SCORER_AND_MATCHED_LLM",
+  "source_ifc_sha256": "c533767f850a7ba01b73caf4467fae7cc886807a72a900d65cd480e7b877bcc9",
+  "status": "PASS_BOTH_STRICT_PUBLIC_NATIVE_MESH_POSTCONDITIONS",
+  "treatment_independent_of_oracle": true,
+  "unaffected_world_meshes_preserved_per_arm": 25,
+  "version": "g1-public-window-native-physical-check-v0.1",
+  "window_and_opening_world_mesh_translation_both_arms": true
+}

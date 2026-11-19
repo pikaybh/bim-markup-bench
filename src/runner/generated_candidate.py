@@ -27,6 +27,9 @@ import time
 import uuid
 
 from src.runner.docker_isolation import DockerIsolationError
+from src.runner.local_docker_transport import (
+    LocalDockerTransportError,pinned_local_docker_argv,
+)
 from src.runner.ifc_worker import (
     _docker_cli, _inspect_config, _sha, _verify_local_image, _run,
     OWN_SOURCE,
@@ -62,7 +65,11 @@ def _limited_attach(container_id:str,timeout_seconds:int)->subprocess.CompletedP
     if not re.fullmatch(r"[a-f0-9]{64}",container_id):
         raise DockerIsolationError("Untrusted container ID")
     from src.runner.ifc_worker import _host_docker_env
-    argv=[_docker_cli(),"start","--attach",container_id]
+    try:
+        argv=pinned_local_docker_argv(
+            [_docker_cli(),"start","--attach",container_id])
+    except LocalDockerTransportError as exc:
+        raise DockerIsolationError("Candidate attach must use fixed local Docker engine") from exc
     child=subprocess.Popen(
         argv,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,env=_host_docker_env(),
@@ -185,6 +192,7 @@ def _trusted_separate_own_grader(source:Path,result:Path)->dict:
 def run_offline_own_generated_candidate(
     image_id:str,script_bytes:bytes,expected_script_sha256:str,
     *,wall_seconds:int=15,seed:int=0,
+    export_verified_own_ifc:Path|None=None,
 )->dict:
     """Safely isolate *arbitrary bytes* only against a fixed OWN synthetic IFC.
 
@@ -193,17 +201,31 @@ def run_offline_own_generated_candidate(
     No host exec/eval/import of candidate code. Real model and paid pilot
     entry points remain blocked in src.runner.sandbox.execute_untrusted_candidate.
     """
-    script_digest=candidate_content_sha256(script_bytes)
-    if expected_script_sha256!=script_digest:
-        raise DockerIsolationError("Candidate bytes changed after trusted capture")
     if not isinstance(seed,int) or isinstance(seed,bool) or not 0<=seed<=2**31-1:
         raise DockerIsolationError("Invalid replay seed")
     if not isinstance(wall_seconds,int) or not 3<=wall_seconds<=MAX_WALL_SECONDS:
         raise DockerIsolationError("Invalid worker wall timeout")
+    if export_verified_own_ifc is not None:
+        dest=Path(export_verified_own_ifc)
+        if (dest.is_symlink() or dest.exists()
+                or not dest.parent.is_dir() or dest.parent.is_symlink()
+                or dest.suffix.lower()!=".ifc"):
+            raise DockerIsolationError("OWN verified IFC export must be a fresh file in an existing directory")
+    else:
+        dest=None
+    # Shared strict OWN-only admission is enforced BEFORE checking/using
+    # Docker. The binder only hashes opaque code; it neither imports nor
+    # executes a candidate or exposes any other IFC source path.
+    from src.runner.worker_admission import bind_own_candidate,WorkerAdmissionError
+    try:
+        admitted=bind_own_candidate(
+            script_bytes,expected_script_sha256,_sha(OWN_SOURCE),
+            arm="imperative_python",seed=seed)
+    except (WorkerAdmissionError,OSError) as exc:
+        raise DockerIsolationError("OWN source/candidate admission rejected") from exc
+    script_digest=admitted.script_sha256
+    source_digest=admitted.source_sha256
     _verify_local_image(image_id)
-    if OWN_SOURCE.is_symlink() or not OWN_SOURCE.is_file():
-        raise DockerIsolationError("OWN synthetic fixture unavailable")
-    source_digest=_sha(OWN_SOURCE)
     run_id=sha256(f"g2-own-only|{source_digest}|{script_digest}|{seed}".encode()).hexdigest()[:24]
     container_name="bim-bench-own-dynamic-"+uuid.uuid4().hex[:12]
     with tempfile.TemporaryDirectory(prefix="bim-bench-owned-dynamic-") as directory:
@@ -282,6 +304,15 @@ def run_offline_own_generated_candidate(
                     or isolated_grade.get("candidate_script_mounted_in_grader") is not False
                     or isolated_grade.get("GT_mounted_in_separate_grader_only") is not True):
                 raise DockerIsolationError("Independent isolated OWN grading did not pass")
+            # Only an independently graded OWN result may be copied out.
+            # The model cannot select its destination; the trusted caller
+            # supplies a new path. Never overwrite or export external IFCs.
+            if dest is not None:
+                with dest.open("xb") as delivered:
+                    delivered.write(ifc_bytes)
+                if _sha(dest)!=result_digest:
+                    dest.unlink(missing_ok=True)
+                    raise DockerIsolationError("Verified OWN IFC export digest mismatch")
             return {
                 "status":"OWN_SYNTHETIC_DYNAMIC_CANDIDATE_VERIFIED",
                 "run_id":run_id,"candidate_sha256":script_digest,

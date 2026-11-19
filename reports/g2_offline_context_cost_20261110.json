@@ -1,0 +1,153 @@
+{
+  "direct_bim_api_access_available": false,
+  "direct_xml_only_authoring_operations": [
+    "read_text",
+    "patch_text",
+    "rewrite_xml_text"
+  ],
+  "frozen_pilot": {
+    "conservative_source_missing_conditional_inputs": 2,
+    "conservative_v01_static_unsupported": 23,
+    "frozen_candidate_sha256": "75b4847814dbefad95340556c0b62f9cda72cac319cd82ecb23ea4933c9ab694",
+    "frozen_candidate_size": 36,
+    "legacy_source_reason_counts": {
+      "MISSING_PINNED_INPUT_IFC": 2,
+      "REQUIRED_NATIVE_RELATION_CREATION_NOT_IMPLEMENTED": 1,
+      "STATIC_ENGINE_UNSUPPORTED": 23,
+      "WALL_CREATE_SPATIAL_ORACLE_NOT_PROVEN": 1,
+      "WALL_DELETE_SOURCE_DEPENDENCIES_BLOCKED": 2,
+      "WALL_THICKNESS_NATIVE_DEPENDENCIES_BLOCKED": 3,
+      "WINDOW_DELETE_NATIVE_RELATIONS_BLOCKED": 2,
+      "WINDOW_MOVE_VECTOR_AND_PAIRED_ORACLE_NOT_PROVEN": 1,
+      "WINDOW_OPENING_DIMENSION_CHANGE_UNIMPLEMENTED": 1
+    },
+    "official_benchmark_tasks_scored": 0,
+    "paired_attempts_if_all_tasks_approved": 72,
+    "plan": {
+      "draft_only": true,
+      "estimated_usd_from_measured_tokens": null,
+      "live_provider_billing_authorized": false,
+      "planned_input_token_limit_per_attempt": 20000,
+      "planned_max_attempts_per_task": 1,
+      "planned_output_token_limit_per_attempt": 6000,
+      "provider_input_tokens": null,
+      "provider_model_selected": false,
+      "provider_name_selected": false,
+      "provider_output_tokens": null,
+      "provider_price_revision_verified": false,
+      "tokenizer_exact_for_selected_model_verified": false
+    },
+    "source_classifier_is_conservative_legacy_v01_not_latest_native": true,
+    "source_eligibility_snapshot_date": "2026-11-10",
+    "source_eligibility_snapshot_status": "BLOCKED_NO_OFFICIAL_PAIRED_D0_I0_TASK_ORACLES",
+    "verified_current_full_36_paired_oracle_coverage": false
+  },
+  "g2_current_status": "BLOCKED_FOR_LIVE_MODEL_PILOT",
+  "hidden_ground_truth_opened": false,
+  "imperative_api_notes": {
+    "billable_provider_tokens": null,
+    "provider_input_tokens": null,
+    "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+    "unicode_codepoints": 1111,
+    "utf8_bytes": 1113
+  },
+  "imperative_os_sandbox_available": false,
+  "imperative_python_executed": false,
+  "imperative_python_only_authoring_operations": [
+    "submit_python_text"
+  ],
+  "input_ifc_original_sha_unchanged": true,
+  "official_evaluator_verified": false,
+  "proposed_v02_metadata": {
+    "billable_provider_tokens": null,
+    "candidate_authoring_answer_exposed": false,
+    "candidate_model_facing_enabled": false,
+    "provider_input_tokens": null,
+    "sha256": "0fbf2221b79e0a1b7304ff249676a07fddb140b53db1a20414c0a510708d756f",
+    "source_only": true,
+    "unicode_codepoints": 2211,
+    "utf8_bytes": 2211
+  },
+  "provider_price_or_billing_snapshot_freshness_verified": false,
+  "provider_tokenizer_installed": false,
+  "real_provider_token_count": null,
+  "release": {
+    "actual_provider_tokens": null,
+    "actual_usd_cost": null,
+    "all_prerequisites_satisfied": false,
+    "blocking_reason_codes": [
+      "model_context_transport_implemented_and_verified",
+      "exact_selected_model_tokenizer_implemented",
+      "per_arm_provider_token_usage_measured",
+      "v02_ablation_preregistered_and_context_budget_approved",
+      "live_d_and_i_tools_verified_isolated",
+      "official_evaluator_provenance_and_score_calibrated",
+      "full_frozen_task_coverage_and_rights_verified",
+      "model_price_snapshot_and_spend_approved",
+      "durable_provider_budget_runtime_implemented"
+    ],
+    "model_calls": 0,
+    "official_task_scores": 0,
+    "preconditions": {
+      "candidate_overlay_equal_and_source_only": true,
+      "durable_provider_budget_runtime_implemented": false,
+      "exact_selected_model_tokenizer_implemented": false,
+      "full_frozen_task_coverage_and_rights_verified": false,
+      "live_d_and_i_tools_verified_isolated": false,
+      "model_context_transport_implemented_and_verified": false,
+      "model_price_snapshot_and_spend_approved": false,
+      "official_evaluator_provenance_and_score_calibrated": false,
+      "per_arm_provider_token_usage_measured": false,
+      "same_public_source_text_and_sha": true,
+      "v02_ablation_preregistered_and_context_budget_approved": false
+    },
+    "status": "BLOCKED_NO_ACTUAL_MODEL_TOKEN_COUNTS_OR_FAIR_G3_RUN"
+  },
+  "scorer_metric_origin": "independent-reimplementation",
+  "shared_source_components": {
+    "public_instruction": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "31a00588498f68ef6791a133b033cc3da442749d5a237e76f0f5817cf095d14d",
+      "unicode_codepoints": 313,
+      "utf8_bytes": 313
+    },
+    "public_task_id": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "f1604240958cafa8ad6ef1be35e6db1d54dfea9bfc41b34def4ab1beb1df3ebf",
+      "unicode_codepoints": 17,
+      "utf8_bytes": 17
+    },
+    "source_ifc_digest": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "7b33f462ce00533e76b956cadda833f073c5b34ef3b44107b9c738fe9acf991e",
+      "unicode_codepoints": 64,
+      "utf8_bytes": 64
+    },
+    "v01_schema_spec": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+      "unicode_codepoints": 7381,
+      "utf8_bytes": 7383
+    },
+    "v01_source_xml": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "63256657f665c268ada86a8f8344a9629c66747e5f0b029378d05de6c2b8c02f",
+      "unicode_codepoints": 2684,
+      "utf8_bytes": 2684
+    }
+  },
+  "shared_source_facts_identical": true,
+  "source_model_rights_cleared": false,
+  "source_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "task_id": "WAL-CRE-SPA-A-003",
+  "tokenizer_for_target_model_verified": false,
+  "v02_candidate_added_exact_utf8_bytes": 2211,
+  "v02_candidate_added_provider_tokens": null,
+  "v02_experimental_authoring_answer_present_in_model_input": false,
+  "version": "g2-offline-context-cost-fairness-audit-v0.1"
+}

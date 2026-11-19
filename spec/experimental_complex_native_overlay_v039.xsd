@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:c="urn:bim-markup-bench:complex-native:v0.39"
+           targetNamespace="urn:bim-markup-bench:complex-native:v0.39"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           version="0.39">
+  <xs:annotation><xs:documentation>
+    Partial developer research-only native IFC4X3 source overlay.
+    OriginalNativeSource holds READ-ONLY evidence of actual native mapped/clipped
+    source IFC, not editable simplified 3D geometry. Only Elements' one new Slab
+    or exactly one hosted Opening+Door can be created. Not lossless BIM XML.
+  </xs:documentation></xs:annotation>
+  <xs:simpleType name="Sha256"><xs:restriction base="xs:string"><xs:pattern value="[0-9a-f]{64}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Guid"><xs:restriction base="xs:string"><xs:pattern value="[0-9A-Za-z_$]{22}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="LocalId"><xs:restriction base="xs:string"><xs:pattern value="[a-zA-Z][a-zA-Z0-9_]{0,79}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Positive"><xs:restriction base="xs:decimal"><xs:minExclusive value="0"/></xs:restriction></xs:simpleType>
+  <xs:complexType name="SourceProduct">
+    <xs:attribute name="ifcGuid" type="c:Guid" use="required"/>
+    <xs:attribute name="ifcClass" type="xs:string" use="required"/>
+    <xs:attribute name="originalName" type="xs:string" use="optional"/>
+    <xs:attribute name="originalSourceOwned" type="xs:boolean" use="required"/>
+    <xs:attribute name="nativeBodyRepresentationType" type="xs:string" use="optional"/>
+    <xs:attribute name="meshStatus" type="xs:string" use="required"/>
+    <xs:attribute name="worldVerticesSha256" type="c:Sha256" use="optional"/>
+    <xs:attribute name="worldTrianglesSha256" type="c:Sha256" use="optional"/>
+    <xs:attribute name="worldTriangleCount" type="xs:nonNegativeInteger" use="optional"/>
+    <xs:attribute name="worldMinX" type="xs:decimal" use="optional"/>
+    <xs:attribute name="worldMinY" type="xs:decimal" use="optional"/>
+    <xs:attribute name="worldMinZ" type="xs:decimal" use="optional"/>
+    <xs:attribute name="worldMaxX" type="xs:decimal" use="optional"/>
+    <xs:attribute name="worldMaxY" type="xs:decimal" use="optional"/>
+    <xs:attribute name="worldMaxZ" type="xs:decimal" use="optional"/>
+    <xs:attribute name="axisStartX" type="xs:decimal" use="optional"/>
+    <xs:attribute name="axisStartY" type="xs:decimal" use="optional"/>
+    <xs:attribute name="axisEndX" type="xs:decimal" use="optional"/>
+    <xs:attribute name="axisEndY" type="xs:decimal" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="SourceRelation">
+    <xs:attribute name="ifcGuid" type="c:Guid" use="required"/>
+    <xs:attribute name="ifcClass" type="xs:string" use="required"/>
+    <xs:attribute name="relatingGuid" type="c:Guid" use="required"/>
+    <xs:attribute name="relatedGuid" type="c:Guid" use="required"/>
+    <xs:attribute name="originalSourceOwned" type="xs:boolean" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="OriginalNativeSource">
+    <xs:sequence>
+      <xs:element name="Products">
+        <xs:complexType><xs:sequence>
+          <xs:element name="Product" type="c:SourceProduct" minOccurs="1" maxOccurs="2000"/>
+        </xs:sequence></xs:complexType>
+      </xs:element>
+      <xs:element name="Relations">
+        <xs:complexType><xs:sequence>
+          <xs:element name="Relation" type="c:SourceRelation" minOccurs="0" maxOccurs="10000"/>
+        </xs:sequence></xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="mode" type="xs:string" fixed="READ_ONLY_NATIVE_IFC_AUTHORITY" use="required"/>
+    <xs:attribute name="editableGeometryComplete" type="xs:boolean" fixed="false" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="NewSlab">
+    <xs:attribute name="id" type="c:LocalId" use="required"/>
+    <xs:attribute name="levelGuid" type="c:Guid" use="required"/>
+    <xs:attribute name="x" type="xs:decimal" use="required"/>
+    <xs:attribute name="y" type="xs:decimal" use="required"/>
+    <xs:attribute name="z" type="xs:decimal" use="required"/>
+    <xs:attribute name="length" type="c:Positive" use="required"/>
+    <xs:attribute name="depth" type="c:Positive" use="required"/>
+    <xs:attribute name="thickness" type="c:Positive" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="NewOpening">
+    <xs:attribute name="id" type="c:LocalId" use="required"/>
+    <xs:attribute name="hostGuid" type="c:Guid" use="required"/>
+    <xs:attribute name="centerX" type="xs:decimal" use="required"/>
+    <xs:attribute name="centerY" type="xs:decimal" use="required"/>
+    <xs:attribute name="sillZ" type="xs:decimal" use="required"/>
+    <xs:attribute name="width" type="c:Positive" use="required"/>
+    <xs:attribute name="height" type="c:Positive" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="NewDoor">
+    <xs:attribute name="id" type="c:LocalId" use="required"/>
+    <xs:attribute name="opening" type="c:LocalId" use="required"/>
+    <xs:attribute name="width" type="c:Positive" use="required"/>
+    <xs:attribute name="height" type="c:Positive" use="required"/>
+  </xs:complexType>
+  <xs:element name="Building">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="OriginalNativeSource" type="c:OriginalNativeSource"/>
+        <xs:element name="Elements">
+          <xs:complexType><xs:choice minOccurs="0" maxOccurs="2">
+            <xs:element name="Slab" type="c:NewSlab"/>
+            <xs:element name="Opening" type="c:NewOpening"/>
+            <xs:element name="Door" type="c:NewDoor"/>
+          </xs:choice></xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" fixed="0.39" use="required"/>
+      <xs:attribute name="sourceModelSha256" type="c:Sha256" use="required"/>
+      <xs:attribute name="originalIFCSha256" type="c:Sha256" use="required"/>
+      <xs:attribute name="sourceIfcSchema" type="xs:string" fixed="IFC4X3" use="required"/>
+      <xs:attribute name="sourceLengthUnit" type="xs:string" fixed="METER_NORMALIZED" use="required"/>
+      <xs:attribute name="sourceStateCompleteness" type="xs:string"
+                    fixed="PARTIAL_NATIVE_REFERENCE_OVERLAY_NOT_LOSSLESS_IFC"
+                    use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

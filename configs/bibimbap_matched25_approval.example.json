@@ -1,0 +1,13 @@
+{
+  "approved": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/114",
+  "model": "gpt-6-luna",
+  "cap_usd": "0.00",
+  "max_tool_calls": 25,
+  "max_output_tokens": 12000,
+  "pricing_checked_utc": "REPLACE_WITH_CURRENT_UTC_YYYY-MM-DDTHH:MM:SSZ",
+  "approved_at_utc": "REPLACE_WITH_EXPLICIT_OWNER_APPROVAL_UTC",
+  "input_per_million_usd": "0.10",
+  "output_per_million_usd": "0.50",
+  "pricing_url": "https://developers.openai.com/api/docs/pricing"
+}

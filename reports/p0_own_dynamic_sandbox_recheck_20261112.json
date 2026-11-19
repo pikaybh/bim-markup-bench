@@ -1,0 +1,45 @@
+{
+  "G2_paid_or_official_model_gate": "BLOCKED",
+  "OWN_source_only": true,
+  "OWN_source_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+  "OWN_synthetic_grader_OS_isolation_verified": true,
+  "cases": [
+    {
+      "GT_accessible_to_candidate": false,
+      "GT_mounted_only_in_isolated_grader": true,
+      "OS_isolated_owned_grader": true,
+      "candidate_script_mounted_to_grader": false,
+      "candidate_sha256": "45fe7ba146a95b018b0e2f4cccbbb213ad580b30bccef8da8a5a80af53594bef",
+      "input_source_unchanged": true,
+      "official_tasks_scored": 0,
+      "only_expected_step_entity_changed": true,
+      "own_synthetic_compartment_status": "OWN_SYNTHETIC_DYNAMIC_CANDIDATE_VERIFIED",
+      "paid_model_calls": 0,
+      "separate_trusted_grader_process": true,
+      "test_id": "own_dynamic_wall_edit"
+    },
+    {
+      "GT_accessible_to_candidate": false,
+      "GT_mounted_only_in_isolated_grader": true,
+      "OS_isolated_owned_grader": true,
+      "candidate_script_mounted_to_grader": false,
+      "candidate_sha256": "beb4cea8fca5dffe3c95a709e093dd4818dfd078965fcc178ba9ecb0a15b1ccf",
+      "input_source_unchanged": true,
+      "official_tasks_scored": 0,
+      "only_expected_step_entity_changed": true,
+      "own_synthetic_compartment_status": "OWN_SYNTHETIC_DYNAMIC_CANDIDATE_VERIFIED",
+      "paid_model_calls": 0,
+      "separate_trusted_grader_process": true,
+      "test_id": "own_embedded_attack_denial"
+    }
+  ],
+  "image_id": "sha256:2ce0d57dff6ea443c7f5ffffd29cf8b1b50a141b77574aae5ca4646f45f3a1ee",
+  "model_generated_python_called": false,
+  "official_tasks_scored": 0,
+  "paid_model_calls": 0,
+  "production_model_generated_program_authorized": false,
+  "scientific_independent_grader_isolation_verified": false,
+  "source_and_reference_not_published": true,
+  "status": "OWN_SYNTHETIC_DYNAMIC_SANDBOX_PROOF_PASS",
+  "test_count": 2
+}

@@ -1,0 +1,24 @@
+{
+  "dataset_commit_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "language_spec_sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+  "llm_calls": 0,
+  "model_packet_sha256": "2a483f97bf36726c2930ed9df8e80e1106f34bde460416a0c0b11fb3ea736959",
+  "model_tokens": null,
+  "model_visible_api_tools": false,
+  "model_visible_author_scorer": false,
+  "model_visible_original_gt": false,
+  "normalized_input_ifc_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+  "note": "Only a public prompt plus a projected XML state; does not imply benchmark scoring or launch permission.",
+  "original_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "packet_keys": [
+    "input",
+    "instructions"
+  ],
+  "paid_spend_usd": 0,
+  "public_csv_sha256": "21c07f08c923cdb748255d7960535bab05e2887e4d093d64f87f76ff6d6d100b",
+  "public_question_sha256": "222cd92c3b4d9eae335aadda7511eadac9e65e5b1f22776ba8f7c1beb13cf4d0",
+  "public_trial_id": "BIBI-XML-PRECHECK-0001",
+  "public_xml_sha256": "932ad4890d2ca16c2dd38c020bba9353955ecdcf6298202efd4b5297802098c3",
+  "source_is_partial_xml_overlay": true,
+  "status": "PUBLIC_PACKET_PREPARED_OFFLINE_ONLY"
+}

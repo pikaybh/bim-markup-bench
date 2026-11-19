@@ -1,0 +1,25 @@
+{
+  "candidate_saved_to_repository": false,
+  "declarative_candidate_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+  "fixed_36_sample_unchanged": true,
+  "ground_truth_ifc_opened": false,
+  "imperative_candidate_sha256": "10c68b5a1320f51e1f75f0e12868e1b38f84bc316a92a3c123059d0358bdfe16",
+  "model_interpreted_instruction": false,
+  "native_root_changes_unexpected_count": 0,
+  "native_topology_inventory_preserved": true,
+  "official_evaluator_executed": false,
+  "official_tasks_scored": 0,
+  "original_input_sha256": "c533767f850a7ba01b73caf4467fae7cc886807a72a900d65cd480e7b877bcc9",
+  "paid_model_calls": 0,
+  "paired_independent_ifc_observation_parity": true,
+  "shared_pinned_input": true,
+  "source_bytes_unchanged": true,
+  "status": "PASS_ONE_TRUSTED_MANUAL_REAL_SOURCE_ORACLE_NOT_AN_LLM_EXPERIMENT",
+  "task_id": "WIN-UPD-DIR-A-002",
+  "trusted_manual_target_selection": true,
+  "world_translation_m": [
+    0.0,
+    1.0,
+    0.0
+  ]
+}

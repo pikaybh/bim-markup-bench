@@ -1,0 +1,82 @@
+{
+  "G1_G2_G3_experiment_unblocked": false,
+  "I0_only_api_reference_bytes": 1113,
+  "common_actual_model_visible_text_component_hashes": {
+    "public_instruction": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "31a00588498f68ef6791a133b033cc3da442749d5a237e76f0f5817cf095d14d",
+      "unicode_codepoints": 313,
+      "utf8_bytes": 313
+    },
+    "public_task_id": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "f1604240958cafa8ad6ef1be35e6db1d54dfea9bfc41b34def4ab1beb1df3ebf",
+      "unicode_codepoints": 17,
+      "utf8_bytes": 17
+    },
+    "source_ifc_digest": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "7b33f462ce00533e76b956cadda833f073c5b34ef3b44107b9c738fe9acf991e",
+      "unicode_codepoints": 64,
+      "utf8_bytes": 64
+    },
+    "v01_schema_spec": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+      "unicode_codepoints": 7381,
+      "utf8_bytes": 7383
+    },
+    "v01_source_xml": {
+      "billable_provider_tokens": null,
+      "provider_input_tokens": null,
+      "sha256": "63256657f665c268ada86a8f8344a9629c66747e5f0b029378d05de6c2b8c02f",
+      "unicode_codepoints": 2684,
+      "utf8_bytes": 2684
+    }
+  },
+  "common_model_source_components_byte_identical": true,
+  "complete_task_oracle_proven": false,
+  "d0_ifc_sha256": "3f357534505b2aa2bb070b24cc818b5fe18d32a7739fe86f28ff6b4cecc52d71",
+  "equal_provider_model_tokenization_or_execution_feedback_proven": false,
+  "existing_native_roots_preserved": true,
+  "existing_space_boundaries_unmodified": true,
+  "experimental_v02_space_authoring_exposed_to_model": false,
+  "frozen_task_id": "WAL-CRE-SPA-A-003",
+  "full_ifc_files_byte_equal": false,
+  "i0_ifc_sha256": "41f56a1c8561f1b11983e129b9c5d747a9266fb9618c7bf7ff5cf2f02daf38a9",
+  "model_generated_output_used": false,
+  "model_provider_calls": 0,
+  "native_d0_i0_ifc_six_category_parity": true,
+  "native_path_joins_to_prompt_walls": 2,
+  "native_source_only_geometry_interpreted_without_GT": true,
+  "native_wall_bbox_max_m": [
+    4.625,
+    5.40775,
+    2.8
+  ],
+  "native_wall_bbox_min_m": [
+    0.175,
+    5.23275,
+    0.0
+  ],
+  "new_room_name_type_psets_qto_in_public_instruction": false,
+  "official_bim_edit_grader_called": false,
+  "official_tasks_scored": 0,
+  "original_native_relationships_preserved": true,
+  "paid_spend_authorized": false,
+  "prompt_right_side_door_world_y_offset_verified": true,
+  "prompt_width_height_and_orthogonal_between_two_walls_verified": true,
+  "public_ids_resolved_in_native_source_and_direct_XML": true,
+  "public_instruction_sha256": "31a00588498f68ef6791a133b033cc3da442749d5a237e76f0f5817cf095d14d",
+  "raw_native_ifc_byte_repeatability_proven": false,
+  "room_split_if_required_by_official_target_proven": false,
+  "semantic_parity_not_identical_raw_bytes": true,
+  "source_ifc_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "source_private_target_or_ground_truth_used": false,
+  "source_room_wall_volume_overlap_m3": 2.1805,
+  "status": "PASS_PROMPT_GROUNDED_WALL_TWO_JOINS_SOURCE_ONLY_FULL_ORACLE_BLOCKED"
+}

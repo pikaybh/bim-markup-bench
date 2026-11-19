@@ -1,0 +1,28 @@
+{
+  "all_input_information_equivalence_proven": false,
+  "declarative_output_sha256": "ee9bbd00fea21c0bf7a789d8d84a7885bd9bc9d1ce29080dde171f00b1e4c628",
+  "frozen_task_id": "WAL-CRE-SPA-A-003",
+  "full_task_oracle_approved": false,
+  "ground_truth_loaded": false,
+  "imperative_output_sha256": "4a85c3fe2f7a2a4e089c5dec487b030ec0b955b4b9b00e34cd5f7309f1f4ddde",
+  "independent_D0_I0_ifc_parity": true,
+  "manually_resolved_source_only_oracle": true,
+  "model_generated_edits": false,
+  "native_connection_types": [
+    "ATPATH-ATSTART",
+    "ATPATH-ATEND"
+  ],
+  "native_join_body_boolean_geometry_verified": false,
+  "native_room_wall_volume_overlap_m3": 2.1805,
+  "new_native_path_joins": 2,
+  "new_wall_native_space_boundaries": 0,
+  "official_score_count": 0,
+  "original_input_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "original_native_relations_preserved_except_storey_membership": true,
+  "paid_model_calls": 0,
+  "result_ifc_committed": false,
+  "space_subdivision_or_reconciliation_verified": false,
+  "space_subdivision_required_by_official_target": null,
+  "status": "BLOCKED_NATIVE_SPACE_BOUNDARY_AND_OFFICIAL_EVALUATOR",
+  "unsplit_source_space_intersects_new_wall": true
+}

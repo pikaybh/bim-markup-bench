@@ -1,0 +1,92 @@
+{
+  "baseline_trial_sha256": "647bd2c7b170e5ffe506d4d9df2cd3206c8ac390701cf3b4957e2b7f6bbb366b",
+  "blocked_tasks_for_next_model_expansion": 1,
+  "developer_authored_parity_tasks_ready": 2,
+  "diagnosis_based_on_static_and_IFC_schema_not_candidate_execution": true,
+  "model_executable_p1_tasks_ready": 0,
+  "model_semantic_failure_diagnosis": "ATTEMPTED_NONEXISTENT_WALL_HEIGHT_ATTRIBUTE",
+  "new_paid_model_cost_usd": "0",
+  "observed_original_python_literal_reflection": [
+    {
+      "attribute": "GlobalId",
+      "function": "getattr"
+    },
+    {
+      "attribute": "Height",
+      "function": "hasattr"
+    }
+  ],
+  "p0_actual_trial_outcome_preserved": {
+    "D_XML": "PASS",
+    "I_PYTHON": "FAIL_STATIC_POLICY"
+  },
+  "p1_experiment_calls_performed": 0,
+  "p1_original_python_new_policy_execution_authorized": false,
+  "p1_original_python_new_policy_static_accepts": true,
+  "p1_original_python_source_sha256": "a2d53f9305e0d465bc3e20738d8336e2653d5e8428da488cb3e5fbe45dd14eaf",
+  "p1_policy_version": "P1_SAFE_LITERAL_READONLY_IFC_REFLECTION",
+  "p1_prospective_tasks": [
+    {
+      "D0_I0_native_parity_verified": true,
+      "engine_status": "SUPPORTED_WITH_EXISTING_OWN_SOURCE",
+      "id": "OWN-P1-WINDOW-MOVE-001",
+      "instruction": "Move the North Window and its hosted Opening 0.5 metres along the same wall toward increasing local X. Do not change any other IFC objects.",
+      "operation": "UPDATE_HOSTED_WINDOW_AND_OPENING",
+      "p1_live_model_runner_ready": false,
+      "p1_live_worker_blocker": "Existing Docker candidate execution and independent OWN native grader are currently fixed to P0 wall-height=3.3; new scenario-specific isolated IFC grading must be validated before paid calls",
+      "reference_proof": "move_hosted_opening"
+    },
+    {
+      "D0_I0_native_parity_verified": true,
+      "engine_status": "SUPPORTED_WITH_EXISTING_OWN_SOURCE",
+      "id": "OWN-P1-WALL-CREATE-002",
+      "instruction": "Create one new straight IfcWall from (0,5,0) to (4,5,0) metres on Level 1, height 3.0 metres and thickness 0.2 metres. Keep all existing IFC objects unchanged.",
+      "operation": "CREATE_IFC_WALL",
+      "p1_live_model_runner_ready": false,
+      "p1_live_worker_blocker": "Existing Docker candidate execution and independent OWN native grader are currently fixed to P0 wall-height=3.3; new scenario-specific isolated IFC grading must be validated before paid calls",
+      "reference_proof": "create_standalone_wall"
+    },
+    {
+      "D0_I0_native_parity_verified": false,
+      "D0_no_output_on_rejection": true,
+      "actual_door_inverse_type_counts": {
+        "IfcRelContainedInSpatialStructure": 1,
+        "IfcRelFillsElement": 1
+      },
+      "current_D0_compiler_reject_reason": "Door+Opening has unsupported native inverse dependencies",
+      "engine_status": "BLOCKED_OWN_FIXTURE_MISSING_COMPILER_REQUIRED_NATIVE_RELATIONS",
+      "id": "OWN-P1-DOOR-DELETE-003",
+      "instruction": "Remove Entrance Door and its hosted Opening, close the host wall void, and keep unrelated IFC objects and relationships unchanged.",
+      "operation": "DELETE_DOOR_AND_OPENING",
+      "p1_live_model_runner_ready": false,
+      "p1_live_worker_blocker": "OWN Door+Opening source compiler rejects missing native relation inventory; no supported D0 result or native grader",
+      "required_compiler_door_inverse_type_counts": {
+        "IfcRelAssociatesClassification": 1,
+        "IfcRelAssociatesMaterial": 1,
+        "IfcRelContainedInSpatialStructure": 1,
+        "IfcRelDefinesByProperties": 2,
+        "IfcRelDefinesByType": 1,
+        "IfcRelFillsElement": 1,
+        "IfcRelSpaceBoundary": 1,
+        "IfcRelVoidsElement": 0
+      }
+    }
+  ],
+  "publication_warning": "D0/I0 are developer-authored engine ceiling only. No official BIM-Edit or new LLM outcomes.",
+  "real_additional_llm_calls": 0,
+  "remaining_p1_work_priority": [
+    "Extend verified OWN-only isolated grader/worker to each of the two D0/I0-passing cases; do not enable paid API before accepted negative tests",
+    "Freeze P1 D/I prompt/context/policy and source/GT separation",
+    "Keep Door delete as explicitly blocked, not silently swapped or excluded; assess a separate future owned source fixture",
+    "Seek separate model/budget approval only after actual P1 end-to-end worker readiness"
+  ],
+  "source_ifc_sha256": "10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58",
+  "source_rights": "REPOSITORY_OWN_SYNTHETIC_ONLY",
+  "source_wall_has_direct_Height_attribute": false,
+  "source_wall_native_sweep_depth_m": [
+    3.0
+  ],
+  "status": "P1_OFFLINE_OWN_CAPABILITY_AND_FIRST_FAILURE_AUDIT",
+  "supported_tasks_for_next_model_expansion": 0,
+  "supported_tasks_for_next_model_expansion_explanation": "Two tasks have D0/I0 deterministic parity only; none yet has a P1-specific trusted isolated model-produced IFC scorer"
+}

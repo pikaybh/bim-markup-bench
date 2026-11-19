@@ -1,0 +1,65 @@
+{
+  "D0_complete_original_native_IFC_SHA256": "5af3a2bd423c101e63cacad0a53342761b4496a0e9337ed0ce5b4b6d2a13f755",
+  "I0_complete_original_native_IFC_SHA256": "5af3a2bd423c101e63cacad0a53342761b4496a0e9337ed0ce5b4b6d2a13f755",
+  "both_original_author_full_marks": true,
+  "causal_D0_vs_I0_model_performance_proven": false,
+  "complete_original45_source_information_writable_feedback_parity_proven": false,
+  "full_native_IFC_D0_I0_bytes_equal": true,
+  "full_original_XML_source_only_one_existing_Wall_four_endpoints_changed": true,
+  "independent_original_native_Root_and_Product_oracle": {
+    "original_native_IfcProduct_count": 43,
+    "original_native_IfcRoot_count": 358,
+    "original_native_Root_GUIDs_classes_unchanged": true,
+    "original_native_all_Product_GUIDs_classes_unchanged": true,
+    "status": "INDEPENDENT_NATIVE_ALL_ORIGINAL_IFCROOT_AND_IFCPRODUCT_IDENTITIES_PRESERVED"
+  },
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/171",
+  "native_source_shared_RefDirection_kept_unchanged": true,
+  "new_cumulative_developer_original_native_byte_equal_D0_I0_tasks": 10,
+  "new_cumulative_original_author_callable_developer_pairs": 8,
+  "new_private_Wall_RefDirection_count": 1,
+  "normalized_original_IFC_SHA256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+  "original_author_or_source_IFC_modified": false,
+  "original_author_pinned_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_mm_source_IFC_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_native_all_surviving_STEP_change_scope": "2 original placement STEP changed, 1 private IfcDirection added; others identical",
+  "original_native_root_count_verified_unchanged": 358,
+  "original_public45_denominator": 45,
+  "original_public_data_pinned_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_question_sha256": "6cf1fe94f7d3ddcdc95169b63b929cdf20bdabf1dfd14aa3549a869cff2630bf",
+  "original_public_task_id": "test_11",
+  "other_original_public_tasks_unverified_identical_protocol": 35,
+  "paid_provider_USD": 0,
+  "parent_v027_frozen_git_SHA": "cb4965d3d5e9f34cbc9a6eb97b9247a38b71d058",
+  "previous_frozen_reports_SHA256": {
+    "reports/bibimbap_v027_original_test19_connected_wall_D0_I0_native_parity_20261116.json": "9cee40c6cd75f5f5fc3c35f1d8ee5b0580681e38820da6178f39c413c71d63b4",
+    "reports/bibimbap_v027_selected_316_non_docker_regression_and_original19_native_QA_20261116.json": "5cc9a36b6c2aad2b30d8240173f1eb0d35e470676383eae33c708fb6c6212c4c"
+  },
+  "prior_developer_original_native_byte_equal_D0_I0_tasks": 9,
+  "prior_original_author_callable_developer_pairs": 7,
+  "raw_original_public_question_target_GUID_or_private_GT_in_report": false,
+  "real_LLM_model_calls": 0,
+  "rotation_about_original_center_plus90_degrees_Z": true,
+  "status": "V028_ORIGINAL_PUBLIC_TEST11_FULL_IFC_D0_I0_BYTE_IDENTICAL_ORIGINAL_AUTHOR_1_0",
+  "trusted_compiler_source_SHA_pinned_and_default_feature_OFF": true,
+  "unchanged_original_author_D0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "unchanged_original_author_I0": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  }
+}

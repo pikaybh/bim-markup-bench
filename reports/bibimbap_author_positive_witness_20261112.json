@@ -1,0 +1,37 @@
+{
+  "author_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "claims_author_paper_reproduction": false,
+  "dataset_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "mode": "developer_controlled_author_IFC_positive_witness_not_llm",
+  "model_calls": 0,
+  "n": 2,
+  "observations": [
+    {
+      "result": {
+        "metrics": {
+          "integrity_constraint": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "score": 1.0,
+        "status": "SCORED"
+      },
+      "source_original_unchanged": true,
+      "test_id": "test_15",
+      "worker_exit": 0
+    },
+    {
+      "result": {
+        "metrics": {
+          "integrity_constraint": 0.0,
+          "object_not_exists": 1.0
+        },
+        "score": 0.5,
+        "status": "SCORED"
+      },
+      "source_original_unchanged": true,
+      "test_id": "test_16",
+      "worker_exit": 0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "approved": false,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/97",
+  "model": "CHOOSE_APPROVED_OPENAI_API_MODEL",
+  "input_rate_per_million_usd": "0",
+  "output_rate_per_million_usd": "0",
+  "cap_usd": "0",
+  "price_reference": "https://developers.openai.com/api/docs/pricing",
+  "price_checked_utc": "NOT_YET_VERIFIED",
+  "max_output_tokens": 3500
+}

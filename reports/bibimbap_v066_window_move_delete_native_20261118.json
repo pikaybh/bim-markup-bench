@@ -1,0 +1,150 @@
+{
+  "D_document_has_no_move_delete_command_elements": true,
+  "actual_native_bijective_STEP_ID_relabel_valid_ifc_outputs": 4,
+  "actual_native_original_source_count": 2,
+  "actual_pinned_Linux_Docker_Python_I_outputs": 4,
+  "all_original_source_SHA_checks_unchanged": true,
+  "cases": [
+    {
+      "already_developer_exposed_source_task_for_audit_only": "geometry_test_13",
+      "cases": [
+        {
+          "D_FULL_final_state_xml_bytes": 6112,
+          "D_FULL_native_bijective_STEP_ID_relabel_real_IFC_accepted": true,
+          "D_FULL_real_IFC_accepted": true,
+          "D_FULL_source_xml_bytes": 6112,
+          "D_MANAGED_final_state_xml_bytes": 2166,
+          "D_MANAGED_real_IFC_accepted": true,
+          "D_MANAGED_source_xml_bytes": 2166,
+          "actual_bijectively_remapped_native_STEP_entities": 1048,
+          "all_three_same_native_physical_semantic_digest": "abf54ace25e4ab0890b78309a8028db1fb3f040b406738725623606b584e4806",
+          "independent_pinned_Linux_Docker_Python_I_real_IFC_accepted": true,
+          "model_generated_attempt_count": 0,
+          "native_illegal_mutations_rejected": {
+            "alter_unrelated_existing_Wall_metadata": "Native IFC entire typed source/reference graph mismatch (no STEP-ID dependence, depth 0)",
+            "unsynced_hosted_detail_proxy": "Window, Opening, detail or untouched original world geometry invalid"
+          },
+          "operation_family": "move",
+          "source_native_assembly_roster_count": 2,
+          "source_native_original_member_group_count": 5,
+          "source_original_IFC_unchanged": true,
+          "source_world_control_offset_m": [
+            0.2,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "D_FULL_final_state_xml_bytes": 6117,
+          "D_FULL_native_bijective_STEP_ID_relabel_real_IFC_accepted": true,
+          "D_FULL_real_IFC_accepted": true,
+          "D_FULL_source_xml_bytes": 6112,
+          "D_MANAGED_final_state_xml_bytes": 2171,
+          "D_MANAGED_real_IFC_accepted": true,
+          "D_MANAGED_source_xml_bytes": 2166,
+          "actual_bijectively_remapped_native_STEP_entities": 986,
+          "all_three_same_native_physical_semantic_digest": "f343398e9ff214d4d733ffd834c75ea3f315e31cf9533434b354ce111e74867a",
+          "independent_pinned_Linux_Docker_Python_I_real_IFC_accepted": true,
+          "model_generated_attempt_count": 0,
+          "native_illegal_mutations_rejected": {
+            "alter_unrelated_existing_Wall_metadata": "Native IFC entire typed source/reference graph mismatch (no STEP-ID dependence, depth 0)",
+            "delete_second_unapproved_Window": "Only one already existing Window may be deleted; no new Window"
+          },
+          "operation_family": "delete",
+          "source_native_assembly_roster_count": 2,
+          "source_native_original_member_group_count": 5,
+          "source_original_IFC_unchanged": true,
+          "source_world_control_offset_m": null
+        }
+      ],
+      "native_groups": 2,
+      "source_IFC_original_root_count": 120,
+      "source_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "source_original_GUIDs_redacted": true,
+      "source_schema": "IFC4X3"
+    },
+    {
+      "already_developer_exposed_source_task_for_audit_only": "geometry_test_19",
+      "cases": [
+        {
+          "D_FULL_final_state_xml_bytes": 10020,
+          "D_FULL_native_bijective_STEP_ID_relabel_real_IFC_accepted": true,
+          "D_FULL_real_IFC_accepted": true,
+          "D_FULL_source_xml_bytes": 10020,
+          "D_MANAGED_final_state_xml_bytes": 2778,
+          "D_MANAGED_real_IFC_accepted": true,
+          "D_MANAGED_source_xml_bytes": 2778,
+          "actual_bijectively_remapped_native_STEP_entities": 786,
+          "all_three_same_native_physical_semantic_digest": "0ab87086cfffed0bce8fa9bdee2c2422682cb82011fc1f5b80ac47eca36edb57",
+          "independent_pinned_Linux_Docker_Python_I_real_IFC_accepted": true,
+          "model_generated_attempt_count": 0,
+          "native_illegal_mutations_rejected": {
+            "add_unauthorized_orphan_native_entity": "Native IFC entire typed source/reference graph mismatch (no STEP-ID dependence, depth 0)",
+            "alter_unrelated_existing_Wall_metadata": "Native IFC entire typed source/reference graph mismatch (no STEP-ID dependence, depth 0)"
+          },
+          "operation_family": "move",
+          "source_native_assembly_roster_count": 7,
+          "source_native_original_member_group_count": 2,
+          "source_original_IFC_unchanged": true,
+          "source_world_control_offset_m": [
+            0.2,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "D_FULL_final_state_xml_bytes": 10022,
+          "D_FULL_native_bijective_STEP_ID_relabel_real_IFC_accepted": true,
+          "D_FULL_real_IFC_accepted": true,
+          "D_FULL_source_xml_bytes": 10020,
+          "D_MANAGED_final_state_xml_bytes": 2780,
+          "D_MANAGED_real_IFC_accepted": true,
+          "D_MANAGED_source_xml_bytes": 2778,
+          "actual_bijectively_remapped_native_STEP_entities": 762,
+          "all_three_same_native_physical_semantic_digest": "0bb4a2236e67dae3f7c58e44dd4d436ecb03392670b1f777abb4c19c6b7ed692",
+          "independent_pinned_Linux_Docker_Python_I_real_IFC_accepted": true,
+          "model_generated_attempt_count": 0,
+          "native_illegal_mutations_rejected": {
+            "alter_unrelated_existing_Wall_metadata": "Native IFC entire typed source/reference graph mismatch (no STEP-ID dependence, depth 0)",
+            "delete_second_unapproved_Window": "Only one already existing Window may be deleted; no new Window"
+          },
+          "operation_family": "delete",
+          "source_native_assembly_roster_count": 7,
+          "source_native_original_member_group_count": 2,
+          "source_original_IFC_unchanged": true,
+          "source_world_control_offset_m": null
+        }
+      ],
+      "native_groups": 7,
+      "source_IFC_original_root_count": 171,
+      "source_SHA256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "source_original_GUIDs_redacted": true,
+      "source_schema": "IFC4X3"
+    }
+  ],
+  "frozen_v066_parent_report_SHA256": "f908cc10086f0fb00efee0d8651385d378ef50221b7d6eab00ad42df7441d49b",
+  "illegal_native_mutation_rejects": 8,
+  "independently_certified_blind_original_IFC_sources": 0,
+  "issue": 247,
+  "legal_native_edit_output_accepts": 16,
+  "model_provider_calls": 0,
+  "operation_source_pairs_executed": 4,
+  "original_IFC_uploads": 0,
+  "original_author_or_private_grader_accesses": 0,
+  "prior_window_source_task_ids_used_only_in_audit_not_in_compiler": [
+    "geometry_test_13",
+    "geometry_test_19"
+  ],
+  "real_native_XML_D_FULL_outputs": 4,
+  "real_native_XML_D_MANAGED_outputs": 4,
+  "source_exposure": "ONLY_TWO_PREVIOUSLY_DEVELOPER_EXPOSED_AND_SHA_PINNED_IFC4X3",
+  "source_net_ISOLATION_and_preregistered_external_transfer_rights": "BLOCKED",
+  "status": "V066_TWO_SOURCE_NEUTRAL_WINDOW_MOVE_DELETE_NATIVE_D_FULL_MANAGED_DOCKER_I_PASS",
+  "supported_schema": "IFC4X3",
+  "unsupported_schema_or_complexity": [
+    "IFC2X3 hosted Window move/delete not demonstrated",
+    "IFC4/curved/shared/orphan proxy/multiple simultaneous changes unsupported",
+    "Alternative lawful IFC representation rewrite may still be rejected by narrow native replay oracle",
+    "This is physical/source-scope admissibility, not original author task correctness"
+  ]
+}

@@ -27,8 +27,23 @@ BLOCKED_IMPORT_ROOTS=frozenset({
 ALLOWED_IMPORT_ROOTS=frozenset({"ifcopenshell","math","numpy"})
 BLOCKED_CALLS=frozenset({
     "eval","exec","compile","__import__","open","input","breakpoint",
-    "getattr","setattr","delattr","globals","locals","vars","dir",
+    "setattr","delattr","globals","locals","vars","dir",
 })
+# P1 prospective policy: allow ordinary *read-only* IFC attribute
+# introspection with literal, reviewed attribute names. The function must
+# appear as a direct Call and the attribute must be a static string. This
+# does not approve OS execution or modify the frozen P0 trial verdict.
+SAFE_IFC_REFLECTION=frozenset({"getattr","hasattr"})
+IFC_REFLECTION_ATTRS=frozenset({
+    "GlobalId","Name","Description","ObjectType","PredefinedType",
+    "Representation","Representations","Items","ObjectPlacement",
+    "Depth","Height","Width","OverallHeight","OverallWidth",
+    "Material","Coordinates","HasOpenings","FillsVoids",
+    "RelatingOpeningElement","RelatedBuildingElement",
+    "RelatingBuildingElement","RelatedObjects","RelatedElements",
+    "RelatingStructure","ContainedInStructure",
+})
+
 BLOCKED_IDENTIFIERS=frozenset({
     "__class__","__base__","__bases__","__subclasses__","__mro__",
     "__globals__","__builtins__","__dict__","__getattribute__",
@@ -75,6 +90,26 @@ def preflight_generated_python(code:bytes)->CodeCheck:
         tree=ast.parse(source,filename="solution.py",mode="exec")
     except (SyntaxError,ValueError,RecursionError) as exc:
         raise ImperativePreflightError("Generated Python fails syntax preflight") from exc
+    # ast.Name occurrences of getattr/hasattr are safe ONLY when they
+    # themselves are the called function with a literal IFC attribute.
+    allowed_reflect_names=set()
+    for node in ast.walk(tree):
+        if not (isinstance(node,ast.Call)
+                and isinstance(node.func,ast.Name)
+                and node.func.id in SAFE_IFC_REFLECTION):
+            continue
+        function=node.func.id
+        argc=len(node.args)
+        exact_arity=((function=="getattr" and argc in (2,3))
+                     or (function=="hasattr" and argc==2))
+        attribute=node.args[1] if argc>=2 else None
+        if (not exact_arity or node.keywords
+                or not isinstance(attribute,ast.Constant)
+                or type(attribute.value) is not str
+                or attribute.value not in IFC_REFLECTION_ATTRS):
+            raise ImperativePreflightError(
+                "Unsafe dynamic attribute reflection or IFC attribute")
+        allowed_reflect_names.add(id(node.func))
     imports=set()
     calls=0
     for node in ast.walk(tree):
@@ -95,6 +130,11 @@ def preflight_generated_python(code:bytes)->CodeCheck:
                 and isinstance(node.value,ast.Name)
                 and node.value.id=="ifcopenshell"
             )
+            if identifier in SAFE_IFC_REFLECTION and (
+                    not isinstance(node,ast.Name)
+                    or id(node) not in allowed_reflect_names):
+                raise ImperativePreflightError(
+                    "Read-only IFC reflection is allowed as a literal direct call only")
             if identifier in BLOCKED_IDENTIFIERS or (
                 identifier in BLOCKED_CALLS and not allow_module_file_open
             ):

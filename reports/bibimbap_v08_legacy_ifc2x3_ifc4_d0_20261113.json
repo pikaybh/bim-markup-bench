@@ -1,0 +1,201 @@
+{
+  "additional_paid_usd": "0",
+  "all_original_IFC_schema_preserved": true,
+  "developer_fixed_D0_not_a_model_benchmark": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/130",
+  "new_paid_provider_calls": 0,
+  "original_author_scoring_revision": "667004e16bd38fd7d538bcee56191465429fd975",
+  "real_GPT6_Luna_historical_score_unchanged": true,
+  "runtime_all_45_original_tasks_native_edit_equivalent": false,
+  "source_original_dataset_revision": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "status": "EXPERIMENTAL_LEGACY_V08_NATIVE_SOURCE_PRESERVING_DEVELOPER_D0_ONLY",
+  "tasks": [
+    {
+      "candidate_original_m_units_sha256": "213bc8887163c6b70f54cc2eb7ba95f04e35e29564dbefe24b3a158470c437b2",
+      "candidate_original_mm_units_sha256": "b0fbe09f044498ce448c5a0f066d2e8e6944e1a8342313a6d9d9a3363c513e9b",
+      "full_45_runtime_parity_not_proven": true,
+      "independent_native_ifc_oracle": {
+        "actual_void_host_north_wall_guid": "3YQ$1CPXD2Mh2vQ18vV$ig",
+        "all_other_original_product_world_mesh_preserved": 2,
+        "candidate_sha256": "213bc8887163c6b70f54cc2eb7ba95f04e35e29564dbefe24b3a158470c437b2",
+        "full_45_parity": false,
+        "host_wall_physical_void_volume_cubic_m": 0.4200000000000026,
+        "new_door_guid": "1DPKQ3BBnHzAdF13exIEvT",
+        "new_native_root_guids": 4,
+        "new_opening_guid": "2Ek6$Or5jGQRcN4NDFmNBT",
+        "original_named_south_wall_guid": "3YQ$1CPXD2Mh2vQ18vV$hw",
+        "original_south_wall_unchanged": true,
+        "source_containment_relations_growing_by_one": 1,
+        "source_noncontainment_step_changes": 0,
+        "source_original_step_entities_preserved": 164,
+        "source_root_guids_preserved": 52,
+        "source_sha256": "4abc753f53ffc1ee18fcc4e8f6f952170fac564467d4863ffd0af5d6a4ec3920",
+        "status": "INDEPENDENT_NATIVE_ORIGINAL_IFC2X3_HOSTED_DOOR_CREATE_PASS"
+      },
+      "new_edited_xml_generated_by_model": false,
+      "original_author_grade_after_freezing_d0": {
+        "original_author_full_mark": true,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "object_exists": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 1.0,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_native_schema": "IFC2X3",
+      "original_public_ifc_sha256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "original_public_task_id": "geometry_test_03",
+      "public_question_sha256": "0c7dff429fadc8286e33f157bc3a46181f800271a99fe645f493a9e37463094d",
+      "source_m_normalized_sha256": "4abc753f53ffc1ee18fcc4e8f6f952170fac564467d4863ffd0af5d6a4ec3920",
+      "source_only_fixed_developer_fixture": {
+        "developer_selected_nearest_north_original_wall_guid": "3YQ$1CPXD2Mh2vQ18vV$ig",
+        "door_dimensions_m": [
+          1.0,
+          0.08,
+          2.1
+        ],
+        "door_world_center_m": [
+          0.0,
+          1.6,
+          1.05
+        ],
+        "new_ids": [
+          "original_public_geometry03_new_opening",
+          "original_public_geometry03_new_door"
+        ],
+        "opening_dimensions_m": [
+          1.0,
+          0.4,
+          2.1
+        ],
+        "original_named_south_wall_guid": "3YQ$1CPXD2Mh2vQ18vV$hw",
+        "public_instruction": "Add a Door to source Wall north of explicitly named original south Wall"
+      },
+      "trusted_native_schema_preserving_operation": "CREATE_ORIGINAL_IFC2X3_HOSTED_DOOR"
+    },
+    {
+      "candidate_original_m_units_sha256": "4b5927191690b61c896a2fe35066ad55dbfebdc622adf0418550fe9bd15ec159",
+      "candidate_original_mm_units_sha256": "c10c4d2770595ddea4a34b0673eb2aaa244b1c4f2833a5ffc2b881a054c13445",
+      "full_45_runtime_parity_not_proven": true,
+      "independent_native_ifc_oracle": {
+        "all_original_products_world_mesh_preserved": 7,
+        "candidate_sha256": "4b5927191690b61c896a2fe35066ad55dbfebdc622adf0418550fe9bd15ec159",
+        "full_45_parity": false,
+        "native_mesh_max_m": [
+          6.3,
+          6.7,
+          2.8
+        ],
+        "native_mesh_min_m": [
+          0.2,
+          0.2,
+          0
+        ],
+        "new_native_root_guids": 2,
+        "new_space_guid": "0gVl7erOTHWPJkmUv8Td6T",
+        "original_reference_column_guid": "3A5GfH23DBvBYpavCfWh4z",
+        "source_containment_relations_growing_by_one": 0,
+        "source_noncontainment_step_changes": 0,
+        "source_original_step_entities_preserved": 288,
+        "source_root_guids_preserved": 93,
+        "source_sha256": "65514d875c017293a3c13887133559a18f360d012e02173a0ffb1311b4abf1ee",
+        "spatial_aggregated_under_source_storey_guid": "2JF4e6axWHqu3u0C1FZlmi",
+        "status": "INDEPENDENT_NATIVE_ORIGINAL_IFC2X3_SPACE_CREATE_PASS"
+      },
+      "new_edited_xml_generated_by_model": false,
+      "original_author_grade_after_freezing_d0": {
+        "original_author_full_mark": false,
+        "original_author_metrics": {
+          "integrity_constraint": 0.6667,
+          "object_exists": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 0.916675,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_native_schema": "IFC2X3",
+      "original_public_ifc_sha256": "d2d6a5e39dc144ef49a44baca8d4039c267cc3bb8b7bfc5eb473c1207b7a62ea",
+      "original_public_task_id": "geometry_test_04",
+      "public_question_sha256": "8ee8935b70896b8d8116bf4929a7fbbfa30dc6d595bd419eb2c110367b14b291",
+      "source_m_normalized_sha256": "65514d875c017293a3c13887133559a18f360d012e02173a0ffb1311b4abf1ee",
+      "source_only_fixed_developer_fixture": {
+        "author_score_will_be_reported_separately": true,
+        "developer_room_bottom_left_m": [
+          0.2,
+          0.2,
+          0
+        ],
+        "developer_room_dimensions_m": [
+          6.1,
+          6.5,
+          2.8
+        ],
+        "named_original_reference_column_guid": "3A5GfH23DBvBYpavCfWh4z",
+        "new_ids": [
+          "original_public_geometry04_left_room"
+        ],
+        "public_instruction": "Insert an IFC Space strictly left of named original Column"
+      },
+      "trusted_native_schema_preserving_operation": "CREATE_ORIGINAL_IFC2X3_SPACE"
+    },
+    {
+      "candidate_original_m_units_sha256": "b995a3eb0dd34b5fb08f9df7b24f0b2b00eb03a5fb698a256f6cfd3d82fce50b",
+      "candidate_original_mm_units_sha256": "49560132af8245f3cb7565fa5a24654fad225203c1826aa2474f363106e96603",
+      "full_45_runtime_parity_not_proven": true,
+      "independent_native_ifc_oracle": {
+        "all_original_products_world_mesh_preserved": 0,
+        "candidate_sha256": "b995a3eb0dd34b5fb08f9df7b24f0b2b00eb03a5fb698a256f6cfd3d82fce50b",
+        "full_45_parity": false,
+        "native_mesh_bbox_max_m": [
+          15,
+          5.2,
+          3
+        ],
+        "native_mesh_bbox_min_m": [
+          10,
+          5,
+          0
+        ],
+        "new_native_root_guids": 2,
+        "new_wall_guid": "3JTuWsKrHTFQNcmCKKbu3C",
+        "original_storey_elevation_remains_missing": true,
+        "source_containment_relations_growing_by_one": 0,
+        "source_noncontainment_step_changes": 0,
+        "source_original_step_entities_preserved": 1136,
+        "source_root_guids_preserved": 76,
+        "source_sha256": "0e0c13d32b2f1b9bae1711ab1e7dca9ba7d0d8b232aa50af43dd67279ee05d61",
+        "status": "INDEPENDENT_NATIVE_ORIGINAL_IFC4_PUBLIC_WALL_CREATE_PASS"
+      },
+      "new_edited_xml_generated_by_model": false,
+      "original_author_grade_after_freezing_d0": {
+        "original_author_full_mark": true,
+        "original_author_metrics": {
+          "integrity_constraint": 1.0,
+          "object_exists": 1.0,
+          "right_dimensions": 1.0,
+          "right_location": 1.0
+        },
+        "original_author_score": 1.0,
+        "status": "AUTHOR_SCORED"
+      },
+      "original_native_schema": "IFC4",
+      "original_public_ifc_sha256": "f637eceda5155c846f2c3f24e215ef2161151ccbff1ba2f9e098c71463322bcc",
+      "original_public_task_id": "geometry_test_05",
+      "public_question_sha256": "d781dbbc052adeafa42c9a291013965422be49ddeaf17ccfb35ad49ab115385b",
+      "source_m_normalized_sha256": "0e0c13d32b2f1b9bae1711ab1e7dca9ba7d0d8b232aa50af43dd67279ee05d61",
+      "source_only_fixed_developer_fixture": {
+        "developer_added_wall_height_m": 3.0,
+        "developer_added_wall_thickness_m": 0.2,
+        "missing_native_storey_elevation_not_fabricated": true,
+        "new_ids": [
+          "original_public_geometry05_wall"
+        ],
+        "public_instruction": "Create 5m Wall from world plan (10,5) towards (1,0)"
+      },
+      "trusted_native_schema_preserving_operation": "CREATE_ORIGINAL_IFC4_WALL"
+    }
+  ]
+}

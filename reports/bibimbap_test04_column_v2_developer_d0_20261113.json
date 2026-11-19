@@ -1,0 +1,46 @@
+{
+  "45_task_backend_parity_achieved": false,
+  "api_cost_usd": "0",
+  "candidate_compiler_version": "experimental-column-v0.2",
+  "candidate_native_ifc_sha256": "c24261d1b08507e1cb92d62b737158bdcc7cd0641f63a30b2ac5dee9efe5c622",
+  "developer_authored_fixture_not_model_output": true,
+  "developer_fixed_unrequested_dimensions_m": {
+    "depth": 0.3,
+    "width": 0.3
+  },
+  "independent_full_scene_clash_oracle_pass": null,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/118",
+  "native_commit_status": "COMMITTED_SCOPED_IFC4X3_COLUMN_CREATE_V2",
+  "native_new_ifc_entity_class": "IfcColumn",
+  "native_new_ifc_guid": "3tnoE0lxzNpvW6ttnuxMv7",
+  "native_world_bbox_max_m": [
+    12.3,
+    8.3,
+    3.0
+  ],
+  "native_world_bbox_min_m": [
+    12.0,
+    8.0,
+    0.0
+  ],
+  "new_luna_model_requests": 0,
+  "original_author_metric_origin": "PINNED_ORIGINAL_AUTHOR_BIBIMBAP",
+  "original_author_results": {
+    "original_author_full_mark": true,
+    "original_author_metrics": {
+      "integrity_constraint": 1.0,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 1.0,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_historical_45_task_results_modified": false,
+  "original_ifc_source_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "public_question_sha256": "bdc610efa790a67c601a0c3d9056c47c702a7af9bcb05d3b8e3acb3d9771ce57",
+  "source_crud": "create",
+  "source_native_ifc_schema": "IFC4X3",
+  "source_task_id": "test_04",
+  "status": "REAL_BIBIMBAP_TEST04_DEVELOPER_D0_XML_COMPILER_ORIGINAL_AUTHOR_SCORED"
+}

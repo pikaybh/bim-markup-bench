@@ -1,0 +1,179 @@
+{
+  "LLM_calls": 0,
+  "basis": "pinned_original_and_reference_ifc_bytes_AND_STEP_HEADER_only",
+  "candidate_sha256": "75b4847814dbefad95340556c0b62f9cda72cac319cd82ecb23ea4933c9ab694",
+  "dataset_card_cc_by_tag_is_model_license_proof": false,
+  "full_g0_release_authorized": false,
+  "gate_status": "BLOCKED_PER_MODEL_RIGHTS_AND_MISSING_IFC_CONTENT",
+  "individual_model_license_documents_verified": 0,
+  "model_redistribution_rights_cleared": false,
+  "model_visible_data_exported": false,
+  "official_tasks_scored": 0,
+  "paid_downloads_or_api_calls": 0,
+  "pinned_model_revision": "0ae510bd21865def4e2c6145c1244f01a1e3bcb9",
+  "private_grader_targets_consumed": false,
+  "raw_ifc_header_originator_data_recorded": false,
+  "raw_source_or_reference_path_recorded": false,
+  "source_reference_ifc_bytes_committed": false,
+  "source_rights_record_is_pending": true,
+  "status_counts": {
+    "BLOCKED_PAIRED_INPUT_REFERENCE_CONTENT_MISSING": 6,
+    "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED": 30
+  },
+  "task_records_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "tasks": [
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WIN-CRE-DIR-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "DOR-CRE-DIR-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-CRE-DIR-R-004"
+    },
+    {
+      "status": "BLOCKED_PAIRED_INPUT_REFERENCE_CONTENT_MISSING",
+      "task_id": "WAL-CRE-DIR-R-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "SLB-CRE-SPA-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-CRE-SPA-A-003"
+    },
+    {
+      "status": "BLOCKED_PAIRED_INPUT_REFERENCE_CONTENT_MISSING",
+      "task_id": "WAL-CRE-SPA-R-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-CRE-SPA-R-003"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "DOR-CRE-TOP-A-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-CRE-TOP-A-002"
+    },
+    {
+      "status": "BLOCKED_PAIRED_INPUT_REFERENCE_CONTENT_MISSING",
+      "task_id": "WIN-CRE-TOP-R-001"
+    },
+    {
+      "status": "BLOCKED_PAIRED_INPUT_REFERENCE_CONTENT_MISSING",
+      "task_id": "WAL-CRE-TOP-R-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "DOR-DEL-DIR-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-DEL-DIR-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-DEL-DIR-R-004"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-DEL-DIR-R-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "COL-DEL-SPA-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WIN-DEL-SPA-A-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "SLB-DEL-SPA-R-003"
+    },
+    {
+      "status": "BLOCKED_PAIRED_INPUT_REFERENCE_CONTENT_MISSING",
+      "task_id": "ROM-DEL-SPA-R-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WIN-DEL-TOP-A-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-DEL-TOP-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "SLB-DEL-TOP-R-003"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-DEL-TOP-R-003"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WIN-UPD-DIR-A-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-UPD-DIR-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-UPD-DIR-R-004"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-UPD-DIR-R-003"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-UPD-SPA-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WIN-UPD-SPA-A-003"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-UPD-SPA-R-003"
+    },
+    {
+      "status": "BLOCKED_PAIRED_INPUT_REFERENCE_CONTENT_MISSING",
+      "task_id": "SLB-UPD-SPA-R-002"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "ROM-UPD-TOP-A-003"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-UPD-TOP-A-001"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "SLB-UPD-TOP-R-003"
+    },
+    {
+      "status": "VERIFIED_PINNED_BYTES_RIGHTS_UNRESOLVED",
+      "task_id": "WAL-UPD-TOP-R-003"
+    }
+  ],
+  "tasks_total": 36,
+  "unique_remaining_file_bytes": 1476908702,
+  "unique_remaining_file_count": 10,
+  "unique_verified_file_bytes": 87353128,
+  "unique_verified_file_count": 42,
+  "verified_file_header_hints": {
+    "NO_HEADER_LICENSE_HINT": 42
+  },
+  "version": "g0-pilot-asset-provenance-rights-v0.1"
+}

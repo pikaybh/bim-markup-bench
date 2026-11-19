@@ -1,0 +1,156 @@
+{
+  "actual_LLM_generated_model_trials": 0,
+  "actual_genuine_Docker_axis_only_native_invalid_rejected": true,
+  "actual_genuine_Docker_good_then_offtarget_last_IFC_preserved": true,
+  "actual_wall_center_preserved_in_native_World_Metre_geometry": true,
+  "all_three_D_I_semantic_digest_per_case_equal": true,
+  "all_three_arms_identical_initial_original_source_XML_bytes": 5287,
+  "approved_paid_provider_model_snapshot_budget": null,
+  "centered_source_wall_target_author_repo_score_one_for_true_1m": true,
+  "centered_versus_start_anchored_development_evaluator_exposure": true,
+  "current_four_of_six_original_source_task_specific_native_developer_supported": [
+    "geometry_test_13",
+    "geometry_test_19",
+    "topological_test_12",
+    "topological_test_18"
+  ],
+  "frozen_original_v058_six_source_selection_SHA256": "0d8e7ca07a08af0afa3a08c10de5a76427e179d41cd1ca9b9df508f40fcc96c8",
+  "full_D_good_then_incomplete_roster_last_XML_and_IFC_preserved": true,
+  "initial_developer_trial_start_anchored_shortening_author_grade_two_thirds": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/239",
+  "native_source_millimetres_vs_world_geometry_metres": true,
+  "one_new_independent_native_IfcCartesianPoint_instead_of_shared_source_mutation": true,
+  "original_31_unique_source_IFC_population": 31,
+  "original_45_public_task_population": 45,
+  "original_IFC_new_schema_findings": 0,
+  "original_IFC_provider_uploads": 0,
+  "original_IFC_source_schema": "IFC4X3",
+  "original_author_repo_evaluator_file_SHA256": "70b2ef6dd429e423d62d7a1e839a111752ee10945d466631a97f2038cb799806",
+  "original_author_scorer_evaluator_only_D_I_grades_agree": true,
+  "original_complete_managed_eight_wall_initial_UTF8_bytes": 955,
+  "original_ifc_underlying_rights_and_provider_transfer_consent_verified": false,
+  "original_paper_official_LLM_score": null,
+  "original_public_IFC_source_SHA256": "1f10c164d5ba6ffad7a22ce5d4e5f869b81abe497463c3ef0c3262c0a679ec83",
+  "original_public_question_SHA256": "c72c3c2b259aebd524bebf43c667b67a2dad631395a0847e03a02e9171c84b2b",
+  "original_six_candidate_sources_no_longer_fully_developer_blind": true,
+  "original_six_preselected_source_tasks_unchanged": [
+    "geometry_test_03",
+    "geometry_test_13",
+    "geometry_test_19",
+    "topological_test_05",
+    "topological_test_12",
+    "topological_test_18"
+  ],
+  "original_source_public_six_wall_exclusion_and_physical_predicate": {
+    "one_omitted_original_wall_is_connected_to_six": true,
+    "one_omitted_original_wall_is_standalone_SweptSolid": true,
+    "outside_original_named_six_wall_count": 2,
+    "public_original_question_named_outer_wall_count": 6,
+    "source_center_should_be_preserved_in_this_developer_policy": true,
+    "source_original_standalone_wall_length_m": 2.0,
+    "source_original_wall_count": 8,
+    "source_physical_correct_shortening_m": 1.0
+  },
+  "original_source_wall_managed_roster_complete_eight": true,
+  "original_wall_count": 8,
+  "original_wall_path_connections_preserved": 7,
+  "paid_provider_model_calls": 0,
+  "parent_v061_exact_HEAD": "fb59e9e113a0e0f0709e8d2ede8569f023e243b3",
+  "parent_v061_frozen_report_SHA256": "a620f6a6ac6ed164d1bbf0eec56ca84d117233fcefa0303d8d732c0a648314c3",
+  "published_paper_official_scorer_equivalence_verified": false,
+  "real_native_D_complete_managed_source_IFC_developer_cases": 3,
+  "real_native_D_full_source_IFC_developer_cases": 3,
+  "real_native_pinned_Linux_Docker_I_developer_cases": 3,
+  "remaining_original_45_public_tasks_without_native_developer_control": 37,
+  "remaining_two_original_fixed_tasks_not_yet_native_eligible": [
+    "geometry_test_03",
+    "topological_test_05"
+  ],
+  "source_native_axis_start_shared_with_other_entities": true,
+  "source_other_seven_clipped_connected_walls_not_general_editable": true,
+  "source_single_native_SweptSolid_standalone_wall_m": 2.0,
+  "status": "V062_ORIGINAL_WALL_AXIS_RECT_PROFILE_CENTERED_SHORTENED_D_FULL_MANAGED_REAL_DOCKER_I_PASS",
+  "strict_source_STEP_representation_may_bias_general_Python_I": true,
+  "three_original_source_centered_Wall_developer_control_results": [
+    {
+      "D_full_complete_final_XML_UTF8_bytes": 5287,
+      "D_managed_complete_final_XML_UTF8_bytes": 955,
+      "I_developer_only_native_Python_UTF8_bytes": 840,
+      "actual_center_preserving_native_physical_shortening_m": 1.0,
+      "actual_genuine_isolated_linux_Docker_Python_executed": true,
+      "all_three_original_native_IFC_canonical_semantic_SHA256": "ffbb1813687a2b5da960d9032e7e25af0e3c9dccbf5f3785a9737286d3be38ea",
+      "developer_generated_Python_source_code_redacted": true,
+      "developer_source_only_public_physical_label": "PUBLIC_SOURCE_PHYSICAL_CENTERED_SHORTEN_1M_CORRECT",
+      "final_native_original_Wall_length_metres": 1.0,
+      "model_generated_answer": false,
+      "native_original_source_IFC_schema_new_findings": 0,
+      "original_author_repository_evaluator_side_only": {
+        "author_repository_boolean_metrics": {
+          "integrity_constraint": true,
+          "right_dimensions": true,
+          "right_location": true
+        },
+        "author_repository_mean_boolean_score": 1.0,
+        "official_published_paper_scorer_version_verified": false,
+        "status": "EVALUATOR_RETURNED_BOOLEAN_METRICS"
+      },
+      "original_author_target_wall_GUID_redacted": true,
+      "source_scope_D_full_managed_Docker_I_all_PASS": true
+    },
+    {
+      "D_full_complete_final_XML_UTF8_bytes": 5287,
+      "D_managed_complete_final_XML_UTF8_bytes": 955,
+      "I_developer_only_native_Python_UTF8_bytes": 840,
+      "actual_center_preserving_native_physical_shortening_m": 0.5,
+      "actual_genuine_isolated_linux_Docker_Python_executed": true,
+      "all_three_original_native_IFC_canonical_semantic_SHA256": "28444ef9cd412b241c3a7767131f0ffccb86345e1dfee1fbb7b64dc59f13481e",
+      "developer_generated_Python_source_code_redacted": true,
+      "developer_source_only_public_physical_label": "PUBLIC_SOURCE_PHYSICAL_CENTERED_SHORTEN_0_5M_WRONG",
+      "final_native_original_Wall_length_metres": 1.5,
+      "model_generated_answer": false,
+      "native_original_source_IFC_schema_new_findings": 0,
+      "original_author_repository_evaluator_side_only": {
+        "author_repository_boolean_metrics": {
+          "integrity_constraint": true,
+          "right_dimensions": false,
+          "right_location": true
+        },
+        "author_repository_mean_boolean_score": 0.666667,
+        "official_published_paper_scorer_version_verified": false,
+        "status": "EVALUATOR_RETURNED_BOOLEAN_METRICS"
+      },
+      "original_author_target_wall_GUID_redacted": true,
+      "source_scope_D_full_managed_Docker_I_all_PASS": true
+    },
+    {
+      "D_full_complete_final_XML_UTF8_bytes": 5287,
+      "D_managed_complete_final_XML_UTF8_bytes": 955,
+      "I_developer_only_native_Python_UTF8_bytes": 839,
+      "actual_center_preserving_native_physical_shortening_m": 1.5,
+      "actual_genuine_isolated_linux_Docker_Python_executed": true,
+      "all_three_original_native_IFC_canonical_semantic_SHA256": "4833f162145234d61de26d1e6eea34187358897415cb59e7d5260fcff9e2d701",
+      "developer_generated_Python_source_code_redacted": true,
+      "developer_source_only_public_physical_label": "PUBLIC_SOURCE_PHYSICAL_CENTERED_SHORTEN_1_5M_WRONG",
+      "final_native_original_Wall_length_metres": 0.5,
+      "model_generated_answer": false,
+      "native_original_source_IFC_schema_new_findings": 0,
+      "original_author_repository_evaluator_side_only": {
+        "author_repository_boolean_metrics": {
+          "integrity_constraint": true,
+          "right_dimensions": false,
+          "right_location": true
+        },
+        "author_repository_mean_boolean_score": 0.666667,
+        "official_published_paper_scorer_version_verified": false,
+        "status": "EVALUATOR_RETURNED_BOOLEAN_METRICS"
+      },
+      "original_author_target_wall_GUID_redacted": true,
+      "source_scope_D_full_managed_Docker_I_all_PASS": true
+    }
+  ],
+  "total_native_original_source_IFC_edits_admitted": 9,
+  "total_original_45_task_specific_native_developer_controls_supported": 8,
+  "v062_new_original_native_task_supported": [
+    "topological_test_12"
+  ]
+}

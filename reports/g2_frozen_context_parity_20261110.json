@@ -1,0 +1,700 @@
+{
+  "GT_ifc_opened": false,
+  "agent_target_metadata_exposed": false,
+  "conditional_source_verified_candidates": 11,
+  "context_parity_blocked": 0,
+  "context_parity_checked": 11,
+  "frozen_candidate_sha256": "75b4847814dbefad95340556c0b62f9cda72cac319cd82ecb23ea4933c9ab694",
+  "imperative_code_executed": false,
+  "live_pilot_authorized": false,
+  "missing_conditional_source_inputs": 2,
+  "model_calls": 0,
+  "model_context_transport_verified": false,
+  "official_benchmark_tasks_scored": 0,
+  "provider_tokens_measured": false,
+  "research_gate": "BLOCKED_G2_G3_NO_MODEL_TOKEN_SANDBOX_OR_OFFICIAL_SCORER",
+  "sandbox_verified": false,
+  "static_engine_unsupported_not_tested": 23,
+  "status_counts": {
+    "MISSING_PINNED_SOURCE_INPUT": 2,
+    "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY": 11,
+    "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED": 23
+  },
+  "task_data_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "tasks": [
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "WIN-CRE-DIR-A-001"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "DOR-CRE-DIR-A-001"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "8a67d9529e109ea18ddd7bdeea036542b8bb10e189ab19799f1ef6419ac65768",
+          "unicode_codepoints": 501,
+          "utf8_bytes": 501
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "bc6fe7faad070b5da14f6a8e3adb5f1503137e4a579deca3284dff114d953a3a",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "302f513aa07e62f4bad287c16f52871d3f4afeb4ef2c03a6cc2d4f4691a0db90",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "f20542a7f8f63679cbf4dce4f11b085e0bc81b29f8c4311eca30ada14bf7dcd1",
+          "unicode_codepoints": 30043,
+          "utf8_bytes": 30043
+        }
+      },
+      "source_sha256": "23303179788b70d10b3b2754ade6a10797f594f08c4ba1262b1d098f7c181ae7",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WAL-CRE-DIR-R-004"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "WAL-CRE-DIR-R-001"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "SLB-CRE-SPA-A-001"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "31a00588498f68ef6791a133b033cc3da442749d5a237e76f0f5817cf095d14d",
+          "unicode_codepoints": 313,
+          "utf8_bytes": 313
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "f1604240958cafa8ad6ef1be35e6db1d54dfea9bfc41b34def4ab1beb1df3ebf",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "7b33f462ce00533e76b956cadda833f073c5b34ef3b44107b9c738fe9acf991e",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "63256657f665c268ada86a8f8344a9629c66747e5f0b029378d05de6c2b8c02f",
+          "unicode_codepoints": 2684,
+          "utf8_bytes": 2684
+        }
+      },
+      "source_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WAL-CRE-SPA-A-003"
+    },
+    {
+      "status": "MISSING_PINNED_SOURCE_INPUT",
+      "task_id": "WAL-CRE-SPA-R-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-CRE-SPA-R-003"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "DOR-CRE-TOP-A-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-CRE-TOP-A-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "WIN-CRE-TOP-R-001"
+    },
+    {
+      "status": "MISSING_PINNED_SOURCE_INPUT",
+      "task_id": "WAL-CRE-TOP-R-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "DOR-DEL-DIR-A-001"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-DEL-DIR-A-001"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-DEL-DIR-R-004"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-DEL-DIR-R-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "COL-DEL-SPA-A-001"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "12c9b43975dc02bbc6842339d741920d749c00e0e00b8fe4201124a017bbb370",
+          "unicode_codepoints": 108,
+          "utf8_bytes": 108
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "0eba701786f29da355c78b7351680c10c9959a9b6782b799fb9d79457b6814c9",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "bc4019a48991567c879be05f43639f9b24186c29668243950fbcaf8f27729b21",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "7510b939e67cab8704889e225a239341daea7b7be102aa7c89b7fc7866684b48",
+          "unicode_codepoints": 1444,
+          "utf8_bytes": 1444
+        }
+      },
+      "source_sha256": "26cb13eb69b4b25a74b17475ccbc4458472327376dba727db095e50e9a55e9f7",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WIN-DEL-SPA-A-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "SLB-DEL-SPA-R-003"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-DEL-SPA-R-001"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "f5405e575668f57b5b8a56098c58b056fc7ad60c4a16d4616dbd3534e4bbee29",
+          "unicode_codepoints": 178,
+          "utf8_bytes": 178
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "028c21d287d550eaf2a891027a084c03179cce45b30d27489d62d651c8e1ff4e",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "bc4019a48991567c879be05f43639f9b24186c29668243950fbcaf8f27729b21",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "7510b939e67cab8704889e225a239341daea7b7be102aa7c89b7fc7866684b48",
+          "unicode_codepoints": 1444,
+          "utf8_bytes": 1444
+        }
+      },
+      "source_sha256": "26cb13eb69b4b25a74b17475ccbc4458472327376dba727db095e50e9a55e9f7",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WIN-DEL-TOP-A-002"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "9a756276fb6a76cf84945beaf0794a223c96bf9d63b5c0c314b79124a80c43cb",
+          "unicode_codepoints": 220,
+          "utf8_bytes": 220
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "a9272804b23ecc1057716a408c4d9596c846ddd08db7b195916a270fafc779a1",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "21da1c77ed3929e47fb84cd0536f520d7542f88bc908fb6ce40916b9bc6bdddc",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "a558093e482acfedf58cf0d471b90dd998b9965c043effef072690f739987a90",
+          "unicode_codepoints": 2899,
+          "utf8_bytes": 2899
+        }
+      },
+      "source_sha256": "6cf0f8b8c77241f215afdd1796626b1138ad4d3224425d2b446242e4560b3f3a",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WAL-DEL-TOP-A-001"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "SLB-DEL-TOP-R-003"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "9ce614e39c1edea840d06dc6ea0e7b4e5cc781c65e5d48002b9cf4108a63e2cd",
+          "unicode_codepoints": 150,
+          "utf8_bytes": 150
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "c33435cff2754840a87b8240dae790de3aa4e1d436d0869ab0c0d98b56e1d2d2",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "73a4eade0847946a45f10f9ec6982174a312148c2b62cfcc036286b55c754646",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+          "unicode_codepoints": 4486,
+          "utf8_bytes": 4486
+        }
+      },
+      "source_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WAL-DEL-TOP-R-003"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "ff98d90daafa34a4979fc942d4d3477a0128526a2cf7c918c419473319078efe",
+          "unicode_codepoints": 163,
+          "utf8_bytes": 163
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "3071162d4661a8beea2b863a19262947e53af455649abb73ecc642386be5038e",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "69a9358a4669f7823133bd8cacfe385d628b3a79e0936899d863413c38f2eede",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "18cee5a4c9f6d86e3545adb0bdcd281526ad1cf59595ccd580f93887a9118d17",
+          "unicode_codepoints": 4486,
+          "utf8_bytes": 4486
+        }
+      },
+      "source_sha256": "c533767f850a7ba01b73caf4467fae7cc886807a72a900d65cd480e7b877bcc9",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WIN-UPD-DIR-A-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-UPD-DIR-A-001"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "WAL-UPD-DIR-R-004"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "393d0f97282eecb6d8c60fecfcd5bd43d2bd3824c20a4f34d8dbec85fcab7b6d",
+          "unicode_codepoints": 127,
+          "utf8_bytes": 127
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "c28834d22da2062f52f5b090e5e2ce573a8f04fdf5da289e180dbefcf0b480c4",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "73a4eade0847946a45f10f9ec6982174a312148c2b62cfcc036286b55c754646",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+          "unicode_codepoints": 4486,
+          "utf8_bytes": 4486
+        }
+      },
+      "source_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WAL-UPD-DIR-R-003"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-UPD-SPA-A-001"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "c9ded29b5547a069567476ad1a69369f5d2a5c978c654f67fac6ccede07b0545",
+          "unicode_codepoints": 181,
+          "utf8_bytes": 181
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "f6675634aee8f795526e2cd65a2cae524f7a603baebcf43ccb0f3ab91e0b9ead",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "79d2eb310375c5eea3d27a405d075370edae3032cac5052bbf8a8ea7cfd6504f",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "db08278620fe8652e3cc778709fa84f7e3cd69e26686af6440f1913ee6b5ad6e",
+          "unicode_codepoints": 794,
+          "utf8_bytes": 794
+        }
+      },
+      "source_sha256": "522aa55959dc5b18e98c1c9cea917afea25fcbccb0f409b252c3a71cce963bc6",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WIN-UPD-SPA-A-003"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "5acd5ac663d8df7cb640685cc25994125c2cf479e472131c22cbf6580fa5039e",
+          "unicode_codepoints": 202,
+          "utf8_bytes": 202
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "744081aae196199334f1fdb6e84ca7709815fe485636788becc25ffbf8ccc503",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "73a4eade0847946a45f10f9ec6982174a312148c2b62cfcc036286b55c754646",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+          "unicode_codepoints": 4486,
+          "utf8_bytes": 4486
+        }
+      },
+      "source_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WAL-UPD-SPA-R-003"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "SLB-UPD-SPA-R-002"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "ROM-UPD-TOP-A-003"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "WAL-UPD-TOP-A-001"
+    },
+    {
+      "status": "STATIC_UNSUPPORTED_NOT_CONTEXT_TESTED",
+      "task_id": "SLB-UPD-TOP-R-003"
+    },
+    {
+      "GT_file_opened": false,
+      "imperative_extra_api_notes": {
+        "billable_provider_tokens": null,
+        "provider_input_tokens": null,
+        "sha256": "cb6f952ee2b3e6e1f69836e99c3681dbdaf4071bcfb045843778c35f53a26901",
+        "unicode_codepoints": 1111,
+        "utf8_bytes": 1113
+      },
+      "native_ifc_edited": false,
+      "provider_tokens": null,
+      "shared_source_observation": {
+        "public_instruction": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "d8640a8986734e2e6974cd32bd433b351fec7af9eae6fc770c3dd64c6bd63ea7",
+          "unicode_codepoints": 219,
+          "utf8_bytes": 219
+        },
+        "public_task_id": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "c78470440c8352544dd067f0426781dab62469c0cfa347e56f6786440e80a225",
+          "unicode_codepoints": 17,
+          "utf8_bytes": 17
+        },
+        "source_ifc_digest": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "73a4eade0847946a45f10f9ec6982174a312148c2b62cfcc036286b55c754646",
+          "unicode_codepoints": 64,
+          "utf8_bytes": 64
+        },
+        "v01_schema_spec": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "05703e0ba035ccddfe942593dbe6e4c2355d989fd86ec97b6ad70985c53a284e",
+          "unicode_codepoints": 7381,
+          "utf8_bytes": 7383
+        },
+        "v01_source_xml": {
+          "billable_provider_tokens": null,
+          "provider_input_tokens": null,
+          "sha256": "477a068017d7e9f0ce71231446e0216073617c44e5b16a7adab258f85a5534da",
+          "unicode_codepoints": 4486,
+          "utf8_bytes": 4486
+        }
+      },
+      "source_sha256": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "status": "PASS_OFFLINE_SHARED_SOURCE_BYTES_ONLY",
+      "task_id": "WAL-UPD-TOP-R-003"
+    }
+  ],
+  "tasks_total": 36,
+  "version": "frozen-36-source-only-context-coverage-v0.1"
+}

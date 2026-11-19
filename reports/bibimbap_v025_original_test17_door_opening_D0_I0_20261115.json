@@ -1,0 +1,61 @@
+{
+  "D0_actual_native_output_IFC_sha256": "7807db482647c4cae88678eef38beb5003d365ea1c08e1b589b68e3a8d86196f",
+  "I0_actual_native_output_IFC_sha256": "7807db482647c4cae88678eef38beb5003d365ea1c08e1b589b68e3a8d86196f",
+  "declarative_XML_edit_is_exactly_one_original_Door_and_Opening_state_removal": true,
+  "developer_output_parity_proves_causal_XML_model_performance": false,
+  "full_original_45_write_information_tool_or_feedback_parity_proven": false,
+  "full_original_native_output_IFC_bytes_equal": true,
+  "independent_developer_I0_uses_native_IfcOpenShell_without_XML_compiler": true,
+  "independent_original_native_product_oracle": {
+    "every_other_original_native_IfcProduct_class_and_GUID_preserved": true,
+    "only_two_original_products_removed": true,
+    "original_IfcProduct_count": 43,
+    "result_IfcProduct_count": 41,
+    "status": "NATIVE_ORIGINAL_DOOR_AND_OPENING_ONLY_PRODUCTS_REMOVED"
+  },
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/164",
+  "new_cumulative_developer_original_native_D0_I0_identical_cases": 8,
+  "new_cumulative_original_author_callable_developer_pairs": 6,
+  "normalized_original_public_native_IFC_sha256": "16568e7c4b8b9d62567a7a199101269daa6e5b1b7535cec095b8e233ae2ef6ac",
+  "original_IFC2X3_or_IFC4_XML_editing_supported": false,
+  "original_IFC4X3_mm_source_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_author_or_source_IFC_modified": false,
+  "original_author_pinned_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_score_full_mark_achieved": false,
+  "original_public_45_task_denominator": 45,
+  "original_public_Door_native_spatial_container_exists": true,
+  "original_public_data_pinned_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_public_question_sha256": "07186f99fde397f1c7896f51a7e2d8ba7492cfc53f384948d353a9a558a25bab",
+  "original_task_id": "test_17",
+  "other_original_public_same_protocol_cases_unverified": 37,
+  "paid_provider_USD": 0,
+  "prior_frozen_developer_original_native_D0_I0_identical_cases": 7,
+  "prior_frozen_original_author_callable_developer_pairs": 5,
+  "prior_frozen_reports_sha256": {
+    "reports/bibimbap_v022_original45_task_relevant_roles_and_xml_input_20261115.json": "f606994defa7517f898e22ee6e39d5e82da6dc40288c1b38cec25c98b7cd492e",
+    "reports/bibimbap_v023_original_test20_space_delete_D0_I0_native_parity_20261115.json": "9abcc4ebd21c18891bf08307624a19f6012a981455eca7db89051ae70ce86102",
+    "reports/bibimbap_v024_original_test18_opening_window_D0_I0_20261115.json": "a31e74dacdece9924304de6c74c5d9e8769497a8ad68287779ddd4a37bac6a67"
+  },
+  "prior_original_author_missing_Window_source_cases": 2,
+  "raw_original_public_named_GUID_or_hidden_original_targets_in_report": false,
+  "real_LLM_model_calls": 0,
+  "status": "ORIGINAL_PUBLIC_TEST17_D0_I0_FULL_NATIVE_IFC_BYTES_IDENTICAL_ORIGINAL_AUTHOR_HALF",
+  "unchanged_original_author_D0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "unchanged_original_author_I0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  }
+}

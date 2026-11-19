@@ -1,0 +1,53 @@
+{
+  "G1_G2_G3_release_allowed": false,
+  "LLM_calls": 0,
+  "d0_i0_planar_footprint_observations_match": true,
+  "d0_i0_wall_perimeter_count_closed": 2,
+  "d0_native_ifc_sha256": "6e0b47d38254a7c8c0063b854b5dd5acdaf3fd56245764ecf4097d2e98d3e585",
+  "floor_ceiling_spatial_boundary_surfaces_verified": false,
+  "frozen_task_id": "DOR-DEL-DIR-A-001",
+  "full_3d_space_boundary_shell_closure_proven": false,
+  "i0_native_ifc_sha256": "cdb4d92baf82e38a6f5c6d5ca573e59b1d8752b6c17a6e7db515ec968ab7d1bd",
+  "input_ifc_sha256": "170d9ed9c10a31d86c3ff2207a450fd552166af21472486f11004f6e2b14defb",
+  "native_IfcRoot_removed_per_arm": 10,
+  "native_unrelated_world_meshes_preserved_per_arm": 13,
+  "official_bim_edit_reference_or_scorer_checked": false,
+  "official_tasks_scored": 0,
+  "original_opening_storey_membership_existed": false,
+  "per_room_surface_observations": [
+    {
+      "removed_door_boundary": true,
+      "source_and_result_nonwall_boundary_counts": [
+        2,
+        1
+      ],
+      "source_and_result_wall_segment_counts": [
+        4,
+        4
+      ],
+      "wall_boundary_vertical_height_m": 3.048,
+      "wall_footprint_area_m2": 65.0,
+      "wall_footprint_perimeter_m": 33.0
+    },
+    {
+      "removed_door_boundary": false,
+      "source_and_result_nonwall_boundary_counts": [
+        2,
+        2
+      ],
+      "source_and_result_wall_segment_counts": [
+        4,
+        4
+      ],
+      "wall_boundary_vertical_height_m": 3.048,
+      "wall_footprint_area_m2": 83.0,
+      "wall_footprint_perimeter_m": 36.6
+    }
+  ],
+  "post_hoc_engineering_capability_not_preregistered": true,
+  "public_instruction_sha256": "8dc59cbf741dbbf626843eebd91972197fa9ff0b9cbea251d6b9a8d8cd0a752a",
+  "removed_door_boundary_overlaid_existing_wall_ring": true,
+  "status": "PASS_PLANAR_WALL_BOUNDARY_RINGS_FULL_3D_SHELL_UNVERIFIED",
+  "unmentioned_door_space_boundary_removed_per_arm": 1,
+  "version": "G1_PUBLIC_DOOR_DELETE_2D_BOUNDARY_FOOTPRINT_V0.3"
+}

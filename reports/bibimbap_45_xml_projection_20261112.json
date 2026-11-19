@@ -1,0 +1,814 @@
+{
+  "assessed_editing_task_count": 45,
+  "author_commit_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "dataset_commit_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "llm_calls": 0,
+  "notes": [
+    "Original author IFCs are millimetre units",
+    "Source projection success is a necessary, not sufficient, condition for an editable task",
+    "Opaque IFC entities are retained in the IFC source, not editable XML",
+    "No LLM, no XML task completion, no scored authoring trial in this audit"
+  ],
+  "per_task": [
+    {
+      "category": "basic",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_01"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_02"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_03"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_04"
+    },
+    {
+      "category": "basic",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_05"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_11"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_12"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_13"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_14"
+    },
+    {
+      "category": "basic",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_15"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_16"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_17"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_18"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_19"
+    },
+    {
+      "category": "basic",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 1,
+        "managed_entity_count": 25,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 16,
+        "managed_window_count": 1,
+        "opaque_entity_count": 18,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "test_20"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "UnsupportedIFCGeometry: No editable geometry could be projected: Expected exactly one simple swept solid; mapped/boolean geometry unsupported",
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": false
+      },
+      "test_id": "geometry_test_01"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 6,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 4,
+        "managed_window_count": 0,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_02"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "ORIGINAL_SOURCE_NOT_IFC4X3",
+        "schema": "IFC2X3",
+        "source_ifc4x3_compatible": false,
+        "xml_projection_passed": false
+      },
+      "test_id": "geometry_test_03"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "ORIGINAL_SOURCE_NOT_IFC4X3",
+        "schema": "IFC2X3",
+        "source_ifc4x3_compatible": false,
+        "xml_projection_passed": false
+      },
+      "test_id": "geometry_test_04"
+    },
+    {
+      "category": "geometry",
+      "crud": "create",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "ORIGINAL_SOURCE_NOT_IFC4X3",
+        "schema": "IFC4",
+        "source_ifc4x3_compatible": false,
+        "xml_projection_passed": false
+      },
+      "test_id": "geometry_test_05"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 15,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 12,
+        "managed_window_count": 0,
+        "opaque_entity_count": 3,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_11"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 6,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 4,
+        "managed_window_count": 0,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_12"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 7,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 1,
+        "managed_window_count": 2,
+        "opaque_entity_count": 8,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_13"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "UnsupportedIFCGeometry: No editable geometry could be projected: Tilted swept extrusion frame unsupported",
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": false
+      },
+      "test_id": "geometry_test_14"
+    },
+    {
+      "category": "geometry",
+      "crud": "update",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "UnsupportedIFCGeometry: No editable geometry could be projected: Expected exactly one simple swept solid; mapped/boolean geometry unsupported",
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": false
+      },
+      "test_id": "geometry_test_15"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 3,
+        "managed_entity_count": 13,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 5,
+        "managed_window_count": 0,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_16"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 19,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 17,
+        "managed_window_count": 0,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_17"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 57,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 17,
+        "managed_window_count": 19,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_18"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 24,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 8,
+        "managed_window_count": 7,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_19"
+    },
+    {
+      "category": "geometry",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 5,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 3,
+        "managed_window_count": 0,
+        "opaque_entity_count": 6,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "geometry_test_20"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 5,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 3,
+        "managed_window_count": 0,
+        "opaque_entity_count": 5,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_01"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 6,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 4,
+        "managed_window_count": 0,
+        "opaque_entity_count": 4,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_02"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 8,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 6,
+        "managed_window_count": 0,
+        "opaque_entity_count": 5,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_03"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 9,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 7,
+        "managed_window_count": 0,
+        "opaque_entity_count": 3,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_04"
+    },
+    {
+      "category": "topological",
+      "crud": "create",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "UnsupportedIFCGeometry: No editable geometry could be projected: Expected exactly one simple swept solid; mapped/boolean geometry unsupported",
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": false
+      },
+      "test_id": "topological_test_05"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "UnsupportedIFCGeometry: No editable geometry could be projected: Expected exactly one simple swept solid; mapped/boolean geometry unsupported",
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": false
+      },
+      "test_id": "topological_test_11"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 3,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 1,
+        "managed_window_count": 0,
+        "opaque_entity_count": 14,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_12"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 10,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 4,
+        "managed_window_count": 2,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_13"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 3,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 1,
+        "managed_window_count": 0,
+        "opaque_entity_count": 14,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_14"
+    },
+    {
+      "category": "topological",
+      "crud": "update",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 9,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 7,
+        "managed_window_count": 0,
+        "opaque_entity_count": 4,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_15"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 11,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 9,
+        "managed_window_count": 0,
+        "opaque_entity_count": 2,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_16"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "source": {
+        "original_units_to_meters": 0.001,
+        "reason": "UnsupportedIFCGeometry: No editable geometry could be projected: Tilted swept extrusion frame unsupported",
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": false
+      },
+      "test_id": "topological_test_17"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 11,
+        "managed_slab_count": 0,
+        "managed_space_count": 2,
+        "managed_wall_count": 7,
+        "managed_window_count": 0,
+        "opaque_entity_count": 3,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_18"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 9,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 7,
+        "managed_window_count": 0,
+        "opaque_entity_count": 3,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_19"
+    },
+    {
+      "category": "topological",
+      "crud": "delete",
+      "source": {
+        "managed_column_count": 0,
+        "managed_door_count": 0,
+        "managed_entity_count": 9,
+        "managed_slab_count": 0,
+        "managed_space_count": 0,
+        "managed_wall_count": 7,
+        "managed_window_count": 0,
+        "opaque_entity_count": 15,
+        "original_units_to_meters": 0.001,
+        "schema": "IFC4X3",
+        "source_ifc4x3_compatible": true,
+        "xml_projection_passed": true
+      },
+      "test_id": "topological_test_20"
+    }
+  ],
+  "projection_dispositions": {
+    "ORIGINAL_SOURCE_NOT_IFC4X3": 3,
+    "PROJECTABLE": 36,
+    "UnsupportedIFCGeometry: No editable geometry could be projected: Expected exactly one simple swept solid; mapped/boolean geometry unsupported": 4,
+    "UnsupportedIFCGeometry: No editable geometry could be projected: Tilted swept extrusion frame unsupported": 2
+  },
+  "schema": "bibimbap-original-xml-projection-audit/v0.1",
+  "unique_editing_source_ifc_count": 31
+}

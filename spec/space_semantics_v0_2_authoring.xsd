@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:s="urn:bim-markup-bench:space-semantics:authoring:v0.2"
+    targetNamespace="urn:bim-markup-bench:space-semantics:authoring:v0.2"
+    elementFormDefault="qualified" version="0.2-authoring-prototype">
+  <xs:annotation><xs:documentation>Distinct experimental DECLARATIVE FINAL STATE,
+    NOT frozen toy:v0.1, NOT model-facing, NOT a command API or normative BIXML.
+    One new typed Space is backed by an independently verified v0.1 geometry
+    state and a read-only source semantic snapshot.
+  </xs:documentation></xs:annotation>
+  <xs:simpleType name="Sha"><xs:restriction base="xs:string">
+    <xs:pattern value="[0-9a-f]{64}"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="LocalId"><xs:restriction base="xs:ID">
+    <xs:maxLength value="128"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="Text"><xs:restriction base="xs:string">
+    <xs:minLength value="1"/><xs:maxLength value="255"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="IfcValueType"><xs:restriction base="xs:string">
+    <xs:enumeration value="IfcIdentifier"/>
+    <xs:enumeration value="IfcBoolean"/>
+  </xs:restriction></xs:simpleType>
+  <xs:simpleType name="PositiveArea"><xs:restriction base="xs:decimal">
+    <xs:minExclusive value="0"/>
+  </xs:restriction></xs:simpleType>
+  <xs:complexType name="Type">
+    <xs:attribute name="name" type="s:Text" use="required"/>
+    <xs:attribute name="predefinedType" type="xs:string" use="required" fixed="NOTDEFINED"/>
+  </xs:complexType>
+  <xs:complexType name="Property">
+    <xs:attribute name="name" type="s:Text" use="required"/>
+    <xs:attribute name="valueType" type="s:IfcValueType" use="required"/>
+    <xs:attribute name="value" type="s:Text" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Pset">
+    <xs:sequence>
+      <xs:element name="Property" type="s:Property" minOccurs="1" maxOccurs="16"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="s:Text" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="PropertySets">
+    <xs:sequence><xs:element name="PropertySet" type="s:Pset"
+         minOccurs="2" maxOccurs="2"/></xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Quantities">
+    <xs:attribute name="netFloorAreaM2" type="s:PositiveArea" use="required"/>
+    <xs:attribute name="netVolumeM3" type="s:PositiveArea" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="Space">
+    <xs:sequence>
+      <xs:element name="Type" type="s:Type"/>
+      <xs:element name="PropertySets" type="s:PropertySets"/>
+      <xs:element name="Quantities" type="s:Quantities"/>
+    </xs:sequence>
+    <xs:attribute name="localId" type="s:LocalId" use="required"/>
+    <xs:attribute name="name" type="s:Text" use="required"/>
+    <xs:attribute name="longName" type="s:Text" use="required"/>
+    <xs:attribute name="predefinedType" type="xs:string" use="required" fixed="NOTDEFINED"/>
+    <xs:attribute name="compositionType" type="xs:string" use="required" fixed="ELEMENT"/>
+  </xs:complexType>
+  <xs:element name="SpaceSemanticsState">
+    <xs:complexType>
+      <xs:sequence><xs:element name="Space" type="s:Space"
+           minOccurs="1" maxOccurs="1"/></xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required"
+           fixed="0.2-authoring-prototype"/>
+      <xs:attribute name="sourceModelSha256" type="s:Sha" use="required"/>
+      <xs:attribute name="sourceObservationSha256" type="s:Sha" use="required"/>
+      <xs:attribute name="policy" type="xs:string" use="required"
+           fixed="EXPLICIT_NEW_SPACE_METADATA_ONLY"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

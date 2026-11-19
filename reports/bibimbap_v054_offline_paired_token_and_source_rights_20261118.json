@@ -1,0 +1,81 @@
+{
+  "actual_provider_call_count": 0,
+  "all_four_original_source_inputs_IFC4X3": true,
+  "author_publication_official_scorer_version_equivalence": null,
+  "exact_original_source_user_prompt_byte_parity": true,
+  "github_content_API_pinned_LICENSE_LICENSE_md_COPYING_observation": "404_NOT_FOUND_2026_11_18_MANUAL_READONLY_CHECK",
+  "huggingface_dataset_redistribution_license_verified": false,
+  "legal_transmission_or_redistribution_rights_verified": false,
+  "license_absence_does_not_establish_copyright_status": true,
+  "max_model_tool_calls_each_arm": 25,
+  "next_approval_items": [
+    "source_data_owner_permission_for_provider_API_transfer",
+    "actual_author_or_HuggingFace_dataset_license_reuse_terms",
+    "exact_provider_and_model_snapshot",
+    "real_provider_measured_billed_tokens_each_arm",
+    "explicit_total_cost_cap_and_user_authorization",
+    "same_transcript_feedback_and_turn_budget",
+    "scoring_policy_freeze_for_schema_invalid_1.0_author_deletion"
+  ],
+  "no_model_prompt_contains_evaluator_source_or_target_guid": true,
+  "offline_no_paid_inference_gate_test_passed": true,
+  "original_author_checkout_contains_recognized_license_file": false,
+  "original_author_code_git_repo": "https://github.com/nbharathik/bibimbap",
+  "original_author_data_source_huggingface_dataset": "clemenskujat/bibimbap-data",
+  "original_author_pinned_commit": "667004e16bd38fd7d538bcee56191465429fd975",
+  "per_task_source_and_tool_Utf8_bytes_NOT_actual_tokens": {
+    "geometry_test_14": {
+      "D_model_tool_schema_UTF8_bytes": 1324,
+      "I_minus_D_tool_schema_UTF8_bytes": -69,
+      "I_model_tool_schema_UTF8_bytes": 1255,
+      "actual_provider_token_parity_proven": false,
+      "initial_XML_source_bytes_each_arm": 39611,
+      "model_provider_input_tokens_D": null,
+      "model_provider_input_tokens_I": null,
+      "source_information_exact_byte_identical": true
+    },
+    "geometry_test_15": {
+      "D_model_tool_schema_UTF8_bytes": 1324,
+      "I_minus_D_tool_schema_UTF8_bytes": -69,
+      "I_model_tool_schema_UTF8_bytes": 1255,
+      "actual_provider_token_parity_proven": false,
+      "initial_XML_source_bytes_each_arm": 60856,
+      "model_provider_input_tokens_D": null,
+      "model_provider_input_tokens_I": null,
+      "source_information_exact_byte_identical": true
+    },
+    "topological_test_11": {
+      "D_model_tool_schema_UTF8_bytes": 1324,
+      "I_minus_D_tool_schema_UTF8_bytes": -69,
+      "I_model_tool_schema_UTF8_bytes": 1255,
+      "actual_provider_token_parity_proven": false,
+      "initial_XML_source_bytes_each_arm": 172424,
+      "model_provider_input_tokens_D": null,
+      "model_provider_input_tokens_I": null,
+      "source_information_exact_byte_identical": true
+    },
+    "topological_test_17": {
+      "D_model_tool_schema_UTF8_bytes": 1324,
+      "I_minus_D_tool_schema_UTF8_bytes": -69,
+      "I_model_tool_schema_UTF8_bytes": 1255,
+      "actual_provider_token_parity_proven": false,
+      "initial_XML_source_bytes_each_arm": 151968,
+      "model_provider_input_tokens_D": null,
+      "model_provider_input_tokens_I": null,
+      "source_information_exact_byte_identical": true
+    }
+  },
+  "primary_arms": [
+    "D_STATE",
+    "I_NATIVE"
+  ],
+  "prior_v053_primary_candidate_sha256": "600a951bfb0733a79f09e9db43376526ceaa9e1a66cc3e800e2ca00601862524",
+  "prior_v054_native_schema_audit_sha256": "27d2ef5c6d24a99303975d32e3c1622f2c241b519d554bb8fe2eb17f50c17442",
+  "provider_actual_billed_tokens": null,
+  "source_lengths_may_demand_chunking_after_prospective_budget_freeze": true,
+  "status": "BLOCKED_MODEL_AND_DATA_RELEASE_PENDING_REAL_APPROVAL",
+  "tool_schema_bytes_differ_between_arms": true,
+  "user_approved_model_and_paid_usd_cap": null,
+  "verified_provider_token_budget_equivalence": false,
+  "verified_sampling_model_snapshot": null
+}

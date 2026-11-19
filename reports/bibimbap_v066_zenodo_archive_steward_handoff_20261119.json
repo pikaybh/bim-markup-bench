@@ -1,0 +1,127 @@
+{
+  "IFC_zip_archive_files_downloaded": 0,
+  "archive_download_and_storage_authorization_needed": true,
+  "candidate_IFC_archives_previously_unknown_exact_sizes_now_measured": 2,
+  "doi_role_correction": {
+    "correct_record_concept_DOI": "10.5281/zenodo.19722011",
+    "correct_record_version_DOI": "10.5281/zenodo.19722012",
+    "old_document_inverted_roles": true,
+    "old_document_unchanged_under_prior_frozen_SHA": true,
+    "source_of_correction": "https://zenodo.org/api/records/19722012"
+  },
+  "empty_claims_missing_roles": [
+    "independent_blind_reviewer",
+    "research_owner",
+    "rights_reviewer",
+    "source_steward",
+    "task_evaluator_steward"
+  ],
+  "external_steward_required_roles": [
+    "source_steward",
+    "task_evaluator_steward",
+    "independent_blind_reviewer",
+    "rights_reviewer",
+    "research_owner"
+  ],
+  "external_steward_roles_required_before_verifiable_review": 5,
+  "individual_IFC_files_opened": 0,
+  "issue": 247,
+  "new_owner_approval_to_launch": false,
+  "next_external_preconditions": [
+    "Source steward obtains a specific IFC only after source licensing and 724MB archive acquisition/storage authorization, records its own SHA256",
+    "Rights steward checks the IFC-specific original author consent, attribution, embedded third-party objects and provider transfer/retention terms",
+    "Independent reviewer certifies source/task/evaluator independence with authenticated real identity, separate keys and out-of-band protected evidence",
+    "Separate evaluator steward creates private new tasks/GT and independently validated scoring rubric without revealing answers to model-facing project",
+    "Research owner verifies authenticated evidence, exact published-scorer revision, cohort/model/tokens/paid cap, then separately authorizes a new research protocol"
+  ],
+  "official_zenodo_record_metadata_only": {
+    "all_public_record_files_bytes": 726248247,
+    "archive_MD5_is_NOT_individual_IFC_SHA256": true,
+    "concept_DOI": "10.5281/zenodo.19722011",
+    "independent_blind_samples_admitted": 0,
+    "individual_IFC_SHA256_computed": false,
+    "individual_IFC_names_inspected": false,
+    "license_identifier": "cc-by-4.0",
+    "official_zenodo_metadata_URL": "https://zenodo.org/api/records/19722012",
+    "original_archive_or_individual_IFC_downloads": 0,
+    "original_zip_archive_count": 2,
+    "original_zip_archive_total_bytes": 724338765,
+    "previous_local_DOI_label_inversion_detected": true,
+    "provider_transfer_retention_permission_verified": false,
+    "public_file_manifest": [
+      {
+        "bytes": 503285210,
+        "downloaded_locally": false,
+        "md5": "md5:bab737c3cfb3ff0443f1cc43355b589c",
+        "name": "2025_BIMfundamentals.zip"
+      },
+      {
+        "bytes": 221053555,
+        "downloaded_locally": false,
+        "md5": "md5:bc4bfb90313162c68a3ec4e24a0d33cf",
+        "name": "2026_BIMprojects.zip"
+      },
+      {
+        "bytes": 341,
+        "downloaded_locally": false,
+        "md5": "md5:6389478e64b473658a64093199bef598",
+        "name": "LICENSE"
+      },
+      {
+        "bytes": 4288,
+        "downloaded_locally": false,
+        "md5": "md5:56aa9ea145afcf63a805694eaebc3e1b",
+        "name": "README.md"
+      },
+      {
+        "bytes": 195135,
+        "downloaded_locally": false,
+        "md5": "md5:6e1bb235811413ad599e2e567bca56f7",
+        "name": "class_distribution.png"
+      },
+      {
+        "bytes": 1702879,
+        "downloaded_locally": false,
+        "md5": "md5:b90d5b9bd342ac32f55f68769c02a72b",
+        "name": "group6.png"
+      },
+      {
+        "bytes": 6839,
+        "downloaded_locally": false,
+        "md5": "md5:fcb578106523ca9b283ae43a042b789d",
+        "name": "other_online_BIM_model_resources.csv"
+      }
+    ],
+    "public_metadata_not_verification_of_embedded_third_party_rights": true,
+    "public_total_files": 7,
+    "publication_date": "2026-04-24",
+    "published_original_IFC_count_claim": 224,
+    "record_version": "1.0.0",
+    "version_DOI": "10.5281/zenodo.19722012"
+  },
+  "original_author_grader_or_GT_files_opened": 0,
+  "paid_trials_or_external_IFC_uploads": 0,
+  "paper_scorer_git_release_crosswalk_completed": false,
+  "prior_public_version_license_report_SHA256": "381795b45366e20c27f200de90b7e611411fef95347a734e39e1784a3298eb6f",
+  "private_task_or_reference_evaluator_files_opened": 0,
+  "prospective_source_SHA_in_new_receipt_certified_as_actual": false,
+  "provider_launch_status": "NO_MODEL_PROVIDER_OR_SCORER_LAUNCH",
+  "provider_or_model_calls": 0,
+  "public_metadata_observed_date": "2026-11-19",
+  "real_external_signatures_received": 0,
+  "rights_report_SHA256": "93f8eacd2b0767c3bda5ae3f509f90a122973064f48ed9c70c3c807321798464",
+  "source_file_legal_and_safety_limits": {
+    "GNI_creator_consent_AND_ccby_claims_are_public": true,
+    "LLM_training_nonexposure_proven": false,
+    "external_provider_specific_transfer_retention_authorization": false,
+    "independent_developer_blindness_proven": false,
+    "individual_IFC_SHA256_and_source_lineage_verified": false,
+    "new_independently_blind_source_count": 0,
+    "third_party_embedded_family_rights_and_attribution_verified": false
+  },
+  "status": "V066_ZENODO_OFFICIAL_ARCHIVE_METADATA_DOI_CORRECTED_WITH_ALL_EXTERNAL_GATE_BLOCKERS",
+  "synthetic_all_role_claims_represent_real_signatures": false,
+  "synthetic_all_role_claims_still_status": "UNVERIFIED_EXTERNAL_ROLE_ATTESTATION_NOT_ADMITTED",
+  "trust_anchor_registry_for_external_signatures_configured": false,
+  "untrusted_receipt_document_SHA_does_not_prove_signer_rights": true
+}

@@ -1,0 +1,32 @@
+{
+  "G1_G2_G3_unblocked": false,
+  "correct_containment_per_arm": true,
+  "d0_ifc_sha256": "dd2e42bbc8db3990ecb4ab86428d0a865cd43a489ffe771de66b4ac6109c7779",
+  "developer_selected_full_oracle_not_provided_to_models": true,
+  "frozen_task_id": "WAL-CRE-SPA-A-003",
+  "i0_ifc_sha256": "c1ca79a3f69309ed2ee98f808e05b275e1cc840289b53b9632c6e680db379c28",
+  "ifc_space_boundaries_before_and_after_per_arm": [
+    13,
+    13
+  ],
+  "ifc_spaces_before_and_after_per_arm": [
+    2,
+    2
+  ],
+  "llm_calls": 0,
+  "native_created_walls_per_arm": 1,
+  "native_source_products_preserved_per_arm": 10,
+  "new_ifc_space_created_in_either_arm": false,
+  "new_native_t_path_joins_per_arm": 2,
+  "official_bim_edit_evaluator_executed": false,
+  "official_ifc_reference_or_scorer_loaded": false,
+  "official_tasks_scored": 0,
+  "public_instruction_sha256": "31a00588498f68ef6791a133b033cc3da442749d5a237e76f0f5817cf095d14d",
+  "research_release_gate": "BLOCKED_FULL_ROOM_ORACLE_AND_OFFICIAL_SCORER",
+  "room_partition_and_new_room_semantics_proven": false,
+  "source_ifc_sha256": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+  "source_only_wall_full_room_cross_section_per_arm": true,
+  "status": "PASS_BOTH_NATIVE_WALL_JOINS_ROOM_PARTITION_NOT_PROVEN",
+  "version": "G1_PUBLIC_WALL_SPATIAL_SEMANTICS_SOURCE_ONLY_V0.1",
+  "wall_overlap_with_unchanged_room_m3": 2.1805
+}

@@ -185,3 +185,25 @@ The experimental image was the locally cached exact native Linux
 AMD64 ID sha256:2ce0d57dff6ea443c7f5ffffd29cf8b1b50a141b77574aae5ca4646f45f3a1ee.
 Source IFC SHA-256: 10d57d3eeb6e50fb51493b03d7cb508d57eadeb76719afaeb71fa6658c3ecf58.
 The test host did not modify production Xim/BIXML or other projects.
+
+
+## 2026-11-10 — Fixed local Docker daemon for OWN-only execution
+
+The earlier November 9 admission review identified that local read-only
+Docker image verification was not necessarily bound to the same daemon
+used by the own-worker's `create`, `start`, attached-output reader,
+independent grader and kernel-probe cleanup. This issue is now
+**code-level addressed in an Issue #19 stacked Draft PR** by the
+shared `src/runner/local_docker_transport.py` local socket binding.
+Every command in those OWN-only code paths now explicitly routes to
+the same platform-owned local Docker endpoint. A remote `DOCKER_HOST`,
+Docker context, SSH/TCP endpoint or competing global CLI argument is
+rejected or ignored; there is no daemon fallback. See
+`docs/gates/G2_local_docker_transport_20261110.md` for detailed
+unit tests and evidence.
+
+This **does not** close Issue #19: the current connected Windows Docker
+Linux daemon is offline, so fresh OS/kernel verification and local OCI
+image attestation are unverified. The primary model-generated Python
+entry point still denies execution; the isolated graders and external
+official scorer are still separate unapproved research components.

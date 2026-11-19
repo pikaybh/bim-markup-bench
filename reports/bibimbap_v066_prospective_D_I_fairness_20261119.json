@@ -1,0 +1,798 @@
+{
+  "actual_billed_input_output_cached_reasoning_tokens": null,
+  "actual_edit_family_coverage": [
+    "create",
+    "delete",
+    "move"
+  ],
+  "actual_native_schema_coverage": [
+    "IFC2X3",
+    "IFC4X3"
+  ],
+  "actual_original_developer_exposed_unique_IFC_source_SHA_clusters": 4,
+  "actual_paid_USD": 0,
+  "actual_source_operation_rows": 6,
+  "audit_kind": "PROSPECTIVE_NOT_ACTIVE_OR_PREREGISTERED_MODEL_TRIAL",
+  "exposed_source_operation_byte_rows": [
+    {
+      "author_hidden_GT_read": false,
+      "family": "hosted_door_opening",
+      "imperative_runtime_native_IFC_access_additional_to_read": true,
+      "model_input_is_really_abstract_source_projection_only": true,
+      "native_original_IFC_SHA256": "88f315a0ec26c1e8bd5ea84fb254cf1d30b0ef143f03bbeffcee1dd8a69a2a59",
+      "operation_family": "create",
+      "original_native_IFC_file_bytes_local_only": 10959,
+      "proposed_arm_submission_payloads": {
+        "D_FULL": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 2457,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 615,
+            "proxy_codepoints_div_4_ceiling": 615,
+            "unicode_codepoints": 2457
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "bcbeb1dca7a8e7e2822a56d59367cb2083f38d26358cfa680f94326a9118be36",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 916,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 229,
+            "proxy_codepoints_div_4_ceiling": 229,
+            "unicode_codepoints": 916
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 2287,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 572,
+            "proxy_codepoints_div_4_ceiling": 572,
+            "unicode_codepoints": 2287
+          },
+          "source_read_envelope_SHA256": "01b5458dec0443f1c19c62cb9f0e4eab056c18fc6fa74bb77038d8ceedde86fd"
+        },
+        "D_MANAGED": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 1128,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 282,
+            "proxy_codepoints_div_4_ceiling": 282,
+            "unicode_codepoints": 1128
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "525a934390c50310484ea3d8890bfb75855fdeff6463a6d97ff6349a322bbf34",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 854,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 214,
+            "proxy_codepoints_div_4_ceiling": 214,
+            "unicode_codepoints": 854
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 1054,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 264,
+            "proxy_codepoints_div_4_ceiling": 264,
+            "unicode_codepoints": 1054
+          },
+          "source_read_envelope_SHA256": "01b5458dec0443f1c19c62cb9f0e4eab056c18fc6fa74bb77038d8ceedde86fd"
+        },
+        "I_NATIVE": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 2564,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 641,
+            "proxy_codepoints_div_4_ceiling": 641,
+            "unicode_codepoints": 2564
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "94ae164fec730400ea50483f4f0f6b95eedb159271012bc5b248d4bdd8e510a1",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 990,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 248,
+            "proxy_codepoints_div_4_ceiling": 248,
+            "unicode_codepoints": 990
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 2507,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 627,
+            "proxy_codepoints_div_4_ceiling": 627,
+            "unicode_codepoints": 2507
+          },
+          "source_read_envelope_SHA256": "01b5458dec0443f1c19c62cb9f0e4eab056c18fc6fa74bb77038d8ceedde86fd"
+        }
+      },
+      "real_original_IFC_file_SHA256_rechecked": true,
+      "same_proposed_read_envelope_SHA256_for_all_three": true,
+      "schema": "IFC2X3",
+      "shared_proposed_initial_read_envelope_UTF8": {
+        "UTF8_bytes": 2913,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 729,
+        "proxy_codepoints_div_4_ceiling": 729,
+        "unicode_codepoints": 2913
+      },
+      "shared_proposed_source_FULL_initial_XML_UTF8": {
+        "UTF8_bytes": 1898,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 475,
+        "proxy_codepoints_div_4_ceiling": 475,
+        "unicode_codepoints": 1898
+      },
+      "shared_proposed_source_MANAGED_initial_XML_UTF8": {
+        "UTF8_bytes": 665,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 167,
+        "proxy_codepoints_div_4_ceiling": 167,
+        "unicode_codepoints": 665
+      }
+    },
+    {
+      "author_hidden_GT_read": false,
+      "family": "hosted_door_opening",
+      "imperative_runtime_native_IFC_access_additional_to_read": true,
+      "model_input_is_really_abstract_source_projection_only": true,
+      "native_original_IFC_SHA256": "c0e0019d7224185d5872b80bdd3652da2bc960b819c1d8c0dd03b213b14847ca",
+      "operation_family": "create",
+      "original_native_IFC_file_bytes_local_only": 27066,
+      "proposed_arm_submission_payloads": {
+        "D_FULL": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 4035,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 1009,
+            "proxy_codepoints_div_4_ceiling": 1009,
+            "unicode_codepoints": 4035
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "579a03a209424327ec55411aa713231839a3c120c33e09cdf3d023c7fbf5a20f",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 916,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 229,
+            "proxy_codepoints_div_4_ceiling": 229,
+            "unicode_codepoints": 916
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 3733,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 934,
+            "proxy_codepoints_div_4_ceiling": 934,
+            "unicode_codepoints": 3733
+          },
+          "source_read_envelope_SHA256": "c7925e5da7483cab2dc6ab612908c9e44240272a377709b44ee024698d38678f"
+        },
+        "D_MANAGED": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 1351,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 338,
+            "proxy_codepoints_div_4_ceiling": 338,
+            "unicode_codepoints": 1351
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "42f8bdbb2d0569bda31ddcdeaf07582f9a3a6ecf07ef67e1487c7d3b9f8b8d18",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 854,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 214,
+            "proxy_codepoints_div_4_ceiling": 214,
+            "unicode_codepoints": 854
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 1261,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 316,
+            "proxy_codepoints_div_4_ceiling": 316,
+            "unicode_codepoints": 1261
+          },
+          "source_read_envelope_SHA256": "c7925e5da7483cab2dc6ab612908c9e44240272a377709b44ee024698d38678f"
+        },
+        "I_NATIVE": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 2400,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 600,
+            "proxy_codepoints_div_4_ceiling": 600,
+            "unicode_codepoints": 2400
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "b5c3cbd2c9379347f85487316deb382e42eb1740d951eb6674cfbe77923ce4dd",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 990,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 248,
+            "proxy_codepoints_div_4_ceiling": 248,
+            "unicode_codepoints": 990
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 2347,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 587,
+            "proxy_codepoints_div_4_ceiling": 587,
+            "unicode_codepoints": 2347
+          },
+          "source_read_envelope_SHA256": "c7925e5da7483cab2dc6ab612908c9e44240272a377709b44ee024698d38678f"
+        }
+      },
+      "real_original_IFC_file_SHA256_rechecked": true,
+      "same_proposed_read_envelope_SHA256_for_all_three": true,
+      "schema": "IFC4X3",
+      "shared_proposed_initial_read_envelope_UTF8": {
+        "UTF8_bytes": 4716,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 1179,
+        "proxy_codepoints_div_4_ceiling": 1179,
+        "unicode_codepoints": 4716
+      },
+      "shared_proposed_source_FULL_initial_XML_UTF8": {
+        "UTF8_bytes": 3345,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 837,
+        "proxy_codepoints_div_4_ceiling": 837,
+        "unicode_codepoints": 3345
+      },
+      "shared_proposed_source_MANAGED_initial_XML_UTF8": {
+        "UTF8_bytes": 873,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 219,
+        "proxy_codepoints_div_4_ceiling": 219,
+        "unicode_codepoints": 873
+      }
+    },
+    {
+      "author_hidden_GT_read": false,
+      "family": "hosted_window_assembly",
+      "imperative_runtime_native_IFC_access_additional_to_read": true,
+      "model_input_is_really_abstract_source_projection_only": true,
+      "native_original_IFC_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "operation_family": "move",
+      "original_native_IFC_file_bytes_local_only": 60103,
+      "proposed_arm_submission_payloads": {
+        "D_FULL": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 6500,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 1625,
+            "proxy_codepoints_div_4_ceiling": 1625,
+            "unicode_codepoints": 6500
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "0f2bd2a5e76cd5e6f08264c4c6eac16b09d57ca1acbc08d7b951474051e618b3",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 916,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 229,
+            "proxy_codepoints_div_4_ceiling": 229,
+            "unicode_codepoints": 916
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 6112,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 1528,
+            "proxy_codepoints_div_4_ceiling": 1528,
+            "unicode_codepoints": 6112
+          },
+          "source_read_envelope_SHA256": "0b4355964edce0d3d2e31cd9edbadcd794b62e1df53b8ec771371cd6f13800fe"
+        },
+        "D_MANAGED": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 2314,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 579,
+            "proxy_codepoints_div_4_ceiling": 579,
+            "unicode_codepoints": 2314
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "4e9bca0bc6c36f6d219278d811e969382c533e5ea47ad47ed703e6a86dc2f942",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 854,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 214,
+            "proxy_codepoints_div_4_ceiling": 214,
+            "unicode_codepoints": 854
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 2166,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 542,
+            "proxy_codepoints_div_4_ceiling": 542,
+            "unicode_codepoints": 2166
+          },
+          "source_read_envelope_SHA256": "0b4355964edce0d3d2e31cd9edbadcd794b62e1df53b8ec771371cd6f13800fe"
+        },
+        "I_NATIVE": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 1270,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 318,
+            "proxy_codepoints_div_4_ceiling": 318,
+            "unicode_codepoints": 1270
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "d4f51e7836dca649f50e4cb288fb7cc60684f88f57a8047616c73c2e4584aeb8",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 990,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 248,
+            "proxy_codepoints_div_4_ceiling": 248,
+            "unicode_codepoints": 990
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 1231,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 308,
+            "proxy_codepoints_div_4_ceiling": 308,
+            "unicode_codepoints": 1231
+          },
+          "source_read_envelope_SHA256": "0b4355964edce0d3d2e31cd9edbadcd794b62e1df53b8ec771371cd6f13800fe"
+        }
+      },
+      "real_original_IFC_file_SHA256_rechecked": true,
+      "same_proposed_read_envelope_SHA256_for_all_three": true,
+      "schema": "IFC4X3",
+      "shared_proposed_initial_read_envelope_UTF8": {
+        "UTF8_bytes": 8984,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 2246,
+        "proxy_codepoints_div_4_ceiling": 2246,
+        "unicode_codepoints": 8984
+      },
+      "shared_proposed_source_FULL_initial_XML_UTF8": {
+        "UTF8_bytes": 6112,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 1528,
+        "proxy_codepoints_div_4_ceiling": 1528,
+        "unicode_codepoints": 6112
+      },
+      "shared_proposed_source_MANAGED_initial_XML_UTF8": {
+        "UTF8_bytes": 2166,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 542,
+        "proxy_codepoints_div_4_ceiling": 542,
+        "unicode_codepoints": 2166
+      }
+    },
+    {
+      "author_hidden_GT_read": false,
+      "family": "hosted_window_assembly",
+      "imperative_runtime_native_IFC_access_additional_to_read": true,
+      "model_input_is_really_abstract_source_projection_only": true,
+      "native_original_IFC_SHA256": "a334c9f41e6d94307ecce9425647ce891b2b07321ab2b59020274ce683d46ee5",
+      "operation_family": "delete",
+      "original_native_IFC_file_bytes_local_only": 60103,
+      "proposed_arm_submission_payloads": {
+        "D_FULL": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 6505,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 1627,
+            "proxy_codepoints_div_4_ceiling": 1627,
+            "unicode_codepoints": 6505
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "87c0cc3e84f373857e91cf1c7fcba067c279c3a1eee2fa990ebb932f74de988e",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 916,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 229,
+            "proxy_codepoints_div_4_ceiling": 229,
+            "unicode_codepoints": 916
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 6117,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 1530,
+            "proxy_codepoints_div_4_ceiling": 1530,
+            "unicode_codepoints": 6117
+          },
+          "source_read_envelope_SHA256": "0b4355964edce0d3d2e31cd9edbadcd794b62e1df53b8ec771371cd6f13800fe"
+        },
+        "D_MANAGED": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 2319,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 580,
+            "proxy_codepoints_div_4_ceiling": 580,
+            "unicode_codepoints": 2319
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "b9542ce4334e22188ab089baff67417211278263e53ffcfdcb8a528f10296df2",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 854,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 214,
+            "proxy_codepoints_div_4_ceiling": 214,
+            "unicode_codepoints": 854
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 2171,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 543,
+            "proxy_codepoints_div_4_ceiling": 543,
+            "unicode_codepoints": 2171
+          },
+          "source_read_envelope_SHA256": "0b4355964edce0d3d2e31cd9edbadcd794b62e1df53b8ec771371cd6f13800fe"
+        },
+        "I_NATIVE": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 879,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 220,
+            "proxy_codepoints_div_4_ceiling": 220,
+            "unicode_codepoints": 879
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "06260c97c5e493dc706578fb5027f827cff1dae9f08a6dc75a491aafb6b8968b",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 990,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 248,
+            "proxy_codepoints_div_4_ceiling": 248,
+            "unicode_codepoints": 990
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 847,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 212,
+            "proxy_codepoints_div_4_ceiling": 212,
+            "unicode_codepoints": 847
+          },
+          "source_read_envelope_SHA256": "0b4355964edce0d3d2e31cd9edbadcd794b62e1df53b8ec771371cd6f13800fe"
+        }
+      },
+      "real_original_IFC_file_SHA256_rechecked": true,
+      "same_proposed_read_envelope_SHA256_for_all_three": true,
+      "schema": "IFC4X3",
+      "shared_proposed_initial_read_envelope_UTF8": {
+        "UTF8_bytes": 8984,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 2246,
+        "proxy_codepoints_div_4_ceiling": 2246,
+        "unicode_codepoints": 8984
+      },
+      "shared_proposed_source_FULL_initial_XML_UTF8": {
+        "UTF8_bytes": 6112,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 1528,
+        "proxy_codepoints_div_4_ceiling": 1528,
+        "unicode_codepoints": 6112
+      },
+      "shared_proposed_source_MANAGED_initial_XML_UTF8": {
+        "UTF8_bytes": 2166,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 542,
+        "proxy_codepoints_div_4_ceiling": 542,
+        "unicode_codepoints": 2166
+      }
+    },
+    {
+      "author_hidden_GT_read": false,
+      "family": "hosted_window_assembly",
+      "imperative_runtime_native_IFC_access_additional_to_read": true,
+      "model_input_is_really_abstract_source_projection_only": true,
+      "native_original_IFC_SHA256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "operation_family": "move",
+      "original_native_IFC_file_bytes_local_only": 48353,
+      "proposed_arm_submission_payloads": {
+        "D_FULL": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 10674,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 2669,
+            "proxy_codepoints_div_4_ceiling": 2669,
+            "unicode_codepoints": 10674
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "fc047e1b05d04b9ed56663c9cc2c1d08eb9d38c4cb0d541bf901a007df5f652e",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 916,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 229,
+            "proxy_codepoints_div_4_ceiling": 229,
+            "unicode_codepoints": 916
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 10020,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 2505,
+            "proxy_codepoints_div_4_ceiling": 2505,
+            "unicode_codepoints": 10020
+          },
+          "source_read_envelope_SHA256": "f2d01946582a9e70e25ec7f28e17ab16de6e80e93e95525ef830058c5f9803ab"
+        },
+        "D_MANAGED": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 2974,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 744,
+            "proxy_codepoints_div_4_ceiling": 744,
+            "unicode_codepoints": 2974
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "995f3c3e8774c45260a3d9d6a781f968174e2745b0fbabe38937092572405e3a",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 854,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 214,
+            "proxy_codepoints_div_4_ceiling": 214,
+            "unicode_codepoints": 854
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 2778,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 695,
+            "proxy_codepoints_div_4_ceiling": 695,
+            "unicode_codepoints": 2778
+          },
+          "source_read_envelope_SHA256": "f2d01946582a9e70e25ec7f28e17ab16de6e80e93e95525ef830058c5f9803ab"
+        },
+        "I_NATIVE": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 1270,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 318,
+            "proxy_codepoints_div_4_ceiling": 318,
+            "unicode_codepoints": 1270
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "d4f51e7836dca649f50e4cb288fb7cc60684f88f57a8047616c73c2e4584aeb8",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 990,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 248,
+            "proxy_codepoints_div_4_ceiling": 248,
+            "unicode_codepoints": 990
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 1231,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 308,
+            "proxy_codepoints_div_4_ceiling": 308,
+            "unicode_codepoints": 1231
+          },
+          "source_read_envelope_SHA256": "f2d01946582a9e70e25ec7f28e17ab16de6e80e93e95525ef830058c5f9803ab"
+        }
+      },
+      "real_original_IFC_file_SHA256_rechecked": true,
+      "same_proposed_read_envelope_SHA256_for_all_three": true,
+      "schema": "IFC4X3",
+      "shared_proposed_initial_read_envelope_UTF8": {
+        "UTF8_bytes": 13818,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 3455,
+        "proxy_codepoints_div_4_ceiling": 3455,
+        "unicode_codepoints": 13818
+      },
+      "shared_proposed_source_FULL_initial_XML_UTF8": {
+        "UTF8_bytes": 10020,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 2505,
+        "proxy_codepoints_div_4_ceiling": 2505,
+        "unicode_codepoints": 10020
+      },
+      "shared_proposed_source_MANAGED_initial_XML_UTF8": {
+        "UTF8_bytes": 2778,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 695,
+        "proxy_codepoints_div_4_ceiling": 695,
+        "unicode_codepoints": 2778
+      }
+    },
+    {
+      "author_hidden_GT_read": false,
+      "family": "hosted_window_assembly",
+      "imperative_runtime_native_IFC_access_additional_to_read": true,
+      "model_input_is_really_abstract_source_projection_only": true,
+      "native_original_IFC_SHA256": "9f492b328e18875ec1796259d8d29f429500f8003ebb1eead951e677996b230f",
+      "operation_family": "delete",
+      "original_native_IFC_file_bytes_local_only": 48353,
+      "proposed_arm_submission_payloads": {
+        "D_FULL": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 10676,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 2669,
+            "proxy_codepoints_div_4_ceiling": 2669,
+            "unicode_codepoints": 10676
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "1cc3c982bc19a1d999b2067341b0ff884f1216bab0d5f15075718248441424e8",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 916,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 229,
+            "proxy_codepoints_div_4_ceiling": 229,
+            "unicode_codepoints": 916
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 10022,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 2506,
+            "proxy_codepoints_div_4_ceiling": 2506,
+            "unicode_codepoints": 10022
+          },
+          "source_read_envelope_SHA256": "f2d01946582a9e70e25ec7f28e17ab16de6e80e93e95525ef830058c5f9803ab"
+        },
+        "D_MANAGED": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 2976,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 744,
+            "proxy_codepoints_div_4_ceiling": 744,
+            "unicode_codepoints": 2976
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "2d3bc63384cb9f33fc8f37181904bf26a136661e362078b12d7e0b2fe85337bf",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 854,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 214,
+            "proxy_codepoints_div_4_ceiling": 214,
+            "unicode_codepoints": 854
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 2780,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 695,
+            "proxy_codepoints_div_4_ceiling": 695,
+            "unicode_codepoints": 2780
+          },
+          "source_read_envelope_SHA256": "f2d01946582a9e70e25ec7f28e17ab16de6e80e93e95525ef830058c5f9803ab"
+        },
+        "I_NATIVE": {
+          "actual_USD_cost": null,
+          "actual_UTF8_tool_arguments": {
+            "UTF8_bytes": 879,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 220,
+            "proxy_codepoints_div_4_ceiling": 220,
+            "unicode_codepoints": 879
+          },
+          "actual_billed_provider_tokens": null,
+          "developer_control_submission_sha256": "06260c97c5e493dc706578fb5027f827cff1dae9f08a6dc75a491aafb6b8968b",
+          "proposed_tool_definitions_UTF8": {
+            "UTF8_bytes": 990,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 248,
+            "proxy_codepoints_div_4_ceiling": 248,
+            "unicode_codepoints": 990
+          },
+          "real_developer_control_submission": {
+            "UTF8_bytes": 847,
+            "actual_provider_billed_tokens": null,
+            "proxy_bytes_div_4_ceiling": 212,
+            "proxy_codepoints_div_4_ceiling": 212,
+            "unicode_codepoints": 847
+          },
+          "source_read_envelope_SHA256": "f2d01946582a9e70e25ec7f28e17ab16de6e80e93e95525ef830058c5f9803ab"
+        }
+      },
+      "real_original_IFC_file_SHA256_rechecked": true,
+      "same_proposed_read_envelope_SHA256_for_all_three": true,
+      "schema": "IFC4X3",
+      "shared_proposed_initial_read_envelope_UTF8": {
+        "UTF8_bytes": 13818,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 3455,
+        "proxy_codepoints_div_4_ceiling": 3455,
+        "unicode_codepoints": 13818
+      },
+      "shared_proposed_source_FULL_initial_XML_UTF8": {
+        "UTF8_bytes": 10020,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 2505,
+        "proxy_codepoints_div_4_ceiling": 2505,
+        "unicode_codepoints": 10020
+      },
+      "shared_proposed_source_MANAGED_initial_XML_UTF8": {
+        "UTF8_bytes": 2778,
+        "actual_provider_billed_tokens": null,
+        "proxy_bytes_div_4_ceiling": 695,
+        "proxy_codepoints_div_4_ceiling": 695,
+        "unicode_codepoints": 2778
+      }
+    }
+  ],
+  "frozen_prior_v065_control_report_SHA256": "cc55f6623fc65d3936cf6ee9bbacf1c46d3893aa94122317632d9f90d009382d",
+  "frozen_prior_window_control_report_SHA256": "b7ee995579d32a887dc5a34882950f2b967861b27e132591b7dd8fab40b7c8be",
+  "issue": 247,
+  "measured_artifacts": "exact UTF8 source FULL/MANAGED XML, proposed common read JSON envelope, actual developer D_FULL, D_MANAGED and Python I submissions, proposed tool JSON schemas, native original IFC file sizes",
+  "missing_actual_tokenizer_name": null,
+  "naive_token_proxy_definition": "ceiling(UTF8_byte_length / 4) and ceiling(Unicode_codepoint_length / 4), displayed only as rough size indicators; not any actual model tokenizer, not provider usage or pricing",
+  "new_model_provider_API_calls": 0,
+  "original_task_author_grader_or_hidden_GT_accessed": false,
+  "proposed_tool_contract_source_SHA256": "ef0eb2e25007415cde04101e7cfe8f7d2b4f8a2a1a6f177758a3f567758ef715",
+  "proposed_tool_schema_SHA256_by_arm": {
+    "D_FULL": "ecda8327e3af9ef2df46c1e2d5683b0f2d26b3b0b873ceb3ae2f80d3a741789a",
+    "D_MANAGED": "9e38324dbdaedaba8d623e1b61cbf67a213ec3501d06e98223b92304103b6302",
+    "I_NATIVE": "5ffea5bea52b53d071743bffab2684c5d8c3b73ecd28a9b3e1680099db8d7e3e"
+  },
+  "proposed_tool_schema_metrics_by_arm": {
+    "D_FULL": {
+      "UTF8_bytes": 916,
+      "actual_provider_billed_tokens": null,
+      "proxy_bytes_div_4_ceiling": 229,
+      "proxy_codepoints_div_4_ceiling": 229,
+      "unicode_codepoints": 916
+    },
+    "D_MANAGED": {
+      "UTF8_bytes": 854,
+      "actual_provider_billed_tokens": null,
+      "proxy_bytes_div_4_ceiling": 214,
+      "proxy_codepoints_div_4_ceiling": 214,
+      "unicode_codepoints": 854
+    },
+    "I_NATIVE": {
+      "UTF8_bytes": 990,
+      "actual_provider_billed_tokens": null,
+      "proxy_bytes_div_4_ceiling": 248,
+      "proxy_codepoints_div_4_ceiling": 248,
+      "unicode_codepoints": 990
+    }
+  },
+  "prospective_design_and_hard_scientific_blockers": {
+    "authorized_new_paid_or_free_model_generation_trials": 0,
+    "billing_by_real_provider_token_usage_verified": false,
+    "causal_claim_representation_only_currently_admissible": false,
+    "common_initial_read_calls_per_trial": 1,
+    "cost_of_actual_billed_provider_tokens": null,
+    "feedback_engine_status_classes": [
+      "admitted_native_scope",
+      "invalid_submission",
+      "unsupported_source",
+      "native_execution_failure",
+      "native_scope_rejected",
+      "engine_timeout"
+    ],
+    "feedback_max_candidate_submissions": 24,
+    "feedback_max_tool_calls_including_read": 25,
+    "frozen_cohort_selected_for_confirmatory_study": false,
+    "hard_original_provider_launch_gate_retained": true,
+    "identical_source_information_to_I_runtime": false,
+    "independently_certified_blind_original_sources": 0,
+    "model_facing_original_author_task_score_allowed": false,
+    "model_facing_raw_stdout_stderr_traceback_from_I_allowed": false,
+    "native_IFC_provider_upload_or_retention_allowed": false,
+    "one_shot_max_candidate_submissions": 1,
+    "one_shot_max_tool_calls_including_read": 2,
+    "original_IFC_per_file_external_transfer_rights_verified": false,
+    "proposed_context_or_completion_token_cap": null,
+    "proposed_decoding_params": null,
+    "proposed_model_snapshot": null,
+    "proposed_owner_budget_USD": null,
+    "proposed_price_USD_per_million_tokens": null,
+    "proposed_provider_name": null,
+    "prospective_arms": [
+      "D_FULL",
+      "D_MANAGED",
+      "I_NATIVE"
+    ],
+    "prospective_regimes": [
+      "one_shot",
+      "feedback"
+    ],
+    "same_native_operation_capabilities_D_vs_I": false,
+    "same_source_only_read_envelope_proposed_for_all_arms": true,
+    "system_workflow_comparison_future_possible_subject_to_gates": true
+  },
+  "source_original_IFC_uploaded_externally": false,
+  "status": "V066_PROSPECTIVE_THREE_ARM_OFFLINE_BYTES_AND_TOOL_FAIRNESS_AUDIT_PASS_BUT_MODEL_TRIAL_BLOCKED"
+}

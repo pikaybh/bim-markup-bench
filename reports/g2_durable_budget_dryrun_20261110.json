@@ -1,0 +1,36 @@
+{
+  "experiment_source": "OFFLINE_SYNTHETIC_VALUES_ONLY",
+  "full_g2_or_g3_live_release_authorized": false,
+  "input_context_measurement_upgraded_to_tokens": false,
+  "official_benchmark_tasks_scored": 0,
+  "over_cap_request_rejected": true,
+  "provider_prices_verified": false,
+  "provider_token_counts": null,
+  "real_network_or_model_calls": 0,
+  "real_provider_charges_usd": null,
+  "state_after_database_reopen": {
+    "actual_provider_charges": null,
+    "actual_provider_tokens": null,
+    "attempt_count": 3,
+    "cap_micro_usd": 300,
+    "committed_hypothetical_micro_usd": 250,
+    "hypothetical_inflight_count": 0,
+    "model_id": "offline/mock-v0",
+    "official_tasks_scored": 0,
+    "outstanding_reserved_micro_usd": 150,
+    "paid_run_authorized": false,
+    "price_revision": "OFFLINE_SYNTHETIC_QUOTE_NO_PROVIDER",
+    "real_provider_calls": 0,
+    "remaining_hypothetical_micro_usd": 50,
+    "settled_synthetic_micro_usd": 100,
+    "states": {
+      "CANCELED_UNSENT": 1,
+      "SETTLED_OFFLINE": 1,
+      "UNKNOWN_USAGE": 1
+    },
+    "status": "OFFLINE_SIMULATED_LEDGER_NO_LIVE_PROVIDER"
+  },
+  "status": "PASS_OFFLINE_DURABLE_BUDGET_SIMULATION_LIVE_G3_BLOCKED",
+  "tokenizer_provenance": "NO_APPROVED_MODEL_TOKENIZER",
+  "unknown_usage_refuses_automatic_reservation_release": true
+}

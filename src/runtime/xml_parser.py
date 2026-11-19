@@ -21,6 +21,8 @@ from src.security.agent_boundary import check_xml_bytes, SecurityBoundaryError
 
 ROOT = Path(__file__).resolve().parents[2]
 XSD_PATH = ROOT / "spec/toy_markup_v0.xsd"
+# Hardcoded research-only alternate schema. Never accept a user-controlled path.
+SLAB_OPENING_V08_XSD_PATH = ROOT / "spec/toy_markup_slab_opening_v08.xsd"
 MAX_DEPTH = 96
 MAX_ELEMENTS = 4096
 MAX_ATTRIBUTES = 32
@@ -56,10 +58,16 @@ def safe_diagnostic(code: str, message: str, file: str,
         "element_id": element_id,
     }
 
-def _schema() -> etree.XMLSchema:
-    # Schema source is trusted and local. No network, DTD or external entities.
+def _schema(*, schema_variant: str="default") -> etree.XMLSchema:
+    # Schema source is trusted and local. Never resolve a caller-supplied path.
+    if schema_variant == "default":
+        path=XSD_PATH
+    elif schema_variant == "slab_opening_v08":
+        path=SLAB_OPENING_V08_XSD_PATH
+    else:
+        raise ValueError("Unrecognized or untrusted XML schema variant")
     parser = etree.XMLParser(resolve_entities=False,load_dtd=False,no_network=True,huge_tree=False)
-    root = etree.parse(str(XSD_PATH), parser=parser)
+    root = etree.parse(str(path), parser=parser)
     if root.find(".//{http://www.w3.org/2001/XMLSchema}include") is not None:
         raise RuntimeError("Schema includes are forbidden")
     if root.find(".//{http://www.w3.org/2001/XMLSchema}import") is not None:
@@ -147,7 +155,8 @@ def _parse_element(element: etree._Element, span: SourceSpan, role: str) -> Elem
     )
 
 def parse_xml(data: bytes, *, filename: str="building.xml",
-              expected_source_sha256: str | None = None) -> BuildingDocument:
+              expected_source_sha256: str | None = None,
+              schema_variant: str="default") -> BuildingDocument:
     """Parse XML bytes; no side effects; all error paths fail closed."""
     filename = Path(filename).name or "building.xml"
     try:
@@ -168,7 +177,9 @@ def parse_xml(data: bytes, *, filename: str="building.xml",
         raise MarkupParseError(safe_diagnostic("XML_WRONG_ROOT","Unexpected namespace or root element",filename))
     lines=data.splitlines()
     try:
-        schema = _schema()
+        # Default call remains exactly the original pinned Wall-only contract.
+        schema = (_schema() if schema_variant == "default"
+                  else _schema(schema_variant=schema_variant))
     except (OSError,etree.XMLSchemaParseError) as exc:
         # Fatal internal runtime setup: not user source error.
         raise RuntimeError("Pinned local XSD schema could not be loaded") from exc

@@ -1,0 +1,132 @@
+{
+  "D0_I0_actual_native_semantic_equivalence": true,
+  "D0_I0_entire_IFC_byte_identical": false,
+  "D0_original_native_IFC_sha256": "371b50de4990951d4ab1c2eb35dc2a77816a44901a84f2f4a4e2faddc37c4103",
+  "I0_original_native_IFC_sha256": "7a40a4ef4684a40906df96346f7cd630ec475a4b35d0605dc63382238bf57807",
+  "XML_slab_offset_and_sill_mean_X_and_Y_footprint_coordinates": true,
+  "both_actual_native_oracles": {
+    "existing_containment_and_aggregate_relations_unchanged": true,
+    "matched_model_host_supported": false,
+    "native_IfcRelVoidsElement_exists": true,
+    "native_opening_world_bbox_m": [
+      2.5,
+      2.5125,
+      3.7,
+      7.5,
+      7.5125,
+      4.2
+    ],
+    "native_void_tool_volume_m3": 12.5,
+    "new_opening_triangles": 12,
+    "new_slab_volume_m3": 24.87,
+    "new_slab_world_bbox_m": [
+      -0.2,
+      -0.175,
+      3.8,
+      10.2,
+      10.2,
+      4.1
+    ],
+    "new_void_hosted_by_original_IfcSlab_not_wall": true,
+    "original_IfcProduct_count": 43,
+    "original_IfcRoot_GUID_class_name_preserved": true,
+    "original_IfcRoot_count": 358,
+    "original_mesh_bearing_products": 39,
+    "original_nonhost_mesh_bearing_products_unchanged": 38,
+    "original_nonhost_triangle_face_count": 1640,
+    "original_slab_host_is_real_IfcSlab": true,
+    "original_slab_triangles_after": 32,
+    "original_slab_triangles_before": 12,
+    "original_slab_volume_m3": 32.37,
+    "original_slab_world_bbox_m": [
+      -0.2,
+      -0.175,
+      3.8,
+      10.2,
+      10.2,
+      4.1
+    ],
+    "original_source_full_STEP_entity_preservation_claimed": false,
+    "physically_removed_slab_volume_m3": 7.5,
+    "status": "V036_INDEPENDENT_ACTUAL_NATIVE_SLAB_OPENING_5x5_THROUGH_VOID_ORACLE_PASS"
+  },
+  "causal_LLM_representation_comparison_permitted": false,
+  "default_XML_schema_wall_only_unchanged": true,
+  "default_typed_binder_wall_only_unchanged": true,
+  "historical_developer_native_byte_equal_11_unchanged": 11,
+  "independent_native_I0_saved_and_checked_before_XML_D0": true,
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/187",
+  "matched_real_LLM_D_I_trials": 0,
+  "new_slab_opening_compiler_registered_in_trial_host": false,
+  "opt_in_XML_v08_slab_opening_host_typed_only": true,
+  "original45_full_native_write_parity_proven": 0,
+  "original45_full_task_relevant_read_parity_proven": 0,
+  "original_45_intention_to_test_denominator": 45,
+  "original_Create_remaining_without_native_semantic_pair": 10,
+  "original_Create_semantic_only_developer_pairs": 5,
+  "original_author_D0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.6667,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 0.916675,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_D0_full_mark": false,
+  "original_author_I0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.6667,
+      "object_exists": 1.0,
+      "right_dimensions": 1.0,
+      "right_location": 1.0
+    },
+    "original_author_score": 0.916675,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_I0_full_mark": false,
+  "original_author_dataset_GT_evaluator_mutated": false,
+  "original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "original_author_scores_identical": true,
+  "original_benchmark_task_under_determined_choices_preregistered": true,
+  "original_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "original_host_kind_real_native_IfcSlab": true,
+  "original_native_IFC_source_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_public_task_id": "test_03",
+  "original_question_sha256": "a887b002fe9606743cf68dcc2914cd6ef136c16f78083999184f901ccf57c289",
+  "original_slab_world_bbox_m": [
+    -0.2,
+    -0.175,
+    3.8,
+    10.2,
+    10.2,
+    4.1
+  ],
+  "paid_LLM_provider_calls": 0,
+  "predeclared_0_5m_vertical_void_tool_through_0_3m_slab": true,
+  "preregistered_5x5_world_center_xy_m": [
+    5.0,
+    5.0125
+  ],
+  "preregistered_opening_square_horizontal_5_by_5_m": true,
+  "preregistered_opening_world_bbox_m": [
+    2.5,
+    2.5125,
+    3.7,
+    7.5,
+    7.5125,
+    4.2
+  ],
+  "prior_reports_sha256": {
+    "reports/bibimbap_v031_original45_eligibility_and_overlap_20261117.json": "d6680b3eadb5733be547c09ab8deed58dd48c7feaccbc3cb562b6e60b475c7dd",
+    "reports/bibimbap_v032_original_test04_column_D0_I0_native_semantic_pair_20261117.json": "65cd592b83b06ac161ff420982cb2f3378e850613f4645419690e06764987b2b",
+    "reports/bibimbap_v033_original_test02_slab_D0_I0_semantic_pair_20261117.json": "998064e23a0b3955b20a0ca1a7cabcb4424a612af1d633e42cd179f5e68ce660",
+    "reports/bibimbap_v034_original_test05_wall_D0_I0_native_semantic_pair_20261117.json": "d4bc58a426fd30b6215fef0c2c8d0907c109df1127fa64d44f7d8ab911d4073d",
+    "reports/bibimbap_v035_original_test01_hosted_door_D0_I0_20261117.json": "7ba3a9465996a90d4d324c8e31bc3ff18f3487cb890431e3c30989a516ac82c9"
+  },
+  "status": "V036_ORIGINAL_PUBLIC_TEST03_SLAB_OPENING_NATIVE_SEMANTIC_D0_I0_PAIR",
+  "whole_native_IFC_STEP_byte_equal_or_lossless_proven": false
+}

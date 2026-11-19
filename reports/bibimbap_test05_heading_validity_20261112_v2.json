@@ -1,0 +1,118 @@
+{
+  "all_variants_scored": true,
+  "author_scorer_modified": false,
+  "author_sha256": "667004e16bd38fd7d538bcee56191465429fd975",
+  "dataset_sha256": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "issue": 104,
+  "llm_calls": 0,
+  "method": "developer-authored declarative XML, trusted compiler, unmodified author scorer",
+  "negative_short_wall_dimensions_rejected": true,
+  "original_full_benchmark_score_reproduced": false,
+  "original_ifc_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_scorer_source_sha256": "70a570bae47ddf599a561a2f5f6a817dca398841473dc27f63190a00bec14e72",
+  "paid_api_cost": 0,
+  "public_task": "Add a wall with a length of 15m beginning in (0, -10).",
+  "results": [
+    {
+      "author_metric_vector": {
+        "integrity_constraint": 1.0,
+        "object_exists": 1.0,
+        "right_dimensions": 1.0,
+        "right_location": 1.0
+      },
+      "author_score": 1.0,
+      "case": "axis_x_15m",
+      "compile_status": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+      "correct_by_public_length_and_start": true,
+      "development_control_not_llm": true,
+      "guids_removed": 0,
+      "heading_degrees": 0.0,
+      "measured_declared_centerline_m": 15.0,
+      "original_source_unchanged": true,
+      "scorer_status": "SCORED",
+      "source_declared_length_m": 15.0
+    },
+    {
+      "author_metric_vector": {
+        "integrity_constraint": 1.0,
+        "object_exists": 1.0,
+        "right_dimensions": 1.0,
+        "right_location": 1.0
+      },
+      "author_score": 1.0,
+      "case": "diagonal_30_15m",
+      "compile_status": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+      "correct_by_public_length_and_start": true,
+      "development_control_not_llm": true,
+      "guids_removed": 0,
+      "heading_degrees": 30.0,
+      "measured_declared_centerline_m": 15.0,
+      "original_source_unchanged": true,
+      "scorer_status": "SCORED",
+      "source_declared_length_m": 15.0
+    },
+    {
+      "author_metric_vector": {
+        "integrity_constraint": 0.6667,
+        "object_exists": 1.0,
+        "right_dimensions": 1.0,
+        "right_location": 1.0
+      },
+      "author_score": 0.916675,
+      "case": "diagonal_45_15m",
+      "compile_status": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+      "correct_by_public_length_and_start": true,
+      "development_control_not_llm": true,
+      "guids_removed": 0,
+      "heading_degrees": 45.0,
+      "measured_declared_centerline_m": 15.0,
+      "original_source_unchanged": true,
+      "scorer_status": "SCORED",
+      "source_declared_length_m": 15.0
+    },
+    {
+      "author_metric_vector": {
+        "integrity_constraint": 0.6667,
+        "object_exists": 1.0,
+        "right_dimensions": 1.0,
+        "right_location": 1.0
+      },
+      "author_score": 0.916675,
+      "case": "axis_y_15m",
+      "compile_status": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+      "correct_by_public_length_and_start": true,
+      "development_control_not_llm": true,
+      "guids_removed": 0,
+      "heading_degrees": 90.0,
+      "measured_declared_centerline_m": 15.0,
+      "original_source_unchanged": true,
+      "scorer_status": "SCORED",
+      "source_declared_length_m": 15.0
+    },
+    {
+      "author_metric_vector": {
+        "integrity_constraint": 1.0,
+        "object_exists": 1.0,
+        "right_dimensions": 0.0,
+        "right_location": 1.0
+      },
+      "author_score": 0.75,
+      "case": "invalid_short_10m",
+      "compile_status": "COMMITTED_SCOPED_IFC4X3_WALL_EDIT",
+      "correct_by_public_length_and_start": false,
+      "development_control_not_llm": true,
+      "guids_removed": 0,
+      "heading_degrees": 0.0,
+      "measured_declared_centerline_m": 10.0,
+      "original_source_unchanged": true,
+      "scorer_status": "SCORED",
+      "source_declared_length_m": 10.0
+    }
+  ],
+  "same_score_across_valid_headings": false,
+  "schema": "bibimbap-test05-orientation-validity/v0.1",
+  "test_id": "test_05",
+  "valid_heading_dimension_pass_count": 4,
+  "valid_heading_dimension_tested_count": 4,
+  "warning": "Author rubric is not a strict task-success metric; rotated false negatives must be separated from LLM errors."
+}

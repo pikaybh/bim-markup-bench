@@ -1,0 +1,63 @@
+{
+  "I0_is_independent_developer_IfcOpenShell_Python": true,
+  "actual_full_IFC_output_bytes_equal": true,
+  "all_original45_write_information_capability_parity_proven": false,
+  "causal_representation_performance_conclusion_supported": false,
+  "historical_prior_developer_D0_I0_original_native_byte_equal": 6,
+  "historical_prior_developer_original_author_callable_pairs": 4,
+  "independent_native_identity_oracle": {
+    "all_other_original_IfcProduct_GUIDs_and_classes_preserved": true,
+    "candidate_IfcProducts": 41,
+    "exactly_one_IfcOpeningElement_and_one_IfcWindow_removed": true,
+    "original_IfcProducts": 43,
+    "status": "INDEPENDENT_ORIGINAL_NATIVE_PRODUCTS_PRESERVED"
+  },
+  "issue": "https://github.com/pikaybh/bim-markup-bench/issues/162",
+  "new_actual_developer_D0_I0_native_equal_original_task_count": 1,
+  "new_cumulative_developer_D0_I0_original_native_byte_equal": 7,
+  "new_cumulative_developer_original_author_callable_pairs": 5,
+  "original_D0_full_native_IFC_sha256": "41dc92e4d667e82f14a0355ac55471429213ae95cad859713c5917e275c354ea",
+  "original_I0_full_native_IFC_sha256": "41dc92e4d667e82f14a0355ac55471429213ae95cad859713c5917e275c354ea",
+  "original_IFC2X3_IFC4_direct_XML_write_unblocked": false,
+  "original_XML_submission_deletes_only_existing_Opening_and_its_existing_Window": true,
+  "original_all45_public_task_denominator": 45,
+  "original_author_full_mark": false,
+  "original_author_grader_D0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_grader_I0": {
+    "original_author_full_mark": false,
+    "original_author_metrics": {
+      "integrity_constraint": 0.0,
+      "object_not_exists": 1.0
+    },
+    "original_author_score": 0.5,
+    "status": "AUTHOR_SCORED"
+  },
+  "original_author_missing_Window_reference_source_cases_still_unscoreable": 2,
+  "original_author_scorer_or_input_modified": false,
+  "original_native_IFC_sha256": "9ef1235e49d5b0359c1d44fd95a7afad7755149362109ca8b875d0427dc487ca",
+  "original_public_data_source_modified": false,
+  "original_public_question_sha256": "5aeba46c7e07ce6f64de630a909af2239a2bfcc477677b4a99bc79f44da0f9be",
+  "original_raw_IFC_GTs_or_original_public_target_GUID_committed": false,
+  "original_source_IFC_length_unit": "MILLIMETER",
+  "original_source_IFC_schema": "IFC4X3",
+  "original_target_has_native_IfcRelVoidsElement": true,
+  "original_target_has_no_native_get_container": false,
+  "original_test_id": "test_18",
+  "other_original_same_protocol_cases_not_proven": 38,
+  "paid_model_cost_usd": 0,
+  "pinned_original45_source_roles_report_sha256": "f606994defa7517f898e22ee6e39d5e82da6dc40288c1b38cec25c98b7cd492e",
+  "pinned_original_author_git_sha": "667004e16bd38fd7d538bcee56191465429fd975",
+  "pinned_original_data_git_sha": "f2a7dfa1ca0858a1751f1bbcd1d9f64db696d5ca",
+  "pinned_previous_v023_report_sha256": "9abcc4ebd21c18891bf08307624a19f6012a981455eca7db89051ae70ce86102",
+  "real_model_calls": 0,
+  "status": "ACTUAL_ORIGINAL_TEST18_D0_I0_FULL_NATIVE_IFC_BYTES_EQUAL_ORIGINAL_GRADER_HALF",
+  "untrusted_model_python_execution_enabled": false
+}

@@ -10,6 +10,7 @@ verifies actual native IFC relationships and placements.
 | XML edit | IFC effect, inspected after reimport | safety / rejection |
 | --- | --- | --- |
 | Delete an existing Window node, retain hosted Opening | Removes exactly one IfcWindow and its IfcRelFillsElement. Keeps IfcRelVoidsElement, IfcOpeningElement, IfcWall, unrelated fills and spatial relationships | Only if filling has precisely one host and no material, Pset/type, group or other IFC inverse dependencies |
+| Delete a **uniquely preflighted Door+Opening pair** by removing both state nodes | Removes both IfcProducts, their Fill/Void, the dependent Door-only SpaceBoundary, owned Psets/material, and only the Door's shared Type/Classification/Storey membership; host physical void closes | Only a single isolated paired state diff and the exact source-native inverse classes/ownership observed and specified in docs/gates/G1_public_door_delete_compiler_v02_20261111.md; any unknown dependency blocks atomically. **Not a general IFC Space/Room boundary regeneration policy or official scored task.** |
 | Change an existing Opening offset | Adjust only the opening's local IfcCartesianPoint; child window/door placed relative to opening moves with it, exact fill and void GUIDs retained | No tilt, unsupported world rotation, non-native child placement, wall-void collision, unbound host or boundary dependencies |
 | Add a Connects relation | Generates a stable derived IfcRelConnectsElements with correct source/target native Wall GUIDs | Two typed walls, same storey, physically meeting endpoints, not already connected, no new GUID collision |
 | Remove existing Connects | Deletes only specified IfcRelConnectsElements | Existing exact native directional connection with no ConnectionGeometry |
@@ -36,8 +37,10 @@ must move by exactly the requested offset and all relation GUIDs must persist.
 - Native wall rotation / curved and non-axis-aligned host frames are rejected;
   a universal world frame/inverse-placement solver is not claimed.
 - IfcRelVoidsElement with a changed width/height, resizing a window/door,
-  creating an Opening or Window, deleting an Opening/Wall with dependencies,
-  or adding a SpaceBoundary is not implemented.
+  creating an Opening or Window, deleting a lone Opening/Wall with dependencies,
+  or adding a SpaceBoundary is not implemented. The new paired Door+Opening
+  deletion is only supported under its separately versioned narrow native
+  source dependency policy, not arbitrary host deletes.
 - Complex wall joins with ConnectionGeometry, wall geometry repairs, material
   and Pset cascades, overlapping openings and multi-floor associations are
   not supported.
