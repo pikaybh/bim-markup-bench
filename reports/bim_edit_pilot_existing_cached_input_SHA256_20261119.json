@@ -1,0 +1,417 @@
+{
+  "actual_model_calls": 0,
+  "approved_paid_model_calls": 0,
+  "cross_task_reference_alias_audit": {
+    "pilot_task_rows_using_cross_task_reference_paths_full324": 22,
+    "pilot_task_rows_using_reference_paths_of_other_pilot_tasks": 7,
+    "same_task_source_equals_reference_path": 0,
+    "source_paths_also_reference_paths_for_other_tasks_full324": 12,
+    "source_paths_also_reference_paths_for_pilot_tasks": 1
+  },
+  "distinct_pilot_source_paths": 25,
+  "exact_duplicate_byte_sha256_groups": [],
+  "independent_underlying_building_lineages_verified": 0,
+  "local_source_hash_bytes_read_for_sha256": 40744368,
+  "missing_local_source_paths": 5,
+  "model_launch_allowed": false,
+  "nonclaims": [
+    "20 different original source SHA256 digests prove different file BYTES, not independent building/project lineage",
+    "The frozen full 36 task sample and all 6 unavailable tasks remain in the denominator",
+    "Hashing public input bytes may also hash an asset used as another task's reference; task-to-file role isolation is required",
+    "Original task reference files were never dereferenced in their reference role; no reference scores/geometry were inspected",
+    "Native input/GT geometry and author scorer were not inspected in this SHA-only audit",
+    "Dataset-level CC BY 4.0 does not establish original per-file rights or provider retention consent",
+    "No official publication-backed scorer, true unseen holdout, preregistration or model-launch approval"
+  ],
+  "original_pilot_tasks": 36,
+  "original_task_reference_file_role_read": false,
+  "pilot_tasks_without_verified_local_input": 6,
+  "pinned_evidence_sha256": {
+    "existing_source_rights": "43f85c4ebf17184bfaea3fa749b565337e34f4fd397ec1b9536a8f242b2add06",
+    "lineage_review_queue": "35273b3951882ceae197912ee66b85404f82ef14af050425902c7c0197924216",
+    "remote_file_metadata": "f1b150a576f3d72045819768215c34fd84602ab4f6a5f4d2f0202a0ae3a92a39",
+    "source_path_report": "6511d1f3783b9f031bd80060ce3e751730839683a9f2a7cc1ce2bd9f95ca9d01"
+  },
+  "pinned_model_revision": "0ae510bd21865def4e2c6145c1244f01a1e3bcb9",
+  "pinned_task_sha256": "9bdf9536b94096a06e0e43bd4c59314d6427d3b939517576c7d4c13e1084ef83",
+  "remote_reported_missing_source_bytes": 736810930,
+  "rights_cleared_for_external_provider": 0,
+  "rows": [
+    {
+      "byte_sha256_verified": null,
+      "expected_source_bytes": 224946499,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/0e29802b440f-input-create_wall.ifc",
+      "public_task_ids": [
+        "WAL-CRE-DIR-R-001"
+      ],
+      "status": "MISSING_LOCAL_PINNED_INPUT",
+      "task_count": 1,
+      "verification_method": null,
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "dc85fb9a923dc87a303d8f2d360baed9a9215c5b637557e1f5a482251366a70d",
+      "expected_source_bytes": 5320714,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/354198cb90b3.ifc",
+      "public_task_ids": [
+        "ROM-CRE-SPA-R-003"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "23303179788b70d10b3b2754ade6a10797f594f08c4ba1262b1d098f7c181ae7",
+      "expected_source_bytes": 5252946,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/3d3be0535ad2.ifc",
+      "public_task_ids": [
+        "WAL-CRE-DIR-R-004"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "e2a63a8e29b43819960be1567b6c3e013483f54187675f3e5de70919f241d62c",
+      "expected_source_bytes": 5258250,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/605ddb973206.ifc",
+      "public_task_ids": [
+        "WAL-UPD-DIR-R-004"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": null,
+      "expected_source_bytes": 154677453,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/65dc48e7147a-update-input.ifc",
+      "public_task_ids": [
+        "SLB-UPD-SPA-R-002"
+      ],
+      "status": "MISSING_LOCAL_PINNED_INPUT",
+      "task_count": 1,
+      "verification_method": null,
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": null,
+      "expected_source_bytes": 148917608,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/6dc4da160a96.ifc",
+      "public_task_ids": [
+        "ROM-DEL-SPA-R-001"
+      ],
+      "status": "MISSING_LOCAL_PINNED_INPUT",
+      "task_count": 1,
+      "verification_method": null,
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "2a04d35994be3814b89303b84457a5b82bfef55b5a83e398414e3de0f290c6c4",
+      "expected_source_bytes": 12157617,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/91ced022fd65-create-ground-truth.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-R-002"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_lfs_sha256_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "a09ae565e3def6d3c3656bb8a37f20da34d4edb313ee7b4153f7360ce1a0e94b",
+      "expected_source_bytes": 5328401,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/9517aa154f71.ifc",
+      "public_task_ids": [
+        "SLB-DEL-SPA-R-003",
+        "SLB-DEL-TOP-R-003",
+        "SLB-UPD-TOP-R-003",
+        "WAL-DEL-TOP-R-003",
+        "WAL-UPD-DIR-R-003",
+        "WAL-UPD-SPA-R-003",
+        "WAL-UPD-TOP-R-003"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 7,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": null,
+      "expected_source_bytes": 47021412,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/9d81a20e025d-create-input.ifc",
+      "public_task_ids": [
+        "WAL-CRE-SPA-R-002",
+        "WAL-CRE-TOP-R-002"
+      ],
+      "status": "MISSING_LOCAL_PINNED_INPUT",
+      "task_count": 2,
+      "verification_method": null,
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": null,
+      "expected_source_bytes": 161247958,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/9fc9f7d62d4a-create-input.ifc",
+      "public_task_ids": [
+        "WIN-CRE-TOP-R-001"
+      ],
+      "status": "MISSING_LOCAL_PINNED_INPUT",
+      "task_count": 1,
+      "verification_method": null,
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "100688f9eea150557cad1a985fe000a97a2007224d2c247b67bb171d25c239b1",
+      "expected_source_bytes": 4716346,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "complex/e32c75df5608.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-R-004"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "e90e635629a85cf1942163db0f647a49edc6d24631ba72ec79a0381c9145a0de",
+      "expected_source_bytes": 110571,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/01_input.ifc",
+      "public_task_ids": [
+        "WAL-CRE-SPA-A-003"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "4edfd5c016bff2608708437cfd295ffd4da25822afe53dd4239346eaa1439348",
+      "expected_source_bytes": 195305,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/04_input.ifc",
+      "public_task_ids": [
+        "DOR-CRE-TOP-A-002"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "522aa55959dc5b18e98c1c9cea917afea25fcbccb0f409b252c3a71cce963bc6",
+      "expected_source_bytes": 226070,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/05_input.ifc",
+      "public_task_ids": [
+        "WIN-UPD-SPA-A-003"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "26cb13eb69b4b25a74b17475ccbc4458472327376dba727db095e50e9a55e9f7",
+      "expected_source_bytes": 239591,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/06_input.ifc",
+      "public_task_ids": [
+        "WIN-DEL-SPA-A-002",
+        "WIN-DEL-TOP-A-002"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 2,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "ea1a4dcb18c621fde9079c57145a77b07327441b6305aed0e6504d84952e7985",
+      "expected_source_bytes": 159559,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/14_input.ifc",
+      "public_task_ids": [
+        "ROM-UPD-TOP-A-003"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "6cf0f8b8c77241f215afdd1796626b1138ad4d3224425d2b446242e4560b3f3a",
+      "expected_source_bytes": 408236,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task001-create-ground-truth.ifc",
+      "public_task_ids": [
+        "WAL-DEL-TOP-A-001",
+        "WAL-UPD-TOP-A-001"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 2,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "80657019b6eaed8efacf74fa04e7b2b9ce3e2eb094d5274bf107a13a26f117a0",
+      "expected_source_bytes": 411901,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task002-create-input.ifc",
+      "public_task_ids": [
+        "DOR-CRE-DIR-A-001"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "170d9ed9c10a31d86c3ff2207a450fd552166af21472486f11004f6e2b14defb",
+      "expected_source_bytes": 136436,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task002-delete-input.ifc",
+      "public_task_ids": [
+        "DOR-DEL-DIR-A-001"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "02f704673f0ca96afa9bc548508811fd1a5da6a292100a2ed2ab1f2f92104a18",
+      "expected_source_bytes": 118800,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task003-create-input.ifc",
+      "public_task_ids": [
+        "SLB-CRE-SPA-A-001"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "2b717cd6c3d9b73c8f0cba12843280d425b277e3d8e1a4b0377c91e74e9144bf",
+      "expected_source_bytes": 133616,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task004-create-ground-truth.ifc",
+      "public_task_ids": [
+        "ROM-DEL-DIR-A-001",
+        "ROM-UPD-DIR-A-001",
+        "ROM-UPD-SPA-A-001"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 3,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "88de67de1f28a64ce0f1ca7eb330a129178ae7a97f52cdeddf0bc1de033cc0a3",
+      "expected_source_bytes": 132873,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task005-create-ground-truth.ifc",
+      "public_task_ids": [
+        "COL-DEL-SPA-A-001"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "bc30a74d2fa776a7dc9cd62589dc32582e8e4fce621fa62d69419ff7cc212083",
+      "expected_source_bytes": 144983,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task007-create-input.ifc",
+      "public_task_ids": [
+        "WIN-CRE-DIR-A-001"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "c533767f850a7ba01b73caf4467fae7cc886807a72a900d65cd480e7b877bcc9",
+      "expected_source_bytes": 150487,
+      "is_cross_task_reference_alias_in_original_324": false,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task007-update-input.ifc",
+      "public_task_ids": [
+        "WIN-UPD-DIR-A-002"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    },
+    {
+      "byte_sha256_verified": "03e4f92c6434e74d1166a3293b835fe9de790e8d80f05c4898bb4991eb8a685b",
+      "expected_source_bytes": 141666,
+      "is_cross_task_reference_alias_in_original_324": true,
+      "per_file_legal_provider_transfer_approved": false,
+      "public_input_path": "simple/task009-create-input.ifc",
+      "public_task_ids": [
+        "ROM-CRE-TOP-A-002"
+      ],
+      "status": "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED",
+      "task_count": 1,
+      "verification_method": "publisher_git_blob_sha1_and_local_sha256",
+      "verified_underlying_building_lineage": null
+    }
+  ],
+  "scope": "ALREADY_CACHED_EXACT_INPUT_IFC_BYTES_ONLY_NO_GT_NATIVE_PARSE",
+  "source_IFC_geometry_native_parsed": false,
+  "status": "PARTIAL_LOCAL_INPUT_BYTE_IDENTITY_VERIFIED_NOT_SCIENTIFIC_LAUNCH",
+  "status_counts": {
+    "MISSING_LOCAL_PINNED_INPUT": 5,
+    "PUBLISHER_OBJECT_AND_LOCAL_SHA256_VERIFIED": 20
+  },
+  "verification_method_counts": {
+    "publisher_git_blob_sha1_and_local_sha256": 19,
+    "publisher_lfs_sha256_and_local_sha256": 1
+  },
+  "verified_cached_inputs_that_are_reference_paths_for_some_other_task": 9,
+  "verified_local_distinct_byte_sha256": 20,
+  "verified_local_input_files": 20,
+  "verified_pilot_tasks_with_local_input": 30
+}
